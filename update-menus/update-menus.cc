@@ -465,12 +465,12 @@ void read_pkginfo()
   while (!feof(status))
   {
     char tmp[MAX_LINE];
-    fgets(tmp, MAX_LINE, status);
+    if (fgets(tmp, MAX_LINE, status) != NULL) {
+      if (tmp[strlen(tmp)-1] == '\n')
+          tmp[strlen(tmp)-1] = 0;
 
-    if (tmp[strlen(tmp)-1] == '\n')
-        tmp[strlen(tmp)-1] = 0;
-
-    installed_packages.insert(tmp);
+      installed_packages.insert(tmp);
+    }
   }
   pclose(status);
 }
