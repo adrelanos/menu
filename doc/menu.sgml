@@ -211,14 +211,14 @@ Here is an example to describe the syntax of such a file:
 ?package(gnuplot):\           specifies what packages need to be installed
                               multiple requirements should be seperated by
                               comma
-  needs=text\                 what kind of terminal this command expects
+  needs="text"\               what kind of terminal this command expects
                               needs=X11: if this program runs only on X11
                               needs=text: if it only runs on text terminals
                                         (the window manager should spawn 
                                          an xterm or rxvt in this case)
                               needs=vc: runs only at linux console
                               needs=wm: this starts another window manager
-  section=Apps/Math\          in what section this menu entry should be
+  section="Apps/Math"\        in what section this menu entry should be
   title="Gnuplot"\            the title of the menu entry (try to make it short)
                               the title must be unique; two entries must not
                               have the same title
@@ -268,6 +268,7 @@ Please do <em/not/ put your packages into any other sections.
        Apps            - normal apps
          Databases     - interactive database programs
          Editors       - text editors, word processors
+         Education     - educational and training programs
          Emulators     - dosemu, etc.
          Graphics      - image manipulation
          Hamradio      - anything relating to ham radio.
@@ -288,6 +289,7 @@ Please do <em/not/ put your packages into any other sections.
          Board         - like gnuchess, pente, gnugo
          Card          - solitaire, etc
          Puzzles       - Stuff from xpuzzles, ...
+         Simulation
          Sports        - Games derived from "real world" sports
          Strategy      - games involving long term strategic thinking
          Tetris-like   - games involving falling blocks
@@ -481,7 +483,7 @@ And here is a good example for a <tt/postinst/ script:
 Please, do not make your package <em/depend/ on the menu package! The
 preferred way of telling dpkg that your wm can cooperate with menu is:
 <example>
-   Suggests: menu (>1.5)
+   Suggests: menu
 </example>
 Please only consider using "depends" if you feel providing reasonable
 defaults for systems without menu will make life very difficult for you.
