@@ -2,6 +2,7 @@ menu (2.1.9-2) unstable; urgency=low
 
   * The "unreleased release". 
   * Add Catalan translation of menu sections. Thanks Jordi Mallach.
+  * Add Japanese translation of menu sections. Thanks GOTO Masanori.
   * Morten Brix Pedersen:
     - Finally make the output of update-menus and install-menu properly
     i18n'ed. Translators should now start translating menu.pot in po/.
@@ -11,6 +12,7 @@ menu (2.1.9-2) unstable; urgency=low
     menu-section.pot.
   * Add menu sections Games/Simulation and Apps/Education to menu.sgml and
     menufile.5.
+  * Convert this file to UTF-8.
   * Bump Standards-Version to 3.6.0.
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 27 Jun 2003 23:14:48 +0200
@@ -43,7 +45,7 @@ menu (2.1.8-2) unstable; urgency=low
   * Add menu-one-file to doc, for building alioth doc.
   * Add Italian translation of menu sections. Thanks Stefano Canepa.
   * Add German translation of menu sections. Thanks Sebastian Rittau.
-  * Complete Brazilian translation of menu sections. Thanks Andr� Lu�s Lopes.
+  * Complete Brazilian translation of menu sections. Thanks AndrÃ© LuÃ­s Lopes.
   * Add French translation of update-menus man pages.
     Thanks Sylvain Cherrier. Closes: #193004
   * Remove hello, octave and xftp default menu entries.
@@ -63,11 +65,11 @@ menu (2.1.8-1) unstable; urgency=low
   * Hard code version in configure.in so that menu can be build without
     the debian directory.
   * Complete french translation of menu sections. Thanks Jean-Philippe
-    Gu�rard.
+    GuÃ©rard.
   * Complete spanish translation of menu sections. Thanks Javier
-    Fern�ndez-Sanguino Pe�a.
+    FernÃ¡ndez-Sanguino PeÃ±a.
   * Complete polish translation of menu sections. Thanks Marcin Owsiany.
-  * Add brazilian translation of menu sections. Thanks Andr� Lu�s Lopes.
+  * Add brazilian translation of menu sections. Thanks AndrÃ© LuÃ­s Lopes.
   * Remove obsolete Apps/Games --> Games in translate_menus.
   * Morten Brix Pedersen <morten@wtf.dk>:
     - Add Danish translation of menu sections.
@@ -93,7 +95,7 @@ menu (2.1.7-3) unstable; urgency=low
   * Remove 'Ja, hoor' debugging message when using hints.
   * debiandoc-sgml 1.1.75 has reached testing so remove the versionned
     Build-Depends.
-  * Depends on dpkg (>= 1.10). Thanks Jens M�ller. Closes: #186160
+  * Depends on dpkg (>= 1.10). Thanks Jens MÃ¼ller. Closes: #186160
   * Patch from Morten Brix Pedersen :
    - Added documentation for several methods in menutree and hints classes.
    - Rename variables to more saner names, instead of single-letter variable
@@ -290,7 +292,7 @@ menu (2.1.5-11) unstable; urgency=low
     Closes: #120735 (Tomas Pospisek)
   s,/usr/doc/menu,/usr/share/doc/menu, in all files.
     Closes: #98363,#103188,#134924
-    (Stephen Stafford,Martin Quinson,Andr� Dahlqvist)
+    (Stephen Stafford,Martin Quinson,AndrÃ© Dahlqvist)
   lots of typo in menu.sgml. Closes: #57832 (Christian T. Steigies)
   * Install and remove info file correctly in postinst/prerm.
   * Rename menu info entry to "Debian menu". 
