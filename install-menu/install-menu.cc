@@ -13,6 +13,7 @@
 #include <pwd.h>
 #include <config.h>
 #include <iconv.h>
+#include <langinfo.h>
 
 #include "install-menu.h"
 #include "menu-tree.h"
@@ -81,7 +82,6 @@ std::string convert(const std::string& str)
   if (conversion == (iconv_t)(-1)) {
       delete []inbuf;
       delete []outbuf;
-      iconv_close(conversion);
       throw conversion_error(strerror(errno));
   }
 
@@ -931,7 +931,7 @@ void read_forcetree(parsestream &i)
 //
 configinfo::configinfo(parsestream &i) 
     : roots("/Debian"), mainmt("Debian"), treew("c(m)"),
-    outputenc(menuencoding), onlyrunasroot(false),
+    outputenc(nl_langinfo(CODESET)), onlyrunasroot(false),
     onlyrunasuser(false),
     onlyuniquetitles(false), hint_optimize(false), hint_nentry(6),
     hint_topnentry(5), hint_mixedpenalty(15), hint_minhintfreq(0.1),
