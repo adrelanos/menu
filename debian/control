@@ -8,6 +8,7 @@ Build-Depends: debhelper (>= 3.0.0), texinfo, debiandoc-sgml, gettext
 Package: menu
 Architecture: any
 Depends: ${shlibs:Depends}, dpkg (>=1.10)
+Suggests: gksu|kdebase-bin
 Description: Provides update-menus functions for some applications
  The intent of this package is to streamline the menus (like the
  fvwm2 ones) in Debian. For this purpose, menu provides an "update-menus"

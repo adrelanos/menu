@@ -42,7 +42,7 @@ else
       echo This command needs $PRIV privileges to be executed.
       echo enter $PRIV passwd:
     fi
-    while ! su "$PRIV" -p -c "$COMMAND"; do
+    while ! su "$PRIV" -c "$COMMAND"; do
       echo -n 'Incorrect password or command failed. Try again? (y/n)'
       read ans
       if test "$ans" != "y" -a "$ans" != "Y"; then

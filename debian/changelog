@@ -1,6 +1,6 @@
-menu (2.1.10-2) unstable; urgency=low
+menu (2.1.11) unstable; urgency=low
 
-  * The "unreleased" release. 
+  * The "Go bravely with Joey" release. 
   * Morten Brix Pedersen:
     - Only enable translated section names when both 'outputencoding' and
       'repeat_lang' has been set.
@@ -9,14 +9,15 @@ menu (2.1.10-2) unstable; urgency=low
     - Update Danish menu translation.
     - Fixed some inconsistent behaviour with "substitute section->section"
       Closes: #216851. Thanks Jean-Philippe Guérard.
-    - Fixed a problem with su-to-root script where a X application didnt have
-      access to run on the server. Closes: #150314. Thanks Raoul Borenius.
     - Fix compilation with g++ 2.95.
   * su-to-root:
     + New -X for need=X11 entries that support for gksu and kdesu.
       Closes: #166844. Thanks Jason Hildebrand.
     + Handle usage by root more sanely.
     + update manpage.
+  * debian/control: 
+    + Suggest gksu|kdebase-bin. Install one of those if su-to-root cannot
+      access the X server. Closes: #150314. Thanks Raoul Borenius.
   * Update Brazillian menu messages translation. Thanks André Luís Lopes. 
   * Add Norwegian nynorsk menu messages and sections translations. 
     Thanks Håvard Korsvoll.
@@ -30,7 +31,7 @@ menu (2.1.10-2) unstable; urgency=low
   * Jens Arvidsson:
     - Add Swedish menu messages and sections translation. 
 
- -- Bill Allombert <ballombe@debian.org>  Fri, 12 Mar 2004 15:27:16 +0100
+ -- Bill Allombert <ballombe@debian.org>  Fri, 26 Mar 2004 19:49:28 +0100
 
 menu (2.1.10-1) unstable; urgency=low
 
