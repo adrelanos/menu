@@ -1,0 +1,147 @@
+# Menu section translation
+# Copyright (C) 2003
+# This file is distributed under the same license as the menu package.
+# Bill Allombert <ballombe@debian.org>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: menu-section 2.1.9-3\n"
+"POT-Creation-Date: 2003-04-03 12:14+0100\n"
+"PO-Revision-Date: 2003-12-17 17:43+0100\n"
+"Last-Translator: Tim Dijkstra <tim@famdijkstra.org>\n"
+"Language-Team: Debian Dutch <debian-l10n-dutch@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Apps"
+msgstr "Toepassingen"
+
+msgid "Databases"
+msgstr "Gegevensbanken"
+
+msgid "Editors"
+msgstr "Tekstbewerkers"
+
+msgid "Education"
+msgstr "Onderwijs"
+
+msgid "Emulators"
+msgstr "Emulatoren"
+
+msgid "Graphics"
+msgstr "Beeldbewerkers"
+
+msgid "Hamradio"
+msgstr "Amateurradio"
+
+msgid "Math"
+msgstr "Wiskunde"
+
+msgid "Net"
+msgstr "Netwerk"
+
+msgid "Programming"
+msgstr "Programmeren"
+
+msgid "Science"
+msgstr "Wetenschap"
+
+msgid "Tools"
+msgstr "Hulpprogramma's"
+
+msgid "Technical"
+msgstr "Technisch"
+
+msgid "Text"
+msgstr "Tekst"
+
+msgid "Shells"
+msgstr "Shells"
+
+msgid "Sound"
+msgstr "Geluid"
+
+msgid "Viewers"
+msgstr "Weergevers"
+
+msgid "System"
+msgstr "Systeem"
+
+msgid "Games"
+msgstr "Spellen"
+
+msgid "Adventure"
+msgstr "Avontuur"
+
+msgid "Arcade"
+msgstr "Speelhal"
+
+msgid "Board"
+msgstr "Bord"
+
+msgid "Card"
+msgstr "Kaart"
+
+msgid "Puzzles"
+msgstr "Puzzels"
+
+msgid "Simulation"
+msgstr "Simulatie"
+
+msgid "Sports"
+msgstr "Sport"
+
+msgid "Strategy"
+msgstr "Strategie"
+
+msgid "Tetris-like"
+msgstr "Tetris-achtig"
+
+msgid "Toys"
+msgstr "Speeltjes"
+
+msgid "Help"
+msgstr "Help"
+
+msgid "Screen"
+msgstr "Scherm"
+
+msgid "Lock"
+msgstr "Vergrendelen"
+
+msgid "Save"
+msgstr "Opslaan"
+
+msgid "Root-window"
+msgstr "Hoofdvenster"
+
+msgid "WindowManagers"
+msgstr "Vensterbeheerders"
+
+msgid "Modules"
+msgstr "Modules"
+
+msgid "XShells"
+msgstr "X-Shells"
+
+#From Apps/System/Admin
+msgid "Admin"
+msgstr "Beheer"
+
+#Non official sections from WindowMaker
+msgid "Appearance"
+msgstr "Uiterlijk"
+
+msgid "WorkSpace"
+msgstr "Werkblad"
+
+#Fresuently used unofficial sections.
+#From Apps/Net/Mozilla Components
+msgid "Mozilla Components"
+msgstr "Mozilla-onderdelen"
+
+#From Games/Toys/Teddies
+msgid "Teddies"
+msgstr "Knuffels"
+
