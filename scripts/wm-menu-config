@@ -1,0 +1,15 @@
+#!/bin/sh 
+
+inst=/etc/menu-methods/$1
+
+case "$2" in 
+"on")  if [ -x /usr/bin/update-menus -a -f $inst -a -x /usr/sbin/install-menu ] ; then
+          chmod a+x $inst
+          update-menus
+       fi 
+       ;;
+"off") 
+       if [ -f "$inst" ]; then chmod a-x $inst ; fi
+       if [ -x /usr/bin/update-menus ] ; then update-menus; fi
+       ;;
+esac

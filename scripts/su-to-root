@@ -1,0 +1,53 @@
+#!/bin/bash
+
+PRIV=root
+COMMAND=
+
+
+eusername () {
+   getent passwd $1 | cut -f1 -d:
+}
+
+usage () {
+  echo usage: $0 '[-p <user>] -c <command>' >&2
+  exit 1
+}
+
+#with getopt I cannot get multi-word commands to work (like -c "ls -al").
+#
+#set -- `getopt p:c: "$@"`
+#if test $? != 0; then
+#    echo 'Usage: ...'
+#  exit 2
+#fi
+for i in "$@"; do
+   case "$prev" in
+     -p)
+       PRIV="$i";;
+     -c)
+       COMMAND="$i";;
+   esac
+   prev="$i"
+done
+
+if [ -z "$COMMAND" ] ; then
+   usage;
+fi
+
+euid=$(id -u)
+eus=$(eusername $euid)
+if test $euid -eq 0 -o $eus = $PRIV; then
+  $COMMAND
+else
+  echo About to execute $COMMAND. 
+  echo This command needs $PRIV privileges to be executed.
+  echo enter $PRIV passwd:
+  while ! su $PRIV -c "$COMMAND"; do
+    echo -n 'Incorrect password. Try again? (y/n)'
+    read ans
+    if test "$ans" != "y" -a "$ans" != "Y"; then
+      exit 1
+    fi
+  done  
+fi
+    
