@@ -13,6 +13,8 @@ menu (2.1.22) unstable; urgency=low
   * debian/bug.presubj: display "Reporting menu bugs" in red to stand out.
   * Morten Brix Pedersen: 
     - Fixed two typos in the Danish menu program translation.
+    - Corrected the counting of menu entries in verbose output.
+      Closes: #280081.
 
  -- Bill Allombert <ballombe@debian.org>  Wed, 16 Feb 2005 23:42:14 +0100
 

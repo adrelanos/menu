@@ -57,6 +57,7 @@ static const char * home_dir;
 
 set<string> installed_packages;
 set<string> menufiles_processed;
+int total_menuentries;
 
 translateinfo *transinfo;
 configinfo     config;
@@ -451,11 +452,13 @@ void read_pkginfo()
   pclose(status);
 }
 
-/** Read a menufile and create a menuentry for it */
-void read_menufile(const string &filename, const string &shortfilename,
-                   vector<string> &menudata)
+/** Read a menufile and create one (or more) menu entries for it.
+ *
+ * Returns the number of menu entries read. */
+int read_menufile(const string &filename, const string &shortfilename,
+                  vector<string> &menudata)
 {
-
+  int menuentries = 0;
   parsestream *ps = 0;
   std::stringstream *sstream = 0;
 
@@ -490,7 +493,7 @@ void read_menufile(const string &filename, const string &shortfilename,
     }
   } catch (endoffile p) {
     delete sstream;
-    return;
+    return menuentries;
   }
 
   try {
@@ -511,6 +514,7 @@ void read_menufile(const string &filename, const string &shortfilename,
           wrote_filename = true;
         }
         m.output(menudata);
+        menuentries++;
         if (ps->linenumber() != linenr) {
           menudata.push_back(string("!L ") + itostring(ps->linenumber())+ '\n');
           linenr = ps->linenumber();
@@ -531,11 +535,13 @@ void read_menufile(const string &filename, const string &shortfilename,
 
   delete ps;
   delete sstream;
+  return menuentries;
 }
 
 /** Read a directory full of menu files */
 void read_menufilesdir(vector<string> &menudata)
 {
+  int menuentries = 0;
   for(vector<string>::const_iterator method_i = config.menufilesdir.begin();
       method_i != config.menufilesdir.end();
       ++method_i)
@@ -562,7 +568,7 @@ void read_menufilesdir(vector<string> &menudata)
               int r = stat(name.c_str(),&st);
               try {
                 if ((!r) && (S_ISREG(st.st_mode)||S_ISLNK(st.st_mode)))
-                    read_menufile(name,entry->d_name, menudata);
+                    menuentries += read_menufile(name,entry->d_name, menudata);
               }
               catch (endofline p) {
                 cerr << String::compose(_("Error reading %1.\n"), name);
@@ -570,7 +576,8 @@ void read_menufilesdir(vector<string> &menudata)
             }
       }
     } catch (dir_error_read p) { }
-    config.report(String::compose(_("%1 menu entries found (%2 total)."), menudata.size() - count, menudata.size()), configinfo::report_verbose);
+    total_menuentries += menuentries;
+    config.report(String::compose(_("%1 menu entries found (%2 total)."), menuentries, total_menuentries), configinfo::report_verbose);
   }
 }
 
