@@ -408,7 +408,24 @@ together with other editors that are marked similar. For example, if
 there are too many entries in the /Apps/Editors menuentry, then menu
 will consider creating a /Apps/Editors/Expert submenu, and put both
 <tt/vi/ and <tt/emacs/ in it. (of course, only if you have 
-<tt/hint_optimize=true/ in your /etc/menu-methods/menu.h file).
+<tt/hint_optimize=true/ in your <tt>/etc/menu-methods/menu.h</tt> file).
+
+<sect> Entries for menu sections.
+<p>
+It is possible to add entries for menu sections, but it is not mandatory
+since section entries are created automatically.
+
+However, this allows to specify fields for sections like <tt/icon/ and
+<tt/sort/.
+
+The syntax for menu sections entries is the same as for regular entries,
+the <tt/section/ field holding the name of the parent section.
+
+For example
+<example>
+?package(local.games): needs="text" title="Games" section="/" sort="001"
+</example>
+will sort <tt/Games/ first.
 
 <sect>Fvwm's task and title bars
 <p>
