@@ -1,3 +1,8 @@
+Originally written and maintained by
 Joost Witteveen <joostje@debian.org>
+up to release 2.1.5-10
 
-g++ 3.2 transition by Morten Brix Pedersen <morten@wtf.dk>
+Current developers:
+
+Bill Allombert <ballombe@debian.org>
+Morten Brix Pedersen <morten@wtf.dk>

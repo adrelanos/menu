@@ -1,5 +1,7 @@
 menu (2.1.8-2) unstable; urgency=low
 
+  * The "Thanks Joost, for the great Debian menu system" release.  
+  * Set myself as maintainer since Joost has officially retired.
   * Add menu-one-file to doc, for building alioth doc.
   * Add Italian translation of menu sections. Thanks Stefano Canepa.
   * Add German translation of menu sections. Thanks Sebastian Rittau.

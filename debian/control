@@ -1,8 +1,7 @@
 Source: menu
 Section: admin
 Priority: optional
-Maintainer: joost witteveen <joostje@debian.org>
-Uploaders: Bill Allombert <ballombe@debian.org>
+Maintainer: Bill Allombert <ballombe@debian.org>
 Standards-Version: 3.5.10.0
 Build-Depends: debhelper (>= 3.0.0), texinfo, debiandoc-sgml, gettext
 

@@ -1,5 +1,8 @@
 This is the Debian menu system, written and maintained by Joost
-Witteveen <joostje@debian.org>.
+Witteveen <joostje@debian.org> until version 2.1.5-10.
+
+The Debian menu system is now maintained by Bill Allombert and Morten Brix
+Pedersen.
 
 The original source can always be found at:
 	ftp://ftp.debian.org/dists/unstable/main/source/
