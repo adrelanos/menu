@@ -9,8 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2003-01-28 12:14+0100\n"
-"PO-Revision-Date: 2003-04-04 17:59+0200\n"
+"POT-Creation-Date: 2003-04-03 12:14+0100\n"
+"PO-Revision-Date: 2003-04-12 02:49+0200\n"
 "Last-Translator: Marcin Owsiany <porridge@debian.org>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -20,32 +20,23 @@ msgstr ""
 msgid "Apps"
 msgstr "Aplikacje"
 
-msgid "Games"
-msgstr "Gry"
-
-msgid "Help"
-msgstr "Pomoc"
-
-msgid "Screen"
-msgstr "Ekran"
-
-msgid "WindowManagers"
-msgstr "Manad¿ery okien"
-
-msgid "XShells"
-msgstr "Pow³oki dla X"
+msgid "Databases"
+msgstr "Bazy danych"
 
 msgid "Editors"
 msgstr "Edytory"
 
+msgid "Emulators"
+msgstr "Emulatory"
+
 msgid "Graphics"
 msgstr "Grafika"
 
+msgid "Hamradio"
+msgstr "Radio HAM"
+
 msgid "Math"
 msgstr "Matematyka"
-
-msgid "Misc"
-msgstr "Ró¿ne"
 
 msgid "Net"
 msgstr "Sieæ"
@@ -53,14 +44,23 @@ msgstr "Sieæ"
 msgid "Programming"
 msgstr "Programowanie"
 
+msgid "Science"
+msgstr "Nauki ¶cis³e"
+
+msgid "Tools"
+msgstr "Narzêdzia"
+
+msgid "Technical"
+msgstr "Techniczne"
+
+msgid "Text"
+msgstr "Tekst"
+
 msgid "Shells"
 msgstr "Pow³oki"
 
 msgid "Sound"
 msgstr "D¼wiêk"
-
-msgid "Tools"
-msgstr "Narzêdzia"
 
 msgid "Viewers"
 msgstr "Przegl±darki"
@@ -68,8 +68,8 @@ msgstr "Przegl±darki"
 msgid "System"
 msgstr "Systemowe"
 
-msgid "Admin"
-msgstr "Administracja"
+msgid "Games"
+msgstr "Gry"
 
 msgid "Adventure"
 msgstr "Przygodowe"
@@ -80,14 +80,29 @@ msgstr "Zrêczno¶ciowe"
 msgid "Board"
 msgstr "Planszowe"
 
-msgid "Simulation"
-msgstr "Symulatory"
+msgid "Card"
+msgstr "Karciane"
+
+msgid "Puzzles"
+msgstr "Uk³adanki"
+
+msgid "Sports"
+msgstr "Sportowe"
 
 msgid "Strategy"
 msgstr "Strategiczne"
 
 msgid "Tetris-like"
 msgstr "Tetrisopodobne"
+
+msgid "Toys"
+msgstr "Zabawki"
+
+msgid "Help"
+msgstr "Pomoc"
+
+msgid "Screen"
+msgstr "Ekran"
 
 msgid "Lock"
 msgstr "Blokady"
@@ -98,6 +113,11 @@ msgstr "Wygaszacze"
 msgid "Root-window"
 msgstr "T³o"
 
+msgid "WindowManagers"
+msgstr "Mened¿ery okien"
+
 msgid "Modules"
 msgstr "Modu³y"
 
+msgid "XShells"
+msgstr "Pow³oki dla X"
