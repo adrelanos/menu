@@ -1,12 +1,21 @@
 menu (2.1.9-5) unstable; urgency=low
 
   * The "unreleased" release. 
+  * Add Polish menu message translation and update Polish menu section
+    translation. Thanks Marcin Owsiany.
   * Update French menu section translation. Closes: #225716. Thanks
     Jean-Philippe Guérard.
-  * Fix stdin/stdout typo in error message. Closes: #227070. Thanks Tommi
-    Vainikainen.
+  * Fix typos in error messages. Closes: #227070. Thanks Tommi Vainikainen.
   * Add Finnish translations. Closes: #227038. Thanks Tommi Vainikainen.
+  * Add Brazillian menu message translation. Closes: #227627. Thanks Gustavo 
+    Noronha Silva. 
   * Add GPL boiler-plate to all C++ source files.
+  * Add Dutch menu message translation. Closes: #228221. Thanks Tim Dijkstra.
+  * Remove documentation of non-existent function process_menudirs.  
+    Closes: #228448. Thanks Chris Cheney.
+  * Fix userprefix() and rootprefix() functions. Closes: #228628. Thanks Chris
+    Cheney.
+  * Add Czech menu section translation. Closes: #229203. Thanks Miroslav Kure.
   * Morten Brix Pedersen:
     - Update Danish sections translation and convert to UTF-8.
     - Update Danish menu translation and convert to UTF-8.
