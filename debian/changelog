@@ -1,6 +1,6 @@
 menu (2.1.19) unstable; urgency=low
 
-  * The "unreleased" release 
+  * The "Debian translators rule!" release
   * Update Finnish menu section translations, fixing a serious translation
     error noticed by Mika Wahlroos. Closes: #276122.
   * Update Brazillian menu section translation. Thanks André Luís Lopes.
@@ -11,8 +11,10 @@ menu (2.1.19) unstable; urgency=low
     Peña.
   * Update Chinese menu messages translation. Thanks Carlos Z.F. Liu.
   * Add German menu messages translation. Thanks Tobias Toedter.
+  * Add Portuguese menu message and menu section translation. Thanks
+    António Amorim.
 
- -- Bill Allombert <ballombe@debian.org>  Thu, 28 Oct 2004 23:19:58 +0200
+ -- Bill Allombert <ballombe@debian.org>  Mon,  1 Nov 2004 17:15:40 +0100
 
 menu (2.1.18) unstable; urgency=low
 

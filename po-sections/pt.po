@@ -1,0 +1,126 @@
+# Menu section translation
+# Copyright (C) 2003
+# This file is distributed under the same license as the menu package.
+# Bill Allombert <ballombe@debian.org>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: menu-section 2.1.7-2\n"
+"POT-Creation-Date: 2004-07-03 12:14+0100\n"
+"PO-Revision-Date: 2004-07-17 12:29-0300\n"
+"Last-Translator: António Amorim <Antonio.Amorim@fisica.fc.ul.pt>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Apps"
+msgstr "Aplicações"
+
+msgid "Databases"
+msgstr "Bases de Dados"
+ 
+msgid "Editors"
+msgstr "Editores"
+
+msgid "Education"
+msgstr "Educação"
+
+msgid "Emulators"
+msgstr "Emuladores"
+
+msgid "Graphics"
+msgstr "Gráficos"
+
+msgid "Hamradio"
+msgstr "Rádio Amador"
+
+msgid "Math"
+msgstr "Matemática"
+
+msgid "Mathematics"
+msgstr "Matemática"
+
+msgid "Net"
+msgstr "Rede"
+
+msgid "Programming"
+msgstr "Programação"
+
+msgid "Science"
+msgstr "Ciência"
+
+msgid "Tools"
+msgstr "Ferramentas"
+
+msgid "Technical"
+msgstr "Técnico"
+
+msgid "Text"
+msgstr "Texto"
+
+msgid "Shells"
+msgstr "Shells"
+
+msgid "Sound"
+msgstr "Som"
+
+msgid "Viewers"
+msgstr "Visualizadores"
+
+msgid "System"
+msgstr "Sistema"
+
+msgid "Games"
+msgstr "Jogos"
+
+msgid "Adventure"
+msgstr "Aventura"
+
+msgid "Arcade"
+msgstr "Fliperama"
+
+msgid "Board"
+msgstr "Tabuleiro"
+
+msgid "Card"
+msgstr "Cartas"
+
+msgid "Puzzles"
+msgstr "Quebra Cabeças"
+
+msgid "Sports"
+msgstr "Desporto"
+
+msgid "Strategy"
+msgstr "Estratégia"
+
+msgid "Tetris-like"
+msgstr "Estilo Tetris"
+
+msgid "Toys"
+msgstr "Brinquedos"
+
+msgid "Help"
+msgstr "Ajuda"
+
+msgid "Screen"
+msgstr "Tela"
+
+msgid "Lock"
+msgstr "Travar"
+
+msgid "Save"
+msgstr "Salvar"
+
+msgid "Root-window"
+msgstr "Janela Raíz"
+
+msgid "WindowManagers"
+msgstr "Gestores de Janelas"
+
+msgid "Modules"
+msgstr "Módulos"
+
+msgid "XShells"
+msgstr "Shells Gráficos"
