@@ -7,9 +7,12 @@ set -e
 # you shouldn't do, and doesn't do other things that you should
 # do. See /usr/share/doc/menu/ for more info.
 
-if [ -x /usr/bin/pidof ]; then
-  kill -KILL `pidof update-menus` 2> /dev/null || true
-fi
+# Disabled since we use proper locking since 4 years now.
+
+#if [ -x /usr/bin/pidof ]; then
+#  kill -KILL `pidof update-menus` 2> /dev/null || true
+#fi
+
 chmod a+x /usr/bin/update-menus
 update-menus
 
