@@ -7,6 +7,7 @@ menu (2.1.8-1) unstable; urgency=low
     Guérard.
   * Complete spanish translation of menu sections. Thanks Javier
     Fernández-Sanguino Peña.
+  * Complete polish translation of menu sections. Thanks Marcin Owsiany.
   * Add brazilian translation of menu sections. Thanks André Luís Lopes.
   * Remove obsolete Apps/Games --> Games in translate_menus.
   * Morten Brix Pedersen <morten@wtf.dk>:
@@ -18,6 +19,8 @@ menu (2.1.8-1) unstable; urgency=low
     - Fix segmentation fault when using forcetree. Closes: #149468
     - Add basesection variable. Closes: #136947
     - Support multiple package requirement. Closes: #114620
+  * Ship prebuild documentation in source tarball to work around sp failure
+    on m68k.
 
  -- Bill Allombert <ballombe@debian.org>  Mon,  7 Apr 2003 20:31:51 +0200
 
