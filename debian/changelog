@@ -1,6 +1,6 @@
 menu (2.1.10-1) unstable; urgency=low
 
-  * The "unreleased" release. 
+  * The "Friday 12" release.
   * Morten Brix Pedersen:
     - replacewith($str, $replace, $with) now outputs an error if $replace and
     $with isn't the same length.
@@ -19,7 +19,7 @@ menu (2.1.10-1) unstable; urgency=low
   * Remove dconfig-text entry form gpm default menu entry: Closes: #234178.
   * Document that menu files must be encoded in 7bit only.
 
- -- Bill Allombert <ballombe@debian.org>  Sat, 24 Jan 2004 19:45:43 +0100
+ -- Bill Allombert <ballombe@debian.org>  Fri, 12 Mar 2004 13:39:31 +0100
 
 menu (2.1.9-5) unstable; urgency=low
 
