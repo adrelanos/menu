@@ -47,7 +47,9 @@ install-stamp: build-stamp
 		   etc/menu-methods \
 		   etc/menu \
 		   usr/lib/menu \
-		   usr/share/man/man1
+		   usr/share/man/man1 \
+		   usr/share/bug/menu
+		   
 
 	# Add here commands to install the package into debian/tmp.
 	$(MAKE) install DESTDIR=`pwd`/debian/tmp/
@@ -61,6 +63,9 @@ install-stamp: build-stamp
 	   doc/README.menu-methods debian/tmp/etc/menu-methods/README
 	install -g root -o root -m 644 \
 	   doc/README.package-menus debian/tmp/usr/lib/menu/README
+	#
+	install -g root -o root -m 644 \
+	   debian/bug.presubj debian/tmp/usr/share/bug/menu/presubj
 	#
 	touch install-stamp
 
