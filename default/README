@@ -1,0 +1,18 @@
+In this directory, the menu package has installed some example
+menu files. Although changing them in this directory may work,
+the local systemadmin (you?) is best adviced to put the local
+menu files in /etc/menu, as, otherwise your changes are deleted
+when you update the menu package.
+
+For more info, please read /usr/share/doc/menu/html
+
+If you want to convert your old menuentry files to the new format, you
+can use the convert-menuentries command. For example given the README
+file above, it will convert it into: (I accedentally did this):
+
+?package(README):needs="In" section="this" icon="the" title="menu" command="package has installed some example"
+?package(README):needs="menufiles." section="Although" icon="them" title="in" command="this directory may work,"
+?package(README):needs="the" section="local" icon="(you?)" title="is" command="best adviced to put the local"
+?package(README):needs="menufiles" section="in" icon="as," title="otherwise" command="your changes are deleted"
+?package(README):needs="when" section="you" icon="the" title="menu" command="package."
+?package(README):needs="For" section="more" icon="please" title="read" command="/usr/share/doc/menu/html"

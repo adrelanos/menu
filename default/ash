@@ -1,0 +1,1 @@
+?package(ash):needs="text" section="Apps/Shells"  title="Ash" command="/bin/ash -i"

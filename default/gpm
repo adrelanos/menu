@@ -1,0 +1,11 @@
+?package(gpm):needs="text" section="Apps/System/Admin" \
+   title="gpm-config" \
+   longtitle="Configure General Purpose Mouse Interface"\
+   description="Configure GPM, a package that\
+ package provides a daemon that listens to the mouse when the\
+ console is displayed, and delivers them to applications."\
+   command="/usr/sbin/su-to-root -p root -c /usr/sbin/gpmconfig"
+?package(gpm):needs="dconfig-text" section="Hardware" \
+     title="gpmconfig" \
+     doc="file:///usr/share/doc/gpm/" \
+     command="gpmconfig"

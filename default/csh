@@ -1,0 +1,1 @@
+?package(csh):needs="text" section="Apps/Shells" title="Csh" command="/usr/bin/csh -l"

@@ -1,0 +1,1 @@
+?package(octave):needs="text" section="Apps/Math"  title="Octave" command="/usr/bin/octave"
