@@ -77,12 +77,12 @@ binary-arch: build install
 	dh_testdir
 	dh_testroot
 	dh_installdocs
+	dh_installman doc/update-menus.fr.1
 #	dh_installexamples
 #	dh_installmenu
 #	dh_installemacsen
 #	dh_installinit
 #	dh_installcron
-#	dh_installman
 #	dh_undocumented
 	dh_installchangelogs
 	dh_strip
