@@ -47,9 +47,9 @@ DIR *open_dir_check(string dirname)
   struct stat st;
 
   if (stat(dirname.c_str(), &st) || (!S_ISDIR (st.st_mode)))
-    throw dir_error_read(dirname);
+      throw dir_error_read(dirname);
 
-  return opendir (dirname.c_str());
+  return opendir(dirname.c_str());
 }
 
 bool executable(const string &s)
@@ -73,18 +73,18 @@ bool is_pkg_installed(string filename)
     return installed_packages.find(filename) != installed_packages.end();
 }
 
-menuentry::menuentry(parsestream &i, const string &filename)
+menuentry::menuentry(parsestream &i, const string& file, const string& shortfile)
 {
   char c = i.get_char();
   if (c == '?') {
     read_menuentry(i);
   } else {
     // old format menuentry
-    if (!is_pkg_installed(filename)) {
+    if (!is_pkg_installed(shortfile)) {
       i.skip_line();
       throw cond_inst_false();
     }
-    data[PACKAGE_VAR] = filename;
+    data[PACKAGE_VAR] = shortfile;
     i.put_back(c);
     data[NEEDS_VAR]   = i.get_stringconst();
     data[SECTION_VAR] = i.get_stringconst();
@@ -94,11 +94,12 @@ menuentry::menuentry(parsestream &i, const string &filename)
     i.skip_space();
     data[COMMAND_VAR] = i.get_line();
   }
+  check_req_tags(file);
 }
 
 // This function checks the package name to see if it's valid and installed.
 // Multiple package names can exist, seperated by comma.
-void menuentry::check_validity(parsestream &i, string &name)
+void menuentry::check_pkg_validity(parsestream &i, string &name)
 {
   string function = i.get_name();
   if (function != COND_PACKAGE)
@@ -128,13 +129,31 @@ void menuentry::check_validity(parsestream &i, string &name)
   i.skip_char(')');
 }
 
+// Checks whether we have all the tags we need.
+void menuentry::check_req_tags(const std::string& filename)
+{
+  vector<string> need;
+
+  need.push_back(SECTION_VAR);
+  need.push_back(TITLE_VAR);
+  need.push_back(NEEDS_VAR);
+
+  for(vector<string>::iterator i = need.begin(); i != need.end(); ++i)
+  {
+    std::map<string, string>::const_iterator j = data.find(*i);
+    if ((j == data.end()) || j->second.empty())
+        throw missing_tag(filename, *i);
+  }
+
+}
+
 void menuentry::read_menuentry(parsestream &i)
 {
   // a new format menuentry
   string name;
 
   // read available info
-  check_validity(i, name);
+  check_pkg_validity(i, name);
   data[PACKAGE_VAR] = name;
   i.skip_space();
   i.skip_char(':');
@@ -162,7 +181,7 @@ void menuentry::output(vector<string> &s)
   if (i != data.end()) {
     while (true)
     {
-      t += i->first + "=\"" + i->second + "\"";
+      t += i->first + "=\"" + i->second + '"';
       i++;
       if (i == data.end())
           break;
@@ -299,83 +318,23 @@ string trans_class::debuginfo()
 
 void translate::process(menuentry &m, const string &v)
 {
-  if(v==match)
+  if (v == match)
       m.data[replace_var]=replace;
 }
 
 void subtranslate::process(menuentry &m, const string &v)
 {
-  if(contains(v, match, 0))
+  if (contains(v, match, 0))
       m.data[replace_var]=replace;
 }
 
 void substitute::process(menuentry &m, const string &v){
   string s,*t;
-  if(contains(v, match, 0)) {
-    t=&(m.data[replace_var]);
-    if(t->length()>=replace.length())
+  if (contains(v, match, 0)) {
+    t = &(m.data[replace_var]);
+    if (t->length() >= replace.length())
       *t=replace+t->substr(match.length());
   }
-}
-
-void translateinfo::init(parsestream &i)
-{
-  Regex ident("[a-zA-Z_][a-zA-Z0-9_]*");
-
-  config.report(string("Reading translate info in ")+i.filename(),
-      configinfo::report_verbose);
-  while (true)
-  {
-    string name = i.get_name(ident);
-    config.report(string("name=")+name, configinfo::report_debug);
-    i.skip_space();
-    string match_var = i.get_name(ident);
-    config.report(string("match_var=")+match_var, configinfo::report_debug);
-    i.skip_space();
-    i.skip_char('-');
-    i.skip_char('>');
-    i.skip_space();
-    string replace_var = i.get_name(ident);
-    config.report(string("replace_var=")+replace_var, configinfo::report_debug);
-
-    i.skip_line();
-    while (true)
-    {
-      trans_class *trcl;
-
-      i.skip_space();
-      string match = i.get_stringconst();
-      if (match == ENDTRANSLATE_TRANS) {
-        i.skip_line();
-        break;
-      }
-      if (match[0]=='#') {
-        i.skip_line();
-        continue;
-      }
-      i.skip_space();
-      string replace = i.get_stringconst();
-      if (name == TRANSLATE_TRANS)
-          trcl = new translate(match,replace,replace_var);
-      if (name == SUBTRANSLATE_TRANS)
-          trcl = new subtranslate(match,replace,replace_var);
-      if (name == SUBSTITUTE_TRANS)
-          trcl = new substitute(match,replace,replace_var);
-
-      std::pair<const string, trans_class *> p(match,trcl);
-
-      config.report(string("adding translate rule: [")+p.first+
-          "]"+ trcl->debuginfo(),
-          configinfo::report_debug);
-      trans[match_var].insert(p);
-      i.skip_line();
-    }
-  }
-}
-
-translateinfo::translateinfo(parsestream &i)
-{
-  init(i);
 }
 
 translateinfo::translateinfo(const string &filename)
@@ -383,9 +342,59 @@ translateinfo::translateinfo(const string &filename)
   try {
     config.report(string("Attempting to open ") + filename + ".. ",
         configinfo::report_debug);
-    parsestream ps(filename);
+    parsestream i(filename);
 
-    init(ps);
+    Regex ident("[a-zA-Z_][a-zA-Z0-9_]*");
+
+    config.report(string("Reading translate info in ")+i.filename(),
+        configinfo::report_verbose);
+    while (true)
+    {
+      string name = i.get_name(ident);
+      config.report(string("name=")+name, configinfo::report_debug);
+      i.skip_space();
+      string match_var = i.get_name(ident);
+      config.report(string("match_var=")+match_var, configinfo::report_debug);
+      i.skip_space();
+      i.skip_char('-');
+      i.skip_char('>');
+      i.skip_space();
+      string replace_var = i.get_name(ident);
+      config.report(string("replace_var=")+replace_var, configinfo::report_debug);
+
+      i.skip_line();
+      while (true)
+      {
+        trans_class *trcl;
+
+        i.skip_space();
+        string match = i.get_stringconst();
+        if (match == ENDTRANSLATE_TRANS) {
+          i.skip_line();
+          break;
+        }
+        if (match[0]=='#') {
+          i.skip_line();
+          continue;
+        }
+        i.skip_space();
+        string replace = i.get_stringconst();
+        if (name == TRANSLATE_TRANS)
+            trcl = new translate(match,replace,replace_var);
+        if (name == SUBTRANSLATE_TRANS)
+            trcl = new subtranslate(match,replace,replace_var);
+        if (name == SUBSTITUTE_TRANS)
+            trcl = new substitute(match,replace,replace_var);
+
+        std::pair<const string, trans_class *> p(match,trcl);
+
+        config.report(string("adding translate rule: [")+p.first+
+            "]"+ trcl->debuginfo(),
+            configinfo::report_debug);
+        trans[match_var].insert(p);
+        i.skip_line();
+      }
+    }
   }
   catch(endoffile p) {
     config.report("End reading translate info", configinfo::report_debug);
@@ -398,21 +407,18 @@ void translateinfo::process(menuentry &m)
   std::map<string, trans_map>::const_iterator i;
   trans_map::const_iterator j;
   string *match;
-  for(i=trans.begin(); i!=trans.end(); i++){
-    match=&m.data[(*i).first];
-    j=(*i).second.lower_bound(*match);
-    if((j==(*i).second.end()) ||
-       ((j!=(*i).second.begin()) && ((*j).first != *match)))
-      j--;
+  for (i = trans.begin(); i != trans.end(); ++i)
+  {
+    match = &m.data[(*i).first];
+    j = i->second.lower_bound(*match);
+    if ((j == i->second.end()) || ((j != i->second.begin()) && (j->first != *match)))
+        j--;
     do {
       config.report(string("translate: var[")+*match+"]"+
-          " testing trans rule match for:"+
-          j->first,
-          configinfo::report_debug);
+          " testing trans rule match for:"+ j->first, configinfo::report_debug);
       j->second->process(m,*match);
       j++;
-    } while((j != i->second.end()) && j->second->check(*match));
-
+    } while ((j != i->second.end()) && j->second->check(*match));
   }
 }
 
@@ -439,7 +445,7 @@ void read_pkginfo()
   char *pkgs = "dpkg-query --show --showformat='${status} ${package}\\n' | sed -n -e 's/.*installed *//p'";
   FILE *status = popen(pkgs, "r");
 
-  if(!status)
+  if (!status)
     throw pipeerror_read(pkgs);
 
   config.report(string("Reading installed packages..."),
@@ -450,8 +456,8 @@ void read_pkginfo()
     char tmp[MAX_LINE];
     fgets(tmp, MAX_LINE, status);
 
-    if(tmp[strlen(tmp)-1]=='\n')
-        tmp[strlen(tmp)-1]=0;
+    if (tmp[strlen(tmp)-1] == '\n')
+        tmp[strlen(tmp)-1] = 0;
 
     installed_packages.insert(tmp);
   }
@@ -461,38 +467,20 @@ void read_pkginfo()
 void read_menufile(const string &filename, const string &shortfilename,
                    vector<string> &menudata)
 {
-  parsestream *ps = 0;
-  std::ifstream *pipe_istr = 0;
-
   config.report(string("Reading menuentryfile ") + filename, configinfo::report_debug);
-  try {
-    if (executable(filename)) {
-      pipe_istr = new std::ifstream(filename.c_str(), std::ios::in);
-      try {
-        ps = new parsestream(*pipe_istr);
-      } catch (endoffile d) {
-        cerr<<"Error (or no input available from stdout) while executing "<<endl
-            <<filename<<" . Note that it is"<<endl
-            <<"a _feature_ of menu that it executes menuentryfiles that have"<<endl
-            <<"the executable bit set. See the documentation."<<endl;
-        throw endoffile(d);
-      }
-    } else {
-      ps = new parsestream(filename);
-    }
-  } catch (endoffile p) {
-    return;
-  }
+
+  parsestream *ps = 0;
 
   try {
+    ps = new parsestream(filename);
     ps->seteolmode(config.compat);
 
     bool wrote_filename = false;
     int linenr = 1;
-    while (ps)
+    while (true)
     {
       try {
-        menuentry m(*ps, shortfilename);
+        menuentry m(*ps, filename, shortfilename);
         linenr++;
         if (transinfo)
             transinfo->process(m);
@@ -509,12 +497,18 @@ void read_menufile(const string &filename, const string &shortfilename,
       }
       catch (cond_inst_false) { }
     }
-  } catch(endoffile p) {
-      if (executable(filename)) {
-          delete pipe_istr;
-      }
-    delete ps;
+  } 
+  catch (endoffile p) { }
+  catch (missing_tag& exc) {
+    std::cerr << exc.message() << std::endl;
+    std::cerr << "Skipping file because of errors..." << std::endl;
   }
+  catch (except_pi& exc) {
+    exc.report();
+    std::cerr << "Skipping file because of errors..." << std::endl;
+  }
+
+  delete ps;
 }
 
 void read_menufilesdir(vector<string> &menudata)
@@ -533,17 +527,18 @@ void read_menufilesdir(vector<string> &menudata)
       while((entry = readdir(dir)))
       {
         string name = entry->d_name;
-        if((name != "README") && (name != "core") && (name[0] != '.') &&
+        if ((name != "README") && (name != "core") && (name[0] != '.') &&
             (name.find(".bak") == string::npos) &&
             (!contains(name, "menu.config")) &&
             (name[name.length()-1] != '~'))
-            if(menufiles_processed.find(name) == menufiles_processed.end()) {
+
+            if (menufiles_processed.find(name) == menufiles_processed.end()) {
               menufiles_processed.insert(name);
               name = dirname+name;
               struct stat st;
               int r = stat(name.c_str(),&st);
               try {
-                if((!r)&&(S_ISREG(st.st_mode)||S_ISLNK(st.st_mode)))
+                if ((!r) && (S_ISREG(st.st_mode)||S_ISLNK(st.st_mode)))
                     read_menufile(name,entry->d_name, menudata);
               }
               catch (endofline p) {
@@ -570,8 +565,8 @@ void run_menumethod(string methodname, const vector<string> &menudata)
       exit(1);
   }
 
-  if(!(child=fork())) {
-    //child:
+  if (!(child=fork())) {
+    // child:
     close(fds[1]);
     close(0);
     dup(fds[0]);
@@ -590,7 +585,7 @@ void run_menumethod(string methodname, const vector<string> &menudata)
     execve(args[0],(char **)args, environ);
     exit(1);
   } else {
-    //parent:
+    // parent:
     signal(SIGPIPE,SIG_IGN);
     close(fds[0]);
 
@@ -614,28 +609,27 @@ void run_menumethod(string methodname, const vector<string> &menudata)
         configinfo::report_quiet);
 }
 
-void run_menumethoddir (const string &dirname, const vector<string> &menudata)
+void run_menumethoddir(const string &dirname, const vector<string> &menudata)
 {
   struct stat st;
-  DIR *dir;
   struct dirent *entry;
   char *s, tmp[MAX_LINE];
-  int r;
 
   config.report(string("Running menu-methods in ")+dirname, configinfo::report_verbose);
-  dir=open_dir_check(dirname);
+  DIR *dir = open_dir_check(dirname);
   while ((entry = readdir (dir)) != NULL) {
     if (!strcmp(entry->d_name, "README") || !strcmp(entry->d_name, "core"))
       continue;
-    for (s = entry->d_name; *s != '\0'; s++){
+    for (s = entry->d_name; *s != '\0'; s++)
+    {
       if (!(isalnum (*s) || (*s == '_') || (*s == '-')))
           break;
     }
     if (*s != '\0')
       continue;
 
-    sprintf (tmp, "%s%s", dirname.c_str(), entry->d_name);
-    r=stat (tmp, &st);
+    sprintf(tmp, "%s%s", dirname.c_str(), entry->d_name);
+    int r = stat(tmp, &st);
 
     // Do we have execute permissions? 
     if ((!r) &&
@@ -651,18 +645,18 @@ void run_menumethoddir (const string &dirname, const vector<string> &menudata)
 int create_lock()
 {
   // return lock fd if succesful, false if unsuccesfull.
-  int fd=true;
+  int fd = true;
   char buf[64];
 
   if (!getuid()) {
     fd = open(UPMEN_LOCKFILE,O_WRONLY|O_CREAT,00644);
 
-    if(flock(fd,LOCK_EX|LOCK_NB)) {
-      if(errno==EWOULDBLOCK) {
+    if (flock(fd,LOCK_EX|LOCK_NB)) {
+      if (errno == EWOULDBLOCK) {
         config.report(string("Other update-menus processes are already "
               "locking " UPMEN_LOCKFILE ", quitting."),
             configinfo::report_verbose);
-      }else{
+      } else {
         config.report(string("Cannot lock "UPMEN_LOCKFILE": ")+
             strerror(errno)+ " Aborting.",
             configinfo::report_quiet);	
@@ -698,22 +692,22 @@ int check_dpkglock()
   struct flock fl;
   char buf[MAX_LINE];
   int er;
-  if(getuid()){
+  if (getuid()){
     config.report("update-menus run by user -- cannot determine if dpkg is "
         "locking "DPKG_LOCKFILE": assuming there is no lock",
         configinfo::report_verbose);
 
     return 0;
   }
-  fd=open(DPKG_LOCKFILE, O_RDWR|O_CREAT|O_TRUNC, 0660);
-  if(fd==-1)
-    return 0; // used to be 1, but why??? (Should not happen, anyway)
-  fl.l_type= F_WRLCK;
-  fl.l_whence= SEEK_SET;
-  fl.l_start= 0;
-  fl.l_len= 0;
+  fd = open(DPKG_LOCKFILE, O_RDWR|O_CREAT|O_TRUNC, 0660);
+  if (fd == -1)
+      return 0; // used to be 1, but why??? (Should not happen, anyway)
+  fl.l_type = F_WRLCK;
+  fl.l_whence = SEEK_SET;
+  fl.l_start = 0;
+  fl.l_len = 0;
   if (fcntl(fd,F_SETLK,&fl) == -1) {
-    er=errno;
+    er = errno;
     close(fd);
     if (er == EWOULDBLOCK || er == EAGAIN || er == EACCES)
         return 1;
@@ -730,7 +724,7 @@ int check_dpkglock()
   fl.l_whence= SEEK_SET;
   fl.l_start= 0;
   fl.l_len= 0;
-  if (fcntl(fd,F_SETLK,&fl) == -1){
+  if (fcntl(fd,F_SETLK,&fl) == -1) {
     // `cannot happen'
     cerr<<"update-menus: ?? Just locked the dpkg status database to see if another dpkg"<<endl
         <<"update-menus: Was running. Now I cannot unlock it! Aborting"<<endl;
@@ -769,7 +763,7 @@ void wait_dpkg(string &stdoutfile)
   // parent once it's written everything it wants to stdout,
   // and only after the parent receved the signal it wil exit(0);
 
-  if(check_dpkglock()){
+  if (check_dpkglock()) {
     sigset_t sig,oldsig;
 
     // Apparently libc2 on 2.0 kernels, with threading on, blocks
@@ -786,15 +780,15 @@ void wait_dpkg(string &stdoutfile)
 
     signal(SIGUSR2,exit_on_signal);
     parentpid=getpid();
-    if((child=fork())){
-      if(child==-1){
+    if ((child=fork())) {
+      if (child==-1) {
         perror("update-menus: fork");
         exit(1);
       }
       pause();
     } else {
-      r=create_lock();
-      if(r){
+      r = create_lock();
+      if (r) {
         stdoutfile=string("/tmp/update-menus.")+itostring(getpid());
         config.report("waiting for dpkg to finish (forking to background)\n"
             "(checking " DPKG_LOCKFILE ")",
@@ -818,10 +812,10 @@ void wait_dpkg(string &stdoutfile)
       }
     }
   } else {
-    r=create_lock();
-    if(!r){
-      exit(1);
-    }
+    r = create_lock();
+    if (!r)
+        exit(1);
+
     config.report("Dpkg not locking dpkg status area. Good.",
         configinfo::report_verbose);
   }
@@ -829,7 +823,8 @@ void wait_dpkg(string &stdoutfile)
 
 void parse_params(char **argv)
 {
-  while (*(++argv)) {
+  while (*(++argv))
+  {
     if(string("-d") == *argv)
       config.set_verbosity(configinfo::report_debug);
     if(string("-v") == *argv)
@@ -912,11 +907,10 @@ void read_homedirectory()
 {
   struct passwd *pwentry = getpwuid(getuid());
 
-  if (pwentry != NULL) {
-    home_dir = pwentry->pw_dir;
-  } else {
-    home_dir = getenv("HOME");
-  }
+  if (pwentry != NULL)
+      home_dir = pwentry->pw_dir;
+  else
+      home_dir = getenv("HOME");
 }
 
 int main (int argc, char **argv)

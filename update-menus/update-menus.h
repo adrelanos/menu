@@ -11,11 +11,12 @@
 using std::string;
 
 class menuentry {
-  void check_validity(parsestream &i, std::string &);
+  void check_req_tags(const std::string& filename);
+  void check_pkg_validity(parsestream &i, std::string &);
   void read_menuentry(parsestream &i);
 
 public:
-  menuentry(parsestream &i, const std::string &);
+  menuentry(parsestream &i, const std::string& file, const std::string& shortfile);
 
   std::map<std::string, std::string> data;
   void output(std::vector<std::string> &s);
@@ -62,9 +63,7 @@ public:
 class translateinfo {
   typedef std::multimap<string, trans_class*> trans_map;
   std::map<string, trans_map> trans;
-  void init(parsestream &i);
 public:
-  translateinfo(parsestream &i);
   translateinfo(const string &filename);
   void process(menuentry &m);
   void debuginfo();
@@ -113,11 +112,20 @@ class cond_inst_false : public genexcept { }; //conditional install returns fals
 
 class pipeerror_read : public except_string {
 public:
-  pipeerror_read(string s) : except_string(s) { }
-  string message() {
-    return Sprintf(_("Failed to pipe data through \"%s\" (pipe opened for reading)"),msg);
+  pipeerror_read(std::string s) : except_string(s) { }
+  std::string message() {
+    return Sprintf(_("Failed to pipe data through \"%s\" (pipe opened for reading)"), msg);
   }
 };  //pipe open for reading failed
+
+class missing_tag : public except_string {
+  std::string file;
+public:
+  missing_tag(std::string f, std::string s) : except_string(s), file(f) { }
+  std::string message() {
+    return file + Sprintf(_(": Missing required tag: \"%s\""), msg);
+  }
+};
 
 class dir_error_read {
 public:

@@ -3,6 +3,9 @@ menu (2.1.8-3) unstable; urgency=low
   * The "not yet released" release. 
   * Change contact address to `menu@packages.debian.org'.
   * doc/menufile.5: Update list of menu sections.
+  * Morten Brix Pedersen:
+    - Just skip the file when its missing a tag, instead of stopping
+    completely. Closes: #56839
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 23 May 2003 20:51:13 +0200
 

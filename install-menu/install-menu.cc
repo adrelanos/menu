@@ -109,7 +109,7 @@ void add_functions()
 
 bool empty_string(const string &s)
 {
-  if(s.empty() || s == "none")
+  if (s.empty() || s == "none")
     return true;
   else
     return false;
@@ -128,24 +128,24 @@ int check_dir(string s)
   if (verbose)
     cerr << "install-menu: CHECK_DIR: " << s << endl;
   while (!s.empty()) {
-    string::size_type i = s.find('/',1);
+    string::size_type i = s.find('/', 1);
     if (i != string::npos) {
-      t=s.substr(0,i+1);
-      for(; i<s.length() && (s[i]=='/'); i++);
+      t = s.substr(0, i+1);
+      for(; i < s.length() && (s[i]=='/'); i++);
       s = s.substr(i);
     } else {
       t = s;
       s.erase();
     }
-    if(chdir(t.c_str()) < 0) {
-      if(verbose)
+    if (chdir(t.c_str()) < 0) {
+      if (verbose)
 	cerr << "install-menu: MKDIR:" << t << endl;
-      if(mkdir(t.c_str(),0755))
+      if (mkdir(t.c_str(),0755))
 	throw dir_createerror(t);
-      if(chdir(t.c_str()))
+      if (chdir(t.c_str()))
 	throw dir_createerror(t);
     } else {
-      if(verbose)
+      if (verbose)
 	cerr << "install-menu: directory " << t << " already exists " << endl;
     }
   }
@@ -817,22 +817,23 @@ void supportedinfo::subst(map<string, string> vars)
   map<string, string>::const_iterator i;
   map<string, supinf>::const_iterator j;
 
-  if((i=vars.find(NEEDS_VAR))==vars.end()){
+  if ((i = vars.find(NEEDS_VAR)) == vars.end()) {
     cerr << _("Undefined "NEEDS_VAR" variable in menuentries") << endl;
     throw informed_fatal();
   }
-  if((j=sup.find(uppercase((*i).second)))==sup.end()){
+  if ((j = sup.find(uppercase(i->second))) == sup.end()) {
     cerr << _("Unknown "NEEDS_VAR"=\"") << i->second << '"' << endl;
     throw informed_fatal();
   }
-  genoutput((*j).second.c->soutput(vars), vars);
+  genoutput(j->second.c->soutput(vars), vars);
 }
+
 int supportedinfo::prec(string &name)
 {
   map<string, supinf>::const_iterator i;
   int p;
   if((i=sup.find(uppercase(name)))==sup.end())
-    p=MAXINT;
+    p = MAXINT;
   else
     p = i->second.prec;
   return p;
@@ -841,10 +842,10 @@ int supportedinfo::prec(string &name)
 ostream &supportedinfo::debuginfo(ostream &o)
 {
   map<string, supinf>::const_iterator i;
-  for(i=sup.begin();i!=sup.end();i++){
-    o<<"SUPPORTED:** name="<<(*i).first<<", prec="
-	<<(*i).second.prec<<" Def="<< endl;
-    (*i).second.c->debuginfo(o);
+  for (i = sup.begin(); i != sup.end(); i++)
+  {
+    o <<"SUPPORTED:** name=" << i->first << ", prec=" << i->second.prec << " Def=" << endl;
+    i->second.c->debuginfo(o);
   }
   return o;
 }
@@ -1119,6 +1120,9 @@ map<string, string> read_vars(parsestream &i)
   return m;
 }
 
+// This check is actually also done in update-menus, so its sorta redundant
+// here. But we will still have trouble if they don't exists, so still make
+// the check here.
 void check_vars(parsestream &pi, map<string, string> &m)
 {
   vector<string> need;
@@ -1143,7 +1147,7 @@ void read_input(parsestream &i)
       
       map<string, string> entry_vars = read_vars(i);
 
-      // check presence of section,title,needs vars. Later we will blindly
+      // check presence of section, title, needs vars. Later we will blindly
       // assume they are defined.
       check_vars(i, entry_vars);
 

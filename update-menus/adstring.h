@@ -110,7 +110,7 @@ public:
   const char *errormsg() const {return _("Identifier expected");}
 };
 
-class char_expected: public except_pi_string {
+class char_expected : public except_pi_string {
 public:
   char_expected(parsestream *p, std::string s):except_pi_string(p,s) { }
   std::string message() const {
@@ -118,7 +118,7 @@ public:
   }
 };
 
-class char_unexpected: public except_pi_string {
+class char_unexpected : public except_pi_string {
 public:
   char_unexpected(parsestream *p, std::string s):except_pi_string(p,s) { }
   std::string message() const {
@@ -126,7 +126,7 @@ public:
   }
 };
 
-class boolean_expected: public except_pi_string {
+class boolean_expected : public except_pi_string {
 public:
   boolean_expected(parsestream *p, std::string s):except_pi_string(p,s) { }
   std::string message() const {
@@ -135,7 +135,7 @@ public:
   }
 };
 
-class ferror_open: public except_string {
+class ferror_open : public except_string {
 public:
   ferror_open(std::string s):except_string(s) { }
   std::string message() const {
@@ -143,7 +143,7 @@ public:
   }
 };
 
-class unknown_compat: public except_pi_string {
+class unknown_compat : public except_pi_string {
 public:
   unknown_compat(parsestream *p, std::string s):except_pi_string(p,s) { }
   std::string message() const {
