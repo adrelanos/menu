@@ -4,10 +4,10 @@ PRIV=root
 COMMAND=
 NEEDS=text
 
-eusername () {
-   getent passwd $1 | cut -f1 -d:
-}
 
+eshell() {
+   getent passwd $1 | cut -f7 -d:
+}
 usage () {
   echo usage: $0 '[-X] [-p <user>] -c <command>' >&2
   echo '-X: command is a X11 program' >&2
@@ -42,7 +42,9 @@ else
       echo This command needs $PRIV privileges to be executed.
       echo enter $PRIV passwd:
     fi
-    while ! su "$PRIV" -c "$COMMAND"; do
+    PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin
+    SHELL=`eshell $PRIV`
+    while ! su -p "$PRIV" -c "$COMMAND"; do
       echo -n 'Incorrect password or command failed. Try again? (y/n)'
       read ans
       if test "$ans" != "y" -a "$ans" != "Y"; then

@@ -8,6 +8,9 @@ menu (2.1.13) unstable; urgency=low
     languages() that return a colon separated list of languages 
     translation available.
   * Fix cppesc() to work correctly under non C locales.
+  * Fix su-to-root to not change $HOME. This make sure xlib can find
+    the X session cookie. Thanks to isaac on IRC for testing the patch. 
+    Closes: #246886. This adresses the last case of #150314.
   * Add Ukrainian menu sections translation by Eugeniy Meshcheryakov.
     Closes: #244067.
   * Add Russian menu sections and messages translation by Dan Korostelev.
