@@ -769,13 +769,13 @@ ostream &rootsection_func::output(ostream &o, vector<cat_str *> &/*args*/,
 ostream &rootprefix_func::output(ostream &o, vector<cat_str *> &/*args*/,
     map<string, string> &menuentry)
 {
-  return o<<config->rootprefix();
+  return o<<config->rootprefix()->soutput(menuentry);
 }
 
 ostream &userprefix_func::output(ostream &o, vector<cat_str *> &/*args*/,
     map<string, string> &menuentry)
 {
-  return o<<config->userprefix();
+  return o<<config->userprefix()->soutput(menuentry);
 }
 
 ostream &treewalk_func::output(ostream &o, vector<cat_str *> &/*args*/,
