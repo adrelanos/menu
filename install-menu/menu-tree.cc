@@ -184,7 +184,6 @@ void menuentry::output()
     else
       s = sub_i->second->vars[SORT_VAR] + ':' + sub_i->second->vars[TITLE_VAR];
 
-    std::cout << "Sorting on: " << s << std::endl;
     sorted.insert(std::pair<string, menuentry *>(s, sub_i->second));
   }
 
