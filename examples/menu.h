@@ -1,50 +1,70 @@
 #   -*- mode: shell-script; -*-
 #The definitions here are used by all window managers that !include menu.h.
-#This way, you can set your prefferences (like whether to use xterm/rxvt,
-#how long do you want your menutitles, etc) for all window-managers.
+#This way, you can set your preferences (like whether to use xterm/rxvt,
+#how long do you want your menu titles, etc) for all window-managers.
 #
 #(This all assumes you're using menu-1.4 or higher).
 #This file is part of the menu package (version 1.4 or higher).
 #For more information, see /usr/share/doc/menu/html
 
 #If you prefer long titles, change the definition below accordingly.
-#(this will currently not give you many long titles, as most menuentries
+#(this will currently not give you many long titles, as most menu entries
 #still don't provide long titles. In those cases, the defintion below
 #defaults to the short title).
+
 function title()=$title
+
 #function title()=ifelse($longtitle,$longtitle,$title)
 
-#if you don''t like to see the icons, (un)comment (out) the lines below:
+#If you don't like to see the icons, (un)comment (out) the lines below:
 function icon()=ifelse($icon32x32, $icon32x32, \
                   ifelse($icon16x16, $icon16x16, $icon))
 #function icon()= ""
 
-#if you prefer an rxvt as your default terminal-program, comment out
-#the next lines, and uncomment the definition below
-#function term()=\
-#    "xterm -sb -sl 500 -j -ls -fn 7x14 -geometry 80x30"\
-#    " -T \"" title() "\""  " -e " $command
+#Define the X terminal emulator to use for text apps under X11.
+#The following use the x-terminal-emulator alternative.
+ 
 function term()=\
     "x-terminal-emulator " ifnempty($visible,"-ut") \
         ifnempty($geometry,"-geometry ") $geometry \
-        " -T \"" title() "\""  " -e " $command
+        " -T \"" esc(title(),"\"") "\""  " -e " $command
 
+#The above is more correct but unfortunately, some menu-methods 
+#do not support ''.
+        
+#function term()=\
+#    "x-terminal-emulator " ifnempty($visible,"-ut") \
+#        ifnempty($geometry,"-geometry ") $geometry \
+#        " -T '" replacewith(title(),"'"," ") "' -e " $command
+
+#Examples:
+#Use a specially cooked xterm instead:
+#function term()=\
+#    "xterm -sb -sl 500 -j -ls -fn 7x14 -geometry 80x30"\
+#    " -T '" replacewith(title(),"'"," ") "' -e " $command
+ 
+#Force use of  rxvt:
 #function term()=\
 #    "rxvt " ifnempty($visible,"-ut") \
 #        ifnempty($geometry,"-geometry ") $geometry \
-#        " -T \"" title() "\"" ifnempty(icon()," -n " icon()) " -e " $command
+#        " -T '" replacewith(title(),"'"," ") "'"  " -e " $command
 
-# if you want your submenus to come before the commands themselves
+
+# This sort menu entry case-insensitively.
+        
+sort=tolower(title())
+  
+# If you want your submenus to come before the commands themselves
 # in the menus (in case of mixed menus):
 #
-# sort=ifelse($command, "1", "0" ) ":$title"
+# sort=ifelse($command, "1", "0" ) ":" title()
 
 
 
-#the following is for the hints (or optimised tree structure):
+#The following is for the hints (or optimised tree structure):
 # (For more info on these variables, see /usr/share/doc/menu/*)
 
-#if you want menu to optimize the tree, set this to true:
+#If you want menu to optimize the tree, set this to true:
 hint_optimize=false
 #for more info on the other variables, see /usr/share/doc/menu/
 #hint_nentry=6
