@@ -295,6 +295,10 @@ struct toupper_func : public funcN<1> {
   std::ostream &output(std::ostream &o, std::vector<cat_str *> &, std::map<std::string, std::string> &);
   const char * name() const { return "toupper"; }
 };
+struct replace_func : public funcN<3> {
+  std::ostream &output(std::ostream &o, std::vector<cat_str *> &, std::map<std::string, std::string> &);
+  const char * name() const { return "replace"; }
+};
 struct replacewith_func : public funcN<3> {
   std::ostream &output(std::ostream &o, std::vector<cat_str *> &, std::map<std::string, std::string> &);
   const char * name() const { return "replacewith"; }

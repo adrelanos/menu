@@ -1233,11 +1233,16 @@ and "submenutitle=" are interpreted as follows:
      Returns the argument set in lowercases resp uppercases. 
 
 <tag> replacewith($s, $replace, $with) <item>
-     Search s for occurrences of characters from string replace, and
+     Search $s for occurrences of characters from string replace, and
      replace them by the corresponding character in $with.
      Example:
       replacewith("hello $world, %dir", "$% ", "123")
       returns:   "hello31world,32dir"
+
+<tag> replace($s, $replace, $with) <item>
+     Search $s for occurences of $replace and replace them with $with.
+     Note that the behaviour of this function is quite different than the
+     replacewith() function.
 
 <tag> ifempty($arg1, $arg2) <item>
      If $arg1 is empty, print $arg2, otherwise print nothing.

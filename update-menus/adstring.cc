@@ -123,7 +123,7 @@ string uppercase(string s)
   return t;
 }
 
-string replacewith_string(const string &s, const string &replace, const string &with)
+string replacewith_string(string &str, const string &replace, const string &with)
 {
   // call with: replacewith_string("hello $world, %dir", "$% ", "123")
   // returns:   "hello31world,32dir"
@@ -131,18 +131,21 @@ string replacewith_string(const string &s, const string &replace, const string &
   if (replace.length() != with.length())
       throw except_string(_("replacewith($string, $replace, $with): $replace and $with must have the same length."));
 
-  string t = s;
   for (string::size_type i = 0; i <= replace.length(); ++i)
   {
-    std::replace(t.begin(), t.end(), replace[i], with[i]);
+    std::replace(str.begin(), str.end(), replace[i], with[i]);
   }
-  return t;
+  return str;
 }
 
-string replace(string s,char match, char replace)
+string replace(string str, const string& repl, const string& with)
 {
-  std::replace(s.begin(), s.end(), match, replace);
-  return s;
+    string::size_type pos = str.find(repl);
+                                                                                
+    if (pos == string::npos)
+          return str;
+                                                                                
+    return replace(str.replace(pos, repl.length(), with), repl, with);
 }
 
 string sort_hotkey(string str)

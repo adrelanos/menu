@@ -155,6 +155,7 @@ void add_functions()
   store_func(new escfirst_func);
   store_func(new tolower_func);  
   store_func(new toupper_func);
+  store_func(new replace_func);
   store_func(new replacewith_func);
   store_func(new nstring_func);  
   store_func(new cppesc_func);
@@ -564,6 +565,14 @@ ostream &replacewith_func::output(ostream &o, vector<cat_str *> &args,
     map<string, string> &menuentry)
 {
   return o<<replacewith_string(args[0]->soutput(menuentry),
+			       args[1]->soutput(menuentry),
+			       args[2]->soutput(menuentry));
+}
+
+ostream &replace_func::output(ostream &o, vector<cat_str *> &args,
+    map<string, string> &menuentry)
+{
+  return o<<replace_string(args[0]->soutput(menuentry),
 			       args[1]->soutput(menuentry),
 			       args[2]->soutput(menuentry));
 }
