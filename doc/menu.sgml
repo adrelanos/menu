@@ -3,7 +3,7 @@
 <!--
  Debian Menu System
  Copyright (C) 1997 Joost Witteveen, Joey Hess, Christian Schwarz;
- Modification (C) 2002 Bill Allombert
+ Modification (C) 2002-2003 Bill Allombert
  released under the terms of the GNU
  General Public License, version 2 or (at your option) any later.
  -->
@@ -14,7 +14,8 @@
 <author>Joost Witteveen <email/joostje@debian.org/
 <author>Joey Hess <email/joeyh@debian.org/
 <author>Christian Schwarz <email/schwarz@debian.org/
-<version>version 1.3, <date>
+<author>Bill Allombert <email/ballombe@debian.org/
+<version>version 1.4, <date>
 
 <abstract>
 The <tt/menu/ package was inspired by the <tt/install-fvwm2-menu/
@@ -26,6 +27,7 @@ interface for both text- and X-oriented programs.
 </abstract>
 
 <copyright>Copyright &copy;1997 Joost Witteveen, Joey Hess, Christian Schwarz.
+&copy;2002-2003 Bill Allombert.
 <p>
 
 This manual is free software; you may redistribute it and/or modify it
@@ -209,21 +211,38 @@ menus.
 Here is an example to describe the syntax of such a file:
 <example>
 ?package(gnuplot):\           specifies what packages need to be installed
-                              multiple requirements should be seperated by
+                              multiple requirements should be separated by
                               comma
-  needs="text"\               what kind of terminal this command expects
-                              needs=X11: if this program runs only on X11
-                              needs=text: if it only runs on text terminals
-                                        (the window manager should spawn 
-                                         an xterm or rxvt in this case)
-                              needs=vc: runs only at linux console
-                              needs=wm: this starts another window manager
+  needs="text"\               what kind of environment this command expects
   section="Apps/Math"\        in what section this menu entry should be
-  title="Gnuplot"\            the title of the menu entry (try to make it short)
-                              the title must be unique; two entries must not
-                              have the same title
-  command="/usr/bin/gnuplot"  the command to run.
+  title="Gnuplot"\            the title of the menu entry
+  command="gnuplot"           the command to run
 </example>
+<p>
+The <tt/title/ must follow the following requirements:
+<enumlist>
+<item> It must be short. There is an optional <tt/longtitle/ field for
+users that want longer titles.
+<item> It must be properly capitalized. Use <em/Emacs/ and not <em/emacs/.
+<item> It must be unique. Two entries must not have the same title.
+</enumlist>
+<p>
+
+The following <tt/needs/ are documented for use in the Debian menu.
+<enumlist>
+<item> <tt/X11/: if this program runs under X11.
+<item> <tt/text/: if it runs under a terminal.
+                X11 window managers will spawn a X terminal emulator.
+<item> <tt/vc/: if it runs under the linux console but not under a virtual terminal.
+<item> <tt/wm/: if it is a X11 window manager. The current window manager
+will exec(2) this program so as to avoid "another window manager is running"
+errors.
+</enumlist>
+<p>
+
+A menu manager can use a special <tt/needs/ named after the package for
+menu entries that must only be displayed in this menu manager.
+Examples include <tt/fvwm/ modules, <tt/dwww/ menu entries.
 <p>
 
 A program like gnuplot which can be run on X11 as well as on a text
@@ -421,9 +440,9 @@ entries to be installed to your script via standard input (stdin).
 <p>
 
 The scripts in <tt>/etc/menu-methods/</> should be configuration
-files, so the user can tune the behaviour of the script. for the same
-reason they must always include the <tt>/etc/menu-methods/menu.h</>
-configuration file at the beginning with the command <tt>!include menu.h</>
+files, so the user can tune the behaviour of the script, and they must always
+include the <tt>/etc/menu-methods/menu.h</> configuration file at the beginning
+with the command <tt>!include menu.h</>
 
 For the same reason, scripts in <tt>/etc/menu-methods/</> are requested
 to use the following configurable functions :
