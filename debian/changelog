@@ -10,6 +10,7 @@ menu (2.1.8-3) unstable; urgency=low
     + Fix capitalisation of `Debian'.
     + Improve section `How a user can override the menus'.
     + Move 'Variables and functions' to a new chapter and format it properly.
+  * update-menus.cc: use F_GETLK instead of F_SETLK to query dpkg lock.
   * Morten Brix Pedersen:
     - Just skip the file when its missing a tag, instead of stopping
     completely. Closes: #56839
