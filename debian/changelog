@@ -14,6 +14,8 @@ menu (2.1.15) unstable; urgency=low
     - Call getuid() once and cache the result.
     - Document behaviour when multiple fields are specified in the same menu
       entry. Closes: #250224.
+    - Add example of an executable menufile to examples/. Closes: #252606
+      Thanks Marc Haber.
   * Sort menu entry according to the current locale. Note that this works
     only if the menu-method uses the locale encoding. Closes: #200447.
   * Fix error message for update-menus --menumethod.  Closes: #251857.
