@@ -190,20 +190,7 @@ string string_parent(const string& str)
 
 string string_basename(const string& str)
 {
-  string t;
-  string::size_type i;
-  string::size_type p; //points to last encountered '/'
-  string::size_type q; //points to last-but-one encountered '/'.
-
-  for(i=0,p=string::npos,q=0;i!=str.length();i++)
-    if(str[i]=='/') {
-      q=p;
-      p=i;
-    }
-  if(p==string::npos)
-    return "";
-  else
-    return str.substr(q+1,p);
+  return string_stripdir(string_parent(str));
 }
 
 string string_stripdir(const string& str)

@@ -95,7 +95,8 @@ std::string sort_hotkey(std::string s);
  */
 std::string string_parent(const std::string& str);
 
-/* FIXME: what does this function do? */
+/* Returns the last part of the parent directory. In other words, the same
+ * as string_stripdir(string_parent(str)). */
 std::string string_basename(const std::string& str);
 
 /* Returns the last element of a string in the form /<foo>/<bar> where '/'
