@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: menu 2.1.15\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
-"POT-Creation-Date: 2004-06-16 21:10+0200\n"
-"PO-Revision-Date: 2004-06-21 16:57+0200\n"
+"POT-Creation-Date: 2004-07-06 14:45+0200\n"
+"PO-Revision-Date: 2004-07-06 15:37+0200\n"
 "Last-Translator: Jens Arvidsson <jya@sverige.nu>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -225,79 +225,79 @@ msgstr ""
 #. menu entries automatically. It does not refer to the localisation
 #. (translation to other languages).
 #.
-#: ../update-menus/update-menus.cc:357
+#: ../update-menus/update-menus.cc:358
 msgid "Reading translation rules in %1."
 msgstr "Läser in översättningsregler i %1."
 
-#: ../update-menus/update-menus.cc:437
+#: ../update-menus/update-menus.cc:438
 msgid "Reading installed packages list..."
 msgstr "Läser in lista över installerade paket..."
 
-#: ../update-menus/update-menus.cc:484
+#: ../update-menus/update-menus.cc:485
 msgid "Execution of %1 generated no output or returned an error.\n"
 msgstr "Utförande av %1 genererade inga utdata eller returnerade ett fel.\n"
 
-#: ../update-menus/update-menus.cc:524 ../update-menus/update-menus.cc:528
+#: ../update-menus/update-menus.cc:525 ../update-menus/update-menus.cc:529
 msgid "Skipping file because of errors...\n"
 msgstr "Hoppar över fil på grund av fel...\n"
 
-#: ../update-menus/update-menus.cc:544
+#: ../update-menus/update-menus.cc:545
 msgid "Reading menu-entry files in %1."
 msgstr "Läser in menypostfil i %1."
 
-#: ../update-menus/update-menus.cc:567
+#: ../update-menus/update-menus.cc:568
 msgid "Error reading %1.\n"
 msgstr "Fel vid inläsning av %1.\n"
 
-#: ../update-menus/update-menus.cc:572
+#: ../update-menus/update-menus.cc:573
 msgid "%1 menu entries found (%2 total)."
 msgstr "%1 menyposter funna (%2 totalt)."
 
-#: ../update-menus/update-menus.cc:584
+#: ../update-menus/update-menus.cc:585
 msgid "Running method: %1"
 msgstr "Kör metod: %1"
 
-#: ../update-menus/update-menus.cc:587
+#: ../update-menus/update-menus.cc:588
 msgid "Cannot create pipe."
 msgstr "Kan inte skapa rör."
 
-#: ../update-menus/update-menus.cc:623 ../update-menus/update-menus.cc:993
+#: ../update-menus/update-menus.cc:624 ../update-menus/update-menus.cc:1000
 msgid "Script %1 could not be executed."
 msgstr "Skript %1 kunde inte köras."
 
-#: ../update-menus/update-menus.cc:626
+#: ../update-menus/update-menus.cc:627
 msgid "Script %1 returned error status %2."
 msgstr "Skript %1 returnerade felstatus %2."
 
-#: ../update-menus/update-menus.cc:629
+#: ../update-menus/update-menus.cc:630
 msgid "Script %1 received signal %2."
 msgstr "Skript %1 mottog signal %2."
 
-#: ../update-menus/update-menus.cc:639
+#: ../update-menus/update-menus.cc:640
 msgid "Running menu-methods in %1."
 msgstr "Kör menu-methods i %1."
 
-#: ../update-menus/update-menus.cc:672
+#: ../update-menus/update-menus.cc:673
 msgid "Other update-menus processes are already locking %1, quitting."
 msgstr "Andra update-menusprocesser låser redan %1, avslutar."
 
-#: ../update-menus/update-menus.cc:675
+#: ../update-menus/update-menus.cc:676
 msgid "Cannot lock %1: %2 - Aborting."
 msgstr "Kan inte låsa %1: %2 - Avbryter."
 
-#: ../update-menus/update-menus.cc:684
+#: ../update-menus/update-menus.cc:685
 msgid "Cannot write to lockfile %1 - Aborting."
 msgstr "Kan inte skriva till låsfil %1 - Avbryter."
 
-#: ../update-menus/update-menus.cc:697
+#: ../update-menus/update-menus.cc:698
 msgid "Cannot remove lockfile %1."
 msgstr "Kan inte ta bort låsfil %1."
 
-#: ../update-menus/update-menus.cc:713
+#: ../update-menus/update-menus.cc:714
 msgid "Update-menus is run by user."
 msgstr "Update-menus körs av användare."
 
-#: ../update-menus/update-menus.cc:797
+#: ../update-menus/update-menus.cc:798
 msgid ""
 "Waiting for dpkg to finish (forking to background).\n"
 "(checking %1)"
@@ -305,53 +305,49 @@ msgstr ""
 "Väntar på att dpkg ska avsluta (grenar (fork) till bakgrund).\n"
 "(kontrollerar %1)"
 
-#: ../update-menus/update-menus.cc:800
+#: ../update-menus/update-menus.cc:801
 msgid "Further output (if any) will appear in %1."
 msgstr "Ytterligare utdata (om några) kommer att synas i %1."
 
-#: ../update-menus/update-menus.cc:822
+#: ../update-menus/update-menus.cc:823
 msgid "Dpkg is not locking dpkg status area, good."
 msgstr "Dpkg låser inte dpkg:s statusområde, bra."
 
 #. This is the update-menus --help message
-#: ../update-menus/update-menus.cc:832
+#: ../update-menus/update-menus.cc:833
 msgid ""
-"update-menus: update the various window-manager config files (and\n"
-"  dwww, and pdmenu) Usage: update-menus [options] \n"
-"    -d              Output debugging messages.\n"
-"    -v              Be verbose about what is going on.\n"
-"    -h, --help      This message.\n"
-"    --menufilesdir  <dir> Add <dir> to the lists of menu directories to "
+"Usage: update-menus [options] \n"
+"Gather packages data from the menu database and generate menus for\n"
+"all programs providing menu-methods, usually window-managers.\n"
+"  -d                     Output debugging messages.\n"
+"  -v                     Be verbose about what is going on.\n"
+"  -h, --help             This message.\n"
+"  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to "
 "search.\n"
-"    --menumethod    <method> Run only the menu method <method>.\n"
-"    --nodefaultdirs Disables the use of all the standard menu directories.\n"
-"    --stdout        Output menu list in format suitable for piping to\n"
-"                    install-menu.\n"
+"  --menumethod=<method>  Run only the menu method <method>.\n"
+"  --nodefaultdirs        Disable the use of all the standard menu "
+"directories.\n"
+"  --stdout               Output menu list in format suitable for piping to\n"
+"                         install-menu.\n"
 msgstr ""
-"update-menus: uppdatera de olika konfigurationsfilerna för\n"
-"  fönsterhanterare (och dwww, och pdmenu)\n"
-"  Användning: update-menus [argument]\n"
-"    -v              Var utförlig om vad som händer.\n"
-"    -d              Skriv ut felsökningsmeddelanden.\n"
-"    -h, --help      Detta meddelande.\n"
-"    --menufilesdir  <kat> Lägg till <kat> i listorna med menykataloger att söka i.\n"
-"    --menumethod    <metod> Kör endast menymetoden <metod>.\n"
-"    --nodefaultdirs Avaktiverar användning av alla standardmenykatalogerna.\n"
-"    --stdout        Skriv ut menylista i format passande för omledning\n"
-"                    till install-menu.\n"
+"Användning: update-menus [argument] \n"
+"Samla in paketdata från menydatabasen och skapa menyer för alla\n"
+"program som tillhandahåller menu-methods, vanligen fönsterhanterare.\n" 
+"  -d                     Skriv ut felsökningsmeddelanden.\n"
+"  -v                     Var utförlig om vad som händer.\n"
+"  -h, --help             Detta meddelande.\n"
+"  --menufilesdir=<kat>   Lägg till <kat> i listorna med menykataloger "
+"att söka i.\n"
+"  --menumethod=<metod>   Kör endast menymetoden <metod>.\n"
+"  --nodefaultdirs        Avaktivera användning av alla "
+"standardmenykatalogerna.\n"
+"  --stdout               Skriv ut menylista i format passande för omledning\n"
+"                         till install-menu.\n"
 
 #. This is the end of the update-menus --help message
-#: ../update-menus/update-menus.cc:843
-msgid "    --version       Output version information and exit.\n"
-msgstr "    --version       Skriv ut versionsinformation och avsluta.\n"
-
-#: ../update-menus/update-menus.cc:868
-msgid "Directory is expected after --menufilesdir option.\n"
-msgstr "Katalog förväntas efter argumentet --menufilesdir.\n"
-
-#: ../update-menus/update-menus.cc:877
-msgid "Filename is expected after --menumethod option.\n"
-msgstr "Filnamn förväntas efter argumentet --menumethod.\n"
+#: ../update-menus/update-menus.cc:845
+msgid "  --version              Output version information and exit.\n"
+msgstr "  --version              Skriv ut versionsinformation och avsluta.\n"
 
 #: ../update-menus/update-menus.h:149
 msgid ""
