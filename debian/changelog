@@ -1,11 +1,12 @@
 menu (2.1.15) unstable; urgency=low
 
   *  The "unreleased" release 
+  * Update Italian menu-section translation. Thanks Stefano Canepa.
   * Morten Brix Pedersen:
     - Fix wrong error message when install-menu couldn't open a menu-method.
     - outputencoding now defaults to LOCALE when no value is specified.
     - No longer require startmenu and endmenu to be defined.
-  * Sort menu entry according to the current locale. Note that this work
+  * Sort menu entry according to the current locale. Note that this works
     only if the menu-method uses the locale encoding. Closes: #200447.
 
  -- Bill Allombert <ballombe@debian.org>  Thu, 27 May 2004 19:59:24 +0200

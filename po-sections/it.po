@@ -13,7 +13,7 @@ msgstr ""
 "Last-Translator: Stefano Canepa <sc@linux.it>\n"
 "Language-Team: Italian <tp@list.linux.it>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Apps"
@@ -98,7 +98,7 @@ msgid "Strategy"
 msgstr "Strategia"
 
 msgid "Tetris-like"
-msgstr "Tetris ed affini"
+msgstr "Tetris e affini"
 
 msgid "Toys"
 msgstr "Gingilli"
