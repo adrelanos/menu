@@ -5,7 +5,7 @@ If you have a difficult to reproduce problem with install-menu
 # update-menus --stdout > /tmp/menu-stdin
 # bzip2 /tmp/menu-stdin
 # tar -cvf /tmp/tar.tar /tmp/menu-stdin.bz2 #and any other interesting file
-# uuencode /tmp/tar.tar /tmp/tar.tar | mail -s tar.tar joostje@debian.org
+# uuencode /tmp/tar.tar /tmp/tar.tar | mail -s tar.tar menu@packages.debian.org
 
 If you want to try out a menu-method yourselve several times
 (with minor changes etc), you can use the /tmp/menu-stdin file
