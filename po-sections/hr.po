@@ -1,0 +1,145 @@
+# Prijevod Debian izabirnika na hrvatski jezik
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: menu-section HR 2.1.9-3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2003-04-03 12:14+0100\n"
+"PO-Revision-Date: 2004-08-21 16:01+0200\n"
+"Last-Translator: Krunoslav Gernhard <kruno@linux.hr>\n"
+"Language-Team: Croatian <lokalizacija@linux.hr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit"
+
+msgid "Apps"
+msgstr "Programi"
+
+msgid "Databases"
+msgstr "Baze podataka"
+
+msgid "Editors"
+msgstr "Ureðivaèi"
+
+msgid "Education"
+msgstr "Obrazovanje"
+
+msgid "Emulators"
+msgstr "Opona¹atelji"
+
+msgid "Graphics"
+msgstr "Grafika"
+
+msgid "Hamradio"
+msgstr "Hamradio"
+
+msgid "Math"
+msgstr "Matematika"
+
+msgid "Net"
+msgstr "Mre¾a"
+
+msgid "Programming"
+msgstr "Programiranje"
+
+msgid "Science"
+msgstr "Znanost"
+
+msgid "Tools"
+msgstr "Alati"
+
+msgid "Technical"
+msgstr "Tehnièki"
+
+msgid "Text"
+msgstr "Tekst"
+
+msgid "Shells"
+msgstr "©koljke"
+
+msgid "Sound"
+msgstr "Zvuk"
+
+msgid "Viewers"
+msgstr "Poglednici"
+
+msgid "System"
+msgstr "Sustav"
+
+msgid "Games"
+msgstr "Igre"
+
+msgid "Adventure"
+msgstr "Avanture"
+
+msgid "Arcade"
+msgstr "Arkade"
+
+msgid "Board"
+msgstr "Na ploèi"
+
+msgid "Card"
+msgstr "Karte"
+
+msgid "Puzzles"
+msgstr "Zagonetke"
+
+msgid "Simulation"
+msgstr "Simulacije"
+
+msgid "Sports"
+msgstr "Sportske"
+
+msgid "Strategy"
+msgstr "Strategije"
+
+msgid "Tetris-like"
+msgstr "Kao Tetris"
+
+msgid "Toys"
+msgstr "Igraèke"
+
+msgid "Help"
+msgstr "Pomoæ"
+
+msgid "Screen"
+msgstr "Zaslon"
+
+msgid "Lock"
+msgstr "Zakljuèaj"
+
+msgid "Save"
+msgstr "Spremi"
+
+msgid "Root-window"
+msgstr "Korijenski prozor"
+
+msgid "WindowManagers"
+msgstr "Upravljaèi prozorima"
+
+msgid "Modules"
+msgstr "Moduli"
+
+msgid "XShells"
+msgstr "X-©koljke"
+
+#From Apps/System/Admin
+msgid "Admin"
+msgstr "Upravljanje"
+
+#Non official sections from WindowMaker
+msgid "Appearance"
+msgstr "Izgled"
+
+msgid "WorkSpace"
+msgstr "Radni prostor"
+
+#Frequently used unofficial sections.
+#From Apps/Net/Mozilla Components
+msgid "Mozilla Components"
+msgstr "Dijelovi Mozille"
+
+#From Games/Toys/Teddies
+msgid "Teddies"
+msgstr "Medvjediæi"
+
