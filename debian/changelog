@@ -5,8 +5,12 @@ menu (2.1.10-2) unstable; urgency=low
     - Only enable translated section names when both 'outputencoding' and
     'repeat_lang' has been set.
     - Set repeat_lang="LOCALE" per default. menu-methods now only need to set
-    outputencoding in order to enable translations.
+    outputencoding in order to enable translations. Closes: #37716.
     - Update Danish menu translation.
+  * Update Brazillian menu messages translation. Thanks André Luís Lopes. 
+  * Add Norwegian nynorsk menu messages and sections translations. 
+    Thanks Håvard Korsvoll.
+  * Add Swedish menu messages and sections translation. Thanks Jens Arvidsson.
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 12 Mar 2004 15:27:16 +0100
 
