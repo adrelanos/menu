@@ -3,6 +3,8 @@ menu (2.1.23) unstable; urgency=low
   * The "unreleased" release
   * Add Norwegian Bokmål menu messages and sections translation. Thanks
     Hans Fredrik Nordhaug. Closes: #298079.
+  * Fix quoting in su-to-root manpage. Thanks Kevin Ryde. Closes: #300643.
+  * default/csh: moved to csh package. Thanks Matej Vela.
 
  -- Bill Allombert <ballombe@debian.org>  Sat,  5 Mar 2005 10:24:04 +0100
 
@@ -268,7 +270,7 @@ menu (2.1.10-1) unstable; urgency=low
     Dijkstra.
   * Add Chinese menu messages and sections translations. Closes: #232403.
     Thanks Carlos Z.F. Liu and Yongtao Yang.
-  * Remove dconfig-text entry form gpm default menu entry: Closes: #234178.
+  * Remove dconfig-text entry from gpm default menu entry: Closes: #234178.
   * Document that menu files must be encoded in 7bit only.
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 12 Mar 2004 13:39:31 +0100
