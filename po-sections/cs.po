@@ -1,0 +1,150 @@
+# Menu section translation
+# Copyright (C) 2003
+# This file is distributed under the same license as the menu package.
+# Bill Allombert <ballombe@debian.org>, 2003.
+# Czech translation: Miroslav Kure, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: menu-section\n"
+"POT-Creation-Date: 2003-04-03 12:14+0100\n"
+"PO-Revision-Date: 2004-01-23 13:01+0100\n"
+"Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
+"Language-Team: Czech <provoz@debian.cz>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Apps"
+msgstr "Aplikace"
+
+msgid "Databases"
+msgstr "Databáze"
+ 
+msgid "Editors"
+msgstr "Editory"
+
+msgid "Education"
+msgstr "Vzdìlání"
+
+msgid "Emulators"
+msgstr "Emulátory"
+
+msgid "Graphics"
+msgstr "Grafika"
+
+msgid "Hamradio"
+msgstr "Amatérské rádio"
+
+msgid "Math"
+msgstr "Matematika"
+
+msgid "Net"
+msgstr "Sí»"
+
+msgid "Programming"
+msgstr "Programování"
+
+msgid "Science"
+msgstr "Vìda"
+
+msgid "Tools"
+msgstr "Nástroje"
+
+msgid "Technical"
+msgstr "Technické"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "Shells"
+msgstr "Shelly"
+
+msgid "Sound"
+msgstr "Zvuky"
+
+msgid "Viewers"
+msgstr "Prohlí¾eèe"
+
+msgid "System"
+msgstr "Systém"
+
+msgid "Games"
+msgstr "Hry"
+
+msgid "Adventure"
+msgstr "Dobrodru¾né"
+
+msgid "Arcade"
+msgstr "Arkády"
+
+msgid "Board"
+msgstr "Deskové"
+
+msgid "Card"
+msgstr "Karetní"
+
+msgid "Puzzles"
+msgstr "Hlavolamy"
+
+msgid "Simulation"
+msgstr "Simulátory"
+
+msgid "Sports"
+msgstr "Sporty"
+
+msgid "Strategy"
+msgstr "Strategie"
+
+msgid "Tetris-like"
+msgstr "Tetrisové variace"
+
+msgid "Toys"
+msgstr "Hraèky"
+
+msgid "Help"
+msgstr "Nápovìda"
+
+msgid "Screen"
+msgstr "Obrazovka"
+
+msgid "Lock"
+msgstr "Zamknout"
+
+msgid "Save"
+msgstr "©etøiè"
+
+msgid "Root-window"
+msgstr "Koøenové okno"
+
+msgid "WindowManagers"
+msgstr "Správci oken"
+
+msgid "Modules"
+msgstr "Moduly"
+
+msgid "XShells"
+msgstr "XShelly"
+
+#From Apps/System/Admin
+msgid "Admin"
+msgstr "Administrátor"
+
+#Non official sections from WindowMaker
+msgid "Appearance"
+msgstr "Vzhled"
+
+msgid "WorkSpace"
+msgstr "Pracovní plocha"
+
+#Fresuently used unofficial sections.
+
+#From Apps/Net/Mozilla Components
+msgid "Mozilla Components"
+msgstr "Mozilla - souèásti"
+
+
+#From Games/Toys/Teddies
+msgid "Teddies"
+msgstr "Medvídci"
+
