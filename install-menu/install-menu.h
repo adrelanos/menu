@@ -405,10 +405,9 @@ public:
   missing_tag(parsestream *p, std::string s) : except_pi_string(p,s) {}
   std::string message() const {
     return String::compose(_("Missing (or empty) tag: %1\n"
-          "This tag needs to defined for the menuentry to make sense.\n"
-          "Note by the way, that update-menus re-arranges the order of the\n"
-          "tags found in the menu entry files, so that the part above\n"
-          "isn't literal"),
+          "This tag needs to be defined for the menu entry to make sense.\n"
+          "Note that update-menus rearranges the order of the tags found\n" 
+          "in the menu-entry files, so that the part above isn't literal."),
         msg);
   }
 };
