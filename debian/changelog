@@ -1,6 +1,12 @@
+menu (2.1.15) unstable; urgency=low
+
+  *  The "unreleased" release 
+
+ -- Bill Allombert <ballombe@debian.org>  Thu, 27 May 2004 19:59:24 +0200
+
 menu (2.1.14) unstable; urgency=low
 
-  * The "unreleased" release
+  * The "multiligual" release
   * Update German menu-section translation. Thanks Sebastian Rittau.
   * Update Hungarian menu-section translation. Thanks Attila Szervá.
   * Update Italian menu-section translation. Thanks Stefano Canepa.
