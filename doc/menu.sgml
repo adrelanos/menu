@@ -203,6 +203,12 @@ Packages provided menu files should be in <file>/usr/lib/menu/</file>.
 System-local menu files should be in <file>/etc/menu/</file>.
 User-specific menu files should be in <file>~/.menu/</file>
 <sect> Syntax
+<p> The format is
+<example>
+?package(package[,package2,...]): \
+   field1="value1"\
+   field2="value2"\
+</example>
 <p>
 Here is an example to describe the syntax of such a file:
 <example>
@@ -217,12 +223,13 @@ Here is an example to describe the syntax of such a file:
   icon="/usr/share/pixmaps/gnumeric.xpm"  the path to the icon to use.
 </example>
 <p>
-You can use "#" to include comments like in shell scripts.
-Meta-character (", \, new line) must be escaped with a \.
+You can use "#" to include comments like in shell scripts. An entry
+must is terminated by a newline, but you can use \ to escape a newline.
 <p>
-Menu entries are terminated by a newline, but newline can be escaped.
+Values must be quoted with ", and meta-character (", \, newline) must be
+escaped with a \.
+<p>
 You can include several entries in the same files. 
-
 <p>
 The file must be encoded in ASCII 7bit. This is necessary to accomodate 
 window managers that do not support 8bit. However the translations are not
@@ -234,9 +241,9 @@ the package containing the menu file and any packages necessary to run the
 command not depended by the package nor essential.  Users can use
 pseudo packages names starting by <tt/local./ which are assumed to be always
 installed.
-
 <p> The fields <tt/needs/, <tt/section/, <tt/title/ and <tt/command/ are
-mandatory. Other fields are optional. Custom field are supported.
+mandatory. Other fields are optional. Custom fields are supported, so
+you can add new fields for you own purpose.
 
 <sect> The <tt/title/ field
 <p>
@@ -485,7 +492,8 @@ to use the following configurable functions :
 <tt/title()/ for the title (in place of <tt/$title/),
 <tt/icon()/ for the icon (in place of <tt/$icon/),
 <tt/term()/ for running <tt/text/ command under <tt/X11/.
-
+<tt/sections_translations()/ for the list of translations of sections name
+available. This later one is only defined if you <tt>!include lang.h</tt>
 <p>
 
 Good examples for these scripts for nearly all Debian window managers
@@ -995,14 +1003,10 @@ the menu-method will be skipped when run as root.
 see <tt/rootprefix/, but when running as user.
 <p>
 
-<tag><tt/repeat_lang=""/
+<tag><tt/outputlanguage=""/
 <item>
-If set to "LOCALE", then menu will automatically translate all title's
-to the languages specified by the current LC_LOCALE setting. (LC_ALL,
-...). It is intended to expand this to <tt/repeat_lang="en:es:eo:nl"/,
-which would repeatedly run install-menus for the various specified
-languages. But the latter hasn't yet been implemented.
-
+If set to "C" automatic translations will be disabled. Note that you 
+can still use translate() to perform explicit translation.
 <tag><tt/hint_optimize=false/
 <item>
 If set to true, menu will try to generate an `optimal' tree, using
@@ -1321,10 +1325,11 @@ and "submenutitle=" are interpreted as follows:
      For each element of the column separated array $array, set
      $var to that element, and print $exec.
      Example:
-      forall("eo:nl", "lang", " name[" $lang "]=\"" translate($lang, title()) "\"\n")
-     will print:
-      name[eo]="Mi estas titolo"
-      name[nl]="Ik ben een titel"
+     <example>
+      !include lang.h
+      forall(sections_translations(), "lang", \ 
+         " section[" $lang "]=" translate($lang, title()) "\n")
+      </example>
 
 <tag> parent($arg) <item>
      for $arg a "directory", return parent directory:
@@ -1381,12 +1386,13 @@ and "submenutitle=" are interpreted as follows:
      the menu-method file.
 
 <tag> translate($lang, $text) <item>
-     translate $text into $lang.
-     example:
-       translate("eo", "Apps")
-     prints:
-       Aplikoj
-
+     Translate $text into $lang using gettext, see <tt/forall/ for an
+     example.  Note that currently outputlanguage must be set to "C".
+     If $lang is the empty string, $text will be translated in the
+     current locale language. See sections_translations() for a list
+     of available translations.
+     
+<tag> implicit concatenation <item>
 String constants, variables and functions can be concatenated 
 by placing them after each other with a space in between, like:
 
