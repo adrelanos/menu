@@ -113,7 +113,7 @@ msgid "Lock"
 msgstr "Sperren"
 
 msgid "Save"
-msgstr "Sichern"
+msgstr "Schonen"
 
 msgid "Root-window"
 msgstr "Root-Fenster"
