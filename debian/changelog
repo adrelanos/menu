@@ -3,6 +3,7 @@ menu (2.1.8-2) unstable; urgency=low
   * Add menu-one-file to doc, for building alioth doc.
   * Add Italian translation of menu sections. Thanks Stefano Canepa.
   * Add German translation of menu sections. Thanks Sebastian Rittau.
+  * Add French translation of update-menus.1. Thanks Sylvain Cherrier.
   * Remove hello, octave and xftp default menu entries.
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 18 Apr 2003 22:29:38 +0200
