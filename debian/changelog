@@ -1,6 +1,8 @@
 menu (2.1.9-4) unstable; urgency=low
 
   * The "unreleased" release. 
+  * Add polish menu message translation and update menu section translation.
+    Thanks Marcin Owsiany.
 
  -- Bill Allombert <ballombe@debian.org>  Sun, 14 Dec 2003 11:14:59 +0100
 
