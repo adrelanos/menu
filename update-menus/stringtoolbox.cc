@@ -95,7 +95,7 @@ string replace(string str, const string& repl, const string& with)
 {
   string::size_type pos = str.find(repl);
 
-  if (pos == string::npos)
+  if (pos == string::npos || repl.empty())
       return str;
 
   return replace(str.replace(pos, repl.length(), with), repl, with);
