@@ -5,6 +5,8 @@ menu (2.1.16) unstable; urgency=low
     - Update Swedish translation.
   * Morten Brix Pedersen:
     - Treat userprefix prefixed by // as an absolute path instead of just a
+    - Revert change in 2.1.15: Don't let outputencoding default to LOCALE by
+    default. This was causing too many problems.
     relative path. This helps us solve a window maker bug.
   * Update Polish menu message translation, thanks Marcin Owsiany. 
   * Add Italian menu message translation, by Stefano Canepa.
