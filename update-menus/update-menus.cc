@@ -688,50 +688,34 @@ int check_dpkglock()
 {
   //return 1 if DPKG_LOCKFILE is locked and we should wait
   //return 0 if we don't need to wait (not root, or no dpkg lock)
+  //when in doubt return 0 to avoid deadlocks.
   int fd;
   struct flock fl;
-  char buf[MAX_LINE];
-  int er;
-  if (getuid()){
-    config.report("update-menus run by user -- cannot determine if dpkg is "
-        "locking "DPKG_LOCKFILE": assuming there is no lock",
-        configinfo::report_verbose);
-
+  if (getuid())
+  {
+    config.report("update-menus run by user", configinfo::report_verbose);
     return 0;
   }
-  fd = open(DPKG_LOCKFILE, O_RDWR|O_CREAT|O_TRUNC, 0660);
-  if (fd == -1)
-      return 0; // used to be 1, but why??? (Should not happen, anyway)
   fl.l_type = F_WRLCK;
   fl.l_whence = SEEK_SET;
   fl.l_start = 0;
   fl.l_len = 0;
-  if (fcntl(fd,F_SETLK,&fl) == -1) {
-    er = errno;
+  fd = open(DPKG_LOCKFILE, O_RDWR|O_CREAT|O_TRUNC, 0660);
+  if (fd == -1)
+    /* Probably /var/lib/dpkg does not exist.
+     * Most probably dpkg is not running.
+     */
+      return 0; 
+  if (fcntl(fd,F_GETLK,&fl) == -1)
+  {
+    /* Probably /var/lib/dpkg filesystem does not support
+     * locks.
+     */
     close(fd);
-    if (er == EWOULDBLOCK || er == EAGAIN || er == EACCES)
-        return 1;
-    cerr<<"update-menus: Encountered an unknown errno (="
-        <<er<<")."<<endl
-        <<"update-menus: Could you please be so kind as to email menu@packages.debian.org"<<endl
-        <<"update-menus: the errno (="<<er<<") with a description of what you did to"<<endl
-        <<"update-menus: trigger this. Thanks very much."<<endl
-        <<"Press enter"<<endl;
-    std::cin.get(buf, sizeof(buf));
-    return 1;
-  }
-  fl.l_type= F_UNLCK;
-  fl.l_whence= SEEK_SET;
-  fl.l_start= 0;
-  fl.l_len= 0;
-  if (fcntl(fd,F_SETLK,&fl) == -1) {
-    // `cannot happen'
-    cerr<<"update-menus: ?? Just locked the dpkg status database to see if another dpkg"<<endl
-        <<"update-menus: Was running. Now I cannot unlock it! Aborting"<<endl;
-    exit(1);
+    return 0;
   }
   close(fd);
-  return 0;
+  return fl.l_type!=F_UNLCK;
 }
 
 void exit_on_signal(int signr)
@@ -761,18 +745,19 @@ void wait_dpkg(string &stdoutfile)
   // have started writing stuff to the console. To prevent that,
   // I use signals: the `background' process sents a signal to the
   // parent once it's written everything it wants to stdout,
-  // and only after the parent receved the signal it wil exit(0);
+  // and only after the parent receved the signal it will exit(0);
+  // [Oh god! (added by Bill trying to understand the fork() business]
 
   if (check_dpkglock()) {
     sigset_t sig,oldsig;
 
     // Apparently libc2 on 2.0 kernels, with threading on, blocks
-    // SIGUSR1. This blocking would be inhereted by children, so
+    // SIGUSR1. This blocking would be inherited by children, so
     // as apt was compiled with -lpthread, this caused problems in 
     // update-menus. I now get rid of that by using
     //  - SIGUSR2 instead of SIGUSR1,
     //  - sigprocmask to unblock SIGUSR2.
-    // Eighter one of those solutions should be enough, though.
+    // Either one of those solutions should be enough, though.
 
     sigemptyset(&sig);
     sigaddset(&sig,SIGUSR2);
