@@ -1,13 +1,13 @@
 # Menu section translation to Catalan.
-# Copyright (C) 2003 Software in the Public Interest, Inc.
+# Copyright (C) 2003, 2004 Software in the Public Interest, Inc.
 # This file is distributed under the same license as the menu package.
-# Jordi Mallach <jordi@debian.org>, 2003.
+# Jordi Mallach <jordi@debian.org>, 2003, 2004.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: menu-section 2.1.7-2\n"
+"Project-Id-Version: menu-section\n"
 "POT-Creation-Date: 2003-04-03 12:14+0100\n"
-"PO-Revision-Date: 2003-07-04 21:44+0200\n"
+"PO-Revision-Date: 2004-04-06 18:29+0200\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,9 +19,12 @@ msgstr "Aplicacions"
 
 msgid "Databases"
 msgstr "Bases de dades"
- 
+
 msgid "Editors"
 msgstr "Editors"
+
+msgid "Education"
+msgstr "Educació"
 
 msgid "Emulators"
 msgstr "Emuladors"
@@ -84,6 +87,9 @@ msgstr "Cartes"
 msgid "Puzzles"
 msgstr "Puzzles"
 
+msgid "Simulation"
+msgstr "Simuladors"
+
 msgid "Sports"
 msgstr "Esports"
 
@@ -119,3 +125,23 @@ msgstr "Mòduls"
 
 msgid "XShells"
 msgstr "Shells per a X"
+
+# From Apps/System/Admin
+msgid "Admin"
+msgstr "Administració"
+
+# Non official sections from WindowMaker
+msgid "Appearance"
+msgstr "Aparença"
+
+msgid "WorkSpace"
+msgstr "Espai de treball"
+
+# Frequently used unofficial sections.
+# From Apps/Net/Mozilla Components
+msgid "Mozilla Components"
+msgstr "Components del Mozilla"
+
+# From Games/Toys/Teddies
+msgid "Teddies"
+msgstr "Teddies"
