@@ -1,0 +1,513 @@
+# /etc/X11/fvwm/system.fvwmrc
+#   Based heavily on system.fvwm, with modifications to bring it in line with
+#   the previous debian fvwm package.
+#
+# See the fvwm(1) manpage for more details.
+#
+# This file is used if the user's ~/.fvwmrc is not found.
+#
+#                       Austin Donnelly <and1000@debian.org>
+#
+
+# Unfortunately, order does matter in this file
+# The correct order for inserting configurations is:
+# 1. Colors
+# 2. Assorted configuration paramters such as ClickToFocus, or MWMBorders
+# 3. Path setup (ModulePath, PixmapPath, IconPath)
+# 4. Style settings, including the default style Style "*" ...
+# 5. InitFunction and ResetFunction definitions.
+# 6. Other Functions. Functions cannot be forward referenced from
+#	other functions, but they can be backward referenced.
+# 7. Menus definitions. Same caveats about forward referencing
+# 8. Key and Mouse Bindings.
+# 9. Module options.
+
+# The order of steps 5, 6, and 7 is not critical, as long as there are
+# no forward references to functions or menus.
+
+# If you get it wrong, the most common problem is that color or font settings
+# are ignored
+
+###########################################################################
+# set up the colors
+#
+
+# this is used for the selected window
+HiForeColor 		Black
+HiBackColor 		#5f9ea0
+
+# colours for non-selected windows
+StdForeColor            Black
+StdBackColor            Grey55
+
+# used for the pager
+PagerForeColor		Black
+PagerBackColor		#5f9ea0
+
+# used for windows that stick to the glass
+StickyForeColor		Black
+StickyBackColor		Grey75
+
+# Menu colors
+MenuForeColor           Black
+MenuBackColor           #5f9ea0
+MenuStippleColor        SlateGrey
+
+############################################################################
+# Now the fonts - one for menus, another for window titles, another for icons
+# The menu font
+Font                    -adobe-times-bold-r-*-*-14-*-*-*-*-*-*-*
+# The font used in the window title bars.
+WindowFont		-adobe-helvetica-bold-r-*-*-12-*-*-*-*-*-*-*
+# Font used to title icons with
+IconFont		-adobe-helvetica-bold-r-*-*-12-*-*-*-*-*-*-*
+
+###########################################################################
+# Set up the major operating modes
+#
+########################      FOCUS STUFF     ##############################
+# Set windows to auto-raise after 750 milliseconds if you like it.
+# Autoraise can sometimes obscure pop-up windows. Performance is now
+# similar to olvwm's auto-raise feature.
+#AutoRaise 750
+
+# Normally, we'll be in focus-follows mouse mode, but uncomment this 
+# for mwm-style click-to-focus
+#ClickToFocus
+
+########################      ICON STUFF     ##############################
+# Auto Place Icons is a nice feature....
+# Area of screen where icons are dumped (left top right bottom)
+# First go along RHS...
+IconBox -100 +140 -1 +730
+# ...next go along the bottom:
+IconBox +10 -40 +828 -1
+
+# If you uncomment this, and make sure that the WindowList is bound to
+# something, it works pretty much like an icon manager.
+#SuppressIcons
+
+# StubbornIcons makes icons de-iconify into their original position on the
+# desktop, instead of on the current page.
+#StubbornIcons
+
+# With AutoPlacement, icons will normally place themselves underneath active
+# windows. This option changes that.
+StubbornIconPlacement
+
+# If you want ALL you icons to follow you around the desktop (Sticky), try
+# this
+StickyIcons
+
+########################      MWM EMULATION     #######################
+#
+# My feeling is that everyone should use MWMDecorHints and MWMFunctionHints,
+# since some applications depend on having the window manager respect them
+
+# MWMFunction hints parses the function information in the MOTIF_WM_HINTS
+# property, and prohibits use of these functions on the window. Appropriate
+# portions of the window decorations are removed.
+MWMFunctionHints
+
+# MWM is kinda picky about what can be done to transients, and it was keeping
+# me from iconifying some windows that I like to iconify, so here's an
+# over-ride that will allow me to do the operation, even tough the menu
+# item is shaded out.
+MWMHintOverride
+
+# MWMDecor hints parses the decoration information in the MOTIF_WM_HINTS
+# property, and removes these decoratons from the window. This does not affect
+# the functions that can be performed via the menus.
+MWMDecorHints
+
+# These are affect minor aspects for the look-and-feel.
+# Sub-menus placement mwm-style?
+MWMMenus
+# mwm-style border reliefs (less deep than default fvwm) ?
+# MWMBorders
+# Maximize button does mwm-inversion thingy
+MWMButtons
+########################      MISCELLANEOUS STUFF     #######################
+# If you don't like the default 150 msec click delay for the complex functions
+# change this and uncomment it.
+#ClickTime 150
+
+# OpaqueMove has a number (N) attached to it (default 5).
+# if the window occupies less than N% of the screen, 
+# then opaque move is used. 0 <= N <= 100
+OpaqueMove 20
+
+# flip by whole pages on the edge of the screen.
+EdgeScroll 100 100
+
+# A modest delay before flipping pages seems to be nice...
+# I thresh in a 50 pixel Move-resistance too, just so people
+# can try it out.
+EdgeResistance 250 50
+
+
+########################      WINDOW PLACEMENT     #######################
+# RandomPlacement prevents user interaction while placing windows:
+# RandomPlacement
+
+# SmartPlacement makes new windows pop-up in blank regions of screen 
+# if possible, or falls back to random or interactive placement.
+SmartPlacement
+
+# With SmartPlacement, windows will normally place themselves over icons. 
+# Uncomment this to change that.
+#StubbornPlacement
+
+# NoPPosition instructs fvwm to ignore the PPosition field in window 
+# geometry hints. Emacs annoyingly sets PPosition to (0,0)!
+NoPPosition
+
+
+########################      DECORATIONS     #######################
+# If you want decorated transient windows, uncomment this:
+#DecorateTransients
+
+
+###########################################################################
+# Set up the virtual desktop and pager
+
+# use the internam pager, rather than the module
+Pager 5 5
+
+#set the desk top size in units of physical screen size
+DeskTopSize 2x2
+
+# and the reduction scale used for the panner/pager
+DeskTopScale 60
+
+##########################################################################
+# Module path and paths to the icons
+#
+# ModulePath is a colon-separated list, just like regular unix PATH
+ModulePath /usr/lib/X11/fvwm
+PixmapPath /usr/include/X11/pixmaps/
+IconPath   /usr/include/X11/bitmaps/
+
+############################################################################
+# Set the decoration styles and window options
+# Order is important!!!!
+# If compatible styles are set for a single window in multiple Style
+# commands, then the styles are ORed together. If conflicting styles
+# are set, the last one specified is used.
+
+# These commands should command before any menus or functions are defined,
+# and before the internal pager is started.
+
+# change the default width.
+Style "*" BorderWidth 5, HandleWidth 5, Color Black/#60a0c0,Icon unknown1.xpm
+
+Style "Fvwm*"      NoTitle, NoHandles, Sticky, WindowListSkip,BorderWidth 0, CirculateSkip
+Style "Fvwm Pager" StaysOnTop, BorderWidth 5, Color Black/#5f9ea0
+Style "FvwmPager"  StaysOnTop, BorderWidth 5
+Style "FvwmBanner" StaysOnTop
+Style "GoodStuff"  NoTitle, NoHandles, Sticky, WindowListSkip,BorderWidth 0
+Style "*lock"      NoTitle, NoHandles, Sticky, WindowListSkip
+Style "xbiff"      NoTitle,            Sticky, WindowListSkip, CirculateSkip
+Style "xload"      NoTitle,            Sticky, WindowListSkip, CirculateSkip
+Style "rxvt"       Icon  term.xpm
+Style "xterm"      Icon xterm.xpm, Color black/grey
+Style "xconsole"   Icon xterm.xpm
+Style "Appointment" Icon datebook.xpm, NoButton 2, NoButton 4
+Style "xclock"     NoTitle, Sticky, WindowListSkip, CirculateSkip
+Style "xcalc"      Icon xcalc.xpm, NoButton 2
+Style "xcal"       NoTitle, NoHandles, Sticky, WindowListSkip, CirculateSkip
+Style "xmh"        Icon mail1.xpm, StartsOnDesk 2, NoButton 2
+Style "xman"	   Icon xman.xpm
+Style "xvgr"	   Icon graphs.xpm
+Style "matlab"	   Icon math4.xpm
+Style "xmag"	   Icon mag_glass.xpm
+Style "xgraph"	   Icon graphs.xpm
+Style "GoodStuff"  Icon toolbox.xpm
+
+# This next one will need to be changed when emacs gets upgraded... :(
+Style "emacs"      Icon /usr/lib/emacs/19.29/etc/gnu.xpm, Color Black/#f061c709e096
+
+
+
+# Change the Maximize and iconify buttons to up and down triangles.
+
+ButtonStyle : 2 4 50x35@1 65x65@0 35x65@0 50x35@1
+ButtonStyle : 4 4 50x65@1 35x35@1 65x35@1 50x65@0
+
+
+############################################################################
+# Now define some handy complex functions
+
+Function "RaiseLowerOrMove"
+        Move            "motion"
+        RaiseLower      "click"
+EndFunction
+
+Function "RaiseOrMove"
+        Move            "motion"
+        Raise           "click"
+EndFunction
+
+Function "LowerOrMove"
+        Move            "motion"
+        Lower           "click"
+EndFunction
+
+Function "IconifyOrMove"
+        Move            "motion"
+        Iconify         "click"
+        Iconify         "doubleclick"
+EndFunction
+
+Function "DoubleClickIconify"
+        Iconify         "click"
+        Iconify         "doubleclick"
+EndFunction
+
+
+Function "InitFunction"
+        Exec    "I"     xmodmap -e "keycode 107 = 0x04"
+        #Exec    "I"     xhost +
+	Exec    "I"     xsetroot -solid steelblue
+        Module  "I"     GoodStuff
+        Desk    "I"     0 2
+        Desk    "I"     0 0
+EndFunction
+
+Function "RestartFunction"
+        Exec    "I"     xsetroot -solid "#266294"      
+        Module  "I"     GoodStuff
+        Module  "I"     FvwmPager 0 3
+EndFunction
+
+
+include-menu-defs
+
+
+##Old-Debian ##############################################################################
+##Old-Debian # now define the menus
+##Old-Debian #
+##Old-Debian 
+##Old-Debian # Provides a list of modules to fire off
+##Old-Debian 
+##Old-Debian 
+##Old-Debian Popup "Applications"
+##Old-Debian 	     Title   "Applications"
+##Old-Debian 	     Exec    "xterm"         exec xterm &
+##Old-Debian 	     Nop     ""
+##Old-Debian 	     Exec    "Emacs"         exec emacs &
+##Old-Debian 	     Exec    "Emacs RMAIL"   exec emacs -f rmail &
+##Old-Debian 	     Exec    "Netscape"      exec netscape &
+##Old-Debian EndPopup
+##Old-Debian 
+Popup "Module-Popup"
+	     Title	"Modules"
+	     Module	"GoodStuff"	GoodStuff
+	     Module	"Clean-Up"	FvwmClean
+	     Module	"Identify"	FvwmIdent
+	     Module  "SaveDesktop"   FvwmSave
+	     Module	"Debug"		FvwmDebug
+	     Module  "Pager"         FvwmPager 0 3
+	     Module  "FvwmWinList"   FvwmWinList
+EndPopup
+
+Popup "Fvwm"
+	     Title   "Fvwm"
+	     Iconify "Iconify"
+	     Module  "Identify"      FvwmIdent
+	     Maximize        "Maximize"
+	     Move    "Move"
+	     Resize  "Resize"
+	     Stick   "Stick"
+	     Raise   "Raise"
+	     Lower   "Lower"
+	     Nop     ""
+	     Destroy "Kill"
+	     Delete  "Delete"
+	     Nop     ""
+	     Popup   "Modules"	Module-Popup
+	     Nop     ""
+	     Refresh "Refresh"
+	     Restart "Restart"       fvwm
+	     Quit    "Exit fvwm"
+EndPopup
+
+
+Popup "Window"
+	     Iconify "Iconify"
+	     Maximize        "Maximize"
+	     Move    "Move"
+	     Resize  "Resize"
+	     Stick   "Stick"
+	     Raise   "Raise"
+	     Lower   "Lower"
+	     Nop     ""
+	     Destroy "Kill"
+	     Delete  "Delete"
+EndPopup
+
+
+
+##############################################################################
+# This defines the mouse bindings
+
+# First, for the mouse in the root window
+# Button 1 gives the Applications menu
+# Button 2 gives the Window Ops menu
+# Button 3 gives the WindowList (like TwmWindows)
+# I use the AnyModifier (A) option for the modifier field, so you can hold down
+# any shift-control-whatever combination you want!
+
+#     Button	Context Modifi 	Function
+Mouse 1		R   	A       PopUp "/Debian"
+Mouse 2		R    	A      	PopUp "Fvwm"
+Mouse 3		R    	A      	WindowList
+
+
+# Now the title bar buttons
+# Any button in the left title-bar button gives the window ops menu
+# Any button in the right title-bar button Iconifies the window
+# Any button in the rightmost title-bar button maximizes
+# Note the use of "Mouse 0" for AnyButton.
+
+#     Button	Context Modifi 	Function
+Mouse 0         1           N   PopUp "Window"
+Mouse 0         2           N   Maximize
+Mouse 0         4           N   Iconify
+
+# Mouse buttons with the Meta (alt) key down always apply, even _inside_
+# the application's window.
+#  (a) This is a little on the sneaky side: applications will never
+#         get to see meta mouse clicks - but then I haven't yet found
+#         one that does respond to them, other than emacs.
+#  (b) Its a very fast way of working one you get used to it.
+Mouse 1		FSTW	    M	Function "RaiseOrMove"
+Mouse 2		FSTWI	    M   Iconify
+Mouse 3		FSTW	    M   RaiseLower
+
+# Now the rest of the frame
+
+# Button 1 in the corner pieces, with any modifiers, gives resize
+#        2 in the corner pieces, with any modifiers, gives resize
+#        3 in the corner pieces, with any modifiers, will raise or lower it
+Mouse 1		F	A	Resize
+Mouse 2		F	A	Resize
+Mouse 3		F	A	RaiseLower
+
+# A click of button 1 on any of the sides will resize the window.
+# A click of button 2 on any of the sides will resize the window.
+# A click of button 3 on any of the sides will raise or lower it.
+Mouse 1        S           N   Resize
+Mouse 2        S           N   Resize
+Mouse 3        S           N   RaiseLower
+
+# A click of button 1 in the title bar will call "RaiseOrMove".
+# A click of button 2 in the title bar will call "LowerOrMove".
+# A click of button 3 in the title bar will raise or lower it.
+Mouse 1        T           N   Function "RaiseOrMove"
+Mouse 2        T           N   Function "LowerOrMove"
+Mouse 3        T           N   RaiseLower
+
+# A click of button 1 on an icon will call "IconifyOrMove".
+# A click of button 2 on an icon will call "IconifyOrMove".
+# A click of button 3 on an icon will raise or lower it.
+Mouse 1        I           N   Function "IconifyOrMove"
+Mouse 2        I           N   Function "IconifyOrMove"
+Mouse 3        I           N   RaiseLower
+
+
+############################################################################
+# Now some keyboard shortcuts.
+
+# Arrow Keys
+# press arrow + control anywhere, and scroll by 1 page
+Key Left	A	C	Scroll -100 0
+Key Right	A	C	Scroll +100 +0
+Key Up		A	C	Scroll +0   -100
+Key Down	A	C	Scroll +0   +100
+
+# Keyboard accelerators
+#Key F1		A	M	Popup "/Debian"
+#Key F2		A	M	Popup "Window"
+#Key F3		A	M	Module "WindowList" FvwmWinList 
+#Key F4		A	M	Iconify
+#Key F5		A	M	Move
+#Key F6		A	M	Resize
+#Key F7		A	M	CirculateUp
+#Key F8		A	M	CirculateDown
+
+
+
+
+############################################################################
+############################################################################
+#Definitions used by the modules
+
+###################### GoodStuff button-bar ################################
+# Colors
+*GoodStuffFore Black
+*GoodStuffBack #908090
+
+# Font
+*GoodStuffFont -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
+# Geometry - really likes to pick its own size, but giving a position is OK
+*GoodStuffGeometry -1-1
+
+# Layout: specify rows or columns, not both
+*GoodStuffRows 2
+
+# Define the buttons to use.....
+*GoodStuff Kill    rbomb.xpm    Destroy
+
+# xterm or rxvts on remote machines can be done like this
+# Output re-direction is csh style, not sh style
+# You will want to substitute your own hosts here!
+
+*GoodStuff Rulgm0  rterm.xpm   Exec "" xterm -sb -sl 500 -j -ls -fn 7x7 -T rulgm0 -e r0 &
+*GoodStuff Rulgm4  rterm.xpm   Exec "" xterm -sb -sl 500 -j -ls -fn 7x7 -T rulgm4 -e r4 &
+*GoodStuff Ruliln  rterm.xpm   Exec "" xterm -sb -sl 500 -j -ls -fn 7x7 -T ruliln -e rln &
+*GoodStuff Rulils  rterm.xpm   Exec "" xterm -sb -sl 500 -j -ls -fn 7x7 -T rulils -e rls &
+*GoodStuff Rulil0  rterm.xpm   Exec "" xterm -sb -sl 500 -j -ls -fn 7x7 -T rulil0 -e rl0 &
+*GoodStuff Xcalc   rcalc.xpm   Exec "" xcalc &
+
+*GoodStuff Paging  clamp.xpm   TogglePage
+*GoodStuff -  clock.xpm   Swallow "xclock" xclock -bg \#908090 -geometry -1500-1500 -padding 0
+*GoodStuff(4x1) - whatever SwallowModule "FvwmPager" FvwmPager 0 3
+
+
+######################### No Clutter ########################################
+# I only wrote NoClutter as a simple test case, but maybe some big sites like
+# universities really have usage problems (too many open windows)....
+# Time delays are in seconds.
+*FvwmNoClutter 3600 Iconify 1
+*FvwmNoClutter 86400 Delete
+*FvwmNoClutter 172800 Destroy
+
+########################## Window-Identifier ###############################
+# Just choose colors and a fonts
+*FvwmIdentBack MidnightBlue
+*FvwmIdentFore Yellow
+*FvwmIdentFont -adobe-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*
+
+########################### Pager #########################################
+*FvwmPagerBack #908090
+*FvwmPagerFore #484048
+*FvwmPagerFont -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
+*FvwmPagerHilight #cab3ca
+*FvwmPagerGeometry -1-1
+*FvwmPagerLabel 0 Misc
+*FvwmPagerLabel 1 Maker
+*FvwmPagerLabel 2 Mail
+*FvwmPagerLabel 3 Matlab
+*FvwmPagerSmallFont 5x8
+
+
+##########################FvwmWinList##################################
+*FvwmWinListBack #908090
+*FvwmWinListFore Black
+*FvwmWinListFont -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
+*FvwmWinListAction Click1 Iconify -1,Focus
+*FvwmWinListAction Click2 Iconify
+*FvwmWinListAction Click3 Module "FvwmIdent" FvwmIdent
+*FvwmWinListUseSkipList
+*FvwmWinListGeometry +0-1

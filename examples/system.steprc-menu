@@ -1,0 +1,301 @@
+# 05/18/96 sample.steprc v1.2 fsf
+
+##########################################################################
+# NEXTSTEP(tm) look related stuff
+StdForeColor 		Black
+StdBackColor 		#bfbfbf
+HiForeColor 		White
+HiBackColor 		Black
+MenuBackColor	#bfbfbf
+MenuForeColor	Black
+Font                    -adobe-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*
+WindowFont              -adobe-helvetica-bold-r-*-*-12-*-*-*-*-*-*-*
+IconBox 90 -68 -1 -1
+StickyForeColor         Black
+StickyBackColor         #60c0a0
+
+########################      FOCUS STUFF     ##############################
+# Set windows to auto-raise after 325 milliseconds if you like it.
+Module Auto 325
+
+########################      MISCELLANEOUS STUFF     #######################
+# If you don't like the default 150 msec click delay for the complex functions
+# change this.
+ClickTime 150
+
+# StubbornIcons makes icons de-iconify into their original position on the
+# desktop, instead of on the current page.
+#StubbornIcons
+
+# With AutoPlacement, icons will normally place themselves underneath active
+# windows. This option changes that.
+#StubbornIconPlacement
+
+# If you want ALL you icons to follow you around the desktop (Sticky), try
+# this
+StickyIcons
+
+########################      WINDOW PLACEMENT     #######################
+# RandomPlacement prevents user interaction while placing windows:
+# RandomPlacement
+
+# SmartPlacement makes new windows pop-up in blank regions of screen 
+# if possible, otherwise falls back to random or interactive placement
+#SmartPlacement
+
+EdgeScroll 0 0
+EdgeResistance 0 0
+SloppyFocus
+AppsBackingStore
+BackingStore
+SaveUnders
+
+# OpaqueMove has a number (N) attached to it (default 5), if the window occupies
+# less than N% of the screen, opaque move is used. 0 <= N <= 100
+OpaqueMove 100
+
+# NoPPosition instructs fvwm to ignore the PPosition field in window 
+# geometry hints.
+# Emacs annoyingly sets PPosition to (0,0)!
+NoPPosition
+
+###########################################################################
+# Set up the virtual desktop and pager
+
+#set the desk top size in units of physical screen size
+DeskTopSize 2x2
+
+# and the reduction scale used for the panner/pager
+DeskTopScale 32
+
+##########################################################################
+# Module path
+# ModulePath is a colon-separated list, just like regular unix PATH
+ModulePath          /usr/X11R6/lib/X11/fvwm:/usr/X11R6/lib/X11/afterstep
+PixmapPath          /usr/include/X11/pixmaps/
+IconPath            /usr/include/X11/bitmaps/
+NoBoundaryWidth 0
+BoundaryWidth 8
+Style "oclock" Sticky, NoTitle, StaysOnTop, WindowListSkip
+Style "*Pager" NoTitle, Sticky, StaysOnTop, WindowListSkip, NoHandles
+Style "xbiff" NoTitle, WindowListSkip
+Style "Minitabx11" StaysOnTop
+Style "Wharf" NoFocus,NoTitle, Sticky, WindowListSkip,StaysOnTop, NoHandles
+
+##########################################################################
+# customize your wharf (read: dock)
+Module Wharf 
+
+# Eliminates the 3D "pushable" buttons and makes things boring
+#*WharfNoPush
+
+*WharfGeometry -1+0
+*WharfColumns 1 
+*Wharf xbiff   nil   Swallow "xbiff" xbiff -bg "#8e8a9e" -fg "#00003f" -geometry 45x45-1-1 &
+*Wharf xload  nil   Swallow "xload" xload -nolabel -hl black -bg "#8e8a9e" -geometry 45x45-1-1 &
+*Wharf xterm monitor.xpm   Exec "-" xterm -e tcsh -l &
+*Wharf lyx text.xpm Exec "-" /home/frank/bin/lyx &>/dev/null &
+*Wharf gimp 3dpaint.xpm Exec "-" gimp -geometry +15+373 &
+#*Wharf tkdate nil Swallow "tkdate" tkdate -geometry -1-1 &
+*Wharf pine writeletter.xpm Exec "-" xterm -T "pine" -e pine &
+*Wharf Netscape netscape3.xpm Exec "-" netscape -geometry 680x565+400+2 &
+*Wharf moxfm FilingCabinet.xpm Exec "-" moxfm >& /dev/null &
+*Wharf pager nil SwallowModule "FvwmPager" FvwmPager 0 0
+*Wharf config interface.xpm Exec "-" xterm -T "vi(.steprc)" -e vim -n ~/.steprc &
+*Wharf Recycler  recycler.xpm  Restart " " afterstep
+*Wharf Shutdown	 shutdown.xpm  Quit 
+##########################################################################
+
+
+############################################################################
+# define some common icon bitmaps
+# These are the color icons.
+# Of course, you need to change the directory to the one where they
+# really live.
+Icon "xterm"        monitor.xpm
+Icon "pine"         writeletter.xpm
+Icon "ghostview"    text.xpm
+Icon "xman"	    xman.xpm
+Icon "gimp"	    3dpaint.xpm
+Icon "xli"	    monalisa.xpm
+Icon "xv"	    xv1.xpm
+Icon "moxfm*"       FileFolders.xpm
+Icon "*lyx*"        text.xpm
+Icon "LyX"          text.xpm
+Icon "Untitled*"    YellowBlueRedGeometry.xpm
+
+Function "InitFunction"
+        Module  "I"     FvwmPager 0 0
+EndFunction
+Function "RestartFunction"
+        Module  "I"     FvwmPager 0 0
+EndFunction
+
+############################################################################
+# Now define some handy complex functions
+
+# This one moves and then raises the window if you drag the mouse,
+# only raises the window if you click,  or does a RaiseLower if you double
+# click
+Function "Move-or-Raise"
+	Move 		"Motion"
+	Raise		"Motion"
+	Raise		"Click"
+	RaiseLower	"DoubleClick" 
+EndFunction
+
+Function "maximize_func"
+	Move		"Motion"
+	Maximize	"Click" 94 100
+	Shade		"DoubleClick"
+ 	PutOnTop	"TripleClick"
+EndFunction
+
+# This one moves or (de)iconifies:
+Function "Move-or-Iconify"
+	Move 		"Motion"
+	Iconify		"DoubleClick"
+EndFunction
+
+Function "Resize-or-Raise"
+	Resize 		"Motion"
+	Raise		"Motion"
+	Raise		"Click"
+	Shade		"DoubleClick"
+EndFunction
+
+# This is provided as a hint only.
+# Move to a known page on the desktop, then start an application in a
+# known location. Could also switch to a known desktop, I guess
+#Function "abs_coord"
+#       GoToPage "Immediate"    1,1
+#       Exec    "Immediate"     exec xcalc -geometry +100+100&
+#EndFunction
+
+##############################################################################
+#now define the menus - defer bindings until later
+
+include-menu-defs
+
+# This menu is invoked as a sub-menu - it allows you to quit
+Popup "Quit-Verify"
+	Title	"Quit?"
+	Quit	"Yes, Quit"
+	Restart "Restart"	afterstep
+	Nop	"No, Don't"
+EndPopup
+
+# This defines the most common window operations
+Popup "Window Ops"
+        Title           "Window Ops"
+        Function        "Move"          Move-or-Raise
+        Function        "Resize"        Resize-or-Raise
+        Raise           "Raise"
+        Lower           "Lower"
+	PutOnTop	"(Un)PutOnTop"
+        Iconify         "(De)Iconify"
+        Stick           "(Un)Stick"
+        Function        "(Un)Maximize"  maximize_func
+        Nop             ""
+        Destroy         "Destroy"
+        Close           "Close"
+        Nop             ""
+        Refresh         "Refresh Screen"
+EndPopup
+
+
+##############################################################################
+# This defines the mouse bindings
+
+# First, for the mouse in the root window
+# Button 1 gives the HotList menu
+# Button 2 gives the WindowList menu
+# Button 3 gives the WindowOps
+
+Mouse 0         1       A       Iconify
+Mouse 0         2       A       Close
+Mouse 1		R   	A       PopUp "/Debian"
+Mouse 1		FS	A	Function "Resize-or-Raise"
+Mouse 1		I	A	Function "Move-or-Iconify"
+Mouse 1		T	A	Function "maximize_func"
+Mouse 2         R       A       WindowList
+Mouse 2		FST	A	PopUp "Window Ops"
+Mouse 3		TSIF	A	RaiseLower
+Mouse 3         R       A       PopUp "Window Ops"
+Mouse 3         W       M       RaiseLower
+
+############################################################################
+# Now some keyboard shortcuts.
+
+# Keyboard accelerators
+Key F1		A	M	Popup "/Debian"
+Key F2		A	M	Popup "Window Ops"
+Key F3		A	M	WindowList
+Key F4		A	M	Exec "xwd" xwd -root -out ~/screen.xwd &
+Key F5 	        A	A       Iconify
+
+# Arrow Keys
+# press arrow + control anywhere, and scroll by 1 page
+Key Left        A       C       Scroll -100 0
+Key Right       A       C       Scroll +100 +0
+Key Up          A       C       Scroll +0   -100
+Key Down        A       C       Scroll +0   +100
+############################################################################
+
+############################################################################
+#Definitions used by the modules
+
+########################## Window-Identifier ###############################
+# Just choose colors and a fonts
+*FvwmIdentBack MidnightBlue
+*FvwmIdentFore Yellow
+*FvwmIdentFont -adobe-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*
+
+*FvwmPagerBack #908090
+*FvwmPagerFore #484048
+*FvwmPagerFont -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
+*FvwmPagerHilight #cab3ca
+*FvwmPagerGeometry +8-6
+*FvwmPagerLabel 0 Pager 
+*FvwmPagerSmallFont 5x8
+
+*PagerBack #908090
+*PagerFore #484048
+*PagerFont -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
+*PagerHilight #cab3ca
+*PagerGeometry +8-6
+*PagerLabel 0 Pager
+*PagerSmallFont 5x8
+
+# Start the Audio player  
+Module Audio    
+
+# Select your normal audio player
+#*AudioPlayCmd /usr/bin/showaudio
+
+# Select the directory containing your sounds
+#*AudioDir /home/frank/mac/sounds
+
+#*AudioDelay 1
+
+# Attach sounds to window manager events...some don't appear to function
+# as well as they could
+#*Audio startup gong.au
+#*Audio shutdown clink.au
+#*Audio add_window bong.au
+#*Audio raise_window drip.au
+#*Audio lower_window drip.au
+#*Audio focus_change drip.au    
+#*Audio destroy_window crash.au
+#*Audio iconify ploop.au
+#*Audio deiconify ploop.au
+#*Audio toggle_paging fwop.au
+#*Audio new_page beaming.au 
+#*Audio new_desk beam_trek.au
+#*Audio configure_window huh.au
+#*Audio window_name bong.au
+#*Audio icon_name beep.au
+#*Audio res_class bong.au
+#*Audio res_name beep.au
+#*Audio end_windowlist twang.au
+
