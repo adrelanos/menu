@@ -17,6 +17,8 @@
 #include "menu-tree.h"
 
 using namespace std;
+using std::vector;
+using std::string;
 
 int verbose = 0;
 
@@ -423,8 +425,8 @@ ostream &forall_func::output(ostream &o, vector<cat_str *> &args,
     map<string, string> &menuentry)
 {
   const string &array=args[0]->soutput(menuentry);
-  StrVec vec;
-  StrVec::const_iterator i;
+  vector<string> vec;
+  vector<string>::const_iterator i;
   string s;
   string varname=args[1]->soutput(menuentry);
 
@@ -860,7 +862,7 @@ void read_forcetree(parsestream &i)
       if (name == "endforcetree")
           return;
 
-      StrVec sections;
+      vector<string> sections;
       break_slashes(name, sections);
       menuentry *entry = new menuentry;
       entry->forced = true;
@@ -880,7 +882,7 @@ configinfo::configinfo(parsestream &i)
     onlyrunasroot(false), onlyrunasuser(false), onlyuniquetitles(false),
     hint_optimize(false), hint_nentry(6), hint_topnentry(5),
     hint_mixedpenalty(15), hint_minhintfreq(0.1), hint_mlpenalty(2000),
-    hint_max_ntry(4), hint_max_iter_hint(5), hint_debug(false)
+    hint_max_ntry(4), hint_max_iter_hint(5), hint_debug(false), hotkeycase(0)
 {
   userpref=rootpref=sort=prerun=preruntest=postrun=genmenu=
     hkexclude=startmenu=endmenu=submenutitle=also_run=repeat_lang=0;
@@ -959,7 +961,7 @@ configinfo::configinfo(parsestream &i)
 	  exit(0);
 	}
 	else if(name=="hotkeycase"){
-	  string s=i.get_eq_stringconst();
+	  string s = i.get_eq_stringconst();
 	  if(s == "sensitive")
 	    hotkeycase = 1;
 	  else if (s=="insensitive")
@@ -1099,10 +1101,10 @@ map<string, string> read_vars(parsestream &i)
           string oldval = val;
 	  val = dgettext("menu-sections",val.c_str());
 	} else if (name == "section") {
-	  StrVec v;
+	  vector<string> v;
 	  break_slashes(val,v);
 	  val.erase();
-          for(StrVec::const_iterator i = v.begin(); i != v.end(); ++i)
+          for(vector<string>::const_iterator i = v.begin(); i != v.end(); ++i)
               val = val + "/" + dgettext("menu-sections", i->c_str());
 	}
       }
@@ -1142,7 +1144,7 @@ void read_input(parsestream &i)
       // assume they are defined.
       check_vars(i, entry_vars);
 
-      StrVec sections;
+      vector<string> sections;
       break_slashes(entry_vars[SECTION_VAR], sections);
       if (entry_vars[TITLE_VAR] != "/")
           sections.push_back(entry_vars[TITLE_VAR]);	  
@@ -1298,28 +1300,28 @@ int main(int argc, char **argv)
       if (retval)
           return retval;
     }
-    if (config->repeat_lang && 
-       (config->repeat_lang->soutput(root_menu.vars) == "LOCALE")){
-      do_translate_hack=true;
-    }
+    if (config->repeat_lang && (config->repeat_lang->soutput(root_menu.vars) == "LOCALE"))
+        do_translate_hack=true;
+
     parsestream psscript(cin);
     root_menu.vars[TITLE_VAR] = config->mainmenutitle();
 
     read_input(psscript);
     if (config->hint_optimize)
         root_menu.process_hints();
+
     root_menu.postprocess(1, 0, config->rootsection());
     root_menu.output();
     closegenoutput();
 
     if (config->also_run) {
       string run=config->also_run->soutput(root_menu.vars);
-      StrVec run_vec;
-      StrVec::const_iterator run_i;
+      vector<string> run_vec;
+      vector<string>::const_iterator run_i;
 
       break_char(run, run_vec, ':');
 
-      configinfo *old_config = config;  /* save old pointer */
+      configinfo *old_config = config;  // save old pointer
 
       for (run_i = run_vec.begin(); run_i != run_vec.end(); ++run_i)
       {
@@ -1330,7 +1332,7 @@ int main(int argc, char **argv)
         closegenoutput();
         delete config;
       }
-      config = old_config;             /* restore old pointer */
+      config = old_config;             // restore old pointer
     }
     if (!config->rcfile().empty() && !config->examplercfile().empty())
         includemenus("include-menu-defs",
