@@ -517,7 +517,7 @@ void read_menufile(const string &filename, const string &shortfilename,
       try {
         ps = new parsestream(*sstream);
       } catch (endoffile d) {
-        cerr << String::compose(_("Error (or no input available from stdout) "
+        cerr << String::compose(_("Error (or no input available from stdin) "
         "while executing %1. Note that it is a _feature_ of menu that it "
         "executes menu-entry files that have the executable bit set. See the "
         "documentation.\n"), filename);
