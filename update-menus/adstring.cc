@@ -127,13 +127,14 @@ string replacewith_string(const string &s, const string &replace, const string &
 {
   // call with: replacewith_string("hello $world, %dir", "$% ", "123")
   // returns:   "hello31world,32dir"
-  string t;
-  string::size_type i,j;
-  for(i=0;i!=s.length();++i){
-    if((string::size_type)(j=replace.find(s[i]))!=string::npos)
-      t+=with[j % with.length()];
-    else
-      t+=s[i];
+
+  if (replace.length() != with.length())
+      throw except_string(_("replacewith($string, $replace, $with): $replace and $with must have the same length."));
+
+  string t = s;
+  for (string::size_type i = 0; i <= replace.length(); ++i)
+  {
+    std::replace(t.begin(), t.end(), replace[i], with[i]);
   }
   return t;
 }
