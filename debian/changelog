@@ -1,6 +1,6 @@
 menu (2.1.22) unstable; urgency=low
 
-  * The "unreleased" release 
+  * The "Debian translators still rule" release 
   * Add Basque menu sections translation. Thanks Piarres Beobide. 
     Closes: #295598.
   * Update Russian menu sections translation. Thanks Nikolai Prokoschenko.
@@ -19,12 +19,14 @@ menu (2.1.22) unstable; urgency=low
     Closes: #296090.
   * Clean up the BUGS file.
   * debian/bug.presubj: display "Reporting menu bugs" in red to stand out.
+  * su-to-root: add support for sux and for a .su-to-rootrc config file.
+    Closes: #272752. Thanks Fabian Franz.
   * Morten Brix Pedersen: 
     - Fixed two typos in the Danish menu program translation.
     - Corrected the counting of menu entries in verbose output.
       Closes: #280081. Thanks Andrew Burton.
 
- -- Bill Allombert <ballombe@debian.org>  Tue, 22 Feb 2005 11:29:54 +0100
+ -- Bill Allombert <ballombe@debian.org>  Thu, 24 Feb 2005 16:53:25 +0100
 
 menu (2.1.21) unstable; urgency=low
 

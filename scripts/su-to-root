@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if test -r ~/.su-to-rootrc; then
+. ~/.su-to-rootrc
+fi
+
 PRIV=root
 COMMAND=
 NEEDS=text
@@ -40,22 +44,48 @@ else
     if test "$euid" != 0; then
       echo About to execute $COMMAND. 
       echo This command needs $PRIV privileges to be executed.
-      echo enter $PRIV passwd:
     fi
     PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin
     SHELL=`eshell $PRIV`
-    while ! su -p "$PRIV" -c "$COMMAND"; do
-      echo -n 'Incorrect password or command failed. Try again? (y/n)'
-      read ans
-      if test "$ans" != "y" -a "$ans" != "Y"; then
-        exit 1
-      fi
-    done;;
+    if test "X$SU_TO_ROOT_SU" = "Xsux"; then
+      echo "Using sux..."
+      echo enter $PRIV passwd:
+      while ! sux -p "$PRIV" "$COMMAND"; do
+        echo -n 'Incorrect password or command failed. Try again? (y/n)'
+        read ans
+        if test "$ans" != "y" -a "$ans" != "Y"; then
+          exit 1
+        fi
+      done
+    else
+      echo enter $PRIV passwd:
+      while ! su -p "$PRIV" -c "$COMMAND"; do
+        echo -n 'Incorrect password or command failed. Try again? (y/n)'
+        read ans
+        if test "$ans" != "y" -a "$ans" != "Y"; then
+          exit 1
+        fi
+      done
+    fi;;
   X11)
-    if which gksu >/dev/null 2>&1 ; then
+    if test -z "$SU_TO_ROOT_X"; then
+      if which gksu >/dev/null 2>&1 ; then
+        SU_TO_ROOT_X=gksu
+      elif which kdesu >/dev/null 2>&1 ; then 
+        SU_TO_ROOT_X=kdesu
+      elif which sux >/dev/null 2>&1 ; then 
+        SU_TO_ROOT_X=sux
+      else
+        SU_TO_ROOT_X=su-to-root
+      fi
+    fi
+    if test "X$SU_TO_ROOT_X" = "Xgksu" ; then
       gksu -u "$PRIV" "$COMMAND"
-    elif which kdesu >/dev/null 2>&1 ; then 
+    elif test "X$SU_TO_ROOT_X" = "Xkdesu" ; then 
       kdesu -u "$PRIV" "$COMMAND"
+    elif test "X$SU_TO_ROOT_X" = "Xsux" ; then
+      env SU_TO_ROOT_SU=sux \
+        x-terminal-emulator -e su-to-root -p "$PRIV" -c "$COMMAND"  
   # As a last resort, open a new x-terminal-emulator and prompt for the password
   # Do not use -X here!
     else
