@@ -7,6 +7,11 @@ menu (2.1.9-2) unstable; urgency=low
     i18n'ed. Translators should now start translating menu.pot in po/.
     Closes: #200072
     - Added Danish translation of the above.
+    - Add menu sections Games/Simulation and Apps/Education to
+    menu-section.pot.
+  * Add menu sections Games/Simulation and Apps/Education to menu.sgml and
+    menufile.5.
+  * Bump Standards-Version to 3.6.0.
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 27 Jun 2003 23:14:48 +0200
 
