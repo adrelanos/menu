@@ -17,7 +17,7 @@ menu (2.1.8-2) unstable; urgency=low
     instead of $title, $icon and hard-coded call to x-terminal-emulator,
     so that user can configure the behaviour in menu.h.
 
- -- Bill Allombert <ballombe@debian.org>  Fri, 18 Apr 2003 22:29:38 +0200
+ -- Bill Allombert <ballombe@debian.org>  Fri, 23 May 2003 00:08:40 +0200
 
 menu (2.1.8-1) unstable; urgency=low
 
