@@ -640,16 +640,8 @@ methodinfo::methodinfo(parsestream &i)
   if (outputenc.empty() || outputenc == "LOCALE")
       outputenc = nl_langinfo(CODESET);
   
-  check_vars();
-}
-
-void methodinfo::check_vars()
-{
-  if(!(genmenu && startmenu && endmenu)) {
-    /* don't translate genmenu, startmenu, endmenu and don't change \"\" */
-    cerr << _("install-menu: At least one of genmenu, startmenu, endmenu\n"
-        "is undefined. All of these have to be defined \n"
-        "(although they may be equal to \"\").\n");
+  if (!genmenu) {
+    cerr << String::compose(_("install-menu: %1 must be defined in menu-method %2"), "genmenu", i.filename());
     throw informed_fatal();
   }
 }

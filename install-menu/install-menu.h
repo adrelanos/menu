@@ -145,7 +145,6 @@ class methodinfo {
   std::string compt, rcf, exrcf, roots, mainmt, treew, outputenc;
   std::string preout, postout;
 
-  void check_vars();
 public:
   methodinfo(parsestream &);
 
