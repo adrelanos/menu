@@ -103,7 +103,7 @@ class unknown_cond_package : public except_pi_string {
 public:
   unknown_cond_package(parsestream *p, string s) : except_pi_string(p,s) { }
   string message() {
-    return String::compose(_("Unknown install condition \"%1\" (currently, only \"package\" is supported)"), msg);
+    return String::compose(_("Unknown install condition \"%1\" (currently, only \"package\" is supported)."), msg);
   }
 };
 
@@ -113,7 +113,7 @@ class pipeerror_read : public except_string {
 public:
   pipeerror_read(std::string s) : except_string(s) { }
   std::string message() {
-    return String::compose(_("Failed to pipe data through \"%1\" (pipe opened for reading)"), msg);
+    return String::compose(_("Failed to pipe data through \"%1\" (pipe opened for reading)."), msg);
   }
 };  // pipe open for reading failed
 
@@ -122,7 +122,7 @@ class missing_tag : public except_string {
 public:
   missing_tag(std::string f, std::string s) : except_string(s), file(f) { }
   std::string message() {
-    return String::compose(_("%1: Missing required tag: \"%2\""), file, msg);
+    return String::compose(_("%1: Missing required tag: \"%2\"."), file, msg);
   }
 };
 

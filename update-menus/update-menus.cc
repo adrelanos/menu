@@ -190,7 +190,7 @@ void menuentry::output(vector<string> &s)
     }
   }
   t += '\n';
-  config.report(String::compose(_("ADDING: %1"), t), configinfo::report_debug);
+  config.report(String::compose("ADDING: %1", t), configinfo::report_debug);
   s.push_back(t);
 }
 
@@ -307,7 +307,7 @@ void configinfo::report(const string &message, verbosity_type v)
 
 bool trans_class::check(string &s)
 {
-  config.report(String::compose(_("Checking that %1 < %2"), match, s), configinfo::report_debug);
+  config.report(String::compose("Checking that %1 < %2", match, s), configinfo::report_debug);
   return contains(match, s, 0);
 }
 
@@ -340,7 +340,7 @@ void substitute::process(menuentry &m, const string &v){
 translateinfo::translateinfo(const string &filename)
 {
   try {
-    config.report(String::compose(_("Attempting to open %1..."), filename),
+    config.report(String::compose("Attempting to open %1...", filename),
         configinfo::report_debug);
     parsestream i(filename);
 
@@ -350,7 +350,7 @@ translateinfo::translateinfo(const string &filename)
       menu entries automatically. It does not refer to the localisation
       (translation to other languages).
      */
-    config.report(String::compose(_("Reading translation rules in %1"), i.filename()),
+    config.report(String::compose(_("Reading translation rules in %1."), i.filename()),
         configinfo::report_verbose);
     while (true)
     {
@@ -392,7 +392,7 @@ translateinfo::translateinfo(const string &filename)
 
         std::pair<const string, trans_class *> p(match,trcl);
 
-        config.report(String::compose(_("Adding translation rule: [%1]%2"), p.first, trcl->debuginfo()),
+        config.report(String::compose("Adding translation rule: [%1]%2", p.first, trcl->debuginfo()),
             configinfo::report_debug);
         trans[match_var].insert(p);
         i.skip_line();
@@ -400,7 +400,7 @@ translateinfo::translateinfo(const string &filename)
     }
   }
   catch(endoffile p) {
-    config.report(_("End reading translation rules"), configinfo::report_debug);
+    config.report("End reading translation rules", configinfo::report_debug);
   }
 
 }
@@ -417,7 +417,7 @@ void translateinfo::process(menuentry &m)
     if ((j == i->second.end()) || ((j != i->second.begin()) && (j->first != *match)))
         j--;
     do {
-      config.report(String::compose(_("Translation: var[%1] testing translation rule match for: %2"),*match,j->first), configinfo::report_debug);
+      config.report(String::compose("Translation: var[%1] testing translation rule match for: %2",*match,j->first), configinfo::report_debug);
       j->second->process(m,*match);
       j++;
     } while ((j != i->second.end()) && j->second->check(*match));
@@ -430,7 +430,7 @@ void translateinfo::debuginfo()
   trans_map::const_iterator j;
   for(i = trans.begin(); i != trans.end(); ++i)
   {
-    config.report(String::compose(_("Translation: [%1]"),(*i).first), configinfo::report_debug);
+    config.report(String::compose("Translation: [%1]",(*i).first), configinfo::report_debug);
     for (j = i->second.begin(); j != i->second.end(); ++j)
         config.report(string("key=")+(*j).first+(*j).second->debuginfo()+'\n',
             configinfo::report_debug);
@@ -469,7 +469,7 @@ void read_pkginfo()
 void read_menufile(const string &filename, const string &shortfilename,
                    vector<string> &menudata)
 {
-  config.report(String::compose(_("Reading menuentryfile %1"), filename), configinfo::report_debug);
+  config.report(String::compose("Reading menu-entry file %1", filename), configinfo::report_debug);
 
   parsestream *ps = 0;
   std::stringstream *sstream = 0;
@@ -497,7 +497,10 @@ void read_menufile(const string &filename, const string &shortfilename,
       try {
         ps = new parsestream(*sstream);
       } catch (endoffile d) {
-        cerr << String::compose(_("Error (or no input available from stdout) while executing %1. Note that it is a _feature_ of menu that it executes menuentryfiles that have the executable bit set. See the documentation.\n"), filename);
+        cerr << String::compose(_("Error (or no input available from stdout) "
+        "while executing %1. Note that it is a _feature_ of menu that it "
+        "executes menu-entry files that have the executable bit set. See the "
+        "documentation.\n"), filename);
         throw endoffile(d);
       }
     } else {
@@ -556,7 +559,7 @@ void read_menufilesdir(vector<string> &menudata)
   {
     int count = menudata.size();
     string dirname = *method_i;
-    config.report(String::compose(_("Reading menuentryfiles in %1"), dirname),
+    config.report(String::compose(_("Reading menu-entry files in %1."), dirname),
         configinfo::report_verbose);
     try {
       struct dirent *entry;
@@ -579,12 +582,12 @@ void read_menufilesdir(vector<string> &menudata)
                     read_menufile(name,entry->d_name, menudata);
               }
               catch (endofline p) {
-                cerr << String::compose(_("Error reading %1\n"), name);
+                cerr << String::compose(_("Error reading %1.\n"), name);
               }
             }
       }
     } catch (dir_error_read p) { }
-    config.report(String::compose(_("%1 menu entries found (%2 total)"), menudata.size() - count, menudata.size()), configinfo::report_verbose);
+    config.report(String::compose(_("%1 menu entries found (%2 total)."), menudata.size() - count, menudata.size()), configinfo::report_verbose);
   }
 }
 
@@ -595,10 +598,10 @@ void run_menumethod(string methodname, const vector<string> &menudata)
   pid_t child, r;
   int status;
 
-  config.report(String::compose(_("Running method: %1"), methodname), configinfo::report_verbose);
+  config.report(String::compose(_("Running method: %1."), methodname), configinfo::report_verbose);
 
   if (pipe(fds) == -1) {
-      config.report(_("Cannot create pipe"), configinfo::report_quiet);
+      config.report(_("Cannot create pipe."), configinfo::report_quiet);
       exit(1);
   }
 
@@ -650,7 +653,7 @@ void run_menumethoddir(const string &dirname, const vector<string> &menudata)
   struct dirent *entry;
   char *s, tmp[MAX_LINE];
 
-  config.report(String::compose(_("Running menu-methods in %1"), dirname), configinfo::report_verbose);
+  config.report(String::compose(_("Running menu-methods in %1."), dirname), configinfo::report_verbose);
   DIR *dir = open_dir_check(dirname);
   while ((entry = readdir (dir)) != NULL) {
     if (!strcmp(entry->d_name, "README") || !strcmp(entry->d_name, "core"))
@@ -712,7 +715,7 @@ void remove_lock()
 {
   if (!getuid()){
     if (unlink(UPMEN_LOCKFILE))
-      config.report(String::compose(_("Cannot remove lockfile %1"), UPMEN_LOCKFILE),
+      config.report(String::compose(_("Cannot remove lockfile %1."), UPMEN_LOCKFILE),
           configinfo::report_normal);
   }
 }
@@ -808,10 +811,10 @@ void wait_dpkg(string &stdoutfile)
       r = create_lock();
       if (r) {
         stdoutfile = string("/tmp/update-menus.")+itostring(getpid());
-        config.report(String::compose(_("Waiting for dpkg to finish (forking to background)\n"
+        config.report(String::compose(_("Waiting for dpkg to finish (forking to background).\n"
             "(checking %1)"), DPKG_LOCKFILE),
             configinfo::report_normal);
-        config.report(String::compose(_("Further output (if any) will appear in %1"), stdoutfile),
+        config.report(String::compose(_("Further output (if any) will appear in %1."), stdoutfile),
             configinfo::report_normal);
         // Close all fd's except the lock fd, for daemon mode.
         for (i=0;i<32;i++) {
@@ -833,7 +836,7 @@ void wait_dpkg(string &stdoutfile)
     if (!r)
         exit(1);
 
-    config.report(_("Dpkg not locking dpkg status area. Good."),
+    config.report(_("Dpkg is not locking dpkg status area, good."),
         configinfo::report_verbose);
   }
 }
@@ -855,7 +858,7 @@ void parse_params(char **argv)
       if(*argv) {
           config.menufilesdir.push_back(*argv);
       } else {
-        cerr<< _("directory expected after --menufilesdir option\n");
+        cerr<< _("Directory is expected after --menufilesdir option.\n");
         throw informed_fatal();
       }
     }
@@ -864,7 +867,7 @@ void parse_params(char **argv)
       if(*argv) {
           config.menumethod = *argv;
       } else {
-        cerr << _("filename expected after --menumethod option\n");
+        cerr << _("Filename is expected after --menumethod option.\n");
         throw informed_fatal();
       }
     }
@@ -872,13 +875,13 @@ void parse_params(char **argv)
       cerr <<
           _("update-menus: update the various window-manager config files (and\n"
               "  dwww, and pdmenu) Usage: update-menus [options] \n"
-              "    -v  Be verbose about what is going on\n"
-              "    -d  Debugging (loads of unintelligible output)\n"
-              "    -h, --help This message\n"
-              "    --menufiledir <dir> Add <dir> to the lists of menu directories to search\n"
-              "    --menumethod  <method> Run only the menu method <method>\n"
-              "    --nodefaultdirs Disables the use of all the standard menu directories\n"
-              "    --stdout Output menu list in format suitable for piping to install-menu\n");
+              "    -v  Be verbose about what is going on.\n"
+              "    -d  Output debugging messages.\n"
+              "    -h, --help This message.\n"
+              "    --menufiledir <dir> Add <dir> to the lists of menu directories to search.\n"
+              "    --menumethod  <method> Run only the menu method <method>.\n"
+              "    --nodefaultdirs Disables the use of all the standard menu directories.\n"
+              "    --stdout Output menu list in format suitable for piping to install-menu.\n");
       exit(1);
     }
   }
