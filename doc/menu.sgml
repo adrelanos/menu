@@ -1265,7 +1265,7 @@ and "submenutitle=" are interpreted as follows:
 
 <tag> esc($arg1,$arg2) <item>
      Print $arg1, but escape all occurrences of characters in $arg2
-     with a \. (thus, if arg1="hello", arg2="lo", print "he\l\l\o").
+     with a '\' (thus, if arg1="hello", arg2="lo", print "he\l\l\o").
 
 <tag> escwith($arg1, $arg2, $arg3) <item>
      Same as esc, but use $arg3 as escape sequence.
