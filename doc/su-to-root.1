@@ -14,24 +14,34 @@
 ..
 .TH  su-to-root 1 "20 October 1998" "Debian Project" "Debian GNU/Linux manual"
 .SH NAME
-su-to-root \- A simple script to give an `interactive' front end to su.
+su-to-root \- A simple script to give an `interactive' front-end to su.
 It can be used in menu entry commands to ask for the root password
 .SH SYNOPSIS
-.B su-to-root [\-p <user>] \-c <command>
+.B su-to-root [-X] [\-p <user>] \-c <command>
 .SH DESCRIPTION
 Most menu entries simply start an editor or a game or whatever. But
 some menu entries would like to give the user the ability to change
 important settings in the system, that require root privileges. 
 .B su-to-root
 can be used to ask for the root password.
-
+.SH OPTIONS
+.IP -c <command>
+The command to execute as a string. This option is mandatory.
+.IP -p <user>
+The name of the user to su to, instead of root.
+.IP -X
+The command is a X11 program that do not require a terminal.
+This is to be used with menu entries that declare needs="X11".
 .SH COPYING
 .B su-to-root
 is distributed under the GNU General Public License.
 (GPL 2.0 or greater).
-.SH AUTHOR
-joost witteveen
+.SH AUTHORS
+Joost Witteveen
 .RI <joostje@debian.org>
+.P
+X11 support by Morten Brix Pedersen and Bill Allombert
+.RI <ballombe@debian.org>
 .SH "SEE ALSO"
 .BR update-menus (1),
 .BR menufile (5),

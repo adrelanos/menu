@@ -2,30 +2,26 @@
 
 PRIV=root
 COMMAND=
-
+NEEDS=text
 
 eusername () {
    getent passwd $1 | cut -f1 -d:
 }
 
 usage () {
-  echo usage: $0 '[-p <user>] -c <command>' >&2
+  echo usage: $0 '[-X] [-p <user>] -c <command>' >&2
+  echo '-X: command is a X11 program' >&2
   exit 1
 }
 
-#with getopt I cannot get multi-word commands to work (like -c "ls -al").
-#
-#set -- `getopt p:c: "$@"`
-#if test $? != 0; then
-#    echo 'Usage: ...'
-#  exit 2
-#fi
 for i in "$@"; do
    case "$prev" in
      -p)
        PRIV="$i";;
      -c)
        COMMAND="$i";;
+     -X) 
+       NEEDS="X11";;
    esac
    prev="$i"
 done
@@ -35,19 +31,33 @@ if [ -z "$COMMAND" ] ; then
 fi
 
 euid=$(id -u)
-eus=$(eusername $euid)
-if test $euid -eq 0 -o $eus = $PRIV; then
+privid=$(id -u $PRIV)
+if test "$euid" = "$privid"; then
   $COMMAND
 else
-  echo About to execute $COMMAND. 
-  echo This command needs $PRIV privileges to be executed.
-  echo enter $PRIV passwd:
-  while ! su $PRIV -p -c "$COMMAND"; do
-    echo -n 'Incorrect password. Try again? (y/n)'
-    read ans
-    if test "$ans" != "y" -a "$ans" != "Y"; then
-      exit 1
+  case $NEEDS in
+  text)
+    if test "$euid" != 0; then
+      echo About to execute $COMMAND. 
+      echo This command needs $PRIV privileges to be executed.
+      echo enter $PRIV passwd:
     fi
-  done  
+    while ! su "$PRIV" -p -c "$COMMAND"; do
+      echo -n 'Incorrect password or command failed. Try again? (y/n)'
+      read ans
+      if test "$ans" != "y" -a "$ans" != "Y"; then
+        exit 1
+      fi
+    done;;
+  X11)
+    if which gksu >/dev/null 2>&1 ; then
+      gksu -u "$PRIV" "$COMMAND"
+    elif which kdesu >/dev/null 2>&1 ; then 
+      kdesu -u "$PRIV" "$COMMAND"
+  # As a last resort, open a new x-terminal-emulator and prompt for the password
+  # Do not use -X here!
+    else
+      x-terminal-emulator -e su-to-root -p "$PRIV" -c "$COMMAND"
+    fi;;
+  esac
 fi
-    
