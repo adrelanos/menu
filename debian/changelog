@@ -1,6 +1,6 @@
-menu (2.1.8-3) unstable; urgency=low
+menu (2.1.9-1) unstable; urgency=low
 
-  * The "not yet released" release. 
+  * The "And no, I'm not accepting job offers" release. 
   * Change contact address to `menu@packages.debian.org'.
   * doc/menufile.5: Update list of menu sections.
   * default/bash: removed. Thanks Matthias Klose.
@@ -17,7 +17,7 @@ menu (2.1.8-3) unstable; urgency=low
     - menu-methods can now define the charset/encoding which the outputted
     section names should be in by using the outputencoding variable.
 
- -- Bill Allombert <ballombe@debian.org>  Fri, 23 May 2003 20:51:13 +0200
+ -- Bill Allombert <ballombe@debian.org>  Thu, 26 Jun 2003 22:25:08 +0200
 
 menu (2.1.8-2) unstable; urgency=low
 
