@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: menu-section 2.1.7-2\n"
 "POT-Creation-Date: 2003-04-03 12:14+0100\n"
-"PO-Revision-Date: 2003-07-11 01:03+0200\n"
+"PO-Revision-Date: 2003-12-31 18:40:41+0100\n"
 "Last-Translator: Jean-Philippe Guérard <jean-philippe.guerard@laposte.net>\n"
-"Language-Team: Debien-l10n-French <debian-l10n-french@lists.debian.org>\n"
+"Language-Team: Debian-l10n-French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,13 +27,13 @@ msgid "Editors"
 msgstr "Éditeurs"
 #
 msgid "Education"
-msgstr "Éducatifs"
+msgstr "Apprentissage"
 #
 msgid "Emulators"
 msgstr "Émulateurs"
 #
 msgid "Graphics"
-msgstr "Dessin et image"
+msgstr "Image"
 #
 # cf. http://www.ref-union.org/promotion/19.php
 msgid "Hamradio"
@@ -49,7 +49,7 @@ msgid "Programming"
 msgstr "Programmation"
 #
 msgid "Science"
-msgstr "Scientifiques"
+msgstr "Sciences"
 #
 msgid "Tools"
 msgstr "Petits outils"
@@ -64,13 +64,13 @@ msgid "Shells"
 msgstr "Interpréteurs de commandes"
 #
 msgid "Sound"
-msgstr "Musique et son"
+msgstr "Son"
 #
 msgid "Viewers"
 msgstr "Visionneurs"
 #
 msgid "System"
-msgstr "Utilitaires système"
+msgstr "Outils système"
 #
 msgid "Games"
 msgstr "Jeux"
@@ -115,10 +115,10 @@ msgid "Lock"
 msgstr "Verrouillage"
 #
 msgid "Save"
-msgstr "Écrans de veille"
+msgstr "Veille"
 #
 msgid "Root-window"
-msgstr "Fonds"
+msgstr "Fonds d'écran"
 #
 msgid "WindowManagers"
 msgstr "Gestionnaires de fenêtres"
@@ -129,5 +129,22 @@ msgstr "Modules"
 msgid "XShells"
 msgstr "Terminaux graphiques"
 #
+# From Apps/System/Admin
+msgid "Admin"
+msgstr "Administration"
+#
+# Non official sections from WindowMaker
+msgid "Appearance"
+msgstr "Apparence"
+#
 msgid "WorkSpace"
 msgstr "Espace de travail"
+#
+# Frequently used unofficial sections.
+# From Apps/Net/Mozilla Components
+msgid "Mozilla Components"
+msgstr "Composants Mozilla"
+#
+# From Games/Toys/Teddies
+msgid "Teddies"
+msgstr "Peluches"
