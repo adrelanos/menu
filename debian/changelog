@@ -28,10 +28,11 @@ menu (2.1.11) unstable; urgency=low
     translation. Thanks Goto Masanori.
   * Update Dutch menu messages translation. Closes: #239324. 
     Thanks Tim Dijkstra.
+  * Add French menu messages translation. Thanks Jean-Luc Coulon.
   * Jens Arvidsson:
     - Add Swedish menu messages and sections translation. 
 
- -- Bill Allombert <ballombe@debian.org>  Fri, 26 Mar 2004 19:49:28 +0100
+ -- Bill Allombert <ballombe@debian.org>  Tue,  6 Apr 2004 00:38:55 +0200
 
 menu (2.1.10-1) unstable; urgency=low
 
