@@ -198,9 +198,9 @@ ostream &menuentry::debugoutput(ostream &o)
 {
   std::map<string, string>::const_iterator i;
 
-  o << "MENUENTRY:" << endl;
+  o << _("Menu entry:\n");
   for (i = data.begin(); i != data.end(); ++i)
-      o << "  data[" << i->first << "]=" << i->second << endl;
+      o << _("  data[%1]=%2\n"),i->first,i->second;
   return o;
 }
 
@@ -289,10 +289,10 @@ void configinfo::report(const string &message, verbosity_type v)
   if(v <= verbosity) {
     switch(method) {
     case method_stdout:
-      cout << "update-menus[" << getpid() << "]: " << message << endl;
+      cout << String::compose("update-menus[%1]: %2\n",getpid(),message);
       break;
     case method_stderr:
-      cerr << "update-menus[" << getpid() << "]: " << message << endl;
+      cerr << String::compose("update-menus[%1]: %2\n",getpid(),message);
       break;
     case method_syslog:
       openlog("update-menus",LOG_PID,syslog_facility);
@@ -340,13 +340,17 @@ void substitute::process(menuentry &m, const string &v){
 translateinfo::translateinfo(const string &filename)
 {
   try {
-    config.report(String::compose(_("Attempting to open %1.. "), filename),
+    config.report(String::compose(_("Attempting to open %1..."), filename),
         configinfo::report_debug);
     parsestream i(filename);
 
     Regex ident("[a-zA-Z_][a-zA-Z0-9_]*");
-
-    config.report(String::compose(_("Reading translate info in %1"), i.filename()),
+    /*Translation here and below refer to the file 
+      /etc/menu-methods/translate_menus that allow to rename and reorganize
+      menu entries automatically. It does not refer to the localisation
+      (translation to other languages).
+     */
+    config.report(String::compose(_("Reading translation rules in %1"), i.filename()),
         configinfo::report_verbose);
     while (true)
     {
@@ -388,7 +392,7 @@ translateinfo::translateinfo(const string &filename)
 
         std::pair<const string, trans_class *> p(match,trcl);
 
-        config.report(String::compose(_("Adding translate rule: [%1]%2"), p.first, trcl->debuginfo()),
+        config.report(String::compose(_("Adding translation rule: [%1]%2"), p.first, trcl->debuginfo()),
             configinfo::report_debug);
         trans[match_var].insert(p);
         i.skip_line();
@@ -396,7 +400,7 @@ translateinfo::translateinfo(const string &filename)
     }
   }
   catch(endoffile p) {
-    config.report(_("End reading translate info"), configinfo::report_debug);
+    config.report(_("End reading translation rules"), configinfo::report_debug);
   }
 
 }
@@ -413,8 +417,7 @@ void translateinfo::process(menuentry &m)
     if ((j == i->second.end()) || ((j != i->second.begin()) && (j->first != *match)))
         j--;
     do {
-      config.report(string("translate: var[")+*match+"]"+
-          " testing trans rule match for:"+ j->first, configinfo::report_debug);
+      config.report(String::compose(_("Translation: var[%1] testing translation rule match for: %2"),*match,j->first), configinfo::report_debug);
       j->second->process(m,*match);
       j++;
     } while ((j != i->second.end()) && j->second->check(*match));
@@ -427,7 +430,7 @@ void translateinfo::debuginfo()
   trans_map::const_iterator j;
   for(i = trans.begin(); i != trans.end(); ++i)
   {
-    config.report(string("TRANS: [")+(*i).first+"]", configinfo::report_debug);
+    config.report(String::compose(_("Translation: [%1]"),(*i).first), configinfo::report_debug);
     for (j = i->second.begin(); j != i->second.end(); ++j)
         config.report(string("key=")+(*j).first+(*j).second->debuginfo()+'\n',
             configinfo::report_debug);
@@ -447,7 +450,7 @@ void read_pkginfo()
   if (!status)
     throw pipeerror_read(pkgs);
 
-  config.report(_("Reading installed packages..."),
+  config.report(_("Reading installed packages list..."),
                   configinfo::report_verbose);
 
   while (!feof(status))
@@ -500,11 +503,11 @@ void read_menufile(const string &filename, const string &shortfilename,
   catch (endoffile p) { }
   catch (missing_tag& exc) {
     std::cerr << exc.message() << std::endl;
-    std::cerr << _("Skipping file because of errors...") << std::endl;
+    std::cerr << _("Skipping file because of errors...\n");
   }
   catch (except_pi& exc) {
     exc.report();
-    std::cerr << _("Skipping file because of errors...") << std::endl;
+    std::cerr << _("Skipping file because of errors...\n");
   }
 
   delete ps;
@@ -541,7 +544,7 @@ void read_menufilesdir(vector<string> &menudata)
                     read_menufile(name,entry->d_name, menudata);
               }
               catch (endofline p) {
-                cerr << String::compose(_("Error reading %1"), name) << endl;
+                cerr << String::compose(_("Error reading %1\n"), name);
               }
             }
       }
@@ -817,7 +820,7 @@ void parse_params(char **argv)
       if(*argv) {
           config.menufilesdir.push_back(*argv);
       } else {
-        cerr<< _("directory expected after --menufilesdir option") << endl;
+        cerr<< _("directory expected after --menufilesdir option\n");
         throw informed_fatal();
       }
     }
@@ -826,7 +829,7 @@ void parse_params(char **argv)
       if(*argv) {
           config.menumethod = *argv;
       } else {
-        cerr << _("filename expected after --menumethod option") << endl;
+        cerr << _("filename expected after --menumethod option\n");
         throw informed_fatal();
       }
     }
