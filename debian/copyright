@@ -4,7 +4,12 @@ Witteveen <joostje@debian.org>.
 The original source can always be found at:
 	ftp://ftp.debian.org/dists/unstable/main/source/
 
-Copyright (C) 1996-99  Joost Witteveen
+This software is developed at: 
+        http://alioth.debian.org/projects/menu
+
+Copyright (C) 1996-2003  Joost Witteveen, 
+Modifications:
+Copyright (C) 2002-2003  Bill Allombert and Morten Brix Pedersen.
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
