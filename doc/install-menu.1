@@ -29,15 +29,15 @@ window-manager startup files that contain the Debian Menu structure.
 .B install-menu
 is written to facilitate this task. For more information, see the menu
 documentation (see below).
-
-.SH BUGS
-Once processing starts, and translation in various languages is
-requested, error messages will be printed in a `random' language. This
-is due to the fact that it doesn't seem possible to locally change the
-language with GNU gettext. Fortunately nearly all errors are reported
-before processing starts, so usually the messages are reported in the
-current LANGUAGE.
-
+.SH SYNOPSIS
+.B install-menu [-vh] <menu-method>
+  Read menuentries from stdin in \fIupdate-menus --stdout\fP format
+    and generate menu files using the specified menu-method.
+.SH OPTIONS
+.IP "-h,--help" 
+Show the help message and exit.
+.IP "-v,--verbose" 
+Be verbose
 .SH COPYING
 .B install-menu
 is distributed under the GNU General Public License.
@@ -45,7 +45,6 @@ is distributed under the GNU General Public License.
 .SH AUTHOR
 joost witteveen
 .RI <joostje@debian.org>
-less
 .SH "SEE ALSO"
 .BR update-menus (1),
 .BR menufile (5),
