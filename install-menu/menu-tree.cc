@@ -38,50 +38,56 @@ using std::list;
 using std::set;
 using std::map;
 
+/** Return prioritized string of useful shortcut keys
+ *
+ * As input takes a string, usually a menu entry title, and then parses it
+ * and returns the best possible characters for a shortcut key.
+ *
+ */
 string sort_hotkey(const string& str)
 {
-  string t;
-  string::size_type i;
-  string::size_type l = str.length();
+  string keys;
+  string::size_type size = str.length();
   char *s = strdup(str.c_str());
 
   if (str.empty())
-      return t;
+      return keys;
 
-  t = s[0];
+  keys = s[0];
   s[0] = '\0';
-  for (i=1; i!=l ;i++)
+  // Adds all uppercase letters which appears after a space or punctation
+  // mark.
+  for (string::size_type i = 1; i != size; ++i)
     if ((isspace(s[i-1]) || ispunct(s[i-1])) && isupper(s[i])) {
-      t += s[i];
+      keys += s[i];
       s[i] = '\0';
     }
-  for (i=1; i!=l; i++)
+  // Adds letters or digit which appears after a space or punctation mark.
+  for (string::size_type i = 1; i != size; ++i)
     if ((isspace(s[i-1]) || ispunct(s[i-1])) && isalnum(s[i])) {
-      t += s[i];
+      keys += s[i];
       s[i] = '\0';
     }
-  for (i=1; i!=l; i++)
+  // Adds uppercase letters.
+  for (string::size_type i = 1; i != size; ++i)
     if (isupper(s[i])) {
-      t += s[i];
+      keys += s[i];
       s[i] = '\0';
     }
-  for (i=1; i!=l; i++)
+  // Adds letters.
+  for (string::size_type i = 1; i != size; ++i)
     if (isalpha(s[i])) {
-      t += s[i];
+      keys += s[i];
       s[i] = '\0';
     }
-  for (i=1; i!=l; i++)
+  // Adds letters and digits.
+  for (string::size_type i = 1; i != size; ++i)
     if (isalnum(s[i])) {
-      t += s[i];
-      s[i] = '\0';
-    }
-  for (i=1; i!=l; i++)
-    if (s[i]) {
-      t += s[i];
+      keys += s[i];
       s[i] = '\0';
     }
   free(s);
-  return t;
+  return keys;
 }
 
 /** Adds a new entry in the menu hierarchy.

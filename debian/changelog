@@ -1,6 +1,9 @@
 menu (2.1.18) unstable; urgency=low
 
   * The "unreleased" release 
+  * Morten Brix Pedersen:
+    - Fix parsing of translate_menus file. Closes: #271659
+    - Only use letters and digits as possible shortcut keys. Closes: #259349
 
  -- Bill Allombert <ballombe@debian.org>  Sat, 25 Sep 2004 15:06:51 +0200
 
