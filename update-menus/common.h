@@ -28,8 +28,6 @@ const int MAX_LINE = 10240;
 //conditionals in the menuentry files (like "package(vi)")
 #define COND_PACKAGE "package"
 
-#define COMPAT_MODE  "menu-1"
-
 #define CONFIGMENUS     "/etc/menu/"
 #define PACKAGEMENUSLIB "/usr/lib/menu/"
 #define PACKAGEMENUS    "/usr/share/menu/"
