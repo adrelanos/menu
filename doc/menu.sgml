@@ -455,27 +455,33 @@ to use the following configurable functions :
 
 Good examples for these scripts for nearly all Debian window managers
 are included in the <tt/menu/ package in
-<tt>/usr/share/doc/menu/examples</>. Note that while working on your script,
+<tt>/usr/share/doc/menu/examples</tt>. Note that while working on your script,
 you can use the tricks described in "The internals of the Menu
 package", section "The update-menus program", to run just your script,
 instead of having update-menus run all scripts (can save quite a lot
 of time).
 <p>
 
-Run <prgn/update-menus/ (if it exists) in your <tt/postinst/ script,
-and remove the execute bit from the <tt>/etc/menu-methods/</> script
-in the <tt/postrm/ when called with option ``remove.'' The
-wm-menu-config script is provided to make all this easier:
+This script should not be executable in the package. Instead
+the <tt/postinst/ should add the execute bit and then run
+<prgn/update-menus/ (if it is executable).
+<p>
+
+Similarly, the <tt/postrm/ script when called with option ``remove'' should
+remove the execute bit and run <prgn/update-menus/ (if it is executable).
 <p>
 
 Here is an example of such a <tt/postrm/ script using <prgn/sh/:
 <example>
   #!/bin/sh
   set -e
-  wm=twm  #or pdmenu, fvwm, ... whatever manager you're installing
+  inst=/etc/menu-methods/#PACKAGE#
   case "$1" in
      remove)
-         if test -x /usr/sbin/wm-menu-config; then wm-menu-config $wm off;fi
+        if [ -f $inst ]; then
+                chmod a-x $inst
+                if [ -x /usr/bin/update-menus ]; then update-menus ; fi
+        fi
      ;;
      purge)
          #remove the files that install-menu creates:
@@ -493,12 +499,26 @@ And here is a good example for a <tt/postinst/ script:
 <example>
   #!/bin/sh
   set -e
-  wm=pdmenu #or fvwm, ... whatever manager you're installing
-
-  if test -x /usr/sbin/wm-menu-config; then wm-menu-config $wm on;fi
+  inst=/etc/menu-methods/#PACKAGE#
+  if [ -f $inst ]; then
+      chmod a+x $inst
+      if [ -x /usr/bin/update-menus ]; then
+          update-menus
+      fi
+  fi
 </example>
-
-
+<p>
+<var>Note:</var>
+<p>
+<var>
+ Previous version of menu were advertising the script
+ <tt>/usr/sbin/wm-menu-config</tt>. There was a flaw: this script
+ was only available when menu is installed and so the menu-method
+ script was not executable if menu was installed afterward.
+ </var><p><var>
+ This script is considered deprecated, please don't use it anymore.
+ </var>
+<p>
 Please, do not make your package <em/depend/ on the menu package! The
 preferred way of telling dpkg that your wm can cooperate with menu is:
 <example>
@@ -738,8 +758,13 @@ For examples of what these scripts can look like, see
 <taglist>
 <tag><tt/compat="menu-1"/
 <item>
-Should always be "menu-1". Please, make this the first non-comment
-line in the script.
+Two mode are defined:
+<taglist>
+<tag> <tt/"menu-1"/ <item> menu directives are terminated by an end-of-line character. </item>
+<tag> <tt/"menu-2"/ <item>menu directives are terminated by semi-comma character. </item>
+</taglist>
+This must be just after the <tt>!include "menu.h"</tt> directive so that
+<file>menu.h</file> can use its own compat mode.
 
 <tag><tt/outputencoding="LOCALE"/
 <item> Set the encoding used for output files. Use <tt/iconv --list/
@@ -842,6 +867,8 @@ install-menu to also load anoter binary, and generate the output.
 <item>
 If onlyrunasroot is set to true, menu will quit silently when run as
 user. Similarly for onlyrunasuser.
+<var>This is deprecated since it is simpler to just not define
+<tt/userprefix/ (resp. <tt/rootprefix/).</var>
 
 <tag><tt>preoutput="#Automatically generated file. Do not edit (see /usr/share/doc/menu/html)\n\n"</tt>
 <tag><tt>postoutput=""</tt>
@@ -924,7 +951,8 @@ file. In that case, make <tt/rcfile=system.rc"$wm"/.
 <tag><tt/rootprefix=""/
 <item>
 The prefix to use when running as root (applies to $genmenu, $rcfile,
-$examplercfile  and other old cache files)
+$examplercfile  and other old cache files). If it is not defined,
+the menu-method will be skipped when run as root.
 
 <p>
 <tag><tt/userprefix=""/
