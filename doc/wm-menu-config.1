@@ -1,0 +1,35 @@
+.\" Process this file with
+.\" groff -man -Tascii foo.1
+.\"
+.\" "verbatim" environment (from strace.1)
+.de CW
+.sp
+.nf
+.ft CW
+..
+.de CE
+.ft
+.fi
+.sp
+..
+.TH  wm-menu-config 1 "20 October 1998" "Debian Project" "Debian GNU/Linux manual"
+.SH NAME
+wm-menu-config \- Should be called in maintainer postinst and postrm
+scripts of Debian packages that install window managers or other
+programs that read menus (like pdmenu).
+
+.SH DESCRIPTION
+For more information, see the menu documentation, 
+available in /usr/share/doc/menu.
+
+.SH COPYING
+.B wm-menu-config
+is distributed under the GNU General Public License.
+(GPL 2.0 or greater).
+.SH AUTHOR
+joost witteveen
+.RI <joostje@debian.org>
+.SH "SEE ALSO"
+.BR update-menus (1),
+.BR menufile (5),
+.BR /usr/share/doc/menu/html

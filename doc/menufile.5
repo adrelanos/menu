@@ -1,0 +1,179 @@
+.\" -*- nroff -*-
+.TH MENUFILE 5 "File Formats" "DEBIAN"
+.SH NAME
+menufile \- entry in the Debian menu system
+.SH SYNOPSIS
+.B ~/.menu/*
+.PP
+.B /etc/menu/*
+.PP
+.B /usr/lib/menu/*
+.PP
+.B /usr/share/menu/default/*
+.SH DESCRIPTION
+Menu files add entries to the Debian menu system. The system administrator can place
+menu files in /etc/menu/ to override menu files that packages add to
+/usr/lib/menu/ .  The user can place menu files in ~/.menu/ to override all
+other menu files.
+.PP
+This man page may be out of date in some
+places. Look at /usr/share/doc/menu/html for more up-to-date info.
+.PP
+The menu files are usually named after the Debian package that
+contains the programs listed in them. In it, you can list several
+"menu entries", that specify a specific item in the menu
+"menu entries", that specify a specific item in the menu
+structure. Each menu entry specifies what package it depends on, if
+that package is not installed, the menu entry will be ignored by
+.BR update-menus(1) .
+(In a menu entry you can specify pseudo-packages that start
+with "local.", update-menus will always use those menu entries).
+If you wish to remove an item from the menu entirely, make an empty menu
+file with the same name as the file you want to override.
+.SH Examples
+Dosemu could install the following menu file as /usr/lib/menu/dosemu:
+.PP                                                              
+ ?package(dosemu):needs=text section=Apps/Emulators title="Dosemu" command=dosemu
+ ?package(dosemu):needs=x11  section=Apps/Emulators title="Dosemu" command=xdos
+.PP
+The system administrator wants to override this file to change how dosemu is run, so
+/etc/menu/dosemu is created:
+.PP
+ ?package(dosemu):needs=text section=Apps/Emulators title="Dosemu" command="dosemu -A"
+ ?package(dosemu):needs=x11  section=Apps/Emulators title="Dosemu" command="xdos -A"
+.PP
+A user does not want Dosemu to appear on his menus at all, so he creates
+an empty file named ~/.menu/dosemu .
+.SH FORMAT
+A menu file consists of 0 or more lines of the following format:
+.RS
+.PP
+\fB?package(package-name):var1=value var2=varlue2 \fR ...
+.TP
+needs=
+What type of display will the program run on? This variable must be
+defined, and should be one of the
+following:
+.RS
+.TP
+needs=text
+any text display
+.TP
+needs=x11
+X11 displays
+.TP
+needs=vc
+At the Linux console (i.e.: svgalib programs)
+.TP
+needs=wm
+A window manager.
+.TP
+needs=fvwmmodule
+A fvwm version 1.x compatible module.
+.TP
+needs=fvwm2module
+A fvwm version 2.x compatible module.
+.RE
+.TP
+section
+The section in which the menu entry should appear. See \fBMENU LAYOUT\fP for
+preferred section names.
+.RS
+.RE
+.TP
+icon
+An icon for this menu entry. If no icon is available, just don't
+define this. (icon="none" is also possible, preferably just leave it out)
+.TP
+title
+The title of the program that will appear on the menus. Keep it short.
+If two menu entries share the same title and section, the one that
+bests fits the available display will be used. So in the example above
+with two menu entries that both have the menu id "title", if X is
+available, the X11 one will be used, otherwise the text one will be used.
+Must be defined.
+.TP
+command
+The command to be executed when this menu entry is selected.
+.TP
+hints
+A comma-separated list of hints on how grouping menu entries, see manual.
+.RE
+.SH "MENU LAYOUT"
+The \fBauthoritative\fP list of Debian's menu structure is maintained in the
+Debian Menu sub-policy document which is part of the Debian Policy package. The
+menu structure below is included only for convenience. Please do not put your
+packages into any other sections. 
+
+Use `/' to separate sub-menu names, for example, "Apps/Editors" or
+"Games/Arcade".
+.PP
+ \fIApps\fP            -- normal apps
+   \fIDatabases\fP     -- interactive database programs
+   \fIEditors\fP       -- editors
+   \fIEmulators\fP     -- Dosemu, ...
+   \fIGraphics\fP      -- image manipulation
+   \fIHamradio\fP      -- anything relating to ham radio.
+   \fIMath\fP          -- Math apps: gnuplot, octave, oleo,..
+   \fINet\fP           -- mail, news, web, irc, etc
+   \fIProgramming\fP   -- debuggers, etc
+   \fITools\fP         -- other tools: xclock, xmag, xman,
+   \fITechnical\fP     -- technical stuff.
+   \fIText\fP          -- text oriented tools other than editors.
+   \fIShells\fP        -- different shells, like bash, zsh, ...
+   \fISound\fP         -- sound players and editors
+   \fIViewers\fP       -- Picture viewers, gs, ...
+   \fISystem\fP        -- system administration and monitoring
+ \fIGames\fP           -- games and recreations
+   \fIAdventure\fP     -- walk around virtual space, zork, MOO's, ...
+   \fIArcade\fP        -- any game where reflexes count.
+   \fIBoard\fP         -- Like: Gnuchess, pente, gnugo
+   \fICard\fP          -- solitaire, etc
+   \fIPuzzles\fP       -- Stuff from xpuzzles, ...
+   \fISports\fP        -- Games derived from "real world" sports
+   \fITetris-like\fP   -- games involving falling blocks
+   \fIToys\fP          -- oneko, xeyes, etc...
+ \fIScreen\fP          -- programs that affect the whole screen
+   \fILock\fP          -- xlock, etc.
+   \fISave\fP          -- screen savers
+   \fIRoot-window\fP   -- things that fill the root window
+ \fIWindow-managers\fP -- (change between fvwm, afterstep, etc)
+   \fIModules\fP       -- fvwm modules, etc. 
+ \fIXShells\fP         -- shells (like xterm, rxvt, ...)
+.SH NOTES
+If you want to specify an icon or hotkey for a sub-menu (for example,
+the Editors sub-menu), just use the same syntax but leave the command
+empty:
+
+?package(mypackage):needs=X11 section=Apps icon=icon.xpm hotkey=E title="Editors"
+
+.PP
+Whenever any menu files are changed, you must run
+.BR update-menus (1)
+.SH FILES
+(Earlier listed files override later files with the same names.)
+.PP
+.I ~/.menus/*
+.RS
+Menu files added by the user.
+.RE
+.I /etc/menu/*
+.RS
+Menu files added by the system administrator.
+.RE
+.I /usr/lib/menu/*
+.RS
+Menu files provided by other Debian packages.
+.RE
+.I /usr/share/menu/default/*
+.RS
+Menu files provided by the menu package.
+.RE
+.SH AUTHOR 
+Joost Witteveen <joostje@debian.org>, based on work by 
+Lars Wirzenius <liw@iki.fi>
+.PP
+(Man page by Joey Hess, <joeyh@master.debian.org>)
+.SH "SEE ALSO"
+.BR update-menus (1),
+.BR /usr/share/doc/menu/html/index.html

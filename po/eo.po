@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1999-07-05 03:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: install-menu/install-menu.cc:42
+#, fuzzy
+msgid ""
+"menu-method: generate window-manager 'rc' files (or html docs)\n"
+"  menu-method gets the menuentries from standard in.\n"
+"  Options to menu-method:\n"
+"     -h --help : this message\n"
+"     -d --debug: show debug info\n"
+"     -showtime : show timeing information"
+msgstr ""
+"install-menu: konstruu 'rc' dosierojn por vindo-kontroliloj (aux html\\n\"\n"
+"dokumentoj). install-menu legas la menuan informon de stdin. Opcioj:\\n\"\n"
+"    -h --help: tio cxi mesagxo\\n\"\n"
+"    -d --debug: montru sencimigajn informojn (angle)\\n\"\n"
+"    -showtime: montru kiom longe dauxras la kreado\""
+
+#: install-menu/install-menu.cc:367
+msgid "Zero-size argument to print function"
+msgstr "Nul-granda argumento de print funkcio"
+
+#: install-menu/install-menu.cc:743
+msgid "Undefined "
+msgstr "Ne-definita "
+
+#: install-menu/install-menu.cc:747
+msgid "Unknown "
+msgstr "Nekonata "
+
+#: install-menu/install-menu.cc:808
+msgid "Parse error: String constant expected"
+msgstr "Eraro: Atendis stringon"
+
+#: install-menu/install-menu.cc:834
+msgid ""
+"Automatically generated file. Do not edit (see /usr/share/doc/menu/html/index.html)"
+msgstr ""
+"Auxtomate gxenerita dosiero. Ne sxangxu (vidu /usr/share/doc/menu/html/index.html)"
+
+#: install-menu/install-menu.cc:912
+#, fuzzy
+msgid "install-menus: hotkeycase can only be {,in}sensitive"
+msgstr "install-menus: hotkeycase nur povas esti {,in}sensitive"
+
+#: install-menu/install-menu.cc:948
+msgid ""
+"At least one of genmenu, startmenu, endmenu\n"
+"is undefined in the config file. All of these have to be \n"
+"defined (although they may be equal to \"\")"
+msgstr ""
+"Minimume unu el genmenu, startmenu, endmenu\\n\n"
+"ne estas definita en la konfiga dosiero. Ili Cxiuj devas esti\\n\n"
+"definiitaj (kvankam ili rajtas esti definiitaj kiel \"\""
+
+#: install-menu/install-menu.cc:1060 install-menu/install-menu.cc:1062
+msgid "Cannot open file "
+msgstr "Ne povas malfermi dosieron "
+
+#: install-menu/install-menu.cc:1124
+msgid "Cannot open script "
+msgstr "Ne povas malfermi skripton "
+
+#: install-menu/install-menu.cc:1124
+msgid " for reading"
+msgstr "por legi"
+
+#: install-menu/install-menu.cc:1190
+msgid "Aborting"
+msgstr "Cxesante"
+
+#: lib/adstring.cc:68
+msgid "In file \""
+msgstr "En Dosiero \""
+
+#: lib/adstring.cc:68
+msgid "\" at (or in the definition that ends at) line "
+msgstr "\" en (aux cxe la defino kiu finas je) linio "
+
+#: update-menus/update-menus.cc:727
+msgid ""
+"update-menus: update the various window-manager config files (and\n"
+"  dwww, and pdmenu) Usage: update-menus [options] \n"
+"    -v  be verbose about what is going on\n"
+"    -d  debugging (loads of unintelligible output)"
+msgstr ""
+"update-menus: gxisdatigu la diversajn vindo-controlilaj konfigaj\n" 
+"   dosierojn (kaj dwww, pdmenu). Uzado: update-menus [opcioj]\n"
+"      -v estu parolema pri kio okazas\n"
+"      -d sencimigu (parolemegega)"
+
+#: update-menus/update-menus.h:14
+msgid "unknown install condition (currently, only \"package\" is supported)"
+msgstr "nekonata enstal-kondicxo (momente nur \"package\" estas subtenata)"
+
+#: update-menus/update-menus.h:20
+msgid "Error in definition"
+msgstr "Eraro en defino"
+
+#: update-menus/install-fvwmgenmenu.c:21
+msgid ""
+"install-fvwmgenmenu, should always be called with at least one argumetn "
+"(name of menu-method\n"
+msgstr ""
+"install-fvwmgenmenu cxiam estu envokita kun minumume unu argumento (nomo\n"
+"de la menu-metodo)\n"
+
+
+

@@ -1,0 +1,665 @@
+This "package" is inspired by the install-fvwm2-menu from the debian fvwm2,
+but it tries to provide a somewhat more general interface for
+menu-building. With the update-menus command from this package,
+(and the /usr/lib/menu/$package files),
+no package needs to be modified for every X window manager again,
+and it provides a unified interface for both text- and X-oriented
+programmes.
+
+Note that substantial changes took place with the menu-1.0 release.
+This README describes menu-1.0, most notable changes are listed in
+README.changes, and README.pre1 is the old README (please don't use
+it!). 
+
+************************
+*It works like this:
+
+Each package includes a file in /usr/lib/menu/package-name. In this
+file, it will have one line per menu-entry, like this (from
+/usr/lib/menu/xbase):
+
+?package(xbase):command="/usr/bin/X11/xedit" icon="none" needs="X11" \
+                section="Apps/Editors" title="Xedit"
+   
+This describes the type of interface the package needs (X11),
+the menu section the menu entry should be in, possibly
+an icon, the menu text, and the command that should be executed.
+
+Whenever root runs update-menus, it will check all new or
+changed menufiles in /etc/menu and /usr/lib/menu,
+and run the installation scripts display managers like fvwm2
+should provide in /etc/menu-methods on them.
+
+The menu package itself provides a set of default menu files,
+for people to get the idea, and to speed things up a bit
+(These files should be incorporated into the package).
+
+************************
+* (User-) Configuring the menu's
+
+A user can specify her/his own menu entries in the ~/.menu directory.
+The files can have any name you want, and should start with either:
+  ?package(installed-package):
+or, if it's something that isn't "debian-officially" installed, with
+  ?package(local.mystuff):
+(any "package" that starts with "local." is considered installed).
+
+If your using old format menuentryfiles should have names of 
+installed packages, or "local.name", as update-menus assumes any 
+Any "package" that starts with "local." is considered installed.
+  (due to a bug in menu-1.3 this didn't work then).
+  
+
+If a user wants to have his own menu-methods, s/he should create a
+~/.menu-methods directory, and put all scripts s/he wants to be run
+in there (if ~/.menu-methods exists, /etc/menu-methods will not be
+searched when a user runs update-menus).
+
+A system administrator should place system-wide menuentries in /etc/menu, 
+(not in /usr/lib/menu/package, those will be overridden after an upgrade 
+of package).
+
+************************
+* Specifying "No-menu-entry"
+
+If a user wants to remove an entry from the system menu (in /etc/menu),
+then this will do the trick:
+  echo -n  > ~/.menu/package
+The zero-size file will tell update-menus that the corresponding
+package should not have any menu-entries listed.
+
+************************
+* What should the each package do to use this:
+
+-Include a conffile file in /usr/lib/menu/$package.
+ The name of the file should be $package, with $package the
+ package name of the binary package the menufile will be distributed
+ in. (in the case of single source packages that build many binary packages).
+ This file should contain, for each programme it likes to make
+ available in a menu:
+?package(gnuplot):\           specifies what packages need to be installed
+   needs=text\                what kind of terminal this command expects
+\                               needs=X11: if this programme only runs on X11
+				needs=text:if it only runs on text terminals;
+					    (the window manager should spawn 
+					    an xterm or rxvt in this case)
+				needs=vc  :runs only at Linux console.
+				needs=wm  :this starts another windowmanager
+   section=Apps/Math\	      in what section should this menuentry be
+   title="Gnuplot"\           The tile of the menuentry (make it short please)
+   command="/usr/bin/gnuplot" the command to run.
+
+ A programme like gnuplot should NOT have an extra entry for
+ needs=X11 because it will then be next to impossible to configure the
+ window mangers to spawn rxvt instead of the default xterm.
+
+ If, on the other hand, if a programme can both run like a real
+ X application, and on a terminal (like emacs), then two
+ entries should be listed (otherwise, emacs will also be run in
+ an xterm).
+
+-In your postinst and postrm script, add a line like:
+  if test -x /usr/bin/update-menus; then update-menus; fi
+
+-Do not make your package depend on the menu package.
+
+************************
+* The preferred layout of the menu (currently suggestion only):
+
+       Apps            -- all normal apps
+         Editors       -- editors (run it in xterm, if nothing else)
+         Net           -- mail, news, web, irc, etc
+         Programming   -- debuggers, etc
+         Shells        -- Different shells, like bash, ksh, zsh, ...
+         Tools         -- other tools: xclock, xmag, xman,
+         Viewers       -- Picture viewers, gs, ...
+         Math          -- Math apps like: gnuplot, octave, oleo,..
+         Graphics      -- xpaint, xfig, xtiff, 
+         Emulators     -- Dosemu, ...
+         Sound         --
+         System        -- system administration and monitoring
+       Games           -- games and recreations
+         Adventure     -- walk around virtual space, zork, MOO's, etc
+         Arcade        -- (any game where reflexes count)
+         Board         -- Like: Gnuchess, pente, gnugo
+         Card          -- solitaire, etc
+         Puzzles       -- Stuff from xpuzzles, ...
+	 Sports        -- Games derived from "real world" sports
+	 Strategy      -- Build your world (Games like lincity, freeciv)
+         Tetris-like   -- games involving falling blocks
+         Toys          -- (oneko, xeyes, etc.)
+       Screen          --
+         Lock          -- xlock, etc.
+         Screen-saver  --
+         Root-window   -- things that fill the root window
+       Window-managers -- (change between fvwm, afterstep, etc)
+         Modules       -- fvwm modules, etc. 
+       XShells         -- shells (like xterm, rxvt, ...)
+
+   
+************************
+* What should each menu-manager (fvwm*, twm, pdmenu, ...) do?
+
+Provide a configfile-script in /etc/menu-methods that can read 
+the menu-files. This script will be executed by update-menus
+with the to be installed menu-entries passed to the script via
+stdin.
+
+The scripts in /etc/menu-methods should be configfiles, if the user
+can tune the behaviour in the script (as is the case in the scripts
+provided in this package in /usr/share/doc/menu/examples/$wm).
+
+Run update-menus (if it exists) in the postinst, and remove the
+execute bit from the /etc/menu-methods in the postrm when called
+with remove. 
+Example bash post{rm,inst} script:
+
+#postrm:
+ #!/bin/sh
+ set -e
+ inst=/etc/menu-methods/twm  #or fvwm, ... whatever manager you're installing
+
+ case "$1" in
+     remove)
+         chmod a-x $inst
+     ;;
+     purge)
+         #remove the files that install-menu creates:
+         rm /etc/X11/twm/{system.twmrc,menus.dat,menudefs.hook}
+         #maybe also rm $inst, if dpkg doesn't do that itself.
+     ;;
+     upgrade);;
+     *)
+         echo "postrm called with unknown argument \`$1'" >&2
+         exit 0
+     ;;
+ esac
+
+#postinst:
+ #!/bin/sh
+ set -e
+ inst=/etc/menu-methods/pdmenu #or fvwm, ... whatever manager you're installing
+ if [ -x /usr/bin/update-menus ] ; then 
+   if [ -f $inst ]; then
+       chmod a+x $inst
+       update-menus; 
+   fi  
+ fi
+
+The menu package should not include any installer scripts for
+window managers (that's the job of the packages that install the
+window managers), but I do provide scripts for nearly all
+debian window managers in /usr/share/doc/menu/examples. See the readme
+on how to activate them. For an example, see the latest fvwm95 package
+(or olvwm).
+
+
+************************
+* What does update-menus do?
+
+
+On startup, update-menus does:
+ check file /var/run/update-menus.pid, and the pid in it -- if
+    there's an update-menus process with that pid, kill it.
+ if /var/lib/dpkg/lock exists, 
+   fork to background, and return control to dpkg.
+   in background process:
+     Every approx second check for /var/lib/dpkg/lock
+       repeat until it's gone.
+   
+  when the lockfile has disappeared (or never has been), start
+  the "normal" update-menus:
+
+  1 sets a variable $dirs to 
+         dirs="/etc/menu /usr/lib/menu /usr/share/menu/default"
+      (and if a user runs runs it, it will add ~/.menu to the front
+      of that list)
+  2 it reads the list of installed packages.
+  3 for d in $dirs; do
+     - read files in $d
+     - check if corresponding package is installed, and, is listed
+       in the $d/.updated-menus file, checking the mod time in 
+       $d/.updated-menus.
+       Depending on that information, either put the menufile $file in the
+       the install-menu-list, or the menuentry in the $remove-entries,
+       and do put the entries in the  already-correctly-installed-list
+  4 after going through all dirs, do
+      for method in `ls /etc/menu-methods`; do
+	$cat install-menu-list | method -f --stdin 
+      done
+
+Ad step 3+4
+  - The $d/.updated-menus file lists not only the files in that directory
+    and it's mod-time (to check for changes), it also lists
+    the known menu-managers (i.e., the output of `ls /etc/menu-methods`)
+    at the time of the last installation. Based on this information,
+    steps 3+4 are changed a bit, to update/remove new/old menu-managers.
+Ad step 1+2+3+4
+  although I've used a sh-like syntax here, it's written in C++.
+
+Ad step 4
+  Here there's a hack for backwards compatibility with the old
+  install-fvwmgenmenu: if the script in /etc/menu-methods doesn't
+  start with "#!/usr/sbin/install-menu", the old dataformat will be sent
+  to the script.
+
+************************
+* The /usr/sbin/install-menu programme
+
+The files /etc/menu-methods/fvwm* are "executable" config files
+that begin with
+ #!/usr/sbin/install-menu
+and thus start that programme, handing it the configuration file for the
+specific wm in argv[1]. This configuration consists of:
+ - the compatibility mode ("menu-1").
+ - where the various files should be stored/read.
+ - what "needs" are supported, and what wrapper files should
+   be used for each "type".
+See /usr/share/doc/menu/examples/ for some more comments.
+
+Options to install-menu:
+  -v              be verbose
+  -d              Produce loads of debugging output
+
+The -f and --stdin "options" exist because old versions used to
+have cache files and other complicated stuff. This didn't result
+in any speedups, and did complicate stuff. So we (Joey and I) decided
+to make -f and --stdin options that are always on (and can thus be
+ignored).
+
+Some window managers  don't support the m4 or cpp
+preprocessing, and cannot read the menudefs.hook file
+from their system.*rc configfile. To still be able to use them,
+install-menu will copy the file $path/$examplercfile to
+$path/$rcfile (with $path, $examplercfile and $rcfile defined 
+in the install-menu config file), and replace all 
+occurrences of "install-menu-defs" with the $genmenu
+file it just generated. Although this approach looks quite 
+clumsy, it does allow for one $path/$examplercfile on the system,
+(The m4/cpp approach puts a "include(/etc/X11/*/menudefs.hook)"
+in the system.*rc file, so users will never load their menudefs.hook
+file).
+To activate the file-copying in this way, simply define
+the $examplercfile and $rcfile variables in the install-menu
+configuration file (/etc/menu-methods/fvwm*), and make sure
+there is a $path/$examplercfile ($path being either $rootprefix, or
+$userprefix)
+
+
+If you are wringing a menu-method, you can use the following to
+debug it somewhat easier:
+  - use the "cat" menu-method in /usr/share/doc/menu/examples/cat to
+    create a list of menuentries in /tmp/menu-stdin
+    (put it in ~/.menu-methods, and run update-menus), and then
+  - you can run just your menu-method with (if it's called wm):
+     ./wm -v < /tmp/menu-stdin
+    (-v for verbose, use -d for debugging, you'll get loads of output).
+
+
+************************
+* install-menu config script definitions:
+*
+
+the menu-methods in /etc/menu-methods/* are basically made up of
+a lot of section=string definitions, explaining install-menu
+how to generate a "system.$wmrc" script. This way you can tune
+the look of generated "system.$wmrc" to your needs.
+
+In the following, something like 
+  treewalk="c(m)"
+means that the treewalk variable by default has the value "c(m)".
+
+For examples of what these scripts can look like, see /usr/share/doc/menu/examples.
+
+compat="menu-1"
+  Should always be "menu-1".
+  Please, make this the first non-comment line in the script.
+
+supported
+endsupported
+  Between the supported and endsupported keywords you define what
+  "needs" are supported by this window manager. So, the following
+  is for a wm that supports both needs=x11 and needs=text:
+  Example:
+
+    supported
+      x11=" ShowEntry("title=\"" $title "\", command=\"" $command "\"")
+      text=" ShowEntry("title=\"" $title "\", command=\""\
+               "xterm -T " $title " -e " $command "\"")
+    endsupported
+
+  For the variable substitution (and functions, not shown above),
+  see the next paragraph.
+  In the above example, you'll notice that for the menuentries that
+  "need=text", an xterm is spawned for the command to run in.
+  Also, as x11 is higher up in the supported list than text, a package that
+  supplies both a "needs=x11" and a "needs=text" entry will have the
+  needs=x11 entry installed, in favour of the needs=text entry.
+  You can continue lines on the next line with a \, but do make sure
+  you don't add any spaces after the \.
+
+startmenu=""
+endmenu=""
+submenutitle=""
+  These define what to print for the beginning/end of a menu, and
+  how to the print a menuentry that pops up another menuentry.
+  They are substituted the same way as the "supported" stuff is
+  (see next paragraph).
+
+treewalk="c(m)"
+  This string defines in what order to dump the $startmenu, $endmenu,
+  and $submenutitle (and it's children). Each char in the string
+  refers to :
+    c  : dump children of menu.
+    m  : dump this menu's $submenutitles
+    (  : dump $startmenu
+    )  : dump $endmenu
+    M  : dump all $submenutitles of this menu and this menu's children.    
+  The default is "c(m)". For olvwm, one needs: "(M)"
+
+genmenu=""
+  The menufile to generate (usually something like system."$wm"rc).
+  The file itself may depend on the level or title that is currently
+  being work on, like 
+    genmenu="/subdir/" replacewith($section," ","_") "/rc.menu"
+  (Substitution works just like the supported stuff, see above).
+  Note that the files made this way are truncated upon
+  opening, so if you have a genmenu like the example above, then
+  your endmenu= will override the startmenu stuff (but you probably
+  only need one of the two anyway).
+
+rootsection="/Debian"
+  the prefix every $section variable gets.
+
+prerun=""
+postrun=""
+  The commands to run before resp. after the actual generation of the
+  menudefs.hook (genmenu) file. Commands will be executed by sh.
+  example: 
+    prerun="rm -rf " prefix() "/*"
+    postrun="killall -USR1 fvwm2"
+  (Substitution works just like the supported stuff, see above).
+
+preoutput="#Automatically generated file. Do not edit (see /usr/share/doc/menu/html)\n\n"
+postoutput=""
+  Text to put at the beginning resp. end of the generated file ($genmenu).
+
+command=""
+  A command to run instead of install-menus. This command will receive
+  the menuentries install-menus would have received on stdin.
+
+hotkeyexclude=""
+  Keys not to use for hotkey generation. You can use the same 
+  variables and functions here as in for example the startmenu
+  sections.
+  Example:
+    hotkeyexclude="q" $section
+
+hotkeycase="insensitive"
+  can be either "insensitive" or "sensitive". Determines
+  whether the hotkeys can be of mixed case (fvwm2 reads
+  the hotkeys case-insensitive, pdmenu case-sensitive).
+  In case of the titles "Xa" and "xb", hotkey will generate
+  "X" and "b", whereas sensitive would generate "X" and "x"
+
+rcfile=""
+  If the window manager doesn't support an "include filename" or
+  "read(filename)" statement in it's config file, you can rename
+  the wm's config file to system."$wm"rc-menu, and insert
+  a "install-menu-defs" line (without the quotes, or whitespace around
+  it, and "install-menu-defs" must be the only thing on the line)
+  in the system."$wm"rc-menu file. This will then get replaced
+  by the $genmenu file that was just created (see also $examplercfile).
+  
+examplercfile=""
+  if needed (see rcfile), this is the system.rc"$wm"-menu file.
+  In that case, make rcfile=system.rc"$wm".
+
+rootprefix=""
+  The prefix to use when running as root (applies to $genmenu, $rcfile,
+  $examplercfile  and other old cache files)
+
+userprefix=""
+  see rootprefix, but when running as user.
+
+
+
+************************
+* variables and functions in the install-menu scripts.
+
+The supported "needs" definitions and "startmenu=", "endmenu="
+and "submenutitle=" are interpreted as follows:
+
+**
+
+String constants:
+  Anything matching  with \"[^\"]*\" is interpreted as a string, and
+  is written verbatim to the output file.
+  Stuff like \n, \t, ... will be substituted for their C expansions 
+  (But not \0xx).
+
+**
+
+Variables:
+  Anything matching $[a-z,A-Z,_]* is interpreted as a variable, and
+  the corresponding definition from the menuentry is substituted. So,
+  for a menuentry.
+  
+  Special variables:
+    The following variables are treated in a special way by install-menus,
+    either because they are used for other purposes too, or because they
+    are modified by install-menus (the ones with a "!" are modified
+    by install-menus).
+    
+    needs:   used to determine whether the window manager supports this
+             menuentry.
+    command: If this is undefined, this menuentry is taken as defining
+             a submenu. (this way you can specify icons of submenus).
+    title!:  Used for sorting (see section).
+             For submenuentries (those with empty command), this
+	     is initialised to the last part of the section.
+	     Please, keep the title short (two words at maximum).
+	     The title is for people who already know what programme
+	     they want to start. See "longtitle" and "description" below
+	     for longer descriptions.
+    sort:    used for sorting (see section).
+    section!:Used to determine the section of the menuentry.
+             The menuentries that have a empty $command, have their
+	     $section changed to modify the current level.	     
+             The menuentries that have a non-empty $command have their
+	     $section modified to $section/$title, or $section/$sort:$title
+	     if $sort is defined. The menuentries within one section
+	     are sorted according to $section.
+    hotkey!: Modified to reflect what install-menus thinks is the
+             most suitable hotkey for this menuentry. The hotkey=
+	     in the menuentry file is taken as a suggestion, that could
+	     be overwritten if there is another entry with the same hotkey=.
+	     To suggest two possible hotkeys for an entry use
+	     hotkey="ab", with "a" being the most preferred hotkey.
+
+  Suggested variables:
+    The following aren't special for install-menus, but it's nice 
+    (read: essential) to use the same variables for the same things.
+    So, I'll suggest some here. If you want to invent new ones, please
+    do so and mail them to me so that I can include them here.
+
+    icon:    The location of the iconfile for this menuentry.
+             If you don't have an iconfile, just leave out the icon=
+	     in the menuentry.
+    longtitle: For people that like descriptive titles (about one line)
+             It is probably best to include this in your menuentries,
+	     while the window-managers don't (by default) put it in the
+	     menus. That way, people who want descriptive titles can
+	     turn them on, but others don't need to use them.
+    description:An even longer description (about 5 lines).
+             For example, a description of the documentation in
+	     the dwww generated html pages.
+   
+
+**
+
+Functions:
+  Anything matching [a-z,A-Z,_] is taken as a function (and an error
+  is generated if the function doesn't exist). The arguments of the
+  functions can be other functions, string constants or variables.
+  
+  prefix()
+     returns the current prefix dir: either $rootprefix, or
+     $HOME/$userprefix, depending on who runs install-menu
+
+  ifroot($rootarg, $userarg)
+     if(getuid()==0) print $rootarg, else print $userarg
+
+  print($arg)    
+     Same as just $arg; if $arg is empty, generate an error.
+
+  esc($arg1,$arg2)
+     Print $arg1, but escape all occurrences of characters in $arg2
+     with a \. (thus, if arg1="hello", arg2="lo", print "he\l\l\o").
+
+  escwith($arg1, $arg2, $arg3)
+     Same as esc, but use $arg3 as escape sequence.
+
+  escfirst($arg1, $arg2, $arg3)
+     Same as escwith, but only escapes thirst occurrence of $arg2.
+
+  tolower($arg)
+  toupper($arg)
+     Returns the argument set in lowercases resp uppercases. 
+
+  replacewith($s, $replace, $with)
+     Search s for occurrences of characters from string replace, and
+     replace them by the corresponding character in $with.
+     Example:
+      replacewith_string("hello $world, %dir", "$% ", "123")
+      returns:   "hello31world,32dir"
+
+  ifempty($arg1, $arg2)
+     If $arg1 is empty, print $arg2, otherwise print nothing.
+     For compatibility, the string "none" is seen as empty.
+
+  ifnempty($arg1, $arg2)     
+     If $arg1 is not empty, print $arg2.
+     For compatibility, the string "none" is seen as empty.
+
+  ifelse($arg1,$arg2)
+     If $arg1 is non-empty, print $arg1, otherwise $arg2.
+     For compatibility, the string "none" is seen as empty.
+
+  ifeq($arg1, $arg2, $arg3)
+     If ($arg1==$arg2) then print $arg3
+  ifneq($arg1, $arg2, $arg3)
+     If ($arg1!=$arg2) then print $arg3
+  ifeqelse($arg1, $arg2, $arg3, $arg4)
+     If ($arg1==$arg2) then print $arg3 else print $arg4
+
+  cond_surr($arg1, $arg2, $arg3)
+     If $arg1 is non-empty print $arg2$arg1$arg3, otherwise print nothing.
+     For compatibility, $arg1="none" is interpreted as empty.
+
+  iffile($arg1, $arg2)
+     If file $arg1 exists, and can be opened for reading by whoever
+     started the current process, return $arg2, otherwise return nothing.
+  
+  parent($arg)
+     for arg a "directory", return parent directory:
+     parent("/Debian/Apps/Editors") = "/Debian/Apps".
+
+  basename($arg)
+     return the last part of the parent directory:
+     basename("/Debian/Apps/Editors") = "Apps".
+
+
+**
+
+String constants, variables and functions can be concatenated 
+by placing them after each other with a space in between, like
+
+"hello" $ifelse($comma, $comma, "sorry" $period " no comma def") " world"
+  
+**
+
+User-defined functions (or rather, macros):
+
+You can define your own function, by typing (outside "supported" scope):
+
+  function myfunc($var1, $var2) = "this is my function, var1=" $var1 ", title= "$title
+
+Note that this example uses a variable "title" that it expects to be defined.
+This is true if it is called from the "startmenu", "endmenu", "submenutitle", 
+a supported definition.
+
+************************
+* Icons
+*
+
+Please, make sure the icons you specify are always available on the system.
+So, if you want to have an icon with your menuentry, the preferred method
+is to supply the icon with that package. Also, to prevent the distribution
+of icons files to turn too much into a mess, please put all icon
+files in /usr/X11R6/include/X11/{bitmap,pixmap}.
+
+
+Debian package maintainers should ensure that any icons they include that
+are used with the debian menus conform to the following:
+
+  1. They should be in xpm format.
+  2. They may be no larger than 32x32 pixels, although smaller sizes are ok.
+  3. They should use only the 24 colors present in cmap.xpm, which comes with
+     this package.
+  4. The background area of the icon should be transparent, if possible.
+
+If you have Imagemagick installed, you can make your icons meet requirements
+1, 2, and 3 with the following command, but you will need to edit the icon
+afterward to clean it up and make the background transparent:
+
+       # mogrify -format xpm -geometry 32x32 -map cmap.xpm <filenames>
+
+
+If you, as a system administrator, don't like the icons in the menu's, simply
+remove the $%{icon} from the files in /etc/menu-methods/$wm, and 
+type "update-menus"
+
+
+If you want to specify an icon for a submenu (for example, the Editors 
+submenu), just use the same syntax but leave the command empty:
+
+  X11 Apps menu/apps /usr/X11R6/include/X11/pixmap/icon.xpm "Editors"
+
+As there probably isn't one right package to include the submenu icons,
+I guess (as Joey suggested) the menu package is the only right place
+to have these menu's (Otherwise, problems arise when two packages
+supply different icons for the same submenu, and we can never be sure
+the icon files are available).
+
+
+************************
+* Taskbar/Titlebar (fvwm*)
+*
+
+The problem with the stuff in the taskbar is that all items are
+displayed all of the time. So, if 200 debian packages all were to
+register a button, the buttons would quickly fill the screen, making
+the exercise useless. The few applications that are considered important
+enough to be listed in the taskbar usually vary widely on each system,
+making it impossible to select a ``happy few'' apps that are allowed
+there on every debian system. If you want your fvwm2 to have a few
+buttons, you can install files for those packages in /etc/menu/$package,
+containing both the normal menu entries, and a line like
+  button Games/Puzzles  xpuzzles/xmball   path-to-pixmap.xpm "Xmball"  /usr/games/xmball
+
+Then, do the following:
+cd /etc/menu-methods/
+cp fvwm2 fvwm2button
+vi fvwm2button
+#and remove all the "supported" entries, adding the one below. For the rest,
+leave everything the same except those listed below.
+
+supported 
+  button="+ Style \"" $title "\" TitleIcon" $icon " Exec "  $command "\n"
+endsupported
+startmenu:   "AddToTitlebar \n"
+endmenu:     "\n"
+submenutitle:""
+mainmenu:
+genmenu:   "buttondefs.hook"

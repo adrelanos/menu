@@ -1,0 +1,53 @@
+.\" Process this file with
+.\" groff -man -Tascii foo.1
+.\"
+.\" "verbatim" environment (from strace.1)
+.de CW
+.sp
+.nf
+.ft CW
+..
+.de CE
+.ft
+.fi
+.sp
+..
+.TH  install-menu 1 "20 October 1998" "Debian Project" "Debian GNU/Linux manual"
+.SH NAME
+install-menu \- Used internally by the Debian menu system. It is a
+program to facilitate the generation of menu-related startup files for
+the various window managers etc.
+
+.SH DESCRIPTION
+When 
+.B update-menus(1)
+reads the menu-information, for each installed window manager it will
+run /etc/menu-methods/wm. Update-menus sends  all menu-information of all
+installed packages to the stdin of those programmes, and it is the
+task of each respective /etc/menu-methods/wm to generate the
+window-manager startup files that contain the Debian Menu structure.
+.B install-menu
+is written to facilitate this task. For more information, see the menu
+documentation (see below).
+
+.SH BUGS
+Once processing starts, and translation in various languages is
+requested, error messages will be printed in a `random' language. This
+is due to the fact that it doesn't seem possible to locally change the
+language with GNU gettext. Fortunately nearly all errors are reported
+before processing starts, so usually the messages are reported in the
+current LANGUAGE.
+
+.SH COPYING
+.B install-menu
+is distributed under the GNU General Public License.
+(GPL 2.0 or greater).
+.SH AUTHOR
+joost witteveen
+.RI <joostje@debian.org>
+less
+.SH "SEE ALSO"
+.BR update-menus (1),
+.BR menufile (5),
+.BR /usr/share/doc/menu/html
+
