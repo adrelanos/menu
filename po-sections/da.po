@@ -30,6 +30,9 @@ msgstr "Databaser"
 msgid "Editors"
 msgstr "Tekstredigering"
 
+msgid "Education"
+msgstr "Uddannelse"
+
 msgid "Emulators"
 msgstr "Emulatorer"
 
@@ -89,6 +92,9 @@ msgstr "Kortspil"
 
 msgid "Puzzles"
 msgstr "Puslespil"
+
+msgid "Simulation"
+msgstr "Simulering"
 
 msgid "Sports"
 msgstr "Sport"
