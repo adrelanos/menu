@@ -211,9 +211,9 @@ int check_dir(string s)
       if (verbose)
         cerr << String::compose(_("install-menu: creating directory %1:\n"), t) ;
       if (mkdir(t.c_str(),0755))
-	throw dir_createerror(t);
+          throw except_string(String::compose(_("Could not create directory(%1): %2"), t, strerror(errno)));
       if (chdir(t.c_str()))
-	throw dir_createerror(t);
+          throw except_string(String::compose(_("Could not change directory(%1): %2"), t, strerror(errno)));
     } else {
       if (verbose)
 	cerr << String::compose(_("install-menu: directory %1 already exists\n"), t);

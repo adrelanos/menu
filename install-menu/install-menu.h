@@ -225,15 +225,6 @@ namespace exceptions {
     }
   };
 
-  /** Exception to be thrown when a directory could not be opened */
-  class dir_createerror : public except_string {
-  public:
-    dir_createerror(std::string s) : except_string(s) {}
-    std::string message() const {
-      return String::compose(_("Could not create directory \"%1\"."), msg);
-    }
-  };
-
   /** Exception to be thrown when encoding conversion failed */
   class conversion_error : public except_string {
   public:
