@@ -931,7 +931,7 @@ void read_forcetree(parsestream &i)
 //
 configinfo::configinfo(parsestream &i) 
     : roots("/Debian"), mainmt("Debian"), treew("c(m)"),
-    outputenc(nl_langinfo(CODESET)), onlyrunasroot(false),
+    outputenc("LOCALE"), onlyrunasroot(false),
     onlyrunasuser(false),
     onlyuniquetitles(false), hint_optimize(false), hint_nentry(6),
     hint_topnentry(5), hint_mixedpenalty(15), hint_minhintfreq(0.1),
@@ -1055,6 +1055,9 @@ configinfo::configinfo(parsestream &i)
       i.skip_line();//read away final newline
     }
   } catch (endoffile) { }
+
+  if (outputenc == "LOCALE")
+      outputenc = nl_langinfo(CODESET);
   
   check_config();
 }
