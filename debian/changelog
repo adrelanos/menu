@@ -1,6 +1,6 @@
 menu (2.1.9-2) unstable; urgency=low
 
-  * The "unreleased release". 
+  * The "long awaited" release". 
   * Add Catalan translation of menu sections. Thanks Jordi Mallach.
   * Add Japanese translation of menu sections. Thanks GOTO Masanori.
   * Morten Brix Pedersen:
@@ -24,7 +24,7 @@ menu (2.1.9-2) unstable; urgency=low
   * postinst/postrm: Remove pre-menu-1.0 kludges.
   * debian/rules: ship update-menus non executable.
 
- -- Bill Allombert <ballombe@debian.org>  Wed,  8 Oct 2003 18:16:11 +0200
+ -- Bill Allombert <ballombe@debian.org>  Mon,  3 Nov 2003 15:51:57 +0100
 
 menu (2.1.9-1) unstable; urgency=low
 
