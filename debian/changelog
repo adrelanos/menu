@@ -3,6 +3,8 @@ menu (2.1.16) unstable; urgency=low
   * The "unreleased" release
   * Jens Arvidsson:
     - Update Swedish translation.
+  * Update Polish menu message translation, thanks Marcin Owsiany. 
+  * Add Italian menu message translation, by Stefano Canepa.
 
  -- Bill Allombert <ballombe@debian.org>  Fri,  2 Jul 2004 19:42:06 +0200
 
