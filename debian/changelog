@@ -13,9 +13,15 @@ menu (2.1.9-2) unstable; urgency=low
   * Add menu sections Games/Simulation and Apps/Education to menu.sgml and
     menufile.5.
   * Convert this file to UTF-8.
-  * Bump Standards-Version to 3.6.0.
+  * Bump Standards-Version to 3.6.1.
+  * install-menu now accept options before argument. Thanks Denis Barbier.
+  * Remove Conflicts: pdmenu (<=0.5.9) dated 1997.
+  * Don't ship the outdated README.changes file.
+  * Fix typo in menu.h file and add sort=tolower(title()) to make sort order
+    case insensitive. Closes: #209257. Thanks Daniel Burrows.
+  * menu.sgml: insist that menu title must be capitalized.
 
- -- Bill Allombert <ballombe@debian.org>  Fri, 27 Jun 2003 23:14:48 +0200
+ -- Bill Allombert <ballombe@debian.org>  Wed,  1 Oct 2003 16:51:21 +0200
 
 menu (2.1.9-1) unstable; urgency=low
 
