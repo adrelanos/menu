@@ -323,24 +323,25 @@ string trans_class::debuginfo()
   return string(" match=")+match+", replace="+replace+", replace_var="+replace_var;
 }
 
-void translate::process(menuentry &m, const string &v)
+void translate::process(menuentry &m, const string &search)
 {
-  if (v == match)
-      m.data[replace_var]=replace;
+  if (search == match)
+      m.data[replace_var] = replace;
 }
 
-void subtranslate::process(menuentry &m, const string &v)
+void subtranslate::process(menuentry &m, const string &search)
 {
-  if (contains(v, match))
-      m.data[replace_var]=replace;
+  if (contains(search, match))
+      m.data[replace_var] = replace;
 }
 
-void substitute::process(menuentry &m, const string &v){
-  string s,*t;
-  if (contains(v, match)) {
-    t = &(m.data[replace_var]);
-    if (t->length() >= replace.length())
-      *t=replace+t->substr(match.length());
+void substitute::process(menuentry &m, const string &search)
+{
+  string *current;
+  if (contains(search, match)) {
+    current = &(m.data[replace_var]);
+    if (current->length() >= match.length())
+        *current = replace + current->substr(match.length());
   }
 }
 
@@ -418,18 +419,18 @@ void translateinfo::process(menuentry &m)
 {
   std::map<string, trans_map>::const_iterator i;
   trans_map::const_iterator j;
-  string *match;
+  string *search;
   for (i = trans.begin(); i != trans.end(); ++i)
   {
-    match = &m.data[(*i).first];
-    j = i->second.lower_bound(*match);
-    if ((j == i->second.end()) || ((j != i->second.begin()) && (j->first != *match)))
+    search = &m.data[(*i).first];
+    j = i->second.lower_bound(*search);
+    if ((j == i->second.end()) || ((j != i->second.begin()) && (j->first != *search)))
         j--;
     do {
-      config.report(String::compose("Translation: var[%1] testing translation rule match for: %2",*match,j->first), configinfo::report_debug);
-      j->second->process(m,*match);
+      config.report(String::compose("Translation: var[%1] testing translation rule match for: %2",*search,j->first), configinfo::report_debug);
+      j->second->process(m, *search);
       j++;
-    } while ((j != i->second.end()) && j->second->check(*match));
+    } while ((j != i->second.end()) && j->second->check(*search));
   }
 }
 

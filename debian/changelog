@@ -7,6 +7,7 @@ menu (2.1.10-2) unstable; urgency=low
     - Set repeat_lang="LOCALE" per default. menu-methods now only need to set
     outputencoding in order to enable translations. Closes: #37716.
     - Update Danish menu translation.
+  * Fixed some inconsistent behaviour with "substitute section->section"
   * Update Brazillian menu messages translation. Thanks André Luís Lopes. 
   * Add Norwegian nynorsk menu messages and sections translations. 
     Thanks Håvard Korsvoll.
