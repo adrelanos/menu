@@ -1,17 +1,17 @@
 menu (2.1.16) unstable; urgency=low
 
-  * The "unreleased" release
+  * The "Sarge is waiting for us!" release
   * Jens Arvidsson:
     - Update Swedish translation.
   * Morten Brix Pedersen:
     - Treat userprefix prefixed by // as an absolute path instead of just a
+    relative path. Closes: #252637, #252891.
     - Revert change in 2.1.15: Don't let outputencoding default to LOCALE by
-    default. This was causing too many problems.
-    relative path. This helps us solve a window maker bug.
+    default. This was causing too many problems. Closes: #258865.
   * Update Polish menu message translation, thanks Marcin Owsiany. 
   * Add Italian menu message translation, by Stefano Canepa.
 
- -- Bill Allombert <ballombe@debian.org>  Fri,  2 Jul 2004 19:42:06 +0200
+ -- Bill Allombert <ballombe@debian.org>  Sat,  7 Aug 2004 11:25:22 +0200
 
 menu (2.1.15) unstable; urgency=low
 
@@ -47,7 +47,7 @@ menu (2.1.15) unstable; urgency=low
 
 menu (2.1.14) unstable; urgency=low
 
-  * The "multiligual" release
+  * The "multilingual" release
   * Update German menu-section translation. Thanks Sebastian Rittau.
   * Update Hungarian menu-section translation. Thanks Attila Szervá.
   * Update Italian menu-section translation. Thanks Stefano Canepa.

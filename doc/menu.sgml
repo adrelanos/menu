@@ -738,7 +738,7 @@ by install-menu from their
 <tt>$path/$examplercfile</tt> to <tt>$path/$rcfile</tt> (with 
 <tt/$examplercfile/ and <tt/$rcfile/ defined in the
 <prgn/install-menu/ config file, and <tt/$path/ either the
-<tt/$rootprefix/ or <tt>${HOME}/userprefix</tt>, depending on whether root
+<tt/$rootprefix/ or <tt>${HOME}/$userprefix</tt>, depending on whether root
 or user executed the file.), and replace all occurrences of
 ``install-menu-defs'' with the <tt/$genmenu/ file it just
 generated. 
@@ -813,8 +813,14 @@ This must be just after the <tt>!include "menu.h"</tt> directive so that
 <tag><tt/outputencoding="UTF-8"/
 <item> Set the encoding used for output files. Use <tt/iconv --list/ to get
 the list of supported encoding. Useful values include "UTF-8" and
-"ISO-8859-1".  If no value is specified, the current locale encoding will be
-used. 
+"ISO-8859-1".  The special value "LOCALE" means that the current locale
+encoding will be used. If set to an empty string, no translations are
+performed.  This is the default.
+
+<tag><tt/outputlanguage=""/
+<item>
+If set to "C" automatic translations will be disabled. Note that you 
+can still use translate() to perform explicit translation.
 
 <tag><tt/supported/
 <tag><tt/endsupported/
@@ -823,20 +829,21 @@ Between the <tt/supported/ and <tt/endsupported/ keywords you define
 what "needs" are supported by this window manager. So, the following
 is an example for a wm that supports both needs=x11 and needs=text:
 <example>
+  function q($s) = "\"" esc($s,"\\\"") "\""
   supported
-    x11 =" ShowEntry(\"" title() "\", \"" $command "\")"
-    text=" ShowEntry(\"" title() "\", \""  term()  "\")"
+    x11 =" ShowEntry(" q(title()) ", " q($command) ")"
+    text=" ShowEntry(" q(title()) ", " q(term())   ")"
   endsupported
 </example>
 
 For the variable substitution (and functions, not shown above), see
 the next paragraph. In the above example, you'll notice that for the
-menu entries that "need=text", an xterm is spawned for the command to
-run in.  Also, as x11 is higher up in the supported list above than text, a
-package that supplies both a "needs=x11" and a "needs=text" entry will
-have the needs=x11 entry installed, in favour of the needs=text entry.
-You can continue lines on the next line with a \, but do make sure you
-don't add any spaces after the \.
+menu entries that "need=text", the term() function is used. This is an
+user-supplied function that will run $command in a X terminal emulator.  Also,
+as x11 is higher up in the supported list above than text, a package that
+supplies both a "needs=x11" and a "needs=text" entry will have the needs=x11
+entry installed, in favour of the needs=text entry.  You can continue lines on
+the next line with a \, but do make sure you don't add any spaces after the \.
 
 <tag><tt/startmenu=""/
 <tag><tt/endmenu=""/
@@ -1001,13 +1008,12 @@ the menu-method will be skipped when run as root.
 <p>
 <tag><tt/userprefix=""/
 <item>
-see <tt/rootprefix/, but when running as user.
+As <tt/rootprefix/, but when running as user. userprefix is relative to
+the user home directory, unless it start with 2 slashes, in which case it
+is treated as an absolute path. If it is not defined, the menu-method will be
+skipped when run as a user.
 <p>
 
-<tag><tt/outputlanguage=""/
-<item>
-If set to "C" automatic translations will be disabled. Note that you 
-can still use translate() to perform explicit translation.
 <tag><tt/hint_optimize=false/
 <item>
 If set to true, menu will try to generate an `optimal' tree, using
