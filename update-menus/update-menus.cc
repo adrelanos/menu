@@ -20,7 +20,7 @@
 #include <signal.h>
 #include <syslog.h>
 #include <pwd.h>
-#include <config.h>
+#include "config.h"
 #include "update-menus.h"
 
 using std::set;

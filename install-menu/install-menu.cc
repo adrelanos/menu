@@ -5,13 +5,13 @@
 #include <cctype>
 #include <cstdlib>
 #include <getopt.h>
-#include <values.h>
+#include <limits.h>
 #include <sys/types.h>
 #include <dirent.h>
 #include <unistd.h>
 #include <sys/stat.h>
 #include <pwd.h>
-#include <config.h>
+#include "config.h"
 #include <iconv.h>
 #include <langinfo.h>
 
@@ -880,7 +880,7 @@ int supportedinfo::prec(string &name)
   map<string, supinf>::const_iterator i;
   int p;
   if((i=sup.find(uppercase(name)))==sup.end())
-    p = MAXINT;
+    p = INT_MAX;
   else
     p = i->second.prec;
   return p;
@@ -1218,7 +1218,7 @@ void read_input(parsestream &i)
       break_slashes(entry_vars[SECTION_VAR], sections);
       if (entry_vars[TITLE_VAR] != "/")
           sections.push_back(entry_vars[TITLE_VAR]);	  
-      if (supported->prec(entry_vars[NEEDS_VAR]) != MAXINT)
+      if (supported->prec(entry_vars[NEEDS_VAR]) != INT_MAX)
           root_menu.add_entry(sections, entry_vars);
       i.skip_line();  // read away the final newline
     }
