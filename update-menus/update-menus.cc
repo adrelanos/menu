@@ -283,7 +283,7 @@ void configinfo::parse_def(const string &key, const string& value)
   }
 }
 
-void configinfo::update(string filename)
+void configinfo::update(const string& filename)
 {
   std::ifstream config_file(filename.c_str());
 

@@ -118,7 +118,7 @@ public:
         method(method_stderr)
     { }
 
-  void update(std::string filename);
+  void update(const std::string& filename);
   void report(const string &message, verbosity_type v);
   void set_verbosity(verbosity_type v) { verbosity = v; }
 };
