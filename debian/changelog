@@ -9,8 +9,9 @@ menu (2.1.19) unstable; urgency=low
   * Update Spanish menu messages translation. Thanks Javier Fernandez-Sanguino
     Peña.
   * Update Chinese menu messages translation. Thanks Carlos Z.F. Liu.
+  * Add German menu messages translation. Thanks Tobias Toedter.
 
- -- Bill Allombert <ballombe@debian.org>  Wed, 27 Oct 2004 14:00:41 +0200
+ -- Bill Allombert <ballombe@debian.org>  Thu, 28 Oct 2004 23:19:58 +0200
 
 menu (2.1.18) unstable; urgency=low
 
