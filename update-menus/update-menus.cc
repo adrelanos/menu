@@ -778,8 +778,8 @@ void wait_dpkg(string &stdoutfile)
   // have started writing stuff to the console. To prevent that,
   // I use signals: the `background' process sents a signal to the
   // parent once it's written everything it wants to stdout,
-  // and only after the parent receved the signal it will exit(0);
-  // [Oh god! (added by Bill trying to understand the fork() business]
+  // and only after the parent received the signal it will exit(0);
+  // [Oh god! (added by Bill trying to understand the fork() business)]
 
   if (check_dpkglock()) {
     sigset_t sig,oldsig;
