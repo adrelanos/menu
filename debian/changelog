@@ -4,6 +4,8 @@ menu (2.1.8-3) unstable; urgency=low
   * Change contact address to `menu@packages.debian.org'.
   * doc/menufile.5: Update list of menu sections.
   * default/bash: removed. Thanks Matthias Klose.
+  * debian/rules: do not create empty dir /usr/share/pixmaps.
+    Closes: #196713. Thanks Ryan Murray.
   * Morten Brix Pedersen:
     - Just skip the file when its missing a tag, instead of stopping
     completely. Closes: #56839

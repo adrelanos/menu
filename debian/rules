@@ -47,7 +47,6 @@ install-stamp: build-stamp
 		   etc/menu-methods \
 		   etc/menu \
 		   usr/lib/menu \
-		   usr/share/pixmaps \
 		   usr/share/man/man1
 
 	# Add here commands to install the package into debian/tmp.
