@@ -3,11 +3,12 @@ menu (2.1.7-4) unstable; urgency=low
   * Put in CVS at alioth.debian.org 
   * Hard code version in configure.in so that menu can be build without
     the debian directory.
-  * Add complete French translation of menu sections. Thanks Jean-Philippe
+  * Complete french translation of menu sections. Thanks Jean-Philippe
     Guérard.
-  * Add complete Spanish translation of menu sections. Thanks Javier
+  * Complete spanish translation of menu sections. Thanks Javier
     Fernández-Sanguino Peña.
-  * Add complete Danish translation of menu sections. (Morten Brix Pedersen)
+  * Add brazilian translation of menu sections. Thanks André Luís Lopes.
+  * Add Danish translation of menu sections. (Morten Brix Pedersen)
   * Fix a segmentation fault which happened when translate_menus only
     contained one line (Morten Brix Pedersen).
 
