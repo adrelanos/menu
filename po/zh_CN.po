@@ -1,91 +1,98 @@
-# SOME DESCRIPTIVE TITLE.
+# The Simplified Chinese translation of Debian menu package.
 # Copyright (C) Year Free Software Foundation, Inc.
 # Yongtao Yang <yongtao.yang@telia.com>, 2004.
+# Carlos Z.F. Liu <carlos_liu@yahoo.com>, 2004.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: menu 2.1.9\n"
-"POT-Creation-Date: 2004-01-20 02:28+0100\n"
-"PO-Revision-Date: 2004-02-11 23:00+0100\n"
-"Last-Translator: Yongtao Yang <yongtao.yang@telia.com>\n"
+"Project-Id-Version: menu 2.1.18\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"POT-Creation-Date: 2004-07-09 20:06+0200\n"
+"PO-Revision-Date: 2004-10-25 00:17+1300\n"
+"Last-Translator: Carlos Z.F. Liu <carlos_liu@yahoo.com>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../install-menu/install-menu.cc:202
-msgid "install-menu: checking directory %1\n"
-msgstr "install-menu：检查目录 %1\n"
-
-#: ../install-menu/install-menu.cc:215
-msgid "install-menu: creating directory %1:\n"
-msgstr "install-menu：创建目录 %1：\n"
-
-#: ../install-menu/install-menu.cc:222
-msgid "install-menu: directory %1 already exists\n"
-msgstr "install-menu：目录 %1 已经存在\n"
-
-#: ../install-menu/install-menu.cc:443
+#: ../install-menu/functions.cc:92
 msgid "Zero-size argument to print function."
 msgstr "打印函数参数长度为零。"
 
+#: ../install-menu/install-menu.cc:200
+msgid "install-menu: checking directory %1\n"
+msgstr "install-menu：检查目录 %1\n"
+
+#: ../install-menu/install-menu.cc:213
+msgid "install-menu: creating directory %1:\n"
+msgstr "install-menu：创建目录 %1：\n"
+
+#: ../install-menu/install-menu.cc:215
+msgid "Could not create directory(%1): %2"
+msgstr "无法创建目录(%1)：%2"
+
+#: ../install-menu/install-menu.cc:217
+msgid "Could not change directory(%1): %2"
+msgstr "无法改变目录(%1)：%2"
+
+#: ../install-menu/install-menu.cc:220
+msgid "install-menu: directory %1 already exists\n"
+msgstr "install-menu：目录 %1 已经存在\n"
+
 #. Do not translate supported
-#: ../install-menu/install-menu.cc:874
+#: ../install-menu/install-menu.cc:437
 msgid "install-menu: [supported]: name=%1\n"
 msgstr "install-menu：[supported]：名称=%1\n"
 
-#: ../install-menu/install-menu.cc:895
+#: ../install-menu/install-menu.cc:454
 msgid "Menu entry lacks mandatory field \"%1\".\n"
 msgstr "菜单条目缺少必须的域“%1”。\n"
 
-#: ../install-menu/install-menu.cc:899
+#: ../install-menu/install-menu.cc:460
 msgid "Unknown value for field %1=\"%2\".\n"
 msgstr "未知的域值 %1=“%2”。\n"
 
 #. Do not translate quoted text
-#: ../install-menu/install-menu.cc:1056
+#: ../install-menu/install-menu.cc:605
 msgid ""
 "install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
 msgstr "install-menu：“hotkeycase”的值只能是“sensitive”或者“insensitive”\n"
 
-#. don't translate genmenu, startmenu, endmenu and don't change \"\"
-#: ../install-menu/install-menu.cc:1099
+#: ../install-menu/install-menu.cc:635
 msgid ""
-"install-menu: At least one of genmenu, startmenu, endmenu\n"
-"is undefined. All of these have to be defined \n"
-"(although they may be equal to \"\").\n"
+"install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
+"Ignoring.\n"
 msgstr ""
-"install-menu：至少 genmenu，startmenu，endmenu \n"
-"其中之一未被定义。它们都必须被定义\n"
-"(尽管它们可以是\"\")。\n"
+"install-menu：警告：在文件 %3 的第 %2 行发现未知的标识“%1”。程序将忽略它。\n"
 
-#: ../install-menu/install-menu.cc:1132
-msgid "Using compatibility with %1.\n"
-msgstr "使用与 %1 的兼容性。\n"
+#: ../install-menu/install-menu.cc:645
+msgid "install-menu: %1 must be defined in menu-method %2"
+msgstr "install-menu: %1 必须在 menu-method %2 中被定义"
 
-#: ../install-menu/install-menu.cc:1278
+#: ../install-menu/install-menu.cc:806
 msgid "Cannot open file %1 (also tried %2).\n"
 msgstr "无法打开文件 %1(同时试探了文件 %2)。\n"
 
-#: ../install-menu/install-menu.cc:1286 ../install-menu/install-menu.cc:1293
-#: ../install-menu/install-menu.cc:1301
+#: ../install-menu/install-menu.cc:814 ../install-menu/install-menu.cc:821
+#: ../install-menu/install-menu.cc:829
 msgid "Cannot open file %1.\n"
 msgstr "无法打开文件 %1。\n"
 
-#: ../install-menu/install-menu.cc:1303
+#: ../install-menu/install-menu.cc:831
 msgid ""
 "In order to be able to create the user config file(s) for the window "
 "manager,\n"
 "the above file needs to be writeable (and/or the directory needs to exist).\n"
-msgstr "为了给窗口管理器创建用户配置文件，\n"
+msgstr ""
+"为了给窗口管理器创建用户配置文件，\n"
 "上述文件必须是可写的(以及/或者目录必须存在)。\n"
 
-#: ../install-menu/install-menu.cc:1325
+#: ../install-menu/install-menu.cc:853
 msgid "Warning: the string %1 did not occur in template file %2\n"
 msgstr "警告：字符串 %1 不在模板文件 %2 中\n"
 
 #. Don't translate quoted string
-#: ../install-menu/install-menu.cc:1331
+#: ../install-menu/install-menu.cc:878
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
@@ -101,103 +108,95 @@ msgstr ""
 "     -h --help    ：本信息\n"
 "     -v --verbose ：详细\n"
 
-#: ../install-menu/install-menu.cc:1371
+#: ../install-menu/install-menu.cc:920
 msgid "install-menu: no menu-method script specified !"
 msgstr "install-menu：未指定 menu-method 脚本！"
 
-#: ../install-menu/install-menu.cc:1384
+#: ../install-menu/install-menu.cc:933
 msgid "Cannot open script %1 for reading.\n"
 msgstr "无法打开脚本 %1 以读取。\n"
 
-#: ../install-menu/install-menu.cc:1428
+#: ../install-menu/install-menu.cc:973
 msgid "Running: \"%1\"\n"
 msgstr "正在运行：“%1”\n"
 
-#: ../install-menu/install-menu.cc:1444
+#: ../install-menu/install-menu.cc:989
 msgid "install-menu: %1: aborting\n"
 msgstr "install-menu：%1：正在放弃\n"
 
-#: ../install-menu/install-menu.h:394
+#: ../install-menu/install-menu.h:198
 msgid "Number of arguments to function %1 does not match."
 msgstr "函数 %1 的参数个数不匹配。"
 
-#: ../install-menu/install-menu.h:401
+#: ../install-menu/install-menu.h:206
 msgid "Unknown function: \"%1\""
 msgstr "未知函数：“%1”"
 
-#: ../install-menu/install-menu.h:409
+#: ../install-menu/install-menu.h:215
 msgid "Indirectly used, but not defined function: \"%1\""
 msgstr "未定义的被间接用到的函数：“%1”"
 
-#: ../install-menu/install-menu.h:417
+#: ../install-menu/install-menu.h:224
 msgid "Unknown identifier: \"%1\""
 msgstr "未知的标识符：“%1”"
 
-#: ../install-menu/install-menu.h:425
-msgid "Could not open directory \"%1\"."
-msgstr "无法打开目录 “%1”。"
-
-#: ../install-menu/install-menu.h:433
-msgid ""
-"Missing (or empty) tag: %1\n"
-"This tag needs to be defined for the menu entry to make sense.\n"
-"Note that update-menus rearranges the order of the tags found\n"
-"in the menu-entry files, so that the part above isn't literal."
-msgstr ""
-"缺失的(或者空的)标签：%1\n"
-"必须定义该标签以使菜单条目有意义。\n"
-"注意 update-menus 会重新调整菜单条目文件\n"
-"中的标签顺序，所以上述部分不是逐字对应的。"
-
-#: ../install-menu/install-menu.h:445
+#: ../install-menu/install-menu.h:233
 msgid "Encoding conversion error: \"%1\""
 msgstr "编码转换错误：“%1”"
 
-#: ../update-menus/adstring.cc:300
-msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
-msgstr "文件“%1”中的第 %2 行(或者其定义结束于该行)：\n"
-
-#: ../update-menus/adstring.cc:321
-msgid "Somewhere in input file:\n"
-msgstr "输入文件的某处：\n"
-
-#: ../update-menus/adstring.cc:329
-msgid "(probably) stdin"
-msgstr "(也许是)标准输入"
-
-#: ../update-menus/adstring.cc:343
-msgid "Cannot open file %1."
-msgstr "无法打开文件 %1。"
-
-#: ../update-menus/adstring.h:86
+#: ../update-menus/exceptions.h:43
 msgid "Unknown error."
 msgstr "未知错误。"
 
-#: ../update-menus/adstring.h:104 ../update-menus/adstring.h:114
+#: ../update-menus/exceptions.h:55 ../update-menus/parsestream.h:114
 msgid "Unknown error, message=%1"
 msgstr "未知错误，消息=%1"
 
-#: ../update-menus/adstring.h:121
+#: ../update-menus/exceptions.h:64
+msgid "Unable to open file \"%1\"."
+msgstr "无法打开文件“%1”。"
+
+#: ../update-menus/exceptions.h:73
+msgid "Failed to pipe data through \"%1\" (pipe opened for reading)."
+msgstr "将数据通过管道“%1”输送出错(已经打开管道以读取)。"
+
+#: ../update-menus/exceptions.h:89
+msgid "%1: missing required tag: \"%2\""
+msgstr "%1：缺少必需的标签：“%2”"
+
+#: ../update-menus/parsestream.cc:48
+msgid "(probably) stdin"
+msgstr "(也许是)标准输入"
+
+#: ../update-menus/parsestream.cc:448
+msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
+msgstr "文件“%1”中的第 %2 行(或者其定义结束于该行)：\n"
+
+#: ../update-menus/parsestream.cc:469
+msgid "Somewhere in input file:\n"
+msgstr "输入文件的某处：\n"
+
+#: ../update-menus/parsestream.h:122
 msgid "Unexpected end of file."
 msgstr "意外的文件结束符。"
 
-#: ../update-menus/adstring.h:127
+#: ../update-menus/parsestream.h:129
 msgid "Unexpected end of line."
 msgstr "意外的行结束符。"
 
-#: ../update-menus/adstring.h:133
+#: ../update-menus/parsestream.h:136
 msgid "Identifier expected."
 msgstr "需要标识符"
 
-#: ../update-menus/adstring.h:140
+#: ../update-menus/parsestream.h:144
 msgid "Expected: \"%1\""
 msgstr "预期的：“%1”"
 
-#: ../update-menus/adstring.h:148
+#: ../update-menus/parsestream.h:153
 msgid "Unexpected character: \"%1\""
 msgstr "意外的字符：“%1”"
 
-#: ../update-menus/adstring.h:156
+#: ../update-menus/parsestream.h:162
 msgid ""
 "Boolean (either true or false) expected.\n"
 "Found: \"%1\""
@@ -205,96 +204,95 @@ msgstr ""
 "需要逻辑值(true 或者 false)。\n"
 "发现：“%1”"
 
-#: ../update-menus/adstring.h:165
-msgid "Unable to open file \"%1\"."
-msgstr "无法打开文件“%1”。"
-
-#: ../update-menus/adstring.h:173
+#: ../update-menus/parsestream.h:172
 msgid "Unknown compat mode: \"%1\""
 msgstr "未知的兼容模式：“%1”"
+
+#: ../update-menus/stringtoolbox.cc:85
+msgid ""
+"replacewith($string, $replace, $with): $replace and $with must have the same "
+"length."
+msgstr ""
+"replacewith($string, $replace, $with): $replace 与 $with 的长度必须相等。"
 
 #. Translation here and below refer to the file
 #. /etc/menu-methods/translate_menus that allow to rename and reorganize
 #. menu entries automatically. It does not refer to the localisation
 #. (translation to other languages).
 #.
-#: ../update-menus/update-menus.cc:373
+#: ../update-menus/update-menus.cc:358
 msgid "Reading translation rules in %1."
 msgstr "读取 %1 中的翻译规则。"
 
-#: ../update-menus/update-menus.cc:473
+#: ../update-menus/update-menus.cc:438
 msgid "Reading installed packages list..."
 msgstr "正在读取已安装软件包列表..."
 
-#: ../update-menus/update-menus.cc:492
-msgid "Reading menu-entry file %1."
-msgstr "正在读取菜单条目文件 %1。"
-
-#: ../update-menus/update-menus.cc:520
+#: ../update-menus/update-menus.cc:485
 msgid "Execution of %1 generated no output or returned an error.\n"
 msgstr "执行 %1 未产生任何输出或者返回错误。\n"
 
-#: ../update-menus/update-menus.cc:560 ../update-menus/update-menus.cc:564
+#: ../update-menus/update-menus.cc:525 ../update-menus/update-menus.cc:529
 msgid "Skipping file because of errors...\n"
 msgstr "因出错而忽略文件...\n"
 
-#: ../update-menus/update-menus.cc:579
+#: ../update-menus/update-menus.cc:545
 msgid "Reading menu-entry files in %1."
 msgstr "正在读取 %1 中的菜单条目文件。"
 
-#: ../update-menus/update-menus.cc:602
+#: ../update-menus/update-menus.cc:568
 msgid "Error reading %1.\n"
 msgstr "读取文件 %1 出错\n"
 
-#: ../update-menus/update-menus.cc:607
+#: ../update-menus/update-menus.cc:573
 msgid "%1 menu entries found (%2 total)."
 msgstr "发现 %1 个菜单(共 %2 个)。"
 
-#: ../update-menus/update-menus.cc:618
+#: ../update-menus/update-menus.cc:585
 msgid "Running method: %1"
 msgstr "正在执行方法：%1"
 
-#: ../update-menus/update-menus.cc:621
+#: ../update-menus/update-menus.cc:588
 msgid "Cannot create pipe."
 msgstr "无法创建管道。"
 
-#: ../update-menus/update-menus.cc:657
+#: ../update-menus/update-menus.cc:624 ../update-menus/update-menus.cc:1000
 msgid "Script %1 could not be executed."
 msgstr "无法执行脚本 %1。"
 
-#: ../update-menus/update-menus.cc:660
+#: ../update-menus/update-menus.cc:627
 msgid "Script %1 returned error status %2."
 msgstr "脚本 %1 返回错误状态 %2。"
 
-#: ../update-menus/update-menus.cc:663
+#: ../update-menus/update-menus.cc:630
 msgid "Script %1 received signal %2."
 msgstr "脚本 %1 接受到信号 %2。"
 
-#: ../update-menus/update-menus.cc:673
+#: ../update-menus/update-menus.cc:640
 msgid "Running menu-methods in %1."
 msgstr "正在 %1 中执行 menu-methods。"
 
-#: ../update-menus/update-menus.cc:711
+#: ../update-menus/update-menus.cc:673
 msgid "Other update-menus processes are already locking %1, quitting."
 msgstr "其它 update-menus 进程已经锁定了 %1，正在退出。"
 
-#: ../update-menus/update-menus.cc:714
+#: ../update-menus/update-menus.cc:676
 msgid "Cannot lock %1: %2 - Aborting."
 msgstr "无法锁定 %1：%2 - 正在退出。"
 
-#: ../update-menus/update-menus.cc:723
+#: ../update-menus/update-menus.cc:685
 msgid "Cannot write to lockfile %1 - Aborting."
 msgstr "无法锁定 %1 - 正在退出。"
 
-#: ../update-menus/update-menus.cc:735
+#: ../update-menus/update-menus.cc:698
 msgid "Cannot remove lockfile %1."
 msgstr "无法删除锁文件 %1。"
 
-#: ../update-menus/update-menus.cc:749
+#: ../update-menus/update-menus.cc:714
 msgid "Update-menus is run by user."
 msgstr "用户在运行 update-menus。"
 
-#: ../update-menus/update-menus.cc:831
+#: ../update-menus/update-menus.cc:798
 msgid ""
 "Waiting for dpkg to finish (forking to background).\n"
 "(checking %1)"
@@ -302,11 +300,11 @@ msgstr ""
 "正在等待 dpkg 结束(正在 fork 到后台)。\n"
 "(正在检查 %1)"
 
-#: ../update-menus/update-menus.cc:834
+#: ../update-menus/update-menus.cc:801
 msgid "Further output (if any) will appear in %1."
 msgstr "更多的输出(如果有的话)将出现在 %1。"
 
-#: ../update-menus/update-menus.cc:856
+#: ../update-menus/update-menus.cc:823
 msgid "Dpkg is not locking dpkg status area, good."
 msgstr "Dpkg 没有锁定 dkpg 状态区，很好。"
 
@@ -327,34 +325,26 @@ msgid ""
 "  --stdout               Output menu list in format suitable for piping to\n"
 "                         install-menu.\n"
 msgstr ""
-"update-menus：更新各种窗口管理器的配置文件(以及 dwww 和 pdmenu)\n"
-"  用法：update-menus [选项] \n"
-"    -v  详细显示正在执行的操作。\n"
-"    -d  输出调试信息。\n"
-"    -h, --help 本信息。\n"
-"    --menufilesdir <dir> 将目录 <dir> 加入到所搜索的菜单目录列表。\n"
-"    --menumethod  <method> 只执行菜单方法 <method>。\n"
-"    --nodefaultdirs 禁止使用全部的标准菜单目录。\n"
-"    --stdout 以适合于管道输送到 install-menu 的格式输出菜单列表。\n"
+"用法：update-menus [选项] \n"
+"从菜单数据库收集软件包数据并为所有提供菜单功能的程序建立菜单，通常是窗口管理"
+"器。\n"
+"  -d                     输出调试信息。\n"
+"  -v                     详细显示正在执行的操作。\n"
+"  -h, --help             本信息。\n"
+"  --menufilesdir=<dir>   将目录 <dir> 添加到要搜索的菜单目录列表。\n"
+"  --menumethod=<method>  仅执行菜单方法 <method>。\n"
+"  --nodefaultdirs        禁止使用所有的标准菜单目录。\n"
+"  --stdout               以适合于管道输送到 install-menu 的格式输出菜单列"
+"表。\n"
 
-#: ../update-menus/update-menus.cc:904
-msgid "Directory is expected after --menufilesdir option.\n"
-msgstr "选项 --menufilesdir 后面需要目录。\n"
+#. This is the end of the update-menus --help message
+#: ../update-menus/update-menus.cc:845
+msgid "  --version              Output version information and exit.\n"
+msgstr "  --version              输出版本信息并退出。\n"
 
-#: ../update-menus/update-menus.cc:914
-msgid "Filename is expected after --menumethod option.\n"
-msgstr "选项 --menumethod 后面需要文件名。\n"
-
-#: ../update-menus/update-menus.h:132
+#: ../update-menus/update-menus.h:149
 msgid ""
 "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
 msgstr "未知的安装条件“%1”(目前，只支持 “package”)。"
 
-#: ../update-menus/update-menus.h:142
-msgid "Failed to pipe data through \"%1\" (pipe opened for reading)."
-msgstr "将数据通过管道“%1”输送出错(已经打开管道以读取)。"
-
-#: ../update-menus/update-menus.h:151
-msgid "%1: missing required tag: \"%2\""
-msgstr "%1：缺少必需的标签：“%2”"
 
