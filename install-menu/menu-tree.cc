@@ -38,25 +38,6 @@ using std::list;
 using std::set;
 using std::map;
 
-bool operator<(const vector<string> &left, const vector<string> &right)
-{
-  vector<string>::const_iterator i,j;
-
-  for (i = left.begin(), j = right.begin();
-      (i != left.end()) && (j != right.end());
-      i++, j++)
-  {
-    if (*i < *j)
-        return true;
-    else if (*i > *j)
-        return false;
-  }
-  if (j == right.end())
-      return false;
-  else
-      return true;
-}
-
 string sort_hotkey(const string& str)
 {
   string t;
@@ -224,6 +205,13 @@ void menuentry::add_entry_ptr(std::vector<std::string> sections, menuentry *entr
   }
 }
 
+struct menusort {
+
+  bool operator()(std::string s1, std::string s2) const {
+    return strcoll(s1.c_str(), s2.c_str())<0;
+  }
+};
+
 /** Output menu tree.
  *
  * Uses the 'treewalk' variable to define what to output in which order,
@@ -246,7 +234,7 @@ void menuentry::output()
 {
   string treew = menumethod->treewalk();
   submenu_container::iterator sub_i;
-  std::multimap<string, menuentry *> sorted;
+  std::multimap<string, menuentry *, menusort> sorted;
   std::multimap<string, menuentry *>::iterator i;
 
   // Sort the submenus in sorted:
