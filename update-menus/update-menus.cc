@@ -987,7 +987,11 @@ int main (int argc, char **argv)
               cout << *i;
 
     } else if (!config.menumethod.empty()) {
-      run_menumethod(config.menumethod, menudata);
+      if (executable(config.menumethod))
+        run_menumethod(config.menumethod, menudata);
+      else
+        config.report(String::compose(_("Script %1 could not be executed."),
+              config.menumethod), configinfo::report_quiet);
     } else {
       if (!is_root) {
         try {
