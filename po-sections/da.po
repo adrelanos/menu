@@ -9,16 +9,15 @@
 # Note: Please send any inquiries on this file to the Debian Danish
 # translation team (debian-l10n-danish@lists.debian.org)
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: menu-section 2.1.7-2\n"
+"Project-Id-Version: menu-section\n"
 "POT-Creation-Date: 2003-04-03 12:14+0100\n"
-"PO-Revision-Date: 2003-04-09 22:24+0100\n"
+"PO-Revision-Date: 2004-01-12 22:24+0100\n"
 "Last-Translator: Morten Brix Pedersen <morten@wtf.dk>\n"
 "Language-Team: debian-l10n-danish <debian-l10n-danish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Apps"
@@ -40,13 +39,13 @@ msgid "Graphics"
 msgstr "Grafik"
 
 msgid "Hamradio"
-msgstr "Amatørradio"
+msgstr "AmatÃ¸rradio"
 
 msgid "Math"
 msgstr "Matematik"
 
 msgid "Net"
-msgstr "Netværk"
+msgstr "NetvÃ¦rk"
 
 msgid "Programming"
 msgstr "Programmering"
@@ -55,7 +54,7 @@ msgid "Science"
 msgstr "Videnskab"
 
 msgid "Tools"
-msgstr "Værktøjer"
+msgstr "VÃ¦rktÃ¸jer"
 
 msgid "Technical"
 msgstr "Teknisk"
@@ -85,7 +84,7 @@ msgid "Arcade"
 msgstr "Arkade"
 
 msgid "Board"
-msgstr "Brætspil"
+msgstr "BrÃ¦tspil"
 
 msgid "Card"
 msgstr "Kortspil"
@@ -106,28 +105,51 @@ msgid "Tetris-like"
 msgstr "Tetris-lignende"
 
 msgid "Toys"
-msgstr "Legetøj"
+msgstr "LegetÃ¸j"
 
 msgid "Help"
-msgstr "Hjælp"
+msgstr "HjÃ¦lp"
 
 msgid "Screen"
-msgstr "Skærm"
+msgstr "SkÃ¦rm"
 
 msgid "Lock"
-msgstr "Lås"
+msgstr "LÃ¥s"
 
 msgid "Save"
-msgstr "Pauseskærm"
+msgstr "PauseskÃ¦rm"
 
 msgid "Root-window"
 msgstr "Rodvindue"
 
 msgid "WindowManagers"
-msgstr "Vindueshåndteringer"
+msgstr "VindueshÃ¥ndteringer"
 
 msgid "Modules"
 msgstr "Moduler"
 
 msgid "XShells"
 msgstr "X-terminaler"
+
+#From Apps/System/Admin
+msgid "Admin"
+msgstr "Administration"
+
+#Non official sections from WindowMaker
+msgid "Appearance"
+msgstr "Udseende"
+
+msgid "WorkSpace"
+msgstr "Skrivebord"
+
+#Frequently used unofficial sections.
+
+#From Apps/Net/Mozilla Components
+msgid "Mozilla Components"
+msgstr "Mozilla-dele"
+
+
+#From Games/Toys/Teddies
+msgid "Teddies"
+msgstr "Bamser"
+

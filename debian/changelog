@@ -7,6 +7,9 @@ menu (2.1.9-5) unstable; urgency=low
     Vainikainen.
   * Add Finnish translations. Closes: #227038. Thanks Tommi Vainikainen.
   * Add GPL boiler-plate to all C++ source files.
+  * Morten Brix Pedersen:
+    - Update Danish sections translation and convert to UTF-8.
+    - Update Danish menu translation and convert to UTF-8.
 
  -- Bill Allombert <ballombe@debian.org>  Sun, 11 Jan 2004 10:59:30 +0100
 
