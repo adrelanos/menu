@@ -840,39 +840,10 @@ void wait_dpkg(string &stdoutfile)
         configinfo::report_verbose);
   }
 }
-
-void parse_params(char **argv)
+void
+usage(ostream &c)
 {
-  while (*(++argv))
-  {
-    if(string("-d") == *argv)
-      config.set_verbosity(configinfo::report_debug);
-    if(string("-v") == *argv)
-      config.set_verbosity(configinfo::report_verbose);
-    if(string("--nodefaultdirs") == *argv)
-      config.usedefaultmenufilesdirs = false;
-    if(string("--stdout") == *argv)
-      config.onlyoutput_to_stdout = true;
-    if(string("--menufiledir") == *argv) {
-      argv++;
-      if(*argv) {
-          config.menufilesdir.push_back(*argv);
-      } else {
-        cerr<< _("Directory is expected after --menufilesdir option.\n");
-        throw informed_fatal();
-      }
-    }
-    if(string("--menumethod") == *argv) {
-      argv++;
-      if(*argv) {
-          config.menumethod = *argv;
-      } else {
-        cerr << _("Filename is expected after --menumethod option.\n");
-        throw informed_fatal();
-      }
-    }
-    if(string("-h") == *argv || string("--help") == *argv) {
-      cerr <<
+      c <<
           _("update-menus: update the various window-manager config files (and\n"
               "  dwww, and pdmenu) Usage: update-menus [options] \n"
               "    -v  Be verbose about what is going on.\n"
@@ -882,6 +853,60 @@ void parse_params(char **argv)
               "    --menumethod  <method> Run only the menu method <method>.\n"
               "    --nodefaultdirs Disables the use of all the standard menu directories.\n"
               "    --stdout Output menu list in format suitable for piping to install-menu.\n");
+}
+
+void parse_params(char **argv)
+{
+  while (*(++argv))
+  {
+    if(string("-d") == *argv)
+    {
+      config.set_verbosity(configinfo::report_debug);
+      continue;
+    }
+    if(string("-v") == *argv)
+    {
+      config.set_verbosity(configinfo::report_verbose);
+      continue;
+    }
+    if(string("--nodefaultdirs") == *argv)
+    {
+      config.usedefaultmenufilesdirs = false;
+      continue;
+    }
+    if(string("--stdout") == *argv)
+    {
+      config.onlyoutput_to_stdout = true;
+      continue;
+    }
+    if(string("--menufiledir") == *argv) {
+      argv++;
+      if(*argv) {
+          config.menufilesdir.push_back(*argv);
+      } else {
+        cerr<< _("Directory is expected after --menufilesdir option.\n");
+        throw informed_fatal();
+      }
+      continue;
+    }
+    if(string("--menumethod") == *argv) {
+      argv++;
+      if(*argv) {
+          config.menumethod = *argv;
+      } else {
+        cerr << _("Filename is expected after --menumethod option.\n");
+        throw informed_fatal();
+      }
+      continue;
+    }
+    if(string("-h") == *argv || string("--help") == *argv) 
+    {  
+      usage(cout);
+      exit(0);
+    }
+    else
+    {
+      usage(cerr);
       exit(1);
     }
   }
