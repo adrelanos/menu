@@ -3,6 +3,8 @@ menu (2.1.19) unstable; urgency=low
   * The "unreleased" release 
   * Update Finnish menu section translations, fixing a serious translation
     error noticed by Mika Wahlroos. Closes: #276122.
+  * Update Russian menu message translation. Thanks Yuri Kozlov.
+    Closes: #268638.
 
  -- Bill Allombert <ballombe@debian.org>  Mon,  4 Oct 2004 13:17:59 +0200
 
