@@ -1,6 +1,7 @@
 menu (2.1.9-2) unstable; urgency=low
 
   * The "unreleased release". 
+  * Add Catalan translation of menu sections. Thanks Jordi Mallach.
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 27 Jun 2003 23:14:48 +0200
 
