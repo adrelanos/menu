@@ -1,4 +1,4 @@
-all-local: menu.html/ menu.txt.gz menu.info.gz
+all-local: menu.html/index.html menu.txt.gz menu.info.gz
 
 DOCS = announce-2 BUGS menu.sgml README.changes README.config-menus README.menu-methods README.new-sections README.package-menus README.pre1 TODO translate
 
@@ -8,7 +8,7 @@ EXTRA_DIST = $(man_MANS) $(DOCS) menu.sgml $(srcdir)/menu.html $(srcdir)/menu.tx
 docdir=$(datadir)/doc
 pkgdocdir=$(docdir)/menu
 
-menu.html/: menu.sgml
+menu.html/index.html: menu.sgml
 	debiandoc2html $<
 
 menu-one-file.html: menu.sgml
@@ -25,7 +25,7 @@ menu-one-file: menu-one-file.html
 	debiandoc2text -O $< > $@
 
 %.gz:   %
-	gzip -f9 $<
+	gzip --best --force --stdout $< > $@
 clean-local:
 	rm -f menu-one-file.html
 
