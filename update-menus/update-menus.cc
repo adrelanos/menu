@@ -546,7 +546,6 @@ void read_menufilesdir(vector<string> &menudata)
       method_i != config.menufilesdir.end();
       ++method_i)
   {
-    int count = menudata.size();
     string dirname = *method_i;
     config.report(String::compose(_("Reading menu-entry files in %1."), dirname),
         configinfo::report_verbose);
