@@ -5,13 +5,12 @@
 #include <map>
 #include <set>
 #include <string>
-#include "adstring.h"
 
 using std::string;
 
 bool operator<(const std::set<string> &left, const std::set<string> &right);
 
-std::ostream& operator<<(std::ostream &, const StrVec &);
+std::ostream& operator<<(std::ostream &, const std::vector<string> &);
 
 
 class hint_tree;
@@ -27,7 +26,7 @@ public:
   hint_tree(string k) : key(k) { }
 
   string key;
-  std::vector<StrVec> entries;
+  std::vector<std::vector<string> > entries;
   double penalty; //of the whole tree (including children, grandchildren, etc).
   std::vector<hint_tree> children;
 };
@@ -43,7 +42,7 @@ class hints {
   unsigned int max_ntry;
   int max_iter_hint;
   
-  std::vector<StrVec> hint_list;
+  std::vector<std::vector<string> > hint_list;
   std::vector<int> raw_count;
 
 public:
@@ -59,8 +58,8 @@ public:
   void set_max_ntry(int n){max_ntry=n;};
   void set_max_iter_hint(int n){max_iter_hint=n;};
   void set_debug(bool opt){debugopt=opt;};
-  void calc_tree(const std::vector<StrVec> &hint_input,
-      std::vector<StrVec> &hint_output);
+  void calc_tree(const std::vector<std::vector<string> > &hint_input,
+      std::vector<std::vector<string> > &hint_output);
 
   void debug();
 
@@ -75,28 +74,27 @@ private:
       return hint_topnentry;
   }
   void add_division(int level, possible_divisions &division_list, 
-		    const std::vector <unsigned int> &division, 
-		    correlation &h, 
-		    int unused, 
-		    double &worst_penalty,
-		    unsigned int itteration);
+                    const std::vector<unsigned int> &division, 
+                    correlation &h, 
+                    int unused, 
+                    double &worst_penalty,
+                    unsigned int itteration);
   bool try_shortcut(int level,
-			const std::vector <StrVec > &hint_input, 
-			const std::vector <int> &raw_input_count,
-			hint_tree &t,
-			int already_used);
+                    const std::vector<std::vector<string> > &hint_input, 
+                    const std::vector<int> &raw_input_count,
+                    hint_tree &t,
+                    int already_used);
   void find_possible_divisions(int level, possible_divisions &division_list,
-			       const std::vector <StrVec> &hint_input,
-			       const std::vector <int> &raw_input_count,
-			       int already_used);
+                              const std::vector<std::vector<string> > &hint_input,
+                              const std::vector<int> &raw_input_count,
+                              int already_used);
   void postprocess(int level, 
-		   const std::vector <StrVec> &hint_input, 
-		   const std::vector <int> &raw_input_count,
-		   hint_tree &t,
-		   int already_used);
-  void search_hint(hint_tree &t,
-		   const StrVec &hint_in,
-		         StrVec &hint_out);
+                  const std::vector<std::vector<string> > &hint_input, 
+                  const std::vector<int> &raw_input_count,
+                  hint_tree &t,
+                  int already_used);
+  void search_hint(hint_tree &t, const std::vector<string> &hint_in,
+                  std::vector<string> &hint_out);
   void debug_hint_tree(const hint_tree &t, int level);
   void nspace(int);
 };

@@ -163,7 +163,7 @@ struct funcN : public func {
 class func_def : public func {
   cat_str *f;
   string func_name;
-  StrVec args_name;
+  std::vector<std::string> args_name;
 public:
   func_def(parsestream &i);
   unsigned int nargs() const { return args_name.size(); }

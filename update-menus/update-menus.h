@@ -24,9 +24,8 @@ class trans_class {
 protected:
   string match, replace, replace_var;
 public:
-  trans_class(const string &m,
-	      const string &r,
-	      const string &rv) : match(m), replace(r), replace_var(rv) { }
+  trans_class(const string &m, const string &r, const string &rv)
+      : match(m), replace(r), replace_var(rv) { }
 
   bool check(string &s);
   virtual void process(menuentry &m, const string &v) = 0;
@@ -36,27 +35,24 @@ public:
 
 class translate : public trans_class {
 public:
-  translate(const string &m,
-	    const string &r,
-	    const string &rv) : trans_class(m,r,rv) { }
-  
+  translate(const string &m, const string &r, const string &rv)
+      : trans_class(m,r,rv) { }
+
   void process(menuentry &m, const string &v);
 };
 
 class substitute : public trans_class {
 public:
-  substitute(const string &m,
-	    const string &r,
-	    const string &rv) : trans_class(m,r,rv) { }
+  substitute(const string &m, const string &r, const string &rv)
+      : trans_class(m,r,rv) { }
 
   void process(menuentry &m, const string &v);
 };
 
 class subtranslate : public trans_class {
 public:
-  subtranslate( string &m,
-	    const string &r,
-	    const string &rv) : trans_class(m,r,rv) { }
+  subtranslate(string &m, const string &r, const string &rv)
+      : trans_class(m,r,rv) { }
 
   void process(menuentry &m, const string &v);
 };
@@ -76,7 +72,7 @@ class configinfo {
 public:
   typedef enum { report_quiet, report_normal, report_verbose, report_debug} verbosity_type;
   parsestream::eol_type compat;
-  StrVec menufilesdir;
+  std::vector<std::string> menufilesdir;
   string menumethod;
   bool usedefaultmenufilesdirs;
   bool onlyoutput_to_stdout;
@@ -98,7 +94,7 @@ public:
 
   void update(string filename);
   void report(const string &message,verbosity_type v);
-  void set_verbosity(verbosity_type v){verbosity=v;};  
+  void set_verbosity(verbosity_type v) { verbosity = v; }
 };
 
 // ************* exception classes:
@@ -109,7 +105,7 @@ public:
   string message(){
     return Sprintf(_("Unknown install condition \"%s\" (currently, only \"package\" is supported)"),msg);
   };
-};  
+};
 
 class cond_inst_false: public genexcept{};//conditional install returns false
 

@@ -56,28 +56,29 @@ using std::multimap;
 using std::set;
 using std::pair;
 using std::cout;
+using std::string;
 using std::endl;
 
 class correlation {
   // this class combines the hints, and calculates a correlation table.
 
 public:
-  typedef vector <vector <int> >  table;
+  typedef vector<vector<int> >  table;
 
 private:
   bool debugopt;
-  vector<StrVec > hint_list; //raw input for this correlation class.
+  vector<vector<string> > hint_list; //raw input for this correlation class.
   vector<int>     raw_count; //raw input frequency vector.
   int n_raw;                 //sum of raw_count[i] for all i.
   
   // hints sorted by name, to be able to quickly find out a 
   // hints' freq. The frequency of each hint is the sum of their 
   // appearencies in hint_list (multiplied by raw_count).
-  map <string, int> hint_frequency;
-    
+  map<string, int> hint_frequency;
+
   // Same as hint_frequency, but sorted by frequency.
-  StrVec frequency_hint; //array of hints, sorted by frequency.
-  vector <int> frequency_freq; //frequencies of above hints.
+  vector<string> frequency_hint; //array of hints, sorted by frequency.
+  vector<int> frequency_freq; //frequencies of above hints.
 
   table tab; 
   //tab[i][j] contains the number of occurences of both
@@ -90,15 +91,15 @@ private:
   void calc_correlations();
 
 public:
-  correlation(const vector <StrVec > &hint_input,
-	      const vector <int> &count_input, 
-	      double min_hint_freq,
-	      bool debug);
+  correlation(const vector<vector<string> > &hint_input,
+              const vector<int> &count_input, 
+              double min_hint_freq,
+              bool debug);
 
   int frequency(string h) { return hint_frequency[h]; }
   int frequency(unsigned int i) { return frequency_freq[i]; }
   string hint_i(unsigned int i) { return frequency_hint[i]; }
-  StrVec &hint_input_i(unsigned int i) { return hint_list[i]; }
+  vector<string> &hint_input_i(unsigned int i) { return hint_list[i]; }
   int raw_total() const { return n_raw; }
   unsigned int n_input() const { return hint_input_n; }
   unsigned int nhints() const { return tab.size(); }
@@ -107,9 +108,9 @@ public:
 };
 
 
-correlation::correlation(const vector <StrVec > &hint_input,
-			 const vector <int> &raw_input_count,
-			 double min_hint_freq,
+correlation::correlation(const vector<vector<string> > &hint_input,
+                         const vector<int> &raw_input_count,
+                         double min_hint_freq,
                          bool bug)
 {
   // hint_input: has been sorted by calling routine,
@@ -117,14 +118,14 @@ correlation::correlation(const vector <StrVec > &hint_input,
   // raw_input_count[i]: records frequency of hint_input[i].
 
   unsigned int i,j;
-  vector <StrVec>::const_iterator k;
-  StrVec::const_iterator m,l;
-  map <string, int>::iterator hi;
-  multimap <int, string, std::greater<int> > fh;
-  multimap <int, string, std::greater<int> >::const_iterator fhi;
+  vector<vector<string> >::const_iterator k;
+  vector<string>::const_iterator m,l;
+  map<string, int>::iterator hi;
+  multimap<int, string, std::greater<int> > fh;
+  multimap<int, string, std::greater<int> >::const_iterator fhi;
   unsigned int total, n;
   string c;
-  set <string> used_hints;
+  set<string> used_hints;
 
   debugopt=bug;
   hint_input_n=hint_input.size();
@@ -143,9 +144,9 @@ correlation::correlation(const vector <StrVec > &hint_input,
       n=raw_count[i];
       total+=n;
       if(hi==hint_frequency.end())
-	hint_frequency[c]=n;
+          hint_frequency[c]=n;
       else
-	(*hi).second+=n;
+          (*hi).second+=n;
     }
     n_raw += raw_input_count[i];
   }
@@ -160,15 +161,16 @@ correlation::correlation(const vector <StrVec > &hint_input,
   // limitation) are left out in used_hints.
   for(k=hint_input.begin(); k!=hint_input.end(); k++){
     if (!k->empty()) {
-      for(l=m=(*k).begin(); m!=(*k).end(); m++){
-	if(hint_frequency[*l]<hint_frequency[*m])
-	  l=m;
-	if(used_hints.find(*m)!=used_hints.end())
-	  break;
+      for(l=m=(*k).begin(); m!=(*k).end(); m++)
+      {
+        if(hint_frequency[*l]<hint_frequency[*m])
+            l=m;
+        if(used_hints.find(*m)!=used_hints.end())
+            break;
       }
       if(m==(*k).end()){
-	fh.insert(pair<int,string>(hint_frequency[*l],*l));
-	used_hints.insert(*l);
+        fh.insert(pair<int,string>(hint_frequency[*l],*l));
+        used_hints.insert(*l);
       }
     }
   }
@@ -202,15 +204,15 @@ void correlation::calc_correlations()
     vector<int> &tab_i=tab[i];
     for(j=0; j<frequency_hint.size();j++){
       if(i==j)
-	tab_i[j]=hint_frequency[c];
+          tab_i[j]=hint_frequency[c];
       else
-	for(k=0;k<hint_list.size(); k++){
-	  StrVec::const_iterator b=hint_list[k].begin();
-	  StrVec::const_iterator e=hint_list[k].end();
-	  if((find(b, e, c)!=e) && (find(b, e, frequency_hint[j])!=e)){
-	    tab_i[j]+=raw_count[k];
-	  }
-	}
+          for(k=0;k<hint_list.size(); k++){
+            vector<string>::const_iterator b=hint_list[k].begin();
+            vector<string>::const_iterator e=hint_list[k].end();
+            if((find(b, e, c)!=e) && (find(b, e, frequency_hint[j])!=e)){
+              tab_i[j]+=raw_count[k];
+            }
+          }
     }
   }
 }
@@ -218,37 +220,37 @@ void correlation::calc_correlations()
 void correlation::debug()
 {
   unsigned int i,j;
-  vector <StrVec >::const_iterator hi;
-  map <string, int>::const_iterator m;
+  vector<vector<string> >::const_iterator hi;
+  map<string, int>::const_iterator m;
 
   if(debugopt){
     cout<<"Hintoj (size="<<hint_frequency.size()<<") :"<<endl;
     for(m=hint_frequency.begin(); m!=hint_frequency.end(); m++)
       cout<<(*m).first<<" - "<<(*m).second<<endl;
-    
+
     cout<<"Hint_input (size="<<hint_list.size()<<") :"<<endl;
     for(i=0,hi=hint_list.begin(); hi!=hint_list.end(); hi++,i++){
       cout<<i<<" \"";
       for(j=0; j< (*hi).size(); j++)
-	cout<<(*hi)[j];
+          cout<<(*hi)[j];
       cout<<" * "<<raw_count[i]<<"\""<<endl;
     }
     cout<<"Hint_tab:"<<endl<<"   ";
     for(i=0; i<frequency_hint.size(); i++)
-      cout<<frequency_hint[i];
+        cout<<frequency_hint[i];
     cout<<endl;
     for(i=0; i<frequency_hint.size(); i++){
       unsigned int k;
       cout<<" "<<frequency_hint[i]<<" ";
       for(k=0;k<frequency_hint.size(); k++){
-	cout<<tab[i][k];
+        cout<<tab[i][k];
       }
       cout<<endl;
     }
   }
 }
 
-std::ostream& operator<<(std::ostream &o, const StrVec &s)
+std::ostream& operator<<(std::ostream &o, const vector<string> &s)
 {
   for(vector<string>::const_iterator i = s.begin(); i != s.end(); ++i)
       o << '[' << *i << ']';
@@ -277,14 +279,14 @@ bool operator<(const set<string> &left, const set<string> &right)
 // Calculate a new menu tree.
 //
 // Arguments:
-//      
+//
 //      hint_input: a vector with all sections.
 //      hint_output: what is to be the final tree
 //
 // The magic happens in order() and postprocess().
 //
-void hints::calc_tree(const vector<StrVec> &hint_input,
-    vector<StrVec> &hint_output)
+void hints::calc_tree(const vector<vector<string> > &hint_input,
+    vector<vector<string> > &hint_output)
 {
 
   hint_output.erase(hint_output.begin(), hint_output.end());
@@ -295,10 +297,10 @@ void hints::calc_tree(const vector<StrVec> &hint_input,
 
   postprocess(0, hint_list, raw_count, root_tree, 0);
 
-  vector<StrVec>::const_iterator i;
+  vector<vector<string> >::const_iterator i;
   for (i = hint_input.begin(); i != hint_input.end(); ++i)
   {
-    StrVec out;
+    vector<string> out;
     search_hint(root_tree, *i, out);
     hint_output.push_back(out);
     if (debugopt)
@@ -322,8 +324,8 @@ void hints::calc_tree(const vector<StrVec> &hint_input,
 // each entry.
 void hints::order()
 {
-  map <set <string>, int> sorted;
-  map <set <string>, int>::iterator si;
+  map<set<string>, int> sorted;
+  map<set<string>, int>::iterator si;
 
   // The test below for (*).empty() is a bad hack! I don't want
   // empty entries, that probably were caused by 
@@ -352,7 +354,7 @@ void hints::order()
   for (si = sorted.begin(); si != sorted.end(); ++si)
   {
     set<string>::const_iterator hi;
-    StrVec v;
+    vector<string> v;
     for(hi = si->first.begin(); hi != si->first.end(); ++hi)
         v.push_back(*hi);
     hint_list.push_back(v);
@@ -372,29 +374,28 @@ double hints::calc_penalty(int level, int n, int unused)
 }
 
 void hints::add_division(int level,
-			 possible_divisions &division_list, 
-			 const vector <unsigned int> &division, 
-			 correlation &h, 
-			 int unused,
-			 double &worst_penalty,
-			 unsigned int itteration
-    )
+                          possible_divisions &division_list, 
+                          const vector<unsigned int> &division, 
+                          correlation &h, 
+                          int unused,
+                          double &worst_penalty,
+                          unsigned int itteration)
 {
   double penalty;
-  vector <hint_tree> d;
+  vector<hint_tree> d;
   unsigned int i;
   possible_divisions::iterator l;
-  
+
   if (!division.empty())
-    penalty=calc_penalty(level, division.size()+unused, unused);
+      penalty=calc_penalty(level, division.size()+unused, unused);
   else
-    penalty=calc_penalty(level, h.raw_total()+unused,0);
+      penalty=calc_penalty(level, h.raw_total()+unused,0);
 
 
   if((division_list.size()<max_ntry) ||
       (penalty<worst_penalty)){
     for(i=0; i<division.size(); i++){
-      vector <hint_tree> c;
+      vector<hint_tree> c;
       hint_tree t(h.hint_i(division[i]), c);
       d.push_back(t);
     } 
@@ -402,9 +403,9 @@ void hints::add_division(int level,
       vector<unsigned int>::const_iterator j;
       cout<<"itt="<<itteration<<" ";
       cout<<"Adding Division h, p="<<penalty<<" dl.s()= "
-	  <<division_list.size()<<", h=";
+          <<division_list.size()<<", h=";
       for(j=division.begin(); j!=division.end(); j++)
-	cout<<"["<<h.hint_i(*j)<<"]";
+          cout<<"["<<h.hint_i(*j)<<"]";
       cout<<endl;
     }
     if(division_list.size()>=max_ntry){
@@ -412,8 +413,7 @@ void hints::add_division(int level,
       l--;
       division_list.erase(l, division_list.end());
     }
-    division_list.insert(pair<const double,
-			 vector<hint_tree> >(penalty,d));
+    division_list.insert(pair<const double, vector<hint_tree> >(penalty,d));
     l=division_list.end();
     l--;
     if((*l).first<worst_penalty)
@@ -423,12 +423,12 @@ void hints::add_division(int level,
 
 void hints::find_possible_divisions(int level,
                                     possible_divisions &division_list,
-                                    const vector <StrVec> &hint_input,
-                                    const vector <int> &raw_input_count,
+                                    const vector<vector<string> > &hint_input,
+                                    const vector<int> &raw_input_count,
                                     int already_used)
 {
-  vector <vector <int> > remaining;
-  vector <unsigned int> division;
+  vector<vector<int> > remaining;
+  vector<unsigned int> division;
   unsigned int i, j, used, used_tmp, total;
   double worst_penalty=(int)max_local_penalty;
   unsigned int itterations=0;
@@ -438,7 +438,7 @@ void hints::find_possible_divisions(int level,
   {
     // generate an `empty' remaining[] array, to show that all
     // hints are still available (see also comment below).
-    vector <int> r;
+    vector<int> r;
     for(i=0; i< h.nhints(); i++)
       r.push_back(1);
     remaining.push_back(r);
@@ -455,7 +455,7 @@ void hints::find_possible_divisions(int level,
 
   while(1)
   {
-    vector <int> r;
+    vector<int> r;
     bool do_add=false;
     bool do_remove_and_continue=false;
 
@@ -470,25 +470,25 @@ void hints::find_possible_divisions(int level,
     // array maintains a list of such hints (remaining[i]=1 means
     // hint[i] still can be used).
     for(; i < tab.size(); i++)
-      if(remaining[remaining.size()-1][i]){
-	used_tmp=used + h.frequency(i);
-	if (used_tmp == total){
-	  // this combination of divisions perfectly uses up all
-	  // menuentries: add it to the division_list, and
-	  // then continue searching other possibilities.
-	  division.push_back(i);
-	  
-	  add_division(level, division_list,division, h, 
-		       total-used_tmp+ already_used, 
-		       worst_penalty, itterations);
-	  division.pop_back();
-	}
-	else if(used_tmp < total){
-	  used=used_tmp;
-	  break;
-	}
-      }
-    
+        if(remaining[remaining.size()-1][i]){
+          used_tmp=used + h.frequency(i);
+          if (used_tmp == total){
+            // this combination of divisions perfectly uses up all
+            // menuentries: add it to the division_list, and
+            // then continue searching other possibilities.
+            division.push_back(i);
+
+            add_division(level, division_list,division, h, 
+                total-used_tmp+ already_used, 
+                worst_penalty, itterations);
+            division.pop_back();
+          }
+          else if(used_tmp < total){
+            used=used_tmp;
+            break;
+          }
+        }
+
     if(i==tab.size() && (division.size())){
       do_add=1;
       do_remove_and_continue=true;
@@ -496,13 +496,13 @@ void hints::find_possible_divisions(int level,
     if(division.size()>(nopt(level)-already_used)){
       double penalty=calc_penalty(level, division.size()+1,0);
       if((division.size()>=max_ntry) &&
-	 (penalty > worst_penalty)){
-	// If after adding this hint we already exceed the maximum 
-	// number of subentries, we can stop trying this hint.
-	// Also the previous hint (in division[]) will not work any
-	// more, as the following hints are all lower in frequency 
-	// (and thus we need more of them to use all entries).
-	do_remove_and_continue=true;
+          (penalty > worst_penalty)){
+        // If after adding this hint we already exceed the maximum 
+        // number of subentries, we can stop trying this hint.
+        // Also the previous hint (in division[]) will not work any
+        // more, as the following hints are all lower in frequency 
+        // (and thus we need more of them to use all entries).
+        do_remove_and_continue=true;
       }
     }
     if(do_add){
@@ -510,16 +510,16 @@ void hints::find_possible_divisions(int level,
       // entries used), but insert this option in 
       // division_list anyway (with a penalty)
       add_division(level,
-		   division_list, division, h, 
-		   total-used + already_used, 
-		   worst_penalty, itterations);
+          division_list, division, h, 
+          total-used + already_used, 
+          worst_penalty, itterations);
     }
     if(do_remove_and_continue){
       // Get i out of division (will be used in next itteration)
       i=division[division.size()-1];
-      
+
       used -= h.frequency(i);
-      
+
       // Remove this (failed) last hint from division.
       division.pop_back();
       remaining.pop_back();
@@ -528,8 +528,8 @@ void hints::find_possible_divisions(int level,
     }
     if (i==tab.size())
       if (division.empty()) {
-	// apparently all possibilities have been seen.
-	break; 
+        // apparently all possibilities have been seen.
+        break; 
       }
 
     division.push_back(i);
@@ -543,8 +543,8 @@ void hints::find_possible_divisions(int level,
 }
 
 bool hints::try_shortcut(int level,
-                        const vector <StrVec > &hint_input,
-                        const vector <int> &raw_input_count,
+                        const vector<vector<string> > &hint_input,
+                        const vector<int> &raw_input_count,
                         hint_tree &t,
                         int already_used)
 {
@@ -568,7 +568,7 @@ found:
 }
 
 void hints::postprocess(int level,
-                        const vector<StrVec >& hint_input,
+                        const vector<vector<string> >& hint_input,
                         const vector<int>& raw_input_count,
                         hint_tree& t,
                         int already_used)
@@ -612,24 +612,24 @@ void hints::postprocess(int level,
     unsigned int cl_i;
     cout << "Je fine:" << endl;
     for(cl_i=0, cl=division_list.begin(); 
-	(cl!=division_list.end()) && (cl_i<7); 
-	cl++, cl_i++){
+        (cl!=division_list.end()) && (cl_i<7); 
+        cl++, cl_i++){
       cout<<(*cl).first<<"  ";
       for(i=0;i<(*cl).second.size(); i++){
-	cout<<"[";
-	for(j=0; j<(*cl).second[i].key.size();j++)
-	  cout<<((*cl).second[i]).key[j];
-	cout<<"]";
+        cout << '[';
+        for(j=0; j<(*cl).second[i].key.size();j++)
+            cout<<((*cl).second[i]).key[j];
+        cout << ']';
       }
-      cout<<endl; 
+      cout << endl; 
     }
   }
   for(cl=division_list.begin(); (cl!=division_list.end()); cl++){
-    vector <bool> stored(hint_input.size());
+    vector<bool> stored(hint_input.size());
     double penalty = cl->first;
     for(i = 0; i < cl->second.size(); ++i){
-      vector <StrVec > children_hint_input;
-      vector <int> children_counts;
+      vector<vector<string> > children_hint_input;
+      vector<int> children_counts;
       //key_leftover: hints that belong to this key,
       //but aren't put in the children_hint_input.
       //This is in situations where key=A, and hints are A, AB, AC.
@@ -637,7 +637,7 @@ void hints::postprocess(int level,
       //but the first one [A] isn't.
       int key_left_over=0; 
       const string &key=(*cl).second[i].key;
-      
+
       // In the example above, the first iteration key will be 
       // b, then e,...	
       // Now search entries in hint_input that have hint key in
@@ -647,45 +647,40 @@ void hints::postprocess(int level,
       // from them (resulting in c,d in the example), and try
       // to (recursively) make a tree from that.
       for(j=0; j<hint_input.size(); j++)
-	if(!stored[j]){
-	  StrVec::const_iterator 
-	    b=hint_input[j].begin(),
-	    e=hint_input[j].end(),
-	    f;
-	  f=find(b, e, key);
-	  if(f!=e){
-	    StrVec tmphint;
-	    stored[j]=true;
-	    for(k=0; k<hint_input[j].size(); k++)
-	      if(hint_input[j][k]!=key)
-		tmphint.push_back(hint_input[j][k]);
-	    if (!tmphint.empty()) {
-	      children_hint_input.push_back(tmphint);
-	      children_counts.push_back(raw_input_count[j]);
-	    } else
-	      key_left_over+=raw_input_count[j];
-	  }
-	}
+          if (!stored[j]) {
+            vector<string>::const_iterator 
+                b=hint_input[j].begin(),
+            e=hint_input[j].end(),
+            f;
+            f=find(b, e, key);
+            if(f!=e){
+              vector<string> tmphint;
+              stored[j]=true;
+              for(k=0; k<hint_input[j].size(); k++)
+                  if(hint_input[j][k]!=key)
+                      tmphint.push_back(hint_input[j][k]);
+              if (!tmphint.empty()) {
+                children_hint_input.push_back(tmphint);
+                children_counts.push_back(raw_input_count[j]);
+              } else
+                  key_left_over+=raw_input_count[j];
+            }
+          }
       if (!children_hint_input.empty()) {
-	if(debugopt)
-	  cout<<"Re-entering postpro, key="<< key 
-	      <<", left_over="<<key_left_over<<endl;
-	postprocess(level+1,
-		    children_hint_input, 
-		    children_counts, (*cl).second[i],
-		    key_left_over);
-	if(debugopt)
-	  cout<<"Eliris      postpro, k="<< key 
-	      <<" p="<<(*cl).second[i].penalty<<endl;
-	penalty+=(*cl).second[i].penalty;
+        if (debugopt)
+            cout<<"Re-entering postpro, key="<< key 
+                <<", left_over="<<key_left_over<<endl;
+        postprocess(level+1, children_hint_input,  children_counts, cl->second[i], key_left_over);
+        if (debugopt)
+            cout<<"Eliris postpro, k="<< key <<" p="<<cl->second[i].penalty<<endl;
+        penalty += cl->second[i].penalty;
       } else {
-	double lpenalty=calc_penalty(level, key_left_over,0);
-	(*cl).second[i].penalty=lpenalty;
-	penalty+=lpenalty;
+        double lpenalty=calc_penalty(level, key_left_over,0);
+        cl->second[i].penalty=lpenalty;
+        penalty+=lpenalty;
       }
     }
-    tmp_div_list.insert(pair<double,possible_divisions::iterator>
-			(penalty,cl));
+    tmp_div_list.insert(pair<double,possible_divisions::iterator>(penalty,cl));
   }
   cl=(*tmp_div_list.begin()).second;
   for(i=0; i<(*cl).second.size(); i++)
@@ -694,8 +689,8 @@ void hints::postprocess(int level,
 }
 
 void hints::search_hint(hint_tree &tree,
-                        const StrVec &hint_in,
-                        StrVec &hint_out)
+                        const vector<string> &hint_in,
+                        vector<string> &hint_out)
 {
   bool found = false;
 

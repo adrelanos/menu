@@ -1,4 +1,3 @@
-#include <vector>
 #include <cctype>
 #include <list>
 #include <set>
@@ -6,11 +5,15 @@
 #include "install-menu.h"
 #include "hints.h"
 
-using namespace std;
+using std::vector;
+using std::string;
+using std::list;
+using std::set;
+using std::map;
 
-bool operator<(const StrVec &left, const StrVec &right)
+bool operator<(const vector<string> &left, const vector<string> &right)
 {
-  StrVec::const_iterator i,j;
+  vector<string>::const_iterator i,j;
 
   for (i = left.begin(), j = right.begin();
       (i != left.end()) && (j != right.end());
@@ -42,7 +45,7 @@ bool operator<(const StrVec &left, const StrVec &right)
 // However, even in the `flat', hint-processing case, if there already
 // exists a submenu with exactly the right sections[0], then we do desent,
 // if it has a entry_vars[FORCED_VAR] set.
-void menuentry::add_entry(StrVec sections, map<string, string> &entry_vars)
+void menuentry::add_entry(vector<string> sections, map<string, string> &entry_vars)
 {
   map<string, string>::iterator vi;
   map<string, string>::iterator vj;
@@ -66,7 +69,7 @@ void menuentry::add_entry(StrVec sections, map<string, string> &entry_vars)
     return;
   }
 
-  StrVec firstsection;
+  vector<string> firstsection;
   firstsection.push_back(sections[0]);
   submenu_container::iterator firstsection_i = submenus.find(firstsection);
 
@@ -81,9 +84,9 @@ void menuentry::add_entry(StrVec sections, map<string, string> &entry_vars)
     // And because sections.size() > 1, there are more sections to add.
 
     // Add new subsections to our new section (but strip the first one)
-    StrVec subsections;
-    for(StrVec::iterator i = sections.begin()+1; i != sections.end(); ++i)
-        if(!i->empty())
+    vector<string> subsections;
+    for (vector<string>::iterator i = sections.begin()+1; i != sections.end(); ++i)
+        if (!i->empty())
             subsections.push_back(*i);
 
     // If the first subsection doesn't already exist, then create a new one.
@@ -91,6 +94,7 @@ void menuentry::add_entry(StrVec sections, map<string, string> &entry_vars)
       submenus[firstsection] = new menuentry;
       submenus[firstsection]->vars[TITLE_VAR] = firstsection[0];
     }
+
     submenus[firstsection]->add_entry(subsections, entry_vars);
   } else {
     submenu_container::iterator f = submenus.find(sections);
@@ -120,19 +124,19 @@ void menuentry::add_entry(StrVec sections, map<string, string> &entry_vars)
 //     sections: A vector of strings, holding the section names.
 //     entry: a pointer to a menuentry.
 // 
-void menuentry::add_entry_ptr(StrVec sections, menuentry *entry)
+void menuentry::add_entry_ptr(vector<string> sections, menuentry *entry)
 {
   if (sections.size() > 1) {
     // There are more sections to add...
 
     // Add new subsections to our new section (but strip the first one)
-    StrVec subsections;
-    for (StrVec::iterator i = sections.begin()+1; i != sections.end(); ++i)
+    vector<string> subsections;
+    for (vector<string>::iterator i = sections.begin()+1; i != sections.end(); ++i)
         if (!i->empty())
             subsections.push_back(*i);
-    
+
     // If the first subsection doesn't already exist, then create a new one.
-    StrVec firstsection;
+    vector<string> firstsection;
     firstsection.push_back(sections[0]);
     if (submenus.find(firstsection) == submenus.end()) {
       submenus[firstsection] = new menuentry;
@@ -141,7 +145,7 @@ void menuentry::add_entry_ptr(StrVec sections, menuentry *entry)
     }
     submenus[firstsection]->add_entry_ptr(subsections, entry);
   } else if (submenus.find(sections) == submenus.end()) {
-    // Add a new entry, because these sections doesn't exist.
+    // Add a new entry, because this section doesn't exist.
     submenus[sections] = entry;
   }
 }
@@ -168,8 +172,8 @@ void menuentry::output()
 {
   string treew = config->treewalk();
   submenu_container::iterator sub_i;
-  multimap <string, menuentry *> sorted;
-  multimap <string, menuentry *>::iterator i;
+  std::multimap<string, menuentry *> sorted;
+  std::multimap<string, menuentry *>::iterator i;
 
   // Sort the submenus in sorted:
   for (sub_i = submenus.begin(); sub_i != submenus.end(); ++sub_i)
@@ -178,10 +182,10 @@ void menuentry::output()
     if (config->sort)
       s = config->sort->soutput(sub_i->second->vars);
     else
-      s = sub_i->second->vars[SORT_VAR] + ":" + sub_i->second->vars[TITLE_VAR];
+      s = sub_i->second->vars[SORT_VAR] + ':' + sub_i->second->vars[TITLE_VAR];
 
-    cout << "Sorting on: " << s << endl;
-    sorted.insert(pair<string,menuentry *>(s, sub_i->second));
+    std::cout << "Sorting on: " << s << std::endl;
+    sorted.insert(std::pair<string, menuentry *>(s, sub_i->second));
   }
 
   // Output the menu according to the treewalk variable.
@@ -192,7 +196,7 @@ void menuentry::output()
     {
       case 'c':
         for (i = sorted.begin(); i != sorted.end(); ++i)
-            if(!i->second->submenus.empty())
+            if (!i->second->submenus.empty())
                 i->second->output();
         break;
       case '(':
@@ -231,6 +235,7 @@ void menuentry::output()
 void menuentry::store_hints()
 {
   submenu_container::iterator i, j;
+  unsigned int l;
 
   // Make sure menuhints are empty
   for(i = submenus.begin(); i != submenus.end(); ++i)
@@ -241,21 +246,23 @@ void menuentry::store_hints()
     const string &hints_str = i->second->vars[HINTS_VAR];
 
     if (!hints_str.empty()) {
-      StrVec hints;
+      vector<string> hints;
 
       break_commas(hints_str, hints);
+
       j = i;
-      while (true)
-      {
-        for (StrVec::iterator k = hints.begin(); k != hints.end(); ++k)
+
+      do {
+        for (vector<string>::iterator k = hints.begin(); k != hints.end(); ++k)
             j->second->menuhints.push_back(*k);
 
         j++;
 
-        for (unsigned int l = 0; l != i->first.size(); ++l)
+        for (l = 0; l != i->first.size(); ++l)
             if (i->first[l] != j->first[l])
                 break;
-      }
+      } while (l == i->first.size());
+
     }
   }
 }
@@ -272,11 +279,11 @@ void menuentry::store_hints()
 //  order).
 void menuentry::process_hints()
 {
-  vector<StrVec> hint_list, hint_out;
-  vector<StrVec>::iterator k, m;
-  StrVec::const_iterator l;
+  vector<vector<string> > hint_list, hint_out;
+  vector<vector<string> >::iterator k, m;
+  vector<string>::const_iterator l;
   submenu_container::iterator i;
-  
+
   // First, process hints of children.
   for (i = submenus.begin(); i != submenus.end(); ++i)
       if (i->second->vars[COMMAND_VAR].empty())
@@ -288,7 +295,7 @@ void menuentry::process_hints()
   // Go through all submenus, and add their sections to hint_list.
   for (i = submenus.begin(); i != submenus.end(); ++i)
   {
-      StrVec sections;
+      vector<string> sections;
 
       for (l = i->first.begin(); l != i->first.end(); ++l)
           sections.push_back(*l);
@@ -298,13 +305,13 @@ void menuentry::process_hints()
       if (sections.size() > 1) {
         sections.pop_back();
         if (config->hint_debug)
-            cout << "Adding to hint_list: " << i->first << ", hints="
-                << i->second->menuhints << endl;
+            std::cout << "Adding to hint_list: " << i->first << ", hints="
+                << i->second->menuhints << std::endl;
         for (l=i->second->menuhints.begin(); l!=i->second->menuhints.end(); ++l)
             sections.push_back(*l);
         hint_list.push_back(sections);
       } else {
-        StrVec empty; // to make sure hint_list[i] and submenus[i] match
+        vector<string> empty; // to make sure hint_list[i] and submenus[i] match
         hint_list.push_back(empty);
       }
   }
@@ -331,7 +338,7 @@ void menuentry::process_hints()
       k != hint_list.end();
       k++, m++, i++)
   {
-    StrVec sections = *m;
+    vector<string> sections = *m;
 
     // Restore title (we popped it of earlier in this function).
     sections.push_back(i->first.back());
@@ -367,7 +374,7 @@ void menuentry::postprocess(int n_parent, int level, const string& prev_section)
     i_next++;
 
     string title = prev_section;
-    for(StrVec::const_iterator j = i->first.begin(); j != i->first.end(); ++j)
+    for(vector<string>::const_iterator j = i->first.begin(); j != i->first.end(); ++j)
         title += string("/") + *j;
 
     menuentry *me = i->second;
@@ -415,59 +422,60 @@ void menuentry::generate_hotkeys()
   list<int>::iterator k, old_k;
   submenu_container::iterator subi;
   map<string, string>::iterator l;
-  StrVec keys;
+  vector<string> keys;
   list<int> todo;
   set<char> used_chars;
   string s;
-  string str0;
   char c;
 
-  str0="0";
+  string str0 = "0";
   str0[0]='\0';
-  if(config->hkexclude)
-    s=config->hkexclude->soutput(vars);
-  for(i=0;i!=s.length();i++)
+  if (config->hkexclude)
+      s = config->hkexclude->soutput(vars);
+  for (i=0;i!=s.length();i++)
     used_chars.insert(hotkeyconv(s[i]));
 
-  for(subi=submenus.begin(), i=0; subi!=submenus.end(); subi++, i++){
-    todo.push_back(i);
-    l=(*subi).second->vars.find(HOTKEY_VAR);
-    if(l!=(*subi).second->vars.end())
-      keys.push_back((*l).second);
-    else
-      keys.push_back(str0);
-    keys[i]+=sort_hotkey((*subi).second->vars[TITLE_VAR]);
-  }
-  j=0;
-  while(!todo.empty())
+  for(subi = submenus.begin(), i = 0; subi != submenus.end(); subi++, i++)
   {
-    for(k=todo.begin();k!=todo.end();){
-      i=*k; 
+    todo.push_back(i);
+    l = subi->second->vars.find(HOTKEY_VAR);
+    if (l != subi->second->vars.end())
+        keys.push_back(l->second);
+    else
+        keys.push_back(str0);
+    keys[i] += sort_hotkey(subi->second->vars[TITLE_VAR]);
+  }
+  j = 0;
+  while (!todo.empty())
+  {
+    for (k = todo.begin();k != todo.end();)
+    {
+      i= *k; 
       old_k=k++; //k++ here, to be able to todo.erase(old_k) safely.
-      if(j>=keys[i].length()){
-	keys[i]=str0;
-	todo.erase(old_k);  //no hotkey found -- give up on this entry.
-	continue;
+      if (j >= keys[i].length()) {
+        keys[i]=str0;
+        todo.erase(old_k);  //no hotkey found -- give up on this entry.
+        continue;
       }
-      c=keys[i][j];
-      if(c){
-	if(used_chars.find(hotkeyconv(c))==used_chars.end()){
-	  todo.erase(old_k); //found a hotkey for this entry.
-	  keys[i]=string("")+c;
-	  used_chars.insert(hotkeyconv(c));
-	  continue;
-	}
-	else
-	  keys[i].replace(j,1,str0);
+      c = keys[i][j];
+      if (c) {
+        if (used_chars.find(hotkeyconv(c)) == used_chars.end()) {
+          todo.erase(old_k); //found a hotkey for this entry.
+          keys[i] = c;
+          used_chars.insert(hotkeyconv(c));
+          continue;
+        } else {
+          keys[i].replace(j,1,str0);
+        }
       }
     }
     j++;
   }
-  for(subi=submenus.begin(), i=0; subi!=submenus.end(); subi++, i++){
-    c=keys[i][0];
-    if(c){
-      (*subi).second->vars[HOTKEY_VAR]=string("")+c;
-    }
+  for (subi=submenus.begin(), i=0; subi!=submenus.end(); subi++, i++)
+  {
+    c = keys[i][0];
+    if (c)
+        subi->second->vars[HOTKEY_VAR] = c;
   }
 }
 
@@ -476,9 +484,9 @@ void menuentry::debug(int level)
   submenu_container::iterator i;
 
   for (int li = level; li > 0; li--)
-      cout << "  ";
+      std::cout << "  ";
 
-  cout << vars[TITLE_VAR]<< ':' << vars[SECTION_VAR] << ':' << vars[ICON_VAR] << endl;
+  std::cout << vars[TITLE_VAR]<< ':' << vars[SECTION_VAR] << ':' << vars[ICON_VAR] << std::endl;
   for(i = submenus.begin(); i != submenus.end(); ++i)
       i->second->debug(level+1);
 }

@@ -1,8 +1,8 @@
 /* Copyright:  GPL */
 /*
-  Witten by joost witteveen;  
+  Written by joost witteveen;
   read_pkginfo function by Tom Lees, run_menumethods by both.
-  
+
   */
 
 #include <fstream>
@@ -23,13 +23,19 @@
 #include <config.h>
 #include "update-menus.h"
 
-using namespace std;
+using std::set;
+using std::vector;
+using std::string;
+using std::cout;
+using std::cerr;
+using std::endl;
+using std::ostream;
 
 static const char * home_dir;
 
 int debug=0, verbose=0;
-set <string> installed_packages;
-set <string> menufiles_processed;
+set<string> installed_packages;
+set<string> menufiles_processed;
 
 extern char **environ;
 
@@ -40,8 +46,7 @@ DIR *open_dir_check(string dirname)
 {
   struct stat st;
 
-  int r = stat (dirname.c_str(), &st);
-  if (r || (!S_ISDIR (st.st_mode)))
+  if (stat(dirname.c_str(), &st) || (!S_ISDIR (st.st_mode)))
     throw dir_error_read(dirname);
 
   return opendir (dirname.c_str());
@@ -53,10 +58,10 @@ bool executable(const string &s)
   if (stat(s.c_str(), &st)) {
     return false;
   } else {
-    return (((st.st_mode & S_IXOTH) || 
-	     ((st.st_mode & S_IXGRP) && st.st_gid == getegid ()) || 
-	     ((st.st_mode & S_IXUSR) && st.st_uid == geteuid ())) && 
-	    (S_ISREG(st.st_mode) || S_ISLNK(st.st_mode)));
+    return (((st.st_mode & S_IXOTH) ||
+          ((st.st_mode & S_IXGRP) && st.st_gid == getegid ()) ||
+          ((st.st_mode & S_IXUSR) && st.st_uid == geteuid ())) &&
+        (S_ISREG(st.st_mode) || S_ISLNK(st.st_mode)));
   }
 }
 
@@ -107,10 +112,10 @@ bool menuentry::check_validity(parsestream &i, string &name)
 }
 
 void menuentry::read_menuentry(parsestream &i)
-{ 
+{
   // a new format menuentry
   string name;
-  
+
   // read available info
   check_validity(i, name);
   data[PACKAGE_VAR] = name;
@@ -136,7 +141,7 @@ void menuentry::read_menuentry(parsestream &i)
 void menuentry::output(vector<string> &s)
 {
   string t;
-  map<string, string>::const_iterator i = data.begin();
+  std::map<string, string>::const_iterator i = data.begin();
   if (i != data.end()) {
     while (true)
     {
@@ -155,7 +160,7 @@ void menuentry::output(vector<string> &s)
 
 ostream &menuentry::debugoutput(ostream &o)
 {
-  map<string, string>::const_iterator i;
+  std::map<string, string>::const_iterator i;
 
   o << "MENUENTRY:" << endl;
   for (i = data.begin(); i != data.end(); ++i)
@@ -180,13 +185,13 @@ void configinfo::parse_def(const string &key, const string& value)
   } else if(key=="method") {
     if     (value=="stdout")  method=method_stdout;
     else if(value=="stderr")  method=method_stderr;
-    else if(value=="syslog") { 
+    else if(value=="syslog") {
 
       method = method_syslog;
       string facility;
       string priority;
 
-      istringstream ss(value);
+      std::istringstream ss(value);
       ss >> facility;
       ss >> priority;
 
@@ -210,7 +215,7 @@ void configinfo::parse_def(const string &key, const string& value)
       else if(facility=="authuser")   syslog_facility=LOG_USER;
       else if(facility=="authuucp")   syslog_facility=LOG_UUCP;
 
-	   if(priority=="emerg")      syslog_priority=LOG_EMERG;
+           if(priority=="emerg")      syslog_priority=LOG_EMERG;
       else if(priority=="alert")      syslog_priority=LOG_ALERT;
       else if(priority=="crit")       syslog_priority=LOG_CRIT;
       else if(priority=="err")        syslog_priority=LOG_ERR;
@@ -301,7 +306,7 @@ void translateinfo::init(parsestream &i)
   Regex ident("[a-zA-Z_][a-zA-Z0-9_]*");
 
   config.report(string("Reading translate info in ")+i.filename(),
-		configinfo::report_verbose);
+      configinfo::report_verbose);
   while (true)
   {
     string name = i.get_name(ident);
@@ -315,36 +320,36 @@ void translateinfo::init(parsestream &i)
     i.skip_space();
     string replace_var = i.get_name(ident);
     config.report(string("replace_var=")+replace_var, configinfo::report_debug);
-    
+
     i.skip_line();
     while (true)
     {
       trans_class *trcl;
-      
+
       i.skip_space();
       string match = i.get_stringconst();
       if (match == ENDTRANSLATE_TRANS) {
-	i.skip_line();
-	break;
+        i.skip_line();
+        break;
       }
       if (match[0]=='#') {
-	i.skip_line();
-	continue;
+        i.skip_line();
+        continue;
       }
       i.skip_space();
       string replace = i.get_stringconst();
-      if(name == TRANSLATE_TRANS)
-	trcl = new translate(match,replace,replace_var);
-      if(name == SUBTRANSLATE_TRANS)
-	trcl = new subtranslate(match,replace,replace_var);
-      if(name == SUBSTITUTE_TRANS)
-	trcl = new substitute(match,replace,replace_var);
-      
-      pair<const string, trans_class *> p(match,trcl);
-      
+      if (name == TRANSLATE_TRANS)
+          trcl = new translate(match,replace,replace_var);
+      if (name == SUBTRANSLATE_TRANS)
+          trcl = new subtranslate(match,replace,replace_var);
+      if (name == SUBSTITUTE_TRANS)
+          trcl = new substitute(match,replace,replace_var);
+
+      std::pair<const string, trans_class *> p(match,trcl);
+
       config.report(string("adding translate rule: [")+p.first+
-		    "]"+ trcl->debuginfo(),
-		    configinfo::report_debug);
+          "]"+ trcl->debuginfo(),
+          configinfo::report_debug);
       trans[match_var].insert(p);
       i.skip_line();
     }
@@ -360,20 +365,20 @@ translateinfo::translateinfo(const string &filename)
 {
   try {
     config.report(string("Attempting to open ") + filename + ".. ",
-		  configinfo::report_debug);
+        configinfo::report_debug);
     parsestream ps(filename);
-    
+
     init(ps);
   }
   catch(endoffile p) {
     config.report("End reading translate info", configinfo::report_debug);
   }
-  
+
 }
 
 void translateinfo::process(menuentry &m)
 {
-  map<string, trans_map>::const_iterator i;
+  std::map<string, trans_map>::const_iterator i;
   trans_map::const_iterator j;
   string *match;
   for(i=trans.begin(); i!=trans.end(); i++){
@@ -382,36 +387,29 @@ void translateinfo::process(menuentry &m)
     if((j==(*i).second.end()) ||
        ((j!=(*i).second.begin()) && ((*j).first != *match)))
       j--;
-    do{
+    do {
       config.report(string("translate: var[")+*match+"]"+
-		    " testing trans rule match for:"+
-		    (*j).first,
-		    configinfo::report_debug);
-      (*j).second->process(m,*match);
+          " testing trans rule match for:"+
+          j->first,
+          configinfo::report_debug);
+      j->second->process(m,*match);
       j++;
-    } while((j!=(*i).second.end())&&
-	    (*j).second->check(*match));
-    
+    } while((j != i->second.end()) && j->second->check(*match));
+
   }
 }
 
 void translateinfo::debuginfo()
 {
-  map<string, trans_map>::const_iterator i;
+  std::map<string, trans_map>::const_iterator i;
   trans_map::const_iterator j;
-  for(i=trans.begin(); i!=trans.end(); i++){
-    config.report(string("TRANS: [")+(*i).first+"]",
-		  configinfo::report_debug);
-    for(j=(*i).second.begin();
-	j!=(*i).second.end();
-	j++){
-      config.report(string("key=")+(*j).first+
-		    (*j).second->debuginfo()+"\n",
-		    configinfo::report_debug);
-      
-      
-    }
-  } 
+  for(i = trans.begin(); i != trans.end(); ++i)
+  {
+    config.report(string("TRANS: [")+(*i).first+"]", configinfo::report_debug);
+    for (j = i->second.begin(); j != i->second.end(); ++j)
+        config.report(string("key=")+(*j).first+(*j).second->debuginfo()+'\n',
+            configinfo::report_debug);
+  }
 }
 /////////////////////////////////////////////////////
 //  Installed Package Status:
@@ -447,12 +445,12 @@ void read_menufile(const string &filename, const string &shortfilename,
                    vector<string> &menudata)
 {
   parsestream *ps = 0;
-  ifstream *pipe_istr = 0;
+  std::ifstream *pipe_istr = 0;
 
   config.report(string("Reading menuentryfile ") + filename, configinfo::report_debug);
   try {
     if (executable(filename)) {
-      pipe_istr = new ifstream(filename.c_str(), ios::in);
+      pipe_istr = new std::ifstream(filename.c_str(), std::ios::in);
       try {
         ps = new parsestream(*pipe_istr);
       } catch (endoffile d) {
@@ -504,7 +502,7 @@ void read_menufile(const string &filename, const string &shortfilename,
 
 void read_menufilesdir(vector<string> &menudata)
 {
-  for(StrVec::const_iterator method_i = config.menufilesdir.begin();
+  for(vector<string>::const_iterator method_i = config.menufilesdir.begin();
       method_i != config.menufilesdir.end();
       ++method_i)
   {
@@ -531,7 +529,7 @@ void read_menufilesdir(vector<string> &menudata)
                 if((!r)&&(S_ISREG(st.st_mode)||S_ISLNK(st.st_mode)))
                     read_menufile(name,entry->d_name, menudata);
               }
-              catch(endofline p) {
+              catch (endofline p) {
                 cerr << "Error reading " << name << endl;
               }
             }
@@ -548,10 +546,10 @@ void run_menumethod(string methodname, const vector<string> &menudata)
   pid_t child, r;
   int status;
 
-  config.report(string("Running method: ")+methodname, configinfo::report_verbose);  
-  
+  config.report(string("Running method: ")+methodname, configinfo::report_verbose);
+
   if (pipe(fds) == -1) {
-      config.report(string("Cannot create pipe"), configinfo::report_quiet);  
+      config.report(string("Cannot create pipe"), configinfo::report_quiet);
       exit(1);
   }
 
@@ -560,7 +558,7 @@ void run_menumethod(string methodname, const vector<string> &menudata)
     close(fds[1]);
     close(0);
     dup(fds[0]);
-    
+
     //???
     // The next 2 lines seem strange! But if I leave it out,
     // pipes (in commands executed in the /etc/menu-method/* scripts as
@@ -579,7 +577,7 @@ void run_menumethod(string methodname, const vector<string> &menudata)
     signal(SIGPIPE,SIG_IGN);
     close(fds[0]);
 
-    for(StrVec::const_iterator i = menudata.begin(); i != menudata.end(); ++i)
+    for(vector<string>::const_iterator i = menudata.begin(); i != menudata.end(); ++i)
         write(fds[1], i->c_str(), i->length());
 
     close(fds[1]);
@@ -588,15 +586,15 @@ void run_menumethod(string methodname, const vector<string> &menudata)
   }
   if (r == -1)
     config.report(string("Script ")+methodname+" could not be executed.",
-		  configinfo::report_quiet);  
+        configinfo::report_quiet);
   if (WEXITSTATUS(status))
     config.report(string("Script ")+methodname+" returned error status "
-		  +itostring(WEXITSTATUS(status))+".",
-		  configinfo::report_quiet);  
+        +itostring(WEXITSTATUS(status))+".",
+        configinfo::report_quiet);
   else if (WIFSIGNALED(status))
     config.report(string("Script ")+methodname+" recieved signal "
-		  +itostring(WTERMSIG(status))+".",
-		  configinfo::report_quiet);  
+        +itostring(WTERMSIG(status))+".",
+        configinfo::report_quiet);
 }
 
 void run_menumethoddir (const string &dirname, const vector<string> &menudata)
@@ -607,30 +605,28 @@ void run_menumethoddir (const string &dirname, const vector<string> &menudata)
   char *s, tmp[MAX_LINE];
   int r;
 
-  config.report(string("Running menu-methods in ")+dirname,
-		configinfo::report_verbose);
+  config.report(string("Running menu-methods in ")+dirname, configinfo::report_verbose);
   dir=open_dir_check(dirname);
   while ((entry = readdir (dir)) != NULL) {
-    if (!strcmp(entry->d_name, "README") ||
-	!strcmp(entry->d_name, "core"))
+    if (!strcmp(entry->d_name, "README") || !strcmp(entry->d_name, "core"))
       continue;
     for (s = entry->d_name; *s != '\0'; s++){
       if (!(isalnum (*s) || (*s == '_') || (*s == '-')))
-	break;
+          break;
     }
     if (*s != '\0')
       continue;
-    
+
     sprintf (tmp, "%s%s", dirname.c_str(), entry->d_name);
     r=stat (tmp, &st);
-    
+
     // Do we have execute permissions? 
-    if ((!r)&&
-	(((st.st_mode & S_IXOTH) || 
-	  ((st.st_mode & S_IXGRP) && st.st_gid == getegid ()) || 
-	  ((st.st_mode & S_IXUSR) && st.st_uid == geteuid ())) && 
-	 (S_ISREG(st.st_mode) || S_ISLNK(st.st_mode))))
-      run_menumethod(tmp, menudata);
+    if ((!r) &&
+        (((st.st_mode & S_IXOTH) || 
+          ((st.st_mode & S_IXGRP) && st.st_gid == getegid ()) || 
+          ((st.st_mode & S_IXUSR) && st.st_uid == geteuid ())) && 
+         (S_ISREG(st.st_mode) || S_ISLNK(st.st_mode))))
+        run_menumethod(tmp, menudata);
   }
   closedir (dir);
 }
@@ -640,28 +636,28 @@ int create_lock()
   // return lock fd if succesful, false if unsuccesfull.
   int fd=true;
   char buf[64];
-  
+
   if (!getuid()) {
     fd = open(UPMEN_LOCKFILE,O_WRONLY|O_CREAT,00644);
-    
+
     if(flock(fd,LOCK_EX|LOCK_NB)) {
       if(errno==EWOULDBLOCK) {
-	config.report(string("Other update-menus processes are already "
-			     "locking " UPMEN_LOCKFILE ", quitting."),
-		      configinfo::report_verbose);
+        config.report(string("Other update-menus processes are already "
+              "locking " UPMEN_LOCKFILE ", quitting."),
+            configinfo::report_verbose);
       }else{
-	config.report(string("Cannot lock "UPMEN_LOCKFILE": ")+
-			     strerror(errno)+ " Aborting.",
-		      configinfo::report_quiet);	
+        config.report(string("Cannot lock "UPMEN_LOCKFILE": ")+
+            strerror(errno)+ " Aborting.",
+            configinfo::report_quiet);	
       }
       return false;
-	
+
     }
 
     sprintf(buf, "%d", getpid());
     if (write(fd, buf, sizeof(buf) < 1)) {
       config.report("Cannot write to lockfile "UPMEN_LOCKFILE". Aborting.",
-		    configinfo::report_quiet);
+          configinfo::report_quiet);
       return false;
     }
   }
@@ -673,7 +669,7 @@ void remove_lock()
   if (!getuid()){
     if (unlink(UPMEN_LOCKFILE))
       config.report("Cannot remove lockfile "UPMEN_LOCKFILE,
-		    configinfo::report_normal);
+          configinfo::report_normal);
   }
 }
 
@@ -687,9 +683,9 @@ int check_dpkglock()
   int er;
   if(getuid()){
     config.report("update-menus run by user -- cannot determine if dpkg is "
-		  "locking "DPKG_LOCKFILE": assuming there is no lock",
-		  configinfo::report_verbose);
-    
+        "locking "DPKG_LOCKFILE": assuming there is no lock",
+        configinfo::report_verbose);
+
     return 0;
   }
   fd=open(DPKG_LOCKFILE, O_RDWR|O_CREAT|O_TRUNC, 0660);
@@ -703,14 +699,14 @@ int check_dpkglock()
     er=errno;
     close(fd);
     if (er == EWOULDBLOCK || er == EAGAIN || er == EACCES)
-      return 1;
+        return 1;
     cerr<<"update-menus: Encountered an unknown errno (="
-	<<er<<")."<<endl
-	<<"update-menus: Could you please be so kind as to email joostje@debian.org"<<endl
-	<<"update-menus: the errno (="<<er<<") with a discription of what you did to"<<endl
-	<<"update-menus: trigger this. Thanks very much."<<endl
-	<<"Press enter"<<endl;
-    cin.get(buf,sizeof(buf));
+        <<er<<")."<<endl
+        <<"update-menus: Could you please be so kind as to email joostje@debian.org"<<endl
+        <<"update-menus: the errno (="<<er<<") with a discription of what you did to"<<endl
+        <<"update-menus: trigger this. Thanks very much."<<endl
+        <<"Press enter"<<endl;
+    std::cin.get(buf, sizeof(buf));
     return 1;
   }
   fl.l_type= F_UNLCK;
@@ -720,7 +716,7 @@ int check_dpkglock()
   if (fcntl(fd,F_SETLK,&fl) == -1){
     // `cannot happen'
     cerr<<"update-menus: ?? Just locked the dpkg status database to see if another dpkg"<<endl
-	<<"update-menus: Was running. Now I cannot unlock it! Aborting"<<endl;
+        <<"update-menus: Was running. Now I cannot unlock it! Aborting"<<endl;
     exit(1);
   }
   close(fd);
@@ -775,33 +771,33 @@ void wait_dpkg(string &stdoutfile)
     parentpid=getpid();
     if((child=fork())){
       if(child==-1){
-	perror("update-menus: fork");
-	exit(1);
+        perror("update-menus: fork");
+        exit(1);
       }
       pause();
     } else {
       r=create_lock();
       if(r){
-	stdoutfile=string("/tmp/update-menus.")+itostring(getpid());
-	config.report("waiting for dpkg to finish (forking to background)\n"
-		      "(checking " DPKG_LOCKFILE ")",
-		      configinfo::report_normal);
-	config.report(string("further output (if any) will appear in ")
-		      +stdoutfile,
-		      configinfo::report_normal);
-	// Close all fd's except the lock fd, for daemon mode.
-	for (i=0;i<32;i++) {
-	  if (i != r)
-	    close(i);
-	}
-	kill(parentpid, SIGUSR2);
+        stdoutfile=string("/tmp/update-menus.")+itostring(getpid());
+        config.report("waiting for dpkg to finish (forking to background)\n"
+            "(checking " DPKG_LOCKFILE ")",
+            configinfo::report_normal);
+        config.report(string("further output (if any) will appear in ")
+            +stdoutfile,
+            configinfo::report_normal);
+        // Close all fd's except the lock fd, for daemon mode.
+        for (i=0;i<32;i++) {
+          if (i != r)
+              close(i);
+        }
+        kill(parentpid, SIGUSR2);
 
-	while(check_dpkglock())
-	  sleep(2);
+        while(check_dpkglock())
+            sleep(2);
       } else {
-	// Exit without doing anything. Kill parent too!
-	kill(parentpid,SIGUSR2);
-	exit(0);
+        // Exit without doing anything. Kill parent too!
+        kill(parentpid,SIGUSR2);
+        exit(0);
       }
     }
   } else {
@@ -913,11 +909,11 @@ int main (int argc, char **argv)
   vector<string> menudata;
   string stdoutfile;
   struct stat st;
-  
+
   setlocale (LC_ALL, "");
   bindtextdomain (PACKAGE, LOCALEDIR);
   textdomain (PACKAGE);
-  
+
   try {
     read_rootconfiginfo();
     parse_params(argv);
@@ -933,22 +929,21 @@ int main (int argc, char **argv)
 
     read_usertranslateinfo();
     read_roottranslateinfo();
-    if(transinfo)
-      transinfo->debuginfo();
-    if(config.usedefaultmenufilesdirs){
-      if(getuid())
-	config.menufilesdir.push_back(string(home_dir)+
-					"/"+USERMENUS);
+    if (transinfo)
+        transinfo->debuginfo();
+    if (config.usedefaultmenufilesdirs) {
+      if (getuid())
+          config.menufilesdir.push_back(string(home_dir)+"/"+USERMENUS);
       config.menufilesdir.push_back(CONFIGMENUS);
       config.menufilesdir.push_back(PACKAGEMENUSLIB);
       config.menufilesdir.push_back(PACKAGEMENUS);
       config.menufilesdir.push_back(MENUMENUS);
     }
-    
+
     read_menufilesdir(menudata);
-    
+
     if (config.onlyoutput_to_stdout) {
-        for(StrVec::const_iterator i = menudata.begin(); i != menudata.end(); ++i)
+        for(vector<string>::const_iterator i = menudata.begin(); i != menudata.end(); ++i)
               cout << *i;
 
     } else if (!config.menumethod.empty()) {
@@ -959,7 +954,7 @@ int main (int argc, char **argv)
           run_menumethoddir(string(home_dir)+"/"+USERMETHODS, menudata);
         }
         catch(dir_error_read d) {
-          run_menumethoddir(MENUMETHODS, menudata);	
+          run_menumethoddir(MENUMETHODS, menudata);
         }
       } else {
           run_menumethoddir(MENUMETHODS, menudata);
@@ -970,11 +965,8 @@ int main (int argc, char **argv)
 
   remove_lock();
 
-  if(!stdoutfile.empty()) {
-    int r = stat(stdoutfile.c_str(),&st);
-    if(!r)
-      if(!st.st_size)
-	unlink(stdoutfile.c_str());
-  }
-  return 0;
+  if(!stdoutfile.empty())
+      if (!stat(stdoutfile.c_str(),&st))
+          if (!st.st_size)
+              unlink(stdoutfile.c_str());
 }

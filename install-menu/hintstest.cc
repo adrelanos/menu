@@ -1,32 +1,33 @@
 #include "hints.h"
 
-void lees (vector <StrVec> &hint_input, vector <int> &hint_count)
+void lees (vector<vector<string> > &hint_input, vector <int> &hint_count)
 {
-  StrVec h;
+  vector<string> h;
   char c;
   //  map <char, int>::iterator hi;
 
   while (cin.get(c))
   {
-    switch(c){
-    case '\n':
-      hint_input.push_back(h);
-      hint_count.push_back(1);
-      h.erase(h.begin(), h.end());
+    switch (c)
+    {
+      case '\n':
+        hint_input.push_back(h);
+        hint_count.push_back(1);
+        h.erase(h.begin(), h.end());
 
-      break;
-    default:
-      h.push_back(c);
-      break;
+        break;
+      default:
+        h.push_back(c);
+        break;
     }
   }
 }
 
 int main()
 {
-  vector <StrVec> hint_input, hint_output;
-  vector <hint_tree> children;
-  vector <int> hint_count;
+  vector<vector<string> > hint_input, hint_output;
+  vector<hint_tree> children;
+  vector<int> hint_count;
   hints h;
 
   hint_tree t('-',children);

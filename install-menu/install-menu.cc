@@ -16,9 +16,15 @@
 #include "install-menu.h"
 #include "menu-tree.h"
 
-using namespace std;
 using std::vector;
 using std::string;
+using std::map;
+using std::set;
+using std::ostream;
+using std::ofstream;
+using std::ifstream;
+using std::cerr;
+using std::endl;
 
 int verbose = 0;
 
@@ -27,9 +33,8 @@ map<string, func *> func_data;
 menuentry root_menu;
 configinfo *config;
 supportedinfo *supported;
-set<string> uniquetitles;
 
-ofstream *genoutputfile = 0;
+std::ofstream *genoutputfile = 0;
 set<string> outputnames; // all names of files ever written to
 
 struct option long_options[] = { 
@@ -39,10 +44,10 @@ struct option long_options[] = {
   { "stdin", no_argument, NULL, 'f' }, 
   { NULL, 0, NULL, 0 } };
 
-// quick hack to get the "repeat_lang=LOCALE" working.
+// quick hack to get the 'repeat_lang="LOCALE"' working.
 // main() checks for value of repeat_lang, and sets
 // this variable if repeat_lang==LOCALE.
-bool do_translate_hack=false;
+bool do_translate_hack = false;
 
 void store_func(func *f)
 {
@@ -121,7 +126,7 @@ int check_dir(string s)
 {
   string t;
   if (verbose)
-    std::cerr << "install-menu: CHECK_DIR: " << s << endl;
+    cerr << "install-menu: CHECK_DIR: " << s << endl;
   while (!s.empty()) {
     string::size_type i = s.find('/',1);
     if (i != string::npos) {
@@ -134,14 +139,14 @@ int check_dir(string s)
     }
     if(chdir(t.c_str()) < 0) {
       if(verbose)
-	std::cerr << "install-menu: MKDIR:" << t << endl;
+	cerr << "install-menu: MKDIR:" << t << endl;
       if(mkdir(t.c_str(),0755))
 	throw dir_createerror(t);
       if(chdir(t.c_str()))
 	throw dir_createerror(t);
     } else {
       if(verbose)
-	std::cerr << "install-menu: directory " << t << " already exists " << endl;
+	cerr << "install-menu: directory " << t << " already exists " << endl;
     }
   }
   return !s.length();
@@ -161,14 +166,14 @@ void closegenoutput()
   }
   for(i = outputnames.begin(); i != outputnames.end(); ++i)
   {
-    ofstream f(i->c_str(), ios::app);
+    std::ofstream f(i->c_str(), std::ios::app);
     f << config->postoutput();
   }
 }
 
 void genoutput(const string &s, map<string, string> &v)
 {
-  static string lastname="////";
+  static string lastname = "////";
 
   string name = config->prefix()+"/"+config->genmenu->soutput(v);
   if (name != lastname) {
@@ -181,10 +186,10 @@ void genoutput(const string &s, map<string, string> &v)
       //genoutputfile=new ofstream(name.c_str(), ios::trunc);
       // So, I do it this way instead:
       unlink(name.c_str());
-      genoutputfile = new ofstream(name.c_str());
-      (*genoutputfile) << config->preoutput();    
+      genoutputfile = new std::ofstream(name.c_str());
+      (*genoutputfile) << config->preoutput();
     } else {
-      genoutputfile = new ofstream(name.c_str(),ios::app);      
+      genoutputfile = new std::ofstream(name.c_str(), std::ios::app);
     }
     lastname = name;
   }
@@ -206,24 +211,24 @@ cat_str::cat_str(parsestream &i)
       i.skip_space();
       c=i.get_char();
       i.put_back(c);
-      if(isalpha(c))
+      if (isalpha(c))
 	v.push_back(new func_str(i));
-      else if(c=='\"') 
+      else if (c == '\"') 
 	v.push_back(new const_str(i));
-      else if(c=='$') 
+      else if (c == '$') 
 	v.push_back(new var_str(i));
-      else if(c==',')
+      else if(c == ',')
 	break;
-      else if(c==')')
+      else if(c == ')')
 	break;
-      else if(c=='\0')
+      else if(c == '\0')
 	break;
       else {
-	buf[0]=c;
+	buf[0] = c;
 	throw char_unexpected(&i, buf);
       }
     }
-  } catch(endofline p){};
+  } catch(endofline p) { }
 }
 
 var_str::var_str(parsestream &i)
@@ -235,21 +240,19 @@ var_str::var_str(parsestream &i)
 func_str::func_str(parsestream &i)
 {
   char c;
-  map<string, func *>::const_iterator j;
-
   string name = i.get_name();
-  j = func_data.find(name);
+  map<string, func *>::const_iterator j = func_data.find(name);
   if (j == func_data.end())
       throw unknown_function(&i, name);
   else
-      f=(*j).second;
+      f = j->second;
 
   i.skip_space();
   i.skip_char('(');
   do {
     i.skip_space();
-    c=i.get_char();
-    if(c==')')
+    c = i.get_char();
+    if(c == ')')
       break;
     i.put_back(c);
     args.push_back(new cat_str(i));
@@ -268,16 +271,15 @@ func_str::func_str(parsestream &i)
 
 ostream &const_str::output(ostream &o, map<string, string> &)
 {
-  return o<<data;
+  return o << data;
 }
 
 string cat_str::soutput(map<string, string> &menuentry)
 {
-  vector<str * >::const_iterator i;
-  ostringstream s;
+  std::ostringstream s;
 
-  for(i = v.begin(); i != v.end(); ++i)
-      (*i)->output(s,menuentry);
+  for(vector<str * >::const_iterator i = v.begin(); i != v.end(); ++i)
+      (*i)->output(s, menuentry);
 
   return s.str();
 }
@@ -294,11 +296,12 @@ void cat_str::output(map<string, string> &menuentry)
 
 ostream &var_str::output(ostream &o, map<string, string> &menuentry)
 {
-  return o<<menuentry[var_name];
+  return o << menuentry[var_name];
 }
+
 ostream &func_str::output(ostream &o, map<string, string> &menuentry)
 {
-  return f->output(o,args,menuentry);
+  return f->output(o, args, menuentry);
 }
 
 /////////////////////////////////////////////////////
@@ -306,7 +309,7 @@ ostream &func_str::output(ostream &o, map<string, string> &menuentry)
 //
 ostream &const_str::debuginfo(ostream &o)
 {
-  return o<<"CONST_STR: "<<data<<endl;
+  return o << "CONST_STR: " << data << endl;
 }
 
 ostream &cat_str::debuginfo(ostream &o)
@@ -321,14 +324,15 @@ ostream &cat_str::debuginfo(ostream &o)
 
 ostream &var_str::debuginfo(ostream &o)
 {
-  return o<<"VAR_STR: "<<var_name<<endl;
+  return o << "VAR_STR: " << var_name << endl;
 }
 
 ostream &func_str::debuginfo(ostream &o)
 {
   o << "FUNC_STR: " << f->name() << " (" << endl;
   vector<cat_str *>::const_iterator i;  
-  for(i = args.begin(); i != args.end();++i) {
+  for(i = args.begin(); i != args.end(); ++i)
+  {
     o << ", ";
     (*i)->debuginfo(o);
   }
@@ -343,7 +347,7 @@ ostream &func_str::debuginfo(ostream &o)
 ostream &prefix_func::output(ostream &o, vector<cat_str *> &,
     map<string, string> &)
 {
-  return o<<config->prefix();
+  return o << config->prefix();
 }
 
 ostream &ifroot_func::output(ostream &o, vector<cat_str *> & args,
@@ -366,7 +370,7 @@ ostream &print_func::output(ostream &o, vector<cat_str *> &args,
     cerr << _("Zero-size argument to print function");
     throw informed_fatal();
   }
-  return o<<s;
+  return o << s;
 }
 
 ostream &ifempty_func::output(ostream &o, vector<cat_str *> &args,
@@ -792,15 +796,15 @@ supportedinfo::supportedinfo(parsestream &i)
 
       name=uppercase(name);
 
-      if(verbose)
-	std::cerr << "install-menu: SUPPORTED_CONSTRUCT: name=" << name << endl;
-      
+      if (verbose)
+          cerr << "install-menu: SUPPORTED_CONSTRUCT: name=" << name << endl;
+
       supinf inf;
       inf.c=get_eq_cat_str(i);
       inf.prec=prec++;
       sup[name]=inf;
-      if(verbose)
-	sup[name].c->debuginfo(cerr);
+      if (verbose)
+          sup[name].c->debuginfo(cerr);
       i.skip_line();   //read away the final newline
     }
     catch (endofline d) { }
@@ -814,11 +818,11 @@ void supportedinfo::subst(map<string, string> vars)
   map<string, supinf>::const_iterator j;
 
   if((i=vars.find(NEEDS_VAR))==vars.end()){
-    cerr<<_("Undefined "NEEDS_VAR" variable in menuentries")<<endl;
+    cerr << _("Undefined "NEEDS_VAR" variable in menuentries") << endl;
     throw informed_fatal();
   }
   if((j=sup.find(uppercase((*i).second)))==sup.end()){
-    cerr<<_("Unknown "NEEDS_VAR"=\"")<<(*i).second<<"\""<<endl;
+    cerr << _("Unknown "NEEDS_VAR"=\"") << i->second << '"' << endl;
     throw informed_fatal();
   }
   genoutput((*j).second.c->soutput(vars), vars);
@@ -839,7 +843,7 @@ ostream &supportedinfo::debuginfo(ostream &o)
   map<string, supinf>::const_iterator i;
   for(i=sup.begin();i!=sup.end();i++){
     o<<"SUPPORTED:** name="<<(*i).first<<", prec="
-	<<(*i).second.prec<<" Def="<<endl;
+	<<(*i).second.prec<<" Def="<< endl;
     (*i).second.c->debuginfo(o);
   }
   return o;
@@ -998,8 +1002,7 @@ configinfo::configinfo(parsestream &i)
 	  throw unknown_ident(&i, name);
       i.skip_line();//read away final newline
     }
-  }
-  catch(endoffile) { }
+  } catch (endoffile) { }
   
   check_config();
 }
@@ -1016,14 +1019,14 @@ void configinfo::check_config()
 
 cat_str *configinfo::userprefix()
 {
-  if(userpref == 0)
+  if (userpref == 0)
       throw unknown_indirect_function(0, "userprefix");
   return userpref;
 }
 
 cat_str *configinfo::rootprefix()
 {
-  if(rootpref == 0)
+  if (rootpref == 0)
       throw unknown_indirect_function(0, "rootprefix");
   return rootpref;
 }
@@ -1040,27 +1043,27 @@ string configinfo::prefix()
 
 ostream &configinfo::debuginfo(ostream &o)
 {
-    o<<"Using compatibility with:"<<compt<<endl
-     <<"mainmenutitle   : "<<mainmt   <<endl
-     <<"rootsection     : "<<roots    <<endl
-     <<"rcfile          : "<<rcf      <<endl
-     <<"examplercfile   : "<<exrcf    <<endl
-     <<"root-prefix     : "<<rootpref <<endl
-     <<"user-prefix     : "<<userpref <<endl
-     <<"startmenu       : "<<endl;
+    o<<"Using compatibility with:"<<compt<< endl
+     <<"mainmenutitle   : "<<mainmt   << endl
+     <<"rootsection     : "<<roots    << endl
+     <<"rcfile          : "<<rcf      << endl
+     <<"examplercfile   : "<<exrcf    << endl
+     <<"root-prefix     : "<<rootpref << endl
+     <<"user-prefix     : "<<userpref << endl
+     <<"startmenu       : "<< endl;
     if(startmenu)
       startmenu->debuginfo(o);
-    o<<"endmenu         : "<<endl;
+    o<<"endmenu         : "<< endl;
     if(endmenu)
       endmenu->debuginfo(o);
-    o<<"genmenu         : "<<endl;
+    o<<"genmenu         : "<< endl;
     if(genmenu)
       genmenu->debuginfo(o);
-    o<<"submenutitle    : "<<endl;
+    o<<"submenutitle    : "<< endl;
     if(submenutitle)
       submenutitle->debuginfo(o);
-  o<<"mainmenutitle   : "<<mainmt   <<endl
-   <<"treewalk        : "<<treew    <<endl;
+  o<<"mainmenutitle   : "<<mainmt   << endl
+   <<"treewalk        : "<<treew    << endl;
   return o;
 }
 
@@ -1174,15 +1177,15 @@ void includemenus(string replace, string menu_filename)
       input_file.clear(); // to clear the bad state of the old straem
       input_file.open(input_filename2.c_str());
       if (!input_file) {
-        cerr<< _("Cannot open file ") << input_filename << " nor "
-            << input_filename2 << endl; 
+        cerr << _("Cannot open file ") << input_filename << " nor "
+            << input_filename2 << endl;
         throw informed_fatal();
       } else {
 	input_filename = input_filename2;
       }
     } else {
       // Running as root:
-      cerr << _("Cannot open file ") << input_filename <<endl;
+      cerr << _("Cannot open file ") << input_filename << endl;
       throw informed_fatal();
     }
   }
@@ -1199,8 +1202,8 @@ void includemenus(string replace, string menu_filename)
   if(!output_file) {
     cerr << _("Cannot open file ") << output_filename << endl; 
     if (getuid())
-        cerr<<"In order to be able to create the user config files for the"<<endl
-            <<"window managers, the above file needs to be writable (and the"<<endl
+        cerr<<"In order to be able to create the user config files for the"<< endl
+            <<"window managers, the above file needs to be writable (and the"<< endl
             <<"directory needs to exists"<<endl;
     throw informed_fatal();
   }
@@ -1212,7 +1215,7 @@ void includemenus(string replace, string menu_filename)
 
           std::string menu_line;
           while (getline(menu_file, menu_line))
-              output_file << menu_line << std::endl;
+              output_file << menu_line << endl;
 
           changed = true;
 
@@ -1228,7 +1231,7 @@ void includemenus(string replace, string menu_filename)
 
 void usage()
 {
-  cerr<< _("install-menu: generate window-manager menu files (or html docs)\n"
+  cerr << _("install-menu: generate window-manager menu files (or html docs)\n"
 	  "  install-menu gets the menuentries from standard in.\n"
 	  "  Options to install-menu:\n"
 	  "     -h --help    : this message\n"
@@ -1238,6 +1241,7 @@ void usage()
 int main(int argc, char **argv)
 {
   std::string script_name;
+  parsestream *ps = 0, *psscript = 0;
   
   setlocale (LC_ALL, "");
   bindtextdomain (PACKAGE, LOCALEDIR);
@@ -1278,13 +1282,13 @@ int main(int argc, char **argv)
     if (getuid())
         directory = MENUMETHODS;
 
-    parsestream ps(script_name, directory);
+    ps = new parsestream(script_name, directory);
     
-    if (!ps.good()) {
+    if (!ps->good()) {
       cerr << _("Cannot open script ") << script_name << _(" for reading") << endl;
       throw informed_fatal();
     }
-    config = new configinfo(ps);
+    config = new configinfo(*ps);
     if (verbose) {
       config->debuginfo(cerr);
       supported->debuginfo(cerr);
@@ -1303,10 +1307,10 @@ int main(int argc, char **argv)
     if (config->repeat_lang && (config->repeat_lang->soutput(root_menu.vars) == "LOCALE"))
         do_translate_hack=true;
 
-    parsestream psscript(cin);
+    psscript = new parsestream(std::cin);
     root_menu.vars[TITLE_VAR] = config->mainmenutitle();
 
-    read_input(psscript);
+    read_input(*psscript);
     if (config->hint_optimize)
         root_menu.process_hints();
 
@@ -1325,7 +1329,7 @@ int main(int argc, char **argv)
 
       for (run_i = run_vec.begin(); run_i != run_vec.end(); ++run_i)
       {
-        cout << "Running: \"" << *run_i << '"' << endl;
+        std::cout << "Running: \"" << *run_i << '"' << endl;
         parsestream also_ps(*run_i);
         config = new configinfo(also_ps);
         root_menu.output();
@@ -1339,11 +1343,9 @@ int main(int argc, char **argv)
             config->prefix()+"/"+config->genmenu->soutput(root_menu.vars));
     if (config->postrun)
         system((config->postrun->soutput(root_menu.vars)).c_str());
-    return 0;
+  } catch (genexcept& p) {
+    p.report();
+    cerr << "install-menu: " << script_name << ": " << _("Aborting") << endl;
+    return 1;
   }
-  catch (genexcept& p) { p.report(); }
-
-  cerr << "install-menu: " << script_name << ": " << _("Aborting") << endl;
-
-  return 1;
 }

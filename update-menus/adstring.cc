@@ -7,7 +7,8 @@
 #include <cstdlib>
 #include "adstring.h"
 
-using namespace std;
+using std::cerr;
+using std::endl;
 
 Regex::Regex(const char *s)
 {
@@ -176,15 +177,15 @@ int stringtoi(const string &s)
 
 string itostring(int i)
 {
-  ostringstream o;
+  std::ostringstream o;
   o << i;
   return o.str();
 }
 
 string itohexstring(int i)
 {
-  ostringstream o;
-  o << hex << i;
+  std::ostringstream o;
+  o << std::hex << i;
   return o.str();
 }
 
@@ -235,7 +236,7 @@ string string_stripdir(string s)
     return s.substr(p+1,s.length());
 }
 
-void break_char(const string &sec, StrVec &sec_vec, char breakchar)
+void break_char(const string &sec, std::vector<string>& sec_vec, char breakchar)
 {
   string::size_type i,j;
 
@@ -263,12 +264,12 @@ void break_char(const string &sec, StrVec &sec_vec, char breakchar)
   }
 }
 
-void break_slashes(const string &sec, StrVec &sec_vec)
+void break_slashes(const string &sec, std::vector<string>& sec_vec)
 {
   break_char(sec,sec_vec,'/');
 }
 
-void break_commas(const string &sec, StrVec &sec_vec)
+void break_commas(const string &sec, std::vector<string>& sec_vec)
 {
   break_char(sec,sec_vec,',');
 }
@@ -301,6 +302,29 @@ void except_pi::report()
     fprintf(stderr, _("Somewhere in input file:\n"));
   }
   cerr << message() << endl;
+}
+
+parsestream::parsestream(std::istream &in, string other)
+  : in_constructor(true), stdin_file(true), otherdir(other), doescaping(true)
+{
+  init(&in,_("(probably) stdin"));
+  in_constructor = false;
+}
+
+parsestream::parsestream(const string &name, string other)
+  : in_constructor(true), stdin_file(false), otherdir(other), doescaping(true)
+{
+  std::istream *f = new std::ifstream(name.c_str());
+
+  if(!f && (name[0] != '/')) {
+    string add = other + "/" + name;
+    f = new std::ifstream(add.c_str());
+  }
+  if (!*f)
+      throw ferror_open(_("Cannot open file ") + name);
+
+  init(f, name);
+  in_constructor = false;
 }
 
 void parsestream::preprocess(string &s)
@@ -355,7 +379,7 @@ void parsestream::preprocess(string &s)
                 new_file(t);
               } else {
                 string name = string_parent(filename()) + '/' + t;
-                if (ifstream(name.c_str()))
+                if (std::ifstream(name.c_str()))
                     new_file(name);
                 else
                     new_file(otherdir + '/' + t);
@@ -371,7 +395,7 @@ void parsestream::preprocess(string &s)
 
 void parsestream::new_file(const string &name)
 {
-  ifstream *f = new ifstream(name.c_str());
+  std::ifstream *f = new std::ifstream(name.c_str());
 
   init(f,name);
 }

@@ -10,8 +10,8 @@ class menuentry;
 bool operator<(const std::vector<std::string>& left, const std::vector<std::string>& right);
 
 /* submenu_container:
-  StrVec    first   - full title, broken into a StrVec
-  menuentry *second - the menu entry with this title
+  vector<string> first   - full title, broken into a vector of strings
+  menuentry*     second  - the menu entry with this title
 */
 typedef std::map<std::vector<std::string>, menuentry *> submenu_container;
 

@@ -27,8 +27,6 @@ public:
 
 // ************* std::string utility functions:
 
-typedef std::vector<string> StrVec;
-
 bool contains(const string& str, const string &sub, string::size_type pos = 0);
 bool contains(const string& str, char c);
 
@@ -36,14 +34,10 @@ string Sprintf(const char *, const string &);
 
 string rmtrailingspace(string &s);
 string escape_string(const string &s, const string &esc);
-string escapewith_string(const string &s, 
-				const string &esc, 
-				const string &with);
+string escapewith_string(const string &s, const string &esc, const string &with);
 string lowercase(string s);
 string uppercase(string s);
-string replacewith_string(const string &s, 
-				 const string &replace, 
-				 const string &with);
+string replacewith_string(const string &s, const string &replace, const string &with);
 string cppesc_string(const string &s);
 string replace(string s,char match, char replace);
 int stringtoi(const string &s);
@@ -54,9 +48,9 @@ string string_parent(string s);
 string string_basename(string s);
 string string_stripdir(string s);
 string string_lastname(string s);
-void break_char(const string &sec,StrVec &sec_vec, char);
-void break_slashes(const string &sec,StrVec &sec_vec);
-void break_commas(const string &sec,StrVec &sec_vec);
+void break_char(const string &sec, std::vector<string> &sec_vec, char);
+void break_slashes(const string &sec, std::vector<string> &sec_vec);
+void break_commas(const string &sec, std::vector<string> &sec_vec);
 
 // ************* exception classes for parsers:
 
@@ -132,16 +126,16 @@ public:
   string message() const {
     return Sprintf(_("Unexpected character :\"%s\"."),msg);
   }
-};  
+};
 
 class boolean_expected: public except_pi_string {
 public:
   boolean_expected(parsestream *p, string s):except_pi_string(p,s) { }
   string message() const {
     return Sprintf(_("Boolean (either true or false) expected.\n"
-		     "Found: \"%s\""),msg);
+                     "Found: \"%s\""), msg);
   }
-};  
+};
 
 class ferror_open: public except_string {
 public:
@@ -184,30 +178,10 @@ private:
   string otherdir;
 
 public:
+  parsestream(std::istream &in, string other = "");
+  parsestream(const string &name, string other = "");
+
   bool doescaping;
-  parsestream(std::istream &in, string other="")
-      : in_constructor(true), stdin_file(true), otherdir(other), doescaping(true)
-  {
-    init(&in,_("(probably) stdin"));
-    in_constructor = false;
-  }
-
-  parsestream(const string &name, string other="")
-      : in_constructor(true), stdin_file(false), otherdir(other), doescaping(true)
-  {
-    std::istream *f = new std::ifstream(name.c_str());
-
-    if(!f && (name[0] != '/')) {
-      string add = other + "/" + name;
-      f = new std::ifstream(add.c_str());
-    }
-    if (!*f)
-        throw ferror_open(_("Cannot open file ") + name);
-
-    init(f, name);
-    in_constructor = false;
-  }
-
   std::string::size_type pos;
   std::string buffer;
   string filename() const { return filenames.back(); }
