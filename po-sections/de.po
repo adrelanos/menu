@@ -1,0 +1,122 @@
+# Menu section translation
+# Copyright (C) 2003
+# This file is distributed under the same license as the menu package.
+# Bill Allombert <ballombe@debian.org>, 2003.
+# German translation:
+#   Sebastian Rittau <srittau@debian.org>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: menu-section 2.1.7-2\n"
+"POT-Creation-Date: 2003-04-03 12:14+0100\n"
+"PO-Revision-Date: 2003-05-14 11:49+0200\n"
+"Last-Translator: Sebastian Rittau <srittau@debian.org>\n"
+"Language-Team: German <debian-l10n-german@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Apps"
+msgstr "Anwendungen"
+
+msgid "Databases"
+msgstr "Datenbanken"
+ 
+msgid "Editors"
+msgstr "Editoren"
+
+msgid "Emulators"
+msgstr "Emulatoren"
+
+msgid "Graphics"
+msgstr "Grafik"
+
+msgid "Hamradio"
+msgstr "Hamradio"
+
+msgid "Math"
+msgstr "Mathematik"
+
+msgid "Net"
+msgstr "Netzwerk"
+
+msgid "Programming"
+msgstr "Programmierung"
+
+msgid "Science"
+msgstr "Wissenschaft"
+
+msgid "Tools"
+msgstr "Werkzeuge"
+
+msgid "Technical"
+msgstr "Technik"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "Shells"
+msgstr "Shells"
+
+msgid "Sound"
+msgstr "Musik"
+
+msgid "Viewers"
+msgstr "Betrachter"
+
+msgid "System"
+msgstr "System"
+
+msgid "Games"
+msgstr "Spiele"
+
+msgid "Adventure"
+msgstr "Adventure"
+
+msgid "Arcade"
+msgstr "Arcade"
+
+msgid "Board"
+msgstr "Brettspiele"
+
+msgid "Card"
+msgstr "Kartenspiele"
+
+msgid "Puzzles"
+msgstr "Rätsel"
+
+msgid "Sports"
+msgstr "Sport"
+
+msgid "Strategy"
+msgstr "Strategie"
+
+msgid "Tetris-like"
+msgstr "Tetris-artig"
+
+msgid "Toys"
+msgstr "Spielzeuge"
+
+msgid "Help"
+msgstr "Hilfe"
+
+msgid "Screen"
+msgstr "Bildschirm"
+
+msgid "Lock"
+msgstr "Sperren"
+
+msgid "Save"
+msgstr "Sichern"
+
+msgid "Root-window"
+msgstr "Root-Fenster"
+
+msgid "WindowManagers"
+msgstr "Fenstermanager"
+
+msgid "Modules"
+msgstr "Module"
+
+msgid "XShells"
+msgstr "XShells"
