@@ -114,9 +114,9 @@ class configinfo {
 
 public:
   configinfo()
-      : compat(parsestream::eol_newline), usedefaultmenufilesdirs(true),
-        onlyoutput_to_stdout(false), verbosity(report_quiet),
-        method(method_stderr)
+      : method(method_stderr), compat(parsestream::eol_newline),
+      usedefaultmenufilesdirs(true), onlyoutput_to_stdout(false),
+      verbosity(report_quiet)
     { }
 
   typedef enum { report_quiet, report_normal, report_verbose, report_debug} verbosity_type;
