@@ -81,8 +81,8 @@ int stringtoi(const std::string &str);
 /* Returns the string representation of i. */
 std::string itostring(int i);
 
-/* Return the string representation of i, in hexidecimal. */
-std::string itohexstring(int i);
+/* Return the hexadecimal representation of c, as a string. */
+std::string chartohex(unsigned char c);
 
 /* Returns the 'parent' of a string in the form /<foo>/<bar> where '/'
  * separates parents.

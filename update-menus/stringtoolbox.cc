@@ -103,13 +103,29 @@ string replace(string str, const string& repl, const string& with)
   return str;
 }
 
+/* This is isalnum with C locale enforced */
+static int c_isalnum(char s)
+{
+  if (s>='a' && s<='z') return 1;
+  if (s>='0' && s<='9') return 1;
+  if (s>='A' && s<='Z') return 1;
+  return 0;
+}
+
+string chartohex(unsigned char c)
+{
+  std::ostringstream o;
+  o << std::hex << (int) c;
+  return o.str();
+}
+
 string cppesc(const string &s)
 {
   string t;
   for (string::size_type i = 0; i!= s.length(); ++i)
   {
-    if (!(isalnum(s[i]) || (s[i] == '_')))
-        t += '$' + itohexstring(int(s[i]));
+    if (!(c_isalnum(s[i]) || (s[i] == '_')))
+        t += '$' + chartohex(s[i]);
     else
         t += s[i];
   }
@@ -125,13 +141,6 @@ string itostring(int i)
 {
   std::ostringstream o;
   o << i;
-  return o.str();
-}
-
-string itohexstring(int i)
-{
-  std::ostringstream o;
-  o << std::hex << i;
   return o.str();
 }
 
