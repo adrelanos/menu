@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Year Free Software Foundation, Inc.
+# Yongtao Yang <yongtao.yang@telia.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: menu 2.1.9\n"
+"POT-Creation-Date: 2004-01-20 02:28+0100\n"
+"PO-Revision-Date: 2004-02-11 23:00+0100\n"
+"Last-Translator: Yongtao Yang <yongtao.yang@telia.com>\n"
+"Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Apps"
+msgstr "程序"
+
+msgid "Databases"
+msgstr "数据库"
+
+msgid "Editors"
+msgstr "编辑器"
+
+msgid "Education"
+msgstr "教育"
+
+msgid "Emulators"
+msgstr "模拟器"
+
+msgid "Graphics"
+msgstr "图形"
+
+msgid "Hamradio"
+msgstr "业余无线电"
+
+msgid "Math"
+msgstr "数学"
+
+msgid "Net"
+msgstr "网络"
+
+msgid "Programming"
+msgstr "编程"
+
+msgid "Science"
+msgstr "科学"
+
+msgid "Tools"
+msgstr "工具"
+
+msgid "Technical"
+msgstr "技术"
+
+msgid "Text"
+msgstr "文本"
+
+msgid "Shells"
+msgstr "Shells"
+
+msgid "Sound"
+msgstr "声音"
+
+msgid "Viewers"
+msgstr "观看器"
+
+msgid "System"
+msgstr "系统"
+
+msgid "Games"
+msgstr "游戏"
+
+msgid "Adventure"
+msgstr "冒险类"
+
+msgid "Arcade"
+msgstr "街机类"
+
+msgid "Board"
+msgstr "棋盘类"
+
+msgid "Card"
+msgstr "牌类"
+
+msgid "Puzzles"
+msgstr "迷宫类"
+
+msgid "Simulation"
+msgstr "模拟类"
+
+msgid "Sports"
+msgstr "体育类"
+
+msgid "Strategy"
+msgstr "策略类"
+
+msgid "Tetris-like"
+msgstr "俄罗斯方块类"
+
+msgid "Toys"
+msgstr "玩具类"
+
+msgid "Help"
+msgstr "帮助"
+
+msgid "Screen"
+msgstr "屏幕"
+
+msgid "Lock"
+msgstr "锁定"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Root-window"
+msgstr "根窗口"
+
+msgid "WindowManagers"
+msgstr "窗口管理器"
+
+msgid "Modules"
+msgstr "模块"
+
+msgid "XShells"
+msgstr "XShells"
+
+msgid "Admin"
+msgstr "管理"
+
+msgid "Appearance"
+msgstr "外观"
+
+msgid "WorkSpace"
+msgstr "工作区"
+
+msgid "Mozilla Components"
+msgstr "Mozilla 组件"
+
+msgid "Teddies"
+msgstr "玩具熊"
+
