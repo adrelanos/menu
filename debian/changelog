@@ -7,6 +7,8 @@ menu (2.1.7-4) unstable; urgency=low
     Guérard.
   * Add complete spanish translation of menu sections. Thanks Javier
     Fernández-Sanguino Peña.
+  * Fix a segmentation fault which happened when translate_menus only
+    contained one line (Morten Brix Pedersen).
 
  -- Bill Allombert <ballombe@debian.org>  Mon,  7 Apr 2003 20:31:51 +0200
 
