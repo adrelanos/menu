@@ -31,7 +31,7 @@ build-stamp:
 clean:
 	dh_testdir
 	dh_testroot
-	rm -f build-stamp install-stamp
+	rm -f build-stamp install-stamp config.log
 
 	# Add here commands to clean up after the build process.
 	[ ! -f Makefile ] || $(MAKE) distclean
@@ -55,8 +55,6 @@ install-stamp: build-stamp
 	cp examples/translate_menus examples/menu.h \
 	   examples/menu.config debian/tmp/etc/menu-methods 
 	#
-	install -g root -o root -m 644 \
-	   doc/README.changes debian/tmp/usr/share/doc/menu/
 	install -g root -o root -m 644 \
 	   doc/README.config-menus debian/tmp/etc/menu/README
 	install -g root -o root -m 644 \
