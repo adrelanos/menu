@@ -1,85 +1,84 @@
-# Turkish translation of menu.
+# Galician translation of menu
+# Copyright (C) 2005 Debian menu team
 # This file is distributed under the same license as the menu package.
-# Çağatay Tengiz <cagatay@tengiz.net>, 2004.
-# 
+# Jacobo Tarrío <jtarrio@debian.org>, 2005.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: menu\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2005-02-14 19:02+0100\n"
-"PO-Revision-Date: 2005-02-17 20:29+0200\n"
-"Last-Translator: Çağatay Tengiz <cagatay@tengiz.net>\n"
-"Language-Team: Turkish <debian-l10n-turkish@lists.debian.org>\n"
+"PO-Revision-Date: 2005-02-18 00:21+0100\n"
+"Last-Translator: Jacobo Tarrío <jtarrio@debian.org>\n"
+"Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=1; plural=0;\n"
 
 #: ../install-menu/functions.cc:92
 msgid "Zero-size argument to print function."
-msgstr "Yazdırma fonksiyonu için sıfır boyutlu argüman"
+msgstr "Pasouse un argumento de tamaño 0 á función de impresión."
 
 #: ../install-menu/install-menu.cc:201
 msgid "install-menu: checking directory %1\n"
-msgstr "install-menu: %1 dizini kontrol ediliyor\n"
+msgstr "install-menu: a comprobar o directorio %1\n"
 
 #: ../install-menu/install-menu.cc:214
 msgid "install-menu: creating directory %1:\n"
-msgstr "install-menu: %1 dizini yaratılıyor:\n"
+msgstr "install-menu: a crear o directorio %1:\n"
 
 #: ../install-menu/install-menu.cc:216
 msgid "Could not create directory(%1): %2"
-msgstr "\"%1\" dizini yaratılamıyor: %2"
+msgstr "Non se puido crear o directorio(%1): %2"
 
 #: ../install-menu/install-menu.cc:218
 msgid "Could not change directory(%1): %2"
-msgstr "\"%1\" dizinine geçilemiyor: %2"
+msgstr "Non se puido cambiar de directorio(%1): %2"
 
 #: ../install-menu/install-menu.cc:221
 msgid "install-menu: directory %1 already exists\n"
-msgstr "install-menu: %1 dizini zaten mevcut\n"
+msgstr "install-menu: o directorio %1 xa existe\n"
 
 #. Do not translate supported
 #: ../install-menu/install-menu.cc:438
 msgid "install-menu: [supported]: name=%1\n"
-msgstr "install-menu: [desteklenen]: isim=%1\n"
+msgstr "install-menu: [supported]: nome=%1\n"
 
 #: ../install-menu/install-menu.cc:455
 msgid "Menu entry lacks mandatory field \"%1\".\n"
-msgstr "Menü girişinde eksik zorunlu alan: \"%1\".\n"
+msgstr "A entrada de menú non ten o campo obrigatorio \"%1\".\n"
 
 #: ../install-menu/install-menu.cc:461
 msgid "Unknown value for field %1=\"%2\".\n"
-msgstr "%1 alanı için bilinmeyen \"%2\" değeri.\n"
+msgstr "Valor descoñecido para o campo %1=\"%2\".\n"
 
 #. Do not translate quoted text
 #: ../install-menu/install-menu.cc:606
 msgid ""
 "install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
 msgstr ""
-"install-menu: \"hotkeycase\" yalnızca \"sensitive\" veya \"insensitive\" "
-"olabilir.\n"
+"install-menu: \"hotkeycase\" só pode valer \"sensitive\" ou \"insensitive\"\n"
 
 #: ../install-menu/install-menu.cc:636
 msgid ""
 "install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
 "Ignoring.\n"
 msgstr ""
-"install-menu: Uyarı: %3 dosyasının %2 no'lu satırında bilinmeyen tanıtıcı `%"
-"1'. Gözardı ediliyor.\n"
+"install-menu: Aviso: Identificador \"%1\" descoñecido na liña %2 do ficheiro "
+"%3. Ignórase.\n"
 
 #: ../install-menu/install-menu.cc:646
 msgid "install-menu: %1 must be defined in menu-method %2"
-msgstr "install-menu: %1, %2 menu-yönteminde tanımlanmalı"
+msgstr "install-menu: %1 debe estar definido no método de menú %2"
 
 #: ../install-menu/install-menu.cc:813
 msgid "Cannot open file %1 (also tried %2).\n"
-msgstr "%1 dosyası açılamıyor. (Ayrıca %2 de denendi).\n"
+msgstr "Non se pode abrir o ficheiro %1 (tamén se probou con %2).\n"
 
 #: ../install-menu/install-menu.cc:821 ../install-menu/install-menu.cc:828
 #: ../install-menu/install-menu.cc:836
 msgid "Cannot open file %1.\n"
-msgstr "%1 dosyası açılamıyor.\n"
+msgstr "Non se pode abrir o ficheiro %1.\n"
 
 #: ../install-menu/install-menu.cc:838
 msgid ""
@@ -87,13 +86,13 @@ msgid ""
 "manager,\n"
 "the above file needs to be writeable (and/or the directory needs to exist).\n"
 msgstr ""
-"Pencere yöneticisi için kullanıcı yapılandırma dosyalarının \n"
-"oluşturulabilmesi için yukarıdaki dosyaların yazılabilir olması \n"
-"(ve/veya dizinlerin oluşturulmuş olması) gerekmektedir.\n"
+"Para poder crear o(s) ficheiro(s) de configuración de usuario do xestor de\n"
+"fiestras, o ficheiro de enriba ten que se poder escribir (e o directorio\n"
+"ten que existir).\n"
 
 #: ../install-menu/install-menu.cc:860
 msgid "Warning: the string %1 did not occur in template file %2\n"
-msgstr "Uyarı: %1 dizgisi, %2 şablon dosyasında hiç yer almıyor.\n"
+msgstr "Aviso: a cadea %1 non aparece no ficheiro de patróns %2\n"
 
 #. Don't translate quoted string
 #: ../install-menu/install-menu.cc:885
@@ -105,123 +104,120 @@ msgid ""
 "     -h --help    : this message\n"
 "     -v --verbose : be verbose\n"
 msgstr ""
-"install-mnu [-vh] <menü-yöntemi>\n"
-"  Menü girişlerini \"update-menus --stdout\" formatında stdin'den\n"
-"  okur ve menü dosyalarını belirtilrn menü-yöntemi'ne göre olusturur.\n"
-"  install-menu için Seçenekler :\n"
-"       -h --help       : bu ileti\n"
-"       -v --verbose    : ayrıntı ver\n"
+"install-menu [-vh] <método>\n"
+"  Le as entradas do menú da entrada estándar no formato de \"update-menus\n"
+"  --stdout\" e xera ficheiros de menú empregando o método indicado.\n"
+"  As opcións de install-menu son:\n"
+"     -h --help    : esta mensaxe\n"
+"     -v --verbose : ser moi descritivo\n"
 
 #: ../install-menu/install-menu.cc:929
 msgid "install-menu: no menu-method script specified !"
-msgstr "install-menu: uygulanacak menü-yöntemi betiği belirtilmedi !"
+msgstr "install-menu: non se indicou un guión de método do menú"
 
 #: ../install-menu/install-menu.cc:942
 msgid "Cannot open script %1 for reading.\n"
-msgstr "%1 betiği okuma için açılamıyor.\n"
+msgstr "Non se pode abrir o guión %1 para lectura.\n"
 
 #: ../install-menu/install-menu.cc:982
 msgid "Running: \"%1\"\n"
-msgstr "Çalıştırılan: \"%1\"\n"
+msgstr "A executar: \"%1\"\n"
 
 #: ../install-menu/install-menu.cc:998
 msgid "install-menu: %1: aborting\n"
-msgstr "install-menu: %1: durduruluyor\n"
+msgstr "install-menu: %1: abórtase\n"
 
 #: ../install-menu/install-menu.h:198
 msgid "Number of arguments to function %1 does not match."
-msgstr "%1 fonksiyonu değişken sayısı uyumsuz."
+msgstr "O número de argumentos da función %1 non encaixa."
 
 #: ../install-menu/install-menu.h:206
 msgid "Unknown function: \"%1\""
-msgstr "Bilinmeyen fonksiyon: \"%1\""
+msgstr "Función descoñecida: \"%1\""
 
 #: ../install-menu/install-menu.h:215
 msgid "Indirectly used, but not defined function: \"%1\""
-msgstr "Dolaylı kullanılan, fakat tanımlanmayan fonksiyon: \"%1\""
+msgstr "Función empregada indirectamente, pero sen definir: \"%1\""
 
 #: ../install-menu/install-menu.h:224
 msgid "Unknown identifier: \"%1\""
-msgstr "Bilinmeyen tanıtıcı: \"%1\""
+msgstr "Identificador descoñecido: \"%1\""
 
 #: ../install-menu/install-menu.h:233
 msgid "Encoding conversion error: \"%1\""
-msgstr "Kodlama dönüşümü hatası: \"%1\""
+msgstr "Erro na conversión da codificación: \"%1\""
 
 #: ../update-menus/exceptions.h:43
 msgid "Unknown error."
-msgstr "Bilinmeyen hata."
+msgstr "Erro descoñecido."
 
 #: ../update-menus/exceptions.h:55 ../update-menus/parsestream.h:114
 msgid "Unknown error, message=%1"
-msgstr "Bilinmeyen hata, ileti=%1"
+msgstr "Erro descoñecido, mensaxe=%1"
 
 #: ../update-menus/exceptions.h:64
 msgid "Unable to open file \"%1\"."
-msgstr "\"%1\" dosyası açılamadı."
+msgstr "Non se puido abrir o ficheiro \"%1\"."
 
 #: ../update-menus/exceptions.h:73
 msgid "Failed to pipe data through \"%1\" (pipe opened for reading)."
-msgstr ""
-"\"%1\" üzerinden veri borulaması başarısız. (boru, okuma için açılmış)."
+msgstr "Non se puido pasar os datos por \"%1\" (abriuse para lectura)."
 
 #: ../update-menus/exceptions.h:89
 msgid "%1: missing required tag: \"%2\""
-msgstr "%1:Gerekli \"%2\" etiketi eksik"
+msgstr "%1: falla a etiqueta requirida: \"%2\""
 
 #: ../update-menus/parsestream.cc:49
 msgid "(probably) stdin"
-msgstr "(olasılıkla) stdin"
+msgstr "(probablemente) entrada estándar"
 
 #: ../update-menus/parsestream.cc:449
 msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
-msgstr ""
-"\"%1\" dosyasında, \"%2\" satırında (veya tanımlamanın sona erdiği "
-"satırda): \n"
+msgstr "No ficheiro \"%1\", na (ou na definición que remata na) liña %2:\n"
 
 #: ../update-menus/parsestream.cc:470
 msgid "Somewhere in input file:\n"
-msgstr "Giriş dosyasında bir yerde:\n"
+msgstr "Nalgunha parte do ficheiro de entrada:\n"
 
 #: ../update-menus/parsestream.h:122
 msgid "Unexpected end of file."
-msgstr "Beklenmeyen dosya sonu."
+msgstr "Non se esperaba a fin do ficheiro."
 
 #: ../update-menus/parsestream.h:129
 msgid "Unexpected end of line."
-msgstr "Beklenmeyen satır sonu."
+msgstr "Non se esperaba a fin da liña."
 
 #: ../update-menus/parsestream.h:136
 msgid "Identifier expected."
-msgstr "Tanıtıcı gerekli."
+msgstr "Esperábase un identificador."
 
 #: ../update-menus/parsestream.h:144
 msgid "Expected: \"%1\""
-msgstr "Beklenen: \"%1\""
+msgstr "Esperábase: \"%1\""
 
 #: ../update-menus/parsestream.h:153
 msgid "Unexpected character: \"%1\""
-msgstr "Beklenmeyen karakter: \"%1\""
+msgstr "Non se esperaba un carácter: \"%1\""
 
 #: ../update-menus/parsestream.h:162
 msgid ""
 "Boolean (either true or false) expected.\n"
 "Found: \"%1\""
 msgstr ""
-"Mantıksal değer (true veya false) gerekli.\n"
-"Bulunan: \"%1\""
+"Esperábase un booleano (verdadeiro ou falso).\n"
+"Atopouse: \"%1\""
 
 #: ../update-menus/parsestream.h:172
 msgid "Unknown compat mode: \"%1\""
-msgstr "Bilinmeyen uyumluluk kipi: \"%1\""
+msgstr "Modo de compatibilidade descoñecido: \"%1\""
 
 #: ../update-menus/stringtoolbox.cc:85
 msgid ""
 "replacewith($string, $replace, $with): $replace and $with must have the same "
 "length."
 msgstr ""
-"replacewith($string, $replace, $with): $replace ve $with aynı uzunlukta "
-"olmalı."
+"replacewith($cadea, $remprazo, $con): $remprazo e $con deben ser da mesma "
+"lonxitude."
 
 #. Translation here and below refer to the file
 #. /etc/menu-methods/translate_menus that allow to rename and reorganize
@@ -230,92 +226,91 @@ msgstr ""
 #.
 #: ../update-menus/update-menus.cc:358
 msgid "Reading translation rules in %1."
-msgstr "%1 dosyasındaki çeviri kuralları okunuyor."
+msgstr "A ler as regras de tradución de %1."
 
 #: ../update-menus/update-menus.cc:438
 msgid "Reading installed packages list..."
-msgstr "Kurulu paket listesi okunuyor..."
+msgstr "A ler a lista de paquetes instalados..."
 
 #: ../update-menus/update-menus.cc:485
 msgid "Execution of %1 generated no output or returned an error.\n"
-msgstr "%1 yürütülmesi çıktı üretmedi veya hata ile sonlandı.\n"
+msgstr "A execución de %1 non produciu saída ou devolveu un erro.\n"
 
 #: ../update-menus/update-menus.cc:525 ../update-menus/update-menus.cc:529
 msgid "Skipping file because of errors...\n"
-msgstr "Hatalardan dolayı dosya atlanıyor...\n"
+msgstr "A omitir o ficheiro por mor dos erros...\n"
 
 #: ../update-menus/update-menus.cc:545
 msgid "Reading menu-entry files in %1."
-msgstr "%1 dosyasındaki menü giriş dosyaları okunuyor."
+msgstr "A ler os ficheiros de entradas do menú de %1."
 
 #: ../update-menus/update-menus.cc:568
 msgid "Error reading %1.\n"
-msgstr "%1 dosyasının okunmasında hata.\n"
+msgstr "Erro ao ler %1.\n"
 
 #: ../update-menus/update-menus.cc:573
 msgid "%1 menu entries found (%2 total)."
-msgstr "%1 menü girişi bulundu (toplam %2)."
+msgstr "Atopáronse %1 entradas de menú (%2 en total)."
 
 #: ../update-menus/update-menus.cc:585
 msgid "Running method: %1"
-msgstr "Çalıştırılan yöntem: %1"
+msgstr "A executar o método: %1"
 
 #: ../update-menus/update-menus.cc:588
 msgid "Cannot create pipe."
-msgstr "Boru oluşturulamıyor."
+msgstr "Non se puido crear a canle."
 
 #: ../update-menus/update-menus.cc:624 ../update-menus/update-menus.cc:1000
 msgid "Script %1 could not be executed."
-msgstr "%1 betiği çalıştırılamadı."
+msgstr "Non se puido executar o guión %1."
 
 #: ../update-menus/update-menus.cc:627
 msgid "Script %1 returned error status %2."
-msgstr "%1 betiği %2 hata durumunu döndürdü."
+msgstr "O guión %1 devolveu o estado de erro %2."
 
 #: ../update-menus/update-menus.cc:630
 msgid "Script %1 received signal %2."
-msgstr "%1 betiği %2 sinyalini aldı."
+msgstr "O guión %1 recibiu o sinal %2."
 
 #: ../update-menus/update-menus.cc:640
 msgid "Running menu-methods in %1."
-msgstr "%1 dosyasındaki menü-yöntemleri çalıştırılıyor."
+msgstr "A executar menu-methods en %1."
 
 #: ../update-menus/update-menus.cc:673
 msgid "Other update-menus processes are already locking %1, quitting."
-msgstr ""
-"%1 diğer update-menu süreçleri tarafından zaten kilitlenmiş, çıkılıyor."
+msgstr "Hai outros procesos de update-menus a bloquear %1, sáese."
 
 #: ../update-menus/update-menus.cc:676
 msgid "Cannot lock %1: %2 - Aborting."
-msgstr "%1 kilitlenemiyor: %2 - Durduruluyor."
+msgstr "Non se pode bloquear %1: %2 - Abórtase."
 
 #: ../update-menus/update-menus.cc:685
 msgid "Cannot write to lockfile %1 - Aborting."
-msgstr "%1 kilit dosyasına yazılamıyor - Durduruluyor."
+msgstr "Non se pode escribir no ficheiro de bloqueo %1 - Abórtase."
 
 #: ../update-menus/update-menus.cc:698
 msgid "Cannot remove lockfile %1."
-msgstr "Kilit dosyası %1 kaldırılamıyor."
+msgstr "Non se pode borrar o ficheiro de bloqueo %1."
 
 #: ../update-menus/update-menus.cc:714
 msgid "Update-menus is run by user."
-msgstr "Update-menus kullanıcı tarafından çalıştırılıyor."
+msgstr "O usuario executa update-menus."
 
 #: ../update-menus/update-menus.cc:798
 msgid ""
 "Waiting for dpkg to finish (forking to background).\n"
 "(checking %1)"
 msgstr ""
-"dpkg'nin sonlanması bekleniyor (arka alanda )\n"
-"(%1 kontrol ediliyor)"
+"A agardar a que dpkg remate (convértese en tarefa de segundo plano).\n"
+"(compróbase %1)"
 
 #: ../update-menus/update-menus.cc:801
 msgid "Further output (if any) will appear in %1."
-msgstr "Sonraki çıktıların (eğer varsa) gözükeceği yer: %1"
+msgstr "Se hai máis saída ha aparecer en %1."
 
 #: ../update-menus/update-menus.cc:823
 msgid "Dpkg is not locking dpkg status area, good."
-msgstr "Dpkg, dpkg durum alanını kilitlemiyor. Güzeel..."
+msgstr "Dpkg non bloquea a área de estado de dpkg; iso é bo."
 
 #. This is the update-menus --help message
 #: ../update-menus/update-menus.cc:833
@@ -334,29 +329,30 @@ msgid ""
 "  --stdout               Output menu list in format suitable for piping to\n"
 "                         install-menu.\n"
 msgstr ""
-"update-menus:çeşitli pencere yöneticileri (ve dww ve pdmenu) \n"
-"  yapılandırma dosyalarını günceller.\n"
-"  Kullanımı : update-menus [seçenekler] \n"
-"    -v                     Neler olup bittiği hakkında ayrıntı ver.\n"
-"    -d                     Hata ayıklama iletilerini dök.\n"
-"    -h, --help             Bu ileti.\n"
-"    --menufilesdir <dizin> Taranacak menü dizini listesine <dizin> dizinini\n"
-"                           ekle.\n"
-"    --menumethod <yöntem>  Yalnızca <yöntem> menü-yöntemini çalıştır.\n"
-"    --nodefaultdirs        Tüm standart menü dizinlerinin kullanımını\n"
-"                           devre dışı bırak.\n"
-"    --stdout               Menü listesi çıktısını, install-menu'ye\n"
-"                           borulanacak biçimde ver.\n"
+"Emprego: update-menus [opcións] \n"
+"Recolle datos dos paquetes da base de datos dos menús e xera menús para "
+"todos\n"
+"os programas que fornecen métodos de menú, normalmente os xestores de "
+"fiestras.\n"
+"  -d                     Produce mensaxes de depuración.\n"
+"  -v                     Dá moita información sobre o que ocorre.\n"
+"  -h, --help             Esta mensaxe.\n"
+"  --menufilesdir=<dir>   Engade <dir> aos directorios de menús nos que "
+"buscar.\n"
+"  --menumethod=<método>  Executa só o método <método>.\n"
+"  --nodefaultdirs        Non emprega os directorios estándar de menús.\n"
+"  --stdout               Produce a lista de menús nun formato axeitado para\n"
+"                         pasar a install-menu.\n"
 
 #. This is the end of the update-menus --help message
 #: ../update-menus/update-menus.cc:845
 msgid "  --version              Output version information and exit.\n"
-msgstr "    --version              Sürüm bilgisini göster ve çık.\n"
+msgstr ""
+"  --version              Produce información sobre a versión e sae.\n"
 
 #: ../update-menus/update-menus.h:149
 msgid ""
 "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
 msgstr ""
-"Bilinmeyen kurulum durumu \"%1\" (şu anda yalnızca \"package\" "
-"desteklenmektedir)."
-
+"Condición de instalación \"%1\" descoñecida (só hai \"package\" polo "
+"momento)."
