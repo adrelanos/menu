@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: menu_2.1.7-3\n"
-"POT-Creation-Date: 2003-01-28 12:14+0100\n"
-"PO-Revision-Date: 2003-04-08 22:00-0300\n"
+"Project-Id-Version: menu-section 2.1.7-2\n"
+"POT-Creation-Date: 2003-04-03 12:14+0100\n"
+"PO-Revision-Date: 2003-05-17 12:29-0300\n"
 "Last-Translator: André Luís Lopes <andrelop@ig.com.br>\n"
 "Language-Team: Debian-BR Project <debian-l10n-portuguese@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,32 +18,23 @@ msgstr ""
 msgid "Apps"
 msgstr "Aplicativos"
 
-msgid "Games"
-msgstr "Jogos"
-
-msgid "Help"
-msgstr "Ajuda"
-
-msgid "Screen"
-msgstr "Tela"
-
-msgid "WindowManagers"
-msgstr "Gerenciadores de Janelas"
-
-msgid "XShells"
-msgstr "Shells Gráficos"
-
+msgid "Databases"
+msgstr "Bases de Dados"
+ 
 msgid "Editors"
 msgstr "Editores"
+
+msgid "Emulators"
+msgstr "Emuladores"
 
 msgid "Graphics"
 msgstr "Gráficos"
 
+msgid "Hamradio"
+msgstr "Rádio Amador"
+
 msgid "Math"
 msgstr "Matemática"
-
-msgid "Misc"
-msgstr "Miscelânia"
 
 msgid "Net"
 msgstr "Rede"
@@ -51,14 +42,23 @@ msgstr "Rede"
 msgid "Programming"
 msgstr "Programação"
 
+msgid "Science"
+msgstr "Ciência"
+
+msgid "Tools"
+msgstr "Ferramentas"
+
+msgid "Technical"
+msgstr "Técnico"
+
+msgid "Text"
+msgstr "Texto"
+
 msgid "Shells"
 msgstr "Shells"
 
 msgid "Sound"
 msgstr "Som"
-
-msgid "Tools"
-msgstr "Ferramentas"
 
 msgid "Viewers"
 msgstr "Visualizadores"
@@ -66,8 +66,8 @@ msgstr "Visualizadores"
 msgid "System"
 msgstr "Sistema"
 
-msgid "Admin"
-msgstr "Administração"
+msgid "Games"
+msgstr "Jogos"
 
 msgid "Adventure"
 msgstr "Aventura"
@@ -78,14 +78,29 @@ msgstr "Fliperama"
 msgid "Board"
 msgstr "Tabuleiro"
 
-msgid "Simulation"
-msgstr "Simulação"
+msgid "Card"
+msgstr "Cartas"
+
+msgid "Puzzles"
+msgstr "Quebra Cabeças"
+
+msgid "Sports"
+msgstr "Esportes"
 
 msgid "Strategy"
 msgstr "Estratégia"
 
 msgid "Tetris-like"
 msgstr "Estilo Tetris"
+
+msgid "Toys"
+msgstr "Brinquedos"
+
+msgid "Help"
+msgstr "Ajuda"
+
+msgid "Screen"
+msgstr "Tela"
 
 msgid "Lock"
 msgstr "Travar"
@@ -94,7 +109,13 @@ msgid "Save"
 msgstr "Salvar"
 
 msgid "Root-window"
-msgstr "Janela-raíz"
+msgstr "Janela Raíz"
+
+msgid "WindowManagers"
+msgstr "Gerenciadores de Janelas"
 
 msgid "Modules"
 msgstr "Módulos"
+
+msgid "XShells"
+msgstr "Shells Gráficos"
