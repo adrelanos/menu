@@ -2,12 +2,14 @@
 # Copyright (C) 2003
 # This file is distributed under the same license as the menu package.
 # Bill Allombert <ballombe@debian.org>, 2003.
-# 
+#
 msgid ""
 msgstr ""
+"msgid \"\"\n"
+"msgstr \"\"\n"
 "Project-Id-Version: menu-section 2.1.7-2\n"
 "POT-Creation-Date: 2003-04-03 12:14+0100\n"
-"PO-Revision-Date: 2003-04-27 15:27+0100\n"
+"PO-Revision-Date: 2004-05-23 22:07+0200\n"
 "Last-Translator: Stefano Canepa <sc@linux.it>\n"
 "Language-Team: Italian <tp@list.linux.it>\n"
 "MIME-Version: 1.0\n"
@@ -19,9 +21,12 @@ msgstr "Applicazioni"
 
 msgid "Databases"
 msgstr "Database"
-
+ 
 msgid "Editors"
 msgstr "Editor"
+
+msgid "Education"
+msgstr "Apprendimento"
 
 msgid "Emulators"
 msgstr "Emulatori"
@@ -83,6 +88,9 @@ msgstr "Carte"
 msgid "Puzzles"
 msgstr "Rompicapi"
 
+msgid "Simulation"
+msgstr "Simulazione"
+
 msgid "Sports"
 msgstr "Sport"
 
@@ -105,7 +113,7 @@ msgid "Lock"
 msgstr "Blocca"
 
 msgid "Save"
-msgstr "Salva"
+msgstr "Salva schermo"
 
 msgid "Root-window"
 msgstr "Sfondo"
@@ -118,4 +126,26 @@ msgstr "Moduli"
 
 msgid "XShells"
 msgstr "Terminali per X"
+
+#From Apps/System/Admin
+msgid "Admin"
+msgstr "Amministrazione"
+
+#Non official sections from WindowMaker
+msgid "Appearance"
+msgstr "Aspetto"
+
+msgid "WorkSpace"
+msgstr "Area di lavoro"
+
+#Frequently used unofficial sections.
+
+#From Apps/Net/Mozilla Components
+msgid "Mozilla Components"
+msgstr "Componenti di mozilla"
+
+
+#From Games/Toys/Teddies
+msgid "Teddies"
+msgstr "Orsacchiotti"
 
