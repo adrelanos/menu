@@ -1,1 +1,0 @@
-?package(xftp):needs="x11" section="Apps/Net"  title="xftp" command="xftp"
