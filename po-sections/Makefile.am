@@ -5,7 +5,7 @@ localedir = $(datadir)/locale
 EXTRA_DIST = $(POs) es.trme menufile2pot menu-sections.pot README trme2po
 
 all-local: $(MOs)
-install-data-local:$(MOs)
+install-data-local:$(MOs) lang.h
 	for mo in $(MOs); do \
            lang=`basename $$mo .mo`; \
 	   dir=$(DESTDIR)$(localedir)/$$lang/LC_MESSAGES; \
@@ -13,8 +13,14 @@ install-data-local:$(MOs)
 	   $(INSTALL_DATA) $$mo $$dir/menu-sections.mo; \
 	done
 
+lang.h: $(MOs)
+	echo "#List of languages for multilingual menu" >lang.h
+	echo >>lang.h
+	echo 'function sections_translations()="$(MOs) "' \
+	  | sed -e 's/.mo /:/g; s/:"/"/' >>lang.h
+
 %.mo   : %.po
 	msgfmt -o $@ $^ 
 
 clean-local:
-	rm -f *.mo
+	rm -f *.mo lang.h

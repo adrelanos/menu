@@ -54,7 +54,7 @@ install-stamp: build-stamp
 	# Add here commands to install the package into debian/tmp.
 	$(MAKE) install DESTDIR=`pwd`/debian/tmp/
 
-	cp examples/translate_menus examples/menu.h \
+	cp examples/translate_menus examples/menu.h po-sections/lang.h\
 	   examples/menu.config debian/tmp/etc/menu-methods 
 	#
 	install -g root -o root -m 644 \
