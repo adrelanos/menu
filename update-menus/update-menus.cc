@@ -96,19 +96,36 @@ menuentry::menuentry(parsestream &i, const string &filename)
   }
 }
 
-bool menuentry::check_validity(parsestream &i, string &name)
+// This function checks the package name to see if it's valid and installed.
+// Multiple package names can exist, seperated by comma.
+void menuentry::check_validity(parsestream &i, string &name)
 {
   string function = i.get_name();
   if (function != COND_PACKAGE)
     throw unknown_cond_package(&i, function);
-  i.skip_char('(');
-  name = i.get_name();
-  if (!is_pkg_installed(name)) {
-    i.skip_line();
-    throw cond_inst_false();
+
+  // Read an entry, such as (foo) or (foo, bar)
+  char c;
+  while ((c = i.get_char()))
+  {
+      if (c == ',' || c == '(') {
+          // A package name follows.
+          string pkgname = i.get_name();
+
+          if (!name.empty())
+                name += ", ";
+
+          name += pkgname;
+          if (!is_pkg_installed(pkgname)) {
+              i.skip_line();
+              throw cond_inst_false();
+          }
+      } else if (c == ')') {
+          // We are finished with the package requirements.
+          return;
+      }
   }
   i.skip_char(')');
-  return true;
 }
 
 void menuentry::read_menuentry(parsestream &i)

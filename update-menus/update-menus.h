@@ -9,7 +9,7 @@
 #include "common.h"
 
 class menuentry {
-  bool check_validity(parsestream &i, string &);
+  void check_validity(parsestream &i, string &);
   void read_menuentry(parsestream &i);
 
 public:

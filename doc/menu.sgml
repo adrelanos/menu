@@ -209,6 +209,8 @@ menus.
 Here is an example to describe the syntax of such a file:
 <example>
 ?package(gnuplot):\           specifies what packages need to be installed
+                              multiple requirements should be seperated by
+                              comma
   needs=text\                 what kind of terminal this command expects
                               needs=X11: if this program runs only on X11
                               needs=text: if it only runs on text terminals
