@@ -84,9 +84,6 @@ std::string itostring(int i);
 /* Return the string representation of i, in hexidecimal. */
 std::string itohexstring(int i);
 
-/* FIXME: what does this function do? */
-std::string sort_hotkey(std::string s);
-
 /* Returns the 'parent' of a string in the form /<foo>/<bar> where '/'
  * separates parents.
  *

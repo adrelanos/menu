@@ -133,52 +133,6 @@ string itohexstring(int i)
   return o.str();
 }
 
-string sort_hotkey(string str)
-{
-  string t;
-  string::size_type i;
-  string::size_type l = str.length();
-  char *s=strdup(str.c_str());
-
-  if(!l)
-    return t;
-
-  t=string("")+s[0];
-  s[0]='\0';
-  for(i=1;i!=l;i++)
-    if((isspace(s[i-1])||ispunct(s[i-1]))&&isupper(s[i])){
-      t+=s[i];
-      s[i]='\0';
-    }
-  for(i=1;i!=l;i++)
-    if((isspace(s[i-1])||ispunct(s[i-1]))&&isalnum(s[i])){
-      t+=s[i];
-      s[i]='\0';
-    }
-  for(i=1;i!=l;i++)
-    if(isupper(s[i])){
-      t+=s[i];
-      s[i]='\0';
-    }
-  for(i=1;i!=l;i++)
-    if(isalpha(s[i])){
-      t+=s[i];
-      s[i]='\0';
-    }
-  for(i=1;i!=l;i++)
-    if(isalnum(s[i])){
-      t+=s[i];
-      s[i]='\0';
-    }
-  for(i=1;i!=l;i++)
-    if(s[i]){
-      t+=s[i];
-      s[i]='\0';
-    }
-  free(s);
-  return t;
-}
-
 string string_parent(const string& str)
 {
   string::size_type pos = str.find_last_of('/');
