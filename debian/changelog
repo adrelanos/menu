@@ -1,3 +1,9 @@
+menu (2.1.8-2) unstable; urgency=low
+
+  *
+
+ -- Bill Allombert <ballombe@debian.org>  Fri, 18 Apr 2003 22:29:38 +0200
+
 menu (2.1.8-1) unstable; urgency=low
 
   * Put in CVS at alioth.debian.org 
