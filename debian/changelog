@@ -1,4 +1,4 @@
-menu (2.1.7-4) unstable; urgency=low
+menu (2.1.8-1) unstable; urgency=low
 
   * Put in CVS at alioth.debian.org 
   * Hard code version in configure.in so that menu can be build without
@@ -8,10 +8,11 @@ menu (2.1.7-4) unstable; urgency=low
   * Complete spanish translation of menu sections. Thanks Javier
     Fernández-Sanguino Peña.
   * Add brazilian translation of menu sections. Thanks André Luís Lopes.
+  * Remove obsolete Apps/Games --> Games in translate_menus.
   * Morten Brix Pedersen <morten@wtf.dk>:
     - Add Danish translation of menu sections.
     - Fix a segmentation fault which happened when translate_menus only
-    contained one line.
+      contained one line.
     - Special characters no longer needs to be double-escaped. Closes: #94466
     - Document the fact that titles in entries must be unique. Closes: #46629
     - Fix segmentation fault when using forcetree. Closes: #149468
