@@ -838,7 +838,7 @@ void usage(ostream &c)
   "  -h, --help             This message.\n"
   "  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to search.\n"
   "  --menumethod=<method>  Run only the menu method <method>.\n"
-  "  --nodefaultdirs        Disables the use of all the standard menu directories.\n"
+  "  --nodefaultdirs        Disable the use of all the standard menu directories.\n"
   "  --stdout               Output menu list in format suitable for piping to\n"
   "                         install-menu.\n")
        << _(  /* This is the end of the update-menus --help message*/
