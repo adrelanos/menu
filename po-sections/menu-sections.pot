@@ -125,3 +125,26 @@ msgstr ""
 
 msgid "XShells"
 msgstr ""
+
+#From Apps/System/Admin
+msgid "Admin"
+msgstr ""
+
+#Non official sections from WindowMaker
+msgid "Appearance"
+msgstr ""
+
+msgid "WorkSpace"
+msgstr ""
+
+#Fresuently used unofficial sections.
+
+#From Apps/Net/Mozilla Components
+msgid "Mozilla Components"
+msgstr ""
+
+
+#From Games/Toys/Teddies
+msgid "Teddies"
+msgstr ""
+
