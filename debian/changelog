@@ -1,3 +1,9 @@
+menu (2.1.9-2) unstable; urgency=low
+
+  * The "unreleased release". 
+
+ -- Bill Allombert <ballombe@debian.org>  Fri, 27 Jun 2003 23:14:48 +0200
+
 menu (2.1.9-1) unstable; urgency=low
 
   * The "And no, I'm not accepting job offers" release. 
