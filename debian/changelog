@@ -10,6 +10,12 @@ menu (2.1.8-2) unstable; urgency=low
     Thanks Sylvain Cherrier. Closes: #193004
   * Remove hello, octave and xftp default menu entries.
   * Bump Standards-Version to 3.5.10.0.
+  * No more require icons to use the colors from cmap.xpm.
+    Closes:#193231, #175430, #192218, #97080
+  * No more install cmap.xpm. Closes:#172092
+  * Document menu methods are required to use title(), icon() and term()
+    instead of $title, $icon and hard-coded call to x-terminal-emulator,
+    so that user can configure the behaviour in menu.h.
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 18 Apr 2003 22:29:38 +0200
 
