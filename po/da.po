@@ -310,18 +310,19 @@ msgstr "Yderligere uddata (hvis nogen) vil kunne ses i %1."
 msgid "Dpkg is not locking dpkg status area, good."
 msgstr "Dpkg låser ikke dpkg status område, godt."
 
-#: ../update-menus/update-menus.cc:834
+#. This is the update-menus --help message
+#: ../update-menus/update-menus.cc:833
 msgid ""
 "Usage: update-menus [options] \n"
-"Update menus for all menu-managers and window-managers providing menu-"
-"methods.\n"
+"Gather packages data from the menu database and generate menus for\n"
+"all programs providing menu-methods, usually window-managers.\n"
 "  -d                     Output debugging messages.\n"
 "  -v                     Be verbose about what is going on.\n"
 "  -h, --help             This message.\n"
 "  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to "
 "search.\n"
 "  --menumethod=<method>  Run only the menu method <method>.\n"
-"  --nodefaultdirs        Disables the use of all the standard menu "
+"  --nodefaultdirs        Disable the use of all the standard menu "
 "directories.\n"
 "  --stdout               Output menu list in format suitable for piping to\n"
 "                         install-menu.\n"
