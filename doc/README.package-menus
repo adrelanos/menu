@@ -15,12 +15,6 @@ and may contain as many lines (menu entries) as is necessary.
 
 For examples, please look in /usr/share/menu/default
 
-Also, note that the files in this directory are probably mostly in
-the "old" format, and if you are writing new menu entries, please use
-new-format menu entries like those found in /usr/share/menu/default, i.e.
-ones that look like:
-
-?package($p):command=/bin/ls section="Apps/System" needs=text title=ls
 
 Also, in your postinst you should check for the availability of
 the update-menus command, and if available, execute it (no
