@@ -472,9 +472,43 @@ void read_menufile(const string &filename, const string &shortfilename,
   config.report(String::compose(_("Reading menuentryfile %1"), filename), configinfo::report_debug);
 
   parsestream *ps = 0;
+  std::stringstream *sstream = 0;
 
   try {
-    ps = new parsestream(filename);
+    // Whenever we encounter a file which has the executable bit set, we
+    // need to execute it and read its output from stdout.
+
+    if (executable(filename)) {
+      FILE *status = popen(filename.c_str(), "r");
+
+      sstream = new std::stringstream;
+
+      if (!status)
+          throw pipeerror_read(filename.c_str());
+
+      while (!feof(status))
+      {
+        char tmp[MAX_LINE];
+        if (fgets(tmp, MAX_LINE, status) != NULL)
+            *sstream << tmp;
+      }
+      pclose(status);
+
+      try {
+        ps = new parsestream(*sstream);
+      } catch (endoffile d) {
+        cerr << String::compose(_("Error (or no input available from stdout) while executing %1. Note that it is a _feature_ of menu that it executes menuentryfiles that have the executable bit set. See the documentation.\n"), filename);
+        throw endoffile(d);
+      }
+    } else {
+      ps = new parsestream(filename);
+    }
+  } catch (endoffile p) {
+    delete sstream;
+    return;
+  }
+
+  try {
     ps->seteolmode(config.compat);
 
     bool wrote_filename = false;
@@ -511,6 +545,7 @@ void read_menufile(const string &filename, const string &shortfilename,
   }
 
   delete ps;
+  delete sstream;
 }
 
 void read_menufilesdir(vector<string> &menudata)

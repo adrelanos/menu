@@ -10,6 +10,7 @@ menu (2.1.9-2) unstable; urgency=low
     - Added Danish translation of the above.
     - Add menu sections Games/Simulation and Apps/Education to
     menu-section.pot.
+    - Executable menu entries weren't executed. Fixed. Closes: #217502
   * Add menu sections Games/Simulation and Apps/Education to menu.sgml and
     menufile.5.
   * Convert this file to UTF-8.
