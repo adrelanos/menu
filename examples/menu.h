@@ -34,19 +34,23 @@ function term()=\
 #function term()=\
 #    "x-terminal-emulator " ifnempty($visible,"-ut") \
 #        ifnempty($geometry,"-geometry ") $geometry \
-#        " -T '" replacewith(title(),"'"," ") "' -e " $command
+#        " -T '" escwith(title(),"'","'\\'") \ 
+#        "' -e sh -c '" escwith($command,"'","'\\'") "'"
 
 #Examples:
 #Use a specially cooked xterm instead:
 #function term()=\
 #    "xterm -sb -sl 500 -j -ls -fn 7x14 -geometry 80x30"\
-#    " -T '" replacewith(title(),"'"," ") "' -e " $command
+#        " -T '" escwith(title(),"'","'\\'") \
+#        "' -e sh -c '" escwith($command,"'","'\\'") "'"
  
 #Force use of  rxvt:
 #function term()=\
 #    "rxvt " ifnempty($visible,"-ut") \
 #        ifnempty($geometry,"-geometry ") $geometry \
-#        " -T '" replacewith(title(),"'"," ") "'"  " -e " $command
+#        " -T '" escwith(title(),"'","'\\'") \
+#        "' -e sh -c '" escwith($command,"'","'\\'") "'"
+        
 
 
 # This sort menu entry case-insensitively.
