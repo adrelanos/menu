@@ -52,8 +52,7 @@ install-data-local:
 	$(INSTALL_DATA) $(srcdir)/menu.info.gz $(DESTDIR)$(infodir)
 	$(INSTALL_DATA) $(srcdir)/menu.sgml $(DESTDIR)$(pkgdocdir)
 
-	$(INSTALL_DATA) $(srcdir)/README.changes $(srcdir)/BUGS \
-           $(DESTDIR)$(pkgdocdir)
+	$(INSTALL_DATA) $(srcdir)/BUGS $(DESTDIR)$(pkgdocdir)
         
 uninstall-local:
 	rm -r $(DESTDIR)$(pkgdocdir)

@@ -13,6 +13,7 @@ menu (2.1.14) unstable; urgency=low
   * Document --version in update-menus.1 and update-menus.fr.1.
   * Add /etc/menu-methods/lang.h which define sections_translations() as
     the list of translations available in this package.
+  * Do not install obsolete README.changes.
 
  -- Bill Allombert <ballombe@debian.org>  Sat, 15 May 2004 00:17:07 +0200
 
