@@ -1,16 +1,23 @@
 menu (2.1.9-3) unstable; urgency=low
 
-  * The "not released" release. 
+  * The "i18n" release. 
   * Improved messages.
   * Menu will skip menu-method with no userprefix (resp. rootprefix) if run
     as user (resp. root). Closes: #81493.
-    Consequently, onlyrunasroot and onlyrunasuser are deprecated.
   * Add symlinks for su-to-root and install-menu in /usr/bin.  Note that sarge
     packages must use the /usr/sbin path. Closes: #202857. Thanks Joey Hess.
   * Add /usr/share/bug/menu/presubj for bugs reporting tips.
   * Fix update-menus options handling.
+  * doc/menu.sgml:
+    + deprecate onlyrunasroot and onlyrunasuser.
+    + deprecate wm-menu-config.
+    + document proper postinst/postrm scripts.
+  * Add unofficial but frequently used sections to po-sections. 
+  * Update french translation of menu sections. Closes: #200738. Thanks
+    Jean-Philippe Guérard. I forgot it in the previous release.
+  * Fix unicodification of this file.
 
- -- Bill Allombert <ballombe@debian.org>  Mon,  3 Nov 2003 16:51:01 +0100
+ -- Bill Allombert <ballombe@debian.org>  Fri, 12 Dec 2003 16:31:38 +0100
 
 menu (2.1.9-2) unstable; urgency=low
 
@@ -68,7 +75,7 @@ menu (2.1.8-2) unstable; urgency=low
   * Add menu-one-file to doc, for building alioth doc.
   * Add Italian translation of menu sections. Thanks Stefano Canepa.
   * Add German translation of menu sections. Thanks Sebastian Rittau.
-  * Complete Brazilian translation of menu sections. Thanks AndrÃ© LuÃ­s Lopes.
+  * Complete Brazilian translation of menu sections. Thanks André Luís Lopes.
   * Add French translation of update-menus man pages.
     Thanks Sylvain Cherrier. Closes: #193004
   * Remove hello, octave and xftp default menu entries.
@@ -88,11 +95,11 @@ menu (2.1.8-1) unstable; urgency=low
   * Hard code version in configure.in so that menu can be build without
     the debian directory.
   * Complete french translation of menu sections. Thanks Jean-Philippe
-    GuÃ©rard.
+    Guérard.
   * Complete spanish translation of menu sections. Thanks Javier
-    FernÃ¡ndez-Sanguino PeÃ±a.
+    Fernández-Sanguino Peña.
   * Complete polish translation of menu sections. Thanks Marcin Owsiany.
-  * Add brazilian translation of menu sections. Thanks AndrÃ© LuÃ­s Lopes.
+  * Add brazilian translation of menu sections. Thanks André Luís Lopes.
   * Remove obsolete Apps/Games --> Games in translate_menus.
   * Morten Brix Pedersen <morten@wtf.dk>:
     - Add Danish translation of menu sections.
@@ -118,7 +125,7 @@ menu (2.1.7-3) unstable; urgency=low
   * Remove 'Ja, hoor' debugging message when using hints.
   * debiandoc-sgml 1.1.75 has reached testing so remove the versionned
     Build-Depends.
-  * Depends on dpkg (>= 1.10). Thanks Jens MÃ¼ller. Closes: #186160
+  * Depends on dpkg (>= 1.10). Thanks Jens Müller. Closes: #186160
   * Patch from Morten Brix Pedersen :
    - Added documentation for several methods in menutree and hints classes.
    - Rename variables to more saner names, instead of single-letter variable
@@ -315,7 +322,7 @@ menu (2.1.5-11) unstable; urgency=low
     Closes: #120735 (Tomas Pospisek)
   s,/usr/doc/menu,/usr/share/doc/menu, in all files.
     Closes: #98363,#103188,#134924
-    (Stephen Stafford,Martin Quinson,AndrÃ© Dahlqvist)
+    (Stephen Stafford,Martin Quinson,André Dahlqvist)
   lots of typo in menu.sgml. Closes: #57832 (Christian T. Steigies)
   * Install and remove info file correctly in postinst/prerm.
   * Rename menu info entry to "Debian menu". 
