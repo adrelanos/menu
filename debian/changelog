@@ -1,11 +1,15 @@
 menu (2.1.21) unstable; urgency=low
 
-  * The "unreleased" release
+  * The "time for ugly work-around" release
   * Add Czech menu messages translation. Thanks Miroslav Kure.
     Closes: #287308.
   * debian/control: uncapitalize synopsis.
+  * debian/postinst, debian/prerm, debian/rules:
+    Divert update-menus by a script that checks if update-menus is executable.
+    This is a work-around for broken postrm scripts in woody. Closes: #289702.
+    Thanks Adam C Powell IV for noticing them.
 
- -- Bill Allombert <ballombe@debian.org>  Wed,  5 Jan 2005 10:52:17 +0100
+ -- Bill Allombert <ballombe@debian.org>  Thu, 20 Jan 2005 17:21:31 +0100
 
 menu (2.1.20) unstable; urgency=low
 

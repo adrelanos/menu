@@ -13,7 +13,7 @@ set -e
 #  kill -KILL `pidof update-menus` 2> /dev/null || true
 #fi
 
-chmod a+x /usr/bin/update-menus
+chmod a+x /usr/bin/update-menus.real
 update-menus
 
 install-info --quiet \
