@@ -1,12 +1,15 @@
-menu (2.1.13) unstable; urgency=low
+menu (2.1.14) unstable; urgency=low
 
   * The "unreleased" release
+
+ -- Bill Allombert <ballombe@debian.org>  Sat, 15 May 2004 00:17:07 +0200
+
+menu (2.1.13) unstable; urgency=low
+
+  * The "sell your car" release
   * Apply patch from Carlos O'Donell for hppa support.
     Closes: #248773. Thanks Grant Grundler.
   * Move wm-menu-config manpage to section 8 and insist it is deprecated.
-  * Provide a /etc/menu-methods/lang.h file that define a function
-    languages() that return a colon separated list of languages 
-    translation available.
   * Fix cppesc() to work correctly under non C locales.
   * Fix su-to-root to not change $HOME. This make sure xlib can find
     the X session cookie. Thanks to isaac on IRC for testing the patch. 
