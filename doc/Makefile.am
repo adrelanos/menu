@@ -11,6 +11,13 @@ pkgdocdir=$(docdir)/menu
 menu.html/: menu.sgml
 	debiandoc2html menu.sgml
 
+menu-one-file.html: menu.sgml
+	debiandoc2html -1 -b menu-1-file menu.sgml
+	mv menu-1-file.html/index.html menu-one-file.html
+	rmdir menu-1-file.html
+
+menu-one-file: menu-one-file.html
+
 %.info: %.sgml
 	debiandoc2info $<
 
@@ -19,6 +26,8 @@ menu.html/: menu.sgml
 
 %.gz:   %
 	gzip -f9 $<
+clean-local:
+	rm -f menu-one-file.html
 
 maintainer-clean-local: 
 	rm -rf menu.html *.info* *.txt*
