@@ -1321,9 +1321,9 @@ int main(int argc, char **argv)
   textdomain(PACKAGE);
 
   if (!getuid()) {
-    // When we are root, we set umask to 002 to ignore the real root umask.
+    // When we are root, we set umask to 022 to ignore the real root umask.
     // This is to ensure that the menu file can be read by users..
-    umask(0002);
+    umask(0022);
   }
 
   while(1)
