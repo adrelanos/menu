@@ -1,0 +1,126 @@
+# Menu section translation
+# Copyright (C) 2003 Free Software Foundation
+# This file is distributed under the same license as the menu package.
+# Bill Allombert <ballombe@debian.org>, 2003.
+#
+# Translators:
+# April 2003 - Javier Fernández-Sanguino Peña 
+#
+# Note: Please send any inquiries on this file to the Debian spanish
+# translation team (debian-l10n-spanish@lists.debian.org)
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: menu-section 2.1.7-2\n"
+"POT-Creation-Date: 2003-04-03 12:14+0100\n"
+"PO-Revision-Date: 2003-04-07 11:22+0100\n"
+"Last-Translator: Javier Fernandez-Sanguino <jfs@debian.org>\n"
+"Language-Team: Spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Apps"
+msgstr "Aplicaciones"
+
+msgid "Databases"
+msgstr "Bases de datos"
+ 
+msgid "Editors"
+msgstr "Editores"
+
+msgid "Emulators"
+msgstr "Emuladores"
+
+msgid "Graphics"
+msgstr "Gráficos"
+
+msgid "Hamradio"
+msgstr "Radioaficionado"
+
+msgid "Math"
+msgstr "Matemáticas"
+
+msgid "Net"
+msgstr "Red"
+
+msgid "Programming"
+msgstr "Programación"
+
+msgid "Science"
+msgstr "Ciencia"
+
+msgid "Tools"
+msgstr "Herramientas"
+
+msgid "Technical"
+msgstr "Técnico"
+
+msgid "Text"
+msgstr "Texto"
+
+msgid "Shells"
+msgstr "Consolas"
+
+msgid "Sound"
+msgstr "Sonido"
+
+msgid "Viewers"
+msgstr "Visores"
+
+msgid "System"
+msgstr "Sistema"
+
+msgid "Games"
+msgstr "Juegos"
+
+msgid "Adventure"
+msgstr "Aventuras"
+
+msgid "Arcade"
+msgstr "Arcade"
+
+msgid "Board"
+msgstr "Tablero"
+
+msgid "Card"
+msgstr "Cartas"
+
+msgid "Puzzles"
+msgstr "Puzzles"
+
+msgid "Sports"
+msgstr "Deportes"
+
+msgid "Strategy"
+msgstr "Estrategia"
+
+msgid "Tetris-like"
+msgstr "Tipo Tetris"
+
+msgid "Toys"
+msgstr "Juguetes"
+
+msgid "Help"
+msgstr "Ayuda"
+
+msgid "Screen"
+msgstr "Pantalla"
+
+msgid "Lock"
+msgstr "Bloqueo"
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "Root-window"
+msgstr "Ventana raíz"
+
+msgid "WindowManagers"
+msgstr "Gestores de Ventanas"
+
+msgid "Modules"
+msgstr "Módulos"
+
+msgid "XShells"
+msgstr "ConsolasX"
