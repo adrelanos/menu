@@ -9,6 +9,8 @@ menu (2.1.22) unstable; urgency=low
     Closes: #295620.
   * Add Traditional Chinese menu sections translation. Thanks Asho Yeh.
     Closes: #295683.
+  * Clean up the BUGS file.
+  * debian/bug.presubj: display "Reporting menu bugs" in red to stand out.
 
  -- Bill Allombert <ballombe@debian.org>  Wed, 16 Feb 2005 23:42:14 +0100
 

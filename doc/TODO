@@ -1,3 +1,4 @@
+(Obsolete file by Joost) 
   
    TODO: Add a $source={Debian,System,User} tag (in update-menus), 
          andreas.
@@ -5,3 +6,26 @@
    TODO: probably we need a translate() function too, to be able to do:
    dir=translate(ifeq($Source,"User","Local User"))
    etc.
+
+-----------------------
+buttonbars:
+-----------------------
+  
+Something like a tag "buttonbarpriority=0--99" added to every
+menuentry, where buttonbarpriority=0 means that this entry is absolutely
+useless in the buttonbar, while buttonbarpriority=99 means that this
+menuentry really should be in the buttonbar on every debian computer
+(I'm assuming neither priority will be used in reality, if this ever
+is implemented).
+
+Then the file /etc/menu-methods/menu.h could have something like
+  buttonbarentries=8
+in it, suggesting that menu should create buttonbar entries for the
+8 highest priority buttonbar entries. (These numbers can then easily
+be overruled in user files in ~/.menu-methods/* or whatever).
+
+Thinking about this, this might actually be doable -- but I don't forsee
+any spare time comming up in my life soon, so it will take some time
+
+(note that the subject of buttonbars and menus has come up quite
+frequently on debian-devel).
