@@ -5,6 +5,8 @@ menu (2.1.17) unstable; urgency=low
     Closes: #266134
   * Add Croatian menu section translation by Krunoslav Gernhard.
     Closes: #268054
+  * Add Hebrew menu section translation by Lior Kaplan.
+    Closes: #269120
 
  -- Bill Allombert <ballombe@debian.org>  Mon, 16 Aug 2004 23:26:17 +0200
 
