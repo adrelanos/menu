@@ -1,8 +1,10 @@
 menu (2.1.23) unstable; urgency=low
 
   * The "unreleased" release
+  * Add Norwegian Bokmål menu messages and sections translation. Thanks
+    Hans Fredrik Nordhaug. Closes: #298079.
 
- -- Bill Allombert <ballombe@debian.org>  Thu, 24 Feb 2005 22:41:45 +0100
+ -- Bill Allombert <ballombe@debian.org>  Sat,  5 Mar 2005 10:24:04 +0100
 
 menu (2.1.22) unstable; urgency=low
 
