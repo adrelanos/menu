@@ -1226,12 +1226,13 @@ map<string, string> read_vars(parsestream &i)
           }
           val = title;
 	} else if (name == "section") {
-	  vector<string> v;
+	  vector<string> names;
           vector<string>::const_iterator i;
-	  break_char(val, v, '/');
-          val.erase();
+	  break_char(val, names, '/');
+          if (!names.empty())
+              val.erase();
 
-          for(i = v.begin(); i != v.end(); ++i)
+          for(i = names.begin(); i != names.end(); ++i)
           {
             string sectionname = dgettext("menu-sections", i->c_str());
             try {
