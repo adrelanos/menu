@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: menu 2.1.9\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2004-01-20 04:27+0100\n"
-"PO-Revision-Date: 2004-03-15 16:17+0100\n"
+"PO-Revision-Date: 2004-03-22 18:36+0100\n"
 "Last-Translator: Jens Arvidsson <jya@sverige.nu>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -68,7 +68,7 @@ msgstr "Använder kompatibilitet med %1.\n"
 
 #: ../install-menu/install-menu.cc:1278
 msgid "Cannot open file %1 (also tried %2).\n"
-msgstr "Kan inte öppna fil %1 (försökte också %2).\n"
+msgstr "Kan inte öppna fil %1 (försökte också med %2).\n"
 
 #: ../install-menu/install-menu.cc:1286 ../install-menu/install-menu.cc:1293
 #: ../install-menu/install-menu.cc:1301
