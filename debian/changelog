@@ -8,11 +8,12 @@ menu (2.1.7-4) unstable; urgency=low
   * Complete spanish translation of menu sections. Thanks Javier
     Fernández-Sanguino Peña.
   * Add brazilian translation of menu sections. Thanks André Luís Lopes.
-  * Add Danish translation of menu sections. (Morten Brix Pedersen)
-  * Fix a segmentation fault which happened when translate_menus only
-    contained one line (Morten Brix Pedersen).
-  * Special characters no longer needs to be double-escaped. (Morten Brix
-    Pedersen) Closes: #94466
+  * Morten Brix Pedersen <morten@wtf.dk>:
+    - Add Danish translation of menu sections.
+    - Fix a segmentation fault which happened when translate_menus only
+    contained one line.
+    - Special characters no longer needs to be double-escaped. Closes: #94466
+    - Document the fact that titles in entries must be unique. Closes: #46629
 
  -- Bill Allombert <ballombe@debian.org>  Mon,  7 Apr 2003 20:31:51 +0200
 
