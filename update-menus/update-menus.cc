@@ -677,7 +677,7 @@ int create_lock()
     fd = open(UPMEN_LOCKFILE,O_WRONLY|O_CREAT,00644);
 
     if (flock(fd,LOCK_EX|LOCK_NB)) {
-      if (errno == EWOULDBLOCK) {
+      if (errno == EWOULDBLOCK || errno == EAGAIN) {
         config.report(String::compose(_("Other update-menus processes are already locking %1, quitting."), UPMEN_LOCKFILE),
             configinfo::report_verbose);
       } else {

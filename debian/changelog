@@ -1,6 +1,8 @@
 menu (2.1.13) unstable; urgency=low
 
   * The "unreleased" release
+  * Apply patch from Carlos O'Donell for hppa support.
+    Closes: #248773. Thanks Grant Grundler.
   * Add Ukrainian menu sections translation by Eugeniy Meshcheryakov.
     Closes: #244067.
   * Add Russian menu sections and messages translation by Dan Korostelev.
