@@ -1,6 +1,6 @@
 /*
  * Debian menu system -- update-menus and install-menu
- * update-menus/adstring.cc
+ * update-menus/parsestream.cc
  *
  * Copyright (C) 1996-2003  Joost Witteveen, 
  * Copyright (C) 2002-2004  Bill Allombert and Morten Brix Pedersen.
@@ -24,17 +24,11 @@
  * Written by Joost Witteveen.
  */
 
-#include <algorithm>
-#include <iomanip>
-#include <sstream>
-#include <cctype>
-#include <clocale>
-#include <cstdio>
-#include <cstdlib>
-#include "adstring.h"
+#include <fstream>
+#include <cstring>
+#include "parsestream.h"
+#include "stringtoolbox.h"
 
-using std::cerr;
-using std::endl;
 using std::string;
 
 Regex::Regex(const char *s)
@@ -44,287 +38,7 @@ Regex::Regex(const char *s)
   patt->fastmap = 0;
   patt->buffer = 0;
   patt->allocated = 0;
-  re_compile_pattern(s, strlen(s), patt);
-}
-
-// ************* std::string utility functions:
-
-bool contains(const std::string& str, const std::string &sub, std::string::size_type pos)
-{
-  std::string::size_type i;
-
-  if (str.length() < (sub.length()+pos))
-      return false;
-
-  for (i=0; (i < sub.length()) && (sub[i] == str[i+pos]); ++i);
-
-  return i == sub.length();
-}
-
-bool contains(const std::string& str, char c)
-{
-  return str.find(c) != std::string::npos;
-}
-
-string rmtrailingspace(string &s)
-{
-  while(!s.empty() && (isspace(s[s.length()-1])))
-    s.erase(s.length()-1,1);
-  return s;
-}
-
-string escapewith_string(const string& s, const string& esc, const string& with)
-{
-  // call with: escape_string("hello $world, %dir", "$%", "\\")
-  // returns:   "hello \$world, \%dir"
-  string t;
-  for (string::size_type i = 0; i != s.length(); ++i)
-  {
-    if (esc.find(s[i]) != string::npos)
-        t += with;
-    t += s[i];
-  }
-  return t;
-}
-
-string escape_string(const string &s, const string &esc)
-{
-  // call with: escape_string("hello $world, %dir", "$%")
-  // returns:   "hello \$world, \%dir"
-  return escapewith_string(s, esc, "\\");
-}
-
-string cppesc_string(const string &s)
-{
-  string t;
-  for (string::size_type i = 0; i!= s.length(); ++i)
-  {
-    if (!(isalnum(s[i])||(s[i]=='_')))
-        t += '$'+itohexstring(int(s[i]));
-    else
-        t += s[i];
-  }
-  return t;
-}
-
-string lowercase(string s)
-{
-  string t;
-  for (string::size_type i = 0; i < s.length(); ++i)
-      t += char(tolower(s[i]));
-  return t;
-}
-
-string uppercase(string s)
-{
-  string t;
-  for (string::size_type i = 0; i < s.length(); ++i)
-      t += char(toupper(s[i]));
-  return t;
-}
-
-string replacewith_string(string str, const string &replace, const string &with)
-{
-  // call with: replacewith_string("hello $world, %dir", "$% ", "123")
-  // returns:   "hello31world,32dir"
-
-  if (replace.length() != with.length())
-      throw except_string(_("replacewith($string, $replace, $with): $replace and $with must have the same length."));
-
-  for (string::size_type i = 0; i <= replace.length(); ++i)
-  {
-    std::replace(str.begin(), str.end(), replace[i], with[i]);
-  }
-  return str;
-}
-
-string replace_string(string str, const string& repl, const string& with)
-{
-    string::size_type pos = str.find(repl);
-
-    if (pos == string::npos)
-          return str;
-
-    return replace_string(str.replace(pos, repl.length(), with), repl, with);
-}
-
-string sort_hotkey(string str)
-{
-  string t;
-  string::size_type i;
-  string::size_type l = str.length();
-  char *s=strdup(str.c_str());
-
-  if(!l)
-    return t;
-
-  t=string("")+s[0];
-  s[0]='\0';
-  for(i=1;i!=l;i++)
-    if((isspace(s[i-1])||ispunct(s[i-1]))&&isupper(s[i])){
-      t+=s[i];
-      s[i]='\0';
-    }
-  for(i=1;i!=l;i++)
-    if((isspace(s[i-1])||ispunct(s[i-1]))&&isalnum(s[i])){
-      t+=s[i];
-      s[i]='\0';
-    }
-  for(i=1;i!=l;i++)
-    if(isupper(s[i])){
-      t+=s[i];
-      s[i]='\0';
-    }
-  for(i=1;i!=l;i++)
-    if(isalpha(s[i])){
-      t+=s[i];
-      s[i]='\0';
-    }
-  for(i=1;i!=l;i++)
-    if(isalnum(s[i])){
-      t+=s[i];
-      s[i]='\0';
-    }
-  for(i=1;i!=l;i++)
-    if(s[i]){
-      t+=s[i];
-      s[i]='\0';
-    }
-  free(s);
-  return t;
-}
-
-int stringtoi(const string &s)
-{
-  return atoi(s.c_str());
-}
-
-string itostring(int i)
-{
-  std::ostringstream o;
-  o << i;
-  return o.str();
-}
-
-string itohexstring(int i)
-{
-  std::ostringstream o;
-  o << std::hex << i;
-  return o.str();
-}
-
-
-string string_parent(string s)
-{
-  // string_parent("/Debian/Apps/Editors/Emacs") = "/Debian/Apps/Editors
-  string::size_type  i,p;
-
-  for (i = 0, p = string::npos; i != s.length(); i++)
-      if (s[i] == '/')
-          p = i;
-  if (p == string::npos)
-      return "";
-  else
-      return s.substr(0, p);
-}
-
-string string_basename(string s)
-{
-  string t;
-  string::size_type i;
-  string::size_type p; //points to last encountered '/'
-  string::size_type q; //points to last-but-one encountered '/'.
-
-  for(i=0,p=string::npos,q=0;i!=s.length();i++)
-    if(s[i]=='/') {
-      q=p;
-      p=i;
-    }
-  if(p==string::npos)
-    return "";
-  else
-    return s.substr(q+1,p);
-}
-string string_stripdir(string s)
-{
-  string t;
-  string::size_type i; 
-  string::size_type p; //points to last encountered '/'
-  
-  for(i=0,p=string::npos;(string::size_type)i!=s.length();i++)
-    if(s[i]=='/')
-      p=i;
-  if(p==string::npos)
-    return s;
-  else
-    return s.substr(p+1,s.length());
-}
-
-void break_char(const string &sec, std::vector<string>& sec_vec, char breakchar)
-{
-  string::size_type i,j;
-
-  if (sec.empty())
-      return;
-
-  if (sec[0] == breakchar) // ignore first occurence of breachar
-      i = 1;
-  else
-      i = 0;
-
-  while (true)
-  {
-    while ((i<sec.size())&&(isspace(sec[i])))
-        i++;
-    j = sec.find(breakchar,i);
-    if (j != string::npos) {
-        sec_vec.push_back(sec.substr(i, j-i));
-    } else {
-      if (i != sec.size())
-          sec_vec.push_back(sec.substr(i));
-      break;
-    }
-    i = j + 1;
-  }
-}
-
-void break_slashes(const string &sec, std::vector<string>& sec_vec)
-{
-  break_char(sec,sec_vec,'/');
-}
-
-void break_commas(const string &sec, std::vector<string>& sec_vec)
-{
-  break_char(sec,sec_vec,',');
-}
-
-void except_pi::report()
-{
-  if (pi) {
-    cerr << String::compose(_("In file \"%1\", at (or in the definition that ends at) line %2:\n"),
-        pi->filename(),
-        pi->linenumber());
-
-    string::size_type startpos = 0;
-    if (pi->pos > 50)
-        startpos = pi->pos - 50;
-
-    if (startpos)
-        cerr << "[...]";
-
-    cerr << pi->buffer.substr(startpos) << endl;
-
-    if (startpos)
-        cerr << "[...]";
-
-    for (string::size_type i = 1+startpos; i< pi->pos; ++i)
-        cerr << ' ';
-
-    cerr << '^' << endl;
-  } else {
-    cerr << _("Somewhere in input file:\n");
-  }
-  cerr << message() << endl;
+  re_compile_pattern(s, std::strlen(s), patt);
 }
 
 parsestream::parsestream(std::istream &in, string other)
@@ -522,7 +236,6 @@ char parsestream::put_back(char c)
   if (c) {
     if (pos) {
       pos--;
-      // buffer.at(pos,1)=string(c);
       buffer[pos] = c;
     } else {
       buffer = c + buffer;
@@ -565,8 +278,9 @@ string parsestream::get_name(const Regex &r)
   string s;
   skip_space();
   try {
-    while((c = get_char())) {
-      if(re_match(r.pattern(), str, 1, 0, 0) > 0)
+    while ((c = get_char()))
+    {
+      if (re_match(r.pattern(), str, 1, 0, 0) > 0)
           s += c;
       else
           break;
@@ -581,7 +295,7 @@ string parsestream::get_eq_name()
 {
   skip_space();
   char c = get_char();
-  if(c != '=')
+  if (c != '=')
     throw char_expected(this, "=");
   return get_name();
 }
@@ -719,30 +433,39 @@ void parsestream::skip_space()
 
 void parsestream::skip_char(char expect)
 {
-  char buf[2]="a";
   char c = get_char();
-  if(c!=expect){
+  if(c != expect) {
     put_back(c);
-    buf[0]=c;
+    char buf[2] = {c, '\0'};
     throw char_expected(this, buf);
   }
 }
 
-const char *ldgettext(const char *lang, const char *domain, const char *msgid)
+void except_pi::report()
 {
-  /* this code comes from the gettext info page. It looks
-     very inefficient (as though for every language change a new
-     catalog file is opened), but tests show adding a language
-     change like this doesn't get performance down very much
-     (runtime goes `only' about 70% up, if switching between 2 
-     languages, as compared to no swiching at all).
-  */
-  /* Change language.  */
-  setenv ("LANGUAGE", lang, 1);
-  /* Make change known.  */
-  {
-    extern int  _nl_msg_cat_cntr;
-    ++_nl_msg_cat_cntr;
+  if (pi) {
+    std::cerr << String::compose(_("In file \"%1\", at (or in the definition that ends at) line %2:\n"),
+        pi->filename(),
+        pi->linenumber());
+
+    string::size_type startpos = 0;
+    if (pi->pos > 50)
+        startpos = pi->pos - 50;
+
+    if (startpos)
+        std::cerr << "[...]";
+
+    std::cerr << pi->buffer.substr(startpos) << std::endl;
+
+    if (startpos)
+        std::cerr << "[...]";
+
+    for (string::size_type i = 1+startpos; i< pi->pos; ++i)
+        std::cerr << ' ';
+
+    std::cerr << '^' << std::endl;
+  } else {
+    std::cerr << _("Somewhere in input file:\n");
   }
-  return dgettext(domain, msgid);
+  std::cerr << message() << std::endl;
 }

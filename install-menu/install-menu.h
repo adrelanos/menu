@@ -58,9 +58,9 @@ Example "str":
 #include <iostream>
 #include <vector>
 #include <map>
-#include "common.h"
-#include "adstring.h"
-#include "compose.hpp"
+#include <common.h>
+#include <compose.hpp>
+#include <parsestream.h>
 
 // container classes:
 
@@ -388,6 +388,7 @@ struct translate_func : public funcN<2> {
   const char * name() const { return "translate"; }
 };
 
+const char *ldgettext(const char *lang, const char *domain, const char *msgid);
 
 // ************* exception classes:
 

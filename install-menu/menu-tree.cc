@@ -30,6 +30,7 @@
 #include "menu-tree.h"
 #include "install-menu.h"
 #include "hints.h"
+#include <stringtoolbox.h>
 
 using std::vector;
 using std::string;
@@ -273,7 +274,7 @@ void menuentry::store_hints()
     if (!hints_str.empty()) {
       vector<string> hints;
 
-      break_commas(hints_str, hints);
+      break_char(hints_str, hints, ',');
 
       j = i;
 

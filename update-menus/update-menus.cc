@@ -42,6 +42,7 @@
 #include <pwd.h>
 #include "config.h"
 #include "update-menus.h"
+#include "stringtoolbox.h"
 
 using std::set;
 using std::vector;
@@ -87,7 +88,7 @@ bool executable(const string &s)
 
 bool is_pkg_installed(string filename)
 {
-  if (contains(filename, "local.",0))
+  if (contains(filename, "local."))
     return true;
   else
     return installed_packages.find(filename) != installed_packages.end();
@@ -328,7 +329,7 @@ void configinfo::report(const string &message, verbosity_type v)
 bool trans_class::check(string &s)
 {
   config.report(String::compose("Checking that %1 < %2", match, s), configinfo::report_debug);
-  return contains(match, s, 0);
+  return contains(match, s);
 }
 
 string trans_class::debuginfo()
@@ -344,13 +345,13 @@ void translate::process(menuentry &m, const string &v)
 
 void subtranslate::process(menuentry &m, const string &v)
 {
-  if (contains(v, match, 0))
+  if (contains(v, match))
       m.data[replace_var]=replace;
 }
 
 void substitute::process(menuentry &m, const string &v){
   string s,*t;
-  if (contains(v, match, 0)) {
+  if (contains(v, match)) {
     t = &(m.data[replace_var]);
     if (t->length() >= replace.length())
       *t=replace+t->substr(match.length());

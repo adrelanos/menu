@@ -44,6 +44,7 @@
 
 #include "install-menu.h"
 #include "menu-tree.h"
+#include <stringtoolbox.h>
 
 using std::vector;
 using std::string;
@@ -509,7 +510,7 @@ ostream &forall_func::output(ostream &o, vector<cat_str *> &args,
   string varname=args[1]->soutput(menuentry);
 
   break_char(array, vec, ':');
-  
+
   for(i = vec.begin(); i != vec.end(); ++i){
     menuentry[varname]=(*i);
     s+=args[2]->soutput(menuentry);
@@ -520,16 +521,16 @@ ostream &forall_func::output(ostream &o, vector<cat_str *> &args,
 ostream &esc_func::output(ostream &o, vector<cat_str *> &args,
     map<string, string> &menuentry)
 {
-  return o<<escape_string(args[0]->soutput(menuentry),
-			  args[1]->soutput(menuentry));
+  return o << escape(args[0]->soutput(menuentry),
+                     args[1]->soutput(menuentry));
 }
 
 ostream &escwith_func::output(ostream &o, vector<cat_str *> &args,
     map<string, string> &menuentry)
 {
-  return o<<escapewith_string(args[0]->soutput(menuentry),
-			      args[1]->soutput(menuentry),
-			      args[2]->soutput(menuentry));
+  return o << escapewith(args[0]->soutput(menuentry),
+                         args[1]->soutput(menuentry),
+                         args[2]->soutput(menuentry));
 }
 
 ostream &escfirst_func::output(ostream &o, vector<cat_str *> &args,
@@ -540,7 +541,7 @@ ostream &escfirst_func::output(ostream &o, vector<cat_str *> &args,
   string t;
 
   for(string::size_type i=0; i != s.length(); ++i){
-    if(esc.length() && contains(esc, s[i])) {
+    if(!esc.empty() && contains(esc, s[i])) {
       t=s.substr(0,i);
       t+=args[2]->soutput(menuentry);
       t+=s.substr(i);
@@ -564,17 +565,17 @@ ostream &toupper_func::output(ostream &o, vector<cat_str *> &args,
 ostream &replacewith_func::output(ostream &o, vector<cat_str *> &args,
     map<string, string> &menuentry)
 {
-  return o<<replacewith_string(args[0]->soutput(menuentry),
-			       args[1]->soutput(menuentry),
-			       args[2]->soutput(menuentry));
+  return o << replacewith(args[0]->soutput(menuentry),
+                          args[1]->soutput(menuentry),
+                          args[2]->soutput(menuentry));
 }
 
 ostream &replace_func::output(ostream &o, vector<cat_str *> &args,
     map<string, string> &menuentry)
 {
-  return o<<replace_string(args[0]->soutput(menuentry),
-			       args[1]->soutput(menuentry),
-			       args[2]->soutput(menuentry));
+    return o << replace(args[0]->soutput(menuentry),
+                        args[1]->soutput(menuentry),
+                        args[2]->soutput(menuentry));
 }
 
 ostream &nstring_func::output(ostream &o, vector<cat_str *> &args,
@@ -591,7 +592,7 @@ ostream &nstring_func::output(ostream &o, vector<cat_str *> &args,
 ostream &cppesc_func::output(ostream &o, vector<cat_str *> &args,
     map<string, string> &menuentry)
 {
-  return o<<cppesc_string(args[0]->soutput(menuentry));
+  return o << cppesc(args[0]->soutput(menuentry));
 }
 
 ostream &add_func::output(ostream &o, vector<cat_str *> &args,
@@ -951,7 +952,7 @@ void read_forcetree(parsestream &i)
           return;
 
       vector<string> sections;
-      break_slashes(name, sections);
+      break_char(name, sections, '/');
       menuentry *entry = new menuentry;
       entry->forced = true;
       entry->vars[TITLE_VAR] = sections.back();
@@ -1201,7 +1202,7 @@ map<string, string> read_vars(parsestream &i)
 	  val = dgettext("menu-sections",val.c_str());
 	} else if (name == "section") {
 	  vector<string> v;
-	  break_slashes(val,v);
+	  break_char(val, v, '/');
 	  val.erase();
 
           for(vector<string>::const_iterator i = v.begin(); i != v.end(); ++i)
@@ -1256,7 +1257,7 @@ void read_input(parsestream &i)
       check_vars(i, entry_vars);
 
       vector<string> sections;
-      break_slashes(entry_vars[SECTION_VAR], sections);
+      break_char(entry_vars[SECTION_VAR], sections, '/');
       if (entry_vars[TITLE_VAR] != "/")
           sections.push_back(entry_vars[TITLE_VAR]);	  
       if (supported->prec(entry_vars[NEEDS_VAR]) != INT_MAX)
@@ -1318,7 +1319,7 @@ void includemenus(string replace, string menu_filename)
   std::string line;
   while (getline(input_file, line))
   {
-      if (contains(line, replace, 0)) {
+      if (contains(line, replace)) {
 
           std::string menu_line;
           while (getline(menu_file, menu_line))
@@ -1333,6 +1334,25 @@ void includemenus(string replace, string menu_filename)
 
   if (!changed)
       cerr << String::compose(_("Warning: the string %1 did not occur in template file %2\n"), replace, input_filename);
+}
+
+const char *ldgettext(const char *lang, const char *domain, const char *msgid)
+{
+  /* this code comes from the gettext info page. It looks
+     very inefficient (as though for every language change a new
+     catalog file is opened), but tests show adding a language
+     change like this doesn't get performance down very much
+     (runtime goes `only' about 70% up, if switching between 2 
+     languages, as compared to no swiching at all).
+  */
+  /* Change language.  */
+  setenv ("LANGUAGE", lang, 1);
+  /* Make change known.  */
+  {
+    extern int  _nl_msg_cat_cntr;
+    ++_nl_msg_cat_cntr;
+  }
+  return dgettext(domain, msgid);
 }
 
 void usage(ostream &c)

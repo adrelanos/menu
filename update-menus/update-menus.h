@@ -29,9 +29,10 @@
 
 #include <map>
 #include <vector>
-#include "adstring.h"
 #include "compose.hpp"
 #include "common.h"
+#include "exceptions.h"
+#include "parsestream.h"
 
 using std::string;
 
