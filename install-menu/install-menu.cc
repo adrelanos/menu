@@ -122,7 +122,7 @@ int check_dir(string s)
     std::cerr << "install-menu: CHECK_DIR: " << s << endl;
   while (!s.empty()) {
     string::size_type i = s.find('/',1);
-    if(i != string::npos) {
+    if (i != string::npos) {
       t=s.substr(0,i+1);
       for(; i<s.length() && (s[i]=='/'); i++);
       s = s.substr(i);
@@ -1339,9 +1339,9 @@ int main(int argc, char **argv)
         system((config->postrun->soutput(root_menu.vars)).c_str());
     return 0;
   }
-  catch(genexcept& p) { p.report(); }
+  catch (genexcept& p) { p.report(); }
 
-  cerr << script_name << ": " << _("Aborting") << endl;
+  cerr << "install-menu: " << script_name << ": " << _("Aborting") << endl;
 
   return 1;
 }

@@ -11,6 +11,8 @@ menu (2.1.7-4) unstable; urgency=low
   * Add Danish translation of menu sections. (Morten Brix Pedersen)
   * Fix a segmentation fault which happened when translate_menus only
     contained one line (Morten Brix Pedersen).
+  * Special characters no longer needs to be double-escaped. (Morten Brix
+    Pedersen) Closes: #94466
 
  -- Bill Allombert <ballombe@debian.org>  Mon,  7 Apr 2003 20:31:51 +0200
 

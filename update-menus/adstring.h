@@ -117,7 +117,7 @@ public:
 
 class char_expected: public except_pi_string {
 public:
-  char_expected(parsestream *p, string s):except_pi_string(p,s){};
+  char_expected(parsestream *p, string s):except_pi_string(p,s) { }
   string message() const {
     return Sprintf(_("Expected: \"%s\"."), msg);
   }
@@ -125,7 +125,7 @@ public:
 
 class char_unexpected: public except_pi_string {
 public:
-  char_unexpected(parsestream *p, string s):except_pi_string(p,s){};
+  char_unexpected(parsestream *p, string s):except_pi_string(p,s) { }
   string message() const {
     return Sprintf(_("Unexpected character :\"%s\"."),msg);
   }
@@ -133,7 +133,7 @@ public:
 
 class boolean_expected: public except_pi_string {
 public:
-  boolean_expected(parsestream *p, string s):except_pi_string(p,s){};
+  boolean_expected(parsestream *p, string s):except_pi_string(p,s) { }
   string message() const {
     return Sprintf(_("Boolean (either true or false) expected.\n"
 		     "Found: \"%s\""),msg);
@@ -142,7 +142,7 @@ public:
 
 class ferror_open: public except_string {
 public:
-  ferror_open(string s):except_string(s){};
+  ferror_open(string s):except_string(s) { }
   string message() const {
     return Sprintf(_("Unable to open file \"%s\""),msg);
   }
@@ -150,56 +150,47 @@ public:
 
 class unknown_compat: public except_pi_string {
 public:
-  unknown_compat(parsestream *p, string s):except_pi_string(p,s){};
+  unknown_compat(parsestream *p, string s):except_pi_string(p,s) { }
   string message() const {
     return Sprintf(_("Unknown compat mode: \"%s\""),msg);
   }
 };
 
-class informed_fatal : public genexcept{};
+class informed_fatal : public genexcept { };
 
-// ************* parser classes
-
-class parseinfo {
-public:
-  virtual ~parseinfo() { }
-
-  std::vector<int> lineno;
-  string buffer;
-  std::string::size_type pos;
-  std::vector<string> fname;
-
-  int linenumber() const { return lineno.back(); }
-  void set_linenumber(int l) { lineno.back() = l; }
-  string filename() const { return fname.back(); }
-  void set_filename(const string &s) { fname.back() = s; }
-};
-
-class parsestream : public parseinfo {
+class parsestream {
 public:
   enum eol_type { eol_newline, eol_semicolon };
 private:
+  std::vector<int> linenumbers;
+  std::vector<string> filenames;
   std::vector<std::istream *> istreams;
+
+  void set_linenumber(int l) { linenumbers.back() = l; }
+  void set_filename(const string &s) { filenames.back() = s; }
+  std::istream *current_istr() const { return istreams.back(); }
+
   bool in_constructor;
   void new_line();
   void preprocess(string &s);
-  std::istream *current_istr() const { return istreams.back(); }
   void new_file(const string &name);
   void init(std::istream *in, string name);
   void close_file();
   bool stdin_file;
   eol_type eolmode;
   string otherdir;
+
 public:
+  bool doescaping;
   parsestream(std::istream &in, string other="")
-      : in_constructor(true), stdin_file(true), otherdir(other)
+      : in_constructor(true), stdin_file(true), otherdir(other), doescaping(true)
   {
     init(&in,_("(probably) stdin"));
     in_constructor = false;
   }
 
   parsestream(const string &name, string other="")
-      : in_constructor(true), stdin_file(false), otherdir(other)
+      : in_constructor(true), stdin_file(false), otherdir(other), doescaping(true)
   {
     std::istream *f = new std::ifstream(name.c_str());
 
@@ -213,6 +204,12 @@ public:
     init(f, name);
     in_constructor = false;
   }
+
+  std::string::size_type pos;
+  std::string buffer;
+  string filename() const { return filenames.back(); }
+  int linenumber() const { return linenumbers.back(); }
+
   bool good() const { return istreams.size(); }
   char get_char();
   char put_back(char);
@@ -234,8 +231,6 @@ public:
   void seteolmode(eol_type mode) { eolmode = mode; }
 };
 
-const char *ldgettext(const char *language, 
-			     const char *domain,
-			     const char *msgid);
+const char *ldgettext(const char *lang, const char *domain, const char *msgid);
 
 #endif /* ADSTRING_H */

@@ -50,8 +50,7 @@ DIR *open_dir_check(string dirname)
 bool executable(const string &s)
 {
   struct stat st;
-  int r = stat (s.c_str(), &st);
-  if (r) {
+  if (stat(s.c_str(), &st)) {
     return false;
   } else {
     return (((st.st_mode & S_IXOTH) || 
@@ -63,10 +62,10 @@ bool executable(const string &s)
 
 bool is_pkg_installed(string filename)
 {
-  if(contains(filename, "local.",0))
+  if (contains(filename, "local.",0))
     return true;
   else
-    return installed_packages.find(filename)!=installed_packages.end();
+    return installed_packages.find(filename) != installed_packages.end();
 }
 
 menuentry::menuentry(parsestream &i, const string &filename)
@@ -117,6 +116,7 @@ void menuentry::read_menuentry(parsestream &i)
   data[PACKAGE_VAR] = name;
   i.skip_space();
   i.skip_char(':');
+  i.doescaping = false;
 
   // read menuentry:
   try {
@@ -129,19 +129,18 @@ void menuentry::read_menuentry(parsestream &i)
       i.put_back(c);
     } while(c);
   }
-  catch (endofline) { };
+  catch (endofline) { }
   i.skip_line();
 }
 
 void menuentry::output(vector<string> &s)
 {
   string t;
-  map<string, string>::const_iterator i = data.begin();;
+  map<string, string>::const_iterator i = data.begin();
   if (i != data.end()) {
     while (true)
     {
-      t += i->first + "=\"" + 
-	 escape_string(i->second,"\"\n") + "\"";
+      t += i->first + "=\"" + i->second + "\"";
       i++;
       if (i == data.end())
           break;
@@ -150,7 +149,7 @@ void menuentry::output(vector<string> &s)
     }
   }
   t += '\n';
-  config.report(string("ADDING: ")+t,configinfo::report_debug);
+  config.report(string("ADDING: ")+t, configinfo::report_debug);
   s.push_back(t);
 }
 
@@ -158,9 +157,9 @@ ostream &menuentry::debugoutput(ostream &o)
 {
   map<string, string>::const_iterator i;
 
-  o<<"MENUENTRY:"<<endl;
-  for(i=data.begin(); i!=data.end(); ++i)
-      o<<"  data["<<(*i).first<<"]="<<(*i).second<<endl;
+  o << "MENUENTRY:" << endl;
+  for (i = data.begin(); i != data.end(); ++i)
+      o << "  data[" << i->first << "]=" << i->second << endl;
   return o;
 }
 
@@ -171,19 +170,19 @@ ostream &menuentry::debugoutput(ostream &o)
 void configinfo::parse_def(const string &key, const string& value)
 {
   if (key=="compat") {
-    if(value=="menu-1") compat=parsestream::eol_newline;
-    else if(value=="menu-2") compat=parsestream::eol_semicolon;
+    if (value=="menu-1") compat = parsestream::eol_newline;
+    else if(value=="menu-2") compat = parsestream::eol_semicolon;
   } else if(key=="verbosity") {
     if     (value=="quiet")   verbosity=report_quiet;
     else if(value=="normal")  verbosity=report_normal;
     else if(value=="verbose") verbosity=report_verbose;
     else if(value=="debug")   verbosity=report_debug;
-  } else if(key=="method"){
+  } else if(key=="method") {
     if     (value=="stdout")  method=method_stdout;
     else if(value=="stderr")  method=method_stderr;
     else if(value=="syslog") { 
 
-      method=method_syslog;
+      method = method_syslog;
       string facility;
       string priority;
 
@@ -478,20 +477,20 @@ void read_menufile(const string &filename, const string &shortfilename,
     while (ps)
     {
       try {
-	menuentry m(*ps, shortfilename);
-	linenr++;
-	if (transinfo)
-	  transinfo->process(m);
-	//gettext_translate(m);
-	if (!wrote_filename) {
-	  menudata.push_back(string("!F ") + filename + '\n');
-	  wrote_filename = true;
-	}
-	m.output(menudata);
-	if (ps->linenumber() != linenr) {
-	  menudata.push_back(string("!L ") + itostring(ps->linenumber())+ '\n');
-	  linenr = ps->linenumber();
-	}
+        menuentry m(*ps, shortfilename);
+        linenr++;
+        if (transinfo)
+            transinfo->process(m);
+        //gettext_translate(m);
+        if (!wrote_filename) {
+          menudata.push_back(string("!F ") + filename + '\n');
+          wrote_filename = true;
+        }
+        m.output(menudata);
+        if (ps->linenumber() != linenr) {
+          menudata.push_back(string("!L ") + itostring(ps->linenumber())+ '\n');
+          linenr = ps->linenumber();
+        }
       }
       catch (cond_inst_false) { }
     }
@@ -532,7 +531,7 @@ void read_menufilesdir(vector<string> &menudata)
                 if((!r)&&(S_ISREG(st.st_mode)||S_ISLNK(st.st_mode)))
                     read_menufile(name,entry->d_name, menudata);
               }
-              catch(endofline p){
+              catch(endofline p) {
                 cerr << "Error reading " << name << endl;
               }
             }
@@ -549,15 +548,13 @@ void run_menumethod(string methodname, const vector<string> &menudata)
   pid_t child, r;
   int status;
 
-  config.report(string("Running method: ")+methodname,
-		configinfo::report_verbose);  
+  config.report(string("Running method: ")+methodname, configinfo::report_verbose);  
   
-  int ret = pipe(fds);
-  if (ret==-1) {
-      config.report(string("Cannot create pipe"),
-              configinfo::report_quiet);  
+  if (pipe(fds) == -1) {
+      config.report(string("Cannot create pipe"), configinfo::report_quiet);  
       exit(1);
   }
+
   if(!(child=fork())) {
     //child:
     close(fds[1]);
@@ -633,7 +630,7 @@ void run_menumethoddir (const string &dirname, const vector<string> &menudata)
 	  ((st.st_mode & S_IXGRP) && st.st_gid == getegid ()) || 
 	  ((st.st_mode & S_IXUSR) && st.st_uid == geteuid ())) && 
 	 (S_ISREG(st.st_mode) || S_ISLNK(st.st_mode))))
-      run_menumethod(tmp,menudata);
+      run_menumethod(tmp, menudata);
   }
   closedir (dir);
 }
@@ -644,11 +641,11 @@ int create_lock()
   int fd=true;
   char buf[64];
   
-  if(!getuid()){
-    fd=open(UPMEN_LOCKFILE,O_WRONLY|O_CREAT,00644);
+  if (!getuid()) {
+    fd = open(UPMEN_LOCKFILE,O_WRONLY|O_CREAT,00644);
     
-    if(flock(fd,LOCK_EX|LOCK_NB)){
-      if(errno==EWOULDBLOCK){
+    if(flock(fd,LOCK_EX|LOCK_NB)) {
+      if(errno==EWOULDBLOCK) {
 	config.report(string("Other update-menus processes are already "
 			     "locking " UPMEN_LOCKFILE ", quitting."),
 		      configinfo::report_verbose);
@@ -663,8 +660,7 @@ int create_lock()
 
     sprintf(buf, "%d", getpid());
     if (write(fd, buf, sizeof(buf) < 1)) {
-      config.report("cannot write to lockfile "
-		    UPMEN_LOCKFILE". Aborting.",
+      config.report("Cannot write to lockfile "UPMEN_LOCKFILE". Aborting.",
 		    configinfo::report_quiet);
       return false;
     }
@@ -674,8 +670,8 @@ int create_lock()
 
 void remove_lock()
 {
-  if(!getuid()){
-    if(unlink(UPMEN_LOCKFILE))
+  if (!getuid()){
+    if (unlink(UPMEN_LOCKFILE))
       config.report("Cannot remove lockfile "UPMEN_LOCKFILE,
 		    configinfo::report_normal);
   }
@@ -956,18 +952,18 @@ int main (int argc, char **argv)
               cout << *i;
 
     } else if (!config.menumethod.empty()) {
-      run_menumethod(config.menumethod,menudata);
+      run_menumethod(config.menumethod, menudata);
     } else {
       if (getuid()) {
         try {
-          run_menumethoddir(string(home_dir)+"/"+USERMETHODS,
-              menudata);
+          run_menumethoddir(string(home_dir)+"/"+USERMETHODS, menudata);
         }
         catch(dir_error_read d) {
           run_menumethoddir(MENUMETHODS, menudata);	
         }
-      } else
+      } else {
           run_menumethoddir(MENUMETHODS, menudata);
+      }
     }
   }
   catch(genexcept& p) { p.report(); }
