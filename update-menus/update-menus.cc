@@ -346,7 +346,7 @@ void substitute::process(menuentry &m, const string &v){
 
 translateinfo::translateinfo(const string &filename)
 {
-  parsestream *i;
+  parsestream *i = 0;
   try {
     config.report(String::compose("Attempting to open %1...", filename),
         configinfo::report_debug);
