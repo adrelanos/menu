@@ -664,8 +664,15 @@ cat_str *methodinfo::rootprefix()
 string methodinfo::prefix()
 {
   if (!is_root) {
+    string up = userprefix()->soutput(root_menu.vars);
     struct passwd *pw = getpwuid(getuid());
-    return string(pw->pw_dir)+"/"+userprefix()->soutput(root_menu.vars);
+    // When userprefix is prefixed by // instead of just one /, treat the
+    // URL as absolute instead of relative.
+    if (up.length() > 1 && up.substr(0, 2) == "//") {
+      return up;
+    } else {
+      return string(pw->pw_dir)+"/"+up;
+    }
   } else {
     return rootprefix()->soutput(root_menu.vars);
   }

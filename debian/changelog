@@ -3,6 +3,9 @@ menu (2.1.16) unstable; urgency=low
   * The "unreleased" release
   * Jens Arvidsson:
     - Update Swedish translation.
+  * Morten Brix Pedersen:
+    - Treat userprefix prefixed by // as an absolute path instead of just a
+    relative path. This helps us solve a window maker bug.
   * Update Polish menu message translation, thanks Marcin Owsiany. 
   * Add Italian menu message translation, by Stefano Canepa.
 
