@@ -26,7 +26,8 @@ function icon()=ifelse($icon32x32, $icon32x32, \
 function term()=\
     "x-terminal-emulator " ifnempty($visible,"-ut") \
         ifnempty($geometry,"-geometry ") $geometry \
-        " -T \"" esc(title(),"\"") "\""  " -e " $command
+        " -T \"" esc(title(),"\\\"") "\"" \
+        " -e sh -c \"" esc($command,"\\\"") "\""
 
 #The above is more correct but unfortunately, some menu-methods 
 #do not support ''.

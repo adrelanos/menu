@@ -14,8 +14,9 @@ menu (2.1.14) unstable; urgency=low
   * Add /etc/menu-methods/lang.h which define sections_translations() as
     the list of translations available in this package.
   * Do not install obsolete README.changes.
+  * Fix term() definition in /etc/menu-methods/menu.h.
 
- -- Bill Allombert <ballombe@debian.org>  Sat, 15 May 2004 00:17:07 +0200
+ -- Bill Allombert <ballombe@debian.org>  Thu, 27 May 2004 15:58:52 +0200
 
 menu (2.1.13) unstable; urgency=low
 
