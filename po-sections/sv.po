@@ -1,0 +1,149 @@
+# Menu section translation
+# Copyright (C) 2004
+# This file is distributed under the same license as the menu package.
+# Bill Allombert <ballombe@debian.org>, 2003.
+# Swedish translation:
+#   Jens Arvidsson <jya@sverige.nu>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: menu-section 2.1.9-5\n"
+"POT-Creation-Date: 2003-04-03 12:14+0100\n"
+"PO-Revision-Date: 2004-03-08 13:17+0100\n"
+"Last-Translator: Jens Arvidsson <jya@sverige.nu>\n"
+"Language-Team: Swedish <sv@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Apps"
+msgstr "Program"
+
+msgid "Databases"
+msgstr "Databaser"
+
+msgid "Editors"
+msgstr "Textredigerare"
+
+msgid "Education"
+msgstr "Utbildning"
+
+msgid "Emulators"
+msgstr "Emulatorer"
+
+msgid "Graphics"
+msgstr "Grafik"
+
+msgid "Hamradio"
+msgstr "Amatörradio"
+
+msgid "Math"
+msgstr "Matematik"
+
+msgid "Net"
+msgstr "Nätverk"
+
+msgid "Programming"
+msgstr "Programmering"
+
+msgid "Science"
+msgstr "Vetenskap"
+
+msgid "Tools"
+msgstr "Verktyg"
+
+msgid "Technical"
+msgstr "Tekniskt"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "Shells"
+msgstr "Skal"
+
+msgid "Sound"
+msgstr "Ljud"
+
+msgid "Viewers"
+msgstr "Visare"
+
+msgid "System"
+msgstr "System"
+
+msgid "Games"
+msgstr "Spel"
+
+msgid "Adventure"
+msgstr "Äventyr"
+
+msgid "Arcade"
+msgstr "Arkad"
+
+msgid "Board"
+msgstr "Brädspel"
+
+msgid "Card"
+msgstr "Kortspel"
+
+msgid "Puzzles"
+msgstr "Pussel"
+
+msgid "Simulation"
+msgstr "Simulering"
+
+msgid "Sports"
+msgstr "Sport"
+
+msgid "Strategy"
+msgstr "Strategi"
+
+msgid "Tetris-like"
+msgstr "Tetris-liknande"
+
+msgid "Toys"
+msgstr "Leksaker"
+
+msgid "Help"
+msgstr "Hjälp"
+
+msgid "Screen"
+msgstr "Skärm"
+
+msgid "Lock"
+msgstr "Lås"
+
+msgid "Save"
+msgstr "Skärmsläckare"
+
+msgid "Root-window"
+msgstr "Rotfönster"
+
+msgid "WindowManagers"
+msgstr "Fönsterhanterare"
+
+msgid "Modules"
+msgstr "Moduler"
+
+msgid "XShells"
+msgstr "X-terminaler"
+
+#From Apps/System/Admin
+msgid "Admin"
+msgstr "Administration"
+
+#Non official sections from WindowMaker
+msgid "Appearance"
+msgstr "Utseende"
+
+msgid "WorkSpace"
+msgstr "Arbetsyta"
+
+#Frequently used unofficial sections.
+
+#From Apps/Net/Mozilla Components
+msgid "Mozilla Components"
+msgstr "Mozillakomponenter"
+
+#From Games/Toys/Teddies
+msgid "Teddies"
+msgstr "Teddybjörnar"

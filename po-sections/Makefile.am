@@ -1,5 +1,5 @@
-MOs = ca.mo cs.mo da.mo de.mo eo.mo es.mo fi.mo fr.mo hu.mo it.mo ja.mo nl.mo pl.mo pt_BR.mo zh_CN.mo
-POs = ca.po cs.po da.po de.po eo.po es.po fi.po fr.po hu.po it.po ja.po nl.po pl.po pt_BR.po zh_CN.po
+MOs = ca.mo cs.mo da.mo de.mo eo.mo es.mo fi.mo fr.mo hu.mo it.mo ja.mo nl.mo nn.mo pl.mo pt_BR.mo sv.mo zh_CN.mo
+POs = ca.po cs.po da.po de.po eo.po es.po fi.po fr.po hu.po it.po ja.po nl.po nn.po pl.po pt_BR.po sv.po zh_CN.po
 localedir = $(datadir)/locale
 
 EXTRA_DIST = $(POs) es.trme menufile2pot menu-sections.pot README trme2po
