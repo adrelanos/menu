@@ -359,10 +359,11 @@ void substitute::process(menuentry &m, const string &v){
 
 translateinfo::translateinfo(const string &filename)
 {
+  parsestream *i;
   try {
     config.report(String::compose("Attempting to open %1...", filename),
         configinfo::report_debug);
-    parsestream i(filename);
+    i = new parsestream(filename);
 
     Regex ident("[a-zA-Z_][a-zA-Z0-9_]*");
     /*Translation here and below refer to the file 
@@ -370,39 +371,39 @@ translateinfo::translateinfo(const string &filename)
       menu entries automatically. It does not refer to the localisation
       (translation to other languages).
      */
-    config.report(String::compose(_("Reading translation rules in %1."), i.filename()),
+    config.report(String::compose(_("Reading translation rules in %1."), i->filename()),
         configinfo::report_verbose);
     while (true)
     {
-      string name = i.get_name(ident);
+      string name = i->get_name(ident);
       config.report(string("name=")+name, configinfo::report_debug);
-      i.skip_space();
-      string match_var = i.get_name(ident);
+      i->skip_space();
+      string match_var = i->get_name(ident);
       config.report(string("match_var=")+match_var, configinfo::report_debug);
-      i.skip_space();
-      i.skip_char('-');
-      i.skip_char('>');
-      i.skip_space();
-      string replace_var = i.get_name(ident);
+      i->skip_space();
+      i->skip_char('-');
+      i->skip_char('>');
+      i->skip_space();
+      string replace_var = i->get_name(ident);
       config.report(string("replace_var=")+replace_var, configinfo::report_debug);
 
-      i.skip_line();
+      i->skip_line();
       while (true)
       {
         trans_class *trcl;
 
-        i.skip_space();
-        string match = i.get_stringconst();
+        i->skip_space();
+        string match = i->get_stringconst();
         if (match == ENDTRANSLATE_TRANS) {
-          i.skip_line();
+          i->skip_line();
           break;
         }
         if (match[0]=='#') {
-          i.skip_line();
+          i->skip_line();
           continue;
         }
-        i.skip_space();
-        string replace = i.get_stringconst();
+        i->skip_space();
+        string replace = i->get_stringconst();
         if (name == TRANSLATE_TRANS)
             trcl = new translate(match,replace,replace_var);
         if (name == SUBTRANSLATE_TRANS)
@@ -415,13 +416,14 @@ translateinfo::translateinfo(const string &filename)
         config.report(String::compose("Adding translation rule: [%1]%2", p.first, trcl->debuginfo()),
             configinfo::report_debug);
         trans[match_var].insert(p);
-        i.skip_line();
+        i->skip_line();
       }
     }
   }
   catch(endoffile p) {
     config.report("End reading translation rules.", configinfo::report_debug);
   }
+  delete i;
 
 }
 

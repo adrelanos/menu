@@ -4,6 +4,8 @@ menu (2.1.9-6) unstable; urgency=low
   * Morten Brix Pedersen:
     - replacewith($str, $replace, $with) now outputs an error if $replace and
     $with isn't the same length.
+    - Don't segfault when there are syntax errors in translate_menus
+      (Closes: #221757)
 
  -- Bill Allombert <ballombe@debian.org>  Sat, 24 Jan 2004 19:45:43 +0100
 
