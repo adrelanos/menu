@@ -7,10 +7,12 @@ menu (2.1.22) unstable; urgency=low
     Closes: #295607.
   * Add Galician menu messages and sections translation. Thanks Jacobo Tarrio.
     Closes: #295620, #295768.
-  * Add Traditional Chinese menu sections translation. Thanks Asho Yeh.
-    Closes: #295683.
+  * Add Traditional Chinese menu messages and sections translation. 
+    Thanks Kanru Chen and Asho Yeh.  Closes: #295794, #295683.
   * Update Turkish menu messages translation. Thanks Recai Oktas.
     Closes: #295732.
+  * Add Greek menu messages translation by Konstantinos Margaritis. 
+    Closes: #295987
   * Clean up the BUGS file.
   * debian/bug.presubj: display "Reporting menu bugs" in red to stand out.
   * Morten Brix Pedersen: 
