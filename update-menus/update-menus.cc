@@ -49,21 +49,17 @@ using std::vector;
 using std::string;
 using std::cout;
 using std::cerr;
-using std::endl;
 using std::ostream;
 
 static const char * home_dir;
 
-int debug=0, verbose=0;
 set<string> installed_packages;
 set<string> menufiles_processed;
-
-extern char **environ;
 
 translateinfo *transinfo;
 configinfo     config;
 
-DIR *open_dir_check(string dirname)
+DIR *open_dir_check(const string& dirname)
 {
   struct stat st;
 
@@ -86,7 +82,7 @@ bool executable(const string &s)
   }
 }
 
-bool is_pkg_installed(string filename)
+bool is_pkg_installed(const string& filename)
 {
   if (contains(filename, "local."))
     return true;
@@ -213,16 +209,6 @@ void menuentry::output(vector<string> &s)
   t += '\n';
   config.report(String::compose("ADDING: %1", t), configinfo::report_debug);
   s.push_back(t);
-}
-
-ostream &menuentry::debugoutput(ostream &o)
-{
-  std::map<string, string>::const_iterator i;
-
-  o << "Menu entry:\n";
-  for (i = data.begin(); i != data.end(); ++i)
-      o << "  data[%1]=%2\n",i->first,i->second;
-  return o;
 }
 
 /////////////////////////////////////////////////////
@@ -642,7 +628,7 @@ void run_menumethod(string methodname, const vector<string> &menudata)
 
     close(1);
     open("/dev/null", O_RDWR);
-    execve(args[0],(char **)args, environ);
+    execve(args[0],(char **)args, '\0');
     exit(1);
   } else {
     // parent:

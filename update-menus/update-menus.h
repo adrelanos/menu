@@ -46,7 +46,6 @@ public:
 
   std::map<std::string, std::string> data;
   void output(std::vector<std::string> &s);
-  std::ostream &debugoutput(std::ostream &o);
 };
 
 class trans_class {
