@@ -1,11 +1,17 @@
 menu (2.1.18) unstable; urgency=low
 
-  * The "unreleased" release 
-  * Morten Brix Pedersen:
-    - Fix parsing of translate_menus file. Closes: #271659
+  * The "really careful" release 
+  * Update Japanese menu message translation. Thanks Goto Masanori.
+  * Update Finnish menu message translation. Thanks Tommi Vainikainen.
+  * Update Portuguese menu message translation. Thanks Andre Luis Lopes.
+  * Update Dutch menu message translation. Thanks Tim Dijkstra. 
+    Closes: #274355.
+  * Morten Brix Pedersen: 
+    - Allow character classes in regular expressions. This fix the parsing
+      of translate_menus. Closes: #271659. Thanks, Paul Seelig.
     - Only use letters and digits as possible shortcut keys. Closes: #259349
 
- -- Bill Allombert <ballombe@debian.org>  Sat, 25 Sep 2004 15:06:51 +0200
+ -- Bill Allombert <ballombe@debian.org>  Sun,  3 Oct 2004 11:47:02 +0200
 
 menu (2.1.17) unstable; urgency=medium
 
