@@ -829,8 +829,7 @@ void wait_dpkg(string &stdoutfile)
 void usage(ostream &c)
 {
       c <<
-          /* This is the update-menus --help message*/
-          _(
+          _( /* This is the update-menus --help message*/
   "Usage: update-menus [options] \n"
   "Gather packages data from the menu database and generate menus for\n"
   "all programs providing menu-methods, usually window-managers.\n"
@@ -842,8 +841,7 @@ void usage(ostream &c)
   "  --nodefaultdirs        Disables the use of all the standard menu directories.\n"
   "  --stdout               Output menu list in format suitable for piping to\n"
   "                         install-menu.\n")
-          /* This is the end of the update-menus --help message*/
-       << _(  
+       << _(  /* This is the end of the update-menus --help message*/
   "  --version              Output version information and exit.\n"  );
 }
 
