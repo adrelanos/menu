@@ -32,46 +32,71 @@
 #include "common.h"
 #include "compose.hpp"
 
-class genexcept {
-public:
-  virtual void report() {
+namespace exceptions {
+  /** Base class for general exceptions */
+  class genexcept {
+  public:
+    virtual void report() {
       std::cerr << message() << std::endl;
-  }
-  virtual std::string message() const {
+    }
+    virtual std::string message() const {
       return _("Unknown error.");
-  }
-  virtual ~genexcept() { }
-};
+    }
+    virtual ~genexcept() { }
+  };
 
-class except_string : public genexcept {
-protected:
-  std::string msg;
-public:
-  except_string(std::string s) : msg(s) { }
-  std::string message() const {
-    return String::compose(_("Unknown error, message=%1"), msg);
-  }
-};
+  /** Base exception class for classes returning string error messages */
+  class except_string : public genexcept {
+  protected:
+    std::string msg;
+  public:
+    except_string(std::string s) : msg(s) { }
+    std::string message() const {
+      return String::compose(_("Unknown error, message=%1"), msg);
+    }
+  };
 
-class ferror_open : public except_string {
-public:
-  ferror_open(std::string s):except_string(s) { }
-  std::string message() const {
-    return String::compose(_("Unable to open file \"%1\"."), msg);
-  }
-};
+  /** Exception class to be thrown when a file fails to open */
+  class ferror_open : public except_string {
+  public:
+    ferror_open(std::string s):except_string(s) { }
+    std::string message() const {
+      return String::compose(_("Unable to open file \"%1\"."), msg);
+    }
+  };
 
-class pipeerror_read : public except_string {
-public:
-  pipeerror_read(std::string s) : except_string(s) { }
-  std::string message() {
-    return String::compose(_("Failed to pipe data through \"%1\" (pipe opened for reading)."), msg);
-  }
-};  // pipe open for reading failed
+  /** Exception class to be thrown when opening a pipe for reading */
+  class pipeerror_read : public except_string {
+  public:
+    pipeerror_read(std::string s) : except_string(s) { }
+    std::string message() {
+      return String::compose(_("Failed to pipe data through \"%1\" (pipe opened for reading)."), msg);
+    }
+  };
 
-class informed_fatal : public genexcept { 
+  /** Exception class to be thrown when a fatal error occured */
+  class informed_fatal : public genexcept { 
   public:
     std::string message() const { return ""; }
-};
+  };
+
+  /** Exception to be thrown when a required tag is missing */
+  class missing_tag : public except_string {
+    std::string file;
+  public:
+    missing_tag(std::string f, std::string s) : except_string(s), file(f) { }
+    std::string message() {
+      return String::compose(_("%1: missing required tag: \"%2\""), file, msg);
+    }
+  };
+
+  /** Exception to be thrown when package isn't installed. */
+  class cond_inst_false : public genexcept { };
+
+  /** Exception to be thrown when opening a directory failed */
+  class dir_error_read : public genexcept { };
+
+}
+
 
 #endif /* EXCEPTIONS_H */

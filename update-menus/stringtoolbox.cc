@@ -82,7 +82,7 @@ string uppercase(string str)
 string replacewith(string str, const string &replace, const string &with)
 {
   if (replace.length() != with.length())
-      throw except_string(_("replacewith($string, $replace, $with): $replace and $with must have the same length."));
+      throw exceptions::except_string(_("replacewith($string, $replace, $with): $replace and $with must have the same length."));
 
   for (string::size_type i = 0; i <= replace.length(); ++i)
   {

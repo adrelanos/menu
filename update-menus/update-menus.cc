@@ -50,6 +50,7 @@ using std::string;
 using std::cout;
 using std::cerr;
 using std::ostream;
+using namespace exceptions;
 
 static const char * home_dir;
 
@@ -59,16 +60,20 @@ set<string> menufiles_processed;
 translateinfo *transinfo;
 configinfo     config;
 
+/** Try to open a directory. Throws dir_error_read if failed, and a DIR*
+ * descriptor if succeeded.
+ */
 DIR *open_dir_check(const string& dirname)
 {
   struct stat st;
 
   if (stat(dirname.c_str(), &st) || (!S_ISDIR (st.st_mode)))
-      throw dir_error_read(dirname);
+      throw dir_error_read();
 
   return opendir(dirname.c_str());
 }
 
+/** Checks whether a file is executable */
 bool executable(const string &s)
 {
   struct stat st;
@@ -82,6 +87,7 @@ bool executable(const string &s)
   }
 }
 
+/** Checks whether a package is installed */
 bool is_pkg_installed(const string& filename)
 {
   if (contains(filename, "local."))
@@ -90,7 +96,7 @@ bool is_pkg_installed(const string& filename)
     return installed_packages.find(filename) != installed_packages.end();
 }
 
-menuentry::menuentry(parsestream &i, const string& file, const string& shortfile)
+menuentry::menuentry(parsestream &i, const std::string& file, const std::string& shortfile)
 {
   char c = i.get_char();
   if (c == '?') {
@@ -114,9 +120,9 @@ menuentry::menuentry(parsestream &i, const string& file, const string& shortfile
   check_req_tags(file);
 }
 
-// This function checks the package name to see if it's valid and installed.
-// Multiple package names can exist, seperated by comma.
-void menuentry::check_pkg_validity(parsestream &i, string &name)
+/** This function checks the package name to see if it's valid and installed.
+ * Multiple package names can exist, seperated by comma. */
+void menuentry::check_pkg_validity(parsestream &i, std::string &name)
 {
   string function = i.get_name();
   if (function != COND_PACKAGE)
@@ -146,7 +152,7 @@ void menuentry::check_pkg_validity(parsestream &i, string &name)
   i.skip_char(')');
 }
 
-// Checks whether we have all the tags we need.
+/** Checks whether we have all the tags we need. */
 void menuentry::check_req_tags(const std::string& filename)
 {
   vector<string> need;
@@ -164,6 +170,7 @@ void menuentry::check_req_tags(const std::string& filename)
 
 }
 
+/** Parse a menuentry from a parsestream */
 void menuentry::read_menuentry(parsestream &i)
 {
   // a new format menuentry
@@ -191,7 +198,7 @@ void menuentry::read_menuentry(parsestream &i)
   i.skip_line();
 }
 
-void menuentry::output(vector<string> &s)
+void menuentry::output(std::vector<std::string> &s)
 {
   string t;
   std::map<string, string>::const_iterator i = data.begin();
@@ -207,7 +214,6 @@ void menuentry::output(vector<string> &s)
     }
   }
   t += '\n';
-  config.report(String::compose("ADDING: %1", t), configinfo::report_debug);
   s.push_back(t);
 }
 
@@ -215,7 +221,8 @@ void menuentry::output(vector<string> &s)
 //  configinfo
 //
 
-void configinfo::parse_def(const string &key, const string& value)
+/** Handle key/value configuration pair */
+void configinfo::parse_config(const std::string &key, const std::string& value)
 {
   if (key=="compat") {
     if (value=="menu-1") compat = parsestream::eol_newline;
@@ -224,7 +231,6 @@ void configinfo::parse_def(const string &key, const string& value)
     if     (value=="quiet")   verbosity=report_quiet;
     else if(value=="normal")  verbosity=report_normal;
     else if(value=="verbose") verbosity=report_verbose;
-    else if(value=="debug")   verbosity=report_debug;
   } else if(key=="method") {
     if     (value=="stdout")  method=method_stdout;
     else if(value=="stderr")  method=method_stderr;
@@ -270,7 +276,7 @@ void configinfo::parse_def(const string &key, const string& value)
   }
 }
 
-void configinfo::update(const string& filename)
+void configinfo::read_file(const std::string& filename)
 {
   std::ifstream config_file(filename.c_str());
 
@@ -286,12 +292,12 @@ void configinfo::update(const string& filename)
         return;
 
     // parse key and value
-    parse_def(str.substr(0, pos), str.substr(pos + 1));
+    parse_config(str.substr(0, pos), str.substr(pos + 1));
   }
 
 }
 
-void configinfo::report(const string &message, verbosity_type v)
+void configinfo::report(const std::string &message, verbosity_type v)
 {
   if(v <= verbosity) {
     switch(method) {
@@ -308,28 +314,24 @@ void configinfo::report(const string &message, verbosity_type v)
     }
   }
 }
+
 /////////////////////////////////////////////////////
 //  translate stuff
 //
 
-string trans_class::debuginfo()
-{
-  return string(" match=")+match+", replace="+replace+", replace_var="+replace_var;
-}
-
-void translate::process(menuentry &m, const string &search)
+void translate::process(menuentry &m, const std::string &search)
 {
   if (search == match)
       m.data[replace_var] = replace;
 }
 
-void subtranslate::process(menuentry &m, const string &search)
+void subtranslate::process(menuentry &m, const std::string &search)
 {
   if (contains(search, match))
       m.data[replace_var] = replace;
 }
 
-void substitute::process(menuentry &m, const string &search)
+void substitute::process(menuentry &m, const std::string &search)
 {
   if (contains(search, match)) {
     string *current = &(m.data[replace_var]);
@@ -338,12 +340,10 @@ void substitute::process(menuentry &m, const string &search)
   }
 }
 
-translateinfo::translateinfo(const string &filename)
+translateinfo::translateinfo(const std::string &filename)
 {
   parsestream *i = 0;
   try {
-    config.report(String::compose("Attempting to open %1...", filename),
-        configinfo::report_debug);
     i = new parsestream(filename);
 
     Regex ident("[a-zA-Z_][a-zA-Z0-9_]*");
@@ -357,16 +357,13 @@ translateinfo::translateinfo(const string &filename)
     while (true)
     {
       string name = i->get_name(ident);
-      config.report(string("name=")+name, configinfo::report_debug);
       i->skip_space();
       string match_var = i->get_name(ident);
-      config.report(string("match_var=")+match_var, configinfo::report_debug);
       i->skip_space();
       i->skip_char('-');
       i->skip_char('>');
       i->skip_space();
       string replace_var = i->get_name(ident);
-      config.report(string("replace_var=")+replace_var, configinfo::report_debug);
 
       i->skip_line();
       while (true)
@@ -397,15 +394,13 @@ translateinfo::translateinfo(const string &filename)
 
         std::pair<const string, trans_class *> p(match, trcl);
 
-        config.report(String::compose("Adding translation rule: [%1]%2", p.first, trcl->debuginfo()),
-            configinfo::report_debug);
         trans[match_var].push_back(p);
         i->skip_line();
       }
     }
   }
   catch(endoffile p) {
-    config.report("End reading translation rules.", configinfo::report_debug);
+    config.report("End reading translation rules.", configinfo::report_verbose);
   }
   delete i;
 }
@@ -420,7 +415,6 @@ void translateinfo::process(menuentry &m)
     search = &m.data[i->first];
     for (j = i->second.begin(); j != i->second.end(); ++j)
     {
-      config.report(String::compose("Translation: var[%1] testing translation rule match for: %2",*search,j->first), configinfo::report_debug);
       j->second->process(m, *search);
     }
   }
@@ -430,6 +424,7 @@ void translateinfo::process(menuentry &m)
 //  Installed Package Status:
 //
 
+/** Read in list of installed packages */
 void read_pkginfo()
 {
   // Here we get the list of *installed* packages from dpkg, using sed to
@@ -456,10 +451,10 @@ void read_pkginfo()
   pclose(status);
 }
 
+/** Read a menufile and create a menuentry for it */
 void read_menufile(const string &filename, const string &shortfilename,
                    vector<string> &menudata)
 {
-  config.report(String::compose(_("Reading menu-entry file %1."), filename), configinfo::report_debug);
 
   parsestream *ps = 0;
   std::stringstream *sstream = 0;
@@ -538,6 +533,7 @@ void read_menufile(const string &filename, const string &shortfilename,
   delete sstream;
 }
 
+/** Read a directory full of menu files */
 void read_menufilesdir(vector<string> &menudata)
 {
   for(vector<string>::const_iterator method_i = config.menufilesdir.begin();
@@ -578,6 +574,7 @@ void read_menufilesdir(vector<string> &menudata)
   }
 }
 
+/** Run a menu method */
 void run_menumethod(string methodname, const vector<string> &menudata)
 {
   int fds[2];
@@ -634,6 +631,7 @@ void run_menumethod(string methodname, const vector<string> &menudata)
         configinfo::report_quiet);
 }
 
+/** Run a directory full of menu methods */
 void run_menumethoddir(const string &dirname, const vector<string> &menudata)
 {
   struct stat st;
@@ -667,6 +665,7 @@ void run_menumethoddir(const string &dirname, const vector<string> &menudata)
   closedir (dir);
 }
 
+/** Try to create a lock file for update-menus */
 int create_lock()
 {
   // return lock fd if succesful, false if unsuccesfull.
@@ -698,6 +697,7 @@ int create_lock()
   return fd;
 }
 
+/** Try to remove update-menus lock */
 void remove_lock()
 {
   if (!getuid()){
@@ -707,11 +707,13 @@ void remove_lock()
   }
 }
 
+/** Check whether dpkg is locked
+  * return 1 if DPKG_LOCKFILE is locked and we should wait
+  * return 0 if we don't need to wait (not root, or no dpkg lock)
+  * when in doubt return 0 to avoid deadlocks.
+  */
 int check_dpkglock()
 {
-  //return 1 if DPKG_LOCKFILE is locked and we should wait
-  //return 0 if we don't need to wait (not root, or no dpkg lock)
-  //when in doubt return 0 to avoid deadlocks.
   int fd;
   struct flock fl;
   if (getuid())
@@ -746,6 +748,8 @@ void exit_on_signal(int signr)
   exit(0);
 }
 
+/** Check whether dpkg is running, and fork into background waiting if it is
+ */
 void wait_dpkg(string &stdoutfile)
 {
   int child;
@@ -786,7 +790,7 @@ void wait_dpkg(string &stdoutfile)
     sigaddset(&sig,SIGUSR2);
     sigprocmask(SIG_UNBLOCK,&sig,&oldsig);
 
-    signal(SIGUSR2,exit_on_signal);
+    signal(SIGUSR2, exit_on_signal);
     parentpid=getpid();
     if ((child=fork())) {
       if (child==-1) {
@@ -827,14 +831,14 @@ void wait_dpkg(string &stdoutfile)
         configinfo::report_verbose);
   }
 }
-void
-usage(ostream &c)
+
+/** Print usage information */
+void usage(ostream &c)
 {
       c <<
           _("update-menus: update the various window-manager config files (and\n"
               "  dwww, and pdmenu) Usage: update-menus [options] \n"
               "    -v  Be verbose about what is going on.\n"
-              "    -d  Output debugging messages.\n"
               "    -h, --help This message.\n"
               "    --menufilesdir <dir> Add <dir> to the lists of menu directories to search.\n"
               "    --menumethod  <method> Run only the menu method <method>.\n"
@@ -842,31 +846,21 @@ usage(ostream &c)
               "    --stdout Output menu list in format suitable for piping to install-menu.\n");
 }
 
+/** Parse commandline parameters */
 void parse_params(char **argv)
 {
   while (*(++argv))
   {
-    if(string("-d") == *argv)
-    {
-      config.set_verbosity(configinfo::report_debug);
-      continue;
-    }
-    if(string("-v") == *argv)
-    {
+    if (string("-v") == *argv) {
       config.set_verbosity(configinfo::report_verbose);
       continue;
-    }
-    if(string("--nodefaultdirs") == *argv)
-    {
+    } else if (string("--nodefaultdirs") == *argv) {
       config.usedefaultmenufilesdirs = false;
       continue;
-    }
-    if(string("--stdout") == *argv)
-    {
+    } else if (string("--stdout") == *argv) {
       config.onlyoutput_to_stdout = true;
       continue;
-    }
-    if(string("--menufilesdir") == *argv || string("--menufiledir") == *argv) {
+    } else if (string("--menufilesdir") == *argv || string("--menufiledir") == *argv) {
       argv++;
       if(*argv) {
           config.menufilesdir.push_back(*argv);
@@ -875,8 +869,7 @@ void parse_params(char **argv)
         throw informed_fatal();
       }
       continue;
-    }
-    if(string("--menumethod") == *argv) {
+    } else if (string("--menumethod") == *argv) {
       argv++;
       if(*argv) {
           config.menumethod = *argv;
@@ -885,38 +878,40 @@ void parse_params(char **argv)
         throw informed_fatal();
       }
       continue;
-    }
-    if(string("-h") == *argv || string("--help") == *argv) 
-    {  
+    } else if (string("--version") == *argv) {
+        cout << "update-menus "VERSION << std::endl;
+        exit(0);
+    } else if (string("-h") == *argv || string("--help") == *argv) {  
       usage(cout);
       exit(0);
-    }
-    else
-    {
+    } else {
       usage(cerr);
       exit(1);
     }
   }
 }
 
+/** Read users configuration file */
 void read_userconfiginfo()
 {
   if (getuid()) {
     try {
-      config.update(string(home_dir)+"/"+USERCONFIG);
+      config.read_file(string(home_dir)+"/"+USERCONFIG);
     } catch(ferror_open d) { };
   }
 }
 
+/** Read roots configuration file */
 void read_rootconfiginfo()
 {
   if(!transinfo){
     try {
-      config.update(CONFIG_FILE);
+      config.read_file(CONFIG_FILE);
     } catch (ferror_open d){};
   }
 }
 
+/** Read users translate information */
 void read_usertranslateinfo()
 {
   if (getuid()) {
@@ -926,6 +921,7 @@ void read_usertranslateinfo()
   }
 }
 
+/** Read roots translate information */
 void read_roottranslateinfo()
 {
   if (!transinfo) {
@@ -935,6 +931,7 @@ void read_roottranslateinfo()
   }
 }
 
+/** Find our home directory */
 void read_homedirectory()
 {
   struct passwd *pwentry = getpwuid(getuid());

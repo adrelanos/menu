@@ -5,7 +5,6 @@
 
 #include <libintl.h>
 
-const int MAX_BUF = 10240;
 const int MAX_LINE = 10240;
 
 #define _(string) gettext(string)

@@ -94,74 +94,84 @@ public:
   void seteolmode(eol_type mode) { eolmode = mode; }
 };
 
-// Exception classes for parsestream class.
-class except_pi : public genexcept {
-public:
-  parsestream *pi;
-  except_pi(parsestream *p) : pi(p) { }
-  void report();
-};
 
-class except_pi_string : public except_pi {
-protected:
-  std::string msg;
-public:
-  except_pi_string(parsestream *p, std::string s) : except_pi(p), msg(s) { }
-  std::string message() const {
-    return String::compose(_("Unknown error, message=%1"), msg);
-  }
-};
+namespace exceptions {
+  /** Exception classes for parsestream class. */
+  class except_pi : public genexcept {
+  public:
+    parsestream *pi;
+    except_pi(parsestream *p) : pi(p) { }
+    void report();
+  };
 
-class endoffile : public except_pi {
-public:
-  endoffile(parsestream *p) : except_pi(p) { }
-  std::string message() const { return _("Unexpected end of file."); }
-};
+  /** Exception for parsestream class using string error messages */
+  class except_pi_string : public except_pi {
+  protected:
+    std::string msg;
+  public:
+    except_pi_string(parsestream *p, std::string s) : except_pi(p), msg(s) { }
+    std::string message() const {
+      return String::compose(_("Unknown error, message=%1"), msg);
+    }
+  };
 
-class endofline : public except_pi {
-public:
-  endofline(parsestream *p) : except_pi(p) { }
-  std::string message() const { return _("Unexpected end of line."); }
-};
+  /** Exception to be thrown when unexpected end of file occurs */
+  class endoffile : public except_pi {
+  public:
+    endoffile(parsestream *p) : except_pi(p) { }
+    std::string message() const { return _("Unexpected end of file."); }
+  };
 
-class ident_expected : public except_pi {
-public:
-  ident_expected(parsestream *p) : except_pi(p) { }
-  const char *errormsg() const { return _("Identifier expected."); }
-};
+  /** Exception to be thrown when unexpected end of line occurs */
+  class endofline : public except_pi {
+  public:
+    endofline(parsestream *p) : except_pi(p) { }
+    std::string message() const { return _("Unexpected end of line."); }
+  };
 
-class char_expected : public except_pi_string {
-public:
-  char_expected(parsestream *p, std::string s):except_pi_string(p,s) { }
-  std::string message() const {
-    return String::compose(_("Expected: \"%1\""), msg);
-  }
-};
+  /** Exception to be thrown when an identifer was expected but wasn't found */
+  class ident_expected : public except_pi {
+  public:
+    ident_expected(parsestream *p) : except_pi(p) { }
+    const char *errormsg() const { return _("Identifier expected."); }
+  };
 
-class char_unexpected : public except_pi_string {
-public:
-  char_unexpected(parsestream *p, std::string s):except_pi_string(p,s) { }
-  std::string message() const {
-    return String::compose(_("Unexpected character: \"%1\""), msg);
-  }
-};
+  /** Exception to be thrown when a character was expected but wasn't found */
+  class char_expected : public except_pi_string {
+  public:
+    char_expected(parsestream *p, std::string s):except_pi_string(p,s) { }
+    std::string message() const {
+      return String::compose(_("Expected: \"%1\""), msg);
+    }
+  };
 
-class boolean_expected : public except_pi_string {
-public:
-  boolean_expected(parsestream *p, std::string s):except_pi_string(p,s) { }
-  std::string message() const {
-    return String::compose(_("Boolean (either true or false) expected.\n"
-                     "Found: \"%1\""), msg);
-  }
-};
+  /** Exception to be thrown when a character was found but not expected */
+  class char_unexpected : public except_pi_string {
+  public:
+    char_unexpected(parsestream *p, std::string s):except_pi_string(p,s) { }
+    std::string message() const {
+      return String::compose(_("Unexpected character: \"%1\""), msg);
+    }
+  };
 
-class unknown_compat : public except_pi_string {
-public:
-  unknown_compat(parsestream *p, std::string s):except_pi_string(p,s) { }
-  std::string message() const {
-    return String::compose(_("Unknown compat mode: \"%1\""), msg);
-  }
-};
+  /** Exception to be thrown when an boolean was expected but not found */
+  class boolean_expected : public except_pi_string {
+  public:
+    boolean_expected(parsestream *p, std::string s):except_pi_string(p,s) { }
+    std::string message() const {
+      return String::compose(_("Boolean (either true or false) expected.\n"
+            "Found: \"%1\""), msg);
+    }
+  };
 
+  /** Exception to be thrown when an unknown compatability mode was chosen */
+  class unknown_compat : public except_pi_string {
+  public:
+    unknown_compat(parsestream *p, std::string s):except_pi_string(p,s) { }
+    std::string message() const {
+      return String::compose(_("Unknown compat mode: \"%1\""), msg);
+    }
+  };
+}
 
 #endif /* PARSESTREAM_H */

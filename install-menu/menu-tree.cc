@@ -150,7 +150,7 @@ void menuentry::add_entry(vector<string> sections, map<string, string> &entry_va
       if (firstsection_i->second->forced)
           use_forced = true;
 
-  if ((!config->hint_optimize || use_forced) && (sections.size() > 1)) {
+  if ((!menumethod->hint_optimize || use_forced) && (sections.size() > 1)) {
     // We are either not using hint_optimize, or we have to add this
     // section, because it's forced to be created by the forcetree.
     //
@@ -243,7 +243,7 @@ void menuentry::add_entry_ptr(vector<string> sections, menuentry *entry)
 //
 void menuentry::output()
 {
-  string treew = config->treewalk();
+  string treew = menumethod->treewalk();
   submenu_container::iterator sub_i;
   std::multimap<string, menuentry *> sorted;
   std::multimap<string, menuentry *>::iterator i;
@@ -252,8 +252,8 @@ void menuentry::output()
   for (sub_i = submenus.begin(); sub_i != submenus.end(); ++sub_i)
   {
     string s;
-    if (config->sort)
-      s = config->sort->soutput(sub_i->second->vars);
+    if (menumethod->sort)
+      s = menumethod->sort->soutput(sub_i->second->vars);
     else
       s = sub_i->second->vars[SORT_VAR] + ':' + sub_i->second->vars[TITLE_VAR];
 
@@ -273,13 +273,13 @@ void menuentry::output()
         break;
       case '(':
         if (!submenus.empty())
-            if (config->startmenu && testuniqueness(vars))
-                config->startmenu->output(vars);
+            if (menumethod->startmenu && testuniqueness(vars))
+                menumethod->startmenu->output(vars);
         break;
       case ')':
         if (!submenus.empty())
-            if (config->endmenu && testuniqueness(vars))
-                config->endmenu->output(vars);
+            if (menumethod->endmenu && testuniqueness(vars))
+                menumethod->endmenu->output(vars);
         break;
       case 'M':
         children_too = true;
@@ -290,9 +290,9 @@ void menuentry::output()
               testuniqueness(i->second->vars)) {
             supported->subst(i->second->vars);
           } else {
-            if (config->submenutitle && !i->second->submenus.empty() &&
+            if (menumethod->submenutitle && !i->second->submenus.empty() &&
                 testuniqueness(i->second->vars))
-                config->submenutitle->output(i->second->vars);
+                menumethod->submenutitle->output(i->second->vars);
             if (children_too)
                 i->second->output();
           }
@@ -378,7 +378,7 @@ void menuentry::process_hints()
       // one, since that's the title of the application.
       if (sections.size() > 1) {
         sections.pop_back();
-        if (config->hint_debug)
+        if (menumethod->hint_debug)
             std::cout << "Adding to hint_list: " << i->first << ", hints="
                 << i->second->menuhints << std::endl;
         for (l=i->second->menuhints.begin(); l!=i->second->menuhints.end(); ++l)
@@ -391,14 +391,14 @@ void menuentry::process_hints()
   }
   // Step 2.
   hints h;
-  h.set_nentry(config->hint_nentry);
-  h.set_topnentry(config->hint_topnentry);
-  h.set_mixedpenalty(config->hint_mixedpenalty);
-  h.set_minhintfreq(config->hint_minhintfreq);
-  h.set_max_local_penalty(config->hint_mlpenalty);
-  h.set_max_ntry(config->hint_max_ntry);
-  h.set_max_iter_hint(config->hint_max_iter_hint);
-  h.set_debug(config->hint_debug);
+  h.set_nentry(menumethod->hint_nentry);
+  h.set_topnentry(menumethod->hint_topnentry);
+  h.set_mixedpenalty(menumethod->hint_mixedpenalty);
+  h.set_minhintfreq(menumethod->hint_minhintfreq);
+  h.set_max_local_penalty(menumethod->hint_mlpenalty);
+  h.set_max_ntry(menumethod->hint_max_ntry);
+  h.set_max_iter_hint(menumethod->hint_max_iter_hint);
+  h.set_debug(menumethod->hint_debug);
 
   // Calculate our new tree, using hints. A lot of magic happens here.
   h.calc_tree(hint_list, hint_out);
@@ -488,7 +488,7 @@ void menuentry::postprocess(int n_parent, int level, const string& prev_section)
 
 char menuentry::hotkeyconv(char h)
 {
-  if (config->hotkeycase)
+  if (menumethod->hotkeycase)
     return h;
   else
     return tolower(h);
@@ -508,8 +508,8 @@ void menuentry::generate_hotkeys()
 
   string str0 = "0";
   str0[0]='\0';
-  if (config->hkexclude)
-      s = config->hkexclude->soutput(vars);
+  if (menumethod->hkexclude)
+      s = menumethod->hkexclude->soutput(vars);
   for (i=0;i!=s.length();i++)
     used_chars.insert(hotkeyconv(s[i]));
 
@@ -556,16 +556,3 @@ void menuentry::generate_hotkeys()
         subi->second->vars[HOTKEY_VAR] = c;
   }
 }
-
-void menuentry::debug(int level)
-{
-  submenu_container::iterator i;
-
-  for (int li = level; li > 0; li--)
-      std::cout << "  ";
-
-  std::cout << vars[TITLE_VAR]<< ':' << vars[SECTION_VAR] << ':' << vars[ICON_VAR] << std::endl;
-  for(i = submenus.begin(); i != submenus.end(); ++i)
-      i->second->debug(level+1);
-}
-

@@ -34,8 +34,7 @@
 #include "exceptions.h"
 #include "parsestream.h"
 
-using std::string;
-
+/** Internal representation of a menu entry */
 class menuentry {
   void check_req_tags(const std::string& filename);
   void check_pkg_validity(parsestream &i, std::string &);
@@ -44,70 +43,74 @@ class menuentry {
 public:
   menuentry(parsestream &i, const std::string& file, const std::string& shortfile);
 
+  /** Map containing the data of the menuentry. The key is the tag and the
+   * value is the value of the tag.
+   */
   std::map<std::string, std::string> data;
-  void output(std::vector<std::string> &s);
+  /** Output full menu entry in menu format, and put it in vec */
+  void output(std::vector<std::string>& vec);
 };
 
+/** Base class containing general methods for translation/substitution */
 class trans_class {
 protected:
   std::string match, replace, replace_var;
+
 public:
-  trans_class(const string &m, const string &r, const string &rv)
+  trans_class(const std::string &m, const std::string &r, const std::string &rv)
       : match(m), replace(r), replace_var(rv) { }
 
-  virtual void process(menuentry &m, const string &v) = 0;
-  string debuginfo();
+  /** Process the menuentry using a search string */
+  virtual void process(menuentry &m, const std::string& search) = 0;
   virtual ~trans_class() { }
 };
 
+/** Class for menu's "translation" feature */
 class translate : public trans_class {
 public:
-  translate(const string &m, const string &r, const string &rv)
+  translate(const std::string &m, const std::string &r, const std::string &rv)
       : trans_class(m,r,rv) { }
 
-  void process(menuentry &m, const string &v);
+  void process(menuentry &m, const std::string& search);
 };
 
+/** Class for menu's "substitute" feature */
 class substitute : public trans_class {
 public:
-  substitute(const string &m, const string &r, const string &rv)
+  substitute(const std::string &m, const std::string &r, const std::string &rv)
       : trans_class(m,r,rv) { }
 
-  void process(menuentry &m, const string &v);
+  void process(menuentry &m, const std::string& search);
 };
 
+/** Helper class for menu's "substitute" feature */
 class subtranslate : public trans_class {
 public:
-  subtranslate(string &m, const string &r, const string &rv)
+  subtranslate(std::string &m, const std::string &r, const std::string &rv)
       : trans_class(m,r,rv) { }
 
-  void process(menuentry &m, const string &v);
+  void process(menuentry &m, const std::string& search);
 };
 
+/** Class container for translation and subtitution classes */
 class translateinfo {
-  typedef std::pair<string, trans_class*> trans_pair;
-  std::map<string, std::vector<trans_pair> > trans;
+  typedef std::pair<std::string, trans_class*> trans_pair;
+  std::map<std::string, std::vector<trans_pair> > trans;
+
 public:
-  translateinfo(const string &filename);
+  translateinfo(const std::string &filename);
+
+  /** Process all translation classes */
   void process(menuentry &m);
 };
 
+/** Representation of configurable variables in update-menus. */
 class configinfo {
-public:
-  typedef enum { report_quiet, report_normal, report_verbose, report_debug} verbosity_type;
-  parsestream::eol_type compat;
-  std::vector<std::string> menufilesdir;
-  string menumethod;
-  bool usedefaultmenufilesdirs;
-  bool onlyoutput_to_stdout;
-
-private:
   typedef enum { method_stdout, method_stderr, method_syslog} method_type;
-
-  verbosity_type verbosity;
   method_type method;
   int syslog_facility, syslog_priority;
-  void parse_def(const string &var, const string& value);
+
+  void parse_config(const std::string &var, const std::string& value);
 
 public:
   configinfo()
@@ -116,38 +119,36 @@ public:
         method(method_stderr)
     { }
 
-  void update(const std::string& filename);
-  void report(const string &message, verbosity_type v);
+  typedef enum { report_quiet, report_normal, report_verbose} verbosity_type;
+  parsestream::eol_type compat;
+  std::vector<std::string> menufilesdir;
+  std::string menumethod;
+  bool usedefaultmenufilesdirs;
+  bool onlyoutput_to_stdout;
+
+
+  /** Read configuration file from filename */
+  void read_file(const std::string& filename);
+
+  /** Print message according to verbosity_type */
+  void report(const std::string &message, verbosity_type v);
+
+  /** Mutator method to verbosity */
   void set_verbosity(verbosity_type v) { verbosity = v; }
+
+private:
+  verbosity_type verbosity;
 };
 
-// ************* exception classes:
-
-class unknown_cond_package : public except_pi_string {
-public:
-  unknown_cond_package(parsestream *p, string s) : except_pi_string(p,s) { }
-  string message() {
-    return String::compose(_("Unknown install condition \"%1\" (currently, only \"package\" is supported)."), msg);
-  }
-};
-
-class cond_inst_false : public genexcept { }; //conditional install returns false
-
-class missing_tag : public except_string {
-  std::string file;
-public:
-  missing_tag(std::string f, std::string s) : except_string(s), file(f) { }
-  std::string message() {
-    return String::compose(_("%1: missing required tag: \"%2\""), file, msg);
-  }
-};
-
-class dir_error_read {
-public:
-  char name[MAX_LINE];
-  dir_error_read(string s){
-    strcpy(name,s.c_str());
+namespace exceptions {
+  /** Exception to be thrown when an unknown install condition is found */
+  class unknown_cond_package : public except_pi_string {
+  public:
+    unknown_cond_package(parsestream *p, std::string s) : except_pi_string(p,s) { }
+    std::string message() {
+      return String::compose(_("Unknown install condition \"%1\" (currently, only \"package\" is supported)."), msg);
+    }
   };
-};  // directory open for reading failed
+}
 
 #endif

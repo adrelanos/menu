@@ -3,6 +3,11 @@ menu (2.1.14) unstable; urgency=low
   * The "unreleased" release
   * Update German menu-section translation. Thanks Sebastian Rittau.
   * Update Hungarian menu-section translation. Thanks Attila Szervá.
+  * Morten Brix Pedersen:
+     - Change a wrong error message from "Could not open directory" to "Could
+     not create directory".
+     - Remove -d (debug) option from update-menus.
+     - Added --version option to update-menus.
 
  -- Bill Allombert <ballombe@debian.org>  Sat, 15 May 2004 00:17:07 +0200
 

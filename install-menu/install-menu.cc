@@ -57,14 +57,15 @@ using std::ifstream;
 using std::cerr;
 using std::cout;
 using std::endl;
+using namespace exceptions;
 
 int verbose = 0;
 const char * menuencoding = "UTF-8";
 
-map<string, func *> func_data;
+map<string, functions::func *> func_data;
 
 menuentry root_menu;
-configinfo *config;
+methodinfo *menumethod;
 supportedinfo *supported;
 
 std::ofstream *genoutputfile = 0;
@@ -79,16 +80,17 @@ struct option long_options[] = {
 // and repeat_lang is set.
 bool do_translation = false;
 
-void store_func(func *f)
+void store_func(functions::func *f)
 {
-  func_data[f->name()]=f;
+  func_data[f->getName()] = f;
 }
 
-// This function is used to convert a string from one encoding to another.
-//
-// The function could probably be prettier, but it works. One of the things
-// I dislike about it is that the cleanup operations are duplicated three
-// times (e.g. delete[]).
+/** This function is used to convert a string from one encoding to another.
+ *
+ * The function could probably be prettier, but it works. One of the things
+ * I dislike about it is that the cleanup operations are duplicated three
+ * times (e.g. delete[]).
+ */
 std::string convert(const std::string& str)
 {
   //std::cerr << "Original string: " << str << std::endl;
@@ -104,7 +106,7 @@ std::string convert(const std::string& str)
   char *outbuf = new char[outsize];
   char *outbuf_t = outbuf;
 
-  iconv_t conversion = iconv_open(config->outputencoding().c_str(), menuencoding);
+  iconv_t conversion = iconv_open(menumethod->outputencoding().c_str(), menuencoding);
 
   if (conversion == (iconv_t)(-1)) {
       delete []inbuf;
@@ -130,65 +132,57 @@ std::string convert(const std::string& str)
 
 void add_functions()
 {
-  store_func(new prefix_func);
-  store_func(new shell_func);
-  store_func(new ifroot_func);
+  store_func(new functions::prefix);
+  store_func(new functions::shell);
+  store_func(new functions::ifroot);
 
-  store_func(new print_func);
-  store_func(new add_func);
-  store_func(new sub_func);
-  store_func(new mult_func);
-  store_func(new div_func);
-  store_func(new ifempty_func);
-  store_func(new ifnempty_func);
-  store_func(new iffile_func);
-  store_func(new ifelsefile_func);
-  store_func(new ifelse_func);
-  store_func(new catfile_func);
-  store_func(new forall_func);
+  store_func(new functions::print);
+  store_func(new functions::add);
+  store_func(new functions::sub);
+  store_func(new functions::mult);
+  store_func(new functions::div);
+  store_func(new functions::ifempty);
+  store_func(new functions::ifnempty);
+  store_func(new functions::iffile);
+  store_func(new functions::ifelsefile);
+  store_func(new functions::ifelse);
+  store_func(new functions::catfile);
+  store_func(new functions::forall);
 
-  store_func(new ifeq_func);
-  store_func(new ifneq_func);
-  store_func(new ifeqelse_func);
+  store_func(new functions::ifeq);
+  store_func(new functions::ifneq);
+  store_func(new functions::ifeqelse);
 
-  store_func(new cond_surr_func);
-  store_func(new esc_func);
-  store_func(new escwith_func);
-  store_func(new escfirst_func);
-  store_func(new tolower_func);  
-  store_func(new toupper_func);
-  store_func(new replace_func);
-  store_func(new replacewith_func);
-  store_func(new nstring_func);  
-  store_func(new cppesc_func);
-  store_func(new parent_func);
-  store_func(new basename_func);
-  store_func(new stripdir_func);
-  store_func(new entrycount_func);
-  store_func(new entryindex_func);
-  store_func(new firstentry_func);
-  store_func(new lastentry_func);
-  store_func(new level_func);
+  store_func(new functions::cond_surr);
+  store_func(new functions::esc);
+  store_func(new functions::escwith);
+  store_func(new functions::escfirst);
+  store_func(new functions::tolower);  
+  store_func(new functions::toupper);
+  store_func(new functions::replace);
+  store_func(new functions::replacewith);
+  store_func(new functions::nstring);  
+  store_func(new functions::cppesc);
+  store_func(new functions::parent);
+  store_func(new functions::basename);
+  store_func(new functions::stripdir);
+  store_func(new functions::entrycount);
+  store_func(new functions::entryindex);
+  store_func(new functions::firstentry);
+  store_func(new functions::lastentry);
+  store_func(new functions::level);
 
-  store_func(new rcfile_func);
-  store_func(new examplercfile_func);
-  store_func(new mainmenutitle_func);
-  store_func(new rootsection_func);
-  store_func(new rootprefix_func);
-  store_func(new userprefix_func);
-  store_func(new treewalk_func);
-  store_func(new postoutput_func);
-  store_func(new preoutput_func);
-  store_func(new cwd_func);
-  store_func(new translate_func);
-}
-
-bool empty_string(const string &s)
-{
-  if (s.empty() || s == "none")
-    return true;
-  else
-    return false;
+  store_func(new functions::rcfile);
+  store_func(new functions::examplercfile);
+  store_func(new functions::mainmenutitle);
+  store_func(new functions::rootsection);
+  store_func(new functions::rootprefix);
+  store_func(new functions::userprefix);
+  store_func(new functions::treewalk);
+  store_func(new functions::postoutput);
+  store_func(new functions::preoutput);
+  store_func(new functions::cwd);
+  store_func(new functions::translate);
 }
 
 cat_str *get_eq_cat_str(parsestream &i)
@@ -243,7 +237,7 @@ void closegenoutput()
   for(i = outputnames.begin(); i != outputnames.end(); ++i)
   {
     std::ofstream f(i->c_str(), std::ios::app);
-    f << config->postoutput();
+    f << menumethod->postoutput();
   }
 }
 
@@ -251,7 +245,7 @@ void genoutput(const string &s, map<string, string> &v)
 {
   static string lastname = "////";
 
-  string name = config->prefix() + '/' + config->genmenu->soutput(v);
+  string name = menumethod->prefix() + '/' + menumethod->genmenu->soutput(v);
   if (name != lastname) {
     if (genoutputfile)
         delete genoutputfile;
@@ -263,7 +257,7 @@ void genoutput(const string &s, map<string, string> &v)
       // So, I do it this way instead:
       unlink(name.c_str());
       genoutputfile = new std::ofstream(name.c_str());
-      (*genoutputfile) << config->preoutput();
+      (*genoutputfile) << menumethod->preoutput();
     } else {
       genoutputfile = new std::ofstream(name.c_str(), std::ios::app);
     }
@@ -317,7 +311,7 @@ func_str::func_str(parsestream &i)
 {
   char c;
   string name = i.get_name();
-  map<string, func *>::const_iterator j = func_data.find(name);
+  map<string, functions::func *>::const_iterator j = func_data.find(name);
   if (j == func_data.end())
       throw unknown_function(&i, name);
   else
@@ -381,468 +375,6 @@ ostream &func_str::output(ostream &o, map<string, string> &menuentry)
 }
 
 /////////////////////////////////////////////////////
-//  Debug routines
-//
-ostream &const_str::debuginfo(ostream &o)
-{
-  return o << "CONST_STR: " << data << endl;
-}
-
-ostream &cat_str::debuginfo(ostream &o)
-{
-  vector<str *>::const_iterator i;
-  o << "CAT_STR: " << endl;
-  for(i = v.begin(); i != v.end(); ++i)
-      (*i)->debuginfo(o);
-
-  return o;
-}
-
-ostream &var_str::debuginfo(ostream &o)
-{
-  return o << "VAR_STR: " << var_name << endl;
-}
-
-ostream &func_str::debuginfo(ostream &o)
-{
-  o << "FUNC_STR: " << f->name() << " (" << endl;
-  vector<cat_str *>::const_iterator i;  
-  for(i = args.begin(); i != args.end(); ++i)
-  {
-    o << ", ";
-    (*i)->debuginfo(o);
-  }
-  return o << ")" << endl;
-}
-
-
-/////////////////////////////////////////////////////
-//  Function definitions:
-//
-
-ostream &prefix_func::output(ostream &o, vector<cat_str *> &,
-    map<string, string> &)
-{
-  return o << config->prefix();
-}
-
-ostream &shell_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  string command = args[0]->soutput(menuentry);
-  FILE *status = popen(command.c_str(), "r");
-
-  if (!status)
-      throw pipeerror_read(command);
-
-  while (!feof(status))
-  {
-    char tmp[MAX_LINE];
-    if (fgets(tmp, MAX_LINE, status) != NULL)
-        o << tmp;
-  }
-  pclose(status);
-  return o;
-}
-
-ostream &ifroot_func::output(ostream &o, vector<cat_str *> & args,
-    map<string, string> &menuentry)
-{
-  if(getuid())
-    args[1]->output(o,menuentry);
-  else
-    args[0]->output(o,menuentry);
-
-  return o;
-}
-
-ostream &print_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  string s=args[0]->soutput(menuentry);
-
-  if (empty_string(s)) {
-    cerr << _("Zero-size argument to print function.");
-    throw informed_fatal();
-  }
-  return o << s;
-}
-
-ostream &ifempty_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  string s=args[0]->soutput(menuentry);
-
-  if(empty_string(s))
-    args[1]->output(o,menuentry);
-  return o;
-}
-
-ostream &ifnempty_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  string s=args[0]->soutput(menuentry);
-  if(!empty_string(s))
-    args[1]->output(o,menuentry);
-  return o;
-}
-
-ostream &iffile_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  string s=args[0]->soutput(menuentry);
-  ifstream f(s.c_str());
-  if(f)
-    args[1]->output(o,menuentry);
-  return o;
-}
-
-ostream &ifelsefile_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  string s=args[0]->soutput(menuentry);
-  ifstream f(s.c_str());
-  if(f)
-    args[1]->output(o,menuentry);
-  else
-    args[2]->output(o,menuentry);
-  return o;
-}
-
-ostream &catfile_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  string s=args[0]->soutput(menuentry);
-  ifstream f(s.c_str());
-  char c;
-
-  while(f && f.get(c))
-    o<<c;
-  return o;
-}
-ostream &forall_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  const string &array=args[0]->soutput(menuentry);
-  vector<string> vec;
-  vector<string>::const_iterator i;
-  string s;
-  string varname=args[1]->soutput(menuentry);
-
-  break_char(array, vec, ':');
-
-  for(i = vec.begin(); i != vec.end(); ++i){
-    menuentry[varname]=(*i);
-    s+=args[2]->soutput(menuentry);
-  }
-  return o<<s;
-}
-
-ostream &esc_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  return o << escape(args[0]->soutput(menuentry),
-                     args[1]->soutput(menuentry));
-}
-
-ostream &escwith_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  return o << escapewith(args[0]->soutput(menuentry),
-                         args[1]->soutput(menuentry),
-                         args[2]->soutput(menuentry));
-}
-
-ostream &escfirst_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  string s=args[0]->soutput(menuentry);
-  string esc=args[1]->soutput(menuentry);
-  string t;
-
-  for(string::size_type i=0; i != s.length(); ++i){
-    if(!esc.empty() && contains(esc, s[i])) {
-      t=s.substr(0,i);
-      t+=args[2]->soutput(menuentry);
-      t+=s.substr(i);
-      break;
-    }
-    t+=s[i];
-  }
-  return o<<t;
-}
-ostream &tolower_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  return o<<lowercase(args[0]->soutput(menuentry));
-}
-
-ostream &toupper_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  return o<<uppercase(args[0]->soutput(menuentry));
-}
-ostream &replacewith_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  return o << replacewith(args[0]->soutput(menuentry),
-                          args[1]->soutput(menuentry),
-                          args[2]->soutput(menuentry));
-}
-
-ostream &replace_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-    return o << replace(args[0]->soutput(menuentry),
-                        args[1]->soutput(menuentry),
-                        args[2]->soutput(menuentry));
-}
-
-ostream &nstring_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  int count= stringtoi(args[0]->soutput(menuentry));
-  int i;
-
-  for(i=0; i<count; i++)
-    o<<args[1]->soutput(menuentry);
-
-  return o;
-}
-ostream &cppesc_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  return o << cppesc(args[0]->soutput(menuentry));
-}
-
-ostream &add_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  int x=stringtoi(args[0]->soutput(menuentry));
-  int y=stringtoi(args[1]->soutput(menuentry));
-
-  return o<<itostring(x+y);
-}
-
-ostream &sub_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  int x=stringtoi(args[0]->soutput(menuentry));
-  int y=stringtoi(args[1]->soutput(menuentry));
-
-  return o<<itostring(x-y);
-}
-
-ostream &mult_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  int x=stringtoi(args[0]->soutput(menuentry));
-  int y=stringtoi(args[1]->soutput(menuentry));
-
-  return o<<itostring(x*y);
-}
-
-ostream &div_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  int x=stringtoi(args[0]->soutput(menuentry));
-  int y=stringtoi(args[1]->soutput(menuentry));
-  
-  if(y)
-    return o<<itostring(x/y);
-  else
-    return o<<"0";
-}
-
-ostream &ifelse_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  string s=args[0]->soutput(menuentry);
-
-  (!empty_string(s)) ?
-    args[1]->output(o,menuentry)
-    :
-    args[2]->output(o,menuentry);
-  return o;
-}
-
-ostream &ifeq_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  string s=args[0]->soutput(menuentry);
-  string t=args[1]->soutput(menuentry);
-  if(s==t)
-    args[2]->output(o,menuentry);
-  
-  return o;
-}
-ostream &ifneq_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  string s=args[0]->soutput(menuentry);
-  string t=args[1]->soutput(menuentry);
-  if(!(s==t))
-    args[2]->output(o,menuentry);
-  
-  return o;
-}
-ostream &ifeqelse_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  string s=args[0]->soutput(menuentry);
-  string t=args[1]->soutput(menuentry);
-  if(s==t)
-    args[2]->output(o,menuentry);
-  else
-    args[3]->output(o,menuentry);
-
-  return o;
-}
-
-ostream &cond_surr_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  string s=args[0]->soutput(menuentry);
-
-  if(!empty_string(s)){
-    args[1]->output(o,menuentry);
-    args[0]->output(o,menuentry);
-    args[2]->output(o,menuentry);
-  }
-  return o;
-}
-
-ostream &parent_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  string s=args[0]->soutput(menuentry);
-
-  return o<<string_parent(s);
-}
-
-ostream &basename_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  string s=args[0]->soutput(menuentry);
-  
-  return o<<string_basename(s);
-}
-
-ostream &stripdir_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  string s=args[0]->soutput(menuentry);
-  
-  return o<<string_stripdir(s);
-}
-
-ostream &entrycount_func::output(ostream &o, vector<cat_str *> &/*args*/,
-    map<string, string> &menuentry)
-{
-  return o<<menuentry[PRIVATE_ENTRYCOUNT_VAR];
-}
-
-ostream &entryindex_func::output(ostream &o, vector<cat_str *> &/*args*/,
-    map<string, string> &menuentry)
-{
-  return o<<menuentry[PRIVATE_ENTRYINDEX_VAR];
-}
-
-ostream &firstentry_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  int index=stringtoi(menuentry[PRIVATE_ENTRYINDEX_VAR]);
-
-  if(index == 0)
-    args[0]->output(o,menuentry);
-  return o;
-}
-
-ostream &lastentry_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  int index=stringtoi(menuentry[PRIVATE_ENTRYINDEX_VAR]);
-  int count=stringtoi(menuentry[PRIVATE_ENTRYCOUNT_VAR]);
-
-  if(index+1 == count)
-    args[0]->output(o,menuentry);
-  return o;
-}
-
-ostream &level_func::output(ostream &o, vector<cat_str *> &/*args*/,
-    map<string, string> &menuentry)
-{
-  return o<<menuentry[PRIVATE_LEVEL_VAR];
-}
-
-ostream &rcfile_func::output(ostream &o, vector<cat_str *> &/*args*/,
-    map<string, string> &menuentry)
-{
-  return o<<config->rcfile();
-}
-ostream &examplercfile_func::output(ostream &o, vector<cat_str *> &/*args*/,
-    map<string, string> &menuentry)
-{
-  return o<<config->examplercfile();
-}
-ostream &mainmenutitle_func::output(ostream &o, vector<cat_str *> &/*args*/,
-    map<string, string> &menuentry)
-{
-  return o<<config->mainmenutitle();
-}
-ostream &rootsection_func::output(ostream &o, vector<cat_str *> &/*args*/,
-    map<string, string> &menuentry)
-{
-  return o<<config->rootsection();
-}
-
-ostream &rootprefix_func::output(ostream &o, vector<cat_str *> &/*args*/,
-    map<string, string> &menuentry)
-{
-  return o<<config->rootprefix()->soutput(menuentry);
-}
-
-ostream &userprefix_func::output(ostream &o, vector<cat_str *> &/*args*/,
-    map<string, string> &menuentry)
-{
-  return o<<config->userprefix()->soutput(menuentry);
-}
-
-ostream &treewalk_func::output(ostream &o, vector<cat_str *> &/*args*/,
-    map<string, string> &menuentry)
-{
-  return o<<config->treewalk();
-}
-ostream &postoutput_func::output(ostream &o, vector<cat_str *> &/*args*/,
-    map<string, string> &menuentry)
-{
-  return o<<config->postoutput();
-}
-ostream &preoutput_func::output(ostream &o, vector<cat_str *> &/*args*/,
-    map<string, string> &menuentry)
-{
-  return o<<config->preoutput();
-}
-ostream &cwd_func::output(ostream &o, vector<cat_str *> &/*args*/,
-    map<string, string> &menuentry)
-{
-  char buf[300];
-  //Bug: getcwd returns NULL if strlen(cwd) > sizeof(buf), so we get
-  //     a segfault here.
-  return o<<string(getcwd(buf,sizeof(buf)));
-}
-
-ostream &translate_func::output(ostream &o, vector<cat_str *> &args,
-    map<string, string> &menuentry)
-{
-  string lang=args[0]->soutput(menuentry);
-  string text=args[1]->soutput(menuentry);
-
-  return o << ldgettext(lang.c_str(), "menu-sections", text.c_str());
-}
-
-
-/////////////////////////////////////////////////////
 //  "defined" function (macro).
 //
 
@@ -888,7 +420,7 @@ func_def::func_def(parsestream &i)
 
 supportedinfo::supportedinfo(parsestream &i)
 {
-  int prec=0;
+  int prec = 0;
   while(1)
   {
     try {
@@ -897,18 +429,16 @@ supportedinfo::supportedinfo(parsestream &i)
       if (name == "endsupported")
           return;
 
-      name=uppercase(name);
+      name = uppercase(name);
 
       if (verbose)
           /*Do not translate supported*/
           cerr << String::compose(_("install-menu: [supported]: name=%1\n"), name);
 
-      supinf inf;
-      inf.c=get_eq_cat_str(i);
-      inf.prec=prec++;
-      sup[name]=inf;
-      if (verbose)
-          sup[name].c->debuginfo(cerr);
+      supinfo info;
+      info.name = get_eq_cat_str(i);
+      info.prec = prec++;
+      supported[name] = info;
       i.skip_line();   //read away the final newline
     }
     catch (endofline d) { }
@@ -917,42 +447,30 @@ supportedinfo::supportedinfo(parsestream &i)
 
 void supportedinfo::subst(map<string, string> vars)
 {
+  map<string, string>::const_iterator i = vars.find(NEEDS_VAR);
 
-  map<string, string>::const_iterator i;
-  map<string, supinf>::const_iterator j;
-
-  if ((i = vars.find(NEEDS_VAR)) == vars.end()) {
+  if (i == vars.end()) {
     cerr << String::compose(_("Menu entry lacks mandatory field \"%1\".\n"), NEEDS_VAR);
     throw informed_fatal();
   }
-  if ((j = sup.find(uppercase(i->second))) == sup.end()) {
+
+  map<string, supinfo>::const_iterator j = supported.find(uppercase(i->second));
+  if (j == supported.end()) {
     cerr << String::compose(_("Unknown value for field %1=\"%2\".\n"), NEEDS_VAR, i->second);
     throw informed_fatal();
   }
-  genoutput(j->second.c->soutput(vars), vars);
+  genoutput(j->second.name->soutput(vars), vars);
 }
 
-int supportedinfo::prec(string &name)
+bool supportedinfo::supports(string& name)
 {
-  map<string, supinf>::const_iterator i;
-  int p;
-  if((i=sup.find(uppercase(name)))==sup.end())
-    p = INT_MAX;
+  map<string, supinfo>::const_iterator i = supported.find(uppercase(name));
+  if (i == supported.end())
+      return false;
   else
-    p = i->second.prec;
-  return p;
+      return true;
 }
 
-ostream &supportedinfo::debuginfo(ostream &o)
-{
-  map<string, supinf>::const_iterator i;
-  for (i = sup.begin(); i != sup.end(); i++)
-  {
-    o <<String::compose("SUPPORTED:** name=%1, prec=%2 Def=\n",i->first,i->second.prec);
-    i->second.c->debuginfo(o);
-  }
-  return o;
-}
 /////////////////////////////////////////////////////
 //  forcetree stuff
 //
@@ -983,10 +501,11 @@ void read_forcetree(parsestream &i)
   }
 
 }
+
 /////////////////////////////////////////////////////
-//  configinfo
+//  methodinfo
 //
-configinfo::configinfo(parsestream &i) 
+methodinfo::methodinfo(parsestream &i) 
     : roots("/Debian"), mainmt("Debian"), treew("c(m)"),
     onlyrunasroot(false), onlyrunasuser(false),
     onlyuniquetitles(false), hint_optimize(false), hint_nentry(6),
@@ -1007,7 +526,7 @@ configinfo::configinfo(parsestream &i)
         string name = i.get_name();
 	if (name=="supported") {
 	  i.skip_line();
-	  supported=new supportedinfo(i);
+	  supported = new supportedinfo(i);
 	} else if (name=="forcetree") {
 	  i.skip_line();
 	  read_forcetree(i);
@@ -1112,17 +631,17 @@ configinfo::configinfo(parsestream &i)
 	else
           cerr << String::compose(_("install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. Ignoring.\n"), name, i.linenumber(), i.filename());
 
-      i.skip_line();//read away final newline
+      i.skip_line(); //read away final newline
     }
   } catch (endoffile) { }
 
   if (outputenc == "LOCALE")
       outputenc = nl_langinfo(CODESET);
   
-  check_config();
+  check_vars();
 }
 
-void configinfo::check_config()
+void methodinfo::check_vars()
 {
   if(!(genmenu && startmenu && endmenu)) {
     /* don't translate genmenu, startmenu, endmenu and don't change \"\" */
@@ -1133,21 +652,21 @@ void configinfo::check_config()
   }
 }
 
-cat_str *configinfo::userprefix()
+cat_str *methodinfo::userprefix()
 {
   if (userpref == 0)
       throw unknown_indirect_function(0, "userprefix");
   return userpref;
 }
 
-cat_str *configinfo::rootprefix()
+cat_str *methodinfo::rootprefix()
 {
   if (rootpref == 0)
       throw unknown_indirect_function(0, "rootprefix");
   return rootpref;
 }
 
-string configinfo::prefix()
+string methodinfo::prefix()
 {
   if (getuid()) {
     struct passwd *pw = getpwuid(getuid());
@@ -1155,32 +674,6 @@ string configinfo::prefix()
   } else {
     return rootprefix()->soutput(root_menu.vars);
   }
-}
-
-ostream &configinfo::debuginfo(ostream &o)
-{
-    o<<String::compose(_("Using compatibility with %1.\n"),compt)
-     <<"mainmenutitle   : "<<mainmt   << endl
-     <<"rootsection     : "<<roots    << endl
-     <<"rcfile          : "<<rcf      << endl
-     <<"examplercfile   : "<<exrcf    << endl
-     <<"root-prefix     : "<<rootpref << endl
-     <<"user-prefix     : "<<userpref << endl
-     <<"startmenu       : "<< endl;
-    if(startmenu)
-      startmenu->debuginfo(o);
-    o<<"endmenu         : "<< endl;
-    if(endmenu)
-      endmenu->debuginfo(o);
-    o<<"genmenu         : "<< endl;
-    if(genmenu)
-      genmenu->debuginfo(o);
-    o<<"submenutitle    : "<< endl;
-    if(submenutitle)
-      submenutitle->debuginfo(o);
-  o<<"mainmenutitle   : "<<mainmt   << endl
-   <<"treewalk        : "<<treew    << endl;
-  return o;
 }
 
 /////////////////////////////////////////////////////
@@ -1191,7 +684,7 @@ bool testuniqueness(map<string, string> &menuentry)
 {
   static set<string> uniquetitles;
 
-  if(config->onlyuniquetitles){
+  if(menumethod->onlyuniquetitles){
     set <string>::const_iterator unique_i;
     string &title=menuentry[TITLE_VAR];
     if(!title.empty()) {
@@ -1269,7 +762,7 @@ void check_vars(parsestream &pi, map<string, string> &m)
   {
     map<string, string>::const_iterator j = m.find(*i);
     if ((j == m.end()) || j->second.empty())
-        throw missing_tag(&pi, *i);
+        throw missing_tag(pi.filename(), *i);
   }
 }
 
@@ -1289,7 +782,7 @@ void read_input(parsestream &i)
       break_char(entry_vars[SECTION_VAR], sections, '/');
       if (entry_vars[TITLE_VAR] != "/")
           sections.push_back(entry_vars[TITLE_VAR]);	  
-      if (supported->prec(entry_vars[NEEDS_VAR]) != INT_MAX)
+      if (supported->supports(entry_vars[NEEDS_VAR]))
           root_menu.add_entry(sections, entry_vars);
       i.skip_line();  // read away the final newline
     }
@@ -1304,13 +797,13 @@ void includemenus(string replace, string menu_filename)
   // menu-file menu_filename
   bool changed = false;
 
-  string input_filename = config->prefix() + '/' + config->examplercfile(); 
+  string input_filename = menumethod->prefix() + '/' + menumethod->examplercfile(); 
 
   ifstream input_file(input_filename.c_str());
   if (!input_file) {
     if (getuid()) {
       // Running as non-root:
-      string input_filename2 = config->rootprefix()->soutput(root_menu.vars) + '/' + config->examplercfile();
+      string input_filename2 = menumethod->rootprefix()->soutput(root_menu.vars) + '/' + menumethod->examplercfile();
 
       input_file.clear(); // to clear the bad state of the old stream
       input_file.open(input_filename2.c_str());
@@ -1334,7 +827,7 @@ void includemenus(string replace, string menu_filename)
       throw informed_fatal();
   }
 
-  string output_filename = config->prefix() + '/' + config->rcfile();
+  string output_filename = menumethod->prefix() + '/' + menumethod->rcfile();
   ofstream output_file(output_filename.c_str());
 
   if (!output_file) {
@@ -1443,61 +936,57 @@ int main(int argc, char **argv)
       cerr << String::compose(_("Cannot open script %1 for reading.\n"), script_name);
       throw informed_fatal();
     }
-    config = new configinfo(*ps);
-    if (verbose) {
-      config->debuginfo(cerr);
-      supported->debuginfo(cerr);
-    }
-    if ((config->onlyrunasroot || config->userpref == 0) && getuid())
+    menumethod = new methodinfo(*ps);
+    if ((menumethod->onlyrunasroot || menumethod->userpref == 0) && getuid())
         return 0;
-    if ((config->onlyrunasuser || config->rootpref == 0) && !getuid())
+    if ((menumethod->onlyrunasuser || menumethod->rootpref == 0) && !getuid())
         return 0;
-    if (config->prerun)
-        system((config->prerun->soutput(root_menu.vars)).c_str());
-    if (config->preruntest) {
-      int retval = system((config->preruntest->soutput(root_menu.vars)).c_str());
+    if (menumethod->prerun)
+        system((menumethod->prerun->soutput(root_menu.vars)).c_str());
+    if (menumethod->preruntest) {
+      int retval = system((menumethod->preruntest->soutput(root_menu.vars)).c_str());
       if (retval)
           return retval;
     }
-    if (config->repeat_lang && (config->repeat_lang->soutput(root_menu.vars) == "LOCALE") && !config->outputencoding().empty())
+    if (menumethod->repeat_lang && (menumethod->repeat_lang->soutput(root_menu.vars) == "LOCALE") && !menumethod->outputencoding().empty())
         do_translation = true;
 
     psscript = new parsestream(std::cin);
-    root_menu.vars[TITLE_VAR] = config->mainmenutitle();
+    root_menu.vars[TITLE_VAR] = menumethod->mainmenutitle();
 
     read_input(*psscript);
-    if (config->hint_optimize)
+    if (menumethod->hint_optimize)
         root_menu.process_hints();
 
-    root_menu.postprocess(1, 0, config->rootsection());
+    root_menu.postprocess(1, 0, menumethod->rootsection());
     root_menu.output();
     closegenoutput();
 
-    if (config->also_run) {
-      string run=config->also_run->soutput(root_menu.vars);
+    if (menumethod->also_run) {
+      string run = menumethod->also_run->soutput(root_menu.vars);
       vector<string> run_vec;
       vector<string>::const_iterator run_i;
 
       break_char(run, run_vec, ':');
 
-      configinfo *old_config = config;  // save old pointer
+      methodinfo *old_menumethod = menumethod;  // save old pointer
 
       for (run_i = run_vec.begin(); run_i != run_vec.end(); ++run_i)
       {
         std::cout << String::compose(_("Running: \"%1\"\n"), *run_i);
         parsestream also_ps(*run_i);
-        config = new configinfo(also_ps);
+        menumethod = new methodinfo(also_ps);
         root_menu.output();
         closegenoutput();
-        delete config;
+        delete menumethod;
       }
-      config = old_config;             // restore old pointer
+      menumethod = old_menumethod;             // restore old pointer
     }
-    if (!config->rcfile().empty() && !config->examplercfile().empty())
+    if (!menumethod->rcfile().empty() && !menumethod->examplercfile().empty())
         includemenus("include-menu-defs",
-            config->prefix()+"/"+config->genmenu->soutput(root_menu.vars));
-    if (config->postrun)
-        system((config->postrun->soutput(root_menu.vars)).c_str());
+            menumethod->prefix()+"/"+menumethod->genmenu->soutput(root_menu.vars));
+    if (menumethod->postrun)
+        system((menumethod->postrun->soutput(root_menu.vars)).c_str());
   } catch (genexcept& p) {
     p.report();
     cerr << String::compose(_("install-menu: %1: aborting\n"), script_name);

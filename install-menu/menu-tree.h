@@ -35,12 +35,13 @@ class menuentry;
 
 bool operator<(const std::vector<std::string>& left, const std::vector<std::string>& right);
 
-/* submenu_container:
-  vector<string> first   - full title, broken into a vector of strings
-  menuentry*     second  - the menu entry with this title
-*/
+/** submenu_container:
+ * vector<string> first   - full title, broken into a vector of strings
+ * menuentry*     second  - the menu entry with this title
+ */
 typedef std::map<std::vector<std::string>, menuentry *> submenu_container;
 
+/** Internal representation of a menu entry */
 class menuentry {
   char hotkeyconv(char);
   void generate_hotkeys();
@@ -59,7 +60,6 @@ public:
   void output();
   void postprocess(int n_parent, int level, const std::string& prev_section);
   void process_hints();
-  void debug(int);
 };
 
 

@@ -30,6 +30,7 @@
 #include "stringtoolbox.h"
 
 using std::string;
+using namespace exceptions;
 
 Regex::Regex(const char *s)
 {
@@ -41,14 +42,14 @@ Regex::Regex(const char *s)
   re_compile_pattern(s, std::strlen(s), patt);
 }
 
-parsestream::parsestream(std::istream &in, string other)
+parsestream::parsestream(std::istream &in, std::string other)
   : in_constructor(true), stdin_file(true), otherdir(other), doescaping(true)
 {
   init(&in,_("(probably) stdin"));
   in_constructor = false;
 }
 
-parsestream::parsestream(const string &name, string other)
+parsestream::parsestream(const std::string &name, std::string other)
   : in_constructor(true), stdin_file(false), otherdir(other), doescaping(true)
 {
   std::istream *f = new std::ifstream(name.c_str());
@@ -64,7 +65,7 @@ parsestream::parsestream(const string &name, string other)
   in_constructor = false;
 }
 
-void parsestream::preprocess(string &s)
+void parsestream::preprocess(std::string &s)
 {
   // Disregards lines that start with a #
   // Set filename if line starts with "!F"
@@ -130,14 +131,14 @@ void parsestream::preprocess(string &s)
   }
 }
 
-void parsestream::new_file(const string &name)
+void parsestream::new_file(const std::string &name)
 {
   std::ifstream *f = new std::ifstream(name.c_str());
 
   init(f,name);
 }
 
-void parsestream::init(std::istream *in, string name)
+void parsestream::init(std::istream *in, std::string name)
 {
   if (!in_constructor)
       if (!in->good())
