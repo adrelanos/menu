@@ -223,8 +223,8 @@ Here is an example to describe the syntax of such a file:
   icon="/usr/share/pixmaps/gnumeric.xpm"  the path to the icon to use.
 </example>
 <p>
-You can use "#" to include comments like in shell scripts. An entry
-must is terminated by a newline, but you can use \ to escape a newline.
+A number sign ("#") can be used to include comments. An entry must be
+terminated by a newline, however you can use \ to escape a newline.
 <p>
 Values must be quoted with ", and meta-character (", \, newline) must be
 escaped with a \.
@@ -243,7 +243,8 @@ pseudo packages names starting by <tt/local./ which are assumed to be always
 installed.
 <p> The fields <tt/needs/, <tt/section/, <tt/title/ and <tt/command/ are
 mandatory. Other fields are optional. Custom fields are supported, so
-you can add new fields for you own purpose.
+you can add new fields for you own purpose. If a field is specified multiple
+times in a menuentry, the last instance will be used.
 
 <sect> The <tt/title/ field
 <p>
