@@ -1,6 +1,8 @@
 menu (2.1.15) unstable; urgency=low
 
   * The "unreleased" release 
+  * Jens Arvidsson:
+    - Update Swedish translation.
   * Update Italian menu-section translation. Thanks Stefano Canepa.
   * Fix German menu-section translation. Closes: #254416. 
     Thanks Eduard Bloch and Sebastian Rittau.
