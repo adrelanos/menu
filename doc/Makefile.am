@@ -5,6 +5,9 @@ DOCS = announce-2 BUGS cmap.xpm menu.sgml README.changes README.config-menus REA
 man_MANS = install-menu.1 menufile.5 su-to-root.1 update-menus.1 wm-menu-config.1
 EXTRA_DIST = $(man_MANS) $(DOCS) menu.sgml $(srcdir)/menu.html $(srcdir)/menu.txt.gz $(srcdir)/menu.info.gz 
 
+docdir=$(datadir)/doc
+pkgdocdir=$(docdir)/menu
+
 menu.html/: menu.sgml
 	debiandoc2html menu.sgml
 
@@ -17,24 +20,33 @@ menu.html/: menu.sgml
 %.gz:   %
 	gzip -f9 $<
 
-clean-local: 
-	rm -rf menu.html *.info* *.dvi* *.txt*
+maintainer-clean-local: 
+	rm -rf menu.html *.info* *.txt*
 
 install-data-local:
 	$(INSTALL) -d \
-	     $(DESTDIR)$(datadir)/doc/menu/examples \
-	     $(DESTDIR)$(datadir)/doc/menu/html \
+	     $(DESTDIR)$(pkgdocdir)/examples \
+	     $(DESTDIR)$(pkgdocdir)/html \
 	     $(DESTDIR)$(pkgdatadir)/default \
 	     $(DESTDIR)$(infodir)
-	$(INSTALL_DATA) `find $(top_srcdir)/examples/* -type f` $(DESTDIR)$(datadir)/doc/menu/examples
-	$(INSTALL_DATA) `find $(top_srcdir)/default/* -type f` $(DESTDIR)$(pkgdatadir)/default
-	$(INSTALL_DATA) $(srcdir)/menu.html/* $(DESTDIR)$(datadir)/doc/menu/html
-	$(INSTALL_DATA) $(srcdir)/menu.txt.gz $(DESTDIR)$(datadir)/doc/menu/
-	$(INSTALL_DATA) $(srcdir)/menu.info.gz $(DESTDIR)$(infodir)
+             
+	for i in $(top_srcdir)/examples/*; do \
+	   test -f $$i && $(INSTALL_DATA) $$i $(DESTDIR)$(pkgdocdir)/examples;\
+        done;
 
-	$(INSTALL_DATA) \
-	   $(srcdir)/menu.sgml $(srcdir)/README.changes $(srcdir)/BUGS $(DESTDIR)$(datadir)/doc/menu/
+	for i in $(top_srcdir)/default/*; do \
+	   test -f $$i && $(INSTALL_DATA) $$i $(DESTDIR)$(pkgdatadir)/default;\
+        done;
+
+	$(INSTALL_DATA) $(srcdir)/menu.html/* $(DESTDIR)$(pkgdocdir)/html
+	$(INSTALL_DATA) $(srcdir)/menu.txt.gz $(DESTDIR)$(pkgdocdir)
+	$(INSTALL_DATA) $(srcdir)/menu.info.gz $(DESTDIR)$(infodir)
+	$(INSTALL_DATA) $(srcdir)/menu.sgml $(DESTDIR)$(pkgdocdir)
+
+	$(INSTALL_DATA) $(srcdir)/README.changes $(srcdir)/BUGS \
+           $(DESTDIR)$(pkgdocdir)
+        
 uninstall-local:
-	rm -r $(DESTDIR)$(datadir)/doc/menu/
+	rm -r $(DESTDIR)$(pkgdocdir)
 	rm -r $(DESTDIR)$(pkgdatadir)/default
 	rm    $(DESTDIR)$(infodir)/menu.info.gz
