@@ -231,6 +231,7 @@ void configinfo::parse_config(const std::string &key, const std::string& value)
     if     (value=="quiet")   verbosity=report_quiet;
     else if(value=="normal")  verbosity=report_normal;
     else if(value=="verbose") verbosity=report_verbose;
+    else if(value=="debug") verbosity=report_debug;
   } else if(key=="method") {
     if     (value=="stdout")  method=method_stdout;
     else if(value=="stderr")  method=method_stderr;
@@ -398,10 +399,7 @@ translateinfo::translateinfo(const std::string &filename)
         i->skip_line();
       }
     }
-  }
-  catch(endoffile p) {
-    config.report("End reading translation rules.", configinfo::report_verbose);
-  }
+  } catch(endoffile p) { }
   delete i;
 }
 
@@ -838,6 +836,7 @@ void usage(ostream &c)
       c <<
           _("update-menus: update the various window-manager config files (and\n"
               "  dwww, and pdmenu) Usage: update-menus [options] \n"
+              "    -d  output debugging messages.\n"
               "    -v  Be verbose about what is going on.\n"
               "    -h, --help This message.\n"
               "    --menufilesdir <dir> Add <dir> to the lists of menu directories to search.\n"
@@ -853,6 +852,9 @@ void parse_params(char **argv)
   {
     if (string("-v") == *argv) {
       config.set_verbosity(configinfo::report_verbose);
+      continue;
+    } else if (string("-d") == *argv) {
+      config.set_verbosity(configinfo::report_debug);
       continue;
     } else if (string("--nodefaultdirs") == *argv) {
       config.usedefaultmenufilesdirs = false;

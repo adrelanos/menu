@@ -119,7 +119,7 @@ public:
         method(method_stderr)
     { }
 
-  typedef enum { report_quiet, report_normal, report_verbose} verbosity_type;
+  typedef enum { report_quiet, report_normal, report_verbose, report_debug} verbosity_type;
   parsestream::eol_type compat;
   std::vector<std::string> menufilesdir;
   std::string menumethod;
