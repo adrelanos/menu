@@ -669,7 +669,7 @@ string methodinfo::prefix()
     // When userprefix is prefixed by // instead of just one /, treat the
     // URL as absolute instead of relative.
     if (up.length() > 1 && up.substr(0, 2) == "//") {
-      return up;
+      return up.substr(1);
     } else {
       return string(pw->pw_dir)+"/"+up;
     }
