@@ -1,6 +1,6 @@
 all-local: menu.html/index.html menu.txt.gz menu.info.gz
 
-DOCS = announce-2 BUGS menu.sgml README.changes README.config-menus README.menu-methods README.new-sections README.package-menus README.pre1 TODO translate
+DOCS = announce-2 BUGS menu.sgml README.changes README.config-menus README.menu-methods README.new-sections README.package-menus README.pre1 TODO translate README.translations
 
 man_MANS = install-menu.1 menufile.5 su-to-root.1 update-menus.1 wm-menu-config.8
 EXTRA_DIST = $(man_MANS) $(DOCS) menu.sgml $(srcdir)/menu.html $(srcdir)/menu.txt.gz $(srcdir)/menu.info.gz update-menus.fr.1
@@ -53,6 +53,8 @@ install-data-local:
 	$(INSTALL_DATA) $(srcdir)/menu.sgml $(DESTDIR)$(pkgdocdir)
 
 	$(INSTALL_DATA) $(srcdir)/BUGS $(DESTDIR)$(pkgdocdir)
+	$(INSTALL_DATA) $(srcdir)/README.translations $(DESTDIR)$(pkgdocdir)
+	$(INSTALL_DATA) $(srcdir)/../README $(DESTDIR)$(pkgdocdir)
         
 uninstall-local:
 	rm -r $(DESTDIR)$(pkgdocdir)

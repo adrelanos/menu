@@ -607,13 +607,19 @@ files will probably be overwritten by a package upgrade).
 <sect>Specifying that a menu entry should not be displayed
 <p>
 
-If a user wants to remove an entry from the system menu (in
-<tt>/etc/menu</>), then this will do the trick:
+If a user wants to remove the entries of <tt/package/ from the system menu (in
+<tt>/usr/lib/menu</>), then this will do the trick:
 <example>
   echo -n  > ~/.menu/package
 </example>
 The zero-size file will tell <prgn/update-menus/ that the
 corresponding package should not have any menu entries listed.
+
+A system administrator can remove menu entries system-wide with
+<example>
+  echo -n  > /etc/menu/package
+</example>
+
 <p>
 
 <sect> Including others files
