@@ -1,7 +1,7 @@
-MOs = eo.mo
+MOs = da.mo eo.mo
 localedir = $(datadir)/locale
 
-EXTRA_DIST = eo.po
+EXTRA_DIST = da.po eo.po
 
 all-local: $(MOs)
 install-data-local:$(MOs)

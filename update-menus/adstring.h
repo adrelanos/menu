@@ -1,5 +1,3 @@
-//   -*- mode: c++; -*-
-
 #ifndef ADSTRING_H
 #define ADSTRING_H
 
@@ -12,6 +10,7 @@
 #include <sys/types.h>
 #include <regex.h>
 #include "common.h"
+#include "compose.hpp"
 
 class Regex {
   struct re_pattern_buffer* patt;
@@ -27,8 +26,6 @@ public:
 
 bool contains(const std::string& str, const std::string &sub, std::string::size_type pos = 0);
 bool contains(const std::string& str, char c);
-
-std::string Sprintf(const char *, const std::string &);
 
 std::string rmtrailingspace(std::string &s);
 std::string escape_string(const std::string &s, const std::string &esc);
@@ -78,7 +75,7 @@ protected:
 public:
   except_string(std::string s) : msg(s) { }
   std::string message() const {
-    return Sprintf(_("Unknown Error, message=%s"),msg);
+    return String::compose(_("Unknown Error, message=%1"), msg);
   }
 };
 
@@ -88,33 +85,33 @@ protected:
 public:
   except_pi_string(parsestream *p, std::string s) : except_pi(p), msg(s) { }
   std::string message() const {
-    return Sprintf(_("Unknown Error, message=%s"),msg);
+    return String::compose(_("Unknown Error, message=%1"), msg);
   }
 };
 
 class endoffile : public except_pi {
 public:
   endoffile(parsestream *p) : except_pi(p) { }
-  std::string message() const {return _("Unexpected end of file");}
+  std::string message() const { return _("Unexpected end of file"); }
 };
 
 class endofline : public except_pi {
 public:
   endofline(parsestream *p) : except_pi(p) { }
-  std::string message() const {return _("Unexpected end of line");}
+  std::string message() const { return _("Unexpected end of line"); }
 };
 
 class ident_expected : public except_pi {
 public:
   ident_expected(parsestream *p) : except_pi(p) { }
-  const char *errormsg() const {return _("Identifier expected");}
+  const char *errormsg() const { return _("Identifier expected"); }
 };
 
 class char_expected : public except_pi_string {
 public:
   char_expected(parsestream *p, std::string s):except_pi_string(p,s) { }
   std::string message() const {
-    return Sprintf(_("Expected: \"%s\"."), msg);
+    return String::compose(_("Expected: \"%1\"."), msg);
   }
 };
 
@@ -122,7 +119,7 @@ class char_unexpected : public except_pi_string {
 public:
   char_unexpected(parsestream *p, std::string s):except_pi_string(p,s) { }
   std::string message() const {
-    return Sprintf(_("Unexpected character :\"%s\"."),msg);
+    return String::compose(_("Unexpected character :\"%1\"."), msg);
   }
 };
 
@@ -130,8 +127,8 @@ class boolean_expected : public except_pi_string {
 public:
   boolean_expected(parsestream *p, std::string s):except_pi_string(p,s) { }
   std::string message() const {
-    return Sprintf(_("Boolean (either true or false) expected.\n"
-                     "Found: \"%s\""), msg);
+    return String::compose(_("Boolean (either true or false) expected.\n"
+                     "Found: \"%1\""), msg);
   }
 };
 
@@ -139,7 +136,7 @@ class ferror_open : public except_string {
 public:
   ferror_open(std::string s):except_string(s) { }
   std::string message() const {
-    return Sprintf(_("Unable to open file \"%s\""),msg);
+    return String::compose(_("Unable to open file \"%1\""), msg);
   }
 };
 
@@ -147,7 +144,7 @@ class unknown_compat : public except_pi_string {
 public:
   unknown_compat(parsestream *p, std::string s):except_pi_string(p,s) { }
   std::string message() const {
-    return Sprintf(_("Unknown compat mode: \"%s\""),msg);
+    return String::compose(_("Unknown compat mode: \"%1\""), msg);
   }
 };
 

@@ -40,13 +40,6 @@ bool contains(const std::string& str, char c)
   return str.find(c) != std::string::npos;
 }
 
-string Sprintf(const char *s, const string &str)
-{
-  char buf[MAX_LINE];
-  snprintf(buf, sizeof(buf), s, str.c_str());
-  return buf;
-}
-
 string rmtrailingspace(string &s)
 {
   while(!s.empty() && (isspace(s[s.length()-1])))
@@ -278,9 +271,8 @@ void break_commas(const string &sec, std::vector<string>& sec_vec)
 void except_pi::report()
 {
   if (pi) {
-    fprintf(stderr,
-        _("In file \"%s\", at (or in the definition that ends at) line %i:\n"),
-        pi->filename().c_str(),
+    cerr << String::compose(_("In file \"%1\", at (or in the definition that ends at) line %2:\n"),
+        pi->filename(),
         pi->linenumber());
 
     string::size_type startpos = 0;
@@ -300,7 +292,7 @@ void except_pi::report()
 
     cerr << '^' << endl;
   } else {
-    fprintf(stderr, _("Somewhere in input file:\n"));
+    cerr << _("Somewhere in input file:\n");
   }
   cerr << message() << endl;
 }
@@ -322,7 +314,7 @@ parsestream::parsestream(const string &name, string other)
     f = new std::ifstream(add.c_str());
   }
   if (!*f)
-      throw ferror_open(_("Cannot open file ") + name);
+      throw ferror_open(String::compose(_("Cannot open file %1"), name));
 
   init(f, name);
   in_constructor = false;

@@ -1,11 +1,10 @@
-//   -*- mode: c++; -*-
-
 #ifndef UPDATE_MENUS_H
 #define UPDATE_MENUS_H
 
 #include <map>
 #include <vector>
 #include "adstring.h"
+#include "compose.hpp"
 #include "common.h"
 
 using std::string;
@@ -94,7 +93,7 @@ public:
     { }
 
   void update(std::string filename);
-  void report(const string &message,verbosity_type v);
+  void report(const string &message, verbosity_type v);
   void set_verbosity(verbosity_type v) { verbosity = v; }
 };
 
@@ -104,7 +103,7 @@ class unknown_cond_package : public except_pi_string {
 public:
   unknown_cond_package(parsestream *p, string s) : except_pi_string(p,s) { }
   string message() {
-    return Sprintf(_("Unknown install condition \"%s\" (currently, only \"package\" is supported)"),msg);
+    return String::compose(_("Unknown install condition \"%1\" (currently, only \"package\" is supported)"), msg);
   }
 };
 
@@ -114,16 +113,16 @@ class pipeerror_read : public except_string {
 public:
   pipeerror_read(std::string s) : except_string(s) { }
   std::string message() {
-    return Sprintf(_("Failed to pipe data through \"%s\" (pipe opened for reading)"), msg);
+    return String::compose(_("Failed to pipe data through \"%1\" (pipe opened for reading)"), msg);
   }
-};  //pipe open for reading failed
+};  // pipe open for reading failed
 
 class missing_tag : public except_string {
   std::string file;
 public:
   missing_tag(std::string f, std::string s) : except_string(s), file(f) { }
   std::string message() {
-    return file + Sprintf(_(": Missing required tag: \"%s\""), msg);
+    return String::compose(_("%1: Missing required tag: \"%2\""), file, msg);
   }
 };
 
@@ -133,6 +132,6 @@ public:
   dir_error_read(string s){
     strcpy(name,s.c_str());
   };
-};  //dir open for reading failed
+};  // directory open for reading failed
 
 #endif

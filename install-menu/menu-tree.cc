@@ -377,7 +377,7 @@ void menuentry::postprocess(int n_parent, int level, const string& prev_section)
 
     string newsection = prev_section;
     for(vector<string>::const_iterator j = i->first.begin(); j != i->first.end(); ++j)
-        newsection += string("/") + *j;
+        newsection += '/' + *j;
 
     menuentry *me = i->second;
     me->vars[SECTION_VAR] = newsection;

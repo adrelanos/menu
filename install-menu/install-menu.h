@@ -1,4 +1,3 @@
-//   -*- mode: c++; -*-
 /*
   
 Grammar of "string"'s:
@@ -35,6 +34,7 @@ Example "str":
 #include <map>
 #include "common.h"
 #include "adstring.h"
+#include "compose.hpp"
 
 // container classes:
 
@@ -365,14 +365,14 @@ class narg_mismatch : public except_pi_string { // number of args mismatch to fu
 public:
   narg_mismatch(parsestream *p, std::string s) : except_pi_string(p,s) {}
   std::string message() const {
-    return Sprintf(_("Number of arguments to function %s doesn't match"), msg);
+    return String::compose(_("Number of arguments to function %1 does not match"), msg);
   }
 };  
 class unknown_function : public except_pi_string {
 public:
   unknown_function(parsestream *p, std::string s) : except_pi_string(p,s) {}
   std::string message() const {
-    return Sprintf(_("Unknown function: \"%s\""), msg);
+    return String::compose(_("Unknown function: \"%1\""), msg);
   }
 };
 
@@ -380,7 +380,7 @@ class unknown_indirect_function : public except_pi_string {
 public:
   unknown_indirect_function(parsestream *p, std::string s) : except_pi_string(p,s){}
   std::string message() const {
-    return Sprintf(_("Indirectly used, but not defined function: \"%s\""), msg);
+    return String::compose(_("Indirectly used, but not defined function: \"%1\""), msg);
   }
 };
 
@@ -388,7 +388,7 @@ class unknown_ident : public except_pi_string {
 public:
   unknown_ident(parsestream *p, std::string s) : except_pi_string(p,s) {}
   std::string message() const {
-    return Sprintf(_("Unknown identifier: \"%s\""), msg);
+    return String::compose(_("Unknown identifier: \"%1\""), msg);
   }
 };
 
@@ -396,7 +396,7 @@ class dir_createerror : public except_string {
 public:
   dir_createerror(std::string s) : except_string(s) {}
   std::string message() const {
-    return Sprintf(_("Could not open dir \"%s\""), msg);
+    return String::compose(_("Could not open directory \"%1\""), msg);
   }
 };
 
@@ -404,12 +404,12 @@ class missing_tag:public except_pi_string {
 public:
   missing_tag(parsestream *p, std::string s) : except_pi_string(p,s) {}
   std::string message() const {
-    return Sprintf(_("Missing (or empty) tag: %s\n"
-		     "This tag needs to defined for the menuentry to make sense.\n"
-		     "Note, BTW, that update-menus re-arranges the order of the\n"
-                     "tags found in the menu entry files, so that the part above\n"
-                     "isn't literal"),
-		   msg);
+    return String::compose(_("Missing (or empty) tag: %1\n"
+          "This tag needs to defined for the menuentry to make sense.\n"
+          "Note by the way, that update-menus re-arranges the order of the\n"
+          "tags found in the menu entry files, so that the part above\n"
+          "isn't literal"),
+        msg);
   }
 };
 
@@ -417,8 +417,8 @@ class conversion_error : public except_string {
 public:
   conversion_error(std::string s) : except_string(s) { }
   std::string message() const {
-    return Sprintf(_("Encoding conversion error: \"%s\""), msg);
+    return String::compose(_("Encoding conversion error: \"%1\""), msg);
   }
 };
 
-#endif /* INSTALL_MENU_H */
+#endif

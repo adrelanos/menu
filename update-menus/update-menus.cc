@@ -190,7 +190,7 @@ void menuentry::output(vector<string> &s)
     }
   }
   t += '\n';
-  config.report(string("ADDING: ")+t, configinfo::report_debug);
+  config.report(String::compose(_("ADDING: %1"), t), configinfo::report_debug);
   s.push_back(t);
 }
 
@@ -307,7 +307,7 @@ void configinfo::report(const string &message, verbosity_type v)
 
 bool trans_class::check(string &s)
 {
-  config.report(string("checking ")+match+" < "+s,configinfo::report_debug);
+  config.report(String::compose(_("Checking that %1 < %2"), match, s), configinfo::report_debug);
   return contains(match, s, 0);
 }
 
@@ -340,13 +340,13 @@ void substitute::process(menuentry &m, const string &v){
 translateinfo::translateinfo(const string &filename)
 {
   try {
-    config.report(string("Attempting to open ") + filename + ".. ",
+    config.report(String::compose(_("Attempting to open %1.. "), filename),
         configinfo::report_debug);
     parsestream i(filename);
 
     Regex ident("[a-zA-Z_][a-zA-Z0-9_]*");
 
-    config.report(string("Reading translate info in ")+i.filename(),
+    config.report(String::compose(_("Reading translate info in %1"), i.filename()),
         configinfo::report_verbose);
     while (true)
     {
@@ -388,8 +388,7 @@ translateinfo::translateinfo(const string &filename)
 
         std::pair<const string, trans_class *> p(match,trcl);
 
-        config.report(string("adding translate rule: [")+p.first+
-            "]"+ trcl->debuginfo(),
+        config.report(String::compose(_("Adding translate rule: [%1]%2"), p.first, trcl->debuginfo()),
             configinfo::report_debug);
         trans[match_var].insert(p);
         i.skip_line();
@@ -397,7 +396,7 @@ translateinfo::translateinfo(const string &filename)
     }
   }
   catch(endoffile p) {
-    config.report("End reading translate info", configinfo::report_debug);
+    config.report(_("End reading translate info"), configinfo::report_debug);
   }
 
 }
@@ -448,7 +447,7 @@ void read_pkginfo()
   if (!status)
     throw pipeerror_read(pkgs);
 
-  config.report(string("Reading installed packages..."),
+  config.report(_("Reading installed packages..."),
                   configinfo::report_verbose);
 
   while (!feof(status))
@@ -467,7 +466,7 @@ void read_pkginfo()
 void read_menufile(const string &filename, const string &shortfilename,
                    vector<string> &menudata)
 {
-  config.report(string("Reading menuentryfile ") + filename, configinfo::report_debug);
+  config.report(String::compose(_("Reading menuentryfile %1"), filename), configinfo::report_debug);
 
   parsestream *ps = 0;
 
@@ -501,11 +500,11 @@ void read_menufile(const string &filename, const string &shortfilename,
   catch (endoffile p) { }
   catch (missing_tag& exc) {
     std::cerr << exc.message() << std::endl;
-    std::cerr << "Skipping file because of errors..." << std::endl;
+    std::cerr << _("Skipping file because of errors...") << std::endl;
   }
   catch (except_pi& exc) {
     exc.report();
-    std::cerr << "Skipping file because of errors..." << std::endl;
+    std::cerr << _("Skipping file because of errors...") << std::endl;
   }
 
   delete ps;
@@ -519,7 +518,7 @@ void read_menufilesdir(vector<string> &menudata)
   {
     int count = menudata.size();
     string dirname = *method_i;
-    config.report(string("Reading menuentryfiles in ")+dirname,
+    config.report(String::compose(_("Reading menuentryfiles in %1"), dirname),
         configinfo::report_verbose);
     try {
       struct dirent *entry;
@@ -542,12 +541,12 @@ void read_menufilesdir(vector<string> &menudata)
                     read_menufile(name,entry->d_name, menudata);
               }
               catch (endofline p) {
-                cerr << "Error reading " << name << endl;
+                cerr << String::compose(_("Error reading %1"), name) << endl;
               }
             }
       }
     } catch (dir_error_read p) { }
-    config.report(itostring(menudata.size() - count) + string(" menu entries found (") + itostring(menudata.size()) + string(" total)"), configinfo::report_verbose);
+    config.report(String::compose(_("%1 menu entries found (%2 total)"), menudata.size() - count, menudata.size()), configinfo::report_verbose);
   }
 }
 
@@ -558,10 +557,10 @@ void run_menumethod(string methodname, const vector<string> &menudata)
   pid_t child, r;
   int status;
 
-  config.report(string("Running method: ")+methodname, configinfo::report_verbose);
+  config.report(String::compose(_("Running method: %1"), methodname), configinfo::report_verbose);
 
   if (pipe(fds) == -1) {
-      config.report(string("Cannot create pipe"), configinfo::report_quiet);
+      config.report(_("Cannot create pipe"), configinfo::report_quiet);
       exit(1);
   }
 
@@ -597,15 +596,13 @@ void run_menumethod(string methodname, const vector<string> &menudata)
     signal(SIGPIPE,SIG_DFL);
   }
   if (r == -1)
-    config.report(string("Script ")+methodname+" could not be executed.",
+    config.report(String::compose(_("Script %1 could not be executed."), methodname),
         configinfo::report_quiet);
   if (WEXITSTATUS(status))
-    config.report(string("Script ")+methodname+" returned error status "
-        +itostring(WEXITSTATUS(status))+".",
+    config.report(String::compose(_("Script %1 returned error status %2."), methodname, WEXITSTATUS(status)),
         configinfo::report_quiet);
   else if (WIFSIGNALED(status))
-    config.report(string("Script ")+methodname+" received signal "
-        +itostring(WTERMSIG(status))+".",
+    config.report(String::compose(_("Script %1 received signal %2."), methodname, WTERMSIG(status)),
         configinfo::report_quiet);
 }
 
@@ -615,7 +612,7 @@ void run_menumethoddir(const string &dirname, const vector<string> &menudata)
   struct dirent *entry;
   char *s, tmp[MAX_LINE];
 
-  config.report(string("Running menu-methods in ")+dirname, configinfo::report_verbose);
+  config.report(String::compose(_("Running menu-methods in %1"), dirname), configinfo::report_verbose);
   DIR *dir = open_dir_check(dirname);
   while ((entry = readdir (dir)) != NULL) {
     if (!strcmp(entry->d_name, "README") || !strcmp(entry->d_name, "core"))
@@ -653,12 +650,10 @@ int create_lock()
 
     if (flock(fd,LOCK_EX|LOCK_NB)) {
       if (errno == EWOULDBLOCK) {
-        config.report(string("Other update-menus processes are already "
-              "locking " UPMEN_LOCKFILE ", quitting."),
+        config.report(String::compose(_("Other update-menus processes are already locking %1, quitting."), UPMEN_LOCKFILE),
             configinfo::report_verbose);
       } else {
-        config.report(string("Cannot lock "UPMEN_LOCKFILE": ")+
-            strerror(errno)+ " Aborting.",
+        config.report(String::compose(_("Cannot lock %1: %2 - Aborting."), UPMEN_LOCKFILE, strerror(errno)),
             configinfo::report_quiet);	
       }
       return false;
@@ -667,7 +662,7 @@ int create_lock()
 
     sprintf(buf, "%d", getpid());
     if (write(fd, buf, sizeof(buf) < 1)) {
-      config.report("Cannot write to lockfile "UPMEN_LOCKFILE". Aborting.",
+      config.report(String::compose(_("Cannot write to lockfile %1. Aborting."), UPMEN_LOCKFILE),
           configinfo::report_quiet);
       return false;
     }
@@ -679,7 +674,7 @@ void remove_lock()
 {
   if (!getuid()){
     if (unlink(UPMEN_LOCKFILE))
-      config.report("Cannot remove lockfile "UPMEN_LOCKFILE,
+      config.report(String::compose(_("Cannot remove lockfile %1"), UPMEN_LOCKFILE),
           configinfo::report_normal);
   }
 }
@@ -693,7 +688,7 @@ int check_dpkglock()
   struct flock fl;
   if (getuid())
   {
-    config.report("update-menus run by user", configinfo::report_verbose);
+    config.report(_("update-menus run by user"), configinfo::report_verbose);
     return 0;
   }
   fl.l_type = F_WRLCK;
@@ -774,12 +769,11 @@ void wait_dpkg(string &stdoutfile)
     } else {
       r = create_lock();
       if (r) {
-        stdoutfile=string("/tmp/update-menus.")+itostring(getpid());
-        config.report("waiting for dpkg to finish (forking to background)\n"
-            "(checking " DPKG_LOCKFILE ")",
+        stdoutfile = string("/tmp/update-menus.")+itostring(getpid());
+        config.report(String::compose(_("Waiting for dpkg to finish (forking to background)\n"
+            "(checking %1)"), DPKG_LOCKFILE),
             configinfo::report_normal);
-        config.report(string("further output (if any) will appear in ")
-            +stdoutfile,
+        config.report(String::compose(_("Further output (if any) will appear in %1"), stdoutfile),
             configinfo::report_normal);
         // Close all fd's except the lock fd, for daemon mode.
         for (i=0;i<32;i++) {
@@ -801,7 +795,7 @@ void wait_dpkg(string &stdoutfile)
     if (!r)
         exit(1);
 
-    config.report("Dpkg not locking dpkg status area. Good.",
+    config.report(_("Dpkg not locking dpkg status area. Good."),
         configinfo::report_verbose);
   }
 }
@@ -823,7 +817,7 @@ void parse_params(char **argv)
       if(*argv) {
           config.menufilesdir.push_back(*argv);
       } else {
-        cerr<<_("directory expected after --menufilesdir option")<<endl;
+        cerr<< _("directory expected after --menufilesdir option") << endl;
         throw informed_fatal();
       }
     }
@@ -832,7 +826,7 @@ void parse_params(char **argv)
       if(*argv) {
           config.menumethod = *argv;
       } else {
-        cerr<<_("filename expected after --menumethod option")<<endl;
+        cerr << _("filename expected after --menumethod option") << endl;
         throw informed_fatal();
       }
     }
