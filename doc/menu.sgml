@@ -346,22 +346,16 @@ for use in the debian menus conform to the following points:
 <item>The icons should be in xpm format.
 <item>The icons may not be larger than 32x32 pixels, although smaller
 sizes are ok.
-<item>The icons should use only the 24 colors present in cmap.xpm,
-which comes with the <tt/menu/ package.
 <item>The background area of the icon should be transparent, if
 possible.
 </enumlist>
-
-If you have Imagemagick installed, you can make your icons meet requirements
-1, 2, and 3 with the following command, but you will need to edit the icon
-afterwards to clean it up and make the background transparent:
-<example>
-  $ mogrify -format xpm -geometry 32x32 -map /usr/share/pixmaps/cmap.xpm &lt;filenames&gt;
-</example>
-
+<p>
+You can provide both 16x16 and 32x32 pixels icons using the variables icon16x16
+and icon32x32 so that the user can configure menu to use one or the other.
+<p>
 If you, as a system administrator, don't like the icons in the menus, simply
-remove the <tt/$%{icon}/ from the files in
-<tt>/etc/menu-methods/$wm</>, and run <prgn/update-menus/.
+change the <tt/icon()/ function from the file
+<tt>/etc/menu-methods/menu.h</tt>, and run <prgn/update-menus/.
 <p>
 
 It's also possible to specify an icon for a sub-menu. However, if each
@@ -428,6 +422,13 @@ The scripts in <tt>/etc/menu-methods/</> should be configuration
 files, so the user can tune the behaviour of the script. for the same
 reason they must always include the <tt>/etc/menu-methods/menu.h</>
 configuration file at the beginning with the command <tt>!include menu.h</>
+
+For the same reason, scripts in <tt>/etc/menu-methods/</> are requested
+to use the following configurable functions :
+
+<tt/title()/ for the title (in place of <tt/$title/),
+<tt/icon()/ for the icon (in place of <tt/$icon/),
+<tt/term()/ for running <tt/text/ command under <tt/X11/.
 
 <p>
 
@@ -677,9 +678,9 @@ To activate the file copying in this way, simply define the
 If you are wringing a menu method, you can use the following to
 debug it somewhat easier:
 <enumlist>
-<item>use the "cat" menu-method in <tt>/usr/share/doc/menu/examples/cat</>
-to create a list of menu entries in <tt>/tmp/menu-stdin</> (put it in
-<tt>~/.menu-methods</>, and run <prgn/update-menus/), and then
+<item>use <tt>update-menus --stdout > /tmp/menu-stdin </tt>
+to create a list of menu entries in <tt>/tmp/menu-stdin</tt>
+and then
 <item>you can run just your menu-method with (if it's called wm):
 <example>
   ./wm -v < /tmp/menu-stdin 
@@ -1131,9 +1132,14 @@ Variables:
     do so and mail them to me so that I can include them here.
 
     icon:    
-             The location of the iconfile for this menu entry.
-             If you don't have an iconfile, just leave out the icon=
+             The location of the icon file for this menu entry.
+             If you don't have an icon file, just leave out the icon=
              in the menu entry.
+    icon32x32:    
+             The location of a 32x32 icon file for this menu entry.
+    icon16x16:    
+             The location of a 16x16 icon file for this menu entry.
+             This allows users to choose between 16x16 and 32x32 icon.
     longtitle:
              For people that like descriptive titles (about one line)
              It is probably best to include this in your menu entries,
