@@ -1,182 +1,178 @@
-# translation of ru_new.po to Russian
-# Menu section translation
-# Copyright (C) 2003
+# Menu section translation (Galician)
+# Copyright (C) 2005 Software in the Public Interest
 # This file is distributed under the same license as the menu package.
-# Bill Allombert <ballombe@debian.org>, 2003.
-# Russian L10N Team <debian-l10n-russian@lists.debian.org>, 2005.
+# Jacobo Tarrío <jtarrio@debian.org>, 2005.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ru_new\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: menu-section 2.1.9-3\n"
 "POT-Creation-Date: 2003-04-03 12:14+0100\n"
-"PO-Revision-Date: 2005-02-16 23:38+0100\n"
-"Last-Translator: Russian L10N Team <debian-l10n-russian@lists.debian.org>\n"
-"Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
+"PO-Revision-Date: 2005-02-16 23:16+0100\n"
+"Last-Translator: Jacobo Tarrío <jtarrio@debian.org>\n"
+"Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
 
 #.  First level entry
 #.  All following 2nd level entries go "under" it
-#.  From menu policy (/usr/share/doc/pdebian-policy/menu-policy.txt.gz):
+#.  From menu policy (/usr/share/doc/pdebian-policy/menu-policy.txt.gz): 
 #.      normal applications
 msgid "Apps"
-msgstr "Приложения"
+msgstr "Aplicacións"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: interactive database programs
 msgid "Databases"
-msgstr "Базы данных"
+msgstr "Bases de datos"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: text editors, word processors
 msgid "Editors"
-msgstr "Редакторы"
+msgstr "Editores"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: educational and training programs
 msgid "Education"
-msgstr "Обучающие"
+msgstr "Educación"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: wine, dosemu, etc.
 msgid "Emulators"
-msgstr "Эмуляторы"
+msgstr "Emuladores"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: image manipulation
 msgid "Graphics"
-msgstr "Графика"
+msgstr "Gráficos"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: anything relating to ham (amateur) radio
 msgid "Hamradio"
-msgstr "Любительское радио"
+msgstr "Radioafección"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: math related programs
 msgid "Math"
-msgstr "Математические"
+msgstr "Matemáticas"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: network programs that don't fit elsewhere
 msgid "Net"
-msgstr "Работа с сетью"
+msgstr "Rede"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: debuggers, etc.
 msgid "Programming"
-msgstr "Программирование"
+msgstr "Programación"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: scientific programs
 msgid "Science"
-msgstr "Научные"
+msgstr "Ciencias"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: simple apps, like clocks, that perform only one task
 msgid "Tools"
-msgstr "Утилиты"
+msgstr "Ferramentas"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: technical stuff
 msgid "Technical"
-msgstr "Технические"
+msgstr "Técnico"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: text oriented tools other than editors
 msgid "Text"
-msgstr "Работа с текстом"
+msgstr "Texto"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: bash, ksh, zsh, etc.
 msgid "Shells"
-msgstr "Оболочки"
+msgstr "Liña de ordes"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: sound players and editors
 msgid "Sound"
-msgstr "Работа со звуком"
+msgstr "Son"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: image viewers
 #.  Maybe also applications which able users to view some specific data
 #.  such as PDF, images, Postscript...
 msgid "Viewers"
-msgstr "Программы просмотра"
+msgstr "Visores"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: system administration and monitoring tools
 msgid "System"
-msgstr "Системные"
+msgstr "Sistema"
 
 #.  First level entry
 #.  Menu policy definition: games and recreations
 msgid "Games"
-msgstr "Игры"
+msgstr "Xogos"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: walk around virtual space, zork, MOO's, etc
 #.  All adventure-style games (often includes RPG)
 msgid "Adventure"
-msgstr "Приключения"
+msgstr "Aventuras"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: any game where reflexes count
 msgid "Arcade"
-msgstr "Аркады"
+msgstr "Arcade"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: games played on a board
 #.  Board-style games such as Mastermind, Yahtzee, Mahjongg
 msgid "Board"
-msgstr "Настольные"
+msgstr "Taboleiro"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: games involving a deck of cards
 msgid "Card"
-msgstr "Карточные"
+msgstr "Cartas"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: tests of ingenuity and logic
 #.  one-player games most often...or games which need the player to think..:-)
 msgid "Puzzles"
-msgstr "Головоломки"
+msgstr "Creba cabezas"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: Simulations of the real world (Flight
 #.                          Simulators, for example)
 msgid "Simulation"
-msgstr "Симуляторы"
+msgstr "Simulación"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: games derived from "real world" sports
 msgid "Sports"
-msgstr "Спортивные"
+msgstr "Deportes"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: games involving long term strategic thinking
 msgid "Strategy"
-msgstr "Стратегии"
+msgstr "Estratexia"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: games involving falling blocks
 msgid "Tetris-like"
-msgstr "Тетрисы"
+msgstr "Semellantes a Tetris"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: amusements, eye-candy, etc.
 #.  Very small things which are often not really games
 #.  Such as Xeyes....
 msgid "Toys"
-msgstr "Игрушки"
+msgstr "Xoguetes"
 
 #.  First level entry
 #.  Menu policy definition: programs that provide user documentation
 msgid "Help"
-msgstr "Справка"
+msgstr "Axuda"
 
 #.  First level entry
 #.  BE VERY CAREFUL HERE
@@ -187,13 +183,13 @@ msgstr "Справка"
 #.  in your language will NOT be correct
 #.  Try using what you use for "screen" in "screensaver" for your language
 msgid "Screen"
-msgstr "Экран"
+msgstr "Pantalla"
 
 #.  Second level entry under "Screen"
 #.  Menu policy definition: programs to lock the screen
 #.  Refers to "Screen" as "Lock the screen"
 msgid "Lock"
-msgstr "Блокировка"
+msgstr "Bloquear"
 
 #.  Second level entry under "Screen"
 #.  Menu policy definition: screen savers
@@ -201,55 +197,49 @@ msgstr "Блокировка"
 #.  Most often the common word for "Save" as in File/Save
 #.  will NOT be appropriate
 msgid "Save"
-msgstr "Хранители экрана"
+msgstr "Salvapantallas"
 
 #.  Second level entry under "Screen"
 #.  Menu policy definition: things that fill the root window
 #.  will handle things that deal with the screen background, for instance
 msgid "Root-window"
-msgstr "Рабочий стол"
+msgstr "Fiestra raíz"
 
 #.  First level entry
 #.  Menu policy definition: X window managers
 #.  Will collect all window managers such as icewm, samfish, twm...
 msgid "WindowManagers"
-msgstr "Оконные менеджеры"
+msgstr "Xestores de fiestras"
 
 #.  Second level entry under "WindowManagers"
 #.  Menu policy definition: window manager modules
 msgid "Modules"
-msgstr "Модули"
+msgstr "Módulos"
 
 #.  First level entry for all xterm-style apps
 #.  Menu policy definition: xterm and its brethren
 msgid "XShells"
-msgstr "X-Терминалы"
+msgstr "Terminais X"
 
-# From Apps/System/Admin
 #. From Apps/System/Admin
 #.  for "System administration"
 msgid "Admin"
-msgstr "Административные"
+msgstr "Administración"
 
-# Non official sections from WindowMaker
 #. Non official sections from WindowMaker
 msgid "Appearance"
-msgstr "Внешний вид"
+msgstr "Aparencia"
 
 #. Non official sections from WindowMaker
 msgid "WorkSpace"
-msgstr "Рабочее место"
+msgstr "Espacio de traballo"
 
-# Frequently used unofficial sections.
-# From Apps/Net/Mozilla Components
 #. Frequently used unofficial sections.
 #. From Apps/Net/Mozilla Components
 msgid "Mozilla Components"
-msgstr "Компоненты Mozilla"
+msgstr "Compoñentes de Mozilla"
 
-# From Games/Toys/Teddies
 #. From Games/Toys/Teddies
 #.  as in "Teddy Bear"
 msgid "Teddies"
-msgstr "Плюшевые мишки"
-
+msgstr "Monecos"
