@@ -1,12 +1,12 @@
 menu (2.1.23) unstable; urgency=low
 
-  * The "unreleased" release
+  * The "getting over Vancouver" release
   * Add Norwegian Bokmål menu messages and sections translation. Thanks
     Hans Fredrik Nordhaug. Closes: #298079.
   * Fix quoting in su-to-root manpage. Thanks Kevin Ryde. Closes: #300643.
   * default/csh: moved to csh package. Thanks Matej Vela.
 
- -- Bill Allombert <ballombe@debian.org>  Sat,  5 Mar 2005 10:24:04 +0100
+ -- Bill Allombert <ballombe@debian.org>  Wed, 23 Mar 2005 18:49:10 +0100
 
 menu (2.1.22) unstable; urgency=low
 
