@@ -1,6 +1,6 @@
 menu (2.1.15) unstable; urgency=low
 
-  * The "unreleased" release 
+  * The "spring clean up" release 
   * Jens Arvidsson:
     - Update Swedish translation.
   * Update Italian menu-section translation. Thanks Stefano Canepa.
@@ -28,7 +28,7 @@ menu (2.1.15) unstable; urgency=low
   * Avoid [a-z] regexp since that breaks under Estonian locales.
     Closes: #254894. Thanks to Jaan Pullerits for the explanation.
 
- -- Bill Allombert <ballombe@debian.org>  Thu, 27 May 2004 19:59:24 +0200
+ -- Bill Allombert <ballombe@debian.org>  Fri,  2 Jul 2004 18:35:16 +0200
 
 menu (2.1.14) unstable; urgency=low
 
