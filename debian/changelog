@@ -1,11 +1,14 @@
 menu (2.1.9-4) unstable; urgency=low
 
-  * The "unreleased" release. 
+  * The "Happy New Year" release. 
   * Add Polish menu message translation and update menu section translation.
     Thanks Marcin Owsiany.
   * Add Dutch menu section translation. Closes: #224292. Thanks Tim Dijkstra.
+  * Set root umask to 022 not 002. Closes: #224685. Thanks Ethan Benson.
+  * Add GPL boiler-plate to update-menus/update-menus.cc
+  * Improve term() examples in menu.h.
 
- -- Bill Allombert <ballombe@debian.org>  Sun, 14 Dec 2003 11:14:59 +0100
+ -- Bill Allombert <ballombe@debian.org>  Mon, 22 Dec 2003 02:15:35 +0100
 
 menu (2.1.9-3) unstable; urgency=low
 
