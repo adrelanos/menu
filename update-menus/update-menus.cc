@@ -30,6 +30,7 @@
 #include <set>
 #include <cstdio>
 #include <unistd.h>
+#include <getopt.h>
 #include <cerrno>
 #include <cctype>
 #include <sys/stat.h>
@@ -829,62 +830,68 @@ void usage(ostream &c)
 {
       c <<
           /* This is the update-menus --help message*/
-          _("update-menus: update the various window-manager config files (and\n"
-              "  dwww, and pdmenu) Usage: update-menus [options] \n"
-              "    -d              Output debugging messages.\n"
-              "    -v              Be verbose about what is going on.\n"
-              "    -h, --help      This message.\n"
-              "    --menufilesdir  <dir> Add <dir> to the lists of menu directories to search.\n"
-              "    --menumethod    <method> Run only the menu method <method>.\n"
-              "    --nodefaultdirs Disables the use of all the standard menu directories.\n"
-              "    --stdout        Output menu list in format suitable for piping to\n"
-              "                    install-menu.\n")
+          _(
+              "Usage: update-menus [options] \n"
+              "Update menus for all menu-managers and window-managers providing menu-methods.\n"
+              "  -d                     Output debugging messages.\n"
+              "  -v                     Be verbose about what is going on.\n"
+              "  -h, --help             This message.\n"
+              "  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to search.\n"
+              "  --menumethod=<method>  Run only the menu method <method>.\n"
+              "  --nodefaultdirs        Disables the use of all the standard menu directories.\n"
+              "  --stdout               Output menu list in format suitable for piping to\n"
+              "                         install-menu.\n")
           /* This is the end of the update-menus --help message*/
-          << _(  "    --version       Output version information and exit.\n"  );
+       << _(  "  --version              Output version information and exit.\n"  );
 }
 
+struct option long_options[] = { 
+  { "debug", no_argument, NULL, 'd' }, 
+  { "verbose", no_argument, NULL, 'v' }, 
+  { "help", no_argument, NULL, 'h' }, 
+  { "menufilesdir", required_argument, NULL, 'f'},
+  { "menumethod", required_argument, NULL, 'm'},
+  { "nodefaultdirs", no_argument, NULL, 'n'},
+  { "stdout", no_argument, NULL, 's'},
+  { "version", no_argument, NULL, 'V'},
+  { NULL, 0, NULL, 0 } };
+
+
 /** Parse commandline parameters */
-void parse_params(char **argv)
+void parse_params(int argc, char **argv)
 {
-  while (*(++argv))
+  while(1)
   {
-    if (string("-v") == *argv) {
-      config.set_verbosity(configinfo::report_verbose);
-      continue;
-    } else if (string("-d") == *argv) {
-      config.set_verbosity(configinfo::report_debug);
-      continue;
-    } else if (string("--nodefaultdirs") == *argv) {
+    int c = getopt_long (argc, argv, "hvd", long_options, NULL);
+    if (c == -1) 
+      break;
+    switch(c)
+    {
+    case 'v':
+        config.set_verbosity(configinfo::report_verbose);
+      break;
+    case 'd':
+        config.set_verbosity(configinfo::report_verbose);
+      break;
+    case 'n':
       config.usedefaultmenufilesdirs = false;
-      continue;
-    } else if (string("--stdout") == *argv) {
+      break;
+    case 's':
       config.onlyoutput_to_stdout = true;
-      continue;
-    } else if (string("--menufilesdir") == *argv || string("--menufiledir") == *argv) {
-      argv++;
-      if(*argv) {
-          config.menufilesdir.push_back(*argv);
-      } else {
-        cerr<< _("Directory is expected after --menufilesdir option.\n");
-        throw informed_fatal();
-      }
-      continue;
-    } else if (string("--menumethod") == *argv) {
-      argv++;
-      if(*argv) {
-          config.menumethod = *argv;
-      } else {
-        cerr << _("Filename is expected after --menumethod option.\n");
-        throw informed_fatal();
-      }
-      continue;
-    } else if (string("--version") == *argv) {
-        cout << "update-menus "VERSION << std::endl;
-        exit(0);
-    } else if (string("-h") == *argv || string("--help") == *argv) {  
+      break;
+    case 'f':
+      config.menufilesdir.push_back(optarg);
+      break;
+    case 'm':
+      config.menumethod = optarg;
+      break;
+    case 'V':
+      cout << "update-menus "VERSION << std::endl;
+      exit(0);
+    case 'h':
       usage(cout);
       exit(0);
-    } else {
+    default: 
       usage(cerr);
       exit(1);
     }
@@ -957,7 +964,7 @@ int main (int argc, char **argv)
 
   try {
     read_rootconfiginfo();
-    parse_params(argv);
+    parse_params(argc, argv);
     wait_dpkg(stdoutfile);
     if(!stdoutfile.empty()) {
       close(1);
