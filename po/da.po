@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: menu 2.1.9\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
-"POT-Creation-Date: 2004-01-13 16:58+0100\n"
-"PO-Revision-Date: 2003-07-05 02:00+0200\n"
+"POT-Creation-Date: 2004-01-20 04:27+0100\n"
+"PO-Revision-Date: 2004-01-20 05:00+0200\n"
 "Last-Translator: Morten Brix Pedersen <morten@wtf.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
@@ -49,6 +49,7 @@ msgstr ""
 "install-menu: \"hotkeycase\" kan kun være \"sensitive\" eller \"insensitive"
 "\"\n"
 
+#. don't translate genmenu, startmenu, endmenu and don't change \"\"
 #: ../install-menu/install-menu.cc:1099
 msgid ""
 "install-menu: At least one of genmenu, startmenu, endmenu\n"
@@ -86,6 +87,7 @@ msgstr ""
 msgid "Warning: the string %1 did not occur in template file %2\n"
 msgstr "Advarsel: Strengen %1 blev ikke fundet i eksempelfil %2\n"
 
+#. Don't translate quoted string
 #: ../install-menu/install-menu.cc:1331
 msgid ""
 "install-menu [-vh] <menu-method>\n"
@@ -232,12 +234,8 @@ msgid "Reading menu-entry file %1."
 msgstr "Læser menupunkts fil %1."
 
 #: ../update-menus/update-menus.cc:520
-msgid ""
-"I tried executing %1, but there was either no output available or an error "
-"occured.\n"
-msgstr ""
-"Jeg prøvede at eksekvere %1, men der var enten ingen uddata tilgængelig "
-"eller der skete en fejl.\n"
+msgid "Execution of %1 generated no output or returned an error.\n"
+msgstr "Eksekvering af %1 generede ingen uddata, eller returnerede en fejl.\n"
 
 #: ../update-menus/update-menus.cc:560 ../update-menus/update-menus.cc:564
 msgid "Skipping file because of errors...\n"
