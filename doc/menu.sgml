@@ -145,7 +145,7 @@ Basically, you as user don't need to know any of how and when the
 startupfiles are created, but you might be interested to know anyway.
 <p>
 When a package that wants to add something to the menu tree gets
-installed, it will run <tt/update-menus/ in it's <tt/postinst/ script.
+installed, it will run <tt/update-menus/ in its <tt/postinst/ script.
 Update-menus then reads in all menu files in <tt>/etc/menu/</tt>
 <tt>/usr/lib/menu</tt> and <tt>/usr/share/menu/default</tt>, and stores
 the menu entries of all installed packages in memory. Once that has
@@ -179,19 +179,18 @@ then you can look at the comments in that <tt/menu.h/ file to see how
 you can make minor adjustments to the look of your menus in your
 window manager.
 <p>
-To generally change the menu tree, see the next section:
+To generally change the menu tree, see the next section.
 
 <sect> Optimization of menu tree: hints
 <p>
-If in the <tt>/etc/menu-methods/*</tt> script appears the definition
-<tt/hint_optimize=true/ (actually, that definition should appear in
+If <tt/hint_optimize=true/ has been set in a menu-method script (actually, that definition should appear in
 the <tt/!include/-ed <tt/menu.h/ file), then install-menu will try to
 alter the menu tree, to make every submenu have about the optimum
 number of menu entries (as specified by <tt/hints_nentry=.../). It
 will do that by removing under-full submenus (only if the `parent' of
 that submenu isn't itself already overfull), and by possibly creating
 new submenus, using hints. Note, however, that the optimization of the
-tree takes in principle exponential time, so I've had to speedup the
+tree takes in principle exponential time, so menu speeds up the
 process, at the expense of occasionally not finding the best tree. So,
 the tree you are presented with may not be optimal. For tuning
 variables, see the hint_* variables in the last chapter.
