@@ -39,6 +39,7 @@ Regex::Regex(const char *s)
   patt->fastmap = 0;
   patt->buffer = 0;
   patt->allocated = 0;
+  re_set_syntax(RE_CHAR_CLASSES);
   re_compile_pattern(s, std::strlen(s), patt);
 }
 
