@@ -1,6 +1,6 @@
 menu (2.1.9-5) unstable; urgency=low
 
-  * The "unreleased" release. 
+  * The "calc inflates severity" release. 
   * Add Polish menu message translation and update Polish menu section
     translation. Thanks Marcin Owsiany.
   * Update French menu section translation. Closes: #225716. Thanks
@@ -20,7 +20,7 @@ menu (2.1.9-5) unstable; urgency=low
     - Update Danish sections translation and convert to UTF-8.
     - Update Danish menu translation and convert to UTF-8.
 
- -- Bill Allombert <ballombe@debian.org>  Sun, 11 Jan 2004 10:59:30 +0100
+ -- Bill Allombert <ballombe@debian.org>  Sat, 24 Jan 2004 15:43:43 +0100
 
 menu (2.1.9-4) unstable; urgency=low
 
