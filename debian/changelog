@@ -3,6 +3,7 @@ menu (2.1.8-3) unstable; urgency=low
   * The "not yet released" release. 
   * Change contact address to `menu@packages.debian.org'.
   * doc/menufile.5: Update list of menu sections.
+  * default/bash: removed. Thanks Matthias Klose.
   * Morten Brix Pedersen:
     - Just skip the file when its missing a tag, instead of stopping
     completely. Closes: #56839
