@@ -21,7 +21,7 @@ Yeah, something like a tak "buttonbarpriority=0--99" added to every
 menuentry, where buttonbarpriority=0 means that this entry is absolutely
 useless in the buttonbar, while buttonbarpriority=99 means that this
 menuentry really should be in the buttonbar on every debian computer
-(I'm assuming neighter priority will be used in reality, if this ever
+(I'm assuming neither priority will be used in reality, if this ever
 is implemented).
 
 Then the file /etc/menu-methods/menu.h could have something like
