@@ -123,7 +123,7 @@ string uppercase(string s)
   return t;
 }
 
-string replacewith_string(string &str, const string &replace, const string &with)
+string replacewith_string(string str, const string &replace, const string &with)
 {
   // call with: replacewith_string("hello $world, %dir", "$% ", "123")
   // returns:   "hello31world,32dir"
@@ -138,14 +138,14 @@ string replacewith_string(string &str, const string &replace, const string &with
   return str;
 }
 
-string replace(string str, const string& repl, const string& with)
+string replace_string(string str, const string& repl, const string& with)
 {
     string::size_type pos = str.find(repl);
-                                                                                
+
     if (pos == string::npos)
           return str;
-                                                                                
-    return replace(str.replace(pos, repl.length(), with), repl, with);
+
+    return replace_string(str.replace(pos, repl.length(), with), repl, with);
 }
 
 string sort_hotkey(string str)
