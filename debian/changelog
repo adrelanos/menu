@@ -21,6 +21,8 @@ menu (2.1.15) unstable; urgency=low
   * Fix error message for update-menus --menumethod.  Closes: #251857.
   * Parse update-menus options with getopt_long.
   * Improve update-menus --help message.
+  * Avoid [a-z] regexp since that breaks under Estonian locales.
+    Closes: #254894. Thanks to Jaan Pullerits for the explanation.
 
  -- Bill Allombert <ballombe@debian.org>  Thu, 27 May 2004 19:59:24 +0200
 

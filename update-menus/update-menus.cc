@@ -349,7 +349,7 @@ translateinfo::translateinfo(const std::string &filename)
   try {
     i = new parsestream(filename);
 
-    Regex ident("[a-zA-Z_][a-zA-Z0-9_]*");
+    Regex ident("[[:alpha:]][[:alnum:]_]*");
     /*Translation here and below refer to the file 
       /etc/menu-methods/translate_menus that allow to rename and reorganize
       menu entries automatically. It does not refer to the localisation
@@ -831,18 +831,20 @@ void usage(ostream &c)
       c <<
           /* This is the update-menus --help message*/
           _(
-              "Usage: update-menus [options] \n"
-              "Update menus for all menu-managers and window-managers providing menu-methods.\n"
-              "  -d                     Output debugging messages.\n"
-              "  -v                     Be verbose about what is going on.\n"
-              "  -h, --help             This message.\n"
-              "  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to search.\n"
-              "  --menumethod=<method>  Run only the menu method <method>.\n"
-              "  --nodefaultdirs        Disables the use of all the standard menu directories.\n"
-              "  --stdout               Output menu list in format suitable for piping to\n"
-              "                         install-menu.\n")
+  "Usage: update-menus [options] \n"
+  "Gather packages data from the menu database and generate menus for\n"
+  "all programs providing menu-methods, usually window-managers.\n"
+  "  -d                     Output debugging messages.\n"
+  "  -v                     Be verbose about what is going on.\n"
+  "  -h, --help             This message.\n"
+  "  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to search.\n"
+  "  --menumethod=<method>  Run only the menu method <method>.\n"
+  "  --nodefaultdirs        Disables the use of all the standard menu directories.\n"
+  "  --stdout               Output menu list in format suitable for piping to\n"
+  "                         install-menu.\n")
           /* This is the end of the update-menus --help message*/
-       << _(  "  --version              Output version information and exit.\n"  );
+       << _(  
+  "  --version              Output version information and exit.\n"  );
 }
 
 struct option long_options[] = { 

@@ -478,7 +478,7 @@ bool supportedinfo::supports(string& name)
 
 void read_forcetree(parsestream &i)
 {
-  Regex r("[a-zA-Z/-_ ]");
+  Regex r("[] /0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\^_abcdefghijklmnopqrstuvwxyz]");
 
   while(1)
   {
