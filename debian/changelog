@@ -16,7 +16,8 @@ menu (2.1.8-1) unstable; urgency=low
       contained one line.
     - Special characters no longer needs to be double-escaped. Closes: #94466
     - Document the fact that titles in entries must be unique. Closes: #46629
-    - Fix segmentation fault when using forcetree. Closes: #149468
+    - Fix segmentation fault when using forcetree and hint_optimize.
+      Closes: #149468, #189396
     - Add basesection variable. Closes: #136947
     - Support multiple package requirement. Closes: #114620
   * Ship prebuild documentation in source tarball to work around sp failure
