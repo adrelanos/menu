@@ -8,3 +8,7 @@ install_menu_SOURCES = install-menu.h install-menu.cc menu-tree.h menu-tree.cc h
 EXTRA_DIST = hintstest.cc
 
 install-menu.cc: ../update-menus/adstring.h ../update-menus/common.h ../update-menus/compose.hpp
+
+install-exec-local:
+	ln -s ../sbin/install-menu $(DESTDIR)$(bindir)/install-menu
+
