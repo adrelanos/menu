@@ -637,7 +637,7 @@ methodinfo::methodinfo(parsestream &i)
     }
   } catch (endoffile) { }
 
-  if (outputenc == "LOCALE")
+  if (outputenc.emty() || outputenc == "LOCALE")
       outputenc = nl_langinfo(CODESET);
   
   check_vars();

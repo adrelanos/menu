@@ -59,7 +59,7 @@ parsestream::parsestream(const std::string &name, std::string other)
     f = new std::ifstream(add.c_str());
   }
   if (!*f)
-      throw ferror_open(String::compose(_("Cannot open file %1."), name));
+      throw ferror_open(name);
 
   init(f, name);
   in_constructor = false;

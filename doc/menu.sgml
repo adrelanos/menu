@@ -809,11 +809,11 @@ Two mode are defined:
 This must be just after the <tt>!include "menu.h"</tt> directive so that
 <file>menu.h</file> can use its own compat mode.
 
-<tag><tt/outputencoding="LOCALE"/
-<item> Set the encoding used for output files. Use <tt/iconv --list/
-to get the list of supported encoding. The special encoding "LOCALE"
-refers to the current locale encoding. Useful values include "UTF-8"
-and "ISO-8859-1".
+<tag><tt/outputencoding="UTF-8"/
+<item> Set the encoding used for output files. Use <tt/iconv --list/ to get
+the list of supported encoding. Useful values include "UTF-8" and
+"ISO-8859-1".  If no value is specified, the current locale encoding will be
+used. 
 
 <tag><tt/supported/
 <tag><tt/endsupported/
