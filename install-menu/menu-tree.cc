@@ -103,22 +103,23 @@ string sort_hotkey(const string& str)
   return t;
 }
 
-// Adds a new entry in the menu hierarchy.
-//
-// Arguments:
-//
-//     sections: A vector of strings, holding the section names.
-//     entry_vars: Variables of the entry to be added.
-// 
-// There are two ways to store the menuentries in the `tree'
-// - `flat', all menuentries in the toplevel submenus map.
-//   This is used when working with `hints'. In this case, we
-//   will later sort out the tree.
-// - as a true tree.
-// However, even in the `flat', hint-processing case, if there already
-// exists a submenu with exactly the right sections[0], then we do desent,
-// if it has a entry_vars[FORCED_VAR] set.
-void menuentry::add_entry(vector<string> sections, map<string, string> &entry_vars)
+/** Adds a new entry in the menu hierarchy.
+ *
+ * Arguments:
+ *
+ *     sections: A vector of strings, holding the section names.
+ *     entry_vars: Variables of the entry to be added.
+ * 
+ * There are two ways to store the menuentries in the `tree'
+ * - `flat', all menuentries in the toplevel submenus map.
+ *   This is used when working with `hints'. In this case, we
+ *   will later sort out the tree.
+ * - as a true tree.
+ * However, even in the `flat', hint-processing case, if there already
+ * exists a submenu with exactly the right sections[0], then we do desent,
+ * if it has a entry_vars[FORCED_VAR] set.
+ */
+void menuentry::add_entry(std::vector<std::string> sections, std::map<std::string, std::string> &entry_vars)
 {
   map<string, string>::iterator vi;
   map<string, string>::iterator vj;
@@ -189,15 +190,15 @@ void menuentry::add_entry(vector<string> sections, map<string, string> &entry_va
   }
 }
 
-// Adds a new entry in the menu hierarchy, using an already created
-// menuentry pointer.
-//
-// Arguments:
-//
-//     sections: A vector of strings, holding the section names.
-//     entry: a pointer to a menuentry.
-// 
-void menuentry::add_entry_ptr(vector<string> sections, menuentry *entry)
+/** Adds a new entry in the menu hierarchy, using an already created
+ * menuentry pointer.
+ *
+ * Arguments:
+ *
+ *     sections: A vector of strings, holding the section names.
+ *     entry: a pointer to a menuentry.
+ */
+void menuentry::add_entry_ptr(std::vector<std::string> sections, menuentry *entry)
 {
   if (sections.size() > 1) {
     // There are more sections to add...
@@ -223,24 +224,24 @@ void menuentry::add_entry_ptr(vector<string> sections, menuentry *entry)
   }
 }
 
-// Output menu tree.
-//
-// Uses the 'treewalk' variable to define what to output in which order,
-// this documentation was taken from the menu manual:
-//
-//   `treewalk="c(m)"'
-//        This string defines in what order to dump the `$startmenu',
-//        `$endmenu', and `$submenutitle' (and its children).  Each char in
-//        the string refers to:
-//
-//  c  : dump children of menu.
-//  m  : dump this menu's $submenutitles
-//  (  : dump $startmenu
-//  )  : dump $endmenu
-//  M  : dump all $submenutitles of this menu and this menu's children.
-//
-//       The default is "c(m)".  For olvwm, one needs: "(M)"
-//
+/** Output menu tree.
+ *
+ * Uses the 'treewalk' variable to define what to output in which order,
+ * this documentation was taken from the menu manual:
+ *
+ *   `treewalk="c(m)"'
+ *        This string defines in what order to dump the `$startmenu',
+ *        `$endmenu', and `$submenutitle' (and its children).  Each char in
+ *        the string refers to:
+ *
+ *  c  : dump children of menu.
+ *  m  : dump this menu's $submenutitles
+ *  (  : dump $startmenu
+ *  )  : dump $endmenu
+ *  M  : dump all $submenutitles of this menu and this menu's children.
+ *
+ *       The default is "c(m)".  For olvwm, one needs: "(M)"
+ */
 void menuentry::output()
 {
   string treew = menumethod->treewalk();
@@ -301,9 +302,10 @@ void menuentry::output()
   }
 }
 
-// Put the $hint variable contents in the hint of the submenu[] map. For
-// submenu entries (without a command), put the $hint variable in all
-// menuentries that lie below that one.
+/** Put the $hint variable contents in the hint of the submenu[] map. For
+ * submenu entries (without a command), put the $hint variable in all
+ *  menuentries that lie below that one.
+ */
 void menuentry::store_hints()
 {
   submenu_container::iterator i, j;
@@ -341,16 +343,17 @@ void menuentry::store_hints()
   }
 }
 
-// Process the menu hierarchy through the hints algorithms.
-//
-// Basically, it has 4 steps (also marked as comments in the code):
-//
-//  Step 1: Fetch appropriate sections to put in hint_list vector.
-//  Step 2: Initialize hints class and calculate a new tree, using hint_list.
-//  Step 3: Remove all submenus.
-//  Step 4: Using the new hint_out vector, initialize our new sorted tree,
-//  thus re-creating the previously removed submenus (but in a different
-//  order).
+/** Process the menu hierarchy through the hints algorithms.
+ *
+ * Basically, it has 4 steps (also marked as comments in the code):
+ *
+ *  Step 1: Fetch appropriate sections to put in hint_list vector.
+ *  Step 2: Initialize hints class and calculate a new tree, using hint_list.
+ *  Step 3: Remove all submenus.
+ *  Step 4: Using the new hint_out vector, initialize our new sorted tree,
+ *  thus re-creating the previously removed submenus (but in a different
+ *  order).
+ */
 void menuentry::process_hints()
 {
   vector<vector<string> > hint_list, hint_out;
@@ -422,16 +425,17 @@ void menuentry::process_hints()
   }
 }
 
-// Postprocess will set or correct some variables in the
-// menuentry tree (vars), that were not known at the time of
-// creation of the menuentry classes (due to hints, or other reasons)
-//
-// Arguments:
-//
-//      n_parent: number of elements in menu of parent
-//      level: how deep this entry is nested in menu tree.
-//      prev_section: parent section name
-void menuentry::postprocess(int n_parent, int level, const string& prev_section)
+/** Postprocess will set or correct some variables in the
+ * menuentry tree (vars), that were not known at the time of
+ * creation of the menuentry classes (due to hints, or other reasons)
+ *
+ * Arguments:
+ *
+ *      n_parent: number of elements in menu of parent
+ *      level: how deep this entry is nested in menu tree.
+ *      prev_section: parent section name
+ */
+void menuentry::postprocess(int n_parent, int level, const std::string& prev_section)
 {
   submenu_container::iterator i, i_next;
   int index = 0;
@@ -510,7 +514,7 @@ void menuentry::generate_hotkeys()
   str0[0]='\0';
   if (menumethod->hkexclude)
       s = menumethod->hkexclude->soutput(vars);
-  for (i=0;i!=s.length();i++)
+  for (i = 0; i != s.length(); i++)
     used_chars.insert(hotkeyconv(s[i]));
 
   for(subi = submenus.begin(), i = 0; subi != submenus.end(); subi++, i++)
@@ -528,10 +532,10 @@ void menuentry::generate_hotkeys()
   {
     for (k = todo.begin();k != todo.end();)
     {
-      i= *k; 
-      old_k=k++; //k++ here, to be able to todo.erase(old_k) safely.
+      i = *k; 
+      old_k = k++; //k++ here, to be able to todo.erase(old_k) safely.
       if (j >= keys[i].length()) {
-        keys[i]=str0;
+        keys[i] = str0;
         todo.erase(old_k);  //no hotkey found -- give up on this entry.
         continue;
       }
@@ -549,7 +553,7 @@ void menuentry::generate_hotkeys()
     }
     j++;
   }
-  for (subi=submenus.begin(), i=0; subi!=submenus.end(); subi++, i++)
+  for (subi = submenus.begin(), i = 0; subi != submenus.end(); subi++, i++)
   {
     c = keys[i][0];
     if (c)

@@ -1,5 +1,5 @@
 SUBDIRS = update-menus install-menu doc po-sections scripts po
-EXTRA_DIST = autogen.sh
+EXTRA_DIST = autogen.sh Doxyfile
 dist-hook:
 	mkdir $(distdir)/examples $(distdir)/default
 	for i in $(srcdir)/examples/*; do \
