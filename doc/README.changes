@@ -1,0 +1,63 @@
+Changes between pre 1.0 and 1.0:
+
+Basically, both update-menus and install-menu have been re-written
+from scratch.
+
+
+*************************************
+update-menus
+
+  *forks to background, waits for dpkg to finish (to get a _correct_
+   package listing).
+
+  *allows new menuentry format:
+    needs=text     command=/usr/bin/vi section=Apps/Editors title=Vi \
+                   longtitle="The editor that people complain even\
+                   more about than the about weather, vi." \
+                   id=vi sort=aa myfunkyvar=lichtbewolkt
+
+
+*************************************
+
+install-fvwmgen -> menu-method:
+  
+  *Change of name (The old name wasn't very good anyway, and
+   it allows me to more easily change the format of the file).
+
+  *Format changed: ${title} is now written as either $title or 
+   print($title) (the latter giving an error if $title is empty).
+   More about this in /usr/share/doc/menu/html.
+
+  *Long lines can be continued on next line with a "\".
+   (do make sure there are no spaces after the "\")
+
+  *in the menu-methods files, tabs, newlines, etc used to need
+   double \\, like "\\t, \\n". These is needed any more.
+   (now looks like "\t, \n").
+
+  *things like "startmenu=filename" don't work any more (nobody
+   knew this worked anyway).
+
+  *Lot's of new "functions", see README
+
+  *Slightly different interpretation of variables:
+
+    ${section} used to print the last part of the section name, now
+    it prints the full section in a submenu, or the full section
+    plus "/"$title in menuentries (or plus "/" $sort ":" $title
+    if $sort is defined).
+    
+    ${fullsection} has been removed (section replaces this)
+    
+    $subsection now prints what ${section} would have printed
+    with menu-0.11.
+ 
+    the id tag isn't needed any more. Now using $sort ":" $title to 
+    determine if two menuentries are the same.
+
+  *in script: mainmenu= isn't accepted any more 
+    (never used to work with "compat=gen").
+
+  *Now you can actually add icons etc to the submenu entries,
+   even to the root menus
+   needs="X11" section="Apps" title="Ap" hotkey=X icon="myiconfile"

@@ -1,0 +1,116 @@
+Hi there,
+
+I've just released menu-2.0. It has many new features, one of
+wich is the optimization of the menu tree, using something I've
+called "hints". This is what I want to start discussion about
+with this email.
+
+********************
+First, why: 
+
+On my system, there are only two entries in the
+/Apps/Editors submenu. But I'm sure that other systems have
+15 or more entries there. Both aren't optimal: on my system,
+the /Apps/Editors submenu could better be removed or merged
+with another menu; while on the other systems, /Apps/Editors
+should get other sub-entries. Because of the static-ness
+of the menu tree, it was never possible to attac this problem.
+Now, with "hints" it is.
+
+********************
+How it works:
+
+The hints actually work in a rather strange way: when
+hint_optimize=true (in the config file) then all $section
+elements (like "section=Apps/Editors", in the menuentry file)
+are added to the specified $hints variable (new variable in the
+menuentry file, could be "hints=Bulky,Expert,Serious" for Emacs).
+The order (/Apps/Editors or /Editors/Apps) of the resulting hints
+is completely ignored. Then, the
+hints for each menu entry are put in an array that is handed to
+the optimization routine, that will calculate a reasonable tree 
+for those hints. That tree must comply with the following:
+
+
+When a user looks for a program "Program" with, say, hints 
+"Good,Bulky,Heaven", then, while walking through the tree, 
+it should at every node visited be clear for the user what 
+submenu to select (or the menu should have "Program" directly 
+in it). So, the toplevel menu may look like
+  Good
+  Hell
+  Microsoft
+because then a searcher for a menu entry with hints "Good,Bulky,Heaven"
+will know to select the submenu "Good". The toplevel menu may not look
+like
+  Good
+  Hell
+  Heaven
+as now it isn't clear whether to visit the Good or the Heaven submenu.
+
+That rule allows for many different trees, and the task of the
+optimization procedure is to select, in a finite amount of time, the
+tree that best matches the user's desire obout the optimimum number of
+menu entries.
+
+Menu is always free to discard hints, if they are not neccecary.
+
+Although this procedure ignores the real debian tree (so much
+discussed about), it does eventually come up that look surprisingly
+like just that tree.
+
+As soon as hints are specified for more menu entries, this procedure
+will allow menu to merge, say "Apps/Viewers" and "Apps/Sound", if we
+give both submenus the hint "MultiMedia". (Would be good on my system,
+as both contain less than 3 entries). If those submenus do get 
+the "Multimedia" hint, then all `children' of those submenus (like 
+GhostVieuw and RoseGarden) will automatically inherit those hints.
+
+********************
+What to discuss?
+
+Well, the hints have most effect if there is some overal uniformity 
+in their use. 
+
+For example, Emacs could be given a hints=Bulky, but if that is done,
+then all big editors should get a hints=Bulky, and not something like
+hints=Big, or hints=MS-like, as then menu will not any more be able 
+to group all big editors in one menuentry.
+
+So, we should agree on some hints that can be used in most submenus
+(Big or Bulky probably could be used in many more submenus, as would
+X11, or Text), and there probably are some hints that can only be used
+in one submenu (like "Music" in the Apps/Sound section).
+
+The hints that apply to submenus (e.g., the hints=Multimedia for
+the submenus /Apps/Sound and /Apps/Viewers) can best be set in
+the menu package; the hints that apply to programs etc. have
+to be set in the menu entry files of those programs.
+
+Another problem is that English isn't my first language, and I
+don't really feel compatent enough to think of many english words
+that apply to several menu entries or submenus. I'm hoping other
+people are better at thinking of them:).
+
+
+********************
+Closing remarks:
+
+All of the tree optimization is optional, it will not happen by default
+(maybe I should however set hint_optimize=true in /etc/menu-methods/menu.h).
+
+These hints will provide for a (the only?) way out for those that dislike
+their overfull/underfull submenus.
+
+Yes, a variable menu tree _is_ also a disadvantage, if you want to tell
+a friend "Find netscape in Apps/Net/Netscape", and on your friend's
+system, it turns out that the section is "Apps/Web/Netscape". But I for
+one always tel people to "type `netscape' if you want to start netscape.
+Personally, I mostly see the tree as a means for people to find out what
+is installed on their system, and, once installed, a possibly nice
+`graphical' way to re-start it (on one's own system).
+
+********************
+Groetjes,
+joostje
+

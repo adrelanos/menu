@@ -1,0 +1,129 @@
+Saluton, Hello, Jó napot!
+
+The debian menus currently currently only exist in
+english, "en da's niet goed" (that's not good, Nem jó, Tio malbonas).
+
+Below I describe how I propose to change this.
+At the end of this message I briefly discuss the gnome/kde
+approach, and why I really like to make menu compatible
+with their format, but not use their translations.
+
+#############
+
+What I propose is that update-menus simply learns the dutch, 
+german, whatever translations for "Apps", "Editors", 
+"The Gimp", "X Window Snapshot", and so on.
+These translations would be provided in a form similar/identical to
+the already used i18n format.
+
+The French translations would be provided by a menu-fr.deb package, 
+the Dutch translations by menu-du.deb, etc.
+
+This may seem strange at first, as now the gimp package has no
+control over how the menu-entry looks in german. It might at first
+sight be much better to put in the menu entry file for the gimp
+all translations of "The Gimp" in however many languages we
+want to support.
+
+The downside of this, is that it simply doesn't work in Debian.
+The maintainer of the gimp surely doens't know the translations
+of "The Gimp" in Dutch, Turkish, Japanise, Esperanto, whatever.
+Somewhere in Turkey there may be somone who is really good at
+translating all english titles into turkish, but s/he will have
+a very hard time convincing all 500+ package maintainers to
+include his/her translation into the package. And, a week later
+someone in Bulgaria wakes up, and sends 500+ discriptions to
+500+ maintainers, asking them to include that. Well, you see,
+with about 6000 languages on this earth, the maintainers are
+going to have a hard time.
+
+That is why I propose that the package maintainers simply
+don't do anything about the languages, but simply upload their
+packages with menu entry files in them. Then some deamon on
+master scans all menu entry files in the distribution, and
+creates a file with all english words/phrases that should be
+translated. This file can be put somewhere on the web, and
+then this the translators simply gets that file, translate
+the 500+ entries in it, and create a menu-tr.deb (menu-de.deb, etc)
+package, and uploads that. Then, the users that want turkish systems
+simply install menu-tr.deb package, set the appropriate LC_*
+variables, and update-menus does what it should do.
+
+This approach has the advantages that
+  - It actually works. Forceing 500+ package maintainers to include
+    the world's 6000+ languages into their menu entry files is
+    really never going to work.
+  - It makes things easy for both the maintainer of the packages
+    with the menu entry files (they do nothing), and for the
+    translators (they don't need to get the to-be-translated words
+    and phrases from all kinds of packages, and send the results to many
+    different package maintainers).
+  - It allows users to select what languages to install, so they
+    don't have to buy extra harddisks because each menu entry file
+    now is 0.5 M big (5000 languages, 100 chars per language).
+
+Note that the file with the `to-be-translated' phrases in them
+should not just have entries like
+  Apps
+  The Gimp
+  X Window Snapshot
+as that will not allow the translators to really see what "Apps" or
+"The Gimp" is. Rather, for each to be translated item, there should
+be info on what package it came from (to allow the translator to
+investigate further), and if present the "description" from the 
+menu entry file the string came from. Maybe more. But we can
+discuss that later.
+Also note that there probably aught to be different files for
+main and non-free. And thus also menu-nonfree-fr.deb
+with the translations for the non-free section. I assume the
+translations should be put somewhere into
+/usr/share/local/fr/LC_MESSAGES/menu-translate.mo (or menu-translate-non-free)
+
+
+Summary:
+ - package maintainers do nothing (apart from maintaining:)
+ - translators get those `to-be-translated' files, translate
+   the words/phrases in them upload the menu-??.deb pacakges.
+ - The users install the menu-??.deb packages for whatever language
+   they like or don't like.
+ - If there are no big objections (only minor points) I'd like
+   to start working on menu very soon. (should be a working version
+   within 2 weeks after I started).
+
+Postnote:
+  Why would we do this only for menu? There may well be other packages
+  that would like to have the same `debian-wide' translation support.
+  Maybe we shouldn't call the packages "menu-fr.deb", but "translate-fr.deb",
+  or whatever.
+
+
+##############
+Gnome/KDE menu's
+
+When the translating of menus comes up, gnome/kde automatically also 
+come up as they already have translations. So, why not use those?
+Well, for the above mentioned reasons: "cross-package" communication
+is pour to say the least in debian, and there is no way we are
+going to support many languages if every change has to go through
+the maintainers. And it's very tough on the translators, as they
+have to communicate with many different maintainers.
+
+So, I say that using the translation support from gnome/kde's menu
+entry files is not the right way in Debian.
+
+However, that doesn't mean we shouldn't move to gnome/kde-format
+menu entry files. They are basically already very close to what 
+we have now, and I'm very tempted to simply add support for them to
+update-menus so that update-menus can read both formats. What
+way we go after that debian-policy has to decide.
+
+
+##############
+
+Any opinions?
+
+If there is noone saying this is a realy bad approach, I'd like
+to start working on this really soon now.
+
+Thanks,
+joostje

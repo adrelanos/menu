@@ -1,0 +1,12 @@
+What I have in mind is something like
+
+section=Apps/Tools title=SomeClock es=Clocks/Digital/Simple
+
+section=Apps/Tools[/Clocks/Digital/Simple] title=SomeClock
+
+
+section=Apps/Tools title=SomeClock es=Clocks/Digital/Simple
+
+
+
+section=Apps[/hello] title=Tools

@@ -1,0 +1,7 @@
+  
+   TODO: Add a $source={Debian,System,User} tag (in update-menus), 
+         andreas.
+  
+   TODO: probably we need a translate() function too, to be able to do:
+   dir=translate(ifeq($Source,"User","Local User"))
+   etc.

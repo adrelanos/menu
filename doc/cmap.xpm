@@ -1,0 +1,32 @@
+/* XPM */
+static char * cmap3[] = {
+/* width height num_colors chars_per_pixel */
+"    46     2       24            1",
+"  c #000000",
+". c #000000",
+"# c #ff0000",
+"a c #ff00ff",
+"b c #0000ff",
+"c c #00ffff",
+"d c #00ff00",
+"e c #ffff00",
+"f c #7f0000",
+"g c #7f007f",
+"h c #00007f",
+"i c #007f7f",
+"j c #007f00",
+"k c #7f7f00",
+"l c #191919",
+"m c #333333",
+"n c #4c4c4c",
+"o c #666667",
+"p c #7f7f7f",
+"q c #999999",
+"r c #b2b2b2",
+"s c #cccccc",
+"t c #e5e5e5",
+"u c #ffffff",
+/* pixels */
+"..##aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuu"
+"..##aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuu"
+};
