@@ -1080,28 +1080,42 @@ Variables:
     are modified by install-menus (the ones marked with a "!" are modified
     by install-menus).
     
-    needs:   used to determine whether the window manager supports this
+    needs:   
+             Used to determine whether the window manager supports this
              menu entry.
-    command: If this is undefined, this menu entry is taken as defining
+    command: 
+             If this is undefined, this menu entry is taken as defining
              a sub-menu. (this way you can specify icons of sub-menus).
-    title!:  Used for sorting (see section).
+    title!:  
+             Used for sorting (see section).
              For sub-menu entries (those with empty command), this
              is initialised to the last part of the section.
              Please, keep the title short (two words at maximum).
              The title is for people who already know what programme
              they want to start. See "longtitle" and "description" below
              for longer descriptions.
-    sort:    used for sorting (see section). To make sure an entry is
+    sort:    
+             Used for sorting (see section). To make sure an entry is
              at the beginning, use something with a low ASCII number,
              like "$". For sorting at the end, use "|"
-    section!:Used to determine the section of the menu entry.
+    section!:
+             Used to determine the section of the menu entry.
              The menu entries that have a empty $command, ie those that
              define a submenu, have $title added to the end of $section 
              The menu entries that have a non-empty $command have their
              $section modified to $section/$title, or $section/$sort:$title
              if $sort is defined. The menu entries within one submenu
-             are sorted according to $section.
-    hotkey!: Modified to reflect what install-menus thinks is the
+             are sorted according to $section. If you want to retrieve the
+             real section name, see the $basesection variable.
+    basesection!:
+             Used to contain the *real* section name. This is useful because
+             $section will be changed to $section/$title in special cases
+             (see above). This causes a problem when you want to do
+             parent($section) because you won't get the real parent section.
+             Instead you can use $basesection, which will never contain the
+             title.
+    hotkey!: 
+             Modified to reflect what install-menus thinks is the
              most suitable hotkey for this menu entry. The hotkey=
              in the menu entry file is taken as a suggestion, that could
              be overwritten if there is another entry with the same hotkey=.
@@ -1114,15 +1128,18 @@ Variables:
     So, I'll suggest some here. If you want to invent new ones, please
     do so and mail them to me so that I can include them here.
 
-    icon:    The location of the iconfile for this menu entry.
+    icon:    
+             The location of the iconfile for this menu entry.
              If you don't have an iconfile, just leave out the icon=
              in the menu entry.
-    longtitle: For people that like descriptive titles (about one line)
+    longtitle:
+             For people that like descriptive titles (about one line)
              It is probably best to include this in your menu entries,
              while the window-managers don't (by default) put it in the
              menus. That way, people who want descriptive titles can
              turn them on, but others don't need to use them.
-    description:An even longer description (about 5 lines).
+    description:
+             An even longer description (about 5 lines).
              For example, a description of the documentation in
              the dwww generated html pages.
 
@@ -1132,13 +1149,15 @@ Variables:
     intended for use by local system managers. Nevertheless, it is
     advised that all debian systems use the following variable names:    
     
-    visible: Some apps add entries to utmp the utmp file, so that
+    visible:
+             Some apps add entries to utmp the utmp file, so that
              "who" and friends know they are running (this is
              especially true for xterms etc). If $visible set
              (to anything other than "" or "none"), xterms etc will
              not write logging info to utmp. (may not work for
              your window manager).
-    geometry: For X apps, this will be the size of the (main) window
+    geometry:
+             For X apps, this will be the size of the (main) window
              that will be created (units in either chars or pixels,
              depending on type of main window (xterm or graphic)).
              If you as package maintainer want to use this, you should

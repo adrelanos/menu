@@ -375,17 +375,21 @@ void menuentry::postprocess(int n_parent, int level, const string& prev_section)
     i_next=i;
     i_next++;
 
-    string title = prev_section;
+    string newsection = prev_section;
     for(vector<string>::const_iterator j = i->first.begin(); j != i->first.end(); ++j)
-        title += string("/") + *j;
+        newsection += string("/") + *j;
 
     menuentry *me = i->second;
-    me->vars[SECTION_VAR] = title;
+    me->vars[SECTION_VAR] = newsection;
+
+    // Get the real section name by removing title of the section name. This
+    // is useful when for example the title is "Foo version/456".
+    me->vars[BASESECTION_VAR] = newsection.substr(0, newsection.rfind(me->vars[TITLE_VAR]) - 1);
 
     me->vars[PRIVATE_ENTRYINDEX_VAR] = itostring(index);
 
     if (!me->submenus.empty())
-        me->postprocess(submenus.size(), level+1, title);
+        me->postprocess(submenus.size(), level+1, newsection);
 
     // Number of entries may have been changed by above call, so we need to
     // test again.

@@ -15,6 +15,7 @@ const int MAX_LINE = 10240;
 #define ICON_VAR    "icon"
 #define NEEDS_VAR   "needs"
 #define SECTION_VAR "section"
+#define BASESECTION_VAR "basesection"
 #define SORT_VAR    "sort"
 #define TITLE_VAR   "title"
 #define HOTKEY_VAR  "hotkey"

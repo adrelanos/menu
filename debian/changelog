@@ -15,6 +15,7 @@ menu (2.1.7-4) unstable; urgency=low
     - Special characters no longer needs to be double-escaped. Closes: #94466
     - Document the fact that titles in entries must be unique. Closes: #46629
     - Fix segmentation fault when using forcetree. Closes: #149468
+    - Add basesection variable. Closes: #136947
 
  -- Bill Allombert <ballombe@debian.org>  Mon,  7 Apr 2003 20:31:51 +0200
 
