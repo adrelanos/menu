@@ -3,14 +3,13 @@
 # This file is distributed under the same license as the menu package.
 # Bill Allombert <ballombe@debian.org>, 2003.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: menu-section 2.1.7-2\n"
+"Project-Id-Version: menu-section 2.1.9-3\n"
 "POT-Creation-Date: 2003-04-03 12:14+0100\n"
-"PO-Revision-Date: 2003-07-24 16:56+0900\n"
+"PO-Revision-Date: 2004-03-22 23:45+0900\n"
 "Last-Translator: GOTO Masanori <gotom@debian.org>\n"
-"Language-Team: Japanese <ja@li.org>\n"
+"Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=EUC-JP\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,9 +19,12 @@ msgstr "アプリケーション"
 
 msgid "Databases"
 msgstr "データベース"
- 
+
 msgid "Editors"
 msgstr "エディタ"
+
+msgid "Education"
+msgstr "教育"
 
 msgid "Emulators"
 msgstr "エミュレータ"
@@ -37,7 +39,7 @@ msgid "Math"
 msgstr "数学"
 
 msgid "Net"
-msgstr "ネットワーク"
+msgstr "ネット"
 
 msgid "Programming"
 msgstr "プログラミング"
@@ -84,8 +86,11 @@ msgstr "カードゲーム"
 msgid "Puzzles"
 msgstr "パズル"
 
+msgid "Simulation"
+msgstr "シミュレーション"
+
 msgid "Sports"
-msgstr "スポーツゲーム"
+msgstr "スポーツ"
 
 msgid "Strategy"
 msgstr "戦略ゲーム"
@@ -119,3 +124,23 @@ msgstr "モジュール"
 
 msgid "XShells"
 msgstr "X端末"
+
+# From Apps/System/Admin
+msgid "Admin"
+msgstr "管理"
+
+# Non official sections from WindowMaker
+msgid "Appearance"
+msgstr "外観"
+
+msgid "WorkSpace"
+msgstr "ワークスペース"
+
+# Frequently used unofficial sections.
+# From Apps/Net/Mozilla Components
+msgid "Mozilla Components"
+msgstr "Mozillaコンポーネント"
+
+# From Games/Toys/Teddies
+msgid "Teddies"
+msgstr "テディー"
