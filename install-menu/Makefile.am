@@ -6,5 +6,5 @@ install_menu_LDADD = ../update-menus/stringtoolbox.o ../update-menus/parsestream
 install_menu_SOURCES = install-menu.h install-menu.cc menu-tree.h menu-tree.cc hints.h hints.cc functions.cc functions.h
 
 install-exec-local:
-	ln -s ../sbin/install-menu $(DESTDIR)$(bindir)/install-menu
+	ln -f -s ../sbin/install-menu $(DESTDIR)$(bindir)/install-menu
 
