@@ -4,8 +4,10 @@ menu (2.1.12) unstable; urgency=low
   * Fix typo in Chinese menu sections translation.  Closes: #242742. Thanks
     Carlos Z.F. Liu.
   * Update Catalan menu sections translation. Thanks Jordi Mallach.
+  * Rename --menufiledir to --menufilesdir as documented. Update translations
+    accordingly. Closes: #241289. Thanks Jean-Luc Coulon.
 
- -- Bill Allombert <ballombe@debian.org>  Thu,  8 Apr 2004 16:06:13 +0200
+ -- Bill Allombert <ballombe@debian.org>  Fri,  9 Apr 2004 18:26:14 +0200
 
 menu (2.1.11) unstable; urgency=low
 

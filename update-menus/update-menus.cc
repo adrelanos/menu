@@ -836,7 +836,7 @@ usage(ostream &c)
               "    -v  Be verbose about what is going on.\n"
               "    -d  Output debugging messages.\n"
               "    -h, --help This message.\n"
-              "    --menufiledir <dir> Add <dir> to the lists of menu directories to search.\n"
+              "    --menufilesdir <dir> Add <dir> to the lists of menu directories to search.\n"
               "    --menumethod  <method> Run only the menu method <method>.\n"
               "    --nodefaultdirs Disables the use of all the standard menu directories.\n"
               "    --stdout Output menu list in format suitable for piping to install-menu.\n");
@@ -866,7 +866,7 @@ void parse_params(char **argv)
       config.onlyoutput_to_stdout = true;
       continue;
     }
-    if(string("--menufiledir") == *argv) {
+    if(string("--menufilesdir") == *argv || string("--menufiledir") == *argv) {
       argv++;
       if(*argv) {
           config.menufilesdir.push_back(*argv);
