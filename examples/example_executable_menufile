@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 
+# This example was contributed by Marc Haber <zugschlus@debian.org>
 # This script can be put into ~/.menu to create a menu of hosts to ssh to.
 
 # Build icons hash to determine which icon file to use for a given menu
@@ -15,9 +16,9 @@ while( <DATA> ) {
   # Split data line into data fields
   my ($host, $hints, $icon) = split;
   # print menu line using the information read from the data field.
-  print "?package(local.ssh):command=\"sshconnect $host\" ";
+  print "?package(local.ssh):command=\"ssh $host\" ";
   print "title=\"$host\" hints=\"$hints\" section=\"local/ssh\" ";
-  print "needs=\"X11\" icon=\"$icons{$icon}\"\n";
+  print "needs=\"text\" icon=\"$icons{$icon}\"\n";
 }
 
 # This is the list of hosts. Each line corresponds to a single host
