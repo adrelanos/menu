@@ -1,5 +1,7 @@
 menu (2.1.12) unstable; urgency=low
 
+  * Jens Arvidsson:
+    - Updated Swedish menu messages translation. 
   * The "unreleased" release.
   * Fix typo in Chinese menu sections translation.  Closes: #242742. Thanks
     Carlos Z.F. Liu.
