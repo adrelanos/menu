@@ -5,11 +5,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: menu-section 2.1.7-2\n"
-"POT-Creation-Date: 2004-07-03 12:14+0100\n"
-"PO-Revision-Date: 2004-07-17 12:29-0300\n"
-"Last-Translator: António Amorim <Antonio.Amorim@fisica.fc.ul.pt>\n"
-"Language-Team: \n"
+"Project-Id-Version: menu-section 2.1.9-3\n"
+"POT-Creation-Date: 2003-04-03 12:14+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Antonio Amorim <Antonio.Amorim@fisica.fc.ul.pt>\n"
+"Language-Team: portuguese <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,7 +24,7 @@ msgid "Editors"
 msgstr "Editores"
 
 msgid "Education"
-msgstr "Educação"
+msgstr "Editores"
 
 msgid "Emulators"
 msgstr "Emuladores"
@@ -36,9 +36,6 @@ msgid "Hamradio"
 msgstr "Rádio Amador"
 
 msgid "Math"
-msgstr "Matemática"
-
-msgid "Mathematics"
 msgstr "Matemática"
 
 msgid "Net"
@@ -89,6 +86,9 @@ msgstr "Cartas"
 msgid "Puzzles"
 msgstr "Quebra Cabeças"
 
+msgid "Simulation"
+msgstr "Simulação"
+
 msgid "Sports"
 msgstr "Desporto"
 
@@ -124,3 +124,26 @@ msgstr "Módulos"
 
 msgid "XShells"
 msgstr "Shells Gráficos"
+
+#From Apps/System/Admin
+msgid "Admin"
+msgstr "Adminstração"
+
+#Non official sections from WindowMaker
+msgid "Appearance"
+msgstr "Aspecto"
+
+msgid "WorkSpace"
+msgstr "Espaço de rabalho"
+
+#Frequently used unofficial sections.
+
+#From Apps/Net/Mozilla Components
+msgid "Mozilla Components"
+msgstr "Componentes Mozilla"
+
+
+#From Games/Toys/Teddies
+msgid "Teddies"
+msgstr "Ursinhos de Peluche"
+
