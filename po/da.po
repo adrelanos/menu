@@ -2,10 +2,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: menu 2.1.15\n"
+"Project-Id-Version: menu 2.1.22\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2005-02-14 19:02+0100\n"
-"PO-Revision-Date: 2004-07-31 14:23+0200\n"
+"PO-Revision-Date: 2005-02-18 03:30+0200\n"
 "Last-Translator: Morten Brix Pedersen <morten@wtf.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
@@ -84,7 +84,7 @@ msgid ""
 "manager,\n"
 "the above file needs to be writeable (and/or the directory needs to exist).\n"
 msgstr ""
-"For at kunne oprette bruger opsætnigsfilerne for "
+"For at kunne oprette bruger opsætningsfilerne for "
 "vindueshåndteringsprogrammer, skal den ovenstående fil være skrivbar (og "
 "mappen skal eksistere).\n"
 
@@ -248,7 +248,7 @@ msgstr "Fejl ved læsning af %1.\n"
 
 #: ../update-menus/update-menus.cc:573
 msgid "%1 menu entries found (%2 total)."
-msgstr "%1 menu filer fundet (%2 totalt)."
+msgstr "%1 menupunkter fundet (%2 totalt)."
 
 #: ../update-menus/update-menus.cc:585
 msgid "Running method: %1"
