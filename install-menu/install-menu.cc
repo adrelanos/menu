@@ -896,7 +896,7 @@ void supportedinfo::subst(map<string, string> vars)
     throw informed_fatal();
   }
   if ((j = sup.find(uppercase(i->second))) == sup.end()) {
-    cerr << String::compose(_("Unknow value for field %1=\"%2\".\n"), NEEDS_VAR, i->second);
+    cerr << String::compose(_("Unknown value for field %1=\"%2\".\n"), NEEDS_VAR, i->second);
     throw informed_fatal();
   }
   genoutput(j->second.c->soutput(vars), vars);
