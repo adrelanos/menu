@@ -6,6 +6,8 @@ menu (2.1.15) unstable; urgency=low
   * Update Italian menu-section translation. Thanks Stefano Canepa.
   * Fix German menu-section translation. Closes: #254416. 
     Thanks Eduard Bloch and Sebastian Rittau.
+  * Fix po/Makefile.am so that tr.mo is installed. Sorry for not noticing
+    sooner.
   * Morten Brix Pedersen:
     - Update Danish translation.
     - Fix wrong error message when install-menu couldn't open a menu-method.

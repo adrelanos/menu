@@ -1,4 +1,4 @@
-MOs = da.mo es.mo fi.mo fr.mo ja.mo nl.mo nn.mo pl.mo pt_BR.mo ru.mo sv.mo tr.po zh_CN.mo
+MOs = da.mo es.mo fi.mo fr.mo ja.mo nl.mo nn.mo pl.mo pt_BR.mo ru.mo sv.mo tr.mo zh_CN.mo
 POs = da.po es.po fi.po fr.po ja.po nl.po nn.po pl.po pt_BR.po ru.po sv.po tr.po zh_CN.po
 localedir = $(datadir)/locale
 
