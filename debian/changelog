@@ -1,8 +1,10 @@
 menu (2.1.20) unstable; urgency=low
 
   * The "unreleased" release
+  * Call getpwuid() once and cache the value. This avoid stressing 
+    needlessly NIS. Thanks to Steven R. Evatt.
 
- -- Bill Allombert <ballombe@debian.org>  Sat,  6 Nov 2004 20:45:07 +0100
+ -- Bill Allombert <ballombe@debian.org>  Thu,  9 Dec 2004 00:40:01 +0100
 
 menu (2.1.19) unstable; urgency=low
 

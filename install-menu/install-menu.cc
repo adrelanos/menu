@@ -62,6 +62,7 @@ using namespace exceptions;
 int verbose = 0;
 const char * menuencoding = "UTF-8";
 bool is_root;
+const char *pw_dir;
 
 map<string, functions::func *> func_data;
 
@@ -665,13 +666,12 @@ string methodinfo::prefix()
 {
   if (!is_root) {
     string up = userprefix()->soutput(root_menu.vars);
-    struct passwd *pw = getpwuid(getuid());
     // When userprefix is prefixed by // instead of just one /, treat the
     // URL as absolute instead of relative.
     if (up.length() > 1 && up.substr(0, 2) == "//") {
       return up.substr(1);
     } else {
-      return string(pw->pw_dir)+"/"+up;
+      return string(pw_dir)+"/"+up;
     }
   } else {
     return rootprefix()->soutput(root_menu.vars);
@@ -892,8 +892,10 @@ void usage(ostream &c)
 
 int main(int argc, char **argv)
 {
-  is_root = (getuid() == 0);
-
+  uid_t uid = getuid();
+  struct passwd *pw = getpwuid(uid);
+  is_root = (uid == 0);
+  pw_dir = pw->pw_dir;
   std::string script_name;
   parsestream *ps = 0, *psscript = 0;
   
