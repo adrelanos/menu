@@ -97,7 +97,7 @@ public:
 };
 
 class configinfo {
-  std::string compt, rcf, exrcf, roots, mainmt, treew;
+  std::string compt, rcf, exrcf, roots, mainmt, treew, outputenc;
   std::string preout, postout;
 
   void check_config();
@@ -133,6 +133,7 @@ public:
   const std::string &treewalk() const { return treew; }
   const std::string &preoutput() const { return preout; }
   const std::string &postoutput() const { return postout; }
+  const std::string &outputencoding() const { return outputenc; }
   cat_str *rootprefix();
   cat_str *userprefix();
 
@@ -409,6 +410,14 @@ public:
                      "tags found in the menu entry files, so that the part above\n"
                      "isn't literal"),
 		   msg);
+  }
+};
+
+class conversion_error : public except_string {
+public:
+  conversion_error(std::string s) : except_string(s) { }
+  std::string message() const {
+    return Sprintf(_("Encoding conversion error: \"%s\""), msg);
   }
 };
 

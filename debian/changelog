@@ -13,6 +13,8 @@ menu (2.1.8-3) unstable; urgency=low
   * Morten Brix Pedersen:
     - Just skip the file when its missing a tag, instead of stopping
     completely. Closes: #56839
+    - menu-methods can now define the charset/encoding which the outputted
+    section names should be in by using the outputencoding variable.
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 23 May 2003 20:51:13 +0200
 

@@ -12,6 +12,7 @@
 #include <sys/stat.h>
 #include <pwd.h>
 #include <config.h>
+#include <iconv.h>
 
 #include "install-menu.h"
 #include "menu-tree.h"
@@ -27,6 +28,7 @@ using std::cerr;
 using std::endl;
 
 int verbose = 0;
+const char * menuencoding = "UTF-8";
 
 map<string, func *> func_data;
 
@@ -52,6 +54,51 @@ bool do_translate_hack = false;
 void store_func(func *f)
 {
   func_data[f->name()]=f;
+}
+
+// This function is used to convert a string from one encoding to another.
+//
+// The function could probably be prettier, but it works. One of the things
+// I dislike about it is that the cleanup operations are duplicated three
+// times (e.g. delete[]).
+std::string convert(const std::string& str)
+{
+  //std::cerr << "Original string: " << str << std::endl;
+  size_t insize = str.length();
+  char *inbuf = new char[insize + 1];
+  char *inbuf_t = inbuf;
+  strcpy(inbuf, str.c_str());
+
+  // Max length of a UTF-8 character is 6 per input character.
+  size_t outsize = insize * 6;
+  size_t outsize_t = outsize;
+
+  char *outbuf = new char[outsize];
+  char *outbuf_t = outbuf;
+
+  iconv_t conversion = iconv_open(config->outputencoding().c_str(), menuencoding);
+
+  if (conversion == (iconv_t)(-1)) {
+      delete []inbuf;
+      delete []outbuf;
+      iconv_close(conversion);
+      throw conversion_error(strerror(errno));
+  }
+
+  size_t retval = iconv(conversion, &inbuf_t, &insize, &outbuf_t, &outsize_t);
+  if (retval == (size_t)(-1)) {
+      delete []inbuf;
+      delete []outbuf;
+      iconv_close(conversion);
+      throw conversion_error(strerror(errno));
+  }
+
+  std::string conv_str = string(outbuf, outsize - outsize_t);
+  //std::cerr << "Converted string: " << conv_str << std::endl;
+  iconv_close(conversion);
+  delete []inbuf;
+  delete []outbuf;
+  return conv_str;
 }
 
 void add_functions()
@@ -735,7 +782,7 @@ ostream &translate_func::output(ostream &o, vector<cat_str *> &args,
   string lang=args[0]->soutput(menuentry);
   string text=args[1]->soutput(menuentry);
 
-  return o<<ldgettext(lang.c_str(), "menu-sections", text.c_str());
+  return o << ldgettext(lang.c_str(), "menu-sections", text.c_str());
 }
 
 
@@ -884,10 +931,12 @@ void read_forcetree(parsestream &i)
 //
 configinfo::configinfo(parsestream &i) 
     : roots("/Debian"), mainmt("Debian"), treew("c(m)"),
-    onlyrunasroot(false), onlyrunasuser(false), onlyuniquetitles(false),
-    hint_optimize(false), hint_nentry(6), hint_topnentry(5),
-    hint_mixedpenalty(15), hint_minhintfreq(0.1), hint_mlpenalty(2000),
-    hint_max_ntry(4), hint_max_iter_hint(5), hint_debug(false), hotkeycase(0)
+    outputenc(menuencoding), onlyrunasroot(false),
+    onlyrunasuser(false),
+    onlyuniquetitles(false), hint_optimize(false), hint_nentry(6),
+    hint_topnentry(5), hint_mixedpenalty(15), hint_minhintfreq(0.1),
+    hint_mlpenalty(2000), hint_max_ntry(4), hint_max_iter_hint(5),
+    hint_debug(false), hotkeycase(0)
 {
   userpref=rootpref=sort=prerun=preruntest=postrun=genmenu=
     hkexclude=startmenu=endmenu=submenutitle=also_run=repeat_lang=0;
@@ -961,6 +1010,8 @@ configinfo::configinfo(parsestream &i)
 	  postout=i.get_eq_stringconst();
 	else if(name=="preoutput")
 	  preout=i.get_eq_stringconst();
+	else if(name=="outputencoding")
+	  outputenc=i.get_eq_stringconst();
 	else if(name=="command"){
 	  system((i.get_eq_stringconst()).c_str());
 	  exit(0);
@@ -1108,15 +1159,24 @@ map<string, string> read_vars(parsestream &i)
 	  vector<string> v;
 	  break_slashes(val,v);
 	  val.erase();
+
           for(vector<string>::const_iterator i = v.begin(); i != v.end(); ++i)
-              val = val + "/" + dgettext("menu-sections", i->c_str());
+              val = val + '/' + dgettext("menu-sections", i->c_str());
+
+          try {
+              std::string newval = convert(val);
+              val = newval;
+          } catch (conversion_error& err) {
+              std::cerr << err.message() << std::endl;
+          }
+
 	}
       }
       
       m[name] = val;
     } 
   }
-  catch(endofline p) { }
+  catch (endofline p) { }
   return m;
 }
 
@@ -1247,9 +1307,10 @@ int main(int argc, char **argv)
   std::string script_name;
   parsestream *ps = 0, *psscript = 0;
   
-  setlocale (LC_ALL, "");
-  bindtextdomain (PACKAGE, LOCALEDIR);
-  textdomain (PACKAGE);
+  setlocale(LC_ALL, "");
+  bindtextdomain(PACKAGE, LOCALEDIR);
+  bind_textdomain_codeset("menu-sections", menuencoding);
+  textdomain(PACKAGE);
 
   if (!getuid()) {
     // When we are root, we set umask to 002 to ignore the real root umask.
