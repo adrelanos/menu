@@ -1,8 +1,11 @@
 menu (2.1.21) unstable; urgency=low
 
   * The "unreleased" release
+  * Add Czech menu messages translation. Thanks Miroslav Kure.
+    Closes: #287308.
+  * debian/control: uncapitalize synopsis.
 
- -- Bill Allombert <ballombe@debian.org>  Wed, 15 Dec 2004 17:36:07 +0100
+ -- Bill Allombert <ballombe@debian.org>  Wed,  5 Jan 2005 10:52:17 +0100
 
 menu (2.1.20) unstable; urgency=low
 
