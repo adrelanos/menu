@@ -633,9 +633,8 @@ void run_menumethod(string methodname, const vector<string> &menudata)
 /** Run a directory full of menu methods */
 void run_menumethoddir(const string &dirname, const vector<string> &menudata)
 {
-  struct stat st;
   struct dirent *entry;
-  char *s, tmp[MAX_LINE];
+  char *s;
 
   config.report(String::compose(_("Running menu-methods in %1."), dirname), configinfo::report_verbose);
   DIR *dir = open_dir_check(dirname);
@@ -649,17 +648,11 @@ void run_menumethoddir(const string &dirname, const vector<string> &menudata)
     }
     if (*s != '\0')
       continue;
+    
+    string method = dirname + entry->d_name;
 
-    sprintf(tmp, "%s%s", dirname.c_str(), entry->d_name);
-    int r = stat(tmp, &st);
-
-    // Do we have execute permissions? 
-    if ((!r) &&
-        (((st.st_mode & S_IXOTH) || 
-          ((st.st_mode & S_IXGRP) && st.st_gid == getegid ()) || 
-          ((st.st_mode & S_IXUSR) && st.st_uid == geteuid ())) && 
-         (S_ISREG(st.st_mode) || S_ISLNK(st.st_mode))))
-        run_menumethod(tmp, menudata);
+    if (executable(method))
+        run_menumethod(method, menudata);
   }
   closedir (dir);
 }
