@@ -1,10 +1,11 @@
 menu (2.1.20) unstable; urgency=low
 
-  * The "unreleased" release
+  * The "deer Rudolf" release
   * Call getpwuid() once and cache the value. This avoid stressing 
     needlessly NIS. Thanks to Steven R. Evatt.
+  * Extend the documentation of onlyrunasuser.
 
- -- Bill Allombert <ballombe@debian.org>  Thu,  9 Dec 2004 00:40:01 +0100
+ -- Bill Allombert <ballombe@debian.org>  Wed, 15 Dec 2004 00:51:03 +0100
 
 menu (2.1.19) unstable; urgency=low
 

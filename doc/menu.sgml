@@ -934,15 +934,17 @@ genmenu, etc to generate more output. This second time, variables like
 <p>
 Note: NOT just like <tt/prerun/ etc: <tt/prerun/ etc start a command
 with /bin/sh, <tt/also_run/ doesn't exec any other command, just tells
-install-menu to also load anoter binary, and generate the output.
+install-menu to also load another binary, and generate the output.
 
 <tag><tt/onlyrunasroot=false/
 <tag><tt/onlyrunasuser=false/
 <item>
-If onlyrunasroot is set to true, menu will quit silently when run as
-user. Similarly for onlyrunasuser.
-<var>This is deprecated since it is simpler to just not define
-<tt/userprefix/ (resp. <tt/rootprefix/).</var>
+If <tt/onlyrunasroot/ is set to true, menu will quit silently when run as
+user. Similarly for <tt/onlyrunasuser/.
+<var><tt/onlyrunasroot/ is deprecated since it is simpler to just not define
+<tt/userprefix/.</var> On the other hand, <tt/onlyrunasuser/ might be needed 
+if you use <tt/rcfile/ since <tt/rootprefix/ is used as a fallback location
+for the template.
 
 <tag><tt>preoutput="#Automatically generated file. Do not edit (see /usr/share/doc/menu/html)\n\n"</tt>
 <tag><tt>postoutput=""</tt>
