@@ -6,6 +6,7 @@ menu (2.1.10-2) unstable; urgency=low
     'repeat_lang' has been set.
     - Set repeat_lang="LOCALE" per default. menu-methods now only need to set
     outputencoding in order to enable translations.
+    - Update Danish menu translation.
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 12 Mar 2004 15:27:16 +0100
 
