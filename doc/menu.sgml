@@ -3,7 +3,7 @@
 <!--
  Debian Menu System
  Copyright (C) 1997 Joost Witteveen, Joey Hess, Christian Schwarz;
- Modification (C) 2002-2003 Bill Allombert
+ Modification (C) 2002-2005 Bill Allombert
  released under the terms of the GNU
  General Public License, version 2 or (at your option) any later.
  -->
@@ -27,7 +27,7 @@ interface for both text- and X-oriented programs.
 </abstract>
 
 <copyright>Copyright &copy;1997 Joost Witteveen, Joey Hess, Christian Schwarz.
-&copy;2002-2003 Bill Allombert.
+&copy;2002-2005 Bill Allombert.
 <p>
 
 This manual is free software; you may redistribute it and/or modify it
