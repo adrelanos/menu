@@ -719,8 +719,8 @@ int check_dpkglock()
         return 1;
     cerr<<"update-menus: Encountered an unknown errno (="
         <<er<<")."<<endl
-        <<"update-menus: Could you please be so kind as to email joostje@debian.org"<<endl
-        <<"update-menus: the errno (="<<er<<") with a discription of what you did to"<<endl
+        <<"update-menus: Could you please be so kind as to email menu@packages.debian.org"<<endl
+        <<"update-menus: the errno (="<<er<<") with a description of what you did to"<<endl
         <<"update-menus: trigger this. Thanks very much."<<endl
         <<"Press enter"<<endl;
     std::cin.get(buf, sizeof(buf));
