@@ -1,0 +1,121 @@
+# Menu section translation
+# Copyright (C) 2003
+# This file is distributed under the same license as the menu package.
+# Bill Allombert <ballombe@debian.org>, 2003.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: menu-section 2.1.7-2\n"
+"POT-Creation-Date: 2003-04-03 12:14+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Gabó <gabo@linuxportal.hu> \n"
+"Language-Team: LinuXPortal <linuxportal@linuxportal.hu>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Apps"
+msgstr "Alkalmazások"
+
+msgid "Databases"
+msgstr "Adatbázisok"
+ 
+msgid "Editors"
+msgstr "Szövegszerkesztõk"
+
+msgid "Emulators"
+msgstr "Emulátorok"
+
+msgid "Graphics"
+msgstr "Grafika"
+
+msgid "Hamradio"
+msgstr "Hamrádió"
+
+msgid "Math"
+msgstr "Matematika"
+
+msgid "Net"
+msgstr "Internet"
+
+msgid "Programming"
+msgstr "Programozás"
+
+msgid "Science"
+msgstr "Tudomány"
+
+msgid "Tools"
+msgstr "Segédletek"
+
+msgid "Technical"
+msgstr "Mûszaki"
+
+msgid "Text"
+msgstr "Szöveges"
+
+msgid "Shells"
+msgstr "Parancsértelmezõk"
+
+msgid "Sound"
+msgstr "Hang"
+
+msgid "Viewers"
+msgstr "Nézegetõk"
+
+msgid "System"
+msgstr "Rendszer"
+
+msgid "Games"
+msgstr "Játékok"
+
+msgid "Adventure"
+msgstr "Kaland"
+
+msgid "Arcade"
+msgstr "Árkád"
+
+msgid "Board"
+msgstr "Tábla"
+
+msgid "Card"
+msgstr "Kártya"
+
+msgid "Puzzles"
+msgstr "Fejtörõk"
+
+msgid "Sports"
+msgstr "Sportok"
+
+msgid "Strategy"
+msgstr "Stratégia"
+
+msgid "Tetris-like"
+msgstr "Tetrisz"
+
+msgid "Toys"
+msgstr "Apróságok"
+
+msgid "Help"
+msgstr "Súgó"
+
+msgid "Screen"
+msgstr "Képernyõ"
+
+msgid "Lock"
+msgstr "Zárol"
+
+msgid "Save"
+msgstr "Ment"
+
+msgid "Root-window"
+msgstr "Fõ ablak"
+
+msgid "WindowManagers"
+msgstr "Ablakkezelõk"
+
+msgid "Modules"
+msgstr "Modulok"
+
+msgid "XShells"
+msgstr "X-héjak"

@@ -1,0 +1,121 @@
+# Menu section translation
+# Copyright (C) 2003
+# This file is distributed under the same license as the menu package.
+# Bill Allombert <ballombe@debian.org>, 2003.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: menu-section 2.1.7-2\n"
+"POT-Creation-Date: 2003-04-03 12:14+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Apps"
+msgstr ""
+
+msgid "Databases"
+msgstr ""
+ 
+msgid "Editors"
+msgstr ""
+
+msgid "Emulators"
+msgstr ""
+
+msgid "Graphics"
+msgstr ""
+
+msgid "Hamradio"
+msgstr ""
+
+msgid "Math"
+msgstr ""
+
+msgid "Net"
+msgstr ""
+
+msgid "Programming"
+msgstr ""
+
+msgid "Science"
+msgstr ""
+
+msgid "Tools"
+msgstr ""
+
+msgid "Technical"
+msgstr ""
+
+msgid "Text"
+msgstr ""
+
+msgid "Shells"
+msgstr ""
+
+msgid "Sound"
+msgstr ""
+
+msgid "Viewers"
+msgstr ""
+
+msgid "System"
+msgstr ""
+
+msgid "Games"
+msgstr ""
+
+msgid "Adventure"
+msgstr ""
+
+msgid "Arcade"
+msgstr ""
+
+msgid "Board"
+msgstr ""
+
+msgid "Card"
+msgstr ""
+
+msgid "Puzzles"
+msgstr ""
+
+msgid "Sports"
+msgstr ""
+
+msgid "Strategy"
+msgstr ""
+
+msgid "Tetris-like"
+msgstr ""
+
+msgid "Toys"
+msgstr ""
+
+msgid "Help"
+msgstr ""
+
+msgid "Screen"
+msgstr ""
+
+msgid "Lock"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Root-window"
+msgstr ""
+
+msgid "WindowManagers"
+msgstr ""
+
+msgid "Modules"
+msgstr ""
+
+msgid "XShells"
+msgstr ""

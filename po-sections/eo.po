@@ -1,0 +1,852 @@
+# Menu section translation
+# Copyright (C) 2000-2003 
+# Joost Witteveen <joostje@debian.org>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: menu 2.1.7-2\n"
+"PO-Revision-Date: 2003-3-06 17:11 +0100\n"
+"Last-Translator: Joost Witteveen <joostje@debian.org>\n"
+"Language-Team: <debian-l10n-esperanto@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# Automatically generated file. Do not edit (see /usr/share/doc/menu/html/index.html)
+#. From the Debian Tree, right at the Root
+msgid "Apps"
+msgstr "Aplikoj"
+
+#. From the Debian Tree, right at the Root
+msgid "Games"
+msgstr "Ludoj"
+
+#. From the Debian Tree, right at the Root
+msgid "Screen"
+msgstr "Ekrano"
+
+#. From the Debian Tree, right at the Root
+msgid "System"
+msgstr "Sistemo"
+
+#. From the Debian Tree, right at the Root
+msgid "WindowManagers"
+msgstr "FenstroKontroliloj"
+
+#. From the Debian Tree, in section /Apps
+msgid "Editors"
+msgstr ""
+
+#. From the Debian Tree, in section /Apps
+msgid "Graphics"
+msgstr "Grafikoj"
+
+#. From the Debian Tree, in section /Apps
+msgid "Math"
+msgstr "Matematiko"
+
+#. From the Debian Tree, in section /Apps
+msgid "Misc"
+msgstr "Diversaj"
+
+#. From the Debian Tree, in section /Apps
+msgid "Net"
+msgstr "Reto"
+
+#. From the Debian Tree, in section /Apps
+msgid "Programming"
+msgstr "Programado"
+
+#. From the Debian Tree, in section /Apps
+msgid "Shells"
+msgstr "Konkoj"
+
+#. From the Debian Tree, in section /Apps
+msgid "Sound"
+msgstr "Sono"
+
+#. From the Debian Tree, in section /Apps
+msgid "Tools"
+msgstr "Iloj"
+
+#. From the Debian Tree, in section /Apps
+msgid "Viewers"
+msgstr "Montriloj"
+
+#. From package emacs20, in section /Apps/Editors
+msgid "Emacs 20"
+msgstr "Emacso 20"
+
+#. From package xcontrib, in section /Apps/Editors
+msgid "Xedit"
+msgstr "Xedit"
+
+#. From the Debian Tree, in section /Apps/Games
+msgid "Toys"
+msgstr "Ludiloj"
+
+#. From package xcontrib, in section /Apps/Games/Toys
+msgid "Ico"
+msgstr ""
+
+#. From package oneko, in section /Apps/Games/Toys
+msgid "Oneko (cat) - start"
+msgstr "Oneko (kato) - Eku"
+
+#. From package oneko, in section /Apps/Games/Toys
+msgid "Oneko (dog) - start"
+msgstr "Oneko (hundo) - komencu"
+
+#. From package oneko, in section /Apps/Games/Toys
+msgid "Oneko - stop"
+msgstr "Oneko - cxesu"
+
+#. From package xcontrib, in section /Apps/Games/Toys
+msgid "Xeyes"
+msgstr "Xokuloj"
+
+#. From package pixmap, in section /Apps/Graphics
+msgid "Pixmap"
+msgstr "Pixmap"
+
+#. From package sced, in section /Apps/Graphics
+msgid "ScEd"
+msgstr ""
+
+#. From package gimp, in section /Apps/Graphics
+msgid "The GIMP"
+msgstr "La GIMP"
+
+#. From package xmorph, in section /Apps/Graphics
+msgid "XMorph"
+msgstr ""
+
+#. From package xfig, in section /Apps/Graphics
+msgid "Xfig"
+msgstr ""
+
+#. From package gnuplot, in section /Apps/Math
+msgid "Gnuplot"
+msgstr ""
+
+#. From package xcontrib, in section /Apps/Math
+msgid "Xcalc"
+msgstr "Xkalk"
+
+#. From package bc, in section /Apps/Math
+msgid "bc"
+msgstr ""
+
+#. From package dc, in section /Apps/Math
+msgid "dc"
+msgstr ""
+
+#. From package addressbook, in section /Apps/Misc
+msgid "Addressbook"
+msgstr "Adreslibro"
+
+#. From package chimera2, in section /Apps/Net
+msgid "Chimera"
+msgstr ""
+
+#. From package lynx, in section /Apps/Net
+msgid "Lynx"
+msgstr ""
+
+#. From package mozilla, in section /Apps/Net
+msgid "Mozilla Navigator"
+msgstr "Mozilla Navigilo"
+
+#. From package mutt, in section /Apps/Net
+msgid "Mutt"
+msgstr ""
+
+#. From the Debian Tree, in section /Apps/Net
+msgid "Netscape"
+msgstr "NetSkapo"
+
+#. From package netstd, in section /Apps/Net
+msgid "Telnet"
+msgstr ""
+
+#. From package xcontrib, in section /Apps/Net
+msgid "Xbiff"
+msgstr ""
+
+#. From package netstd, in section /Apps/Net
+msgid "ftp"
+msgstr ""
+
+#. From package communicator-smotif-408, in section /Apps/Net/Netscape/Communicator(static
+msgid "Communicator(static/4.08) Browser"
+msgstr "Komunikanto(statike/4.08) Foliumilo"
+
+#. From package communicator-smotif-408, in section /Apps/Net/Netscape/Communicator(static
+msgid "Communicator(static/4.08) Mail"
+msgstr "Komunikanto(statike/4.08) Retposxto"
+
+#. From package communicator-smotif-408, in section /Apps/Net/Netscape/Communicator(static
+msgid "Communicator(static/4.08) News"
+msgstr "Komunikanto(statike/4.08) Novajxo"
+
+#. From package communicator-smotif-46, in section /Apps/Net/Netscape/Communicator(static
+msgid "Communicator(static/4.6) Browser"
+msgstr "Komunikanto(statike/4.6) Foliumilo"
+
+#. From package communicator-smotif-46, in section /Apps/Net/Netscape/Communicator(static
+msgid "Communicator(static/4.6) Mail"
+msgstr "Komunikanto(statike/4.6) Retposxto"
+
+#. From package communicator-smotif-46, in section /Apps/Net/Netscape/Communicator(static
+msgid "Communicator(static/4.6) News"
+msgstr "Komunikanto(statike/4.6) Novajxo"
+
+#. From package navigator-smotif-408, in section /Apps/Net/Netscape/Navigator(static
+msgid "Navigator(static/4.08) Browser"
+msgstr "Navigilo(statike/4.08) Foliumilo"
+
+#. From package ddd, in section /Apps/Programming
+msgid "Data Display Debugger"
+msgstr ""
+
+#. From package gdb, in section /Apps/Programming
+msgid "Gdb"
+msgstr ""
+
+#. From package xxgdb, in section /Apps/Programming
+msgid "Xxgdb"
+msgstr ""
+
+#. From package bash, in section /Apps/Shells
+msgid "Bash"
+msgstr ""
+
+#. From package pdksh, in section /Apps/Shells
+msgid "Ksh"
+msgstr ""
+
+#. From package pdmenu, in section /Apps/Shells
+msgid "Pdmenu"
+msgstr "Pdmenuo"
+
+#. From package bash, in section /Apps/Shells
+msgid "Sh"
+msgstr ""
+
+#. From package rosegarden, in section /Apps/Sound
+msgid "Rosegarden"
+msgstr ""
+
+#. From the Debian Tree, in section /Apps/System
+msgid "Admin"
+msgstr ""
+
+#. From package procps, in section /Apps/System
+msgid "Top"
+msgstr ""
+
+#. From package xosview, in section /Apps/System
+msgid "xosview"
+msgstr ""
+
+#. From package dwww, in section /Apps/System/Admin
+msgid "Dwww-config"
+msgstr "Dwww-adapto"
+
+#. From package lilo, in section /Apps/System/Admin
+msgid "Lilo-config"
+msgstr "Lilo-adapto"
+
+#. From package magicfilter, in section /Apps/System/Admin
+msgid "Magicfilter-config"
+msgstr "Magicfilter-adapto"
+
+#. From package gnuplot, in section /Apps/System/Admin
+msgid "gnuplot-config"
+msgstr "gnuplot-adapto"
+
+#. From package gpm, in section /Apps/System/Admin
+msgid "gpm-config"
+msgstr "gpm-adapto"
+
+#. From package asclock, in section /Apps/Tools
+msgid "ASclock"
+msgstr ""
+
+#. From package dhelp, in section /Apps/Tools
+msgid "Debian Online Help"
+msgstr ""
+
+#. From package xcontrib, in section /Apps/Tools
+msgid "Viewres"
+msgstr ""
+
+#. From package xcontrib, in section /Apps/Tools
+msgid "Xev"
+msgstr ""
+
+#. From package xcontrib, in section /Apps/Tools
+msgid "Xgc"
+msgstr ""
+
+#. From package xcontrib, in section /Apps/Tools
+msgid "Xman"
+msgstr ""
+
+#. From package xzoom, in section /Apps/Tools
+msgid "xzoom"
+msgstr ""
+
+#. From package gv, in section /Apps/Viewers
+msgid "GV"
+msgstr ""
+
+#. From package imagemagick, in section /Apps/Viewers
+msgid "ImageMagick"
+msgstr ""
+
+#. From package zgv, in section /Apps/Viewers
+msgid "zgv"
+msgstr ""
+
+#. From the Debian Tree, in section /Games
+msgid "Adventure"
+msgstr "Aventuro"
+
+#. From the Debian Tree, in section /Games
+msgid "Arcade"
+msgstr ""
+
+#. From the Debian Tree, in section /Games
+msgid "Board"
+msgstr "Tabulo"
+
+#. From the Debian Tree, in section /Games
+msgid "Simulation"
+msgstr "Sxajnigo"
+
+#. From the Debian Tree, in section /Games
+msgid "Strategy"
+msgstr "Strategio"
+
+#. From the Debian Tree, in section /Games
+msgid "Tetris-like"
+msgstr "Tetris-eca"
+
+#. From package tf, in section /Games/Adventure
+msgid "TinyFugue"
+msgstr "EtaFugxe"
+
+#. From package xonix-jahu, in section /Games/Arcade
+msgid "JahuSoft Xonix"
+msgstr ""
+
+#. From package nighthawk, in section /Games/Arcade
+msgid "Nighthawk"
+msgstr ""
+
+#. From package pacman, in section /Games/Arcade
+msgid "PacMan"
+msgstr ""
+
+#. From package xbill, in section /Games/Arcade
+msgid "XBill"
+msgstr ""
+
+#. From package xblast, in section /Games/Arcade
+msgid "XBlast"
+msgstr ""
+
+#. From package xdigger, in section /Games/Arcade
+msgid "XDigger"
+msgstr "XFosanto"
+
+#. From package xscavenger, in section /Games/Arcade
+msgid "XScavenger"
+msgstr ""
+
+#. From package xboing, in section /Games/Arcade
+msgid "Xboing"
+msgstr ""
+
+#. From package xdemineur, in section /Games/Arcade
+msgid "Xdemineur"
+msgstr ""
+
+#. From package xkobo, in section /Games/Arcade
+msgid "Xkobo"
+msgstr ""
+
+#. From package xonix, in section /Games/Arcade
+msgid "Xonix"
+msgstr ""
+
+#. From package gnushogi, in section /Games/Board
+msgid "GNU Shogi"
+msgstr ""
+
+#. From package pente, in section /Games/Board
+msgid "Pente"
+msgstr ""
+
+#. From package phalanx, in section /Games/Board
+msgid "Phalanx"
+msgstr ""
+
+#. From package xboard, in section /Games/Board
+msgid "X Gnuchess"
+msgstr "X GnuSxako"
+
+#. From package xboard, in section /Games/Board
+msgid "XBoard"
+msgstr "XTabulo"
+
+#. From package xshogi, in section /Games/Board
+msgid "XShogi"
+msgstr ""
+
+#. From package xbattle, in section /Games/Board
+msgid "Xbattle"
+msgstr ""
+
+#. From package lincity-x, in section /Games/Simulation
+msgid "Lincity (X)"
+msgstr ""
+
+#. From package xconq, in section /Games/Strategy
+msgid "Xconq"
+msgstr ""
+
+#. From package xlaby, in section /Games/Strategy
+msgid "xlaby"
+msgstr ""
+
+#. From package xbl, in section /Games/Tetris-like
+msgid "Blockout"
+msgstr ""
+
+#. From package xemeraldia, in section /Games/Tetris-like
+msgid "Emeraldia"
+msgstr ""
+
+#. From package xjewel, in section /Games/Tetris-like
+msgid "Jewel Box"
+msgstr "Perla Skatolo"
+
+#. From package xtris, in section /Games/Tetris-like
+msgid "Xtris"
+msgstr ""
+
+#. From package netris, in section /Games/Tetris-like
+msgid "netris"
+msgstr ""
+
+#. From package xflip, in section /Games/Toys
+msgid "Flip Screen"
+msgstr "Turnigu Ekranon"
+
+#. From package xflip, in section /Games/Toys
+msgid "Meltdown"
+msgstr "SubenFandu"
+
+#. From the Debian Tree, in section /Screen
+msgid "Lock"
+msgstr "Sxlosu"
+
+#. From the Debian Tree, in section /Screen
+msgid "Save"
+msgstr "Sxparu"
+
+#. From the Debian Tree, in section /Screen/Lock
+msgid "Assorted"
+msgstr "Diversaj"
+
+#. From the Debian Tree, in section /Screen/Lock
+msgid "Automata"
+msgstr ""
+
+#. From the Debian Tree, in section /Screen/Lock
+msgid "Fractal"
+msgstr "Fraktalo"
+
+#. From the Debian Tree, in section /Screen/Lock
+msgid "Geometry"
+msgstr "Geometrio"
+
+#. From the Debian Tree, in section /Screen/Lock
+msgid "MarqueeMessage"
+msgstr ""
+
+#. From the Debian Tree, in section /Screen/Lock
+msgid "NoseMessage"
+msgstr "NazoMesagxoj"
+
+#. From the Debian Tree, in section /Screen/Lock
+msgid "Space"
+msgstr "Spaco"
+
+#. From the Debian Tree, in section /Screen/Lock
+msgid "Special"
+msgstr "Specialo"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Ball"
+msgstr "Pilko"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Bat"
+msgstr "Vesperto"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Blot"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Bounce"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Clock"
+msgstr "Horlogxo"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Crystal"
+msgstr "Kristalo"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Daisy"
+msgstr "Lekanteto"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Dclock"
+msgstr "Dhorlogxo"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Eyes"
+msgstr "Okuloj"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Flag"
+msgstr "Flago"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Goop"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Image"
+msgstr "Bildo"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Marquee"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Maze"
+msgstr "Labirinto"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Nose"
+msgstr "Nazo"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Pacman"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Puzzle"
+msgstr "Enigmo"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Pyro"
+msgstr "FajroLudo"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Pyro3d"
+msgstr "FajroLudo3d"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Roll"
+msgstr "Ruli"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Slip"
+msgstr "Joro"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Swarm"
+msgstr "Svarmo"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Swirl"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Worm"
+msgstr "Vermo"
+
+#. From package xlockmore, in section /Screen/Lock/Assorted
+msgid "Worm3d"
+msgstr "Vermo3d"
+
+#. From package xlockmore, in section /Screen/Lock/Automata
+msgid "Ant"
+msgstr "Formiko"
+
+#. From package xlockmore, in section /Screen/Lock/Automata
+msgid "Ant Truchet"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Automata
+msgid "Bee"
+msgstr "Abelo"
+
+#. From package xlockmore, in section /Screen/Lock/Automata
+msgid "Bee Truchet"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Automata
+msgid "Bug"
+msgstr "Cimo"
+
+#. From package xlockmore, in section /Screen/Lock/Automata
+msgid "Demon"
+msgstr "Demono"
+
+#. From package xlockmore, in section /Screen/Lock/Automata
+msgid "Dilemma"
+msgstr "Dilemo"
+
+#. From package xlockmore, in section /Screen/Lock/Automata
+msgid "Life"
+msgstr "Vivo"
+
+#. From package xlockmore, in section /Screen/Lock/Automata
+msgid "Life1d"
+msgstr "Vivo1d"
+
+#. From package xlockmore, in section /Screen/Lock/Automata
+msgid "Life3d"
+msgstr "Vivo3d"
+
+#. From package xlockmore, in section /Screen/Lock/Automata
+msgid "Loop"
+msgstr "Rundiro"
+
+#. From package xlockmore, in section /Screen/Lock/Automata
+msgid "Random"
+msgstr "Hazarde"
+
+#. From package xlockmore, in section /Screen/Lock/Automata
+msgid "Wator"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Automata
+msgid "Wire"
+msgstr "Sxnuro"
+
+#. From package xlockmore, in section /Screen/Lock/Fractal
+msgid "Drift"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Fractal
+msgid "Flame"
+msgstr "Flamo"
+
+#. From package xlockmore, in section /Screen/Lock/Fractal
+msgid "Forest"
+msgstr "Arbaro"
+
+#. From package xlockmore, in section /Screen/Lock/Fractal
+msgid "Hop"
+msgstr "Salto"
+
+#. From package xlockmore, in section /Screen/Lock/Fractal
+msgid "IFS"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Fractal
+msgid "Julia"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Fractal
+msgid "Lightning"
+msgstr "Fulmo"
+
+#. From package xlockmore, in section /Screen/Lock/Fractal
+msgid "Mandelbrot"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Fractal
+msgid "Mountain"
+msgstr "Monto"
+
+#. From package xlockmore, in section /Screen/Lock/Fractal
+msgid "Sierpinski"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Fractal
+msgid "Strange"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Fractal
+msgid "Triangle"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Fractal
+msgid "Turtle"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Fractal
+msgid "Vines"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Geometry
+msgid "Braid"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Geometry
+msgid "Helix"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Geometry
+msgid "Hyper"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Geometry
+msgid "Kaleid"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Geometry
+msgid "Laser"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Geometry
+msgid "Lisa"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Geometry
+msgid "Lissie"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Geometry
+msgid "Penrose"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Geometry
+msgid "Penrose Ammann"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Geometry
+msgid "Petal"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Geometry
+msgid "Qix"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Geometry
+msgid "Rotor"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Geometry
+msgid "Shape"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Geometry
+msgid "Sphere"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Geometry
+msgid "Spiral"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Geometry
+msgid "Spline"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/MarqueeMessage
+msgid "Back Soon"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/MarqueeMessage
+msgid "Overnight"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/MarqueeMessage
+msgid "Rude"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Space
+msgid "Bouboule"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Space
+msgid "Bouboule3d"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Space
+msgid "Galaxy"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Space
+msgid "Grav"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Space
+msgid "Grav Decay"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Space
+msgid "Grav Trail"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Space
+msgid "Rock"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Space
+msgid "Star"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Space
+msgid "Star Trek"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Space
+msgid "Star3d"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Space
+msgid "World"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Special
+msgid "Blank"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Special
+msgid "Random all"
+msgstr ""
+
+#. From package xlockmore, in section /Screen/Lock/Special
+msgid "Random nice"
+msgstr ""
+
+#. From package imlib-progs, in section /System
+msgid "Imlib Config"
+msgstr ""
+
+#. From package psmisc, in section /System
+msgid "pstree"
+msgstr ""
+
+#. From package afterstep, in section /WindowManagers
+msgid "AfterStep"
+msgstr ""
+
+#. From package fvwm2, in section /WindowManagers
+msgid "Fvwm2"
+msgstr ""
+

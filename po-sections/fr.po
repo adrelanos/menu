@@ -1,0 +1,125 @@
+# Menu section translation
+# Copyright (C) 2003
+# Bill Allombert <ballombe@debian.org>, 2003.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: menu 2.1.7-2\n"
+"PO-Revision-Date: 2003-3-06 17:11 +0100\n"
+"Last-Translator: Bill Allombert <ballombe@debian.org>\n"
+"Language-Team: <debian-l10n-french@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Apps"
+msgstr "Applications"
+
+#. From the Debian Tree, right at the Root
+msgid "Games"
+msgstr "Jeux"
+
+#. From the Debian Tree, right at the Root
+msgid "Help"
+msgstr "Aide"
+
+#. From the Debian Tree, right at the Root
+msgid "Screen"
+msgstr "Écran"
+
+#. From the Debian Tree, right at the Root
+msgid "WindowManagers"
+msgstr "Gestionnaire de fenêtres"
+
+#. From the Debian Tree, right at the Root
+msgid "XShells"
+msgstr "XShells"
+
+#. From the Debian Tree, in section /Apps
+msgid "Editors"
+msgstr "Editeurs"
+
+#. From the Debian Tree, in section /Apps
+msgid "Graphics"
+msgstr "Graphiques"
+
+#. From the Debian Tree, in section /Apps
+msgid "Math"
+msgstr "Math"
+
+#. From the Debian Tree, in section /Apps
+msgid "Misc"
+msgstr "Divers"
+
+#. From the Debian Tree, in section /Apps
+msgid "Net"
+msgstr "Réseau"
+
+#. From the Debian Tree, in section /Apps
+msgid "Programming"
+msgstr "Programmation"
+
+#. From the Debian Tree, in section /Apps
+msgid "Shells"
+msgstr "Shells"
+
+#. From the Debian Tree, in section /Apps
+msgid "Sound"
+msgstr "Son"
+
+#. From the Debian Tree, in section /Apps
+msgid "Tools"
+msgstr "Outils"
+
+#. From the Debian Tree, in section /Apps
+msgid "Viewers"
+msgstr "Afficheurs"
+
+#. From the Debian Tree, in section /Apps
+msgid "System"
+msgstr "Système"
+
+#. From the Debian Tree, in section /Apps/System
+msgid "Admin"
+msgstr "Administration"
+
+#. From the Debian Tree, in section /Games
+msgid "Adventure"
+msgstr "Aventure"
+
+#. From the Debian Tree, in section /Games
+msgid "Arcade"
+msgstr "Arcade"
+
+#. From the Debian Tree, in section /Games
+msgid "Board"
+msgstr "Plateau"
+
+#. From the Debian Tree, in section /Games
+msgid "Simulation"
+msgstr "Simulation"
+
+#. From the Debian Tree, in section /Games
+msgid "Strategy"
+msgstr "Strategie"
+
+#. From the Debian Tree, in section /Games
+msgid "Tetris-like"
+msgstr "Tetris"
+
+#. From the Debian Tree, in section /Screen
+msgid "Lock"
+msgstr "Vérouillage"
+
+#. From the Debian Tree, in section /Screen
+msgid "Save"
+msgstr "Économiseur"
+
+#. From the Debian Tree, in section /Screen
+msgid "Root-window"
+msgstr "Fond d'écran"
+
+#. From the Debian Tree, in section /WindowManagers
+msgid "Modules"
+msgstr "Modules"

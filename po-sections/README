@@ -1,0 +1,18 @@
+If you want to start translating, you should start with a
+menu-messages.po[t] file. Really, we should distribute that
+file somewhere on www.debian.org, but that hasn't been done yet.
+To generate it temporarily from the menu entry files installed
+on your system, type
+
+  make menu-messages.pot
+
+Then you simply type
+  mv menu-messages.pot de.po
+if you want to start making the german translations.
+
+The Makefile in this dir really needs fixing up, but I'll do
+that soon anyway. Probably before you manage to send in your
+??.po file.
+
+Thanks,
+joost    <joostje@debian.org>

@@ -1,0 +1,48 @@
+#!/usr/bin/perl
+
+#trme2po (TRanslate_MEnus TO .po format)
+
+$trans=();
+
+sub preface {
+    print '
+# Menu section translation
+# Copyright (C) 2003
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: menu 2.1.7-2\n"
+"PO-Revision-Date: 2003-3-06 17:11 +0100\n"
+"Last-Translator: FIRST AUTHOR <EMAIL@ADDRESS>\n"
+"Language-Team: <@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# Automatically generated file. Do not edit (see /usr/share/doc/menu/html/index.html)
+';
+}
+
+sub dump_body {
+    for my $id (sort keys %trans){
+	print "msgid \"$id\"\n";
+	print "msgstr \"".$trans{$id}."\"\n";
+	print "\n";
+    }
+}
+
+sub process {
+    while (<STDIN>){
+	s/#.*//;
+	s/^\s+//;
+	next if /^$/;
+	do {print STDERR "Error: $_"; next;} unless /^\"([^\"]+)\"\s+\"([^\"]+)\"/;
+	$trans{$1}=$2;
+    }
+}
+process();
+
+preface();
+dump_body();
