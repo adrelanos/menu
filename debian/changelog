@@ -13,6 +13,7 @@ menu (2.1.10-2) unstable; urgency=low
     - Update Danish menu translation.
     - Fixed a problem with su-to-root script where a X application didnt have
     access to run on the server. Closes: #150314
+    - Fix compilation with g++ 2.95.
   * Fixed some inconsistent behaviour with "substitute section->section"
   * Update Brazillian menu messages translation. Thanks André Luís Lopes. 
   * Add Norwegian nynorsk menu messages and sections translations. 

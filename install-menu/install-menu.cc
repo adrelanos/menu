@@ -34,6 +34,7 @@
 #include <limits.h>
 #include <sys/types.h>
 #include <dirent.h>
+#include <cstdio>
 #include <unistd.h>
 #include <sys/stat.h>
 #include <errno.h>
