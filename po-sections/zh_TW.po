@@ -1,0 +1,187 @@
+# Menu section translation
+# Copyright (C) 2003
+# This file is distributed under the same license as the menu package.
+# Bill Allombert <ballombe@debian.org>, 2003.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: menu-section 2.1.9-3\n"
+"POT-Creation-Date: 2003-04-03 12:14+0100\n"
+"PO-Revision-Date: 2005-02-17 10:01+0800\n"
+"Last-Translator: Asho Yeh <asho@debian.org.tw>\n"
+"Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: TAIWAN\n"
+
+#.  First level entry
+msgid "Apps"
+msgstr "應用程式"
+
+#.  Second level entry under "Apps"
+msgid "Databases"
+msgstr "資料庫"
+
+#.  Second level entry under "Apps"
+msgid "Editors"
+msgstr "編輯器"
+
+#.  Second level entry under "Apps"
+msgid "Education"
+msgstr "教育"
+
+#.  Second level entry under "Apps"
+msgid "Emulators"
+msgstr "模擬器"
+
+#.  Second level entry under "Apps"
+msgid "Graphics"
+msgstr "圖形"
+
+#.  Second level entry under "Apps"
+msgid "Hamradio"
+msgstr "業餘無線電"
+
+#.  Second level entry under "Apps"
+msgid "Math"
+msgstr "數學"
+
+#.  Second level entry under "Apps"
+msgid "Net"
+msgstr "網路"
+
+#.  Second level entry under "Apps"
+msgid "Programming"
+msgstr "程式語言"
+
+#.  Second level entry under "Apps"
+msgid "Science"
+msgstr "科學"
+
+#.  Second level entry under "Apps"
+msgid "Tools"
+msgstr "其他"
+
+#.  Second level entry under "Apps"
+msgid "Technical"
+msgstr "技術"
+
+#.  Second level entry under "Apps"
+msgid "Text"
+msgstr "文字翻譯"
+
+#.  Second level entry under "Apps"
+msgid "Shells"
+msgstr "Shells"
+
+#.  Second level entry under "Apps"
+msgid "Sound"
+msgstr "音效"
+
+#.  Second level entry under "Apps"
+msgid "Viewers"
+msgstr "多媒體撥放"
+
+#.  Second level entry under "Apps"
+msgid "System"
+msgstr "系統"
+
+#.  First level entry
+msgid "Games"
+msgstr "遊戲"
+
+#.  Second level entry under "Games"
+msgid "Adventure"
+msgstr "冒險"
+
+#.  Second level entry under "Games"
+msgid "Arcade"
+msgstr "大型遊戲機"
+
+#.  Second level entry under "Games"
+msgid "Board"
+msgstr "棋盤"
+
+#.  Second level entry under "Games"
+msgid "Card"
+msgstr "紙牌"
+
+#.  Second level entry under "Games"
+msgid "Puzzles"
+msgstr "拼圖迷宮"
+
+#.  Second level entry under "Games"
+msgid "Simulation"
+msgstr "戰略"
+
+#.  Second level entry under "Games"
+msgid "Sports"
+msgstr "運動"
+
+#.  Second level entry under "Games"
+msgid "Strategy"
+msgstr "策略"
+
+#.  Second level entry under "Games"
+msgid "Tetris-like"
+msgstr "俄羅斯方塊類"
+
+#.  Second level entry under "Games"
+msgid "Toys"
+msgstr "玩具"
+
+#.  First level entry
+msgid "Help"
+msgstr "求助"
+
+#.  First level entry
+msgid "Screen"
+msgstr "螢幕"
+
+#.  Second level entry under "Screen"
+msgid "Lock"
+msgstr "鎖定"
+
+#.  Second level entry under "Screen"
+msgid "Save"
+msgstr "螢幕保護"
+
+#.  Second level entry under "Screen"
+msgid "Root-window"
+msgstr "根視窗"
+
+#.  First level entry
+msgid "WindowManagers"
+msgstr "視窗管理程式"
+
+#.  Second level entry under "WindowManagers"
+msgid "Modules"
+msgstr "模組"
+
+#.  First level entry for all xterm-style apps
+msgid "XShells"
+msgstr "XShells"
+
+#. From Apps/System/Admin
+msgid "Admin"
+msgstr "系統管理程式"
+
+#. Non official sections from WindowMaker
+msgid "Appearance"
+msgstr "外觀"
+
+#. Non official sections from WindowMaker
+msgid "WorkSpace"
+msgstr "工作區"
+
+#. Frequently used unofficial sections.
+msgid "Mozilla Components"
+msgstr "Mozilla 相關"
+
+#. From Games/Toys/Teddies
+msgid "Teddies"
+msgstr "玩具熊"
+
