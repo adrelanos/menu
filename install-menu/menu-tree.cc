@@ -257,6 +257,8 @@ void menuentry::store_hints()
             j->second->menuhints.push_back(*k);
 
         j++;
+        if (j == submenus.end())
+            break;
 
         for (l = 0; l != i->first.size(); ++l)
             if (i->first[l] != j->first[l])
