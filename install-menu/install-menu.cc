@@ -892,7 +892,7 @@ ostream &supportedinfo::debuginfo(ostream &o)
   map<string, supinf>::const_iterator i;
   for (i = sup.begin(); i != sup.end(); i++)
   {
-    o <<String::compose(_("SUPPORTED:** name=%1, prec=%2 Def=\n"),i->first,i->second.prec);
+    o <<String::compose("SUPPORTED:** name=%1, prec=%2 Def=\n",i->first,i->second.prec);
     i->second.c->debuginfo(o);
   }
   return o;

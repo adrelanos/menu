@@ -198,9 +198,9 @@ ostream &menuentry::debugoutput(ostream &o)
 {
   std::map<string, string>::const_iterator i;
 
-  o << _("Menu entry:\n");
+  o << "Menu entry:\n";
   for (i = data.begin(); i != data.end(); ++i)
-      o << _("  data[%1]=%2\n"),i->first,i->second;
+      o << "  data[%1]=%2\n",i->first,i->second;
   return o;
 }
 
@@ -400,7 +400,7 @@ translateinfo::translateinfo(const string &filename)
     }
   }
   catch(endoffile p) {
-    config.report("End reading translation rules", configinfo::report_debug);
+    config.report("End reading translation rules.", configinfo::report_debug);
   }
 
 }
@@ -469,7 +469,7 @@ void read_pkginfo()
 void read_menufile(const string &filename, const string &shortfilename,
                    vector<string> &menudata)
 {
-  config.report(String::compose("Reading menu-entry file %1", filename), configinfo::report_debug);
+  config.report(String::compose(_("Reading menu-entry file %1."), filename), configinfo::report_debug);
 
   parsestream *ps = 0;
   std::stringstream *sstream = 0;
@@ -598,7 +598,7 @@ void run_menumethod(string methodname, const vector<string> &menudata)
   pid_t child, r;
   int status;
 
-  config.report(String::compose(_("Running method: %1."), methodname), configinfo::report_verbose);
+  config.report(String::compose(_("Running method: %1"), methodname), configinfo::report_verbose);
 
   if (pipe(fds) == -1) {
       config.report(_("Cannot create pipe."), configinfo::report_quiet);
@@ -703,7 +703,7 @@ int create_lock()
 
     sprintf(buf, "%d", getpid());
     if (write(fd, buf, sizeof(buf) < 1)) {
-      config.report(String::compose(_("Cannot write to lockfile %1. Aborting."), UPMEN_LOCKFILE),
+      config.report(String::compose(_("Cannot write to lockfile %1 - Aborting."), UPMEN_LOCKFILE),
           configinfo::report_quiet);
       return false;
     }
@@ -729,7 +729,7 @@ int check_dpkglock()
   struct flock fl;
   if (getuid())
   {
-    config.report(_("update-menus run by user"), configinfo::report_verbose);
+    config.report(_("Update-menus is run by user."), configinfo::report_verbose);
     return 0;
   }
   fl.l_type = F_WRLCK;

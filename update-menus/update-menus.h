@@ -122,7 +122,7 @@ class missing_tag : public except_string {
 public:
   missing_tag(std::string f, std::string s) : except_string(s), file(f) { }
   std::string message() {
-    return String::compose(_("%1: Missing required tag: \"%2\"."), file, msg);
+    return String::compose(_("%1: missing required tag: \"%2\""), file, msg);
   }
 };
 

@@ -365,7 +365,7 @@ class narg_mismatch : public except_pi_string { // number of args mismatch to fu
 public:
   narg_mismatch(parsestream *p, std::string s) : except_pi_string(p,s) {}
   std::string message() const {
-    return String::compose(_("Number of arguments to function %1 does not match"), msg);
+    return String::compose(_("Number of arguments to function %1 does not match."), msg);
   }
 };  
 class unknown_function : public except_pi_string {
@@ -396,7 +396,7 @@ class dir_createerror : public except_string {
 public:
   dir_createerror(std::string s) : except_string(s) {}
   std::string message() const {
-    return String::compose(_("Could not open directory \"%1\""), msg);
+    return String::compose(_("Could not open directory \"%1\"."), msg);
   }
 };
 

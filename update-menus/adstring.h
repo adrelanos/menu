@@ -57,7 +57,7 @@ public:
       std::cerr << message() << std::endl;
   }
   virtual std::string message() const {
-      return _("Unknown error");
+      return _("Unknown error.");
   }
   virtual ~genexcept() { }
 };
@@ -92,26 +92,26 @@ public:
 class endoffile : public except_pi {
 public:
   endoffile(parsestream *p) : except_pi(p) { }
-  std::string message() const { return _("Unexpected end of file"); }
+  std::string message() const { return _("Unexpected end of file."); }
 };
 
 class endofline : public except_pi {
 public:
   endofline(parsestream *p) : except_pi(p) { }
-  std::string message() const { return _("Unexpected end of line"); }
+  std::string message() const { return _("Unexpected end of line."); }
 };
 
 class ident_expected : public except_pi {
 public:
   ident_expected(parsestream *p) : except_pi(p) { }
-  const char *errormsg() const { return _("Identifier expected"); }
+  const char *errormsg() const { return _("Identifier expected."); }
 };
 
 class char_expected : public except_pi_string {
 public:
   char_expected(parsestream *p, std::string s):except_pi_string(p,s) { }
   std::string message() const {
-    return String::compose(_("Expected: \"%1\"."), msg);
+    return String::compose(_("Expected: \"%1\""), msg);
   }
 };
 
@@ -119,7 +119,7 @@ class char_unexpected : public except_pi_string {
 public:
   char_unexpected(parsestream *p, std::string s):except_pi_string(p,s) { }
   std::string message() const {
-    return String::compose(_("Unexpected character :\"%1\"."), msg);
+    return String::compose(_("Unexpected character: \"%1\""), msg);
   }
 };
 
@@ -136,7 +136,7 @@ class ferror_open : public except_string {
 public:
   ferror_open(std::string s):except_string(s) { }
   std::string message() const {
-    return String::compose(_("Unable to open file \"%1\""), msg);
+    return String::compose(_("Unable to open file \"%1\"."), msg);
   }
 };
 
