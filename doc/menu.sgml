@@ -356,7 +356,7 @@ If you have Imagemagick installed, you can make your icons meet requirements
 1, 2, and 3 with the following command, but you will need to edit the icon
 afterwards to clean it up and make the background transparent:
 <example>
-  $ mogrify -format xpm -geometry 32x32 -map cmap.xpm &lt;filenames&gt;
+  $ mogrify -format xpm -geometry 32x32 -map /usr/share/pixmaps/cmap.xpm &lt;filenames&gt;
 </example>
 
 If you, as a system administrator, don't like the icons in the menus, simply
@@ -1194,7 +1194,7 @@ Functions:
      Same as esc, but use $arg3 as escape sequence.
 
   escfirst($arg1, $arg2, $arg3)
-     Same as escwith, but only escapes thirst occurrence of $arg2.
+     Same as escwith, but only escapes first occurrence of $arg2.
 
   cppesc($arg1)
      Escape anything that isn't a letter, number or _ with
