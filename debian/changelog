@@ -3,6 +3,7 @@ menu (2.1.19) unstable; urgency=low
   * The "unreleased" release 
   * Update Finnish menu section translations, fixing a serious translation
     error noticed by Mika Wahlroos. Closes: #276122.
+  * Update Brazillian menu section translation. Thanks André Luís Lopes.
   * Update Russian menu messages translation. Thanks Yuri Kozlov.
     Closes: #268638.
   * Fix Norwegian Nynorsk menu message translation. Thanks Håvard Korsvoll.
@@ -18,7 +19,7 @@ menu (2.1.18) unstable; urgency=low
   * The "Sarge is still warm" release 
   * Update Japanese menu message translation. Thanks Goto Masanori.
   * Update Finnish menu message translation. Thanks Tommi Vainikainen.
-  * Update Portuguese menu message translation. Thanks Andre Luis Lopes.
+  * Update Brazillian menu message translation. Thanks André Luís Lopes.
   * Update Dutch menu message translation. Thanks Tim Dijkstra. 
     Closes: #274355.
   * Update Norwegian Nynorsk menu message translation. Thanks Håvard Korsvoll.
