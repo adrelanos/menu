@@ -62,7 +62,10 @@ sort=tolower(title())
 #sort=ifelse($command, "1", "0" ) ":" title()
 
 #Activate menu section translations:
-#repeat_lang="LOCALE"
+repeat_lang="LOCALE"
+#menu-methods need to set 'outputencoding' before translations are really
+#enabled.
+
 
 #The following is for the hints (or optimised tree structure):
 # (For more info on these variables, see /usr/share/doc/menu/*)

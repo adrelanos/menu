@@ -74,10 +74,9 @@ struct option long_options[] = {
   { "help", no_argument, NULL, 'h' }, 
   { NULL, 0, NULL, 0 } };
 
-// quick hack to get the 'repeat_lang="LOCALE"' working.
-// main() checks for value of repeat_lang, and sets
-// this variable if repeat_lang==LOCALE.
-bool do_translate_hack = false;
+// Should we do translations? This is set to 'true' when both outputencoding
+// and repeat_lang is set.
+bool do_translation = false;
 
 void store_func(func *f)
 {
@@ -988,8 +987,7 @@ void read_forcetree(parsestream &i)
 //
 configinfo::configinfo(parsestream &i) 
     : roots("/Debian"), mainmt("Debian"), treew("c(m)"),
-    outputenc("LOCALE"), onlyrunasroot(false),
-    onlyrunasuser(false),
+    onlyrunasroot(false), onlyrunasuser(false),
     onlyuniquetitles(false), hint_optimize(false), hint_nentry(6),
     hint_topnentry(5), hint_mixedpenalty(15), hint_minhintfreq(0.1),
     hint_mlpenalty(2000), hint_max_ntry(4), hint_max_iter_hint(5),
@@ -1215,7 +1213,7 @@ map<string, string> read_vars(parsestream &i)
       string name = i.get_name();
       string val = i.get_eq_stringconst();
       
-      if (do_translate_hack) {
+      if (do_translation) {
 	if (name == "title") {
 	  // This won't work if ldgettext is also used (translate($lang)).
 	  string title = dgettext("menu-sections", val.c_str());
@@ -1459,8 +1457,8 @@ int main(int argc, char **argv)
       if (retval)
           return retval;
     }
-    if (config->repeat_lang && (config->repeat_lang->soutput(root_menu.vars) == "LOCALE"))
-        do_translate_hack=true;
+    if (config->repeat_lang && (config->repeat_lang->soutput(root_menu.vars) == "LOCALE") && !config->outputencoding().empty())
+        do_translation = true;
 
     psscript = new parsestream(std::cin);
     root_menu.vars[TITLE_VAR] = config->mainmenutitle();
