@@ -1,2 +1,8 @@
 SUBDIRS = update-menus install-menu doc po-sections scripts po
-EXTRA_DIST = default examples autogen.sh
+EXTRA_DIST = autogen.sh
+dist-hook:
+	mkdir $(distdir)/examples $(distdir)/default
+	for i in $(srcdir)/examples/*; do \
+	   test -f $$i && cp $$i $(distdir)/examples; done
+	for i in $(srcdir)/default/*; do \
+	   test -f $$i && cp $$i $(distdir)/default; done
