@@ -11,6 +11,8 @@ menu (2.1.10-2) unstable; urgency=low
   * Add Norwegian nynorsk menu messages and sections translations. 
     Thanks Håvard Korsvoll.
   * Add Swedish menu messages and sections translation. Thanks Jens Arvidsson.
+  * Update Spanish menu sections translation and add Spanish menu messages
+    translation. Thanks Javier Fernandez-Sanguino Peña.
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 12 Mar 2004 15:27:16 +0100
 
