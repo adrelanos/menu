@@ -628,7 +628,7 @@ void run_menumethod(string methodname, const vector<string> &menudata)
 
     close(1);
     open("/dev/null", O_RDWR);
-    execve(args[0],(char **)args, '\0');
+    execv(args[0],(char **)args);
     exit(1);
   } else {
     // parent:
