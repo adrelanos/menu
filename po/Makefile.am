@@ -1,5 +1,5 @@
-MOs = da.mo fi.mo pl.mo
-POs = da.po fi.po pl.po
+MOs = da.mo fi.mo nl.mo pl.mo pt_BR.mo
+POs = da.po fi.po nl.po pl.po pt_BR.po
 localedir = $(datadir)/locale
 
 EXTRA_DIST = $(POs)
