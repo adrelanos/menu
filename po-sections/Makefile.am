@@ -1,7 +1,8 @@
 MOs = eo.mo es.mo fr.mo hu.mo ja.mo pl.mo 
+POs = eo.po es.po fr.po hu.po ja.po pl.po 
 localedir = $(datadir)/locale
 
-EXTRA_DIST = $(MOs) es.trme menufile2pot menu-sections.pot README trme2po
+EXTRA_DIST = $(POs) es.trme menufile2pot menu-sections.pot README trme2po
 
 all-local: $(MOs)
 install-data-local:$(MOs)
