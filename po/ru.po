@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: menu 2.1.19\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
-"POT-Creation-Date: 2004-07-09 20:06+0200\n"
+"POT-Creation-Date: 2005-02-14 19:02+0100\n"
 "PO-Revision-Date: 2004-10-18 14:57+0300\n"
 "Last-Translator: Yuri Kozlov <yuray@id.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
@@ -21,68 +21,69 @@ msgstr ""
 msgid "Zero-size argument to print function."
 msgstr "Аргумент нулевого размера в функции print"
 
-#: ../install-menu/install-menu.cc:200
+#: ../install-menu/install-menu.cc:201
 msgid "install-menu: checking directory %1\n"
 msgstr "install-menu: проверка каталога %1\n"
 
-#: ../install-menu/install-menu.cc:213
+#: ../install-menu/install-menu.cc:214
 msgid "install-menu: creating directory %1:\n"
 msgstr "install-menu: создание каталога %1:\n"
 
-#: ../install-menu/install-menu.cc:215
+#: ../install-menu/install-menu.cc:216
 msgid "Could not create directory(%1): %2"
 msgstr "Невозможно открыть каталог(%1): %2"
 
-#: ../install-menu/install-menu.cc:217
+#: ../install-menu/install-menu.cc:218
 msgid "Could not change directory(%1): %2"
 msgstr "Невозможно сменить каталог(%1): %2"
 
-#: ../install-menu/install-menu.cc:220
+#: ../install-menu/install-menu.cc:221
 msgid "install-menu: directory %1 already exists\n"
 msgstr "install-menu: каталог %1 уже существует\n"
 
 #. Do not translate supported
-#: ../install-menu/install-menu.cc:437
+#: ../install-menu/install-menu.cc:438
 msgid "install-menu: [supported]: name=%1\n"
 msgstr "install-menu: [поддерживается]: имя=%1\n"
 
-#: ../install-menu/install-menu.cc:454
+#: ../install-menu/install-menu.cc:455
 msgid "Menu entry lacks mandatory field \"%1\".\n"
 msgstr "В записи пункта меню отсутствует необходимое поле \"%1\".\n"
 
-#: ../install-menu/install-menu.cc:460
+#: ../install-menu/install-menu.cc:461
 msgid "Unknown value for field %1=\"%2\".\n"
 msgstr "Неизвестное значение поля %1=\"%2\".\n"
 
 #. Do not translate quoted text
-#: ../install-menu/install-menu.cc:605
-msgid "install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
+#: ../install-menu/install-menu.cc:606
+msgid ""
+"install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
 msgstr ""
 "install-menu: \"hotkeycase\" может иметь значение только \"sensitive\" или "
 "\"insensitive\"\n"
 
-#: ../install-menu/install-menu.cc:635
+#: ../install-menu/install-menu.cc:636
 msgid ""
 "install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
 "Ignoring.\n"
 msgstr ""
-"install-menu: Внимание: Неизвестный идентификатор `%1' в строк %2 в файле %3. "
-"Игнорирую\n"
+"install-menu: Внимание: Неизвестный идентификатор `%1' в строк %2 в файле %"
+"3. Игнорирую\n"
 
-#: ../install-menu/install-menu.cc:645
+#: ../install-menu/install-menu.cc:646
 msgid "install-menu: %1 must be defined in menu-method %2"
 msgstr "install-menu: %1 должен быть определён в menu-method %2"
 
-#: ../install-menu/install-menu.cc:806
+#: ../install-menu/install-menu.cc:813
 msgid "Cannot open file %1 (also tried %2).\n"
 msgstr "Не удалось открыть файл %1 (также и %2).\n"
 
-#: ../install-menu/install-menu.cc:814 ../install-menu/install-menu.cc:821
-#: ../install-menu/install-menu.cc:829
+#: ../install-menu/install-menu.cc:821 ../install-menu/install-menu.cc:828
+#: ../install-menu/install-menu.cc:836
 msgid "Cannot open file %1.\n"
 msgstr "Не удалось открыть файл %1.\n"
 
-#: ../install-menu/install-menu.cc:831
+#: ../install-menu/install-menu.cc:838
 msgid ""
 "In order to be able to create the user config file(s) for the window "
 "manager,\n"
@@ -92,12 +93,12 @@ msgstr ""
 "Вышеуказанные файлы должны быть доступны на запись (и/или каталоги должны "
 "существовать).\n"
 
-#: ../install-menu/install-menu.cc:853
+#: ../install-menu/install-menu.cc:860
 msgid "Warning: the string %1 did not occur in template file %2\n"
 msgstr "Внимание: строка %1 не найдена в файле шаблона %2\n"
 
 #. Don't translate quoted string
-#: ../install-menu/install-menu.cc:878
+#: ../install-menu/install-menu.cc:885
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
@@ -113,19 +114,19 @@ msgstr ""
 "     -h --help    : это сообщение\n"
 "     -v --verbose : выдавать подробную информацию\n"
 
-#: ../install-menu/install-menu.cc:920
+#: ../install-menu/install-menu.cc:929
 msgid "install-menu: no menu-method script specified !"
 msgstr "install-menu: узазанный метод меню не установлен !"
 
-#: ../install-menu/install-menu.cc:933
+#: ../install-menu/install-menu.cc:942
 msgid "Cannot open script %1 for reading.\n"
 msgstr "Не удалось открыть сценарий %1 на чтение.\n"
 
-#: ../install-menu/install-menu.cc:973
+#: ../install-menu/install-menu.cc:982
 msgid "Running: \"%1\"\n"
 msgstr "Запуск: \"%1\"\n"
 
-#: ../install-menu/install-menu.cc:989
+#: ../install-menu/install-menu.cc:998
 msgid "install-menu: %1: aborting\n"
 msgstr "install-menu: %1: отмена\n"
 
@@ -169,15 +170,16 @@ msgstr "Ошибка передачи данных через канал \"%1\" 
 msgid "%1: missing required tag: \"%2\""
 msgstr "%1: отсутствует необходимый тег: \"%2\""
 
-#: ../update-menus/parsestream.cc:48
+#: ../update-menus/parsestream.cc:49
 msgid "(probably) stdin"
 msgstr "(возможно) stdin"
 
-#: ../update-menus/parsestream.cc:448
+#: ../update-menus/parsestream.cc:449
 msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
-msgstr "В файле \"%1\", в (или в определении, которое кончается на) строке %2:\n"
+msgstr ""
+"В файле \"%1\", в (или в определении, которое кончается на) строке %2:\n"
 
-#: ../update-menus/parsestream.cc:469
+#: ../update-menus/parsestream.cc:470
 msgid "Somewhere in input file:\n"
 msgstr "Где-то во входном файле:\n"
 
@@ -349,6 +351,8 @@ msgid "  --version              Output version information and exit.\n"
 msgstr "  --version              Показать информацию о версии и выйти.\n"
 
 #: ../update-menus/update-menus.h:149
-msgid "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
-msgstr "Неизвестное условие установки \"%1\" (пока поддерживается только \"package\")."
-
+msgid ""
+"Unknown install condition \"%1\" (currently, only \"package\" is supported)."
+msgstr ""
+"Неизвестное условие установки \"%1\" (пока поддерживается только \"package"
+"\")."

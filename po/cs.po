@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: menu\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
-"POT-Creation-Date: 2004-07-09 20:06+0200\n"
+"POT-Creation-Date: 2005-02-14 19:02+0100\n"
 "PO-Revision-Date: 2004-12-26 19:21+0100\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team: Czech <provoz@debian.cz>\n"
@@ -19,47 +19,48 @@ msgstr ""
 msgid "Zero-size argument to print function."
 msgstr "Argument nulové velikosti zadán funkci print."
 
-#: ../install-menu/install-menu.cc:200
+#: ../install-menu/install-menu.cc:201
 msgid "install-menu: checking directory %1\n"
 msgstr "install-menu: kontroluji adresáø %1\n"
 
-#: ../install-menu/install-menu.cc:213
+#: ../install-menu/install-menu.cc:214
 msgid "install-menu: creating directory %1:\n"
 msgstr "install-menu: vytváøím adresáø %1:\n"
 
-#: ../install-menu/install-menu.cc:215
+#: ../install-menu/install-menu.cc:216
 msgid "Could not create directory(%1): %2"
 msgstr "Nepodaøilo se vytvoøit adresáø(%1): %2"
 
-#: ../install-menu/install-menu.cc:217
+#: ../install-menu/install-menu.cc:218
 msgid "Could not change directory(%1): %2"
 msgstr "Nepodaøilo se zmìnit adresáø(%1): %2"
 
-#: ../install-menu/install-menu.cc:220
+#: ../install-menu/install-menu.cc:221
 msgid "install-menu: directory %1 already exists\n"
 msgstr "install-menu: adresáø %1 ji¾ existuje\n"
 
 #. Do not translate supported
-#: ../install-menu/install-menu.cc:437
+#: ../install-menu/install-menu.cc:438
 msgid "install-menu: [supported]: name=%1\n"
 msgstr "install-menu: [supported]: jméno=%1\n"
 
-#: ../install-menu/install-menu.cc:454
+#: ../install-menu/install-menu.cc:455
 msgid "Menu entry lacks mandatory field \"%1\".\n"
 msgstr "Polo¾ce menu chybí povinné pole \"%1\".\n"
 
-#: ../install-menu/install-menu.cc:460
+#: ../install-menu/install-menu.cc:461
 msgid "Unknown value for field %1=\"%2\".\n"
 msgstr "Neznámá hodnota pole %1=\"%2\".\n"
 
 #. Do not translate quoted text
-#: ../install-menu/install-menu.cc:605
+#: ../install-menu/install-menu.cc:606
 msgid ""
 "install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
 msgstr ""
-"install-menu: \"hotkeycase\" mù¾e být pouze \"sensitive\" nebo \"insensitive\"\n"
+"install-menu: \"hotkeycase\" mù¾e být pouze \"sensitive\" nebo \"insensitive"
+"\"\n"
 
-#: ../install-menu/install-menu.cc:635
+#: ../install-menu/install-menu.cc:636
 msgid ""
 "install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
 "Ignoring.\n"
@@ -67,20 +68,20 @@ msgstr ""
 "install-menu: Varování: Neznámý identifikátor `%1' na øádku %2 v souboru %3. "
 "Ignoruji.\n"
 
-#: ../install-menu/install-menu.cc:645
+#: ../install-menu/install-menu.cc:646
 msgid "install-menu: %1 must be defined in menu-method %2"
 msgstr "install-menu: %1 musí být definována v menu-method %2"
 
-#: ../install-menu/install-menu.cc:806
+#: ../install-menu/install-menu.cc:813
 msgid "Cannot open file %1 (also tried %2).\n"
 msgstr "Nemohu otevøít soubor %1 (zkusil jsem i %2).\n"
 
-#: ../install-menu/install-menu.cc:814 ../install-menu/install-menu.cc:821
-#: ../install-menu/install-menu.cc:829
+#: ../install-menu/install-menu.cc:821 ../install-menu/install-menu.cc:828
+#: ../install-menu/install-menu.cc:836
 msgid "Cannot open file %1.\n"
 msgstr "Nemohu otevøít soubor %1.\n"
 
-#: ../install-menu/install-menu.cc:831
+#: ../install-menu/install-menu.cc:838
 msgid ""
 "In order to be able to create the user config file(s) for the window "
 "manager,\n"
@@ -89,12 +90,12 @@ msgstr ""
 "Abych mohl vytvoøit u¾ivatelské konfiguraèní soubory pro správce oken,\n"
 "musí být zmínìné soubory zapisovatelné (a/nebo musí existovat adresáø).\n"
 
-#: ../install-menu/install-menu.cc:853
+#: ../install-menu/install-menu.cc:860
 msgid "Warning: the string %1 did not occur in template file %2\n"
 msgstr "Varování: øetìzec %1 se neobjevil v ¹ablonì %2\n"
 
 #. Don't translate quoted string
-#: ../install-menu/install-menu.cc:878
+#: ../install-menu/install-menu.cc:885
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
@@ -110,19 +111,19 @@ msgstr ""
 "     -h --help    : tato nápovìda\n"
 "     -v --verbose : bude upovídanìj¹í\n"
 
-#: ../install-menu/install-menu.cc:920
+#: ../install-menu/install-menu.cc:929
 msgid "install-menu: no menu-method script specified !"
 msgstr "install-menu: nebyl zadán skript menu-method !"
 
-#: ../install-menu/install-menu.cc:933
+#: ../install-menu/install-menu.cc:942
 msgid "Cannot open script %1 for reading.\n"
 msgstr "Nemohu otevøít skript %1 pro ètení.\n"
 
-#: ../install-menu/install-menu.cc:973
+#: ../install-menu/install-menu.cc:982
 msgid "Running: \"%1\"\n"
 msgstr "Spou¹tím: \"%1\"\n"
 
-#: ../install-menu/install-menu.cc:989
+#: ../install-menu/install-menu.cc:998
 msgid "install-menu: %1: aborting\n"
 msgstr "install-menu: %1: pøeru¹uji\n"
 
@@ -166,15 +167,15 @@ msgstr "Nemohu protlaèit data pøes \"%1\" (roura otevøena pro ètení)."
 msgid "%1: missing required tag: \"%2\""
 msgstr "%1: chybí vy¾adovaná znaèka: \"%2\""
 
-#: ../update-menus/parsestream.cc:48
+#: ../update-menus/parsestream.cc:49
 msgid "(probably) stdin"
 msgstr "(pravdìpodobnì) stdin"
 
-#: ../update-menus/parsestream.cc:448
+#: ../update-menus/parsestream.cc:449
 msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
 msgstr "V souboru \"%1\" na øádku %2 (nebo v definici, která zde konèí):\n"
 
-#: ../update-menus/parsestream.cc:469
+#: ../update-menus/parsestream.cc:470
 msgid "Somewhere in input file:\n"
 msgstr "Nìkde ve vstupním souboru:\n"
 

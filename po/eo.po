@@ -2,122 +2,399 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 1999-07-05 03:15+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: menu\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"POT-Creation-Date: 2005-02-14 19:02+0100\n"
+"PO-Revision-Date: 1999-07-05 03:15+0200\n"
+"Last-Translator: Joost Witteveen <joostje@debian.org>\n"
+"Language-Team: Esperanto <debian-l10n-esperanto@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-#: install-menu/install-menu.cc:42
+#: ../install-menu/functions.cc:92
 #, fuzzy
-msgid ""
-"menu-method: generate window-manager 'rc' files (or html docs)\n"
-"  menu-method gets the menuentries from standard in.\n"
-"  Options to menu-method:\n"
-"     -h --help : this message\n"
-"     -d --debug: show debug info\n"
-"     -showtime : show timeing information"
-msgstr ""
-"install-menu: konstruu 'rc' dosierojn por vindo-kontroliloj (aux html\\n\"\n"
-"dokumentoj). install-menu legas la menuan informon de stdin. Opcioj:\\n\"\n"
-"    -h --help: tio cxi mesagxo\\n\"\n"
-"    -d --debug: montru sencimigajn informojn (angle)\\n\"\n"
-"    -showtime: montru kiom longe dauxras la kreado\""
-
-#: install-menu/install-menu.cc:367
-msgid "Zero-size argument to print function"
+msgid "Zero-size argument to print function."
 msgstr "Nul-granda argumento de print funkcio"
 
-#: install-menu/install-menu.cc:743
-msgid "Undefined "
-msgstr "Ne-definita "
-
-#: install-menu/install-menu.cc:747
-msgid "Unknown "
-msgstr "Nekonata "
-
-#: install-menu/install-menu.cc:808
-msgid "Parse error: String constant expected"
-msgstr "Eraro: Atendis stringon"
-
-#: install-menu/install-menu.cc:834
-msgid ""
-"Automatically generated file. Do not edit (see /usr/share/doc/menu/html/index.html)"
+#: ../install-menu/install-menu.cc:201
+msgid "install-menu: checking directory %1\n"
 msgstr ""
-"Auxtomate gxenerita dosiero. Ne sxangxu (vidu /usr/share/doc/menu/html/index.html)"
 
-#: install-menu/install-menu.cc:912
+#: ../install-menu/install-menu.cc:214
+msgid "install-menu: creating directory %1:\n"
+msgstr ""
+
+#: ../install-menu/install-menu.cc:216
+msgid "Could not create directory(%1): %2"
+msgstr ""
+
+#: ../install-menu/install-menu.cc:218
+msgid "Could not change directory(%1): %2"
+msgstr ""
+
+#: ../install-menu/install-menu.cc:221
+msgid "install-menu: directory %1 already exists\n"
+msgstr ""
+
+#. Do not translate supported
+#: ../install-menu/install-menu.cc:438
+msgid "install-menu: [supported]: name=%1\n"
+msgstr ""
+
+#: ../install-menu/install-menu.cc:455
+msgid "Menu entry lacks mandatory field \"%1\".\n"
+msgstr ""
+
+#: ../install-menu/install-menu.cc:461
+msgid "Unknown value for field %1=\"%2\".\n"
+msgstr ""
+
+#. Do not translate quoted text
+#: ../install-menu/install-menu.cc:606
 #, fuzzy
-msgid "install-menus: hotkeycase can only be {,in}sensitive"
+msgid ""
+"install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
 msgstr "install-menus: hotkeycase nur povas esti {,in}sensitive"
 
-#: install-menu/install-menu.cc:948
+#: ../install-menu/install-menu.cc:636
 msgid ""
-"At least one of genmenu, startmenu, endmenu\n"
-"is undefined in the config file. All of these have to be \n"
-"defined (although they may be equal to \"\")"
+"install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
+"Ignoring.\n"
 msgstr ""
-"Minimume unu el genmenu, startmenu, endmenu\\n\n"
-"ne estas definita en la konfiga dosiero. Ili Cxiuj devas esti\\n\n"
-"definiitaj (kvankam ili rajtas esti definiitaj kiel \"\""
 
-#: install-menu/install-menu.cc:1060 install-menu/install-menu.cc:1062
-msgid "Cannot open file "
+#: ../install-menu/install-menu.cc:646
+msgid "install-menu: %1 must be defined in menu-method %2"
+msgstr ""
+
+#: ../install-menu/install-menu.cc:813
+#, fuzzy
+msgid "Cannot open file %1 (also tried %2).\n"
 msgstr "Ne povas malfermi dosieron "
 
-#: install-menu/install-menu.cc:1124
-msgid "Cannot open script "
+#: ../install-menu/install-menu.cc:821 ../install-menu/install-menu.cc:828
+#: ../install-menu/install-menu.cc:836
+#, fuzzy
+msgid "Cannot open file %1.\n"
+msgstr "Ne povas malfermi dosieron "
+
+#: ../install-menu/install-menu.cc:838
+msgid ""
+"In order to be able to create the user config file(s) for the window "
+"manager,\n"
+"the above file needs to be writeable (and/or the directory needs to exist).\n"
+msgstr ""
+
+#: ../install-menu/install-menu.cc:860
+msgid "Warning: the string %1 did not occur in template file %2\n"
+msgstr ""
+
+#. Don't translate quoted string
+#: ../install-menu/install-menu.cc:885
+msgid ""
+"install-menu [-vh] <menu-method>\n"
+"  Read menu entries from stdin in \"update-menus --stdout\" format\n"
+"  and generate menu files using the specified menu-method.\n"
+"  Options to install-menu:\n"
+"     -h --help    : this message\n"
+"     -v --verbose : be verbose\n"
+msgstr ""
+
+#: ../install-menu/install-menu.cc:929
+msgid "install-menu: no menu-method script specified !"
+msgstr ""
+
+#: ../install-menu/install-menu.cc:942
+#, fuzzy
+msgid "Cannot open script %1 for reading.\n"
 msgstr "Ne povas malfermi skripton "
 
-#: install-menu/install-menu.cc:1124
-msgid " for reading"
-msgstr "por legi"
+#: ../install-menu/install-menu.cc:982
+msgid "Running: \"%1\"\n"
+msgstr ""
 
-#: install-menu/install-menu.cc:1190
-msgid "Aborting"
-msgstr "Cxesante"
+#: ../install-menu/install-menu.cc:998
+msgid "install-menu: %1: aborting\n"
+msgstr ""
 
-#: lib/adstring.cc:68
-msgid "In file \""
-msgstr "En Dosiero \""
+#: ../install-menu/install-menu.h:198
+msgid "Number of arguments to function %1 does not match."
+msgstr ""
 
-#: lib/adstring.cc:68
-msgid "\" at (or in the definition that ends at) line "
+#: ../install-menu/install-menu.h:206
+msgid "Unknown function: \"%1\""
+msgstr ""
+
+#: ../install-menu/install-menu.h:215
+msgid "Indirectly used, but not defined function: \"%1\""
+msgstr ""
+
+#: ../install-menu/install-menu.h:224
+msgid "Unknown identifier: \"%1\""
+msgstr ""
+
+#: ../install-menu/install-menu.h:233
+msgid "Encoding conversion error: \"%1\""
+msgstr ""
+
+#: ../update-menus/exceptions.h:43
+#, fuzzy
+msgid "Unknown error."
+msgstr "Nekonata "
+
+#: ../update-menus/exceptions.h:55 ../update-menus/parsestream.h:114
+msgid "Unknown error, message=%1"
+msgstr ""
+
+#: ../update-menus/exceptions.h:64
+#, fuzzy
+msgid "Unable to open file \"%1\"."
+msgstr "Ne povas malfermi dosieron "
+
+#: ../update-menus/exceptions.h:73
+msgid "Failed to pipe data through \"%1\" (pipe opened for reading)."
+msgstr ""
+
+#: ../update-menus/exceptions.h:89
+msgid "%1: missing required tag: \"%2\""
+msgstr ""
+
+#: ../update-menus/parsestream.cc:49
+msgid "(probably) stdin"
+msgstr ""
+
+#: ../update-menus/parsestream.cc:449
+#, fuzzy
+msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
 msgstr "\" en (aux cxe la defino kiu finas je) linio "
 
-#: update-menus/update-menus.cc:727
-msgid ""
-"update-menus: update the various window-manager config files (and\n"
-"  dwww, and pdmenu) Usage: update-menus [options] \n"
-"    -v  be verbose about what is going on\n"
-"    -d  debugging (loads of unintelligible output)"
+#: ../update-menus/parsestream.cc:470
+msgid "Somewhere in input file:\n"
 msgstr ""
-"update-menus: gxisdatigu la diversajn vindo-controlilaj konfigaj\n" 
-"   dosierojn (kaj dwww, pdmenu). Uzado: update-menus [opcioj]\n"
-"      -v estu parolema pri kio okazas\n"
-"      -d sencimigu (parolemegega)"
 
-#: update-menus/update-menus.h:14
-msgid "unknown install condition (currently, only \"package\" is supported)"
+#: ../update-menus/parsestream.h:122
+msgid "Unexpected end of file."
+msgstr ""
+
+#: ../update-menus/parsestream.h:129
+msgid "Unexpected end of line."
+msgstr ""
+
+#: ../update-menus/parsestream.h:136
+msgid "Identifier expected."
+msgstr ""
+
+#: ../update-menus/parsestream.h:144
+msgid "Expected: \"%1\""
+msgstr ""
+
+#: ../update-menus/parsestream.h:153
+msgid "Unexpected character: \"%1\""
+msgstr ""
+
+#: ../update-menus/parsestream.h:162
+msgid ""
+"Boolean (either true or false) expected.\n"
+"Found: \"%1\""
+msgstr ""
+
+#: ../update-menus/parsestream.h:172
+msgid "Unknown compat mode: \"%1\""
+msgstr ""
+
+#: ../update-menus/stringtoolbox.cc:85
+msgid ""
+"replacewith($string, $replace, $with): $replace and $with must have the same "
+"length."
+msgstr ""
+
+#. Translation here and below refer to the file
+#. /etc/menu-methods/translate_menus that allow to rename and reorganize
+#. menu entries automatically. It does not refer to the localisation
+#. (translation to other languages).
+#.
+#: ../update-menus/update-menus.cc:358
+msgid "Reading translation rules in %1."
+msgstr ""
+
+#: ../update-menus/update-menus.cc:438
+msgid "Reading installed packages list..."
+msgstr ""
+
+#: ../update-menus/update-menus.cc:485
+msgid "Execution of %1 generated no output or returned an error.\n"
+msgstr ""
+
+#: ../update-menus/update-menus.cc:525 ../update-menus/update-menus.cc:529
+msgid "Skipping file because of errors...\n"
+msgstr ""
+
+#: ../update-menus/update-menus.cc:545
+msgid "Reading menu-entry files in %1."
+msgstr ""
+
+#: ../update-menus/update-menus.cc:568
+#, fuzzy
+msgid "Error reading %1.\n"
+msgstr "por legi"
+
+#: ../update-menus/update-menus.cc:573
+msgid "%1 menu entries found (%2 total)."
+msgstr ""
+
+#: ../update-menus/update-menus.cc:585
+msgid "Running method: %1"
+msgstr ""
+
+#: ../update-menus/update-menus.cc:588
+#, fuzzy
+msgid "Cannot create pipe."
+msgstr "Ne povas malfermi dosieron "
+
+#: ../update-menus/update-menus.cc:624 ../update-menus/update-menus.cc:1000
+msgid "Script %1 could not be executed."
+msgstr ""
+
+#: ../update-menus/update-menus.cc:627
+msgid "Script %1 returned error status %2."
+msgstr ""
+
+#: ../update-menus/update-menus.cc:630
+msgid "Script %1 received signal %2."
+msgstr ""
+
+#: ../update-menus/update-menus.cc:640
+msgid "Running menu-methods in %1."
+msgstr ""
+
+#: ../update-menus/update-menus.cc:673
+msgid "Other update-menus processes are already locking %1, quitting."
+msgstr ""
+
+#: ../update-menus/update-menus.cc:676
+msgid "Cannot lock %1: %2 - Aborting."
+msgstr ""
+
+#: ../update-menus/update-menus.cc:685
+msgid "Cannot write to lockfile %1 - Aborting."
+msgstr ""
+
+#: ../update-menus/update-menus.cc:698
+#, fuzzy
+msgid "Cannot remove lockfile %1."
+msgstr "Ne povas malfermi dosieron "
+
+#: ../update-menus/update-menus.cc:714
+msgid "Update-menus is run by user."
+msgstr ""
+
+#: ../update-menus/update-menus.cc:798
+msgid ""
+"Waiting for dpkg to finish (forking to background).\n"
+"(checking %1)"
+msgstr ""
+
+#: ../update-menus/update-menus.cc:801
+msgid "Further output (if any) will appear in %1."
+msgstr ""
+
+#: ../update-menus/update-menus.cc:823
+msgid "Dpkg is not locking dpkg status area, good."
+msgstr ""
+
+#. This is the update-menus --help message
+#: ../update-menus/update-menus.cc:833
+msgid ""
+"Usage: update-menus [options] \n"
+"Gather packages data from the menu database and generate menus for\n"
+"all programs providing menu-methods, usually window-managers.\n"
+"  -d                     Output debugging messages.\n"
+"  -v                     Be verbose about what is going on.\n"
+"  -h, --help             This message.\n"
+"  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to "
+"search.\n"
+"  --menumethod=<method>  Run only the menu method <method>.\n"
+"  --nodefaultdirs        Disable the use of all the standard menu "
+"directories.\n"
+"  --stdout               Output menu list in format suitable for piping to\n"
+"                         install-menu.\n"
+msgstr ""
+
+#. This is the end of the update-menus --help message
+#: ../update-menus/update-menus.cc:845
+msgid "  --version              Output version information and exit.\n"
+msgstr ""
+
+#: ../update-menus/update-menus.h:149
+#, fuzzy
+msgid ""
+"Unknown install condition \"%1\" (currently, only \"package\" is supported)."
 msgstr "nekonata enstal-kondicxo (momente nur \"package\" estas subtenata)"
 
-#: update-menus/update-menus.h:20
-msgid "Error in definition"
-msgstr "Eraro en defino"
+#, fuzzy
+#~ msgid ""
+#~ "menu-method: generate window-manager 'rc' files (or html docs)\n"
+#~ "  menu-method gets the menuentries from standard in.\n"
+#~ "  Options to menu-method:\n"
+#~ "     -h --help : this message\n"
+#~ "     -d --debug: show debug info\n"
+#~ "     -showtime : show timeing information"
+#~ msgstr ""
+#~ "install-menu: konstruu 'rc' dosierojn por vindo-kontroliloj (aux html\\n"
+#~ "\"\n"
+#~ "dokumentoj). install-menu legas la menuan informon de stdin. Opcioj:\\n"
+#~ "\"\n"
+#~ "    -h --help: tio cxi mesagxo\\n\"\n"
+#~ "    -d --debug: montru sencimigajn informojn (angle)\\n\"\n"
+#~ "    -showtime: montru kiom longe dauxras la kreado\""
 
-#: update-menus/install-fvwmgenmenu.c:21
-msgid ""
-"install-fvwmgenmenu, should always be called with at least one argumetn "
-"(name of menu-method\n"
-msgstr ""
-"install-fvwmgenmenu cxiam estu envokita kun minumume unu argumento (nomo\n"
-"de la menu-metodo)\n"
+#~ msgid "Undefined "
+#~ msgstr "Ne-definita "
 
+#~ msgid "Parse error: String constant expected"
+#~ msgstr "Eraro: Atendis stringon"
 
+#~ msgid ""
+#~ "Automatically generated file. Do not edit (see /usr/share/doc/menu/html/"
+#~ "index.html)"
+#~ msgstr ""
+#~ "Auxtomate gxenerita dosiero. Ne sxangxu (vidu /usr/share/doc/menu/html/"
+#~ "index.html)"
 
+#~ msgid ""
+#~ "At least one of genmenu, startmenu, endmenu\n"
+#~ "is undefined in the config file. All of these have to be \n"
+#~ "defined (although they may be equal to \"\")"
+#~ msgstr ""
+#~ "Minimume unu el genmenu, startmenu, endmenu\\n\n"
+#~ "ne estas definita en la konfiga dosiero. Ili Cxiuj devas esti\\n\n"
+#~ "definiitaj (kvankam ili rajtas esti definiitaj kiel \"\""
+
+#~ msgid "Aborting"
+#~ msgstr "Cxesante"
+
+#~ msgid "In file \""
+#~ msgstr "En Dosiero \""
+
+#~ msgid ""
+#~ "update-menus: update the various window-manager config files (and\n"
+#~ "  dwww, and pdmenu) Usage: update-menus [options] \n"
+#~ "    -v  be verbose about what is going on\n"
+#~ "    -d  debugging (loads of unintelligible output)"
+#~ msgstr ""
+#~ "update-menus: gxisdatigu la diversajn vindo-controlilaj konfigaj\n"
+#~ "   dosierojn (kaj dwww, pdmenu). Uzado: update-menus [opcioj]\n"
+#~ "      -v estu parolema pri kio okazas\n"
+#~ "      -d sencimigu (parolemegega)"
+
+#~ msgid "Error in definition"
+#~ msgstr "Eraro en defino"
+
+#~ msgid ""
+#~ "install-fvwmgenmenu, should always be called with at least one argumetn "
+#~ "(name of menu-method\n"
+#~ msgstr ""
+#~ "install-fvwmgenmenu cxiam estu envokita kun minumume unu argumento (nomo\n"
+#~ "de la menu-metodo)\n"

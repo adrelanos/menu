@@ -1,3 +1,4 @@
+# translation of fr.po to French
 # Debian menu system
 # Copyright (C) 2004 Debian menu team
 # This file is distributed under the same license as the menu package.
@@ -7,60 +8,60 @@ msgid ""
 msgstr ""
 "Project-Id-Version: menu 2.1.10\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
-"POT-Creation-Date: 2004-06-29 17:26+0200\n"
-"PO-Revision-Date: 2004-04-04 10:47+0100\n"
+"POT-Creation-Date: 2005-02-14 19:02+0100\n"
+"PO-Revision-Date: 2005-02-14 19:03+0100\n"
 "Last-Translator: Jean-Luc  Coulon (f5ibh) <jean-luc.coulon@wanadoo.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-15\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
 
 #: ../install-menu/functions.cc:92
 msgid "Zero-size argument to print function."
 msgstr "La fonction « print » a reçu un argument de longueur nulle."
 
-#: ../install-menu/install-menu.cc:200
+#: ../install-menu/install-menu.cc:201
 msgid "install-menu: checking directory %1\n"
 msgstr "install-menu : recherche du répertoire %1\n"
 
-#: ../install-menu/install-menu.cc:213
+#: ../install-menu/install-menu.cc:214
 msgid "install-menu: creating directory %1:\n"
 msgstr "install-menu : création du répertoire %1\n"
 
-#: ../install-menu/install-menu.cc:215
+#: ../install-menu/install-menu.cc:216
 msgid "Could not create directory(%1): %2"
 msgstr "Impossible de créer le répertoire « %1 »."
 
-#: ../install-menu/install-menu.cc:217
+#: ../install-menu/install-menu.cc:218
 msgid "Could not change directory(%1): %2"
 msgstr "Impossible de changer de répertoire en faveur de « %1 »."
 
-#: ../install-menu/install-menu.cc:220
+#: ../install-menu/install-menu.cc:221
 msgid "install-menu: directory %1 already exists\n"
 msgstr "install-menu : le répertoire %1 existe déjà\n"
 
 #. Do not translate supported
-#: ../install-menu/install-menu.cc:437
+#: ../install-menu/install-menu.cc:438
 msgid "install-menu: [supported]: name=%1\n"
 msgstr "install-menu : [supported] : nom=%1\n"
 
-#: ../install-menu/install-menu.cc:454
+#: ../install-menu/install-menu.cc:455
 msgid "Menu entry lacks mandatory field \"%1\".\n"
 msgstr "Il manque le champ obligatoire « %1 » dans l'entrée de menu.\n"
 
-#: ../install-menu/install-menu.cc:460
+#: ../install-menu/install-menu.cc:461
 msgid "Unknown value for field %1=\"%2\".\n"
 msgstr "Valeur inconnue pour le champ %1=« %2 ».\n"
 
 #. Do not translate quoted text
-#: ../install-menu/install-menu.cc:605
-msgid ""
-"install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
+#: ../install-menu/install-menu.cc:606
+msgid "install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
 msgstr ""
 "install-menu : « hotkeycase » ne peut être que « sensitive » ou "
 "« insensitive »\n"
 
-#: ../install-menu/install-menu.cc:635
+#: ../install-menu/install-menu.cc:636
 msgid ""
 "install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
 "Ignoring.\n"
@@ -68,20 +69,20 @@ msgstr ""
 "install-menu : Attention : identificateur inconnu « %1 » à la ligne %2 du "
 "fichier %3. Ignoré.\n"
 
-#: ../install-menu/install-menu.cc:645
+#: ../install-menu/install-menu.cc:646
 msgid "install-menu: %1 must be defined in menu-method %2"
-msgstr ""
+msgstr "install-menu: %1 doit être défini dans la méthode de menu %2"
 
-#: ../install-menu/install-menu.cc:806
+#: ../install-menu/install-menu.cc:813
 msgid "Cannot open file %1 (also tried %2).\n"
 msgstr "Impossible d'ouvrir le fichier %1 (de même que %2).\n"
 
-#: ../install-menu/install-menu.cc:814 ../install-menu/install-menu.cc:821
-#: ../install-menu/install-menu.cc:829
+#: ../install-menu/install-menu.cc:821 ../install-menu/install-menu.cc:828
+#: ../install-menu/install-menu.cc:836
 msgid "Cannot open file %1.\n"
 msgstr "Impossible d'ouvrir le fichier %1.\n"
 
-#: ../install-menu/install-menu.cc:831
+#: ../install-menu/install-menu.cc:838
 msgid ""
 "In order to be able to create the user config file(s) for the window "
 "manager,\n"
@@ -91,12 +92,12 @@ msgstr ""
 "le gestionnaire de fenêtres, le fichier ci-dessus doit pouvoir être\n"
 "écrit (et le répertoire doit exister).\n"
 
-#: ../install-menu/install-menu.cc:853
+#: ../install-menu/install-menu.cc:860
 msgid "Warning: the string %1 did not occur in template file %2\n"
 msgstr "Attention : la chaîne %1 n'existe pas dans le fichier de canevas %2\n"
 
 #. Don't translate quoted string
-#: ../install-menu/install-menu.cc:878
+#: ../install-menu/install-menu.cc:885
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
@@ -113,19 +114,19 @@ msgstr ""
 "     -h --help      : ce texte\n"
 "     -v --verbose   : mode bavard\n"
 
-#: ../install-menu/install-menu.cc:920
+#: ../install-menu/install-menu.cc:929
 msgid "install-menu: no menu-method script specified !"
 msgstr "install-menu : aucun script de méthode n'a été indiqué !"
 
-#: ../install-menu/install-menu.cc:933
+#: ../install-menu/install-menu.cc:942
 msgid "Cannot open script %1 for reading.\n"
 msgstr "Impossible d'ouvrir le script %1 en lecture.\n"
 
-#: ../install-menu/install-menu.cc:973
+#: ../install-menu/install-menu.cc:982
 msgid "Running: \"%1\"\n"
 msgstr "En cours : « %1 »\n"
 
-#: ../install-menu/install-menu.cc:989
+#: ../install-menu/install-menu.cc:998
 msgid "install-menu: %1: aborting\n"
 msgstr "Install-menu : %1 : abandon\n"
 
@@ -169,17 +170,17 @@ msgstr "Échec lors du tubage à travers « %1 » (tube ouvert en lecture)."
 msgid "%1: missing required tag: \"%2\""
 msgstr "%1 : l'indicateur obligatoire « %2 » est absent."
 
-#: ../update-menus/parsestream.cc:48
+#: ../update-menus/parsestream.cc:49
 msgid "(probably) stdin"
 msgstr "(probablement) l'entrée standard"
 
-#: ../update-menus/parsestream.cc:448
+#: ../update-menus/parsestream.cc:449
 msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
 msgstr ""
 "Dans le fichier « %1 » à (ou dans la définition qui se termine à) la ligne %"
 "2 :\n"
 
-#: ../update-menus/parsestream.cc:469
+#: ../update-menus/parsestream.cc:470
 msgid "Somewhere in input file:\n"
 msgstr "Quelque part dans le fichier d'entrée :\n"
 
@@ -266,7 +267,7 @@ msgstr "Lancement de la méthode : %1"
 msgid "Cannot create pipe."
 msgstr "Impossible de créer le tube."
 
-#: ../update-menus/update-menus.cc:624 ../update-menus/update-menus.cc:1002
+#: ../update-menus/update-menus.cc:624 ../update-menus/update-menus.cc:1000
 msgid "Script %1 could not be executed."
 msgstr "Le script %1 n'a pas pu être exécuté."
 
@@ -318,7 +319,8 @@ msgstr "Des information complémentaires (s'il y en a) se trouveront dans %1."
 msgid "Dpkg is not locking dpkg status area, good."
 msgstr "Dpkg ne verrouille pas la zone d'état de dpkg, c'est correct."
 
-#: ../update-menus/update-menus.cc:834
+#. This is the update-menus --help message
+#: ../update-menus/update-menus.cc:833
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -337,7 +339,7 @@ msgstr ""
 "Usage : update-menus [options]\n"
 "Rassemble les informations sur les paquets dans la base de données\n"
 "de menu et génère les menus pour tout les programmes fournissant un\n"
-"script de menu (menu-method), habituellement les gestionnaires de fenêtres\n" 
+"script de menu (menu-method), habituellement les gestionnaires de fenêtres\n"
 "    -d                      affiche les messages de déboguage.\n"
 "    -v                      mode bavard sur les actions en cours.\n"
 "    -h, --help              ce message.\n"
@@ -349,14 +351,13 @@ msgstr ""
 "    --stdout                affiche la liste des menus dans un format\n"
 "                            compatible avec un tubage vers install-menu.\n"
 
-#: ../update-menus/update-menus.cc:847
+#. This is the end of the update-menus --help message
+#: ../update-menus/update-menus.cc:845
 msgid "  --version              Output version information and exit.\n"
-msgstr ""
-"    --version               affiche la version et termine.\n"
+msgstr "    --version               affiche la version et termine.\n"
 
 #: ../update-menus/update-menus.h:149
-msgid ""
-"Unknown install condition \"%1\" (currently, only \"package\" is supported)."
+msgid "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
 msgstr ""
 "Condition d'installation inconnue « %1 » (actuellement, seul « package » est "
 "supporté)."

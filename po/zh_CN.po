@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: menu 2.1.18\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
-"POT-Creation-Date: 2004-07-09 20:06+0200\n"
+"POT-Creation-Date: 2005-02-14 19:02+0100\n"
 "PO-Revision-Date: 2004-10-25 00:17+1300\n"
 "Last-Translator: Carlos Z.F. Liu <carlos_liu@yahoo.com>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -19,66 +19,66 @@ msgstr ""
 msgid "Zero-size argument to print function."
 msgstr "打印函数参数长度为零。"
 
-#: ../install-menu/install-menu.cc:200
+#: ../install-menu/install-menu.cc:201
 msgid "install-menu: checking directory %1\n"
 msgstr "install-menu：检查目录 %1\n"
 
-#: ../install-menu/install-menu.cc:213
+#: ../install-menu/install-menu.cc:214
 msgid "install-menu: creating directory %1:\n"
 msgstr "install-menu：创建目录 %1：\n"
 
-#: ../install-menu/install-menu.cc:215
+#: ../install-menu/install-menu.cc:216
 msgid "Could not create directory(%1): %2"
 msgstr "无法创建目录(%1)：%2"
 
-#: ../install-menu/install-menu.cc:217
+#: ../install-menu/install-menu.cc:218
 msgid "Could not change directory(%1): %2"
 msgstr "无法改变目录(%1)：%2"
 
-#: ../install-menu/install-menu.cc:220
+#: ../install-menu/install-menu.cc:221
 msgid "install-menu: directory %1 already exists\n"
 msgstr "install-menu：目录 %1 已经存在\n"
 
 #. Do not translate supported
-#: ../install-menu/install-menu.cc:437
+#: ../install-menu/install-menu.cc:438
 msgid "install-menu: [supported]: name=%1\n"
 msgstr "install-menu：[supported]：名称=%1\n"
 
-#: ../install-menu/install-menu.cc:454
+#: ../install-menu/install-menu.cc:455
 msgid "Menu entry lacks mandatory field \"%1\".\n"
 msgstr "菜单条目缺少必须的域“%1”。\n"
 
-#: ../install-menu/install-menu.cc:460
+#: ../install-menu/install-menu.cc:461
 msgid "Unknown value for field %1=\"%2\".\n"
 msgstr "未知的域值 %1=“%2”。\n"
 
 #. Do not translate quoted text
-#: ../install-menu/install-menu.cc:605
+#: ../install-menu/install-menu.cc:606
 msgid ""
 "install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
 msgstr "install-menu：“hotkeycase”的值只能是“sensitive”或者“insensitive”\n"
 
-#: ../install-menu/install-menu.cc:635
+#: ../install-menu/install-menu.cc:636
 msgid ""
 "install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
 "Ignoring.\n"
 msgstr ""
 "install-menu：警告：在文件 %3 的第 %2 行发现未知的标识“%1”。程序将忽略它。\n"
 
-#: ../install-menu/install-menu.cc:645
+#: ../install-menu/install-menu.cc:646
 msgid "install-menu: %1 must be defined in menu-method %2"
 msgstr "install-menu: %1 必须在 menu-method %2 中被定义"
 
-#: ../install-menu/install-menu.cc:806
+#: ../install-menu/install-menu.cc:813
 msgid "Cannot open file %1 (also tried %2).\n"
 msgstr "无法打开文件 %1(同时试探了文件 %2)。\n"
 
-#: ../install-menu/install-menu.cc:814 ../install-menu/install-menu.cc:821
-#: ../install-menu/install-menu.cc:829
+#: ../install-menu/install-menu.cc:821 ../install-menu/install-menu.cc:828
+#: ../install-menu/install-menu.cc:836
 msgid "Cannot open file %1.\n"
 msgstr "无法打开文件 %1。\n"
 
-#: ../install-menu/install-menu.cc:831
+#: ../install-menu/install-menu.cc:838
 msgid ""
 "In order to be able to create the user config file(s) for the window "
 "manager,\n"
@@ -87,12 +87,12 @@ msgstr ""
 "为了给窗口管理器创建用户配置文件，\n"
 "上述文件必须是可写的(以及/或者目录必须存在)。\n"
 
-#: ../install-menu/install-menu.cc:853
+#: ../install-menu/install-menu.cc:860
 msgid "Warning: the string %1 did not occur in template file %2\n"
 msgstr "警告：字符串 %1 不在模板文件 %2 中\n"
 
 #. Don't translate quoted string
-#: ../install-menu/install-menu.cc:878
+#: ../install-menu/install-menu.cc:885
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
@@ -108,19 +108,19 @@ msgstr ""
 "     -h --help    ：本信息\n"
 "     -v --verbose ：详细\n"
 
-#: ../install-menu/install-menu.cc:920
+#: ../install-menu/install-menu.cc:929
 msgid "install-menu: no menu-method script specified !"
 msgstr "install-menu：未指定 menu-method 脚本！"
 
-#: ../install-menu/install-menu.cc:933
+#: ../install-menu/install-menu.cc:942
 msgid "Cannot open script %1 for reading.\n"
 msgstr "无法打开脚本 %1 以读取。\n"
 
-#: ../install-menu/install-menu.cc:973
+#: ../install-menu/install-menu.cc:982
 msgid "Running: \"%1\"\n"
 msgstr "正在运行：“%1”\n"
 
-#: ../install-menu/install-menu.cc:989
+#: ../install-menu/install-menu.cc:998
 msgid "install-menu: %1: aborting\n"
 msgstr "install-menu：%1：正在放弃\n"
 
@@ -164,15 +164,15 @@ msgstr "将数据通过管道“%1”输送出错(已经打开管道以读取)�
 msgid "%1: missing required tag: \"%2\""
 msgstr "%1：缺少必需的标签：“%2”"
 
-#: ../update-menus/parsestream.cc:48
+#: ../update-menus/parsestream.cc:49
 msgid "(probably) stdin"
 msgstr "(也许是)标准输入"
 
-#: ../update-menus/parsestream.cc:448
+#: ../update-menus/parsestream.cc:449
 msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
 msgstr "文件“%1”中的第 %2 行(或者其定义结束于该行)：\n"
 
-#: ../update-menus/parsestream.cc:469
+#: ../update-menus/parsestream.cc:470
 msgid "Somewhere in input file:\n"
 msgstr "输入文件的某处：\n"
 
@@ -346,5 +346,3 @@ msgstr "  --version              输出版本信息并退出。\n"
 msgid ""
 "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
 msgstr "未知的安装条件“%1”(目前，只支持 “package”)。"
-
-

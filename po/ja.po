@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: menu\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
-"POT-Creation-Date: 2004-07-09 20:06+0200\n"
+"POT-Creation-Date: 2005-02-14 19:02+0100\n"
 "PO-Revision-Date: 2004-09-27 19:59+0900\n"
 "Last-Translator: GOTO Masanori <gotom@debian.org>\n"
 "Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
@@ -19,48 +19,48 @@ msgstr ""
 msgid "Zero-size argument to print function."
 msgstr "関数表示時に長さゼロの引数が与えられました"
 
-#: ../install-menu/install-menu.cc:200
+#: ../install-menu/install-menu.cc:201
 msgid "install-menu: checking directory %1\n"
 msgstr "install-menu: ディレクトリ %1 を検査中です\n"
 
-#: ../install-menu/install-menu.cc:213
+#: ../install-menu/install-menu.cc:214
 msgid "install-menu: creating directory %1:\n"
 msgstr "install-menu: ディレクトリ %1 を作成中:\n"
 
-#: ../install-menu/install-menu.cc:215
+#: ../install-menu/install-menu.cc:216
 msgid "Could not create directory(%1): %2"
 msgstr "ディレクトリ (%1) が作成できません: %2"
 
-#: ../install-menu/install-menu.cc:217
+#: ../install-menu/install-menu.cc:218
 msgid "Could not change directory(%1): %2"
 msgstr "ディレクトリ (%1) を変更できません: %2"
 
-#: ../install-menu/install-menu.cc:220
+#: ../install-menu/install-menu.cc:221
 msgid "install-menu: directory %1 already exists\n"
 msgstr "install-menu: ディレクトリ %1 は既に存在しています\n"
 
 #. Do not translate supported
-#: ../install-menu/install-menu.cc:437
+#: ../install-menu/install-menu.cc:438
 msgid "install-menu: [supported]: name=%1\n"
 msgstr "install-menu: [supported]: name=%1\n"
 
-#: ../install-menu/install-menu.cc:454
+#: ../install-menu/install-menu.cc:455
 msgid "Menu entry lacks mandatory field \"%1\".\n"
 msgstr "メニューエントリは必須フィールド \"%1\" を欠いています.\n"
 
-#: ../install-menu/install-menu.cc:460
+#: ../install-menu/install-menu.cc:461
 msgid "Unknown value for field %1=\"%2\".\n"
 msgstr "項目 %1=\"%2\" が未知の値.\n"
 
 #. Do not translate quoted text
-#: ../install-menu/install-menu.cc:605
+#: ../install-menu/install-menu.cc:606
 msgid ""
 "install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
 msgstr ""
 "install-menu: \"hotkeycase\" は \"sensitive\" または \"insensitive\" のみ指定"
 "できます\n"
 
-#: ../install-menu/install-menu.cc:635
+#: ../install-menu/install-menu.cc:636
 msgid ""
 "install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
 "Ignoring.\n"
@@ -68,20 +68,20 @@ msgstr ""
 "install-menu: 警告: 未知の識別子 `%1' がファイル %3 の %2 行にあります. 無視"
 "します.\n"
 
-#: ../install-menu/install-menu.cc:645
+#: ../install-menu/install-menu.cc:646
 msgid "install-menu: %1 must be defined in menu-method %2"
 msgstr "install-menu: %1 は menu-method %2 中で定義されていなければなりません"
 
-#: ../install-menu/install-menu.cc:806
+#: ../install-menu/install-menu.cc:813
 msgid "Cannot open file %1 (also tried %2).\n"
 msgstr "ファイル %1 が開けません (%2 も試験済み).\n"
 
-#: ../install-menu/install-menu.cc:814 ../install-menu/install-menu.cc:821
-#: ../install-menu/install-menu.cc:829
+#: ../install-menu/install-menu.cc:821 ../install-menu/install-menu.cc:828
+#: ../install-menu/install-menu.cc:836
 msgid "Cannot open file %1.\n"
 msgstr "ファイル %1 が開けません.\n"
 
-#: ../install-menu/install-menu.cc:831
+#: ../install-menu/install-menu.cc:838
 msgid ""
 "In order to be able to create the user config file(s) for the window "
 "manager,\n"
@@ -92,12 +92,12 @@ msgstr ""
 "書込み可能である必要があります (またはディレクトリが存在していなければなりま"
 "せん).\n"
 
-#: ../install-menu/install-menu.cc:853
+#: ../install-menu/install-menu.cc:860
 msgid "Warning: the string %1 did not occur in template file %2\n"
 msgstr "警告: 文字列 %1 はテンプレートファイル %2 中で見い出されませんでした\n"
 
 #. Don't translate quoted string
-#: ../install-menu/install-menu.cc:878
+#: ../install-menu/install-menu.cc:885
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
@@ -113,19 +113,19 @@ msgstr ""
 "     -h --help    : このメッセージを表示\n"
 "     -v --verbose : 冗長表示\n"
 
-#: ../install-menu/install-menu.cc:920
+#: ../install-menu/install-menu.cc:929
 msgid "install-menu: no menu-method script specified !"
 msgstr "install-menu: menu-method スクリプトが指定されていません!"
 
-#: ../install-menu/install-menu.cc:933
+#: ../install-menu/install-menu.cc:942
 msgid "Cannot open script %1 for reading.\n"
 msgstr "読込み時にスクリプト %1 が開けません.\n"
 
-#: ../install-menu/install-menu.cc:973
+#: ../install-menu/install-menu.cc:982
 msgid "Running: \"%1\"\n"
 msgstr "実行中: \"%1\"\n"
 
-#: ../install-menu/install-menu.cc:989
+#: ../install-menu/install-menu.cc:998
 msgid "install-menu: %1: aborting\n"
 msgstr "install-menu: %1: 中断\n"
 
@@ -170,15 +170,15 @@ msgstr ""
 msgid "%1: missing required tag: \"%2\""
 msgstr "%1: 必須タグが見当たらない: \"%2\""
 
-#: ../update-menus/parsestream.cc:48
+#: ../update-menus/parsestream.cc:49
 msgid "(probably) stdin"
 msgstr "(おそらく) 標準入力"
 
-#: ../update-menus/parsestream.cc:448
+#: ../update-menus/parsestream.cc:449
 msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
 msgstr "ファイル \"%1\" の %2 行 (またはそれ以前の定義行内):\n"
 
-#: ../update-menus/parsestream.cc:469
+#: ../update-menus/parsestream.cc:470
 msgid "Somewhere in input file:\n"
 msgstr "入力ファイルのどこか:\n"
 
@@ -341,7 +341,8 @@ msgstr ""
 "  --menufilesdir=<dir>   検索用メニューディレクトリのリストに <dir> を追加.\n"
 "  --menumethod=<method>  メニューメソッド <method> のみ実行.\n"
 "  --nodefaultdirs        全ての標準メニューディレクトリの使用をやめる.\n"
-"  --stdout               install-menu にパイプで渡す時に適したフォーマットで\n"
+"  --stdout               install-menu にパイプで渡す時に適したフォーマット"
+"で\n"
 "                         メニューリストを出力.\n"
 
 #. This is the end of the update-menus --help message
