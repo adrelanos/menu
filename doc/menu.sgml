@@ -693,7 +693,7 @@ by install-menu from their
 <prgn/install-menu/ will copy the file
 <tt>$path/$examplercfile</tt> to <tt>$path/$rcfile</tt> (with 
 <tt/$examplercfile/ and <tt/$rcfile/ defined in the
-<prgn/install-menu/ config file, and <tt/$path/ eihter the
+<prgn/install-menu/ config file, and <tt/$path/ either the
 <tt/$rootprefix/ or <tt>${HOME}/userprefix</tt>, depending on whether root
 or user executed the file.), and replace all occurrences of
 ``install-menu-defs'' with the <tt/$genmenu/ file it just
