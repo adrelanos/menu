@@ -487,7 +487,7 @@ include the <tt>/etc/menu-methods/menu.h</> configuration file at the beginning
 with the command <tt>!include menu.h</>
 
 For the same reason, scripts in <tt>/etc/menu-methods/</> are requested
-to use the following configurable functions :
+to use the following configurable functions:
 
 <tt/title()/ for the title (in place of <tt/$title/),
 <tt/icon()/ for the icon (in place of <tt/$icon/),
@@ -499,7 +499,7 @@ available. This later one is only defined if you <tt>!include lang.h</tt>
 Good examples for these scripts for nearly all Debian window managers
 are included in the <tt/menu/ package in
 <tt>/usr/share/doc/menu/examples</tt>. Note that while working on your script,
-you can use the tricks described in "The internals of the Menu
+you can use the tricks described in "The internals of the menu
 package", section "The update-menus program", to run just your script,
 instead of having update-menus run all scripts (can save quite a lot
 of time).
