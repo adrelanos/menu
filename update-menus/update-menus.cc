@@ -834,15 +834,19 @@ void wait_dpkg(string &stdoutfile)
 void usage(ostream &c)
 {
       c <<
+          /* This is the update-menus --help message*/
           _("update-menus: update the various window-manager config files (and\n"
               "  dwww, and pdmenu) Usage: update-menus [options] \n"
-              "    -d  output debugging messages.\n"
-              "    -v  Be verbose about what is going on.\n"
-              "    -h, --help This message.\n"
-              "    --menufilesdir <dir> Add <dir> to the lists of menu directories to search.\n"
-              "    --menumethod  <method> Run only the menu method <method>.\n"
+              "    -d              Output debugging messages.\n"
+              "    -v              Be verbose about what is going on.\n"
+              "    -h, --help      This message.\n"
+              "    --menufilesdir  <dir> Add <dir> to the lists of menu directories to search.\n"
+              "    --menumethod    <method> Run only the menu method <method>.\n"
               "    --nodefaultdirs Disables the use of all the standard menu directories.\n"
-              "    --stdout Output menu list in format suitable for piping to install-menu.\n");
+              "    --stdout        Output menu list in format suitable for piping to\n"
+              "                    install-menu.\n")
+          /* This is the end of the update-menus --help message*/
+          << _(  "    --version       Output version information and exit.\n"  );
 }
 
 /** Parse commandline parameters */
