@@ -1,3 +1,15 @@
+menu (2.1.7-4) unstable; urgency=low
+
+  * Put in CVS at alioth.debian.org 
+  * Hard code version in configure.in so that menu can be build without
+    the debian directory.
+  * Add complete french translation of menu sections. Thanks Jean-Philippe
+    Guérard.
+  * Add complete spanish translation of menu sections. Thanks Javier
+    Fernández-Sanguino Peña.
+
+ -- Bill Allombert <ballombe@debian.org>  Mon,  7 Apr 2003 20:31:51 +0200
+
 menu (2.1.7-3) unstable; urgency=low
 
   * Fix es.trme translation. Closes: #144043.  
