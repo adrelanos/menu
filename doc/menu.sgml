@@ -720,6 +720,12 @@ For examples of what these scripts can look like, see
 Should always be "menu-1". Please, make this the first non-comment
 line in the script.
 
+<tag><tt/outputencoding="LOCALE"/
+<item> Set the encoding used for output files. Use <tt/iconv --list/
+to get the list of supported encoding. The special encoding "LOCALE"
+refers to the current locale encoding. Useful values include "UTF-8"
+and "ISO-8859-1".
+
 <tag><tt/supported/
 <tag><tt/endsupported/
 <item>
@@ -728,9 +734,8 @@ what "needs" are supported by this window manager. So, the following
 is an example for a wm that supports both needs=x11 and needs=text:
 <example>
   supported
-    x11=" ShowEntry(\"" $title "\", \"" $command "\")"
-    text="  ShowEntry(\"" $title "\", \"" $command 
-             "xterm -T " $title " -e " $command "\")"
+    x11 =" ShowEntry(\"" title() "\", \"" $command "\")"
+    text=" ShowEntry(\"" title() "\", \""  term()  "\")"
   endsupported
 </example>
 
