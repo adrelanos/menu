@@ -219,6 +219,10 @@ Here is an example to describe the syntax of such a file:
   command="gnuplot"           the command to run
 </example>
 <p>
+The file must be encoded in ASCII 7bit. This is necessary to accomodate 
+window managers that do not support 8bit. However the translations are not
+limited in encoding.
+<p>
 The <tt/title/ must follow the following requirements:
 <enumlist>
 <item> It must be short. There is an optional <tt/longtitle/ field for
@@ -1278,6 +1282,9 @@ and "submenutitle=" are interpreted as follows:
 
 <tag> catfile($arg1) <item>
      Return the contents of file $arg1.
+
+<tag> shell($arg1) <item>
+     Return the output of the shell command $arg1.
   
 <tag> forall($array, "var", $exec) <item>
      For each element of the column separated array $array, set

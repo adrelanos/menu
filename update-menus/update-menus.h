@@ -135,14 +135,6 @@ public:
 
 class cond_inst_false : public genexcept { }; //conditional install returns false
 
-class pipeerror_read : public except_string {
-public:
-  pipeerror_read(std::string s) : except_string(s) { }
-  std::string message() {
-    return String::compose(_("Failed to pipe data through \"%1\" (pipe opened for reading)."), msg);
-  }
-};  // pipe open for reading failed
-
 class missing_tag : public except_string {
   std::string file;
 public:

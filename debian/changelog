@@ -11,10 +11,13 @@ menu (2.1.10-1) unstable; urgency=low
     - Modify basename() function to do as advertised in the documentation.
     - When conversion for a translated menu section failed, fallback to the
     original string.
+    - Implement a shell() function.
   * Update Dutch menu message translation. Closes: #230525. Thanks Tim
     Dijkstra.
   * Add Chinese menu messages and sections translations. Closes: #232403.
     Thanks Carlos Z.F. Liu and Yongtao Yang.
+  * Remove dconfig-text entry form gpm default menu entry: Closes: #234178.
+  * Document that menu files must be encoded in 7bit only.
 
  -- Bill Allombert <ballombe@debian.org>  Sat, 24 Jan 2004 19:45:43 +0100
 

@@ -207,6 +207,10 @@ struct prefix_func : public funcN<0> {
   std::ostream &output(std::ostream &o, std::vector<cat_str *> &, std::map<std::string, std::string> &);
   const char * name() const { return "prefix"; }
 };
+struct shell_func : public funcN<1> {
+  std::ostream &output(std::ostream &o, std::vector<cat_str *> &, std::map<std::string, std::string> &);
+  const char * name() const { return "shell"; }
+};
 struct ifroot_func: public funcN<2> {
   std::ostream &output(std::ostream &o, std::vector<cat_str *> &, std::map<std::string, std::string> &);
   const char * name() const { return "ifroot"; }

@@ -131,6 +131,7 @@ std::string convert(const std::string& str)
 void add_functions()
 {
   store_func(new prefix_func);
+  store_func(new shell_func);
   store_func(new ifroot_func);
 
   store_func(new print_func);
@@ -423,6 +424,25 @@ ostream &prefix_func::output(ostream &o, vector<cat_str *> &,
     map<string, string> &)
 {
   return o << config->prefix();
+}
+
+ostream &shell_func::output(ostream &o, vector<cat_str *> &args,
+    map<string, string> &menuentry)
+{
+  string command = args[0]->soutput(menuentry);
+  FILE *status = popen(command.c_str(), "r");
+
+  if (!status)
+      throw pipeerror_read(command);
+
+  while (!feof(status))
+  {
+    char tmp[MAX_LINE];
+    if (fgets(tmp, MAX_LINE, status) != NULL)
+        o << tmp;
+  }
+  pclose(status);
+  return o;
 }
 
 ostream &ifroot_func::output(ostream &o, vector<cat_str *> & args,

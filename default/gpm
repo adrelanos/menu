@@ -5,7 +5,3 @@
  package provides a daemon that listens to the mouse when the\
  console is displayed, and delivers them to applications."\
    command="/usr/sbin/su-to-root -p root -c /usr/sbin/gpmconfig"
-?package(gpm):needs="dconfig-text" section="Hardware" \
-     title="gpmconfig" \
-     doc="file:///usr/share/doc/gpm/" \
-     command="gpmconfig"

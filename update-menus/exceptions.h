@@ -61,6 +61,14 @@ public:
   }
 };
 
+class pipeerror_read : public except_string {
+public:
+  pipeerror_read(std::string s) : except_string(s) { }
+  std::string message() {
+    return String::compose(_("Failed to pipe data through \"%1\" (pipe opened for reading)."), msg);
+  }
+};  // pipe open for reading failed
+
 class informed_fatal : public genexcept { 
   public:
     std::string message() const { return ""; }
