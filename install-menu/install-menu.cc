@@ -1363,9 +1363,9 @@ int main(int argc, char **argv)
       config->debuginfo(cerr);
       supported->debuginfo(cerr);
     }
-    if (config->onlyrunasroot && getuid())
+    if ((config->onlyrunasroot || config->userpref == 0) && getuid())
         return 0;
-    if (config->onlyrunasuser && !getuid())
+    if ((config->onlyrunasuser || config->rootpref == 0) && !getuid())
         return 0;
     if (config->prerun)
         system((config->prerun->soutput(root_menu.vars)).c_str());
