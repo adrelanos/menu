@@ -6,6 +6,10 @@ menu (2.1.8-3) unstable; urgency=low
   * default/bash: removed. Thanks Matthias Klose.
   * debian/rules: do not create empty dir /usr/share/pixmaps.
     Closes: #196713. Thanks Ryan Murray.
+  * doc/menu.sgml: 
+    + Fix capitalisation of `Debian'.
+    + Improve section `How a user can override the menus'.
+    + Move 'Variables and functions' to a new chapter and format it properly.
   * Morten Brix Pedersen:
     - Just skip the file when its missing a tag, instead of stopping
     completely. Closes: #56839
