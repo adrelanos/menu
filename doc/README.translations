@@ -4,9 +4,9 @@
 ***                                                  ***
 ********************************************************
 
-In sarge, menu include translations of menu sections names
-in various languages. The lists is available in
-/etc/menu-methods/lang.h
+Debian menu includes translations of menu sections names
+in various languages. The list is available in
+/etc/menu-methods/lang.h.
 
 A) Selecting the language:
 
@@ -35,7 +35,7 @@ Menu will be translated in all languages at once. The users just
 need to configure KDE to use their language and menus will follow.
 
 B) Problems:
-There are unfortunately lots of reasons why translations would fails:
+There are unfortunately lots of reasons why translations would fail:
 window-manager not supporting menu translations, not supporting your
 locale encoding or not supporting user menus.
 
@@ -45,8 +45,8 @@ at the start of /etc/menu-methods/<your favorite wm>
 and run update-menus under different locale encodings.
 
 C) Screenshots
-Some admittedly crappy screenshots are available here:
-<http://people.debian.org/~ballombe/menu-snapshot>
+Some screenshots are available at
+<http://people.debian.org/~ballombe/menu-snapshot>.
 
 --
-Bill Allombert <ballombe@debian.org>  Mon, 27 Sep 2004 23:01:37 +0200
+Bill Allombert <ballombe@debian.org>  Sun,  3 Oct 2004 19:23:53 +0200
