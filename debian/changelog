@@ -3,6 +3,8 @@ menu (2.1.13) unstable; urgency=low
   * The "unreleased" release
   * Add Ukrainian menu sections translation by Eugeniy Meshcheryakov.
     Closes: #244067.
+  * Add Russian menu sections and messages translation by Dan Korostelev.
+    Closes: #245353.
 
  -- Bill Allombert <ballombe@debian.org>  Thu, 15 Apr 2004 20:39:12 +0200
 

@@ -1,0 +1,150 @@
+# Menu section translation
+# Copyright (C) 2003
+# This file is distributed under the same license as the menu package.
+# Bill Allombert <ballombe@debian.org>, 2003.
+# , fuzzy
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: menu-section 2.1.9-3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2003-04-03 12:14+0100\n"
+"PO-Revision-Date: 2004-04-22 21:27+0400\n"
+"Last-Translator: Dan Korostelev <dan@ats.energo.ru>\n"
+"Language-Team: Russian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+msgid "Apps"
+msgstr "Приложения"
+
+msgid "Databases"
+msgstr "Базы данных"
+
+msgid "Editors"
+msgstr "Редакторы"
+
+msgid "Education"
+msgstr "Обучающие"
+
+msgid "Emulators"
+msgstr "Эмуляторы"
+
+msgid "Graphics"
+msgstr "Графика"
+
+msgid "Hamradio"
+msgstr "Любительское радио"
+
+msgid "Math"
+msgstr "Математические"
+
+msgid "Net"
+msgstr "Работа с сетью"
+
+msgid "Programming"
+msgstr "Программирование"
+
+msgid "Science"
+msgstr "Научные"
+
+msgid "Tools"
+msgstr "Утилиты"
+
+msgid "Technical"
+msgstr "Технические"
+
+msgid "Text"
+msgstr "Работа с текстом"
+
+msgid "Shells"
+msgstr "Оболочки"
+
+msgid "Sound"
+msgstr "Работа со звуком"
+
+msgid "Viewers"
+msgstr "Программы просмотра"
+
+msgid "System"
+msgstr "Системные"
+
+msgid "Games"
+msgstr "Игры"
+
+msgid "Adventure"
+msgstr "Приключения"
+
+msgid "Arcade"
+msgstr "Аркады"
+
+msgid "Board"
+msgstr "Настольные"
+
+msgid "Card"
+msgstr "Карточные"
+
+msgid "Puzzles"
+msgstr "Головоломки"
+
+msgid "Simulation"
+msgstr "Симуляторы"
+
+msgid "Sports"
+msgstr "Спортивные"
+
+msgid "Strategy"
+msgstr "Стратегии"
+
+msgid "Tetris-like"
+msgstr "Тетрисы"
+
+msgid "Toys"
+msgstr "Игрушки"
+
+msgid "Help"
+msgstr "Справка"
+
+msgid "Screen"
+msgstr "Экран"
+
+msgid "Lock"
+msgstr "Блокировка"
+
+msgid "Save"
+msgstr "Хранители экрана"
+
+msgid "Root-window"
+msgstr "Рабочий стол"
+
+msgid "WindowManagers"
+msgstr "Оконные менеджеры"
+
+msgid "Modules"
+msgstr "Модули"
+
+msgid "XShells"
+msgstr "X-Терминалы"
+
+#From Apps/System/Admin
+msgid "Admin"
+msgstr "Административные"
+
+#Non official sections from WindowMaker
+msgid "Appearance"
+msgstr "Внешний вид"
+
+msgid "WorkSpace"
+msgstr "Рабочее место"
+
+#Frequently used unofficial sections.
+#From Apps/Net/Mozilla Components
+msgid "Mozilla Components"
+msgstr "Компоненты Mozilla"
+
+#From Games/Toys/Teddies
+msgid "Teddies"
+msgstr ""
+
