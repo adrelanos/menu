@@ -1198,21 +1198,30 @@ map<string, string> read_vars(parsestream &i)
       if (do_translate_hack) {
 	if (name == "title") {
 	  // This won't work if ldgettext is also used (translate($lang)).
-          string oldval = val;
-	  val = dgettext("menu-sections",val.c_str());
+	  string title = dgettext("menu-sections", val.c_str());
+          try {
+            title = convert(title);
+          } catch (conversion_error& err) {
+            // Conversion failed, use the original, untranslated string.
+            title = val;
+          }
+          val = title;
 	} else if (name == "section") {
 	  vector<string> v;
+          vector<string>::const_iterator i;
 	  break_char(val, v, '/');
-	  val.erase();
+          val.erase();
 
-          for(vector<string>::const_iterator i = v.begin(); i != v.end(); ++i)
-              val = val + '/' + dgettext("menu-sections", i->c_str());
-
-          try {
-              std::string newval = convert(val);
-              val = newval;
-          } catch (conversion_error& err) {
-              std::cerr << err.message() << std::endl;
+          for(i = v.begin(); i != v.end(); ++i)
+          {
+            string sectionname = dgettext("menu-sections", i->c_str());
+            try {
+              sectionname = convert(sectionname);
+            } catch (conversion_error& err) {
+              // Conversion failed, use the original, untranslated string.
+              sectionname = i->c_str();
+            }
+            val = val + '/' + sectionname;
           }
 
 	}

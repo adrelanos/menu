@@ -9,6 +9,8 @@ menu (2.1.9-6) unstable; urgency=low
     - Unknown identifiers now generates a warning instead of an error.
     - Implement a replace() function. Closes: #223948
     - Modify basename() function to do as advertised in the documentation.
+    - When conversion for a translated menu section failed, fallback to the
+    original string.
   * Update Dutch menu message translation. Closes: #230525. Thanks Tim
     Dijkstra.
 
