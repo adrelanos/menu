@@ -59,7 +59,7 @@ std::string escapewith_string(const std::string &s, const std::string &esc, cons
 std::string lowercase(std::string s);
 std::string uppercase(std::string s);
 std::string replacewith_string(std::string str, const std::string &replace, const std::string &with);
-std::string replace_string(std::string str, const std::string& repl, const std::string& with)
+std::string replace_string(std::string str, const std::string& repl, const std::string& with);
 std::string cppesc_string(const std::string &s);
 int stringtoi(const std::string &s);
 std::string itostring(int i);
