@@ -57,7 +57,7 @@ public:
       std::cerr << message() << std::endl;
   }
   virtual std::string message() const {
-      return _("Unknown Error");
+      return _("Unknown error");
   }
   virtual ~genexcept() { }
 };
@@ -75,7 +75,7 @@ protected:
 public:
   except_string(std::string s) : msg(s) { }
   std::string message() const {
-    return String::compose(_("Unknown Error, message=%1"), msg);
+    return String::compose(_("Unknown error, message=%1"), msg);
   }
 };
 
@@ -85,7 +85,7 @@ protected:
 public:
   except_pi_string(parsestream *p, std::string s) : except_pi(p), msg(s) { }
   std::string message() const {
-    return String::compose(_("Unknown Error, message=%1"), msg);
+    return String::compose(_("Unknown error, message=%1"), msg);
   }
 };
 
