@@ -1,0 +1,101 @@
+#! /usr/bin/make -f
+#   -*- mode: makefile; -*-
+#
+# Based on the sample file shipped with debhelper.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+export DH_COMPAT=1
+
+arch    := $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+CXXFLAGS = -g -Wall
+CFLAGS = -g -Wall
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+CXXFLAGS += -O0
+CFLAGS += -O0
+else
+CXXFLAGS += -O2
+CFLAGS += -O2
+endif
+
+build: build-stamp
+build-stamp:
+	dh_testdir
+	./configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man
+	$(MAKE) CXXFLAGS="$(CXXFLAGS)" CFLAGS="$(CFLAGS)" 
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp install-stamp
+
+	# Add here commands to clean up after the build process.
+	[ ! -f Makefile ] || $(MAKE) distclean
+
+	dh_clean
+
+install: install-stamp
+install-stamp: build-stamp
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs \
+		   etc/menu-methods \
+		   etc/menu \
+		   usr/lib/menu \
+		   usr/share/pixmaps \
+		   usr/share/man/man1
+
+	# Add here commands to install the package into debian/tmp.
+	$(MAKE) install DESTDIR=`pwd`/debian/tmp/
+
+	cp examples/translate_menus examples/menu.h \
+	   examples/menu.config debian/tmp/etc/menu-methods 
+	cp doc/cmap.xpm debian/tmp/usr/share/pixmaps
+	#
+	install -g root -o root -m 644 \
+	   doc/README.changes debian/tmp/usr/share/doc/menu/
+	install -g root -o root -m 644 \
+	   doc/README.config-menus debian/tmp/etc/menu/README
+	install -g root -o root -m 644 \
+	   doc/README.menu-methods debian/tmp/etc/menu-methods/README
+	install -g root -o root -m 644 \
+	   doc/README.package-menus debian/tmp/usr/lib/menu/README
+	#
+	touch install-stamp
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do here, no architecture independant packages here.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installdocs
+#	dh_installexamples
+#	dh_installmenu
+#	dh_installemacsen
+#	dh_installinit
+#	dh_installcron
+#	dh_installman
+#	dh_undocumented
+	dh_installchangelogs
+	dh_strip
+	dh_compress
+	dh_fixperms
+#	dh_suidregister
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+#	dh_makeshlibs
+	dh_md5sums
+	dh_builddeb
+
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary

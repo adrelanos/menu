@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+# Package maintainers, DO NOT use this as an example for how to
+# call update-menus in your postinst! This script does several things
+# you shouldn't do, and doesn't do other things that you should
+# do. See /usr/share/doc/menu/ for more info.
+
+if [ -x /usr/bin/pidof ]; then
+  kill -KILL `pidof update-menus` 2> /dev/null || true
+fi
+chmod a+x /usr/bin/update-menus
+update-menus
+
+install-info --quiet \
+            --menuentry="Debian menu" \
+            --section "Information" "Information:" \
+            --description="The Debian menu system" \
+            /usr/share/info/menu.info
+
+#DEBHELPER#

@@ -1,0 +1,21 @@
+Source: menu
+Section: admin
+Priority: optional
+Maintainer: joost witteveen <joostje@debian.org>
+Uploaders: Bill Allombert <ballombe@debian.org>
+Standards-Version: 3.5.8.0
+Build-Depends: debhelper (>= 3.0.0), texinfo, debiandoc-sgml, gettext
+
+Package: menu
+Architecture: any
+Depends: ${shlibs:Depends}, dpkg (>=1.10)
+Conflicts: pdmenu (<=0.5.9)
+Description: Provides update-menus functions for some applications
+ The intent of this package is to streamline the menus (like the
+ fvwm2 ones) in Debian. For this purpose, menu provides an "update-menus"
+ command, that will read all installed menu files (as provided by
+ other packages in /usr/lib/menu), and run the frontends for various
+ window-managers in /etc/menu-methods to create startup files for
+ the window managers (or pdmenu).
+ The user and system admin can easily override the menu files
+ on a by-user or by-system bases.

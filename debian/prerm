@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set +e
+
+rm -f /usr/lib/menu/.updated-menus
+rm -f /etc/menu/.updated-menus
+install-info --quiet --remove /usr/share/info/menu.info
+
+#DEBHELPER#
