@@ -3,7 +3,7 @@
  * update-menus/update-menus.cc
  *
  * Copyright (C) 1996-2003  Joost Witteveen, 
- * Copyright (C) 2002-2003  Bill Allombert and Morten Brix Pedersen.
+ * Copyright (C) 2002-2004  Bill Allombert and Morten Brix Pedersen.
  * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
