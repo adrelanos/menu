@@ -1,0 +1,363 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Debian menu team
+# This file is distributed under the same license as the PACKAGE package.
+# Tommi Vainikainen, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: menu\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"POT-Creation-Date: 2003-12-21 21:45+0100\n"
+"PO-Revision-Date: 2004-01-10 04:13+0200\n"
+"Last-Translator: Tommi Vainikainen <thv+debian@iki.fi>\n"
+"Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../install-menu/install-menu.cc:176
+msgid "install-menu: checking directory %1\n"
+msgstr "install-menu: tarkistetaan hakemisto %1\n"
+
+#: ../install-menu/install-menu.cc:189
+msgid "install-menu: creating directory %1:\n"
+msgstr "install-menu: luodaan hakemisto %1:\n"
+
+#: ../install-menu/install-menu.cc:196
+msgid "install-menu: directory %1 already exists\n"
+msgstr "install-menu: hakemisto %1 on jo olemassa\n"
+
+#: ../install-menu/install-menu.cc:417
+msgid "Zero-size argument to print function."
+msgstr "Nollapituinen argumentti tulostusfunktiolle."
+
+#. Do not translate supported
+#: ../install-menu/install-menu.cc:848
+msgid "install-menu: [supported]: name=%1\n"
+msgstr "install-menu: [supported]: nimi=%1\n"
+
+#: ../install-menu/install-menu.cc:869
+msgid "Menu entry lacks mandatory field \"%1\".\n"
+msgstr "Valikkomerkinnästä puuttuu pakollinen kenttä \"%1\".\n"
+
+#: ../install-menu/install-menu.cc:873
+msgid "Unknow value for field %1=\"%2\".\n"
+msgstr "Tuntematon arvo kentälle %1=\"%2\".\n"
+
+#. Do not translate quoted text
+#: ../install-menu/install-menu.cc:1030
+msgid ""
+"install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
+msgstr "install-menu: \"hotkeycase\" voi olla vain \"sensitive\" tai \"insensitive\"\n"
+
+#. don't translate genmenu, startmenu, endmenu and don't change \"\"
+#: ../install-menu/install-menu.cc:1073
+msgid ""
+"install-menu: At least one of genmenu, startmenu, endmenu\n"
+"is undefined. All of these have to be defined \n"
+"(although they may be equal to \"\").\n"
+msgstr ""
+"install-menu: Ainakin yksi genmenusta, startmenusta tai endmenusta\n"
+"on määrittelemätön. Kaikki nämä täytyy määritellä\n"
+"(vaikkakin ne voivat olla \"\").\n"
+
+#: ../install-menu/install-menu.cc:1106
+msgid "Using compatibility with %1.\n"
+msgstr "Toimitaan %1-yhteensopivasti.\n"
+
+#: ../install-menu/install-menu.cc:1252
+msgid "Cannot open file %1 (also tried %2).\n"
+msgstr "Tiedostoa %1 ei voi avata (myös tiedostoa %2 yritettiin).\n"
+
+#: ../install-menu/install-menu.cc:1260 ../install-menu/install-menu.cc:1267
+#: ../install-menu/install-menu.cc:1275
+msgid "Cannot open file %1.\n"
+msgstr "Tiedostoa %1 ei voi avata.\n"
+
+#: ../install-menu/install-menu.cc:1277
+msgid ""
+"In order to be able to create the user config file(s) for the window "
+"manager,\n"
+"the above file needs to be writeable (and/or the directory needs to exist).\n"
+msgstr ""
+"Jotta käyttäjien asetustiedosto(t) ikkunointiohjelmille voidaan luoda,\n"
+"mainitun tiedoston täytyy olla kirjoitettavissa (ja/tai hakemiston olemassa).\n"
+
+#: ../install-menu/install-menu.cc:1299
+msgid "Warning: the string %1 did not occur in template file %2\n"
+msgstr "Varoitus: merkkijonoa %1 ei löydy mallitiedostosta %2\n"
+
+#. Don't translate quoted string
+#: ../install-menu/install-menu.cc:1305
+msgid ""
+"install-menu [-vh] <menu-method>\n"
+"  Read menu entries from stdin in \"update-menus --stdout\" format\n"
+"  and generate menu files using the specified menu-method.\n"
+"  Options to install-menu:\n"
+"     -h --help    : this message\n"
+"     -v --verbose : be verbose\n"
+msgstr ""
+"install-menu [-vh] <valikkotapa>\n"
+"  Lue valikkomerkinnät vakiosyötteestä \"update-menus --stdout\"-muodossa\n"
+"  ja luo valikkotiedostot määriteltyä valikkotapaa käyttäen.\n"
+"  install-menun valitsimet:\n"
+"     -h --help    : tämä viesti\n"
+"     -v --verbose : toimii monisanaisesti\n"
+
+#: ../install-menu/install-menu.cc:1345
+msgid "install-menu: no menu-method script specified !"
+msgstr "install-menu: valikkotapa-skriptiä ei määritelty !"
+
+#: ../install-menu/install-menu.cc:1358
+msgid "Cannot open script %1 for reading.\n"
+msgstr "Skriptiä %1 ei aukea luettavaksi.\n"
+
+#: ../install-menu/install-menu.cc:1402
+msgid "Running: \"%1\"\n"
+msgstr "Suoritetaan: \"%1\"\n"
+
+#: ../install-menu/install-menu.cc:1418
+msgid "install-menu: %1: aborting\n"
+msgstr "install-menu: %1: keskeytetään\n"
+
+#: ../install-menu/install-menu.h:368
+msgid "Number of arguments to function %1 does not match."
+msgstr "Funktiolle %1 annettujen argumenttien määrä ei täsmää."
+
+#: ../install-menu/install-menu.h:375
+msgid "Unknown function: \"%1\""
+msgstr "Tuntematon funktio: \"%1\""
+
+#: ../install-menu/install-menu.h:383
+msgid "Indirectly used, but not defined function: \"%1\""
+msgstr "Epäsuorasti käytetty, mutta määrittelemätön funktio: \"%1\""
+
+#: ../install-menu/install-menu.h:391
+msgid "Unknown identifier: \"%1\""
+msgstr "Tuntematon tunniste: \"%1\""
+
+#: ../install-menu/install-menu.h:399
+msgid "Could not open directory \"%1\"."
+msgstr "Hakemistoa \"%1\" ei aukea."
+
+#: ../install-menu/install-menu.h:407
+msgid ""
+"Missing (or empty) tag: %1\n"
+"This tag needs to be defined for the menu entry to make sense.\n"
+"Note that update-menus rearranges the order of the tags found\n"
+"in the menu-entry files, so that the part above isn't literal."
+msgstr ""
+"Puuttuva (tai tyhjä) tagi: %1\n"
+"Tämän tagin täytyy olla määritelty järkevässä valikkomerkinnässä.\n"
+"Huomaa, että update-menus uudelleenjärjestää valikkomerkintätiedostoista\n"
+"löytyvät tagit, joten tämä osa ei ole kirjaimellinen."
+
+#: ../install-menu/install-menu.h:419
+msgid "Encoding conversion error: \"%1\""
+msgstr "Merkistökoodauksen muunnosvirhe: \"%1\""
+
+#: ../update-menus/adstring.cc:274
+msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
+msgstr "Tiedostossa \"%1\" rivillä (tai määrittelyssä, joka loppuu riviin) %2:\n"
+
+#: ../update-menus/adstring.cc:295
+msgid "Somewhere in input file:\n"
+msgstr "Jossain syötetiedostossa:\n"
+
+#: ../update-menus/adstring.cc:303
+msgid "(probably) stdin"
+msgstr "(luultavasti) vakiosyöte"
+
+#: ../update-menus/adstring.cc:317
+msgid "Cannot open file %1."
+msgstr "Tiedosto %1 ei aukea."
+
+#: ../update-menus/adstring.h:60
+msgid "Unknown error."
+msgstr "Tuntematon virhe."
+
+#: ../update-menus/adstring.h:78 ../update-menus/adstring.h:88
+msgid "Unknown error, message=%1"
+msgstr "Tuntematon virhe, viesti=%1"
+
+#: ../update-menus/adstring.h:95
+msgid "Unexpected end of file."
+msgstr "Odottamaton tiedoston loppu."
+
+#: ../update-menus/adstring.h:101
+msgid "Unexpected end of line."
+msgstr "Odottamaton rivin loppu."
+
+#: ../update-menus/adstring.h:107
+msgid "Identifier expected."
+msgstr "Tunnistetta odotettiin."
+
+#: ../update-menus/adstring.h:114
+msgid "Expected: \"%1\""
+msgstr "Odotettiin: \"%1\""
+
+#: ../update-menus/adstring.h:122
+msgid "Unexpected character: \"%1\""
+msgstr "Odottamaton merkki: \"%1\""
+
+#: ../update-menus/adstring.h:130
+msgid ""
+"Boolean (either true or false) expected.\n"
+"Found: \"%1\""
+msgstr ""
+"Totuusarvoa (joko tosi tai epätosi) odotettiin.\n"
+"Löytyi: \"%1\""
+
+#: ../update-menus/adstring.h:139
+msgid "Unable to open file \"%1\"."
+msgstr "Tiedosto \"%1\" ei aukea."
+
+#: ../update-menus/adstring.h:147
+msgid "Unknown compat mode: \"%1\""
+msgstr "Tuntematon yhtsopivuustapa: \"%1\""
+
+#. Translation here and below refer to the file
+#. /etc/menu-methods/translate_menus that allow to rename and reorganize
+#. menu entries automatically. It does not refer to the localisation
+#. (translation to other languages).
+#.
+#: ../update-menus/update-menus.cc:373
+msgid "Reading translation rules in %1."
+msgstr "Luetaan muunnossääntöjä tiedostosta %1."
+
+#: ../update-menus/update-menus.cc:473
+msgid "Reading installed packages list..."
+msgstr "Luetaan asennettujen pakettien luetteloa..."
+
+#: ../update-menus/update-menus.cc:492
+msgid "Reading menu-entry file %1."
+msgstr "Luetaan valikkomerkintätiedostoa %1."
+
+#: ../update-menus/update-menus.cc:520
+msgid ""
+"Error (or no input available from stdin) while executing %1. Note that it "
+"is a _feature_ of menu that it executes menu-entry files that have the "
+"executable bit set. See the documentation.\n"
+msgstr "Virhe (tai ei syötettä luettavissa vakiosyötteestä) suoritettaessa %1.  Huomaa, että menun _ominaisuus_ on suorittaa valikkomerkintätiedostot, joiden suoritusoikeus on asetettu.  Katso ohjeistus.\n"
+
+#: ../update-menus/update-menus.cc:563 ../update-menus/update-menus.cc:567
+msgid "Skipping file because of errors...\n"
+msgstr "Ohitetaan tiedosto virheiden vuoksi...\n"
+
+#: ../update-menus/update-menus.cc:582
+msgid "Reading menu-entry files in %1."
+msgstr "Luetaan valikkomerkintätiedostoja hakemistossa %1."
+
+#: ../update-menus/update-menus.cc:605
+msgid "Error reading %1.\n"
+msgstr "Virhe luettaessa tiedostoa %1.\n"
+
+#: ../update-menus/update-menus.cc:610
+msgid "%1 menu entries found (%2 total)."
+msgstr "%1 valikkomerkintää löytyi (yhteensä %2)."
+
+#: ../update-menus/update-menus.cc:621
+msgid "Running method: %1"
+msgstr "Suoritustapa: %1"
+
+#: ../update-menus/update-menus.cc:624
+msgid "Cannot create pipe."
+msgstr "Putkea ei voi luoda."
+
+#: ../update-menus/update-menus.cc:660
+msgid "Script %1 could not be executed."
+msgstr "Skriptiä %1 ei voi suorittaa."
+
+#: ../update-menus/update-menus.cc:663
+msgid "Script %1 returned error status %2."
+msgstr "Skripti %1 palautta virhetilan %2."
+
+#: ../update-menus/update-menus.cc:666
+msgid "Script %1 received signal %2."
+msgstr "Skripti %1 sai signaalin %2."
+
+#: ../update-menus/update-menus.cc:676
+msgid "Running menu-methods in %1."
+msgstr "Suoritetaan valikkotavat hakemistosta %1."
+
+#: ../update-menus/update-menus.cc:714
+msgid "Other update-menus processes are already locking %1, quitting."
+msgstr "Toiset update-menus-prosessit ovat jo lukinneet tiedoston %1, lopetaan. "
+
+#: ../update-menus/update-menus.cc:717
+msgid "Cannot lock %1: %2 - Aborting."
+msgstr "Ei voi lukita %1: %2 - Keskeytetään."
+
+#: ../update-menus/update-menus.cc:726
+msgid "Cannot write to lockfile %1 - Aborting."
+msgstr "Ei voi kirjoittaa lukkotiedostoa %1 - Keskeytetään."
+
+#: ../update-menus/update-menus.cc:738
+msgid "Cannot remove lockfile %1."
+msgstr "Lukkotiedostoa %1 ei voi poistaa."
+
+#: ../update-menus/update-menus.cc:752
+msgid "Update-menus is run by user."
+msgstr "Valikkopäivitystä ajaa käyttäjä."
+
+#: ../update-menus/update-menus.cc:834
+msgid ""
+"Waiting for dpkg to finish (forking to background).\n"
+"(checking %1)"
+msgstr ""
+"Odotetaan dpkg:n päättymistä (haaraudutaan taustalle).\n"
+"(tarkistetaan %1)"
+
+#: ../update-menus/update-menus.cc:837
+msgid "Further output (if any) will appear in %1."
+msgstr "Myöhempi tuloste (jos sellaista on) tulee näkyviin tiedostoon %1."
+
+#: ../update-menus/update-menus.cc:859
+msgid "Dpkg is not locking dpkg status area, good."
+msgstr "Dpkg ei lukitse dpkg-tilannealaa, hyvä."
+
+#: ../update-menus/update-menus.cc:867
+msgid ""
+"update-menus: update the various window-manager config files (and\n"
+"  dwww, and pdmenu) Usage: update-menus [options] \n"
+"    -v  Be verbose about what is going on.\n"
+"    -d  Output debugging messages.\n"
+"    -h, --help This message.\n"
+"    --menufiledir <dir> Add <dir> to the lists of menu directories to "
+"search.\n"
+"    --menumethod  <method> Run only the menu method <method>.\n"
+"    --nodefaultdirs Disables the use of all the standard menu directories.\n"
+"    --stdout Output menu list in format suitable for piping to install-"
+"menu.\n"
+msgstr ""
+"update-menus: päivitä useiden ikkunointiohjelmien asetustiedostot (ja\n"
+"  dwww ja pdmenu) Käyttö: update-menus [valitsimet] \n"
+"    -v  Tekemisiä ilmaistaan monisanaisesti.\n"
+"    -d  Tulosta vianetsintäviestit.\n"
+"    -h, --help Tämä viesti.\n"
+"    --menufiledir <hak> Lisää <hak> etsittävien valikkohakemistojen luetteloon.\n"
+"    --menumethod  <tapa> Suorita vain valikkotapa <tapa>.\n"
+"    --nodefaultdirs Kaikki standardit valikkohakemistot poistetaan käytöstä.\n"
+"    --stdout Tulosta valikkoluettelo install-menulle putkittamiseen\n"
+"             soveltuvassa muodossa.\n"
+
+#: ../update-menus/update-menus.cc:907
+msgid "Directory is expected after --menufilesdir option.\n"
+msgstr "Hakemistoa odotettiin valitsimen --menufilesdir jälkeen.\n"
+
+#: ../update-menus/update-menus.cc:917
+msgid "Filename is expected after --menumethod option.\n"
+msgstr "Tiedostonimeä odotettiin valitsimen --menumethod jälkeen.\n"
+
+#: ../update-menus/update-menus.h:106
+msgid ""
+"Unknown install condition \"%1\" (currently, only \"package\" is supported)."
+msgstr "Tuntematon asennusehto \"%1\" (tällä hetkellä vain \"package\" on tuettu)."
+
+#: ../update-menus/update-menus.h:116
+msgid "Failed to pipe data through \"%1\" (pipe opened for reading)."
+msgstr "Tiedon putkittaminen läpi \"%1\" epäonnistui (putki avattu luettavaksi)."
+
+#: ../update-menus/update-menus.h:125
+msgid "%1: missing required tag: \"%2\""
+msgstr "%1: vaadittu tagi puuttuu: \"%2\""
