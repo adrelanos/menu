@@ -5,7 +5,7 @@ update-menus \- generate Debian menu system
 .SH SYNOPSIS
 .B update-menus [\-v] [\-d] [\-h|--help] [--menufilesdir <dir>] [--menumethod <method>] [--nodefaultdirs] [--stdout]
 .SH DESCRIPTION
-Before the advent of \fIupdate-menus\fP, when the system administrator installed a 
+Before the advent of \fIupdate-menus\fP, when the system administrators installed a 
 package onto a Debian system, they would need to edit various window 
 manager configuration files to make the new program show up on, for example, 
 fvwm's menus. The menus could easily become out of sync with what programs
@@ -41,11 +41,11 @@ Display usage help and exit.
 .IP "--menufilesdir <dir>" 
 Adds directory <dir> to the list of directory to search for menu files in. 
 .IP "--menumethod <method>" 
-process only the menu method <method> instead of all the menu methods found.
+Process only the menu method <method> instead of all the menu methods found.
 .IP "--nodefaultdirs"
 Disables the search of menu entries in system menu directories.
 .IP "--stdout" 
-output the menu list in a format suitable as input for \fIinstall-menu\fP or a
+Output the menu list in a format suitable as input for \fIinstall-menu\fP or a
 menu method file.
 .SH CONFIGURATION
 There are several ways to tune the operation of update-menus:
@@ -61,7 +61,7 @@ who want to override the system wide defaults put their files in
 .RE	
 .I per window-manager in /etc/menu-methods/$wm
 .RS
-In these configuration files, one can tune generated "system.rc" files for
+In these configuration files, one can tune generated system."$wm"rc files for
 each individual window manager. For example, one can specify that the
 wm should ignore any icons that the packages may supply, or set the
 default wrapper for text-only applications (usually, an xterm is started to
