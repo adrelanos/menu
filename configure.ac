@@ -6,7 +6,6 @@ AM_INIT_AUTOMAKE(menu,2.1.9-6)
 AM_CONFIG_HEADER(config.h)
 AM_MAINTAINER_MODE dnl Be nice with packagers, i.e. ourself 
 dnl Checks for programs.
-AC_PROG_CC
 AC_PROG_CXX
 
 AC_PROG_INSTALL
@@ -18,10 +17,6 @@ AC_HEADER_DIRENT
 AC_HEADER_STDC
 AC_HEADER_SYS_WAIT
 AC_CHECK_HEADERS(fcntl.h sys/file.h syslog.h unistd.h libintl.h)
-
-dnl Checks for typedefs, structures, and compiler characteristics.
-AC_C_CONST
-AC_TYPE_OFF_T
 
 dnl Checks for library functions.
 AC_TYPE_SIGNAL
