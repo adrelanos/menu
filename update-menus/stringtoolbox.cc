@@ -95,10 +95,12 @@ string replace(string str, const string& repl, const string& with)
 {
   string::size_type pos = str.find(repl);
 
-  if (pos == string::npos || repl.empty())
-      return str;
-
-  return replace(str.replace(pos, repl.length(), with), repl, with);
+  while (pos != string::npos && !repl.empty())
+  {
+    str = str.replace(pos, repl.length(), with);
+    pos = str.find(repl, pos+with.length());
+  }
+  return str;
 }
 
 string cppesc(const string &s)

@@ -196,51 +196,73 @@ process, at the expense of occasionally not finding the best tree. So,
 the tree you are presented with may not be optimal. For tuning
 variables, see the hint_* variables in the last chapter.
 
-
-<chapt>What packages with applications should do
+<chapt> The menu file 
 <p>
-
-<sect>Registering your applications
+<sect> Location
 <p>
-A package should provide a menu file
-<tt>/usr/lib/menu/&lt;package-name&gt;</tt> that contains
-information about each program it likes to make available in the
-menus.
+Packages provided menu files should be in <file>/usr/lib/menu/</file>.
+System-local menu files should be in <file>/etc/menu/</file>.
+User-specific enu files should be in <file>~/.menu/</file>
+<sect> Syntax
 <p>
-
 Here is an example to describe the syntax of such a file:
 <example>
-?package(gnuplot):\           specifies what packages need to be installed
-                              multiple requirements should be separated by
-                              comma
-  needs="text"\               what kind of environment this command expects
-  section="Apps/Math"\        in what section this menu entry should be
-  title="Gnuplot"\            the title of the menu entry
-  command="gnuplot"           the command to run
+?package(gnumeric):\           specifies what packages need to be installed
+                               multiple requirements should be separated by
+                               comma
+  needs="X11"\                 what kind of environment this command expects
+  section="Apps/Math"\         in what section this menu entry should be
+  title="Gnumeric"\            the title of the menu entry
+  command="gnumeric" \         the command to run
+  hints="Gnome,Spreadsheets" \ some hints about menu placement.
+  icon="/usr/share/pixmaps/gnumeric.xpm"  the path to the icon to use.
 </example>
+<p>
+You can use "#" to include comments like in shell scripts.
+Meta-character (", \, new line) must be escaped with a \.
+<p>
+Menu entries are terminated by a newline, but newline can be escaped.
+You can include several entries in the same files. 
+
 <p>
 The file must be encoded in ASCII 7bit. This is necessary to accomodate 
 window managers that do not support 8bit. However the translations are not
 limited in encoding.
+
+<p> <tt/?package(...)/ contains a comma-separated list of packages that
+need to be installed for the menu entry to be displayed. That should include
+the package containing the menu file and any packages necessary to run the
+command not depended by the package nor essential.  Users can use
+pseudo packages names starting by <tt/local./ which are assumed to be always
+installed.
+
+<p> The fields <tt/needs/, <tt/section/, <tt/title/ and <tt/command/ are
+mandatory. Other fields are optional. Custom field are supported.
+
+<sect> The <tt/title/ field
 <p>
+
 The <tt/title/ must follow the following requirements:
 <enumlist>
-<item> It must be short. There is an optional <tt/longtitle/ field for
-users that want longer titles.
-<item> It must be properly capitalized. Use <em/Emacs/ and not <em/emacs/.
-<item> It must be unique. Two entries must not have the same title.
+  <item> It must be short. There is an optional <tt/longtitle/ field for
+  users that want longer titles.
+  <item> It must be properly capitalized. Use <em/Emacs/ and not <em/emacs/.
+  <item> It must be unique. Two entries must not have the same title.
 </enumlist>
+
+<sect> The <tt/needs/ field
 <p>
 
 The following <tt/needs/ are documented for use in the Debian menu.
 <enumlist>
-<item> <tt/X11/: if this program runs under X11.
-<item> <tt/text/: if it runs under a terminal.
-                X11 window managers will spawn a X terminal emulator.
-<item> <tt/vc/: if it runs under the linux console but not under a virtual terminal.
-<item> <tt/wm/: if it is a X11 window manager. The current window manager
-will exec(2) this program so as to avoid "another window manager is running"
-errors.
+  <item> <tt/X11/: if this program runs under X11.
+  <item> <tt/text/: if it runs under a terminal.  X11 window managers will
+  spawn a X terminal emulator.
+  <item> <tt/vc/: if it runs under the linux console but not under a virtual
+  terminal.
+  <item> <tt/wm/: if it is a X11 window manager. The current window manager
+  will exec(2) this program to avoid "Another window manager is running"
+  errors.
 </enumlist>
 <p>
 
@@ -249,7 +271,7 @@ menu entries that must only be displayed in this menu manager.
 Examples include <tt/fvwm/ modules, <tt/dwww/ menu entries.
 <p>
 
-A program like gnuplot which can be run on X11 as well as on a text
+A program like gnumeric which can be run on X11 as well as on a text
 terminal should <em/not/ have an extra entry with <tt/needs=X11/
 because it will then be next to impossible to configure the window
 managers to spawn <prgn/rxvt/ instead of the default <prgn/xterm/.
@@ -261,21 +283,9 @@ otherwise the program will always be run in an <prgn/xterm/ (or
 <prgn/rxvt/). Though you must remember, that two entries are never allowed
 to have the same title. The title must be unique.
 <p>
-
-In the menu entry files, you can use "#" as comment (like in shell scripts).
+<sect> The <tt/section/ field
 <p>
-
-You should add a line like this to your <tt/postinst/ script
-<example>
- if test -x /usr/bin/update-menus; then update-menus; fi
-</example>
-and the <tt/postrm/ script should get the line
-<example>
- if test -x /usr/bin/update-menus; then update-menus; fi
-</example>
-(that is, the same line in postinst and in postrm).
-<p>
-<sect>Preferred menu structure
+The section field hold a / separated list of hierarchical sections components.
 <p>
 The <em/authoritative list of Debian's menu structure/ is maintained
 in the Debian Menu sub-policy document which is part of the Debian
@@ -295,7 +305,7 @@ Please do <em/not/ put your packages into any other sections.
          Emulators     - dosemu, etc.
          Graphics      - image manipulation
          Hamradio      - anything relating to ham radio.
-         Math          - gnuplot, octave, oleo, etc.
+         Math          - maxima, octave, oleo, etc.
          Net           - mail, news, web, irc, etc.
          Programming   - debuggers, etc.
          Science       - scientific programs
@@ -330,7 +340,48 @@ For users wanting to access some menu entries quickly, you can also put
 entries in the root menu. This is done by using <em>section="/"</em>.
 Package provided menu entries must never use this feature.
 
-<sect>Hints
+<sect> The <tt/command/ field
+<p>
+The command field holds the command that should be executed when the
+menu entry is selected. Commands will be executed with <prgn/sh -c/
+using 
+<example>
+execl("/bin/sh","sh","-c",command)
+</example>
+or the equivalent.
+
+<sect> The <tt/icon/ field
+<p>
+
+Please, make sure the icons you specify are always available on the
+system. So, if you want to have an icon with your menu entry, the
+preferred method is to supply the icon with that package. Also, to
+prevent the distribution of icons files to turn too much into a mess,
+please put all icon files in the directory
+<tt>/usr/share/pixmaps</tt>.
+<p>
+
+Debian package maintainers should ensure that any icons they include
+for use in the Debian menus conform to the following points:
+<enumlist>
+  <item>The icons should be in xpm format.
+  <item>The icons may not be larger than 32x32 pixels, although smaller
+  sizes are ok.
+  <item>The background area of the icon should be transparent, if
+  possible.
+</enumlist>
+<p>
+
+You can provide both 16x16 and 32x32 pixels icons using the variables icon16x16
+and icon32x32 so that the user can configure menu to use one or the other.
+<p>
+
+If you, as a system administrator, don't like the icons in the menus, simply
+change the <tt/icon()/ function from the file
+<tt>/etc/menu-methods/menu.h</tt>, and run <prgn/update-menus/.
+<p>
+
+<sect> The <tt/hints/ field
 <p>
 Hints have been added starting from version 2.0.0 of menu. There needs
 to be some discussion about them first, but if you want to try them
@@ -353,44 +404,6 @@ there are too many entries in the /Apps/Editors menuentry, then menu
 will consider creating a /Apps/Editors/Expert submenu, and put both
 <tt/vi/ and <tt/emacs/ in it. (of course, only if you have 
 <tt/hint_optimize=true/ in your /etc/menu-methods/menu.h file).
-
-<sect>Icons
-<p>
-
-Please, make sure the icons you specify are always available on the
-system. So, if you want to have an icon with your menu entry, the
-preferred method is to supply the icon with that package. Also, to
-prevent the distribution of icons files to turn too much into a mess,
-please put all icon files in the directory
-<tt>/usr/share/pixmaps</>.
-<p>
-
-Debian package maintainers should ensure that any icons they include
-for use in the Debian menus conform to the following points:
-<enumlist>
-<item>The icons should be in xpm format.
-<item>The icons may not be larger than 32x32 pixels, although smaller
-sizes are ok.
-<item>The background area of the icon should be transparent, if
-possible.
-</enumlist>
-<p>
-You can provide both 16x16 and 32x32 pixels icons using the variables icon16x16
-and icon32x32 so that the user can configure menu to use one or the other.
-<p>
-If you, as a system administrator, don't like the icons in the menus, simply
-change the <tt/icon()/ function from the file
-<tt>/etc/menu-methods/menu.h</tt>, and run <prgn/update-menus/.
-<p>
-
-It's also possible to specify an icon for a sub-menu. However, if each
-package would supply its own icons for the sub menus we can never be
-sure that the icon files are available. Thus, only the <tt/menu/
-package is allowed to specify icons for sub menus. The syntax for this
-is:
-<example>
-  X11 Apps menu/apps /usr/share/pixmaps/icon.xpm "Editors"
-</example>
 
 <sect>Fvwm's task and title bars
 <p>
@@ -432,6 +445,27 @@ leave everything the same except those listed below.
 </example>
 (Of course regular users (not system administrators) can also specify
 `buttonfiles' in their ~/.menu/ directory).
+
+<chapt>What packages with applications should do
+<sect> Providing a menu file
+<p>
+A package should provide a menu file
+<tt>/usr/lib/menu/&lt;package-name&gt;</tt> that contains
+information about each program it likes to make available in the
+menus.
+<p>
+<sect> Adding a hook for dpkg in your packages
+<p>
+You should add a line like this to your <tt/postinst/ script
+<example>
+ if test -x /usr/bin/update-menus; then update-menus; fi
+</example>
+and the <tt/postrm/ script should get the line
+<example>
+ if test -x /usr/bin/update-menus; then update-menus; fi
+</example>
+(that is, the same line in postinst and in postrm).
+<p>
 
 <chapt>What packages with menu managers should do
 <p>

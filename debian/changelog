@@ -1,11 +1,13 @@
 menu (2.1.12) unstable; urgency=low
 
-  * The "unreleased" release.
+  * The "quickfix" release.
   * Jens Arvidsson:
     - Updated Swedish menu messages translation. 
   * Morten Brix Pedersen:
     - Fix bug where section="/" failed when translations were enabled.
       Closes: #243531.
+    - Prevent infinite recursion in replace($s,$replace,$with) when $with 
+      match $replace.
   * Fix typo in Chinese menu sections translation.  Closes: #242742. Thanks
     Carlos Z.F. Liu.
   * Add Turkish translations of menu messages and menu sections. 
@@ -13,8 +15,9 @@ menu (2.1.12) unstable; urgency=low
   * Update Catalan menu sections translation. Thanks Jordi Mallach.
   * Rename --menufiledir to --menufilesdir as documented. Update translations
     accordingly. Closes: #241289. Thanks Jean-Luc Coulon.
+  * Reformat and extend the documentation about the menu entry format.
 
- -- Bill Allombert <ballombe@debian.org>  Fri,  9 Apr 2004 18:26:14 +0200
+ -- Bill Allombert <ballombe@debian.org>  Thu, 15 Apr 2004 17:43:07 +0200
 
 menu (2.1.11) unstable; urgency=low
 
