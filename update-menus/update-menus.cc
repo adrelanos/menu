@@ -604,7 +604,7 @@ void run_menumethod(string methodname, const vector<string> &menudata)
         +itostring(WEXITSTATUS(status))+".",
         configinfo::report_quiet);
   else if (WIFSIGNALED(status))
-    config.report(string("Script ")+methodname+" recieved signal "
+    config.report(string("Script ")+methodname+" received signal "
         +itostring(WTERMSIG(status))+".",
         configinfo::report_quiet);
 }
