@@ -13,21 +13,11 @@ using namespace std;
 Regex::Regex(const char *s)
 {
   patt = (struct re_pattern_buffer*) malloc(sizeof(struct re_pattern_buffer));
-  patt->translate=0;
-  patt->fastmap=0;
-  patt->buffer=0;
-  patt->allocated=0;
-  re_compile_pattern(s,strlen(s),patt);
-}
-
-bool readline(istream& s, string& x, char terminator = '\n')
-{
-  char buf[MAX_LINE*2];
-  bool ret;
-
-  ret = s.getline(buf, sizeof(buf));
-  x = buf;
-  return ret;
+  patt->translate = 0;
+  patt->fastmap = 0;
+  patt->buffer = 0;
+  patt->allocated = 0;
+  re_compile_pattern(s, strlen(s), patt);
 }
 
 // ************* std::string utility functions:
@@ -321,8 +311,8 @@ void except_pi::report()
 
 void parsestream::preprocess(string &s)
 {
-  //disregards lines that start with a #
-  //set filename if line starts with "!F"
+  // Disregards lines that start with a #
+  // Set filename if line starts with "!F"
 
   string compat;
   string::size_type i = 0;
@@ -331,7 +321,7 @@ void parsestream::preprocess(string &s)
   if (i)
     s = s.substr(i);
 
-  if(s.empty())
+  if (s.empty())
     return;
 
   switch (s[0])
@@ -340,8 +330,9 @@ void parsestream::preprocess(string &s)
       s.erase();
       return;
     case '!':
-      if(!s.empty()) {
-        switch(s[1]){
+      if (!s.empty()) {
+        switch (s[1])
+        {
           case 'F': 
             set_linenumber(0);
             set_filename(s.substr(3));
@@ -364,16 +355,16 @@ void parsestream::preprocess(string &s)
             s.erase();
             return;
           default:
-            if(contains(s, "!include", 0)) {
+            if (contains(s, "!include")) {
               string t(s.substr(strlen("!include ")));
-              if(t[0] == '/' || fname.empty()) {
+              if (t[0] == '/' || fname.empty()) {
                 new_file(t);
               } else {
-                string name = string_parent(filename()) + "/" + t;
+                string name = string_parent(filename()) + '/' + t;
                 if (ifstream(name.c_str()))
                     new_file(name);
                 else
-                    new_file(otherdir+'/'+t);
+                    new_file(otherdir + '/' + t);
               }
             }
             return;
@@ -384,11 +375,33 @@ void parsestream::preprocess(string &s)
   }
 }
 
+void parsestream::new_file(const string &name)
+{
+  ifstream *f = new ifstream(name.c_str());
+  
+  init(f,name);
+}
+
+void parsestream::init(std::istream *in, string name)
+{
+  if (!in_constructor)
+      if (!in->good())
+          throw ferror_open(name);
+  pos = 0;
+  eolmode = eol_newline;
+  istreams.push_back(in); 
+  lineno.push_back(0);
+  fname.push_back(name);
+
+  new_line();
+}
+
 void parsestream::close_file()
 {
-  if (!istreams.empty()) {
-    if (!stdin_file)
-        delete istreams.back();
+  if (!stdin_file && !istreams.empty())
+      delete istreams.back();
+
+  if (istreams.size() > 1) {
     istreams.pop_back();
     lineno.pop_back();
     fname.pop_back();
@@ -397,44 +410,37 @@ void parsestream::close_file()
   }
 }
 
-void parsestream::new_file(const string &s)
-{
-  ifstream *f=new ifstream(s.c_str());
-  
-  init(f,s);
-  //??? 
-}
-
 void parsestream::new_line()
 {
   while (!istreams.empty())
   {
-    if(!current_istr() || current_istr()->eof()){
+    if (!current_istr()->good()) {
       close_file();
       continue;
     }
     buffer.erase();
-    pos=0;
-    while(current_istr()->good() && !current_istr()->eof() && buffer.empty())
+    pos = 0;
+    while (current_istr()->good() && buffer.empty())
     {
-      readline(*current_istr(),buffer);
+      getline(*current_istr(), buffer);
       set_linenumber(linenumber()+1);
       preprocess(buffer);
       buffer = rmtrailingspace(buffer);
     }
-    while(current_istr()->good() && !current_istr()->eof() &&
+    while (current_istr()->good() &&
 	  (((eolmode==eol_newline) && (buffer[buffer.length()-1]=='\\')) ||
            ((eolmode==eol_semicolon) && (buffer[buffer.length()-1]!=';'))))
     {
       string s;
-      readline(*current_istr(),s);
+      getline(*current_istr(), s);
       set_linenumber(linenumber()+1);
-      switch(eolmode){
+      switch(eolmode)
+      {
       case eol_newline:
-	buffer=buffer.substr(0,buffer.length()-1)+" "+rmtrailingspace(s);
+	buffer = buffer.substr(0,buffer.length()-1) + ' ' + rmtrailingspace(s);
 	break;
       case eol_semicolon:
-	buffer=buffer+" "+rmtrailingspace(s);
+	buffer = buffer + ' ' + rmtrailingspace(s);
 	break;
       }
     }
@@ -442,23 +448,22 @@ void parsestream::new_line()
       close_file();
       continue;
     }
-    if(current_istr()->eof() &&
-       !buffer.empty() &&
+    if (current_istr()->eof() && !buffer.empty() &&
        (((eolmode==eol_newline)&&(buffer[buffer.length()-1]=='\\'))||
 	((eolmode==eol_semicolon)&&(buffer[buffer.length()-1]!=';')))){
       //a "\" at the end of a file: unconditional error (don't unwind etc)
       //(or no ; at eof, when eolmode=; . Same unconditional error.
       throw endoffile(this);
     }
-    if(eolmode==eol_semicolon)
-      if(buffer[buffer.length()-1]==';')
+    if (eolmode == eol_semicolon)
+      if (buffer[buffer.length()-1] == ';')
 	buffer.erase(buffer.length()-1, 1);
     return;
   }
-  if (in_constructor) {
-    return;
-  } else
-    throw endoffile(this);
+  if (in_constructor)
+      return;
+  else
+      throw endoffile(this);
 }
 
 char parsestream::get_char()
@@ -487,9 +492,8 @@ char parsestream::put_back(char c)
 
 string parsestream::get_line()
 {
-  string s;
-  s = buffer.substr(pos);
-  if(s.empty())
+  string s = buffer.substr(pos);
+  if (s.empty())
     throw endofline(this);
   buffer.erase();
   try {

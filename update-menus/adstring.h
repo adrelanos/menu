@@ -26,7 +26,7 @@ public:
 
 typedef std::vector<string> StrVec;
 
-bool contains(const string& str, const string &sub, string::size_type pos=0);
+bool contains(const string& str, const string &sub, string::size_type pos = 0);
 bool contains(const string& str, char c);
 
 string Sprintf(const char *, const string &);
@@ -177,15 +177,16 @@ public:
 
 class parsestream : public parseinfo {
 public:
-  enum eol_type {eol_newline, eol_semicolon};
+  enum eol_type { eol_newline, eol_semicolon };
 private:
   std::vector<std::istream *> istreams;
   bool in_constructor;
   void new_line();
   void preprocess(string &s);
   std::istream *current_istr() const { return istreams.back(); }
+  void new_file(const string &name);
+  void init(std::istream *in, string name);
   void close_file();
-  void new_file(const string &s);
   bool stdin_file;
   eol_type eolmode;
   string otherdir;
@@ -197,34 +198,20 @@ public:
     in_constructor = false;
   }
 
-  parsestream(const string &s, string other="")
+  parsestream(const string &name, string other="")
       : in_constructor(true), stdin_file(false), otherdir(other)
   {
-    std::istream *f = new std::ifstream(s.c_str());
+    std::istream *f = new std::ifstream(name.c_str());
 
-    if(!f && (s[0]!='/')) {
-      string add=other+"/"+s;
+    if(!f && (name[0] != '/')) {
+      string add = other + "/" + name;
       f = new std::ifstream(add.c_str());
     }
     if (!*f)
-        throw ferror_open(_("Cannot open file ") +s);
+        throw ferror_open(_("Cannot open file ") + name);
 
-    init(f,s);
+    init(f, name);
     in_constructor = false;
-  }
-  void init(std::istream *in, string s) {
-
-    if(!in_constructor){
-      if(!*in || !in->good())
-	throw ferror_open(s);
-    }
-    pos=0;
-    eolmode=eol_newline;
-    istreams.push_back(in); 
-    lineno.push_back(0);
-    fname.push_back(s);
-
-    new_line();
   }
   bool good() const { return istreams.size(); }
   char get_char();

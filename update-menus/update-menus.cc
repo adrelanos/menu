@@ -299,51 +299,47 @@ void substitute::process(menuentry &m, const string &v){
 
 void translateinfo::init(parsestream &i)
 {
-  string name, match, replace, match_var, replace_var;
   Regex ident("[a-zA-Z_][a-zA-Z0-9_]*");
 
   config.report(string("Reading translate info in ")+i.filename(),
 		configinfo::report_verbose);
-  while(true)
+  while (true)
   {
-    name=i.get_name(ident);
-    config.report(string("name=")+name,
-		  configinfo::report_debug);
+    string name = i.get_name(ident);
+    config.report(string("name=")+name, configinfo::report_debug);
     i.skip_space();
-    match_var=i.get_name(ident);
-    config.report(string("match_var=")+match_var,
-		  configinfo::report_debug);
+    string match_var = i.get_name(ident);
+    config.report(string("match_var=")+match_var, configinfo::report_debug);
     i.skip_space();
     i.skip_char('-');
     i.skip_char('>');
     i.skip_space();
-    replace_var=i.get_name(ident);
-    config.report(string("replace_var=")+replace_var,
-		  configinfo::report_debug);
+    string replace_var = i.get_name(ident);
+    config.report(string("replace_var=")+replace_var, configinfo::report_debug);
     
     i.skip_line();
-    while(true)
+    while (true)
     {
       trans_class *trcl;
       
       i.skip_space();
-      match=i.get_stringconst();
-      if(match==string(ENDTRANSLATE_TRANS)){
+      string match = i.get_stringconst();
+      if (match == ENDTRANSLATE_TRANS) {
 	i.skip_line();
 	break;
       }
-      if(match[0]=='#'){
+      if (match[0]=='#') {
 	i.skip_line();
 	continue;
       }
       i.skip_space();
-      replace=i.get_stringconst();
-      if(name==TRANSLATE_TRANS)
-	trcl=new translate(match,replace,replace_var);
-      if(name==SUBTRANSLATE_TRANS)
-	trcl=new subtranslate(match,replace,replace_var);
-      if(name==SUBSTITUTE_TRANS)
-	trcl=new substitute(match,replace,replace_var);
+      string replace = i.get_stringconst();
+      if(name == TRANSLATE_TRANS)
+	trcl = new translate(match,replace,replace_var);
+      if(name == SUBTRANSLATE_TRANS)
+	trcl = new subtranslate(match,replace,replace_var);
+      if(name == SUBSTITUTE_TRANS)
+	trcl = new substitute(match,replace,replace_var);
       
       pair<const string, trans_class *> p(match,trcl);
       
@@ -364,15 +360,15 @@ translateinfo::translateinfo(parsestream &i)
 translateinfo::translateinfo(const string &filename)
 {
   try {
-    config.report(string("attempting to open ")+filename+".. ",
+    config.report(string("Attempting to open ") + filename + ".. ",
 		  configinfo::report_debug);
     parsestream ps(filename);
     
     init(ps);
   }
-  catch(endoffile p)
-    {config.report(string("End reading translate info"),
-		   configinfo::report_debug);}
+  catch(endoffile p) {
+    config.report("End reading translate info", configinfo::report_debug);
+  }
   
 }
 
