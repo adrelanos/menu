@@ -20,8 +20,10 @@ menu (2.1.9-2) unstable; urgency=low
   * Fix typo in menu.h file and add sort=tolower(title()) to make sort order
     case insensitive. Closes: #209257. Thanks Daniel Burrows.
   * menu.sgml: insist that menu title must be capitalized.
+  * postinst/postrm: Remove pre-menu-1.0 kludges.
+  * debian/rules: ship update-menus non executable.
 
- -- Bill Allombert <ballombe@debian.org>  Wed,  1 Oct 2003 16:51:21 +0200
+ -- Bill Allombert <ballombe@debian.org>  Wed,  8 Oct 2003 18:16:11 +0200
 
 menu (2.1.9-1) unstable; urgency=low
 
