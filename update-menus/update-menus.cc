@@ -312,12 +312,6 @@ void configinfo::report(const string &message, verbosity_type v)
 //  translate stuff
 //
 
-bool trans_class::check(string &s)
-{
-  config.report(String::compose("Checking that %1 < %2", match, s), configinfo::report_debug);
-  return contains(match, s);
-}
-
 string trans_class::debuginfo()
 {
   return string(" match=")+match+", replace="+replace+", replace_var="+replace_var;
@@ -337,9 +331,8 @@ void subtranslate::process(menuentry &m, const string &search)
 
 void substitute::process(menuentry &m, const string &search)
 {
-  string *current;
   if (contains(search, match)) {
-    current = &(m.data[replace_var]);
+    string *current = &(m.data[replace_var]);
     if (current->length() >= match.length())
         *current = replace + current->substr(match.length());
   }
@@ -378,8 +371,6 @@ translateinfo::translateinfo(const string &filename)
       i->skip_line();
       while (true)
       {
-        trans_class *trcl;
-
         i->skip_space();
         string match = i->get_stringconst();
         if (match == ENDTRANSLATE_TRANS) {
@@ -392,18 +383,23 @@ translateinfo::translateinfo(const string &filename)
         }
         i->skip_space();
         string replace = i->get_stringconst();
-        if (name == TRANSLATE_TRANS)
-            trcl = new translate(match,replace,replace_var);
-        if (name == SUBTRANSLATE_TRANS)
-            trcl = new subtranslate(match,replace,replace_var);
-        if (name == SUBSTITUTE_TRANS)
-            trcl = new substitute(match,replace,replace_var);
+        trans_class *trcl;
+        if (name == TRANSLATE_TRANS) {
+          trcl = new translate(match,replace,replace_var);
+        } else if (name == SUBTRANSLATE_TRANS) {
+          trcl = new subtranslate(match,replace,replace_var);
+        } else if (name == SUBSTITUTE_TRANS) {
+          trcl = new substitute(match,replace,replace_var);
+        } else {
+          i->skip_line();
+          continue;
+        }
 
-        std::pair<const string, trans_class *> p(match,trcl);
+        std::pair<const string, trans_class *> p(match, trcl);
 
         config.report(String::compose("Adding translation rule: [%1]%2", p.first, trcl->debuginfo()),
             configinfo::report_debug);
-        trans[match_var].insert(p);
+        trans[match_var].push_back(p);
         i->skip_line();
       }
     }
@@ -412,40 +408,24 @@ translateinfo::translateinfo(const string &filename)
     config.report("End reading translation rules.", configinfo::report_debug);
   }
   delete i;
-
 }
 
 void translateinfo::process(menuentry &m)
 {
-  std::map<string, trans_map>::const_iterator i;
-  trans_map::const_iterator j;
+  std::map<string, std::vector<trans_pair> >::const_iterator i;
+  std::vector<trans_pair>::const_iterator j;
   string *search;
   for (i = trans.begin(); i != trans.end(); ++i)
   {
-    search = &m.data[(*i).first];
-    j = i->second.lower_bound(*search);
-    if ((j == i->second.end()) || ((j != i->second.begin()) && (j->first != *search)))
-        j--;
-    do {
+    search = &m.data[i->first];
+    for (j = i->second.begin(); j != i->second.end(); ++j)
+    {
       config.report(String::compose("Translation: var[%1] testing translation rule match for: %2",*search,j->first), configinfo::report_debug);
       j->second->process(m, *search);
-      j++;
-    } while ((j != i->second.end()) && j->second->check(*search));
+    }
   }
 }
 
-void translateinfo::debuginfo()
-{
-  std::map<string, trans_map>::const_iterator i;
-  trans_map::const_iterator j;
-  for(i = trans.begin(); i != trans.end(); ++i)
-  {
-    config.report(String::compose("Translation: [%1]",(*i).first), configinfo::report_debug);
-    for (j = i->second.begin(); j != i->second.end(); ++j)
-        config.report(string("key=")+(*j).first+(*j).second->debuginfo()+'\n',
-            configinfo::report_debug);
-  }
-}
 /////////////////////////////////////////////////////
 //  Installed Package Status:
 //
@@ -992,8 +972,7 @@ int main (int argc, char **argv)
 
     read_usertranslateinfo();
     read_roottranslateinfo();
-    if (transinfo)
-        transinfo->debuginfo();
+
     if (config.usedefaultmenufilesdirs) {
       if (getuid())
           config.menufilesdir.push_back(string(home_dir)+"/"+USERMENUS);

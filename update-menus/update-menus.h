@@ -55,7 +55,6 @@ public:
   trans_class(const string &m, const string &r, const string &rv)
       : match(m), replace(r), replace_var(rv) { }
 
-  bool check(string &s);
   virtual void process(menuentry &m, const string &v) = 0;
   string debuginfo();
   virtual ~trans_class() { }
@@ -86,12 +85,11 @@ public:
 };
 
 class translateinfo {
-  typedef std::multimap<string, trans_class*> trans_map;
-  std::map<string, trans_map> trans;
+  typedef std::pair<string, trans_class*> trans_pair;
+  std::map<string, std::vector<trans_pair> > trans;
 public:
   translateinfo(const string &filename);
   void process(menuentry &m);
-  void debuginfo();
 };
 
 class configinfo {
