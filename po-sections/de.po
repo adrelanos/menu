@@ -16,134 +16,237 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#.  First level entry
+#.  All following 2nd level entries go "under" it
+#.  From menu policy (/usr/share/doc/pdebian-policy/menu-policy.txt.gz): 
+#.      normal applications
 msgid "Apps"
 msgstr "Anwendungen"
 
+#.  Second level entry under "Apps"
+#.  Menu policy definition: interactive database programs
 msgid "Databases"
 msgstr "Datenbanken"
- 
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: text editors, word processors
 msgid "Editors"
 msgstr "Editoren"
 
+#.  Second level entry under "Apps"
+#.  Menu policy definition: educational and training programs
 msgid "Education"
 msgstr "Bildung"
 
+#.  Second level entry under "Apps"
+#.  Menu policy definition: wine, dosemu, etc.
 msgid "Emulators"
 msgstr "Emulatoren"
 
+#.  Second level entry under "Apps"
+#.  Menu policy definition: image manipulation
 msgid "Graphics"
 msgstr "Grafik"
 
+#.  Second level entry under "Apps"
+#.  Menu policy definition: anything relating to ham (amateur) radio
 msgid "Hamradio"
 msgstr "Hamradio"
 
+#.  Second level entry under "Apps"
+#.  Menu policy definition: math related programs
 msgid "Math"
 msgstr "Mathematik"
 
+#.  Second level entry under "Apps"
+#.  Menu policy definition: network programs that don't fit elsewhere
 msgid "Net"
 msgstr "Netzwerk"
 
+#.  Second level entry under "Apps"
+#.  Menu policy definition: debuggers, etc.
 msgid "Programming"
 msgstr "Programmierung"
 
+#.  Second level entry under "Apps"
+#.  Menu policy definition: scientific programs
 msgid "Science"
 msgstr "Wissenschaft"
 
+#.  Second level entry under "Apps"
+#.  Menu policy definition: simple apps, like clocks, that perform only one task
 msgid "Tools"
 msgstr "Werkzeuge"
 
+#.  Second level entry under "Apps"
+#.  Menu policy definition: technical stuff
 msgid "Technical"
 msgstr "Technik"
 
+#.  Second level entry under "Apps"
+#.  Menu policy definition: text oriented tools other than editors
 msgid "Text"
 msgstr "Text"
 
+#.  Second level entry under "Apps"
+#.  Menu policy definition: bash, ksh, zsh, etc.
 msgid "Shells"
 msgstr "Shells"
 
+#.  Second level entry under "Apps"
+#.  Menu policy definition: sound players and editors
 msgid "Sound"
 msgstr "Musik"
 
+#.  Second level entry under "Apps"
+#.  Menu policy definition: image viewers
+#.  Maybe also applications which able users to view some specific data
+#.  such as PDF, images, Postscript...
 msgid "Viewers"
 msgstr "Betrachter"
 
+#.  Second level entry under "Apps"
+#.  Menu policy definition: system administration and monitoring tools
 msgid "System"
 msgstr "System"
 
+#.  First level entry
+#.  Menu policy definition: games and recreations
 msgid "Games"
 msgstr "Spiele"
 
+#.  Second level entry under "Games"
+#.  Menu policy definition: walk around virtual space, zork, MOO's, etc
+#.  All adventure-style games (often includes RPG)
 msgid "Adventure"
 msgstr "Adventure"
 
+#.  Second level entry under "Games"
+#.  Menu policy definition: any game where reflexes count
 msgid "Arcade"
 msgstr "Arcade"
 
+#.  Second level entry under "Games"
+#.  Menu policy definition: games played on a board
+#.  Board-style games such as Mastermind, Yahtzee, Mahjongg
 msgid "Board"
 msgstr "Brettspiele"
 
+#.  Second level entry under "Games"
+#.  Menu policy definition: games involving a deck of cards
 msgid "Card"
 msgstr "Kartenspiele"
 
+#.  Second level entry under "Games"
+#.  Menu policy definition: tests of ingenuity and logic
+#.  one-player games most often...or games which need the player to think..:-)
 msgid "Puzzles"
 msgstr "Rätsel"
 
+#.  Second level entry under "Games"
+#.  Menu policy definition: Simulations of the real world (Flight
+#.                          Simulators, for example)
 msgid "Simulation"
 msgstr "Simulationen"
 
+#.  Second level entry under "Games"
+#.  Menu policy definition: games derived from "real world" sports
 msgid "Sports"
 msgstr "Sport"
 
+#.  Second level entry under "Games"
+#.  Menu policy definition: games involving long term strategic thinking
 msgid "Strategy"
 msgstr "Strategie"
 
+#.  Second level entry under "Games"
+#.  Menu policy definition: games involving falling blocks
 msgid "Tetris-like"
 msgstr "Tetris-artig"
 
+#.  Second level entry under "Games"
+#.  Menu policy definition: amusements, eye-candy, etc.
+#.  Very small things which are often not really games
+#.  Such as Xeyes....
 msgid "Toys"
 msgstr "Spielzeuge"
 
+#.  First level entry
+#.  Menu policy definition: programs that provide user documentation
 msgid "Help"
 msgstr "Hilfe"
 
+#.  First level entry
+#.  BE VERY CAREFUL HERE
+#.  Menu policy definition: programs that affect the whole screen
+#.  This entry is about screen saver/locking systems
+#.  (see the following entries)
+#.  Most often, literal translations to the word for "Screen"
+#.  in your language will NOT be correct
+#.  Try using what you use for "screen" in "screensaver" for your language
 msgid "Screen"
 msgstr "Bildschirm"
 
+#.  Second level entry under "Screen"
+#.  Menu policy definition: programs to lock the screen
+#.  Refers to "Screen" as "Lock the screen"
 msgid "Lock"
 msgstr "Sperren"
 
+#.  Second level entry under "Screen"
+#.  Menu policy definition: screen savers
+#.  Refers to "Screen" as "trigger the screensaver"
+#.  Most often the common word for "Save" as in File/Save
+#.  will NOT be appropriate
 msgid "Save"
 msgstr "Schonen"
 
+#.  Second level entry under "Screen"
+#.  Menu policy definition: things that fill the root window
+#.  will handle things that deal with the screen background, for instance
 msgid "Root-window"
 msgstr "Root-Fenster"
 
+#.  First level entry
+#.  Menu policy definition: X window managers
+#.  Will collect all window managers such as icewm, samfish, twm...
 msgid "WindowManagers"
 msgstr "Fenstermanager"
 
+#.  Second level entry under "WindowManagers"
+#.  Menu policy definition: window manager modules
 msgid "Modules"
 msgstr "Module"
 
+#.  First level entry for all xterm-style apps
+#.  Menu policy definition: xterm and its brethren
 msgid "XShells"
 msgstr "X-Shells"
 
-#From Apps/System/Admin
+# From Apps/System/Admin
+#. From Apps/System/Admin
+#.  for "System administration"
 msgid "Admin"
 msgstr "Administration"
 
-#Non official sections from WindowMaker
+# Non official sections from WindowMaker
+#. Non official sections from WindowMaker
 msgid "Appearance"
 msgstr "Erscheinungsbild"
 
+#. Non official sections from WindowMaker
 msgid "WorkSpace"
 msgstr "Arbeitsplatz"
 
-#Frequently used unofficial sections.
-
-#From Apps/Net/Mozilla Components
+# Frequently used unofficial sections.
+# From Apps/Net/Mozilla Components
+#. Frequently used unofficial sections.
+#. From Apps/Net/Mozilla Components
 msgid "Mozilla Components"
 msgstr "Mozilla-Komponenten"
 
-#From Games/Toys/Teddies
+# From Games/Toys/Teddies
+#. From Games/Toys/Teddies
+#.  as in "Teddy Bear"
 msgid "Teddies"
 msgstr "Teddys"
