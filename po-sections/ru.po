@@ -15,7 +15,7 @@ msgstr ""
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 msgid "Apps"
 msgstr "Приложения"
@@ -128,23 +128,22 @@ msgstr "Модули"
 msgid "XShells"
 msgstr "X-Терминалы"
 
-#From Apps/System/Admin
+# From Apps/System/Admin
 msgid "Admin"
 msgstr "Административные"
 
-#Non official sections from WindowMaker
+# Non official sections from WindowMaker
 msgid "Appearance"
 msgstr "Внешний вид"
 
 msgid "WorkSpace"
 msgstr "Рабочее место"
 
-#Frequently used unofficial sections.
-#From Apps/Net/Mozilla Components
+# Frequently used unofficial sections.
+# From Apps/Net/Mozilla Components
 msgid "Mozilla Components"
 msgstr "Компоненты Mozilla"
 
-#From Games/Toys/Teddies
+# From Games/Toys/Teddies
 msgid "Teddies"
 msgstr ""
-

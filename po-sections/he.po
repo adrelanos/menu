@@ -15,7 +15,7 @@ msgstr ""
 "Language-Team: Hebrew <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 msgid "Apps"
 msgstr "תוכנות"
@@ -128,24 +128,22 @@ msgstr "מודולים"
 msgid "XShells"
 msgstr "מעטפות ל-X"
 
-#From Apps/System/Admin
+# From Apps/System/Admin
 msgid "Admin"
 msgstr "מנהל"
 
-#Non official sections from WindowMaker
+# Non official sections from WindowMaker
 msgid "Appearance"
 msgstr "מראה"
 
 msgid "WorkSpace"
 msgstr "מרחב עבודה"
 
-#Frequently used unofficial sections.
-#From Apps/Net/Mozilla Components
+# Frequently used unofficial sections.
+# From Apps/Net/Mozilla Components
 msgid "Mozilla Components"
 msgstr "רכיבי מוזיללה"
 
-#From Games/Toys/Teddies
+# From Games/Toys/Teddies
 msgid "Teddies"
 msgstr "דובונים"
-
-

@@ -5,7 +5,6 @@
 # Polish translation:
 # Marcin Owsiany <porridge@debian.org>, 2003.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: menu-section 2.1.9-3\n"

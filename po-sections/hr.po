@@ -10,7 +10,7 @@ msgstr ""
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-2\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 msgid "Apps"
 msgstr "Programi"
@@ -123,23 +123,22 @@ msgstr "Moduli"
 msgid "XShells"
 msgstr "X-©koljke"
 
-#From Apps/System/Admin
+# From Apps/System/Admin
 msgid "Admin"
 msgstr "Upravljanje"
 
-#Non official sections from WindowMaker
+# Non official sections from WindowMaker
 msgid "Appearance"
 msgstr "Izgled"
 
 msgid "WorkSpace"
 msgstr "Radni prostor"
 
-#Frequently used unofficial sections.
-#From Apps/Net/Mozilla Components
+# Frequently used unofficial sections.
+# From Apps/Net/Mozilla Components
 msgid "Mozilla Components"
 msgstr "Dijelovi Mozille"
 
-#From Games/Toys/Teddies
+# From Games/Toys/Teddies
 msgid "Teddies"
 msgstr "Medvjediæi"
-
