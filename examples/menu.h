@@ -3,8 +3,7 @@
 #This way, you can set your preferences (like whether to use xterm/rxvt,
 #how long do you want your menu titles, etc) for all window-managers.
 #
-#(This all assumes you're using menu-1.4 or higher).
-#This file is part of the menu package (version 1.4 or higher).
+#This file is part of the menu package (version 1.4 and higher).
 #For more information, see /usr/share/doc/menu/html
 
 #If you prefer long titles, change the definition below accordingly.
@@ -51,15 +50,15 @@ function term()=\
 
 
 # This sort menu entry case-insensitively.
-        
 sort=tolower(title())
   
-# If you want your submenus to come before the commands themselves
-# in the menus (in case of mixed menus):
+#If you want your submenus to come before the commands themselves
+#in the menus (in case of mixed menus):
 #
-# sort=ifelse($command, "1", "0" ) ":" title()
+#sort=ifelse($command, "1", "0" ) ":" title()
 
-
+#Activate menu section translations:
+#repeat_lang="LOCALE"
 
 #The following is for the hints (or optimised tree structure):
 # (For more info on these variables, see /usr/share/doc/menu/*)
