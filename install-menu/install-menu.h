@@ -152,7 +152,7 @@ public:
   bool keep_sections;
   cat_str *startmenu, *endmenu, *submenutitle, *hkexclude,
     *genmenu, *postrun, *prerun, *sort, *rootpref, *userpref,
-    *repeat_lang, *also_run, *preruntest;
+    *outputlanguage, *also_run, *preruntest;
 
   bool onlyrunasroot, onlyrunasuser;
   bool onlyuniquetitles;

@@ -62,7 +62,7 @@ sort=tolower(title())
 #sort=ifelse($command, "1", "0" ) ":" title()
 
 #Activate menu section translations:
-repeat_lang="LOCALE"
+outputlanguage="LOCALE"
 #menu-methods need to set 'outputencoding' before translations are really
 #enabled.
 

@@ -77,7 +77,7 @@ struct option long_options[] = {
   { NULL, 0, NULL, 0 } };
 
 // Should we do translations? This is set to 'true' when both outputencoding
-// and repeat_lang is set.
+// and outputlanguage is set.
 bool do_translation = false;
 
 void store_func(functions::func *f)
@@ -514,7 +514,7 @@ methodinfo::methodinfo(parsestream &i)
     hint_debug(false), hotkeycase(0)
 {
   userpref=rootpref=sort=prerun=preruntest=postrun=genmenu=
-    hkexclude=startmenu=endmenu=submenutitle=also_run=repeat_lang=0;
+    hkexclude=startmenu=endmenu=submenutitle=also_run=outputlanguage=0;
 
   /*Should not be translated as this appear in the output file that can use 
    *a different encoding*/
@@ -605,8 +605,10 @@ methodinfo::methodinfo(parsestream &i)
 	    throw informed_fatal();
 	  }
 	} 
-	else if(name=="repeat_lang")
-	  repeat_lang=get_eq_cat_str(i);
+	else if(name=="outputlanguage" 
+            //We accept the deprecated name repeat_lang for the time being
+            || name=="repeat_lang")
+	  outputlanguage=get_eq_cat_str(i);
 	else if(name=="hint_optimize")
 	  hint_optimize=i.get_eq_boolean();
 	else if(name=="hint_nentry")
@@ -865,7 +867,7 @@ const char *ldgettext(const char *lang, const char *domain, const char *msgid)
      catalog file is opened), but tests show adding a language
      change like this doesn't get performance down very much
      (runtime goes `only' about 70% up, if switching between 2 
-     languages, as compared to no swiching at all).
+     languages, as compared to not switching at all).
   */
   /* Change language.  */
   setenv ("LANGUAGE", lang, 1);
@@ -948,7 +950,7 @@ int main(int argc, char **argv)
       if (retval)
           return retval;
     }
-    if (menumethod->repeat_lang && (menumethod->repeat_lang->soutput(root_menu.vars) == "LOCALE") && !menumethod->outputencoding().empty())
+    if (menumethod->outputlanguage && (menumethod->outputlanguage->soutput(root_menu.vars) == "LOCALE") && !menumethod->outputencoding().empty())
         do_translation = true;
 
     psscript = new parsestream(std::cin);
