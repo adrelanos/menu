@@ -1081,7 +1081,8 @@ configinfo::configinfo(parsestream &i)
 	else if(name=="hint_debug")
 	  hint_debug=i.get_eq_boolean();
 	else
-	  throw unknown_ident(&i, name);
+          cerr << String::compose(_("install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. Ignoring.\n"), name, i.linenumber(), i.filename());
+
       i.skip_line();//read away final newline
     }
   } catch (endoffile) { }
