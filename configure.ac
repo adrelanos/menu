@@ -1,5 +1,6 @@
 dnl Process this file with autoconf to produce a configure script.
-AC_INIT(update-menus/update-menus.cc)
+AC_INIT
+AC_CONFIG_SRCDIR([update-menus/update-menus.cc])
 
 AM_INIT_AUTOMAKE(menu,2.1.8-3)
 AM_CONFIG_HEADER(config.h)
@@ -26,5 +27,6 @@ dnl Checks for library functions.
 AC_TYPE_SIGNAL
 AC_CHECK_FUNCS(mkdir strdup strerror)
 
-AC_OUTPUT(po/Makefile scripts/Makefile po-sections/Makefile doc/Makefile update-menus/Makefile install-menu/Makefile Makefile)
+AC_CONFIG_FILES([po/Makefile scripts/Makefile po-sections/Makefile doc/Makefile update-menus/Makefile install-menu/Makefile Makefile])
+AC_OUTPUT
 
