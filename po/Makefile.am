@@ -1,5 +1,5 @@
-MOs = da.mo
-POs = da.po
+MOs = da.mo pl.mo
+POs = da.po pl.po
 localedir = $(datadir)/locale
 
 EXTRA_DIST = $(POs)
@@ -17,7 +17,7 @@ install-data-local:$(MOs)
 	msgfmt -o $@ $^ 
 
 menu.pot::
-	xgettext -o menu.pot -C -k_ -c ../install-menu/*.[ch]* ../update-menus/*.[ch]*
+	xgettext -o menu.pot -C -k_ -c ../install-menu/*.[ch]* ../update-menus/*.[ch]* --msgid-bugs-address=menu@packages.debian.org --copyright-holder="Debian menu team"
 
 clean-local:
 	rm -f *.mo
