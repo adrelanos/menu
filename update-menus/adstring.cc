@@ -5,14 +5,13 @@
 #include <clocale>
 #include <cstdio>
 #include <cstdlib>
-#include "regex.h"
 #include "adstring.h"
 
 using namespace std;
 
 Regex::Regex(const char *s)
 {
-  patt = (struct re_pattern_buffer*) malloc(sizeof(struct re_pattern_buffer));
+  patt = new re_pattern_buffer;
   patt->translate = 0;
   patt->fastmap = 0;
   patt->buffer = 0;

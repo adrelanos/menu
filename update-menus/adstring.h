@@ -9,7 +9,8 @@
 #include <string>
 #include <clocale>
 #include <cstdio>
-#include "regex-c.h"
+#include <sys/types.h>
+#include <regex.h>
 #include "common.h"
 
 using std::string;
@@ -18,6 +19,8 @@ class Regex {
   struct re_pattern_buffer* patt;
 public:
   Regex(const char *s);
+  ~Regex() { delete patt; }
+
   struct re_pattern_buffer* pattern() const { return patt; }
 };
 
