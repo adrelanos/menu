@@ -1,0 +1,183 @@
+.\" -*- nroff -*-
+.TH UPDATE-MENUS 1 "Utilitaires Debian" "DEBIAN"
+.SH NOM
+update-menus \- génère les menus d'un système DEBIAN
+.SH SYNOPSIS
+.B update-menus [\-v] [\-d] [\-h|--help] [--menufilesdir <répertoire>] [--menumethod <méthode>] [--nodefaultdirs] [--stdout]
+.SH DESCRIPTION
+Avant l'utilisation de \fIupdate-menus\fP, quand l'administrateur système
+installait un paquet sur un système Debian, il devait modifier de nombreux
+fichiers de configuration des gestionnaires de fenêtres afin de rendre
+accessible ce nouveau programme (les menus de fvwm, par exemple). Ces menus
+pouvaient facilement ne plus lister les programmes effectivement accessibles,
+certains éléments des menus ne fonctionnant pas, alors que d'autres programmes
+n'étaient pas référencés.
+.I update-menus
+et le paquet Debian menu ont pour but de résoudre ce problème.
+.PP
+.I update-menus 
+génère automatiquement les menus des programmes installés pour les
+gestionnaires de fenêtres et pour les autres programmes à menus. Il doit être
+lancé à chaque fois qu'un fichier de menu (voir 
+.BR menufile (5))
+ou qu'un fichier de générations de menu (menu method file) est modifié.
+.I update-menus
+sera automatiquement lancé dès qu'un paquet Debian contenant des fichiers
+de menus sera installé ou supprimé du système.
+.PP
+.I update-menus
+utilise les fichiers de menu fournis par le paquet (dans /usr/lib/menu)
+pour obtenir ses informations concernant les menus (mais l'administrateur du
+système ou un utilisateur peuvent modifier ce comportement, voir plus loin).
+Si le fichier de menu est exécutable,
+.I update-menus
+l'exécute et utilise sa sortie standard pour générer
+la base de données du menu.
+
+.SH OPTIONS
+.IP "-v"
+Mode bavard. Affiche tous les arguments des programmes /etc/menu-methods
+.IP "-d"
+Mode Debug. Génère un tas de messages inintelligibles.
+.IP "-h, --help"
+Affiche un message d'aide et s'arrête.
+.IP "--menufilesdir <répertoire>" 
+Ajoute le répertoire <répertoire> à la liste des répertoires dans laquelle on
+recherche des fichiers de menu. 
+.IP "--menumethod <méthode>" 
+Traite uniquement le fichier de génération de menu <méthode>, et non tous les
+fichiers de génération de menu trouvés.
+.IP "--nodefaultdirs"
+Désactive la recherche de fichiers de menu dans les répertoires de menu
+du système.
+.IP "--stdout" 
+Génère une liste de menu acceptable comme entrée par \fIinstall-menu\fP ou par
+un fichier de génération de menu.
+.SH CONFIGURATION
+Il y a plusieurs façons de régler le fonctionnement d'update-menus\ :
+.PP
+.I par fichier de menu, dans /etc/menu/$paquet
+.RS
+Dans ce répertoire, l'administrateur système ou l'utilisateur peut passer
+outre les réglages par défaut (lorsqu'un fichier /etc/menu/$paquet existe,
+le fichier /usr/lib/menu/$paquet n'est plus consulté). Un utilisateur
+qui veut modifier le réglage par défaut du système placera ses fichiers
+dans le répertoire ~/.menu. Voir aussi
+.BR menufile (5)
+.RE	
+.I par gestionnaire de fenêtres, dans /etc/menu-methods/$wm
+.RS
+Dans ces fichiers de configuration, on peut ajuster le fichier system."$wm"rc
+généré pour chacun des gestionnaires de fenêtres. Par exemple, on peut
+définir que le gestionnaire doit ignorer toute icône que le paquet pourrait 
+fournir, ou définir le programme générique pour les applications en mode texte
+(normalement, c'est xterm qui est lancé pour accueillir une application en mode
+texte telle que vi). Les utilisateurs qui veulent passer outre les réglages par
+défaut du système déposent leurs fichiers dans ~/.menu-methods. Pour plus
+d'informations, consultez /usr/share/doc/menu/html. 
+.RE
+.I globalement, dans /etc/menu-methods/translate_menus
+.RS
+Ce fichier contient les transformations qui seront utilisées pour chaque entrée
+de menu et dans chacun des gestionnaires de fenêtres. Vous pouvez définir des
+points tels que\ : «\ Toutes les sections qui commencent par ``Apps/Jeux'' doivent
+être référencées par ``Jeux''\ », ou «\ l'entrée de menu ``gnuplot'' doit avoir
+le titre de ``GnuTeken''\ » (afin de traduire les titres dans d'autres langues).
+Jetez un oeil au fichier par défaut /etc/menu-methods/translate_menus pour
+prendre exemple. Les utilisateurs qui veulent passer outre le système de 
+traduction par défaut le font dans ~/.menu-methods/translate_menus.
+.BR Note\ :
+ne pas utiliser pour une traduction complète du menu. Servez-vous des fichiers
+po comme indiqué dans le paquet source.
+.RE
+.I pour les rapports d'erreurs, dans /etc/menu-methods/menu.config
+.RS
+Ce fichier contient des informations générales sur le comportement d'
+update-menus. Pour le moment, vous ne pouvez régler que le niveau de bavardage
+de la sortie standard du programme, ainsi que la définition de cette sortie.
+La  quantité d'information est définie par «\ verbosity=VAL\ ». Choisissez
+VAL=quite pour empêcher update-menu d'afficher autre chose que les erreurs les
+plus importantes, VAL=normal, VAL=verbose, VAL=debug pour des informations de
+plus en plus détaillées.
+
+Pour définir où le flux sortant doit aller, utilisez «\ method=stdout\ »,
+«\ method=stderr\ » ou «\ method=syslog facility priorité\ ». «\ facility\ » est
+soit  auth, authpriv, authcron, authdaemon, authkern, authlocal0, authlocal1,
+authlocal2, authlocal3, authlocal4, authlocal5, authlocal6, authlocal7,authlpr,
+authmail, authnews, authsyslog, authuser, ou authuucp. «\ priorité\ » est 
+l'un des termes suivants\ :  emerg, alert, crit, err, warning, notice, info,
+debug.
+.RE
+.SH FICHIERS
+Fichiers de menu\ : (les répertoires cités en premier sont 
+prioritaires sur ceux cités plus loin)
+.RS
+.I ~/.menu/*
+.RS
+Fichiers de menu ajoutés par l'utilisateur (ignorés si
+l'administrateur lance update-menus)
+.RE
+.I /etc/menu/*
+.RS
+Fichiers de menu ajoutés par l'administrateur système.
+.RE
+.I /usr/lib/menu/*
+.RS
+Fichiers de menu fournis par d'autres paquets Debian.
+.RE
+.I /usr/share/menu/default/*
+.RS
+Fichiers de menu fournis par le paquet menu. (Ils existent pour les
+paquets qui ne fournissent pas encore de menu. Si vous voyez (ou maintenez) un
+paquet qui offre un fichier de menu dans /usr/lib/menu/, 
+écrivez-moi s'il vous plaît, et je retirerai son équivalent de
+/usr/share/menu/default/).
+.RE
+.RE
+Menu methods:
+.RS
+.I /etc/menu-methods/
+.RS
+Fichiers de configuration  exécutables ajoutés par les gestionnaires de
+fenêtres et autres programmes à menus, qui sont exécutés par 
+.I update-menus
+afin de générer les menus pour ces différents programmes. Le fichier 
+translate_menus figure aussi dans ce répertoire, et sert aux réglages locaux du
+modèle d'arborescence des menus.
+.RE
+.RE
+.RS
+.I ~/.menu-methods/
+.RS
+Permet aux utilisateurs d'outrepasser le comportement par défaut de
+/etc/menu-methods. Si ce répertoire existe, aucun des fichiers de 
+/etc/menu-methods n'est lu.
+.RE
+.RE
+.SH DISTRIBUTION
+La distribution est soumise à la licence publique GNU.
+.SH BOGUES
+.I update-menus
+peut connaître des dysfonctionnements quand il est invoqué par un simple 
+utilisateur pour générer ses propres menus. C'est souvent parce que le 
+gestionnaire de fenêtres n'attend pas les fichiers system."$wm"rc 
+dans le répertoire (normalement ~/."$wm", à configurer dans /etc/menu-methods).
+Si vous repérez quelque chose de ce genre et que vous trouvez une solution, 
+envoyez-moi un courrier à (joostje@debian.org). Cela doit parfaitement
+fonctionner pour fvwm et fvwm2\ : je teste d'abord le paquet en tant que simple
+utilisateur.
+.PP
+.SH AUTEUR 
+Joost Witteveen <joostje@debian.org>, sur une idée originale de
+Lars Wirzenius <liw@iki.fi>
+.SH REMERCIEMENTS
+À Joey Hess, pour toutes ses bonnes idées et le test de la pré-version, et à
+Tom Lees pour son update-menus en C natif (dont je n'ai utilisé qu'une fonction,
+mais c'est la vie).
+.PP
+(page de manuel par Joey Hess, <joeyh@debian.org>)
+.SH VOIR AUSSI
+.BR menufile (5),
+.BR /usr/share/doc/menu/html
+.SH TRADUCTION
+Sylvain Cherrier <sylvain.cherrier@free.fr>
