@@ -1,7 +1,7 @@
 .\" -*- nroff -*-
 .TH UPDATE-MENUS 1 "Utilitaires Debian" "DEBIAN"
 .SH NOM
-update-menus \- génère les menus d'un système DEBIAN
+update-menus \- génère les menus d'un système Debian
 .SH SYNOPSIS
 .B update-menus [\-v] [\-d] [\-h|--help] [--menufilesdir <répertoire>] [--menumethod <méthode>] [--nodefaultdirs] [--stdout]
 .SH DESCRIPTION
@@ -20,7 +20,7 @@ génère automatiquement les menus des programmes installés pour les
 gestionnaires de fenêtres et pour les autres programmes à menus. Il doit être
 lancé à chaque fois qu'un fichier de menu (voir 
 .BR menufile (5))
-ou qu'un fichier de générations de menu (menu method file) est modifié.
+ou qu'un fichier de génération de menu (menu method file) est modifié.
 .I update-menus
 sera automatiquement lancé dès qu'un paquet Debian contenant des fichiers
 de menus sera installé ou supprimé du système.
@@ -134,7 +134,7 @@ paquet qui offre un fichier de menu dans /usr/lib/menu/,
 /usr/share/menu/default/).
 .RE
 .RE
-Menu methods:
+Fichiers de génération de menu (menu methods):
 .RS
 .I /etc/menu-methods/
 .RS
