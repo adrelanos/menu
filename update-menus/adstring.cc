@@ -9,6 +9,7 @@
 
 using std::cerr;
 using std::endl;
+using std::string;
 
 Regex::Regex(const char *s)
 {

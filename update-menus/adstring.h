@@ -13,8 +13,6 @@
 #include <regex.h>
 #include "common.h"
 
-using std::string;
-
 class Regex {
   struct re_pattern_buffer* patt;
 public:
@@ -27,30 +25,30 @@ public:
 
 // ************* std::string utility functions:
 
-bool contains(const string& str, const string &sub, string::size_type pos = 0);
-bool contains(const string& str, char c);
+bool contains(const std::string& str, const std::string &sub, std::string::size_type pos = 0);
+bool contains(const std::string& str, char c);
 
-string Sprintf(const char *, const string &);
+std::string Sprintf(const char *, const std::string &);
 
-string rmtrailingspace(string &s);
-string escape_string(const string &s, const string &esc);
-string escapewith_string(const string &s, const string &esc, const string &with);
-string lowercase(string s);
-string uppercase(string s);
-string replacewith_string(const string &s, const string &replace, const string &with);
-string cppesc_string(const string &s);
-string replace(string s,char match, char replace);
-int stringtoi(const string &s);
-string itostring(int i);
-string itohexstring(int i);
-string sort_hotkey(string s);
-string string_parent(string s);
-string string_basename(string s);
-string string_stripdir(string s);
-string string_lastname(string s);
-void break_char(const string &sec, std::vector<string> &sec_vec, char);
-void break_slashes(const string &sec, std::vector<string> &sec_vec);
-void break_commas(const string &sec, std::vector<string> &sec_vec);
+std::string rmtrailingspace(std::string &s);
+std::string escape_string(const std::string &s, const std::string &esc);
+std::string escapewith_string(const std::string &s, const std::string &esc, const std::string &with);
+std::string lowercase(std::string s);
+std::string uppercase(std::string s);
+std::string replacewith_string(const std::string &s, const std::string &replace, const std::string &with);
+std::string cppesc_string(const std::string &s);
+std::string replace(std::string s, char match, char replace);
+int stringtoi(const std::string &s);
+std::string itostring(int i);
+std::string itohexstring(int i);
+std::string sort_hotkey(std::string s);
+std::string string_parent(std::string s);
+std::string string_basename(std::string s);
+std::string string_stripdir(std::string s);
+std::string string_lastname(std::string s);
+void break_char(const std::string &sec, std::vector<std::string> &sec_vec, char);
+void break_slashes(const std::string &sec, std::vector<std::string> &sec_vec);
+void break_commas(const std::string &sec, std::vector<std::string> &sec_vec);
 
 // ************* exception classes for parsers:
 
@@ -61,7 +59,7 @@ public:
   virtual void report() {
       std::cerr << message() << std::endl;
   }
-  virtual string message() const {
+  virtual std::string message() const {
       return _("Unknown Error");
   }
   virtual ~genexcept() { }
@@ -76,20 +74,20 @@ public:
 
 class except_string : public genexcept {
 protected:
-  string msg;
+  std::string msg;
 public:
-  except_string(string s) : msg(s) { }
-  string message() const {
+  except_string(std::string s) : msg(s) { }
+  std::string message() const {
     return Sprintf(_("Unknown Error, message=%s"),msg);
   }
 };
 
 class except_pi_string : public except_pi {
 protected:
-  string msg;
+  std::string msg;
 public:
-  except_pi_string(parsestream *p, string s) : except_pi(p), msg(s) { }
-  string message() const {
+  except_pi_string(parsestream *p, std::string s) : except_pi(p), msg(s) { }
+  std::string message() const {
     return Sprintf(_("Unknown Error, message=%s"),msg);
   }
 };
@@ -97,13 +95,13 @@ public:
 class endoffile : public except_pi {
 public:
   endoffile(parsestream *p) : except_pi(p) { }
-  string message() const {return _("Unexpected end of file");}
+  std::string message() const {return _("Unexpected end of file");}
 };
 
 class endofline : public except_pi {
 public:
   endofline(parsestream *p) : except_pi(p) { }
-  string message() const {return _("Unexpected end of line");}
+  std::string message() const {return _("Unexpected end of line");}
 };
 
 class ident_expected : public except_pi {
@@ -114,24 +112,24 @@ public:
 
 class char_expected: public except_pi_string {
 public:
-  char_expected(parsestream *p, string s):except_pi_string(p,s) { }
-  string message() const {
+  char_expected(parsestream *p, std::string s):except_pi_string(p,s) { }
+  std::string message() const {
     return Sprintf(_("Expected: \"%s\"."), msg);
   }
 };
 
 class char_unexpected: public except_pi_string {
 public:
-  char_unexpected(parsestream *p, string s):except_pi_string(p,s) { }
-  string message() const {
+  char_unexpected(parsestream *p, std::string s):except_pi_string(p,s) { }
+  std::string message() const {
     return Sprintf(_("Unexpected character :\"%s\"."),msg);
   }
 };
 
 class boolean_expected: public except_pi_string {
 public:
-  boolean_expected(parsestream *p, string s):except_pi_string(p,s) { }
-  string message() const {
+  boolean_expected(parsestream *p, std::string s):except_pi_string(p,s) { }
+  std::string message() const {
     return Sprintf(_("Boolean (either true or false) expected.\n"
                      "Found: \"%s\""), msg);
   }
@@ -139,16 +137,16 @@ public:
 
 class ferror_open: public except_string {
 public:
-  ferror_open(string s):except_string(s) { }
-  string message() const {
+  ferror_open(std::string s):except_string(s) { }
+  std::string message() const {
     return Sprintf(_("Unable to open file \"%s\""),msg);
   }
 };
 
 class unknown_compat: public except_pi_string {
 public:
-  unknown_compat(parsestream *p, string s):except_pi_string(p,s) { }
-  string message() const {
+  unknown_compat(parsestream *p, std::string s):except_pi_string(p,s) { }
+  std::string message() const {
     return Sprintf(_("Unknown compat mode: \"%s\""),msg);
   }
 };
@@ -160,48 +158,48 @@ public:
   enum eol_type { eol_newline, eol_semicolon };
 private:
   std::vector<int> linenumbers;
-  std::vector<string> filenames;
+  std::vector<std::string> filenames;
   std::vector<std::istream *> istreams;
 
   void set_linenumber(int l) { linenumbers.back() = l; }
-  void set_filename(const string &s) { filenames.back() = s; }
+  void set_filename(const std::string &s) { filenames.back() = s; }
   std::istream *current_istr() const { return istreams.back(); }
 
   bool in_constructor;
   void new_line();
-  void preprocess(string &s);
-  void new_file(const string &name);
-  void init(std::istream *in, string name);
+  void preprocess(std::string &s);
+  void new_file(const std::string &name);
+  void init(std::istream *in, std::string name);
   void close_file();
   bool stdin_file;
   eol_type eolmode;
-  string otherdir;
+  std::string otherdir;
 
 public:
-  parsestream(std::istream &in, string other = "");
-  parsestream(const string &name, string other = "");
+  parsestream(std::istream &in, std::string other = "");
+  parsestream(const std::string &name, std::string other = "");
 
   bool doescaping;
   std::string::size_type pos;
   std::string buffer;
-  string filename() const { return filenames.back(); }
+  std::string filename() const { return filenames.back(); }
   int linenumber() const { return linenumbers.back(); }
 
   bool good() const { return istreams.size(); }
   char get_char();
   char put_back(char);
-  string get_name();
-  string get_name(const Regex &);
-  string get_eq_name();
-  string get_stringconst();
-  string get_eq_stringconst();
+  std::string get_name();
+  std::string get_name(const Regex &);
+  std::string get_eq_name();
+  std::string get_stringconst();
+  std::string get_eq_stringconst();
   bool   get_boolean();
   bool   get_eq_boolean();
   int    get_integer();
   int    get_eq_integer();
   double get_double();
   double get_eq_double();
-  string get_line();
+  std::string get_line();
   void skip_line();
   void skip_space();
   void skip_char(char expect);
