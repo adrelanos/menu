@@ -8,21 +8,23 @@
 #include "adstring.h"
 #include "common.h"
 
+using std::string;
+
 class menuentry {
-  void check_validity(parsestream &i, string &);
+  void check_validity(parsestream &i, std::string &);
   void read_menuentry(parsestream &i);
 
 public:
-  menuentry(parsestream &i, const string &);
+  menuentry(parsestream &i, const std::string &);
 
-  std::map<string, string> data;
-  void output(std::vector<string> &s);
+  std::map<std::string, std::string> data;
+  void output(std::vector<std::string> &s);
   std::ostream &debugoutput(std::ostream &o);
 };
 
 class trans_class {
 protected:
-  string match, replace, replace_var;
+  std::string match, replace, replace_var;
 public:
   trans_class(const string &m, const string &r, const string &rv)
       : match(m), replace(r), replace_var(rv) { }
@@ -92,29 +94,29 @@ public:
         method(method_stderr)
     { }
 
-  void update(string filename);
+  void update(std::string filename);
   void report(const string &message,verbosity_type v);
   void set_verbosity(verbosity_type v) { verbosity = v; }
 };
 
 // ************* exception classes:
 
-class unknown_cond_package:public except_pi_string {
+class unknown_cond_package : public except_pi_string {
 public:
-  unknown_cond_package(parsestream *p, string s):except_pi_string(p,s){};
-  string message(){
+  unknown_cond_package(parsestream *p, string s) : except_pi_string(p,s) { }
+  string message() {
     return Sprintf(_("Unknown install condition \"%s\" (currently, only \"package\" is supported)"),msg);
-  };
+  }
 };
 
-class cond_inst_false: public genexcept{};//conditional install returns false
+class cond_inst_false : public genexcept { }; //conditional install returns false
 
-class pipeerror_read: public except_string {
+class pipeerror_read : public except_string {
 public:
-  pipeerror_read(string s):except_string(s){};
-  string message(){
+  pipeerror_read(string s) : except_string(s) { }
+  string message() {
     return Sprintf(_("Failed to pipe data through \"%s\" (pipe opened for reading)"),msg);
-  };
+  }
 };  //pipe open for reading failed
 
 class dir_error_read {
