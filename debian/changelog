@@ -1,21 +1,17 @@
-  * Jens Arvidsson:
-    - Minor corrections and changes in the Swedish menu messages and
-    sections translation.
-
 menu (2.1.10-2) unstable; urgency=low
 
   * The "unreleased" release. 
   * Morten Brix Pedersen:
     - Only enable translated section names when both 'outputencoding' and
-    'repeat_lang' has been set.
+      'repeat_lang' has been set.
     - Set repeat_lang="LOCALE" per default. menu-methods now only need to set
-    outputencoding in order to enable translations. Closes: #37716.
+      outputencoding in order to enable translations. 
     - Update Danish menu translation.
+    - Fixed some inconsistent behaviour with "substitute section->section"
+      Closes: #216851. Thanks Jean-Philippe Guérard.
     - Fixed a problem with su-to-root script where a X application didnt have
-    access to run on the server. Closes: #150314
+      access to run on the server. Closes: #150314. Thanks Raoul Borenius.
     - Fix compilation with g++ 2.95.
-  * Fixed some inconsistent behaviour with "substitute section->section".
-    Closes: #216851
   * Update Brazillian menu messages translation. Thanks André Luís Lopes. 
   * Add Norwegian nynorsk menu messages and sections translations. 
     Thanks Håvard Korsvoll.
@@ -26,6 +22,8 @@ menu (2.1.10-2) unstable; urgency=low
     translation. Thanks Goto Masanori.
   * Update Dutch menu messages translation. Closes: #239324. 
     Thanks Tim Dijkstra.
+  * Jens Arvidsson:
+    - Add Swedish menu messages and sections translation. 
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 12 Mar 2004 15:27:16 +0100
 
