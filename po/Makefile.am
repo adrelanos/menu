@@ -1,7 +1,8 @@
-MOs = da.mo eo.mo
+MOs = da.mo
+POs = da.po
 localedir = $(datadir)/locale
 
-EXTRA_DIST = da.po eo.po
+EXTRA_DIST = $(POs)
 
 all-local: $(MOs)
 install-data-local:$(MOs)
@@ -15,8 +16,8 @@ install-data-local:$(MOs)
 %.mo   : %.po
 	msgfmt -o $@ $^ 
 
-menu.pot:
-	xgettext -o menu.pot -C -k_ ../install-menu/*.[ch]* ../update-menus/*.[ch]*
+menu.pot::
+	xgettext -o menu.pot -C -k_ -c ../install-menu/*.[ch]* ../update-menus/*.[ch]*
 
 clean-local:
 	rm -f *.mo
