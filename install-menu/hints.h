@@ -38,8 +38,8 @@ std::ostream& operator<<(std::ostream &, const std::vector<std::string> &);
 class hint_tree;
 class correlation;
 
-typedef std::multimap <double, std::vector<hint_tree> > possible_divisions;
-typedef std::multimap <double, possible_divisions::iterator> possible_divisions_it;
+typedef std::multimap<double, std::vector<hint_tree> > possible_divisions;
+typedef std::multimap<double, possible_divisions::iterator> possible_divisions_it;
 
 class hint_tree {
 public:
@@ -53,7 +53,7 @@ public:
 };
 
 class hints {
-  bool debugopt;
+  bool debug_enabled;
   double max_local_penalty;
   hint_tree root_tree;
   
@@ -68,8 +68,9 @@ class hints {
 
 public:
   hints()
-      : root_tree("-"), min_hint_freq(0.3 / hint_nentry),
-  hint_nentry(6), hint_topnentry(6), max_ntry(5), max_iter_hint(5) { }
+      : debug_enabled(false), root_tree("-"), min_hint_freq(0.3 /
+        hint_nentry), hint_nentry(6), hint_topnentry(6), max_ntry(5),
+        max_iter_hint(5) { }
 
   void set_nentry(double n) { hint_nentry = n; }
   void set_topnentry(double n) { hint_topnentry = n; } 
@@ -78,11 +79,9 @@ public:
   void set_max_local_penalty(double p) { max_local_penalty = p; }
   void set_max_ntry(int n) { max_ntry = n; }
   void set_max_iter_hint(int n) { max_iter_hint = n;}
-  void set_debug(bool opt) { debugopt = opt; }
+  void set_debug(bool opt) { debug_enabled = opt; }
   void calc_tree(const std::vector<std::vector<std::string> > &hint_input,
       std::vector<std::vector<std::string> > &hint_output);
-
-  void debug();
 
 private:
   void sort_hints();
@@ -116,7 +115,8 @@ private:
   void search_hint(hint_tree &t, const std::vector<std::string> &hint_in,
                   std::vector<std::string> &hint_out);
   void debug_hint_tree(const hint_tree &t, int level);
+  void debug();
 };
 
 
-#endif /*  HINTS_H */
+#endif /* HINTS_H */
