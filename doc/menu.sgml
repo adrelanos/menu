@@ -960,56 +960,6 @@ the menu-method will be skipped when run as root.
 see <tt/rootprefix/, but when running as user.
 <p>
 
-<tag><tt/process_menudirs="user,system"/
-<item>
-Directories that <tt/install-menu/ will process menu entry files from
-(new in menu-2.1.6).
-The default is "<tt/user/, <tt/etc/, <tt/debian/, <tt/default/", which means that
-<tt/install-menu/ will read files found in <tt>${HOME}/.menu</tt>, then in
-<tt>/etc/menu</tt>, then in <tt>/usr/lib/menu</tt>, and last in
-<tt>/usr/share/menu/default</tt>. To make life easier, there's an alias for
-the <tt/etc/, <tt/debian/, <tt/default/ locations: <tt/system/.
-Note that the order in which you specify
-the locations doesn't matter.
-<p>
-To be complete, <tt/user/=<tt>"${HOME}/.menu"</tt>; <tt/etc/=<tt>"/etc/menu"</tt>;
-<tt/debian/=<tt>"/usr/lib/menu"</tt>;
-<tt/default/=<tt>"/usr/share/menu/default"</tt>; <tt/system/=<tt>"/etc/menu</tt>,
-<tt>/usr/lib/menu</tt>, <tt>/usr/share/menu/default"</tt>
-<p>
-If you have a WM which allows an "incremental" user configuration file
-(with only the menu entries of the users), then you may want to
-specify:
-<example>process_menudirs="user, " ifroot(system)
-</example>
-This will cause <tt/install-menu/ to discard all system menu entry
-files if run as normal user, and the user's WM-config file can
-<tt/#include/ the system menu definitions from
-<tt>/etc/WM/*</tt>. Note that if you do this, you disable an elswehere
-in this manual advertised feature: if the user does <tt> true >
-~/.menu/package </tt>, then the user doesn't have the menu entry files
-from <tt/package/. But as in your case the user's WM-config file
-<tt/#include/s the system wide menu defintions, this will not work any more.
-<p>
-The way this feature works may not be the one you at first glance
-expect: when the user or system admin runs <tt/update-menus/, it will
-read all menu entry files in all directories (user, etc, debian and
-default). <tt/update-menus/ then generates one big list of the
-concatenated files (whose packages are installed), and hands that file
-to the stdin of the <tt/install-menu/ program in
-<tt>/etc/menu-methods/*</tt>. That program then reads the
-<tt/process_menudirs/ variable, and starts processing the input given
-by <tt/update-menus/. And it will discard any menu
-entry files if they appear to originate from a directory not specified
-in <tt/process_menudirs/. Due to this implementation, it is not
-possible for <tt/install-menu/ to read menu entry files outside the
-standard user, etc, debian and default directories, and also the order
-of the directories in <tt/process_menudirs/ has no effect. Also, as
-<tt/update-menus/, when ran under root will not process the user's
-(root) home dir, so the <tt/user/ setting in <tt/process_menudirs/
-will simply have no effect.
-<p>
-
 <tag><tt/repeat_lang=""/
 <item>
 If set to "LOCALE", then menu will automatically translate all title's
