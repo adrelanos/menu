@@ -201,7 +201,7 @@ variables, see the hint_* variables in the last chapter.
 <p>
 Packages provided menu files should be in <file>/usr/lib/menu/</file>.
 System-local menu files should be in <file>/etc/menu/</file>.
-User-specific enu files should be in <file>~/.menu/</file>
+User-specific menu files should be in <file>~/.menu/</file>
 <sect> Syntax
 <p>
 Here is an example to describe the syntax of such a file:
@@ -382,10 +382,8 @@ change the <tt/icon()/ function from the file
 
 <sect> The <tt/hints/ field
 <p>
-Hints have been added starting from version 2.0.0 of menu. There needs
-to be some discussion about them first, but if you want to try them
-out, simply add a hints="Myhint,Herhint,Hishint" definition to the
-menu entry file. For example:
+Hints are used to help menu structure generated menus in a more optimal way.
+For example:
 <p>
 <example>
 ?package(emacs20):\
