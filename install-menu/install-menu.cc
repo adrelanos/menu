@@ -10,6 +10,7 @@
 #include <dirent.h>
 #include <unistd.h>
 #include <sys/stat.h>
+#include <errno.h>
 #include <pwd.h>
 #include "config.h"
 #include <iconv.h>
@@ -26,6 +27,7 @@ using std::ostream;
 using std::ofstream;
 using std::ifstream;
 using std::cerr;
+using std::cout;
 using std::endl;
 
 int verbose = 0;
@@ -41,10 +43,8 @@ std::ofstream *genoutputfile = 0;
 set<string> outputnames; // all names of files ever written to
 
 struct option long_options[] = { 
-  { "verbose", no_argument, &verbose, 1 }, 
-  { "debug", no_argument, NULL, 1 }, 
+  { "verbose", no_argument, NULL, 'v' }, 
   { "help", no_argument, NULL, 'h' }, 
-  { "stdin", no_argument, NULL, 'f' }, 
   { NULL, 0, NULL, 0 } };
 
 // quick hack to get the 'repeat_lang="LOCALE"' working.
@@ -173,7 +173,7 @@ int check_dir(string s)
 {
   string t;
   if (verbose)
-    cerr << String::compose(_("install-menu: checking directory %1"), s) << endl;
+    cerr << String::compose(_("install-menu: checking directory %1\n"), s);
   while (!s.empty()) {
     string::size_type i = s.find('/', 1);
     if (i != string::npos) {
@@ -186,14 +186,14 @@ int check_dir(string s)
     }
     if (chdir(t.c_str()) < 0) {
       if (verbose)
-        cerr << String::compose(_("install-menu: creating directory %1:"), t) << endl;
+        cerr << String::compose(_("install-menu: creating directory %1:\n"), t) ;
       if (mkdir(t.c_str(),0755))
 	throw dir_createerror(t);
       if (chdir(t.c_str()))
 	throw dir_createerror(t);
     } else {
       if (verbose)
-	cerr << String::compose(_("install-menu: directory %1 already exists "), t) << endl;
+	cerr << String::compose(_("install-menu: directory %1 already exists.\n"), t);
     }
   }
   return !s.length();
@@ -844,7 +844,8 @@ supportedinfo::supportedinfo(parsestream &i)
       name=uppercase(name);
 
       if (verbose)
-          cerr << String::compose(_("install-menu: SUPPORTED_CONSTRUCT: name=%1"), name) << endl;
+          /*Do not translate supported*/
+          cerr << String::compose(_("install-menu: [supported]: name=%1\n"), name);
 
       supinf inf;
       inf.c=get_eq_cat_str(i);
@@ -865,11 +866,11 @@ void supportedinfo::subst(map<string, string> vars)
   map<string, supinf>::const_iterator j;
 
   if ((i = vars.find(NEEDS_VAR)) == vars.end()) {
-    cerr << String::compose(_("Undefined %1 variable in menuentries"), NEEDS_VAR) << endl;
+    cerr << String::compose(_("Undefined %1 variable in menuentries\n"), NEEDS_VAR);
     throw informed_fatal();
   }
   if ((j = sup.find(uppercase(i->second))) == sup.end()) {
-    cerr << String::compose(_("Unknown %1=\"%2\""), NEEDS_VAR, i->second) << endl;
+    cerr << String::compose(_("Unknown %1=\"%2\"\n"), NEEDS_VAR, i->second);
     throw informed_fatal();
   }
   genoutput(j->second.c->soutput(vars), vars);
@@ -891,7 +892,7 @@ ostream &supportedinfo::debuginfo(ostream &o)
   map<string, supinf>::const_iterator i;
   for (i = sup.begin(); i != sup.end(); i++)
   {
-    o <<"SUPPORTED:** name=" << i->first << ", prec=" << i->second.prec << " Def=" << endl;
+    o <<String::compose(_("SUPPORTED:** name=%1, prec=%2 Def=\n"),i->first,i->second.prec);
     i->second.c->debuginfo(o);
   }
   return o;
@@ -941,7 +942,9 @@ configinfo::configinfo(parsestream &i)
   userpref=rootpref=sort=prerun=preruntest=postrun=genmenu=
     hkexclude=startmenu=endmenu=submenutitle=also_run=repeat_lang=0;
 
-  preout = _("# Automatically generated file. Do not edit (see /usr/share/doc/menu/html/index.html)\n\n");
+  /*Should not be translated as this appear in the output file that can use 
+   *a different encoding*/
+  preout = "# Automatically generated file. Do not edit (see /usr/share/doc/menu/html/index.html)\n\n";
 
   try {
       while(1)
@@ -1023,7 +1026,8 @@ configinfo::configinfo(parsestream &i)
 	  else if (s=="insensitive")
 	    hotkeycase = 0;
 	  else {
-	    cerr << _("install-menu: hotkeycase can only be {,in}sensitive") << endl;
+	    /*Do not translate quoted text*/ 
+            cerr << _("install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n");
 	    throw informed_fatal();
 	  }
 	} 
@@ -1065,9 +1069,10 @@ configinfo::configinfo(parsestream &i)
 void configinfo::check_config()
 {
   if(!(genmenu && startmenu && endmenu)) {
+    /* don't translate genmenu, startmenu, endmenu and don't change \"\" */
     cerr << _("install-menu: At least one of genmenu, startmenu, endmenu\n"
-        "is undefined in the config file. All of these have to be \n"
-        "defined (although they may be equal to \"\")") << endl;
+        "is undefined. All of these have to be defined \n"
+        "(although they may be equal to \"\")\n");
     throw informed_fatal();
   }
 }
@@ -1098,7 +1103,7 @@ string configinfo::prefix()
 
 ostream &configinfo::debuginfo(ostream &o)
 {
-    o<<"Using compatibility with:"<<compt<< endl
+    o<<String::compose(_("Using compatibility with:%1\n"),compt)
      <<"mainmenutitle   : "<<mainmt   << endl
      <<"rootsection     : "<<roots    << endl
      <<"rcfile          : "<<rcf      << endl
@@ -1183,7 +1188,7 @@ map<string, string> read_vars(parsestream &i)
   return m;
 }
 
-// This check is actually also done in update-menus, so its sorta redundant
+// This check is actually also done in update-menus, so it is sort of redundant
 // here. But we will still have trouble if they don't exists, so still make
 // the check here.
 void check_vars(parsestream &pi, map<string, string> &m)
@@ -1244,21 +1249,22 @@ void includemenus(string replace, string menu_filename)
       input_file.clear(); // to clear the bad state of the old stream
       input_file.open(input_filename2.c_str());
       if (!input_file) {
-        cerr << String::compose(_("Cannot open file %1 (also tried %2)"), input_filename, input_filename2) << endl;
+        cerr << String::compose(_("Cannot open file %1 (also tried %2)\n"), input_filename, input_filename2);
         throw informed_fatal();
       } else {
 	input_filename = input_filename2;
       }
-    } else {
+    }else 
       // Running as root:
-      cerr << String::compose(_("Cannot open file %1"), input_filename) << endl;
+    {
+      cerr << String::compose(_("Cannot open file %1\n"), input_filename);
       throw informed_fatal();
     }
   }
 
   ifstream menu_file(menu_filename.c_str());
   if (!menu_file) {
-      cerr << String::compose(_("Cannot open file %1"), menu_filename) << endl;
+      cerr << String::compose(_("Cannot open file %1\n"), menu_filename);
       throw informed_fatal();
   }
 
@@ -1266,9 +1272,10 @@ void includemenus(string replace, string menu_filename)
   ofstream output_file(output_filename.c_str());
 
   if (!output_file) {
-    cerr << String::compose(_("Cannot open file %1"), output_filename) << endl; 
+    cerr << String::compose(_("Cannot open file %1\n"), output_filename); 
     if (getuid())
-        cerr << _("In order to be able to create the user config files for the window managers, the above file needs to be writeable (and the directory needs to exist).") << endl;
+        cerr << _("In order to be able to create the user config file(s) for the window manager,\n" 
+            "the above file needs to be writeable (and/or the directory needs to exist).\n");
     throw informed_fatal();
   }
 
@@ -1289,16 +1296,18 @@ void includemenus(string replace, string menu_filename)
   }
 
   if (!changed)
-      cerr << String::compose(_("Warning: The string %1 did not occur in example file %2"), replace, input_filename) << endl;
+      cerr << String::compose(_("Warning: The string %1 did not occur in template file %2\n"), replace, input_filename);
 }
 
-void usage()
+void usage(ostream &c)
 {
-  cerr << _("install-menu: generate window-manager menu files (or html docs)\n"
-	  "  install-menu gets the menuentries from standard in.\n"
-	  "  Options to install-menu:\n"
+  /*Don't translate quoted string*/
+  c <<  _("install-menu [-vh] <menu-method>\n"
+	  "  Read menuentries from stdin in \"update-menus --stdout\" format\n" 
+          "  and generate menu files using the specified menu-method.\n"
+          "  Options to install-menu:\n"
 	  "     -h --help    : this message\n"
-	  "     -v --verbose : be verbose") << endl;
+	  "     -v --verbose : be verbose\n");
 }
 
 int main(int argc, char **argv)
@@ -1314,30 +1323,27 @@ int main(int argc, char **argv)
   if (!getuid()) {
     // When we are root, we set umask to 002 to ignore the real root umask.
     // This is to ensure that the menu file can be read by users..
-    umask(002);
+    umask(0002);
   }
 
-  try {
-    if (argv[1]) {
-      script_name = argv[1];
-    } else {
-      cerr << _("install-menu: First parameter must be name of script") << endl;
-      throw informed_fatal();
+  while(1)
+  {
+    int c = getopt_long (argc, argv, "vh", long_options, NULL);
+    if(c == -1) 
+        break;
+    switch (c) {
+      case '?': usage(cerr); return 1; break;
+      case 'h': usage(cout); return 0; break;
+      case 'v': verbose = 1; break;
     }
-
-    int option_index;
-    while(1)
-    {
-      int c = getopt_long (argc, argv, "fdvh", long_options, &option_index);
-      if(c == -1) 
-          break;
-      switch (c) {
-        case '?':;
-        case 'h': usage(); return 1; break;
-        case 'v': verbose = 1; break;
-        case 'd': break;           /* ignore for compatibility reasons */
-        case 'f': break;           /* ignore for compatibility reasons */
-      }
+  }
+    
+  try {
+    if (optind < argc) {
+      script_name = argv[optind];
+    } else {
+      cerr << _("install-menu: no menu-method script specified !\n");
+      throw informed_fatal();
     }
 
     add_functions();
@@ -1349,7 +1355,7 @@ int main(int argc, char **argv)
     ps = new parsestream(script_name, directory);
     
     if (!ps->good()) {
-      cerr << String::compose(_("Cannot open script %1 for reading"), script_name) << endl;
+      cerr << String::compose(_("Cannot open script %1 for reading\n"), script_name);
       throw informed_fatal();
     }
     config = new configinfo(*ps);
@@ -1393,7 +1399,7 @@ int main(int argc, char **argv)
 
       for (run_i = run_vec.begin(); run_i != run_vec.end(); ++run_i)
       {
-        std::cout << String::compose(_("Running: \"%1\""), *run_i) << endl;
+        std::cout << String::compose(_("Running: \"%1\"\n"), *run_i);
         parsestream also_ps(*run_i);
         config = new configinfo(also_ps);
         root_menu.output();
@@ -1409,7 +1415,7 @@ int main(int argc, char **argv)
         system((config->postrun->soutput(root_menu.vars)).c_str());
   } catch (genexcept& p) {
     p.report();
-    cerr << "install-menu: " << script_name << ": " << _("Aborting") << endl;
+    cerr << String::compose(_("install-menu: %1: Aborting\n"), script_name);
     return 1;
   }
 }

@@ -148,7 +148,10 @@ public:
   }
 };
 
-class informed_fatal : public genexcept { };
+class informed_fatal : public genexcept { 
+  public:
+    std::string message() const { return ""; }
+};
 
 class parsestream {
 public:
