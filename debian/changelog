@@ -5,6 +5,7 @@ menu (2.1.13) unstable; urgency=low
     Closes: #244067.
   * Add Russian menu sections and messages translation by Dan Korostelev.
     Closes: #245353.
+  * Add Greek menu sections translation by Konstantinos Margaritis.
 
  -- Bill Allombert <ballombe@debian.org>  Thu, 15 Apr 2004 20:39:12 +0200
 
