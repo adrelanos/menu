@@ -1,87 +1,86 @@
 # translation of menu.po to Norwegian Nynorsk
-# This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) YEAR Debian menu team.
+# This file is distributed under the same license as the menu package.
+# Copyright (C) 2004 Debian menu team.
 # Håvard Korsvoll <korsvoll@skulelinux.no>, 2004.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: menu\n"
-"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
-"POT-Creation-Date: 2004-03-14 16:18+0100\n"
-"PO-Revision-Date: 2004-03-16 20:38+0100\n"
+"Project-Id-Version: menu_nn\n"
+"POT-Creation-Date: 2004-07-09 20:06+0200\n"
+"PO-Revision-Date: 2004-10-03 22:38+0200\n"
 "Last-Translator: Håvard Korsvoll <korsvoll@skulelinux.no>\n"
-"Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
+"Language-Team: Norwegian nynorsk <i18n-nn@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.3.1\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"X-Generator: KBabel 1.0.2\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../install-menu/install-menu.cc:204
-msgid "install-menu: checking directory %1\n"
-msgstr "install-menu: sjekkar katalog %1\n"
-
-#: ../install-menu/install-menu.cc:217
-msgid "install-menu: creating directory %1:\n"
-msgstr "install-menu: lagar katalog %1:\n"
-
-#: ../install-menu/install-menu.cc:224
-msgid "install-menu: directory %1 already exists\n"
-msgstr "install-menu: katalogen %1 finst allereie\n"
-
-#: ../install-menu/install-menu.cc:464
+#: ../install-menu/functions.cc:92
 msgid "Zero-size argument to print function."
 msgstr "Argument for utskriftsfunksjonen har nullstorleik"
 
+#: ../install-menu/install-menu.cc:200
+msgid "install-menu: checking directory %1\n"
+msgstr "install-menu: sjekkar katalog %1\n"
+
+#: ../install-menu/install-menu.cc:213
+msgid "install-menu: creating directory %1:\n"
+msgstr "install-menu: lagar katalog %1:\n"
+
+#: ../install-menu/install-menu.cc:215
+msgid "Could not create directory(%1): %2"
+msgstr "Klarte ikkje opna katalog(«%1»): %2"
+
+#: ../install-menu/install-menu.cc:217
+msgid "Could not change directory(%1): %2"
+msgstr "Klarte ikkje opna katalog(«%1»): %2"
+
+#: ../install-menu/install-menu.cc:220
+msgid "install-menu: directory %1 already exists\n"
+msgstr "install-menu: katalogen %1 finst allereie\n"
+
 #. Do not translate supported
-#: ../install-menu/install-menu.cc:903
+#: ../install-menu/install-menu.cc:437
 msgid "install-menu: [supported]: name=%1\n"
 msgstr "install-menu: [supported]: namn=%1\n"
 
-#: ../install-menu/install-menu.cc:924
+#: ../install-menu/install-menu.cc:454
 msgid "Menu entry lacks mandatory field \"%1\".\n"
 msgstr "Menyoppføring manglar obligatorisk felt «%1».\n"
 
-#: ../install-menu/install-menu.cc:928
+#: ../install-menu/install-menu.cc:460
 msgid "Unknown value for field %1=\"%2\".\n"
 msgstr "Ukjent verdi for felt %1=«%2».\n"
 
 #. Do not translate quoted text
-#: ../install-menu/install-menu.cc:1084
+#: ../install-menu/install-menu.cc:605
 msgid "install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
 msgstr "install-menu: «hotkeycase» kan berre vera «sensitive» eller «insensitive»\n"
 
-#: ../install-menu/install-menu.cc:1112
+#: ../install-menu/install-menu.cc:635
 msgid ""
 "install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
 "Ignoring.\n"
-msgstr "install-menu: Åtvaring: Ukjent kjenneteikn «%1» på linje %2 i fil %3. Ignorerer.\n"
-
-#. don't translate genmenu, startmenu, endmenu and don't change \"\"
-#: ../install-menu/install-menu.cc:1128
-msgid ""
-"install-menu: At least one of genmenu, startmenu, endmenu\n"
-"is undefined. All of these have to be defined \n"
-"(although they may be equal to \"\").\n"
 msgstr ""
-"install-menu: Minst ein av genmenu, startmenu, endmenu\n"
-"er udefinert. Alle desse må definerast \n"
-"(men dei kan vera \"\").\n"
+"install-menu: Åtvaring: Ukjent kjenneteikn «%1» på linje %2 i fil %3. "
+"Ignorerer.\n"
 
-#: ../install-menu/install-menu.cc:1161
-msgid "Using compatibility with %1.\n"
-msgstr "Brukar kompatibilitet med %1.\n"
+#: ../install-menu/install-menu.cc:645
+msgid "install-menu: %1 must be defined in menu-method %2"
+msgstr "install-menu: %1 må vera definert i menu-method %2"
 
-#: ../install-menu/install-menu.cc:1316
+#: ../install-menu/install-menu.cc:806
 msgid "Cannot open file %1 (also tried %2).\n"
 msgstr "Klarer ikkje opna fil %1 (prøvde også %2).\n"
 
-#: ../install-menu/install-menu.cc:1324 ../install-menu/install-menu.cc:1331
-#: ../install-menu/install-menu.cc:1339
+#: ../install-menu/install-menu.cc:814 ../install-menu/install-menu.cc:821
+#: ../install-menu/install-menu.cc:829
 msgid "Cannot open file %1.\n"
 msgstr "Klarer ikkje opna fil %1.\n"
 
-#: ../install-menu/install-menu.cc:1341
+#: ../install-menu/install-menu.cc:831
 msgid ""
 "In order to be able to create the user config file(s) for the window "
 "manager,\n"
@@ -90,12 +89,12 @@ msgstr ""
 "For å kunne laga brukaren sine oppsettsfiler for vindaugshandteraren,\n"
 "må filene ovanfor vera skrivbare (og/eller katalogen må eksistere).\n"
 
-#: ../install-menu/install-menu.cc:1363
+#: ../install-menu/install-menu.cc:853
 msgid "Warning: the string %1 did not occur in template file %2\n"
 msgstr "Åtvaring: strengen %1 finst ikkje i malfil %2\n"
 
 #. Don't translate quoted string
-#: ../install-menu/install-menu.cc:1388
+#: ../install-menu/install-menu.cc:878
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
@@ -111,111 +110,95 @@ msgstr ""
 "     -h --help    : denne meldinga\n"
 "     -v --verbose : skriv ut fyldig informasjon\n"
 
-#: ../install-menu/install-menu.cc:1428
+#: ../install-menu/install-menu.cc:920
 msgid "install-menu: no menu-method script specified !"
 msgstr "install-menu: ingen script for menymetode er oppgjeve!"
 
-#: ../install-menu/install-menu.cc:1441
+#: ../install-menu/install-menu.cc:933
 msgid "Cannot open script %1 for reading.\n"
 msgstr "Klarer ikkje opna script %1 for lesing.\n"
 
-#: ../install-menu/install-menu.cc:1485
+#: ../install-menu/install-menu.cc:973
 msgid "Running: \"%1\"\n"
 msgstr "Køyrer: «%1»\n"
 
-#: ../install-menu/install-menu.cc:1501
+#: ../install-menu/install-menu.cc:989
 msgid "install-menu: %1: aborting\n"
 msgstr "install-menu: %1: avbryt\n"
 
-#: ../install-menu/install-menu.h:403
+#: ../install-menu/install-menu.h:198
 msgid "Number of arguments to function %1 does not match."
 msgstr "Tal på argument til funksjon %1 er ikkje rett."
 
-#: ../install-menu/install-menu.h:410
+#: ../install-menu/install-menu.h:206
 msgid "Unknown function: \"%1\""
 msgstr "Ukjent funksjon: «%1»"
 
-#: ../install-menu/install-menu.h:418
+#: ../install-menu/install-menu.h:215
 msgid "Indirectly used, but not defined function: \"%1\""
 msgstr "Indirekte brukt, men ikkje definert funksjon: «%1»"
 
-#: ../install-menu/install-menu.h:426
+#: ../install-menu/install-menu.h:224
 msgid "Unknown identifier: \"%1\""
 msgstr "Ukjent kjennemerke: «%1»"
 
-#: ../install-menu/install-menu.h:434
-msgid "Could not open directory \"%1\"."
-msgstr "Klarte ikkje opna katalog «%1»."
-
-#: ../install-menu/install-menu.h:442
-msgid ""
-"Missing (or empty) tag: %1\n"
-"This tag needs to be defined for the menu entry to make sense.\n"
-"Note that update-menus rearranges the order of the tags found\n"
-"in the menu-entry files, so that the part above isn't literal."
-msgstr ""
-"Manglar (eller tomt) merke: %1\n"
-"Dette merket må definerast for at menyelementet skal vera fornuftig.\n"
-"Merk at update-menus ordnar om på rekkefølgja på merke som blir\n"
-"funne i menyelementfila, slik at det som står over ikkje er bokstavleg."
-
-#: ../install-menu/install-menu.h:454
+#: ../install-menu/install-menu.h:233
 msgid "Encoding conversion error: \"%1\""
 msgstr "Feil ved kodeomforming: «%1»"
 
-#: ../update-menus/exceptions.h:41
+#: ../update-menus/exceptions.h:43
 msgid "Unknown error."
 msgstr "Ukjend feil."
 
-#: ../update-menus/exceptions.h:52 ../update-menus/parsestream.h:111
+#: ../update-menus/exceptions.h:55 ../update-menus/parsestream.h:114
 msgid "Unknown error, message=%1"
 msgstr "Ukjend feil, melding=%1"
 
-#: ../update-menus/exceptions.h:60
+#: ../update-menus/exceptions.h:64
 msgid "Unable to open file \"%1\"."
 msgstr "Klarte ikkje opna fil «%1»."
 
-#: ../update-menus/exceptions.h:68
+#: ../update-menus/exceptions.h:73
 msgid "Failed to pipe data through \"%1\" (pipe opened for reading)."
 msgstr "Klarte ikkje leia data gjennom «%1» (røyr opna for lesing)."
 
-#: ../update-menus/parsestream.cc:47
+#: ../update-menus/exceptions.h:89
+msgid "%1: missing required tag: \"%2\""
+msgstr "%1: manglar påkrevd merke: «%2»"
+
+#: ../update-menus/parsestream.cc:48
 msgid "(probably) stdin"
 msgstr "(truleg) stdin"
 
-#: ../update-menus/parsestream.cc:61
-msgid "Cannot open file %1."
-msgstr "Kan ikkje opna fil %1."
-
-#: ../update-menus/parsestream.cc:447
+#: ../update-menus/parsestream.cc:448
 msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
 msgstr "I fil «%1», ved (eller i definisjonen som sluttar ved) linje %2:\n"
 
-#: ../update-menus/parsestream.cc:468
+#: ../update-menus/parsestream.cc:469
 msgid "Somewhere in input file:\n"
 msgstr "Ein stad in inndatafil:\n"
 
-#: ../update-menus/parsestream.h:118
+#: ../update-menus/parsestream.h:122
 msgid "Unexpected end of file."
 msgstr "Uventa slutt på fil."
 
-#: ../update-menus/parsestream.h:124
+#: ../update-menus/parsestream.h:129
 msgid "Unexpected end of line."
 msgstr "Uventa slutt på linje."
 
-#: ../update-menus/parsestream.h:130
+#: ../update-menus/parsestream.h:136
 msgid "Identifier expected."
 msgstr "Identifikasjonsmerke forventa."
 
-#: ../update-menus/parsestream.h:137
+#: ../update-menus/parsestream.h:144
 msgid "Expected: \"%1\""
 msgstr "Forventa: «%1»"
 
-#: ../update-menus/parsestream.h:145
+#: ../update-menus/parsestream.h:153
 msgid "Unexpected character: \"%1\""
 msgstr "Uventa teikn: «%1»"
 
-#: ../update-menus/parsestream.h:153
+#: ../update-menus/parsestream.h:162
 msgid ""
 "Boolean (either true or false) expected.\n"
 "Found: \"%1\""
@@ -223,7 +206,7 @@ msgstr ""
 "Boolsk (anten sann eller usann) forventa.\n"
 "Fann: «%1»"
 
-#: ../update-menus/parsestream.h:162
+#: ../update-menus/parsestream.h:172
 msgid "Unknown compat mode: \"%1\""
 msgstr "Ukjend kompatilitetsmodus: «%1»"
 
@@ -240,83 +223,79 @@ msgstr ""
 #. menu entries automatically. It does not refer to the localisation
 #. (translation to other languages).
 #.
-#: ../update-menus/update-menus.cc:361
+#: ../update-menus/update-menus.cc:358
 msgid "Reading translation rules in %1."
 msgstr "Les omsetjingsreglar i %1."
 
-#: ../update-menus/update-menus.cc:462
+#: ../update-menus/update-menus.cc:438
 msgid "Reading installed packages list..."
 msgstr "Les in liste over installerte pakkar ..."
 
-#: ../update-menus/update-menus.cc:481
-msgid "Reading menu-entry file %1."
-msgstr "Les menyelementfil %1."
-
-#: ../update-menus/update-menus.cc:509
+#: ../update-menus/update-menus.cc:485
 msgid "Execution of %1 generated no output or returned an error.\n"
 msgstr "Køyring av %1 genererte ingen utdata eller returnerte ein feil.\n"
 
-#: ../update-menus/update-menus.cc:549 ../update-menus/update-menus.cc:553
+#: ../update-menus/update-menus.cc:525 ../update-menus/update-menus.cc:529
 msgid "Skipping file because of errors...\n"
 msgstr "Hoppar over fil på grunn av feil ...\n"
 
-#: ../update-menus/update-menus.cc:568
+#: ../update-menus/update-menus.cc:545
 msgid "Reading menu-entry files in %1."
 msgstr "Les menyelementfiler i %1."
 
-#: ../update-menus/update-menus.cc:591
+#: ../update-menus/update-menus.cc:568
 msgid "Error reading %1.\n"
 msgstr "Feil ved innlesing av %1.\n"
 
-#: ../update-menus/update-menus.cc:596
+#: ../update-menus/update-menus.cc:573
 msgid "%1 menu entries found (%2 total)."
 msgstr "%1 menyelement funne (%2 totalt)."
 
-#: ../update-menus/update-menus.cc:607
+#: ../update-menus/update-menus.cc:585
 msgid "Running method: %1"
 msgstr "Køyrer metode %1"
 
-#: ../update-menus/update-menus.cc:610
+#: ../update-menus/update-menus.cc:588
 msgid "Cannot create pipe."
 msgstr "Klarer ikkje laga røyr."
 
-#: ../update-menus/update-menus.cc:646
+#: ../update-menus/update-menus.cc:624 ../update-menus/update-menus.cc:1000
 msgid "Script %1 could not be executed."
 msgstr "Script %1 kunne ikkje køyrast."
 
-#: ../update-menus/update-menus.cc:649
+#: ../update-menus/update-menus.cc:627
 msgid "Script %1 returned error status %2."
 msgstr "Script %1 returnerte feilstatus %2."
 
-#: ../update-menus/update-menus.cc:652
+#: ../update-menus/update-menus.cc:630
 msgid "Script %1 received signal %2."
 msgstr "Script %1 mottok signal %2."
 
-#: ../update-menus/update-menus.cc:662
+#: ../update-menus/update-menus.cc:640
 msgid "Running menu-methods in %1."
 msgstr "Køyrer menymetodar i %1."
 
-#: ../update-menus/update-menus.cc:700
+#: ../update-menus/update-menus.cc:673
 msgid "Other update-menus processes are already locking %1, quitting."
 msgstr "Andre update-menus prosessar låser allereie %1, avsluttar."
 
-#: ../update-menus/update-menus.cc:703
+#: ../update-menus/update-menus.cc:676
 msgid "Cannot lock %1: %2 - Aborting."
 msgstr "Klarer ikkje låsa %1: %2 - Avbryt."
 
-#: ../update-menus/update-menus.cc:712
+#: ../update-menus/update-menus.cc:685
 msgid "Cannot write to lockfile %1 - Aborting."
 msgstr "Kan ikkje skriva til låsefil %1 - Avbryt."
 
-#: ../update-menus/update-menus.cc:724
+#: ../update-menus/update-menus.cc:698
 msgid "Cannot remove lockfile %1."
 msgstr "Kan ikkje fjerna låsefil %1."
 
-#: ../update-menus/update-menus.cc:738
+#: ../update-menus/update-menus.cc:714
 msgid "Update-menus is run by user."
 msgstr "Update-menus vert køyrt av brukar."
 
-#: ../update-menus/update-menus.cc:820
+#: ../update-menus/update-menus.cc:798
 msgid ""
 "Waiting for dpkg to finish (forking to background).\n"
 "(checking %1)"
@@ -324,11 +303,11 @@ msgstr ""
 "Ventar på at dpkg skal bli ferdig (spaltar ut (fork) til bakgrunn).\n"
 "(sjekkar %1)"
 
-#: ../update-menus/update-menus.cc:823
+#: ../update-menus/update-menus.cc:801
 msgid "Further output (if any) will appear in %1."
 msgstr "Meir utdata (om det er meir) kjem fram i %1."
 
-#: ../update-menus/update-menus.cc:845
+#: ../update-menus/update-menus.cc:823
 msgid "Dpkg is not locking dpkg status area, good."
 msgstr "Dpkg låser ikkje dpkg sitt statusområde, bra."
 
@@ -349,32 +328,25 @@ msgid ""
 "  --stdout               Output menu list in format suitable for piping to\n"
 "                         install-menu.\n"
 msgstr ""
-"update-menus: oppdaterer dei ulike oppsettsfilene for\n"
-"  vindaugshandterarane (i tilegg dwww og pdmenu) "
-"  Bruk: update-menus [val] \n"
-"    -v  utfyllande meldingar om det som skjer.\n"
-"    -d  Skriv ut feilsøkingsmeldingar.\n"
-"    -h, --help Denne meldinga.\n"
-"    --menufilesdir <katalog> Legg <katalog> til lista over menykatalogar\n"
-"        som skal søkjast i. "
-"    --menumethod  <metode> Køyr berre menymetode <metode>.\n"
-"    --nodefaultdirs Slår av bruk av alle standard menykatalogar. "
-"    --stdout Skriv ut menylista i eit format som passar til å sende\n"
-"        vidare til install-menu.\n"
+"Bruk: update-menus [val] \n"
+"Hentar pakkedata frå menydatabasen og opprettar menyar for\n"
+"alle program som tilbyr menymetodar, vanlegvis vindaugshandterarar.\n"
+"  -d                      Skriv ut feilsøkingsmeldingar.\n"
+"  -v                      Utfyllande meldingar om det som skjer.\n"
+"  -h, --help              Denne meldinga.\n"
+"  --menufiledir <katalog> Legg <katalog> til lista over menykatalogar\n"
+"                          som skal søkjast i. "
+"  --menumethod  <metode>  Køyr berre menymetode <metode>.\n"
+"  --nodefaultdirs         Slår av bruk av alle standard menykatalogar."
+"  --stdout                Skriv ut menylista i eit format som passar \n"
+"                          til å sende vidare til install-menu.\n"
 
-#: ../update-menus/update-menus.cc:893
-msgid "Directory is expected after --menufilesdir option.\n"
-msgstr "Katalog vert forventa etter valet --menufilesdir.\n"
+#. This is the end of the update-menus --help message
+#: ../update-menus/update-menus.cc:845
+msgid "  --version              Output version information and exit.\n"
+msgstr "  --version               Skriv ut versjonsinformasjon og avsluttar.\n"
 
-#: ../update-menus/update-menus.cc:903
-msgid "Filename is expected after --menumethod option.\n"
-msgstr "Filnamn er forventa etter valet --menumethod.\n"
-
-#: ../update-menus/update-menus.h:132
+#: ../update-menus/update-menus.h:149
 msgid "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
 msgstr "Ukjent installeringstilstand «%1» (for tida er berre «package» støtta)."
-
-#: ../update-menus/update-menus.h:143
-msgid "%1: missing required tag: \"%2\""
-msgstr "%1: manglar påkrevd merke: «%2»"
 
