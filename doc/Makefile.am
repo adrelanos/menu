@@ -1,6 +1,6 @@
 all-local: menu.html/ menu.txt.gz menu.info.gz
 
-DOCS = announce-2 BUGS cmap.xpm menu.sgml README.changes README.config-menus README.menu-methods README.new-sections README.package-menus README.pre1 TODO translate
+DOCS = announce-2 BUGS menu.sgml README.changes README.config-menus README.menu-methods README.new-sections README.package-menus README.pre1 TODO translate
 
 man_MANS = install-menu.1 menufile.5 su-to-root.1 update-menus.1 wm-menu-config.1
 EXTRA_DIST = $(man_MANS) $(DOCS) menu.sgml $(srcdir)/menu.html $(srcdir)/menu.txt.gz $(srcdir)/menu.info.gz update-menus.fr.1
