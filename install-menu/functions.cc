@@ -75,7 +75,7 @@ ostream &shell::output(ostream &o, vector<cat_str *> &args,
 ostream &ifroot::output(ostream &o, vector<cat_str *> & args,
     map<string, string> &menuentry)
 {
-  if(getuid())
+  if(!is_root)
     args[1]->output(o,menuentry);
   else
     args[0]->output(o,menuentry);

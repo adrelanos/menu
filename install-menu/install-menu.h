@@ -185,6 +185,7 @@ public:
 
 extern methodinfo *menumethod;
 extern supportedinfo *supported;
+extern bool is_root;
 extern bool testuniqueness(std::map<std::string, std::string> &menuentry);
 const char *ldgettext(const char *lang, const char *domain, const char *msgid);
 

@@ -59,6 +59,7 @@ set<string> menufiles_processed;
 
 translateinfo *transinfo;
 configinfo     config;
+bool is_root;
 
 /** Try to open a directory. Throws dir_error_read if failed, and a DIR*
  * descriptor if succeeded.
@@ -670,7 +671,7 @@ int create_lock()
   int fd = true;
   char buf[64];
 
-  if (!getuid()) {
+  if (is_root) {
     fd = open(UPMEN_LOCKFILE,O_WRONLY|O_CREAT,00644);
 
     if (flock(fd,LOCK_EX|LOCK_NB)) {
@@ -698,7 +699,7 @@ int create_lock()
 /** Try to remove update-menus lock */
 void remove_lock()
 {
-  if (!getuid()){
+  if (is_root) {
     if (unlink(UPMEN_LOCKFILE))
       config.report(String::compose(_("Cannot remove lockfile %1."), UPMEN_LOCKFILE),
           configinfo::report_normal);
@@ -714,7 +715,7 @@ int check_dpkglock()
 {
   int fd;
   struct flock fl;
-  if (getuid())
+  if (!is_root)
   {
     config.report(_("Update-menus is run by user."), configinfo::report_verbose);
     return 0;
@@ -900,7 +901,7 @@ void parse_params(char **argv)
 /** Read users configuration file */
 void read_userconfiginfo()
 {
-  if (getuid()) {
+  if (!is_root) {
     try {
       config.read_file(string(home_dir)+"/"+USERCONFIG);
     } catch(ferror_open d) { };
@@ -920,7 +921,7 @@ void read_rootconfiginfo()
 /** Read users translate information */
 void read_usertranslateinfo()
 {
-  if (getuid()) {
+  if (!is_root) {
     try {
       transinfo = new translateinfo(string(home_dir)+"/"+USERTRANSLATE);
     } catch(ferror_open d) { };
@@ -950,6 +951,7 @@ void read_homedirectory()
 
 int main (int argc, char **argv)
 {
+  is_root = (getuid() == 0);
   read_homedirectory();
 
   vector<string> menudata;
@@ -977,7 +979,7 @@ int main (int argc, char **argv)
     read_roottranslateinfo();
 
     if (config.usedefaultmenufilesdirs) {
-      if (getuid())
+      if (!is_root)
           config.menufilesdir.push_back(string(home_dir)+"/"+USERMENUS);
       config.menufilesdir.push_back(CONFIGMENUS);
       config.menufilesdir.push_back(PACKAGEMENUSLIB);
@@ -994,7 +996,7 @@ int main (int argc, char **argv)
     } else if (!config.menumethod.empty()) {
       run_menumethod(config.menumethod, menudata);
     } else {
-      if (getuid()) {
+      if (!is_root) {
         try {
           run_menumethoddir(string(home_dir)+"/"+USERMETHODS, menudata);
         }

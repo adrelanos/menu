@@ -6,6 +6,7 @@ menu (2.1.15) unstable; urgency=low
     - Fix wrong error message when install-menu couldn't open a menu-method.
     - outputencoding now defaults to LOCALE when no value is specified.
     - No longer require startmenu and endmenu to be defined.
+    - Call getuid() once and cache the result.
   * Sort menu entry according to the current locale. Note that this works
     only if the menu-method uses the locale encoding. Closes: #200447.
 

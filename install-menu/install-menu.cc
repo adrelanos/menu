@@ -61,6 +61,7 @@ using namespace exceptions;
 
 int verbose = 0;
 const char * menuencoding = "UTF-8";
+bool is_root;
 
 map<string, functions::func *> func_data;
 
@@ -662,7 +663,7 @@ cat_str *methodinfo::rootprefix()
 
 string methodinfo::prefix()
 {
-  if (getuid()) {
+  if (!is_root) {
     struct passwd *pw = getpwuid(getuid());
     return string(pw->pw_dir)+"/"+userprefix()->soutput(root_menu.vars);
   } else {
@@ -795,7 +796,7 @@ void includemenus(string replace, string menu_filename)
 
   ifstream input_file(input_filename.c_str());
   if (!input_file) {
-    if (getuid()) {
+    if (!is_root) {
       // Running as non-root:
       string input_filename2 = menumethod->rootprefix()->soutput(root_menu.vars) + '/' + menumethod->examplercfile();
 
@@ -826,7 +827,7 @@ void includemenus(string replace, string menu_filename)
 
   if (!output_file) {
     cerr << String::compose(_("Cannot open file %1.\n"), output_filename); 
-    if (getuid())
+    if (!is_root)
         cerr << _("In order to be able to create the user config file(s) for the window manager,\n" 
             "the above file needs to be writeable (and/or the directory needs to exist).\n");
     throw informed_fatal();
@@ -884,6 +885,8 @@ void usage(ostream &c)
 
 int main(int argc, char **argv)
 {
+  is_root = (getuid() == 0);
+
   std::string script_name;
   parsestream *ps = 0, *psscript = 0;
   
@@ -892,7 +895,7 @@ int main(int argc, char **argv)
   bind_textdomain_codeset("menu-sections", menuencoding);
   textdomain(PACKAGE);
 
-  if (!getuid()) {
+  if (is_root) {
     // When we are root, we set umask to 022 to ignore the real root umask.
     // This is to ensure that the menu file can be read by users.
     umask(0022);
@@ -921,7 +924,7 @@ int main(int argc, char **argv)
     add_functions();
     
     string directory;
-    if (getuid())
+    if (!is_root)
         directory = MENUMETHODS;
 
     ps = new parsestream(script_name, directory);
@@ -931,9 +934,9 @@ int main(int argc, char **argv)
       throw informed_fatal();
     }
     menumethod = new methodinfo(*ps);
-    if ((menumethod->onlyrunasroot || menumethod->userpref == 0) && getuid())
+    if ((menumethod->onlyrunasroot || menumethod->userpref == 0) && !is_root)
         return 0;
-    if ((menumethod->onlyrunasuser || menumethod->rootpref == 0) && !getuid())
+    if ((menumethod->onlyrunasuser || menumethod->rootpref == 0) && is_root)
         return 0;
     if (menumethod->prerun)
         system((menumethod->prerun->soutput(root_menu.vars)).c_str());
