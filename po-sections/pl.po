@@ -8,9 +8,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: menu-section 2.1.9-3\n"
 "POT-Creation-Date: 2003-04-03 12:14+0100\n"
-"PO-Revision-Date: 2003-04-12 02:49+0200\n"
+"PO-Revision-Date: 2003-12-13 15:42+0100\n"
 "Last-Translator: Marcin Owsiany <porridge@debian.org>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -25,6 +25,9 @@ msgstr "Bazy danych"
 
 msgid "Editors"
 msgstr "Edytory"
+
+msgid "Education"
+msgstr "Edukacja"
 
 msgid "Emulators"
 msgstr "Emulatory"
@@ -86,6 +89,9 @@ msgstr "Karciane"
 msgid "Puzzles"
 msgstr "Uk³adanki"
 
+msgid "Simulation"
+msgstr "Symulatory"
+
 msgid "Sports"
 msgstr "Sportowe"
 
@@ -121,3 +127,23 @@ msgstr "Modu³y"
 
 msgid "XShells"
 msgstr "Pow³oki dla X"
+
+# From Apps/System/Admin
+msgid "Admin"
+msgstr "Administracyjne"
+
+# Non official sections from WindowMaker
+msgid "Appearance"
+msgstr "Wygl±d"
+
+msgid "WorkSpace"
+msgstr "Obszar roboczy"
+
+# Fresuently used unofficial sections.
+# From Apps/Net/Mozilla Components
+msgid "Mozilla Components"
+msgstr "Komponenty mozilli"
+
+# From Games/Toys/Teddies
+msgid "Teddies"
+msgstr "Misie"
