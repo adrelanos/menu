@@ -1,0 +1,345 @@
+# 選單自動化程式
+# Copyright (C) YEAR Debian menu team
+# This file is distributed under the same license as the PACKAGE package.
+# Kanru Chen <koster@debian.org.tw>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: menu\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"POT-Creation-Date: 2005-02-14 19:02+0100\n"
+"PO-Revision-Date: 2005-02-18 11:47+0800\n"
+"Last-Translator: Kanru Chen <koster@debian.org.tw>\n"
+"Language-Team: Chinese/Traditional <zh-l10n@linux.org.tw>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../install-menu/functions.cc:92
+msgid "Zero-size argument to print function."
+msgstr "列印函數參數為零。"
+
+#: ../install-menu/install-menu.cc:201
+msgid "install-menu: checking directory %1\n"
+msgstr "install-menu：檢查目錄 %1\n"
+
+#: ../install-menu/install-menu.cc:214
+msgid "install-menu: creating directory %1:\n"
+msgstr "install-menu：建立目錄 %1：\n"
+
+#: ../install-menu/install-menu.cc:216
+msgid "Could not create directory(%1): %2"
+msgstr "無法建立目錄(%1)： %2"
+
+#: ../install-menu/install-menu.cc:218
+msgid "Could not change directory(%1): %2"
+msgstr "無法改變目錄(%1)： %2"
+
+#: ../install-menu/install-menu.cc:221
+msgid "install-menu: directory %1 already exists\n"
+msgstr "install-menu：目錄 %1 已經存在\n"
+
+#. Do not translate supported
+#: ../install-menu/install-menu.cc:438
+msgid "install-menu: [supported]: name=%1\n"
+msgstr "install-menu：[supported]：名稱=%1\n"
+
+#: ../install-menu/install-menu.cc:455
+msgid "Menu entry lacks mandatory field \"%1\".\n"
+msgstr "此選單項目缺乏必要欄位\n"
+
+#: ../install-menu/install-menu.cc:461
+msgid "Unknown value for field %1=\"%2\".\n"
+msgstr "未知的值於欄位 %1=\"%2\"。\n"
+
+#. Do not translate quoted text
+#: ../install-menu/install-menu.cc:606
+msgid ""
+"install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
+msgstr "install-menu：\"hotkeycase\" 只能是 \"sensitive\" 或 \"insensitive\"\n"
+
+#: ../install-menu/install-menu.cc:636
+msgid ""
+"install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
+"Ignoring.\n"
+msgstr "install-menu：警告：在文件 %3 的第 %2 行有未知的標記 `%1'。將被程式忽略。\n"
+
+#: ../install-menu/install-menu.cc:646
+msgid "install-menu: %1 must be defined in menu-method %2"
+msgstr "install-menu：%1 必須在 menu-method %2 中定義"
+
+#: ../install-menu/install-menu.cc:813
+msgid "Cannot open file %1 (also tried %2).\n"
+msgstr "無法開啟檔案 %1 (同時也試過 %2)。\n"
+
+#: ../install-menu/install-menu.cc:821 ../install-menu/install-menu.cc:828
+#: ../install-menu/install-menu.cc:836
+msgid "Cannot open file %1.\n"
+msgstr "無法開啟檔案 %1。\n"
+
+#: ../install-menu/install-menu.cc:838
+msgid ""
+"In order to be able to create the user config file(s) for the window "
+"manager,\n"
+"the above file needs to be writeable (and/or the directory needs to exist).\n"
+msgstr ""
+"為了能替 Window Manager 產生設定檔，\n"
+"上述檔案必須可以寫入(以及/或是目錄必須存在)。\n"
+
+#: ../install-menu/install-menu.cc:860
+msgid "Warning: the string %1 did not occur in template file %2\n"
+msgstr "警告：字串 %1 不存在於樣板檔案 %2 中\n"
+
+#. Don't translate quoted string
+#: ../install-menu/install-menu.cc:885
+msgid ""
+"install-menu [-vh] <menu-method>\n"
+"  Read menu entries from stdin in \"update-menus --stdout\" format\n"
+"  and generate menu files using the specified menu-method.\n"
+"  Options to install-menu:\n"
+"     -h --help    : this message\n"
+"     -v --verbose : be verbose\n"
+msgstr ""
+"install-menu [-vh] <menu-method>\n"
+"  以 \"update-menus --stdout\" 格式從標準輸入中讀取選單項目\n"
+"  並且用指定的 menu-method 產生選單檔案。\n"
+"  install-menu 的選項：\n"
+"     -h --help    ：本訊息\n"
+"     -v --verbose ：詳細輸出\n"
+
+#: ../install-menu/install-menu.cc:929
+msgid "install-menu: no menu-method script specified !"
+msgstr "install-menu：沒有指定 menu-method 文稿"
+
+#: ../install-menu/install-menu.cc:942
+msgid "Cannot open script %1 for reading.\n"
+msgstr "無法開啟文稿 %1 以讀取。\n"
+
+#: ../install-menu/install-menu.cc:982
+msgid "Running: \"%1\"\n"
+msgstr "正在運行：\"%1\"\n"
+
+#: ../install-menu/install-menu.cc:998
+msgid "install-menu: %1: aborting\n"
+msgstr "install-menu：%1：放棄\n"
+
+#: ../install-menu/install-menu.h:198
+msgid "Number of arguments to function %1 does not match."
+msgstr "函式 %1 的參數個數不符合。"
+
+#: ../install-menu/install-menu.h:206
+msgid "Unknown function: \"%1\""
+msgstr "未知的函式：\"%1\""
+
+#: ../install-menu/install-menu.h:215
+msgid "Indirectly used, but not defined function: \"%1\""
+msgstr "間接使用，但未定義函式：\"%1\""
+
+#: ../install-menu/install-menu.h:224
+msgid "Unknown identifier: \"%1\""
+msgstr "未知的標示：\"%1\""
+
+#: ../install-menu/install-menu.h:233
+msgid "Encoding conversion error: \"%1\""
+msgstr "編碼轉換錯誤：\"%1\""
+
+#: ../update-menus/exceptions.h:43
+msgid "Unknown error."
+msgstr "未知的錯誤。"
+
+#: ../update-menus/exceptions.h:55 ../update-menus/parsestream.h:114
+msgid "Unknown error, message=%1"
+msgstr "未知的錯誤，訊息=%1"
+
+#: ../update-menus/exceptions.h:64
+msgid "Unable to open file \"%1\"."
+msgstr "無法開啟檔案 \"%1\"。"
+
+#: ../update-menus/exceptions.h:73
+msgid "Failed to pipe data through \"%1\" (pipe opened for reading)."
+msgstr "將資料透過管道送到 \"%1\" 時出錯(管道已經開啟以讀取)。"
+
+#: ../update-menus/exceptions.h:89
+msgid "%1: missing required tag: \"%2\""
+msgstr "%1 缺少必要的標籤：\"%2\""
+
+#: ../update-menus/parsestream.cc:49
+msgid "(probably) stdin"
+msgstr "(也許是)標準輸入"
+
+#: ../update-menus/parsestream.cc:449
+msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
+msgstr "檔案 \"%1\" 中，第 %2 行(或是該行最末)：\n"
+
+#: ../update-menus/parsestream.cc:470
+msgid "Somewhere in input file:\n"
+msgstr "輸入檔案的某處：\n"
+
+#: ../update-menus/parsestream.h:122
+msgid "Unexpected end of file."
+msgstr "檔案未預期的結束。"
+
+#: ../update-menus/parsestream.h:129
+msgid "Unexpected end of line."
+msgstr "行未預期的結束。"
+
+#: ../update-menus/parsestream.h:136
+msgid "Identifier expected."
+msgstr "需要標示。"
+
+#: ../update-menus/parsestream.h:144
+msgid "Expected: \"%1\""
+msgstr "預期的：\"%1\""
+
+#: ../update-menus/parsestream.h:153
+msgid "Unexpected character: \"%1\""
+msgstr "未預期的字元：\"%1\""
+
+#: ../update-menus/parsestream.h:162
+msgid ""
+"Boolean (either true or false) expected.\n"
+"Found: \"%1\""
+msgstr ""
+"必須為 Boolean 值(true 或 false)。\n"
+"找到： \"%1\""
+
+#: ../update-menus/parsestream.h:172
+msgid "Unknown compat mode: \"%1\""
+msgstr "未知的相容模式：\"%1\""
+
+#: ../update-menus/stringtoolbox.cc:85
+msgid ""
+"replacewith($string, $replace, $with): $replace and $with must have the same "
+"length."
+msgstr "replacewith($string, $replace, $with)：$replace 和 $with 長度必須相同。"
+
+#. Translation here and below refer to the file
+#. /etc/menu-methods/translate_menus that allow to rename and reorganize
+#. menu entries automatically. It does not refer to the localisation
+#. (translation to other languages).
+#.
+#: ../update-menus/update-menus.cc:358
+msgid "Reading translation rules in %1."
+msgstr "讀取 %1 中的轉換規則。"
+
+#: ../update-menus/update-menus.cc:438
+msgid "Reading installed packages list..."
+msgstr "讀取已安裝套件清單..."
+
+#: ../update-menus/update-menus.cc:485
+msgid "Execution of %1 generated no output or returned an error.\n"
+msgstr "執行 %1 沒有產生任何輸出或是回傳錯誤。\n"
+
+#: ../update-menus/update-menus.cc:525 ../update-menus/update-menus.cc:529
+msgid "Skipping file because of errors...\n"
+msgstr "因為錯誤所以略過檔案...\n"
+
+#: ../update-menus/update-menus.cc:545
+msgid "Reading menu-entry files in %1."
+msgstr "讀取 %1 中的選單項目檔案。"
+
+#: ../update-menus/update-menus.cc:568
+msgid "Error reading %1.\n"
+msgstr "讀取 %1 錯誤。\n"
+
+#: ../update-menus/update-menus.cc:573
+msgid "%1 menu entries found (%2 total)."
+msgstr "找到 %1 個選單項目(總共 %2 個)。"
+
+#: ../update-menus/update-menus.cc:585
+msgid "Running method: %1"
+msgstr "執行方法：%1"
+
+#: ../update-menus/update-menus.cc:588
+msgid "Cannot create pipe."
+msgstr "無法建立管道。"
+
+#: ../update-menus/update-menus.cc:624 ../update-menus/update-menus.cc:1000
+msgid "Script %1 could not be executed."
+msgstr "無法執行文稿 %1。"
+
+#: ../update-menus/update-menus.cc:627
+msgid "Script %1 returned error status %2."
+msgstr "文稿 %1 傳回錯誤狀態 %2 。"
+
+#: ../update-menus/update-menus.cc:630
+msgid "Script %1 received signal %2."
+msgstr "文稿 %1 收到 %2 信號。"
+
+#: ../update-menus/update-menus.cc:640
+msgid "Running menu-methods in %1."
+msgstr "執行 %1 中的選單方法。"
+
+#: ../update-menus/update-menus.cc:673
+msgid "Other update-menus processes are already locking %1, quitting."
+msgstr "其他 update-menus 程序已經鎖定 %1，正在退出。"
+
+#: ../update-menus/update-menus.cc:676
+msgid "Cannot lock %1: %2 - Aborting."
+msgstr "無法鎖定 %1：%2 - 放棄。"
+
+#: ../update-menus/update-menus.cc:685
+msgid "Cannot write to lockfile %1 - Aborting."
+msgstr "無法寫入鎖定檔 %1 - 放棄。"
+
+#: ../update-menus/update-menus.cc:698
+msgid "Cannot remove lockfile %1."
+msgstr "無法刪除鎖定檔 %1 。"
+
+#: ../update-menus/update-menus.cc:714
+msgid "Update-menus is run by user."
+msgstr "Update-menus 以用戶權限執行。"
+
+#: ../update-menus/update-menus.cc:798
+msgid ""
+"Waiting for dpkg to finish (forking to background).\n"
+"(checking %1)"
+msgstr ""
+"等待 dpkg 結束 (正 fork 到背景)。\n"
+"(檢查 %1)"
+
+#: ../update-menus/update-menus.cc:801
+msgid "Further output (if any) will appear in %1."
+msgstr "更多的輸出(如果有的話)會出現在 %1。"
+
+#: ../update-menus/update-menus.cc:823
+msgid "Dpkg is not locking dpkg status area, good."
+msgstr "Dpkg 沒有鎖定 dpkg 狀態區，很好。"
+
+#. This is the update-menus --help message
+#: ../update-menus/update-menus.cc:833
+msgid ""
+"Usage: update-menus [options] \n"
+"Gather packages data from the menu database and generate menus for\n"
+"all programs providing menu-methods, usually window-managers.\n"
+"  -d                     Output debugging messages.\n"
+"  -v                     Be verbose about what is going on.\n"
+"  -h, --help             This message.\n"
+"  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to "
+"search.\n"
+"  --menumethod=<method>  Run only the menu method <method>.\n"
+"  --nodefaultdirs        Disable the use of all the standard menu "
+"directories.\n"
+"  --stdout               Output menu list in format suitable for piping to\n"
+"                         install-menu.\n"
+msgstr ""
+"用法：update-menus [options] \n"
+"從選單資料庫中收集套件之料並產生選單給其他所有\n"
+"有選單功能的程式，通常是 Window Manager。\n"
+"  -d                     輸出除錯訊息。\n"
+"  -v                     詳細顯示正在執行的操作。\n"
+"  -h, --help             本訊息。\n"
+"  --menufilesdir=<dir>   加入 <dir> 到要搜尋的選單目錄清單中。\n"
+"  --menumethod=<method>  僅執行選單方法 <method>。\n"
+"  --nodefaultdirs        停用所有的標準選單目錄。\n"
+"  --stdout               以適合透過管道傳送到 install-menu 的方式輸出選單清單。\n"
+
+#. This is the end of the update-menus --help message
+#: ../update-menus/update-menus.cc:845
+msgid "  --version              Output version information and exit.\n"
+msgstr "  --version              輸出版本訊息然後離開。\n"
+
+#: ../update-menus/update-menus.h:149
+msgid ""
+"Unknown install condition \"%1\" (currently, only \"package\" is supported)."
+msgstr "未知的安裝條件 \"%1\" (目前只有支援 \"package\")。"
+
