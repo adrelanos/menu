@@ -1,16 +1,16 @@
 # Menu section translation
 # Copyright (C) 2000-2003 
 # Joost Witteveen <joostje@debian.org>
-#
+# Copyright 2005 MJ Ray <mjr@debian.org>
 msgid ""
 msgstr ""
-"Project-Id-Version: menu 2.1.7-2\n"
+"Project-Id-Version: menu-section 2.1.9-3\n"
 "POT-Creation-Date: 2003-04-03 12:14+0100\n"
-"PO-Revision-Date: 2003-3-06 17:11 +0100\n"
-"Last-Translator: Joost Witteveen <joostje@debian.org>\n"
+"PO-Revision-Date: 2005-05-16 15:11 +0100\n"
+"Last-Translator: MJ Ray <mjr@debian.org>\n"
 "Language-Team: <debian-l10n-esperanto@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 # Automatically generated file. Do not edit (see /usr/share/doc/menu/html/index.html)
@@ -24,24 +24,23 @@ msgstr "Aplikoj"
 #.  Second level entry under "Apps"
 #.  Menu policy definition: interactive database programs
 msgid "Databases"
-msgstr ""
+msgstr "Datumbazoj"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: text editors, word processors
 msgid "Editors"
-msgstr ""
+msgstr "Redaktiloj"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: educational and training programs
-#, fuzzy
 msgid "Education"
-msgstr "Sxajnigo"
+msgstr "Edukiloj"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: wine, dosemu, etc.
 #, fuzzy
 msgid "Emulators"
-msgstr "Sxajnigo"
+msgstr "Ŝajnigiloj"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: image manipulation
@@ -51,7 +50,7 @@ msgstr "Grafikoj"
 #.  Second level entry under "Apps"
 #.  Menu policy definition: anything relating to ham (amateur) radio
 msgid "Hamradio"
-msgstr ""
+msgstr "Radiosendoj"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: math related programs
@@ -70,9 +69,8 @@ msgstr "Programado"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: scientific programs
-#, fuzzy
 msgid "Science"
-msgstr "Ekrano"
+msgstr "Scienco"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: simple apps, like clocks, that perform only one task
@@ -83,22 +81,22 @@ msgstr "Iloj"
 #.  Menu policy definition: technical stuff
 #, fuzzy
 msgid "Technical"
-msgstr "Specialo"
+msgstr "Teknikaĵo"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: text oriented tools other than editors
 msgid "Text"
-msgstr ""
+msgstr "Teksto"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: bash, ksh, zsh, etc.
 msgid "Shells"
-msgstr "Konkoj"
+msgstr "Ŝeloj"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: sound players and editors
 msgid "Sound"
-msgstr "Sono"
+msgstr "Soniloj"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: image viewers
@@ -126,7 +124,7 @@ msgstr "Aventuro"
 #.  Second level entry under "Games"
 #.  Menu policy definition: any game where reflexes count
 msgid "Arcade"
-msgstr ""
+msgstr "Arkadaro"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: games played on a board
@@ -138,25 +136,25 @@ msgstr "Tabulo"
 #.  Menu policy definition: games involving a deck of cards
 #, fuzzy
 msgid "Card"
-msgstr "Tabulo"
+msgstr "Kartoj"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: tests of ingenuity and logic
 #.  one-player games most often...or games which need the player to think..:-)
 #, fuzzy
 msgid "Puzzles"
-msgstr "Enigmo"
+msgstr "Enigmoj"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: Simulations of the real world (Flight
 #.                          Simulators, for example)
 msgid "Simulation"
-msgstr "Sxajnigo"
+msgstr "Simuliloj"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: games derived from "real world" sports
 msgid "Sports"
-msgstr ""
+msgstr "Sporto"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: games involving long term strategic thinking
@@ -173,12 +171,12 @@ msgstr "Tetris-eca"
 #.  Very small things which are often not really games
 #.  Such as Xeyes....
 msgid "Toys"
-msgstr "Ludiloj"
+msgstr "Ludetoj"
 
 #.  First level entry
 #.  Menu policy definition: programs that provide user documentation
 msgid "Help"
-msgstr ""
+msgstr "Helpo"
 
 #.  First level entry
 #.  BE VERY CAREFUL HERE
@@ -195,7 +193,7 @@ msgstr "Ekrano"
 #.  Menu policy definition: programs to lock the screen
 #.  Refers to "Screen" as "Lock the screen"
 msgid "Lock"
-msgstr "Sxlosu"
+msgstr "Ŝlosu"
 
 #.  Second level entry under "Screen"
 #.  Menu policy definition: screen savers
@@ -203,268 +201,56 @@ msgstr "Sxlosu"
 #.  Most often the common word for "Save" as in File/Save
 #.  will NOT be appropriate
 msgid "Save"
-msgstr "Sxparu"
+msgstr "Ŝparu"
 
 #.  Second level entry under "Screen"
 #.  Menu policy definition: things that fill the root window
 #.  will handle things that deal with the screen background, for instance
 msgid "Root-window"
-msgstr ""
+msgstr "Radika Fenstro"
 
 #.  First level entry
 #.  Menu policy definition: X window managers
 #.  Will collect all window managers such as icewm, samfish, twm...
 msgid "WindowManagers"
-msgstr "FenstroKontroliloj"
+msgstr "Fenstrokontroliloj"
 
 #.  Second level entry under "WindowManagers"
 #.  Menu policy definition: window manager modules
 msgid "Modules"
-msgstr ""
+msgstr "Moduloj"
 
 #.  First level entry for all xterm-style apps
 #.  Menu policy definition: xterm and its brethren
 #, fuzzy
 msgid "XShells"
-msgstr "Konkoj"
+msgstr "Ŝelfenstroj"
 
 #. From Apps/System/Admin
 #.  for "System administration"
 msgid "Admin"
-msgstr ""
+msgstr "Administracio"
 
 # Non official sections from WindowMaker
 #. Non official sections from WindowMaker
 msgid "Appearance"
-msgstr ""
+msgstr "Aspekto"
 
 #. Non official sections from WindowMaker
 #, fuzzy
 msgid "WorkSpace"
-msgstr "Spaco"
+msgstr "Laborspaco"
 
 # Frequently used unofficial sections.
 # From Apps/Net/Mozilla Components
 #. Frequently used unofficial sections.
 #. From Apps/Net/Mozilla Components
 msgid "Mozilla Components"
-msgstr ""
+msgstr "Mozila Pecoj"
 
 # From Games/Toys/Teddies
 #. From Games/Toys/Teddies
 #.  as in "Teddy Bear"
 msgid "Teddies"
-msgstr ""
+msgstr "Ursetoj"
 
-#~ msgid "Misc"
-#~ msgstr "Diversaj"
-
-#~ msgid "Emacs 20"
-#~ msgstr "Emacso 20"
-
-#~ msgid "Xedit"
-#~ msgstr "Xedit"
-
-#~ msgid "Oneko (cat) - start"
-#~ msgstr "Oneko (kato) - Eku"
-
-#~ msgid "Oneko (dog) - start"
-#~ msgstr "Oneko (hundo) - komencu"
-
-#~ msgid "Oneko - stop"
-#~ msgstr "Oneko - cxesu"
-
-#~ msgid "Xeyes"
-#~ msgstr "Xokuloj"
-
-#~ msgid "Pixmap"
-#~ msgstr "Pixmap"
-
-#~ msgid "The GIMP"
-#~ msgstr "La GIMP"
-
-#~ msgid "Xcalc"
-#~ msgstr "Xkalk"
-
-#~ msgid "Addressbook"
-#~ msgstr "Adreslibro"
-
-#~ msgid "Mozilla Navigator"
-#~ msgstr "Mozilla Navigilo"
-
-#~ msgid "Netscape"
-#~ msgstr "NetSkapo"
-
-#~ msgid "Communicator(static/4.08) Browser"
-#~ msgstr "Komunikanto(statike/4.08) Foliumilo"
-
-#~ msgid "Communicator(static/4.08) Mail"
-#~ msgstr "Komunikanto(statike/4.08) Retposxto"
-
-#~ msgid "Communicator(static/4.08) News"
-#~ msgstr "Komunikanto(statike/4.08) Novajxo"
-
-#~ msgid "Communicator(static/4.6) Browser"
-#~ msgstr "Komunikanto(statike/4.6) Foliumilo"
-
-#~ msgid "Communicator(static/4.6) Mail"
-#~ msgstr "Komunikanto(statike/4.6) Retposxto"
-
-#~ msgid "Communicator(static/4.6) News"
-#~ msgstr "Komunikanto(statike/4.6) Novajxo"
-
-#~ msgid "Navigator(static/4.08) Browser"
-#~ msgstr "Navigilo(statike/4.08) Foliumilo"
-
-#~ msgid "Pdmenu"
-#~ msgstr "Pdmenuo"
-
-#~ msgid "Dwww-config"
-#~ msgstr "Dwww-adapto"
-
-#~ msgid "Lilo-config"
-#~ msgstr "Lilo-adapto"
-
-#~ msgid "Magicfilter-config"
-#~ msgstr "Magicfilter-adapto"
-
-#~ msgid "gnuplot-config"
-#~ msgstr "gnuplot-adapto"
-
-#~ msgid "gpm-config"
-#~ msgstr "gpm-adapto"
-
-#~ msgid "TinyFugue"
-#~ msgstr "EtaFugxe"
-
-#~ msgid "XDigger"
-#~ msgstr "XFosanto"
-
-#~ msgid "X Gnuchess"
-#~ msgstr "X GnuSxako"
-
-#~ msgid "XBoard"
-#~ msgstr "XTabulo"
-
-#~ msgid "Jewel Box"
-#~ msgstr "Perla Skatolo"
-
-#~ msgid "Flip Screen"
-#~ msgstr "Turnigu Ekranon"
-
-#~ msgid "Meltdown"
-#~ msgstr "SubenFandu"
-
-#~ msgid "Assorted"
-#~ msgstr "Diversaj"
-
-#~ msgid "Fractal"
-#~ msgstr "Fraktalo"
-
-#~ msgid "Geometry"
-#~ msgstr "Geometrio"
-
-#~ msgid "NoseMessage"
-#~ msgstr "NazoMesagxoj"
-
-#~ msgid "Ball"
-#~ msgstr "Pilko"
-
-#~ msgid "Bat"
-#~ msgstr "Vesperto"
-
-#~ msgid "Clock"
-#~ msgstr "Horlogxo"
-
-#~ msgid "Crystal"
-#~ msgstr "Kristalo"
-
-#~ msgid "Daisy"
-#~ msgstr "Lekanteto"
-
-#~ msgid "Dclock"
-#~ msgstr "Dhorlogxo"
-
-#~ msgid "Eyes"
-#~ msgstr "Okuloj"
-
-#~ msgid "Flag"
-#~ msgstr "Flago"
-
-#~ msgid "Image"
-#~ msgstr "Bildo"
-
-#~ msgid "Maze"
-#~ msgstr "Labirinto"
-
-#~ msgid "Nose"
-#~ msgstr "Nazo"
-
-#~ msgid "Pyro"
-#~ msgstr "FajroLudo"
-
-#~ msgid "Pyro3d"
-#~ msgstr "FajroLudo3d"
-
-#~ msgid "Roll"
-#~ msgstr "Ruli"
-
-#~ msgid "Slip"
-#~ msgstr "Joro"
-
-#~ msgid "Swarm"
-#~ msgstr "Svarmo"
-
-#~ msgid "Worm"
-#~ msgstr "Vermo"
-
-#~ msgid "Worm3d"
-#~ msgstr "Vermo3d"
-
-#~ msgid "Ant"
-#~ msgstr "Formiko"
-
-#~ msgid "Bee"
-#~ msgstr "Abelo"
-
-#~ msgid "Bug"
-#~ msgstr "Cimo"
-
-#~ msgid "Demon"
-#~ msgstr "Demono"
-
-#~ msgid "Dilemma"
-#~ msgstr "Dilemo"
-
-#~ msgid "Life"
-#~ msgstr "Vivo"
-
-#~ msgid "Life1d"
-#~ msgstr "Vivo1d"
-
-#~ msgid "Life3d"
-#~ msgstr "Vivo3d"
-
-#~ msgid "Loop"
-#~ msgstr "Rundiro"
-
-#~ msgid "Random"
-#~ msgstr "Hazarde"
-
-#~ msgid "Wire"
-#~ msgstr "Sxnuro"
-
-#~ msgid "Flame"
-#~ msgstr "Flamo"
-
-#~ msgid "Forest"
-#~ msgstr "Arbaro"
-
-#~ msgid "Hop"
-#~ msgstr "Salto"
-
-#~ msgid "Lightning"
-#~ msgstr "Fulmo"
-
-#~ msgid "Mountain"
-#~ msgstr "Monto"
