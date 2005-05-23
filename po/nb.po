@@ -17,7 +17,6 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../install-menu/functions.cc:92
-#, fuzzy
 msgid "Zero-size argument to print function."
 msgstr "Argument for utskriftsfunksjonen har nullstørrelse"
 
