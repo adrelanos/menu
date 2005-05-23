@@ -213,7 +213,7 @@ msgstr "Radika Fenstro"
 #.  Menu policy definition: X window managers
 #.  Will collect all window managers such as icewm, samfish, twm...
 msgid "WindowManagers"
-msgstr "Fenstrokontroliloj"
+msgstr "Fenstroregiloj"
 
 #.  Second level entry under "WindowManagers"
 #.  Menu policy definition: window manager modules
