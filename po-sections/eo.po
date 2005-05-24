@@ -38,7 +38,6 @@ msgstr "Edukiloj"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: wine, dosemu, etc.
-#, fuzzy
 msgid "Emulators"
 msgstr "Ŝajnigiloj"
 
@@ -79,7 +78,6 @@ msgstr "Iloj"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: technical stuff
-#, fuzzy
 msgid "Technical"
 msgstr "Teknikaĵo"
 
@@ -134,14 +132,12 @@ msgstr "Tabulo"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: games involving a deck of cards
-#, fuzzy
 msgid "Card"
 msgstr "Kartoj"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: tests of ingenuity and logic
 #.  one-player games most often...or games which need the player to think..:-)
-#, fuzzy
 msgid "Puzzles"
 msgstr "Enigmoj"
 
@@ -222,7 +218,6 @@ msgstr "Moduloj"
 
 #.  First level entry for all xterm-style apps
 #.  Menu policy definition: xterm and its brethren
-#, fuzzy
 msgid "XShells"
 msgstr "Ŝelfenstroj"
 
@@ -237,7 +232,6 @@ msgid "Appearance"
 msgstr "Aspekto"
 
 #. Non official sections from WindowMaker
-#, fuzzy
 msgid "WorkSpace"
 msgstr "Laborspaco"
 
