@@ -1,9 +1,14 @@
-menu (2.1.24) unstable; urgency=low
+menu (2.1.24) unstable; urgency=medium
 
-  * The "unreleased" release 
+  * The "head or tail" release 
   * Fix .menus typo in menufile.5. Closes: #306564. Thanks Sean Finney.
+  * Add Vietnamese menu messages and menu sections translations.
+    Thanks Clytie Siddall. Closes: #307450, #308953.
+  * Update Esperanto menu sections translation. Thanks MJ Ray.
+  * Add Esperanto menu messages translation. Thanks MJ Ray.
+  * Unfuzzy Norwegian Bokmål menu messages translation.
   
- -- Bill Allombert <ballombe@debian.org>  Thu, 24 Mar 2005 20:08:17 +0100
+ -- Bill Allombert <ballombe@debian.org>  Tue, 24 May 2005 10:34:47 +0200
 
 menu (2.1.23) unstable; urgency=low
 
