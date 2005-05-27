@@ -1,3 +1,9 @@
+menu (2.1.25) unstable; urgency=low
+
+  * The "unreleased" release 
+
+ -- Bill Allombert <ballombe@debian.org>  Tue, 24 May 2005 13:02:33 +0200
+
 menu (2.1.24) unstable; urgency=medium
 
   * The "head or tail" release 
