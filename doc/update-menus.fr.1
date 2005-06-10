@@ -26,7 +26,7 @@ sera automatiquement lancé dès qu'un paquet Debian contenant des fichiers
 de menus sera installé ou supprimé du système.
 .PP
 .I update-menus
-utilise les fichiers de menu fournis par le paquet (dans /usr/lib/menu)
+utilise les fichiers de menu fournis par le paquet (dans /usr/share/menu)
 pour obtenir ses informations concernant les menus (mais l'administrateur du
 système ou un utilisateur peuvent modifier ce comportement, voir plus loin).
 Si le fichier de menu est exécutable,
@@ -62,7 +62,7 @@ Il y a plusieurs façons de régler le fonctionnement d'update-menus\ :
 .RS
 Dans ce répertoire, l'administrateur système ou l'utilisateur peut passer
 outre les réglages par défaut (lorsqu'un fichier /etc/menu/$paquet existe,
-le fichier /usr/lib/menu/$paquet n'est plus consulté). Un utilisateur
+le fichier /usr/share/menu/$paquet n'est plus consulté). Un utilisateur
 qui veut modifier le réglage par défaut du système placera ses fichiers
 dans le répertoire ~/.menu. Voir aussi
 .BR menufile (5)
@@ -125,15 +125,17 @@ Fichiers de menu ajoutés par l'administrateur système.
 .RE
 .I /usr/lib/menu/*
 .RS
-Fichiers de menu fournis par d'autres paquets Debian.
+Fichiers de menu (dépendant de l'architecture) fournis par d'autres paquets
+Debian.
+.RE
+.I /usr/share/menu/*
+.RS
+Fichiers de menu (indépendant de l'architecture) fournis par d'autres paquets
+Debian.
 .RE
 .I /usr/share/menu/default/*
 .RS
-Fichiers de menu fournis par le paquet menu. (Ils existent pour les
-paquets qui ne fournissent pas encore de menu. Si vous voyez (ou maintenez) un
-paquet qui offre un fichier de menu dans /usr/lib/menu/, 
-écrivez-moi s'il vous plaît, et je retirerai son équivalent de
-/usr/share/menu/default/).
+Fichiers de menu fournis par le paquet menu. 
 .RE
 .RE
 Fichiers de génération de menu (menu methods):
@@ -157,7 +159,7 @@ Permet aux utilisateurs d'outrepasser le comportement par défaut de
 .RE
 .RE
 .SH DISTRIBUTION
-La distribution est soumise à la licence publique GNU.
+La distribution est soumise à la Licence Publique Générale GNU.
 .SH BOGUES
 .I update-menus
 peut connaître des dysfonctionnements quand il est invoqué par un simple 
@@ -169,9 +171,10 @@ envoyez-moi un courrier à <menu@packages.debian.org>. Cela doit parfaitement
 fonctionner pour fvwm et fvwm2\ : je teste d'abord le paquet en tant que simple
 utilisateur.
 .PP
-.SH AUTEUR 
+.SH AUTEURS
 Joost Witteveen <joostje@debian.org>, sur une idée originale de
-Lars Wirzenius <liw@iki.fi>
+Lars Wirzenius <liw@iki.fi>. Actuellement maintenu par
+Bill Allombert <ballombe@debian.org>.
 .SH REMERCIEMENTS
 À Joey Hess, pour toutes ses bonnes idées et le test de la pré-version, et à
 Tom Lees pour son update-menus en C natif (dont je n'ai utilisé qu'une fonction,

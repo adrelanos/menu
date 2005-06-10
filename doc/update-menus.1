@@ -24,7 +24,7 @@ will be ran automatically when Debian packages that contain menu
 files are installed or removed from the system.
 .PP
 .I update-menus
-uses the package-supplied menu entry files (in /usr/lib/menu) for
+uses the package-supplied menu entry files (in /usr/share/menu) for
 its information about the menus (but this can be overruled by the
 system administrator/user, see below). If a menu entry file is executable,
 .I update-menus
@@ -56,7 +56,7 @@ There are several ways to tune the operation of update-menus:
 .RS
 In these directory the system administrator or user can override the default
 menu files. (if a file /etc/menu/$package exists, than the
-corresponding /usr/lib/menu/$package file isn't read any more). Users
+corresponding /usr/share/menu/$package file isn't read any more). Users
 who want to override the system wide defaults put their files in
 ~/.menu. See also 
 .BR menufile(5)
@@ -116,14 +116,15 @@ Menu files added by the system administrator.
 .RE
 .I /usr/lib/menu/*
 .RS
-Menu files provided by other Debian packages.
+Architecture-dependant menu files provided by other Debian packages.
+.RE
+.I /usr/share/menu/*
+.RS
+Architecture-independant menu files provided by other Debian packages.
 .RE
 .I /usr/share/menu/default/*
 .RS
-Menu files provided by the menu package. (These are for packages that
-don't provide menu entries yet. If you see (or maintain) a package that
-supplies a menu file in /usr/lib/menu/, please email me and I'll remove
-that menu file from /usr/share/menu/default/).
+Menu files provided by the menu package. 
 .RE
 .RE
 Menu methods:
@@ -147,7 +148,7 @@ any more.
 .RE
 .RE
 .SH DISTRIBUTION
-Distribution is subject to the GNU public license.
+Distribution is subject to the GNU General Public License.
 .SH BUGS
 .I update-menus
 may not work properly when run by a normal user, to generate menus for that
@@ -157,9 +158,10 @@ in /etc/menu-methods). If you see such a thing, and you find a
 solution, please mail <menu@packages.debian.org>. It should work OK for
 fvwm and fvwm2: I usually test the package first as an ordinary user.
 .PP
-.SH AUTHOR 
+.SH AUTHORS
 Joost Witteveen <joostje@debian.org>, original idea by
-Lars Wirzenius <liw@iki.fi>
+Lars Wirzenius <liw@iki.fi>. Now maintained by 
+Bill Allombert <ballombe@debian.org>.
 .SH THANKS
 To Joey Hess, for a lot of good ideas and pre-release testing, and to
 Tom Lees for a update-menus in pure C (of which I only used one
