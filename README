@@ -5,7 +5,7 @@ menu is a menu-generator originally made for Debian. It provides an
 update-menus program to generate menus for different providers of menus
 (both window managers and console applications like pdmenu).
 
-Menu files are placed in /usr/lib/menu by packages. update-menus then reads
+Menu files are placed in /usr/share/menu by packages. update-menus then reads
 these files and passes them to install-menu which generates a menu specified
 by a menu-method (placed in /etc/menu-method).
 
