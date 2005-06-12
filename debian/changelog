@@ -1,15 +1,22 @@
 menu (2.1.25) unstable; urgency=low
 
-  * The "unreleased" release
-  * Correct extra space before exclamation mark before a program message
-    Translations unfuzzied assumign that translators know about their own
-    language typography
-  * Programs translations
-    - German updated
-  * Menu sections translations
-    - German updated. Closes: #312852
+  * The "Welcome to Etch" release 
+  * Documentation changes-only upload to transition from /usr/lib/menu
+    to /usr/share/menu. Sarge menu support both locations already,
+    /usr/lib/menu havinghigher priority than /usr/share/menu.
+    Closes: #92428. Thanks Jochen Voss.
+  * debian/rules: Move README from /usr/lib/menu to /usr/share/menu.
+  * debian/control: Rewrite package description.
+  * Clean up manpages.
+  * Update Portuguese menu sections translation. 
+    Thanks Miguel Figueiredo. Closes: #311308.
+  * Remove gpm default menu entry. Closes: #187728.
+  * Changes by Christian Perrier:
+    - Correct extra space before exclamation mark before a program message
+    - Update german menu messages and sections translations. 
+      Thanks Jens Seidel. Closes: #312852
 
- -- Christian Perrier <bubulle@debian.org>  Sun, 12 Jun 2005 15:16:54 +0200
+ -- Bill Allombert <ballombe@debian.org>  Sun, 12 Jun 2005 18:57:18 +0200
 
 menu (2.1.24) unstable; urgency=medium
 
