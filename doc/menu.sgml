@@ -18,7 +18,7 @@
 <version>version 1.4, <date>
 
 <abstract>
-The <tt/menu/ package was inspired by the <tt/install-fvwm2-menu/
+The <tt/menu/ package was inspired by the <prgn/install-fvwm2-menu/
 program from the old <prgn/fvwm2/ package. However, <tt/menu/ tries to
 provide a more general interface for menu building.  With the
 <prgn/update-menus/ command from this package, no package needs to be
@@ -43,11 +43,11 @@ General Public License for more details.
 <p>
 
 A copy of the GNU General Public License is available as
-<tt>/usr/share/common-licenses/GPL</tt> in the Debian GNU/Linux distribution
-or on the World Wide Web at
+<file>/usr/share/common-licenses/GPL</file> in the Debian GNU/Linux
+distribution or on the World Wide Web at
 <tt>http://www.gnu.org/copyleft/gpl.html</tt>. You can also obtain it
-by writing to the Free Software Foundation, Inc., 675 Mass Ave,
-Cambridge, MA 02139, USA.
+by writing to the Free Software Foundation, Inc., 
+51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 <p>
 
 <toc sect>
@@ -55,10 +55,10 @@ Cambridge, MA 02139, USA.
 <chapt>Introduction
 <p>
 
-Before  the  advent  of  <tt/update-menus/,  when  the sysadmin
+Before  the  advent  of  <prgn/update-menus/,  when  the sysadmin
 installed a package onto a Debian system, they would  need
 to  edit  various  window manager config files to make the
-new program show up on, for  example,  <tt/fvwm/'s  menus.  The
+new program show up on, for  example,  <prgn/fvwm/'s  menus.  The
 menus  could  easily become out of sync with what programs
 were actually available, with some menu items that  didn't
 work,  and  other  programs  that  lacked  a  menu  entry.
@@ -66,13 +66,13 @@ update-menus and Debian's menu package aim to  solve  this
 problem.
 <p>
 
-<tt/update-menus/  automatically  generates  menus of installed
+<prgn/update-menus/  automatically  generates  menus of installed
 programs for window managers and other menu  programs.  It
 should  be  run whenever a menu file or menu-method file
-is changed.  <tt/update-menus/ will be ran  automatically  when
+is changed.  <prgn/update-menus/ will be ran  automatically  when
 Debian  packages  that contain menu files are installed or
 removed from the system. Users themselves can add/delete menu items,
-and should then run <tt/update-menus/ as that user, thus creating
+and should then run <prgn/update-menus/ as that user, thus creating
 window-manager startup files that are used in preference to the
 systemwide files.
 <p>
@@ -95,9 +95,9 @@ variables (see paragraph below, or the hints chapter).
 <p>
 
 Each package that needs to add an entry to the menu tree, 
-includes a menu file <tt>/usr/lib/menu/package-name</tt>. In
+includes a menu file <file>/usr/share/menu/package-name</file>. In
 this file, it will have one line per menu entry, like this (copied
-from <tt>/usr/lib/menu/xbase</tt>):
+from <file>/usr/share/menu/xbase</file>):
 <example>
    ?package(xbase):command="/usr/bin/X11/xedit" needs="X11" \
                 section="Apps/Editors" title="Xedit" \
@@ -113,9 +113,9 @@ subsection.
 <p>
 
 Whenever <tt/root/ runs <prgn/update-menus/, it will check all
-menu files in <tt>/etc/menu</tt> and <tt>/usr/lib/menu</tt>,
-and run the installation scripts that display managers like <prgn/fvwm2/
-should provide in <tt>/etc/menu-methods</tt>.
+menu files in <file>/etc/menu</file>, <file>/usr/lib/menu</file>, 
+<file>/usr/share/menu</file>, and run the installation scripts that display
+managers like <prgn/fvwm2/ should provide in <file>/etc/menu-methods</file>.
 <p>
 
 The menu package itself provides a set of default menu files,
@@ -145,19 +145,20 @@ Basically, you as user don't need to know any of how and when the
 startupfiles are created, but you might be interested to know anyway.
 <p>
 When a package that wants to add something to the menu tree gets
-installed, it will run <tt/update-menus/ in its <tt/postinst/ script.
-Update-menus then reads in all menu files in <tt>/etc/menu/</tt>
-<tt>/usr/lib/menu</tt> and <tt>/usr/share/menu/default</tt>, and stores
-the menu entries of all installed packages in memory. Once that has
-been done, it will run the menu-methods in
-<tt>/etc/menu-methods/*</tt>, and pipe the information about the menu
+installed, it will run <prgn/update-menus/ in its <file/postinst/ script.
+Update-menus then reads in all menu files in <file>/etc/menu/</file>
+<file>/usr/lib/menu</file>, <file>/usr/share/menu</file> and
+<file>/usr/share/menu/default</file>, and stores the menu entries of all
+installed packages in memory. Once that has been done, it will run the
+menu-methods in
+<file>/etc/menu-methods/*</file>, and pipe the information about the menu
 entries to the menu-methods on stdout, so that the menu-methods can
-read this. Each Window Manager or other program that wants to have
+read this. Each window-manager or other program that wants to have
 the Debian menu tree, will supply a menu-method script in
-<tt>/etc/menu-methods/</tt>. This menu-method then knows how to
+<file>/etc/menu-methods/</file>. This menu-method then knows how to
 generate the startup-file for that window manager. To facilitate this
 task for the window-manager maintainers, menu provides a
-<tt>install-menu</tt> program. This program can generate the
+<prgn>install-menu</prgn> program. This program can generate the
 startupfiles for just about every window manager.
 
 <sect> Tuning of the generated window manager startup files
@@ -167,15 +168,15 @@ In principle this is a very window-manager specific business.
 But for all window managers (and others) applies:
 <p>
 The file to attack is the menu-method in 
-<tt>/etc/menu-methods/$wm</tt>, with <tt/$wm/ the
+<file>/etc/menu-methods/$wm</file>, with <tt/$wm/ the
 name of your window manager. However, if this menu-method
-<tt/!include/-s the <tt/menu.h/ file (as it should), you can also edit
+<tt/!include/-s the <file/menu.h/ file (as it should), you can also edit
 that file, to make your changes work for every installed window
 manager.
 <p>
 If the menu-method file of your window manager does <tt/!include/ the
-<tt/menu.h/ file, and makes proper use of the definitions in there,
-then you can look at the comments in that <tt/menu.h/ file to see how
+<file/menu.h/ file, and makes proper use of the definitions in there,
+then you can look at the comments in that <file/menu.h/ file to see how
 you can make minor adjustments to the look of your menus in your
 window manager.
 <p>
@@ -199,7 +200,9 @@ variables, see the hint_* variables in the last chapter.
 <p>
 <sect> Location
 <p>
-Packages provided menu files should be in <file>/usr/lib/menu/</file>.
+Packages-provided menu files should be in <file>/usr/share/menu/</file>,
+unless the menu files are actually executable binaries, in which case they go
+in <file>/usr/lib/menu/</file>.
 System-local menu files should be in <file>/etc/menu/</file>.
 User-specific menu files should be in <file>~/.menu/</file>
 <sect> Syntax
@@ -365,7 +368,7 @@ system. So, if you want to have an icon with your menu entry, the
 preferred method is to supply the icon with that package. Also, to
 prevent the distribution of icons files to turn too much into a mess,
 please put all icon files in the directory
-<tt>/usr/share/pixmaps</tt>.
+<file>/usr/share/pixmaps</file>.
 <p>
 
 Debian package maintainers should ensure that any icons they include
@@ -385,7 +388,7 @@ and icon32x32 so that the user can configure menu to use one or the other.
 
 If you, as a system administrator, don't like the icons in the menus, simply
 change the <tt/icon()/ function from the file
-<tt>/etc/menu-methods/menu.h</tt>, and run <prgn/update-menus/.
+<file>/etc/menu-methods/menu.h</file>, and run <prgn/update-menus/.
 <p>
 
 <sect> The <tt/hints/ field
@@ -408,7 +411,7 @@ together with other editors that are marked similar. For example, if
 there are too many entries in the /Apps/Editors menuentry, then menu
 will consider creating a /Apps/Editors/Expert submenu, and put both
 <tt/vi/ and <tt/emacs/ in it. (of course, only if you have 
-<tt/hint_optimize=true/ in your <tt>/etc/menu-methods/menu.h</tt> file).
+<tt/hint_optimize=true/ in your <file>/etc/menu-methods/menu.h</file> file).
 
 <sect> Entries for menu sections.
 <p>
@@ -472,7 +475,7 @@ leave everything the same except those listed below.
 <sect> Providing a menu file
 <p>
 A package should provide a menu file
-<tt>/usr/lib/menu/&lt;package-name&gt;</tt> that contains
+<file>/usr/share/menu/&lt;package-name&gt;</file> that contains
 information about each program it likes to make available in the
 menus.
 <p>
@@ -482,7 +485,7 @@ You should add a line like this to your <tt/postinst/ script
 <example>
  if test -x /usr/bin/update-menus; then update-menus; fi
 </example>
-and the <tt/postrm/ script should get the line
+and the <file/postrm/ script should get the line
 <example>
  if test -x /usr/bin/update-menus; then update-menus; fi
 </example>
@@ -494,17 +497,17 @@ and the <tt/postrm/ script should get the line
 
 Each package containing a <em/menu manager/ (i.e. a program that can
 display a menu) should provide a script or program in
-<tt>/etc/menu-methods/</> that can read the menu files. This script
+<file>/etc/menu-methods/</> that can read the menu files. This script
 will be executed by <prgn/update-menus/, which will feed the menu
 entries to be installed to your script via standard input (stdin).
 <p>
 
-The scripts in <tt>/etc/menu-methods/</> should be configuration
+The scripts in <file>/etc/menu-methods/</> should be configuration
 files, so the user can tune the behaviour of the script, and they must always
-include the <tt>/etc/menu-methods/menu.h</> configuration file at the beginning
+include the <file>/etc/menu-methods/menu.h</> configuration file at the beginning
 with the command <tt>!include menu.h</>
 
-For the same reason, scripts in <tt>/etc/menu-methods/</> are requested
+For the same reason, scripts in <file>/etc/menu-methods/</> are requested
 to use the following configurable functions:
 
 <tt/title()/ for the title (in place of <tt/$title/),
@@ -516,7 +519,7 @@ available. This later one is only defined if you <tt>!include lang.h</tt>
 
 Good examples for these scripts for nearly all Debian window managers
 are included in the <tt/menu/ package in
-<tt>/usr/share/doc/menu/examples</tt>. Note that while working on your script,
+<file>/usr/share/doc/menu/examples</file>. Note that while working on your script,
 you can use the tricks described in "The internals of the menu
 package", section "The update-menus program", to run just your script,
 instead of having update-menus run all scripts (can save quite a lot
@@ -528,11 +531,11 @@ the <tt/postinst/ should add the execute bit and then run
 <prgn/update-menus/ (if it is executable).
 <p>
 
-Similarly, the <tt/postrm/ script when called with option ``remove'' should
+Similarly, the <file/postrm/ script when called with option ``remove'' should
 remove the execute bit and run <prgn/update-menus/ (if it is executable).
 <p>
 
-Here is an example of such a <tt/postrm/ script using <prgn/sh/:
+Here is an example of such a <file/postrm/ script using <prgn/sh/:
 <example>
   #!/bin/sh
   set -e
@@ -556,7 +559,7 @@ Here is an example of such a <tt/postrm/ script using <prgn/sh/:
   esac
 </example>
 
-And here is a good example for a <tt/postinst/ script:
+And here is a good example for a <file/postinst/ script:
 <example>
   #!/bin/sh
   set -e
@@ -573,7 +576,7 @@ And here is a good example for a <tt/postinst/ script:
 <p>
 <var>
  Previous version of menu were advertising the script
- <tt>/usr/sbin/wm-menu-config</tt>. There was a flaw: this script
+ <file>/usr/sbin/wm-menu-config</file>. There was a flaw: this script
  was only available when menu is installed and so the menu-method
  script was not executable if menu was installed afterward.
  </var><p><var>
@@ -595,7 +598,7 @@ defaults for systems without menu will make life very difficult for you.
 <sect>Configuring the menus
 <p>
 
-A user can specify his/her own menu entries in the <tt>~/.menu</> directory.
+Users can specify their own menu entries in the <file>~/.menu</> directory.
 The files can have an arbitrary file name as long as the new syntax
 for the menu entries is used. They should start with either
 <example>
@@ -610,22 +613,22 @@ if it's something that isn't ``debian-officially'' installed. (Any
 <p>
 
 If a user wants to have his/her own menu methods, he/she should create
-a <tt>~/.menu-methods</> directory and put all scripts he/she wants to
-be run in it. (If <tt>~/.menu-methods</> exists,
-<tt>/etc/menu-methods</> will not be searched when a user runs
+a <file>~/.menu-methods</> directory and put all scripts he/she wants to
+be run in it. (If <file>~/.menu-methods</> exists,
+<file>/etc/menu-methods</> will not be searched when a user runs
 <prgn/update-menus/).
 <p>
 
 A system administrator should place system-wide menu entries in
-<tt>/etc/menu</> (not in <tt>/usr/lib/menu/package</>, since these
+<file>/etc/menu</> (not in <file>/usr/share/menu/package</>, since these
 files will probably be overwritten by a package upgrade).
 <p>
 
 <sect>Specifying that a menu entry should not be displayed
 <p>
 
-If a user wants to remove the entries of <tt/package/ from the system menu (in
-<tt>/usr/lib/menu</>), then this will do the trick:
+If a user wants to remove the entries of <tt/package/ from the system menu then
+this will do the trick:
 <example>
   echo -n  > ~/.menu/package
 </example>
@@ -653,20 +656,20 @@ menu files. Well, actually, it was already possible, but not very well
 documented. 
 </var>
 <p>
-To include the contents of file /usr/lib/menu/somefile,
+To include the contents of the file <file>/usr/share/menu/somefile</>,
 add this to your menu file:
 
 <example>
-!include /usr/lib/menu/somefile
+!include /usr/share/menu/somefile
 </example>
 
 Apart form that, it is of course possible to make the menu entry file
 executable (<tt>chmod a+x ~/.menu/package</>), and do something like
 <example>
 #!/bin/sh
-cat  /usr/lib/menu/somefile
+cat  /usr/share/menu/somefile
 sed -e  "/unwanted_entry/s/?package(/?package(notinstalled./" \
-     /usr/lib/menu/someotherfile
+     /usr/share/menu/someotherfile
 </example>
 to get the same effect, with the added flexibility of being able to
 filter out unwanted lines.
@@ -678,18 +681,18 @@ filter out unwanted lines.
 <p>
 
 On startup, update-menus checks the file
-<tt>/var/run/update-menus.pid</> and the pid in it. If there's an
+<file>/var/run/update-menus.pid</> and the pid in it. If there's an
 <prgn/update-menus/ process with that pid it kills it.
-If <tt>/var/lib/dpkg/lock</> exists, it forks to background and
+If <file>/var/lib/dpkg/lock</> exists, it forks to background and
 returns control to dpkg. The background process checks the
-<tt>/var/lib/dpkg/lock</> file approx. every second until the file's
+<file>/var/lib/dpkg/lock</> file approx. every second until the file's
 gone. 
 <p>
 
 After that, <prgn/update-menus/ reads the menu-entry-files in
-the following directories:<tt> /etc/menu /usr/lib/menu /usr/share/menu/default
-</>
-(if a user runs <prgn/update-menus/, it will add ~/.menu to the
+the following directories: <file>/etc/menu</>, <file>/usr/lib/menu</>,
+<file>/usr/share/menu</>, <file>/usr/share/menu/default</>.
+(if a user runs <prgn/update-menus/, it will add <file>~/.menu</> to the
 front of that list). For every menu entry line in each file it checks
 if the corresponding package is installed (works on file bases for old
 syntax menu entry files). The menu entries of all "installed" packages
@@ -698,25 +701,24 @@ executable menu entry files are executed, and stdout is placed in
 the buffer). 
 <p>
 Once it's read all menu entry files, <prgn/update-menus/ starts all
-executable scripts in /etc/menu-methods/, hands the scripts the
+executable scripts in <file>/etc/menu-methods/</>, hands the scripts the
 previously created buffer via stdin. (If <prgn/update-menus/ is ran by
-a user, it will first try to run the scripts in ~/.menu-methods, and
+a user, it will first try to run the scripts in <file>~/.menu-methods</>, and
 only if that directory doesn't exist, it will run the scripts in
-/etc/menu-methods). 
+<file>/etc/menu-methods</>). 
 <p>
 
 Note that as an aid to debugging, one can use
 <example>
 update-menus --stdout > /tmp/menu-stdin
 </example>
-and then view the file /tmp/menu-stdin to see exactly what
-<tt/update-menus/ handed the menu-methods on their stdin.
+and then view the file <file>/tmp/menu-stdin</> to see exactly what
+<prgn/update-menus/ handed the menu-methods on their stdin.
 <p>
 
-This may also be useful for people
-writing /etc/menu-method/* scripts: Running <prgn/update-menus/ every
-time you changed something in the script may be quite
-time-consuming. So, it's much easier to run 
+This may also be useful for people writing <file>/etc/menu-method/*</> scripts:
+Running <prgn/update-menus/ every time you changed something in the script may
+be quite time-consuming. So, it's much easier to run 
 <prgn/update-menus --stdout/ once, and then run
 <example>
   /etc/menu-methods/mymethod < /tmp/menu-stdin
@@ -727,7 +729,7 @@ and removing 90% or so of all entries)
 <sect>The install-menu program
 <p>
 
-The files <tt>/etc/menu-methods/$wm</> are executable config
+The files <file>/etc/menu-methods/$wm</> are executable config
 files that start with the line
 <example>
   #!/usr/sbin/install-menu
@@ -741,7 +743,7 @@ configuration consists of:
 <item>what "needs" are supported, and what wrapper files should
    be used for each "type".
 </enumlist>
-See <tt>/usr/share/doc/menu/examples/</> of the menu package for more
+See <file>/usr/share/doc/menu/examples/</> of the menu package for more
 comments.
 <p>
 
@@ -752,18 +754,16 @@ Options to <prgn/install-menu/:
 </example>
 <p>
 
-Some window managers don't support an `include' like statement in
-their <tt/system.*rc/ files (like <prgn/m4/ or <prgn/cpp/
-preprocessing), they cannot read the <tt/menudefs.hook/ file generated
-by install-menu from their
-<tt/system.*rc/ config file. To still be able to use them,
-<prgn/install-menu/ will copy the file
-<tt>$path/$examplercfile</tt> to <tt>$path/$rcfile</tt> (with 
-<tt/$examplercfile/ and <tt/$rcfile/ defined in the
-<prgn/install-menu/ config file, and <tt/$path/ either the
-<tt/$rootprefix/ or <tt>${HOME}/$userprefix</tt>, depending on whether root
-or user executed the file.), and replace all occurrences of
-``install-menu-defs'' with the <tt/$genmenu/ file it just
+Some window managers don't support an `include' like statement in their
+<file/system.*rc/ files (like <prgn/m4/ or <prgn/cpp/ preprocessing), they
+cannot read the <file/menudefs.hook/ file generated by install-menu from their
+<file/system.*rc/ config file. To still be able to use them,
+<prgn/install-menu/ will copy the file <file>$path/$examplercfile</file> to
+<file>$path/$rcfile</file> (with <file/$examplercfile/ and <file/$rcfile/
+defined in the <prgn/install-menu/ config file, and <file/$path/ either the
+<file/$rootprefix/ or <file>${HOME}/$userprefix</file>, depending on whether
+root or user executed the file.), and replace all occurrences of
+``install-menu-defs'' with the <file/$genmenu/ file it just
 generated. 
 <p>
 As an example, consider the following:
@@ -771,27 +771,26 @@ As an example, consider the following:
 <tt>rcfile=system.foo-wm</tt>, <tt>genmenu=menudefs.hook</tt> and
 <tt>rootprefix=/etc/X11/foo-wm</tt>. Now, if <prgn/install-menu/ gets run, it
 will first generate the file
-<tt>/etc/X11/foo-wm/menudefs.hook</tt>. Next, it will line-by-line 
-read the file <tt>/etc/X11/foo-wm/system.foo-wm-example</tt> and copy
-it's contents to <tt>/etc/X11/foo-wm/system.foo-wm</tt>, replacing
+<file>/etc/X11/foo-wm/menudefs.hook</file>. Next, it will line-by-line 
+read the file <file>/etc/X11/foo-wm/system.foo-wm-example</file> and copy
+it's contents to <file>/etc/X11/foo-wm/system.foo-wm</file>, replacing
 every occurrence of the string <tt>install-menu-defs</tt> by the
 contents
-of the file <tt>/etc/X11/foo-wm/menudefs.hook</tt>. 
+of the file <file>/etc/X11/foo-wm/menudefs.hook</file>. 
 <p>
 
-To activate the file copying in this way, simply define the
-<tt/$examplercfile/ and <tt/$rcfile/ variables in the
-<prgn/install-menu/ configuration file
-(for example, see <tt>/etc/menu-methods/fvwm</tt>), and make sure there is a
-<tt>$path/$examplercfile</> (<tt>$path</> being either
-<tt/$rootprefix/, or <tt/$userprefix/.)
+To activate the file copying in this way, simply define the <tt/$examplercfile/
+and <tt/$rcfile/ variables in the <prgn/install-menu/ configuration file (for
+example, see <file>/etc/menu-methods/fvwm</file>), and make sure there is a
+<file>$path/$examplercfile</> (<tt>$path</> being either <tt/$rootprefix/, or
+<file/$userprefix/.)
 <p>
 
-If you are wringing a menu method, you can use the following to
-debug it somewhat easier:
+If you are writing a menu method, you can use the following to make
+debugging it somewhat easier:
 <enumlist>
 <item>use <tt>update-menus --stdout > /tmp/menu-stdin </tt>
-to create a list of menu entries in <tt>/tmp/menu-stdin</tt>
+to create a list of menu entries in <file>/tmp/menu-stdin</file>
 and then
 <item>you can run just your menu-method with (if it's called wm):
 <example>
@@ -805,10 +804,10 @@ of output!)
 <sect>The install-menu config script definitions
 <p>
 
-The menu-methods in <tt>/etc/menu-methods/*</> are basically made up of
+The menu-methods in <file>/etc/menu-methods/*</> are basically made up of
 a lot of ``tag=string'' definitions, explaining <prgn/install-menu/
-how to generate a <tt/system.$wmrc/ script. This way you can tune
-the look of generated <tt/system.$wmrc/ to your needs.
+how to generate a <file/system.$wmrc/ script. This way you can tune
+the look of generated <file/system.$wmrc/ to your needs.
 <p>
 
 In the following, something like 
@@ -819,7 +818,7 @@ means that the treewalk variable by default has the value "c(m)".
 <p>
 
 For examples of what these scripts can look like, see
-<tt>/usr/share/doc/menu/examples/*</>.
+<file>/usr/share/doc/menu/examples/*</>.
 <p>
 
 <taglist>
@@ -914,7 +913,7 @@ the prefix, every <tt/$section/ variable gets.
 <tag><tt/postrun=""/
 <item>
 The commands to run before resp. after the actual generation of the
-<tt/menudefs.hook/ (genmenu) file. Commands will be executed by <prgn/sh/.
+<file/menudefs.hook/ (genmenu) file. Commands will be executed by <prgn/sh/.
 Example: 
 <example>
   prerun="rm -rf " prefix() "/*"
@@ -1054,7 +1053,7 @@ than 3 probably don't work very well at the moment.
 <tag><tt/hint_topnentry=5/
 <item>
 Same as hint_nentry, but for the top level menu. Often here are other
-entries, added by the Window Manager itself (like Exit, Xterm,
+entries, added by the window-manager itself (like Exit, Xterm,
 whatever) that menu doesn't know about, so that you may want to
 instruct menu to put less entries in the top level menu.
 
