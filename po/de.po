@@ -34,7 +34,7 @@ msgstr "Konnte Verzeichnis %1 nicht erstellen: %2"
 
 #: ../install-menu/install-menu.cc:218
 msgid "Could not change directory(%1): %2"
-msgstr "Konnte nicht in Verzeichnis (%1) wechseln: %2"
+msgstr "Konnte nicht in Verzeichnis %1 wechseln: %2"
 
 #: ../install-menu/install-menu.cc:221
 msgid "install-menu: directory %1 already exists\n"
@@ -113,7 +113,7 @@ msgstr ""
 "     -v --verbose : Ausführliche Ausgaben\n"
 
 #: ../install-menu/install-menu.cc:929
-msgid "install-menu: no menu-method script specified !"
+msgid "install-menu: no menu-method script specified!"
 msgstr "install-menu: Kein Skript für die Menü-Methode angegeben!"
 
 #: ../install-menu/install-menu.cc:942

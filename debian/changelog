@@ -1,8 +1,15 @@
 menu (2.1.25) unstable; urgency=low
 
-  * The "unreleased" release 
+  * The "unreleased" release
+  * Correct extra space before exclamation mark before a program message
+    Translations unfuzzied assumign that translators know about their own
+    language typography
+  * Programs translations
+    - German updated
+  * Menu sections translations
+    - German updated. Closes: #312852
 
- -- Bill Allombert <ballombe@debian.org>  Tue, 24 May 2005 13:02:33 +0200
+ -- Christian Perrier <bubulle@debian.org>  Sun, 12 Jun 2005 15:16:54 +0200
 
 menu (2.1.24) unstable; urgency=medium
 

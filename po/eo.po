@@ -110,7 +110,7 @@ msgstr ""
 "     -v --verbose : estu babilema\n"
 
 #: ../install-menu/install-menu.cc:920
-msgid "install-menu: no menu-method script specified !"
+msgid "install-menu: no menu-method script specified!"
 msgstr "install-menu: menu-metodskripto ne donita !"
 
 #: ../install-menu/install-menu.cc:933

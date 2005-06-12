@@ -135,7 +135,7 @@ msgstr ""
 "     -v --verbose  : ser más verboso\n"
 
 #: ../install-menu/install-menu.cc:929
-msgid "install-menu: no menu-method script specified !"
+msgid "install-menu: no menu-method script specified!"
 msgstr "install-menu: ¡no se ha especificado ningún guión de método de menú!"
 
 #: ../install-menu/install-menu.cc:942

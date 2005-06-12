@@ -113,7 +113,7 @@ msgstr ""
 "     -v --verbose : toimii monisanaisesti\n"
 
 #: ../install-menu/install-menu.cc:929
-msgid "install-menu: no menu-method script specified !"
+msgid "install-menu: no menu-method script specified!"
 msgstr "install-menu: valikkotapa-skriptiä ei määritelty !"
 
 #: ../install-menu/install-menu.cc:942

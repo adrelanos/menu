@@ -115,7 +115,7 @@ msgstr ""
 "     -v --verbose   : mode bavard\n"
 
 #: ../install-menu/install-menu.cc:929
-msgid "install-menu: no menu-method script specified !"
+msgid "install-menu: no menu-method script specified!"
 msgstr "install-menu : aucun script de méthode n'a été indiqué !"
 
 #: ../install-menu/install-menu.cc:942

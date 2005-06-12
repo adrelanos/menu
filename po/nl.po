@@ -108,7 +108,7 @@ msgstr ""
 "     -v --verbose : wees uitvoerig\n"
 
 #: ../install-menu/install-menu.cc:929
-msgid "install-menu: no menu-method script specified !"
+msgid "install-menu: no menu-method script specified!"
 msgstr "install-menu: geen menumethode-script opgegeven!"
 
 #: ../install-menu/install-menu.cc:942

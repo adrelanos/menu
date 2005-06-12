@@ -112,7 +112,7 @@ msgstr ""
 "     -v --verbose 	: xuất _chi tiết_\n"
 
 #:../install-menu/install-menu.cc:929
-msgid "install-menu: no menu-method script specified !"
+msgid "install-menu: no menu-method script specified!"
 msgstr "trình đơn cài: chưa ghi rõ tập lệnh loại phương pháp trình đơn."
 
 #:../install-menu/install-menu.cc:942

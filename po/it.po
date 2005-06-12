@@ -115,7 +115,7 @@ msgstr ""
 "     -v --verbose : Prolisso\n"
 
 #: ../install-menu/install-menu.cc:929
-msgid "install-menu: no menu-method script specified !"
+msgid "install-menu: no menu-method script specified!"
 msgstr "install-menu: nessuno script menu-method specificato!"
 
 #: ../install-menu/install-menu.cc:942

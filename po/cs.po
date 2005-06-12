@@ -112,7 +112,7 @@ msgstr ""
 "     -v --verbose : bude upovídanìj¹í\n"
 
 #: ../install-menu/install-menu.cc:929
-msgid "install-menu: no menu-method script specified !"
+msgid "install-menu: no menu-method script specified!"
 msgstr "install-menu: nebyl zadán skript menu-method !"
 
 #: ../install-menu/install-menu.cc:942

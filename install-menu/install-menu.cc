@@ -926,7 +926,7 @@ int main(int argc, char **argv)
     if (optind < argc) {
       script_name = argv[optind];
     } else {
-      cerr << _("install-menu: no menu-method script specified !");
+      cerr << _("install-menu: no menu-method script specified!");
       throw informed_fatal();
     }
 

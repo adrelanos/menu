@@ -113,7 +113,7 @@ msgstr ""
 "       -v --verbose    : ayrıntı ver\n"
 
 #: ../install-menu/install-menu.cc:929
-msgid "install-menu: no menu-method script specified !"
+msgid "install-menu: no menu-method script specified!"
 msgstr "install-menu: uygulanacak menü-yöntemi betiği belirtilmedi !"
 
 #: ../install-menu/install-menu.cc:942

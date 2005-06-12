@@ -51,7 +51,7 @@ msgstr "Grafik"
 #.  Second level entry under "Apps"
 #.  Menu policy definition: anything relating to ham (amateur) radio
 msgid "Hamradio"
-msgstr "Hamradio"
+msgstr "Amateurfunk"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: math related programs

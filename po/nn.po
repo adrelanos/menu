@@ -113,7 +113,7 @@ msgstr ""
 "     -v --verbose : skriv ut fyldig informasjon\n"
 
 #: ../install-menu/install-menu.cc:929
-msgid "install-menu: no menu-method script specified !"
+msgid "install-menu: no menu-method script specified!"
 msgstr "install-menu: ingen script for menymetode er oppgjeve!"
 
 #: ../install-menu/install-menu.cc:942
