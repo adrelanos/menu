@@ -9,12 +9,13 @@ Package: menu
 Architecture: any
 Depends: ${shlibs:Depends}, dpkg (>=1.10)
 Suggests: gksu|kdebase-bin|sux
-Description: provides update-menus functions for some applications
- The intent of this package is to streamline the menus (like the
- fvwm2 ones) in Debian. For this purpose, menu provides an "update-menus"
- command, that will read all installed menu files (as provided by
- other packages in /usr/lib/menu), and run the frontends for various
- window-managers in /etc/menu-methods to create startup files for
- the window managers (or pdmenu).
- The user and system admin can easily override the menu files
- on a by-user or by-system bases.
+Description: generates programs menu for all menu-aware applications
+ Debian menu keeps transparently the menus in the different
+ window-managers in sync with the list of installed programs. 
+ .
+ Debian menu relies on a list of menu entries provided by programs
+ and a list of menu-methods provided by window-managers and other
+ menu-aware applications.
+ .
+ Menu provides system-level and user-level configuration and overrides
+ for both menu entries and menu-methods.
