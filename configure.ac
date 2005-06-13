@@ -2,7 +2,7 @@ dnl Process this file with autoconf to produce a configure script.
 AC_INIT
 AC_CONFIG_SRCDIR([update-menus/update-menus.cc])
 
-AM_INIT_AUTOMAKE(menu,2.1.25)
+AM_INIT_AUTOMAKE(menu,2.1.26)
 AM_CONFIG_HEADER(config.h)
 AM_MAINTAINER_MODE dnl Be nice with packagers, i.e. ourself 
 dnl Checks for programs.
