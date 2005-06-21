@@ -541,11 +541,11 @@ int read_menufile(const string &filename, const string &shortfilename,
 /** Read a directory full of menu files */
 void read_menufilesdir(vector<string> &menudata)
 {
-  int menuentries = 0;
   for(vector<string>::const_iterator method_i = config.menufilesdir.begin();
       method_i != config.menufilesdir.end();
       ++method_i)
   {
+    int menuentries = 0;
     string dirname = *method_i;
     config.report(String::compose(_("Reading menu-entry files in %1."), dirname),
         configinfo::report_verbose);
