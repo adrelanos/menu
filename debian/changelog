@@ -1,7 +1,10 @@
 menu (2.1.26) unstable; urgency=low
 
   * The "unreleased" release 
-  * Fix update-menus counting of menuentries in verbose mode. Closes: #315304.
+  * Fix update-menus counting of menuentries in verbose mode. 
+    Closes: #315304. Thanks Shlomi Fish.
+  * Add Bulgarian menu sections translation. Thanks Yavor Doganov.
+    Closes: #315841. 
 
  -- Bill Allombert <ballombe@debian.org>  Mon, 13 Jun 2005 13:21:44 +0200
 
