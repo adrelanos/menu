@@ -5,6 +5,7 @@ menu (2.1.26) unstable; urgency=low
     Closes: #315304. Thanks Shlomi Fish.
   * Add Bulgarian menu sections translation. Thanks Yavor Doganov.
     Closes: #315841. 
+  * Bump Standards-Version to 3.6.2.
 
  -- Bill Allombert <ballombe@debian.org>  Mon, 13 Jun 2005 13:21:44 +0200
 
