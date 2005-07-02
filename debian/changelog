@@ -6,8 +6,9 @@ menu (2.1.26) unstable; urgency=low
   * Add Bulgarian menu sections translation. Thanks Yavor Doganov.
     Closes: #315841. 
   * Bump Standards-Version to 3.6.2.
+  * debian/postinst, debian/prerm, debian/rules: Undivert update-menus.
 
- -- Bill Allombert <ballombe@debian.org>  Mon, 13 Jun 2005 13:21:44 +0200
+ -- Bill Allombert <ballombe@debian.org>  Sat,  2 Jul 2005 16:16:59 +0200
 
 menu (2.1.25) unstable; urgency=low
 
