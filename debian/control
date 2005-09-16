@@ -3,7 +3,7 @@ Section: admin
 Priority: optional
 Maintainer: Bill Allombert <ballombe@debian.org>
 Standards-Version: 3.6.2
-Build-Depends: debhelper (>= 3.0.0), texinfo, debiandoc-sgml, gettext
+Build-Depends: debhelper (>= 4.0.0), texinfo, debiandoc-sgml, gettext
 
 Package: menu
 Architecture: any

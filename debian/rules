@@ -6,8 +6,6 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-export DH_COMPAT=1
-
 arch    := $(shell dpkg-architecture -qDEB_HOST_ARCH)
 
 CXXFLAGS = -g -Wall
@@ -51,21 +49,21 @@ install-stamp: build-stamp
 		   usr/share/bug/menu
 		   
 
-	# Add here commands to install the package into debian/tmp.
-	$(MAKE) install DESTDIR=`pwd`/debian/tmp/
+	# Add here commands to install the package into debian/menu.
+	$(MAKE) install DESTDIR=`pwd`/debian/menu/
 
 	cp examples/translate_menus examples/menu.h po-sections/lang.h\
-	   examples/menu.config debian/tmp/etc/menu-methods 
+	   examples/menu.config debian/menu/etc/menu-methods 
 	#
 	install -g root -o root -m 644 \
-	   doc/README.config-menus debian/tmp/etc/menu/README
+	   doc/README.config-menus debian/menu/etc/menu/README
 	install -g root -o root -m 644 \
-	   doc/README.menu-methods debian/tmp/etc/menu-methods/README
+	   doc/README.menu-methods debian/menu/etc/menu-methods/README
 	install -g root -o root -m 644 \
-	   doc/README.package-menus debian/tmp/usr/share/menu/README
+	   doc/README.package-menus debian/menu/usr/share/menu/README
 	#
 	install -g root -o root -m 644 \
-	   debian/bug.presubj debian/tmp/usr/share/bug/menu/presubj
+	   debian/bug.presubj debian/menu/usr/share/bug/menu/presubj
 	#
 	touch install-stamp
 
@@ -79,21 +77,15 @@ binary-arch: build install
 	dh_testroot
 	dh_installdocs
 	dh_installman doc/update-menus.fr.1
-#	dh_installexamples
-#	dh_installmenu
-#	dh_installemacsen
-#	dh_installinit
-#	dh_installcron
-#	dh_undocumented
 	dh_installchangelogs
 	dh_strip
 	dh_compress
 	dh_fixperms
-#	dh_suidregister
 	dh_installdeb
+#	refuse debhelper V3 conffiles behaviour.
+	cp debian/conffiles debian/menu/DEBIAN
 	dh_shlibdeps
 	dh_gencontrol
-#	dh_makeshlibs
 	dh_md5sums
 	dh_builddeb
 
