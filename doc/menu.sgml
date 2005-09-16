@@ -642,7 +642,7 @@ A system administrator can remove menu entries system-wide with
 
 <p>
 
-<sect> Including others files
+<sect> Including other files
 <p>
 
 <var> Historical comment by Joost:</var> 
@@ -663,7 +663,7 @@ add this to your menu file:
 !include /usr/share/menu/somefile
 </example>
 
-Apart form that, it is of course possible to make the menu entry file
+Apart from that, it is of course possible to make the menu entry file
 executable (<tt>chmod a+x ~/.menu/package</>), and do something like
 <example>
 #!/bin/sh
@@ -732,7 +732,7 @@ and removing 90% or so of all entries)
 The files <file>/etc/menu-methods/$wm</> are executable config
 files that start with the line
 <example>
-  #!/usr/sbin/install-menu
+  #!/usr/bin/install-menu
 </example>
 and thus start that program, handing it the configuration file for the
 specific window manager in the first command line argument. This
