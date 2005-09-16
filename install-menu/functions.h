@@ -44,6 +44,7 @@ namespace functions {
   /** Base class for function definitions */
   class func {
   public: 
+    virtual ~func() { }
     /** Number of arguments that function takes as parameters */
     virtual unsigned int nargs() const = 0;
     /** Calls function with arguments and returns output in stream */
