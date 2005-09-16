@@ -1,5 +1,6 @@
-sbin_SCRIPTS = su-to-root wm-menu-config
-EXTRA_DIST = $(sbin_SCRIPTS)
+bin_SCRIPTS = su-to-root
+EXTRA_DIST = $(bin_SCRIPTS)
 
 install-exec-local:
-	ln -f -s ../sbin/su-to-root $(DESTDIR)$(bindir)/su-to-root
+	test -d "$(DESTDIR)$(sbindir)" || mkdir "$(DESTDIR)$(sbindir)"
+	ln -f -s ../bin/su-to-root $(DESTDIR)$(sbindir)/su-to-root
