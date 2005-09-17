@@ -1,9 +1,9 @@
-#!/usr/sbin/install-menu
+#!/usr/bin/install-menu
 #   -*- mode: shell-script; -*-
 #I need menu-1!
 #
 #NOTE: the first line of this script _must_ be
-# equal to "#!/usr/sbin/install-menu", otherwise update-menus
+# equal to "#!/usr/bin/install-menu", otherwise update-menus
 # will feed this script old-compat-mode data.
 #
 #More info: /usr/share/doc/menu/html.

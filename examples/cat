@@ -5,7 +5,7 @@ exit 0
 
 #In the good old days of menu-0 compatibility, one had to use:
 
-# #!/usr/sbin/install-menu
+# #!/usr/bin/install-menu
 # #I need menu-1!
 # 
 # #

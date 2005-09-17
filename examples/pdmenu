@@ -1,4 +1,4 @@
-#!/usr/sbin/install-menu
+#!/usr/bin/install-menu
 #   -*- mode: shell-script; -*-
 #
 # Written by Joey Hess.

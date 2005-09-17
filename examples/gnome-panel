@@ -1,4 +1,4 @@
-#!/usr/sbin/install-menu
+#!/usr/bin/install-menu
 compat="menu-1"
 
 !include menu.h
