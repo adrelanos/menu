@@ -139,7 +139,7 @@ are finished by a ';' instead of a newline).
 
 <chapt> Menu from the viewpoint of a user
 <p>
-<sect> How/when do the window manger startup files get created?
+<sect> How/when do the window manager startup files get created?
 <p>
 Basically, you as user don't need to know any of how and when the
 startupfiles are created, but you might be interested to know anyway.
