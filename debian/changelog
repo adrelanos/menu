@@ -1,21 +1,40 @@
 menu (2.1.26) unstable; urgency=low
 
-  * The "unreleased" release 
+  * The "And no, I'm not accepting job offers (2)" release. 
+  * Menu-methods should now use #!/usr/bin/install-menu
   * Fix update-menus counting of menuentries in verbose mode. 
     Closes: #315304. Thanks Shlomi Fish.
   * Add Bulgarian menu sections translation. Thanks Yavor Doganov.
     Closes: #315841. 
+  * Add Slovak menu sections translation. Thanks Peter Mann.
+    Closes: #330182
   * Bump Standards-Version to 3.6.2.
   * debian/postinst, debian/prerm, debian/rules: Undivert update-menus.
+  * scripts/wm-menu-config, doc/wm-menu-config.8: removed.
+  * install-menu and su-to-root are now in /usr/bin and symlinks in 
+    /usr/sbin.
+  * debian/copyright: update FSF address and bump copyright date.
+  * debian/menu.sgml: Fix typos, thanks Francesco Poli and 
+    Miguel Gea Milvaques. Closes: #328947.
+  * debian/rules, debian/control, debian/conffiles: 
+    + Switch to debhelper v4. 
+    + Hack to prevent /etc/menu/README and /etc/menu-methods/README 
+      to be marked as conffiles.
+  * update-menus was segfaulting on non-readable directories. 
+    Closes: #331247. Thanks Felipe Almeida Lessa.
+  * The functions firstentry(), entryindex() and lastentry() did not work
+    when sorting was used.  Closes: #231826. Thanks Jorgen Schäfer.
+  * Morten Brix Pedersen:
+    - Add missing virtual destructor to class 'func'.
 
- -- Bill Allombert <ballombe@debian.org>  Sat,  2 Jul 2005 16:16:59 +0200
+ -- Bill Allombert <ballombe@debian.org>  Tue,  4 Oct 2005 18:31:56 +0200
 
 menu (2.1.25) unstable; urgency=low
 
   * The "Welcome to Etch" release 
   * Documentation changes-only upload to transition from /usr/lib/menu
     to /usr/share/menu. Sarge menu support both locations already,
-    /usr/lib/menu havinghigher priority than /usr/share/menu.
+    /usr/lib/menu having higher priority than /usr/share/menu.
     Closes: #92428. Thanks Jochen Voss.
   * debian/rules: Move README from /usr/lib/menu to /usr/share/menu.
   * debian/control: Rewrite package description.
