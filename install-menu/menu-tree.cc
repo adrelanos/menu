@@ -254,6 +254,9 @@ void menuentry::output()
 
     sorted.insert(std::pair<string, menuentry *>(s, sub_i->second));
   }
+  int index = 0;
+  for (i = sorted.begin(); i != sorted.end(); ++i)
+    i->second->vars[PRIVATE_ENTRYINDEX_VAR] = itostring(index++);
 
   // Output the menu according to the treewalk variable.
   for (string::size_type j = 0; j < treew.length(); ++j)
@@ -432,7 +435,6 @@ void menuentry::process_hints()
 void menuentry::postprocess(int n_parent, int level, const std::string& prev_section)
 {
   submenu_container::iterator i, i_next;
-  int index = 0;
 
   vars[PRIVATE_LEVEL_VAR] = itostring(level);
 
@@ -440,7 +442,7 @@ void menuentry::postprocess(int n_parent, int level, const std::string& prev_sec
   if (!level)
       vars[SECTION_VAR] = prev_section;
 
-  for (i = submenus.begin(); i != submenus.end(); ++index)
+  for (i = submenus.begin(); i != submenus.end();)
   {
     i_next=i;
     i_next++;
@@ -456,8 +458,6 @@ void menuentry::postprocess(int n_parent, int level, const std::string& prev_sec
     // is useful when for example the title is "Foo version/456".
     me->vars[BASESECTION_VAR] = newsection.substr(0, newsection.rfind(me->vars[TITLE_VAR]) - 1);
 
-    me->vars[PRIVATE_ENTRYINDEX_VAR] = itostring(index);
-
     if (!me->submenus.empty())
         me->postprocess(submenus.size(), level+1, newsection);
 
@@ -468,7 +468,6 @@ void menuentry::postprocess(int n_parent, int level, const std::string& prev_sec
         // This is an empty menu (without comand or submenus), so delete it.
         submenus.erase(i);
 
-        index--;
       } else {
         i->second->vars[PRIVATE_ENTRYCOUNT_VAR] = itostring(submenus.size());
         i->second->vars[PRIVATE_LEVEL_VAR] = itostring(level+1);
@@ -476,7 +475,6 @@ void menuentry::postprocess(int n_parent, int level, const std::string& prev_sec
     }
     // don't use i here any more, it may have been erased above
     i = i_next; // don't do i++, as *i now may not be defined
-    index++;
   }
 
   generate_hotkeys();
