@@ -68,12 +68,12 @@ bool is_root;
  */
 DIR *open_dir_check(const string& dirname)
 {
-  struct stat st;
+  DIR *dir = opendir(dirname.c_str());
 
-  if (stat(dirname.c_str(), &st) || (!S_ISDIR (st.st_mode)))
+  if (!dir)
       throw dir_error_read();
 
-  return opendir(dirname.c_str());
+  return dir;
 }
 
 /** Checks whether a file is executable */
