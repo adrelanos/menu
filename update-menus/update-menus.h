@@ -116,7 +116,7 @@ public:
   configinfo()
       : method(method_stderr), compat(parsestream::eol_newline),
       usedefaultmenufilesdirs(true), onlyoutput_to_stdout(false),
-      verbosity(report_quiet)
+      remove_menu(false), verbosity(report_quiet)
     { }
 
   typedef enum { report_quiet, report_normal, report_verbose, report_debug} verbosity_type;
@@ -125,6 +125,7 @@ public:
   std::string menumethod;
   bool usedefaultmenufilesdirs;
   bool onlyoutput_to_stdout;
+  bool remove_menu;
 
 
   /** Read configuration file from filename */

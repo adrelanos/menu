@@ -580,9 +580,43 @@ void read_menufilesdir(vector<string> &menudata)
   }
 }
 
+/** Run a menu-method with --remove*/
+void run_menumethod_remove(string methodname)
+{
+  const char *args[] = { methodname.c_str(), "--remove", NULL };
+  pid_t child, r;
+  int status;
+
+  config.report(String::compose(_("Running method: %1 --remove"), methodname),
+      configinfo::report_verbose);
+  if (!(child=fork())) {
+    // child:
+    execv(args[0],(char **)args);
+    exit(1);
+  } 
+  // parent:
+  signal(SIGPIPE,SIG_IGN);
+  r = wait4(child, &status, 0, NULL);
+  signal(SIGPIPE,SIG_DFL);
+  if (r == -1)
+    config.report(String::compose(_("Script %1 could not be executed."), methodname),
+        configinfo::report_quiet);
+  if (WEXITSTATUS(status))
+    config.report(String::compose(_("Script %1 returned error status %2."), methodname, WEXITSTATUS(status)),
+        configinfo::report_quiet);
+  else if (WIFSIGNALED(status))
+    config.report(String::compose(_("Script %1 received signal %2."), methodname, WTERMSIG(status)),
+        configinfo::report_quiet);
+}
+
 /** Run a menu method */
 void run_menumethod(string methodname, const vector<string> &menudata)
 {
+  if (config.remove_menu)
+  {
+    run_menumethod_remove(methodname);
+    return;
+  }
   int fds[2];
   const char *args[] = { methodname.c_str(), NULL };
   pid_t child, r;
@@ -659,7 +693,7 @@ void run_menumethoddir(const string &dirname, const vector<string> &menudata)
     string method = dirname + entry->d_name;
 
     if (executable(method))
-        run_menumethod(method, menudata);
+      run_menumethod(method, menudata);
   }
   closedir (dir);
 }
@@ -845,10 +879,10 @@ void usage(ostream &c)
   "  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to search.\n"
   "  --menumethod=<method>  Run only the menu method <method>.\n"
   "  --nodefaultdirs        Disable the use of all the standard menu directories.\n"
+  "  --remove               Remove generated menus instead.\n"
   "  --stdout               Output menu list in format suitable for piping to\n"
-  "                         install-menu.\n")
-       << _(  /* This is the end of the update-menus --help message*/
-  "  --version              Output version information and exit.\n"  );
+  "                         install-menu.\n"
+  "  --version              Output version information and exit.\n");
 }
 
 struct option long_options[] = { 
@@ -860,6 +894,7 @@ struct option long_options[] = {
   { "nodefaultdirs", no_argument, NULL, 'n'},
   { "stdout", no_argument, NULL, 's'},
   { "version", no_argument, NULL, 'V'},
+  { "remove", no_argument, NULL, 'r'},
   { NULL, 0, NULL, 0 } };
 
 
@@ -890,6 +925,9 @@ void parse_params(int argc, char **argv)
       break;
     case 'm':
       config.menumethod = optarg;
+      break;
+    case 'r':
+      config.remove_menu = true;
       break;
     case 'V':
       cout << "update-menus "VERSION << std::endl;
@@ -955,6 +993,27 @@ void read_homedirectory()
       home_dir = getenv("HOME");
 }
 
+void run_methods(vector<string> &menudata)
+{
+  if (!config.menumethod.empty())
+  {
+    if (executable(config.menumethod))
+      run_menumethod(config.menumethod, menudata);
+    else
+      config.report(String::compose(_("Script %1 could not be executed."),
+            config.menumethod), configinfo::report_quiet);
+  }
+  else if (!is_root) {
+    try {
+      run_menumethoddir(string(home_dir)+"/"+USERMETHODS, menudata);
+    }
+    catch(dir_error_read d) {
+      run_menumethoddir(MENUMETHODS, menudata);
+    }
+  } else 
+      run_menumethoddir(MENUMETHODS, menudata);
+}
+
 int main (int argc, char **argv)
 {
   is_root = (getuid() == 0);
@@ -978,6 +1037,11 @@ int main (int argc, char **argv)
       close(2);
       dup2(1,2);
     }
+    if (config.remove_menu)
+    {
+      run_methods(menudata);
+      return 0;
+    }
     read_pkginfo();
     transinfo = 0;
 
@@ -999,24 +1063,8 @@ int main (int argc, char **argv)
         for(vector<string>::const_iterator i = menudata.begin(); i != menudata.end(); ++i)
               cout << *i;
 
-    } else if (!config.menumethod.empty()) {
-      if (executable(config.menumethod))
-        run_menumethod(config.menumethod, menudata);
-      else
-        config.report(String::compose(_("Script %1 could not be executed."),
-              config.menumethod), configinfo::report_quiet);
-    } else {
-      if (!is_root) {
-        try {
-          run_menumethoddir(string(home_dir)+"/"+USERMETHODS, menudata);
-        }
-        catch(dir_error_read d) {
-          run_menumethoddir(MENUMETHODS, menudata);
-        }
-      } else {
-          run_menumethoddir(MENUMETHODS, menudata);
-      }
-    }
+    } else 
+        run_methods(menudata);
   }
   catch(genexcept& p) { p.report(); }
 

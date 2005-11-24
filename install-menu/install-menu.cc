@@ -76,6 +76,7 @@ set<string> outputnames; // all names of files ever written to
 struct option long_options[] = { 
   { "verbose", no_argument, NULL, 'v' }, 
   { "help", no_argument, NULL, 'h' }, 
+  { "remove", no_argument, NULL, 'r' }, 
   { NULL, 0, NULL, 0 } };
 
 // Should we do translations? This is set to 'true' when both outputencoding
@@ -346,6 +347,14 @@ ostream &const_str::output(ostream &o, map<string, string> &)
   return o << data;
 }
 
+bool cat_str::is_constant_string() 
+{
+  for(int i=0; i<v.size(); i++)
+  if (!dynamic_cast<const_str*>(v[i]))
+    return false;
+  return true;
+}
+
 string cat_str::soutput(map<string, string> &menuentry)
 {
   std::ostringstream s;
@@ -515,7 +524,7 @@ methodinfo::methodinfo(parsestream &i)
     hint_mlpenalty(2000), hint_max_ntry(4), hint_max_iter_hint(5),
     hint_debug(false), hotkeycase(0)
 {
-  userpref=rootpref=sort=prerun=preruntest=postrun=genmenu=
+  userpref=rootpref=sort=remove=prerun=preruntest=postrun=genmenu=
     hkexclude=startmenu=endmenu=submenutitle=also_run=outputlanguage=0;
 
   /*Should not be translated as this appear in the output file that can use 
@@ -545,6 +554,8 @@ methodinfo::methodinfo(parsestream &i)
 	  hkexclude=get_eq_cat_str(i);
 	else if(name=="genmenu")
 	  genmenu=get_eq_cat_str(i);	
+	else if(name=="removemenu")
+	  remove=get_eq_cat_str(i);	
 	else if(name=="prerun")
 	  prerun=get_eq_cat_str(i);	
 	else if(name=="postrun")
@@ -887,11 +898,13 @@ void usage(ostream &c)
           "  and generate menu files using the specified menu-method.\n"
           "  Options to install-menu:\n"
 	  "     -h --help    : this message\n"
+	  "        --remove  : remove the menu instead of generating it.\n"
 	  "     -v --verbose : be verbose\n");
 }
 
 int main(int argc, char **argv)
 {
+  int remove = 0;
   uid_t uid = getuid();
   struct passwd *pw = getpwuid(uid);
   is_root = (uid == 0);
@@ -919,6 +932,7 @@ int main(int argc, char **argv)
       case '?': usage(cerr); return 1; break;
       case 'h': usage(cout); return 0; break;
       case 'v': verbose = 1; break;
+      case 'r': remove = 1; break;
     }
   }
     
@@ -947,15 +961,33 @@ int main(int argc, char **argv)
         return 0;
     if ((menumethod->onlyrunasuser || menumethod->rootpref == 0) && is_root)
         return 0;
+    if (remove)
+    {
+      if (menumethod->remove)
+        system(menumethod->remove->soutput(root_menu.vars).c_str());
+      else if (menumethod->genmenu 
+            && menumethod->genmenu->is_constant_string())
+      {
+        unlink((menumethod->prefix()+"/"
+               +menumethod->genmenu->soutput(root_menu.vars)).c_str());
+        if (!menumethod->rcfile().empty())
+          unlink((menumethod->prefix()+"/"
+                 +menumethod->rcfile()).c_str());
+        rmdir(menumethod->prefix().c_str());
+      }
+      else
+        cerr << String::compose(_("Warning: script %1 does not provide removemenu, menu not deleted\n"), script_name);
+      return 0;
+    }
     if (menumethod->prerun)
-        system((menumethod->prerun->soutput(root_menu.vars)).c_str());
+      system((menumethod->prerun->soutput(root_menu.vars)).c_str());
     if (menumethod->preruntest) {
       int retval = system((menumethod->preruntest->soutput(root_menu.vars)).c_str());
       if (retval)
-          return retval;
+        return retval;
     }
     if (menumethod->outputlanguage && (menumethod->outputlanguage->soutput(root_menu.vars) == "LOCALE") && !menumethod->outputencoding().empty())
-        do_translation = true;
+      do_translation = true;
 
     psscript = new parsestream(std::cin);
     root_menu.vars[TITLE_VAR] = menumethod->mainmenutitle();

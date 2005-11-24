@@ -83,6 +83,7 @@ public:
 class cat_str : public str {
   std::vector<str *> v;
 public:
+  bool is_constant_string();
   cat_str(parsestream &);
   std::ostream &output(std::ostream &o, std::map<std::string, std::string> &menuentry);
   void output(std::map<std::string, std::string> &menuentry);
@@ -150,7 +151,7 @@ public:
 
   bool keep_sections;
   cat_str *startmenu, *endmenu, *submenutitle, *hkexclude,
-    *genmenu, *postrun, *prerun, *sort, *rootpref, *userpref,
+    *genmenu, *postrun, *prerun, *remove, *sort, *rootpref, *userpref,
     *outputlanguage, *also_run, *preruntest;
 
   bool onlyrunasroot, onlyrunasuser;
