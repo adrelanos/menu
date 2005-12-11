@@ -20,7 +20,7 @@ génère automatiquement les menus des programmes installés pour les
 gestionnaires de fenêtres et pour les autres programmes à menus. Il doit être
 lancé à chaque fois qu'un fichier de menu (voir 
 .BR menufile (5))
-ou qu'un fichier de génération de menu (menu method file) est modifié.
+ou qu'un script de génération de menus est modifié.
 .I update-menus
 sera automatiquement lancé dès qu'un paquet Debian contenant des fichiers
 de menus sera installé ou supprimé du système.
@@ -45,14 +45,17 @@ Affiche un message d'aide et s'arrête.
 Ajoute le répertoire <répertoire> à la liste des répertoires dans laquelle on
 recherche des fichiers de menu. 
 .IP "--menumethod <méthode>" 
-Traite uniquement le fichier de génération de menu <méthode>, et non tous les
-fichiers de génération de menu trouvés.
+Traite uniquement le script de génération de menus <méthode>, et non tous les
+scripts de génération de menus trouvés.
 .IP "--nodefaultdirs"
 Désactive la recherche de fichiers de menu dans les répertoires de menu
 du système.
+.IP "--remove"
+Supprime les menus générés en passant l'option \fB--remove\fP aux scripts de
+génération de menus.
 .IP "--stdout" 
 Génère une liste de menu acceptable comme entrée par \fIinstall-menu\fP ou par
-un fichier de génération de menu.
+un script de génération de menus.
 .IP "--version"
 Affiche les informations de version, puis s'arrête.
 .SH CONFIGURATION
