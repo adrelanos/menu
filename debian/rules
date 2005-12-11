@@ -76,7 +76,7 @@ binary-arch: build install
 	dh_testdir
 	dh_testroot
 	dh_installdocs
-	dh_installman doc/update-menus.fr.1
+	dh_installman doc/update-menus.fr.1 doc/su-to-root.fr.1
 	dh_installchangelogs
 	dh_strip
 	dh_compress
