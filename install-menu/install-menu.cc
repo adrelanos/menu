@@ -349,7 +349,7 @@ ostream &const_str::output(ostream &o, map<string, string> &)
 
 bool cat_str::is_constant_string() 
 {
-  for(int i=0; i<v.size(); i++)
+  for (unsigned int i=0; i<v.size(); i++)
   if (!dynamic_cast<const_str*>(v[i]))
     return false;
   return true;
