@@ -1,50 +1,41 @@
-.\" Process this file with
-.\" groff -man -Tascii foo.1
-.\"
-.\" "verbatim" environment (from strace.1)
-.de CW
-.sp
-.nf
-.ft CW
-..
-.de CE
-.ft
-.fi
-.sp
-..
-.TH  install-menu 1 "20 October 1998" "Debian Project" "Debian GNU/Linux manual"
+.TH  install-menu 1 "28 November 2005" "Debian Project" "Debian GNU/Linux manual"
 .SH NAME
-install-menu \- Used internally by the Debian menu system. It is a
-program to facilitate the generation of menu-related startup files for
-the various window managers etc.
-
+install-menu \- Process a menu method and generate the menu files for a window
+manager or a menu-aware application.
 .SH DESCRIPTION
-When 
 .B update-menus(1)
-reads the menu-information, for each installed window manager it will
-run /etc/menu-methods/wm. Update-menus sends  all menu-information of all
-installed packages to the stdin of those programmes, and it is the
-task of each respective /etc/menu-methods/wm to generate the
-window-manager startup files that contain the Debian Menu structure.
-.B install-menu
-is written to facilitate this task. For more information, see the menu
-documentation (see below).
+computes the list of menu entries and passes it in turn to the menu methods in
+\fI/etc/menu-methods/\fP. The task of a menu methods is to generate menus
+for a specific window manager.
+.B install-menu 
+provides a generic and customizable way to do that. The documentation of the
+.B install-menu 
+definition language is available in the Debian Menu manual, a local copy being
+available in 
+.BR /usr/share/doc/menu/html.
 .SH SYNOPSIS
-.B install-menu [-vh] <menu-method>
-  Read menuentries from stdin in \fIupdate-menus --stdout\fP format
-    and generate menu files using the specified menu-method.
+.B install-menu [-vh] [--remove] <menu-method>
+.PP
+Read menu entries from stdin in \fIupdate-menus --stdout\fP format and generate
+menu files using the specified menu-method.
+.PP
+Normally used in menu method scripts as \fI#! /usr/bin/install-menu\fP.
 .SH OPTIONS
 .IP "-h,--help" 
 Show the help message and exit.
+.IP "--remove" 
+Remove the menu files instead of generating them.
 .IP "-v,--verbose" 
-Be verbose
+Output messages about what the program is doing.
 .SH COPYING
 .B install-menu
-is distributed under the GNU General Public License.
-(GPL 2.0 or greater).
+is distributed under the term of the GNU General Public License version 2, or
+(at your option) any later version. 
 .SH AUTHOR
-joost witteveen
-.RI <joostje@debian.org>
+Written by Joost Witteveen
+.RI <joostje@debian.org>.
+Now maintained by Bill Allombert
+.RI <ballombe@debian.org>.
 .SH "SEE ALSO"
 .BR update-menus (1),
 .BR menufile (5),
