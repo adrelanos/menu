@@ -1,12 +1,16 @@
 menu (2.1.27) unstable; urgency=low
 
-  * The "unreleased" release
+  * The "Mock Turtle" release
   * Allow to remove generated menus. Closes: #81495, thanks Yann Dirson.
    - New config option removemenu that should remove the menu.
    - New install-menu option --remove to call removemenu.
    - New update-menus option --remove to call install-menu with --remove.
+  * Clean up manpages (first stage).
+  * Changes proposed by Nicolas François:
+   - Add French su-to-root.1 translation.
+   - Remove verbatim environment from su-to-root.1 and install-menu.1
 
- -- Bill Allombert <ballombe@debian.org>  Thu, 24 Nov 2005 13:13:03 +0100
+ -- Bill Allombert <ballombe@debian.org>  Sun, 11 Dec 2005 14:35:19 +0100
 
 menu (2.1.26) unstable; urgency=low
 
