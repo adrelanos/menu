@@ -7,7 +7,7 @@ menu (2.1.27) unstable; urgency=low
    - New update-menus option --remove to call install-menu with --remove.
   * Clean up manpages (first stage).
   * Changes proposed by Nicolas François:
-   - Add French su-to-root.1 translation.
+   - Add French su-to-root.1 and menufile.5 translations.
    - Remove verbatim environment from su-to-root.1 and install-menu.1
 
  -- Bill Allombert <ballombe@debian.org>  Sun, 11 Dec 2005 14:35:19 +0100

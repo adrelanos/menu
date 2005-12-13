@@ -1,0 +1,204 @@
+.\" -*- nroff -*-
+.TH "FICHIER DE MENUS" 5 "Formats de fichier" DEBIAN 
+.SH NOM
+menufile \- entrée dans le système des menus Debian
+.SH SYNOPSIS
+.B ~/.menu/*
+.PP
+.B /etc/menu/*
+.PP
+.B /usr/lib/menu/*
+.PP
+.B /usr/share/menu/*
+.PP
+.B /usr/share/menu/default/*
+.SH DESCRIPTION
+Les fichiers de menus ajoutent des entrées dans le système des menus 
+Debian. L'administrateur système peut placer des fichiers de menus dans 
+/etc/menu/ qui auront priorité sur les fichiers de menus que les paquets
+ajoutent à /usr/share/menu/. Un utilisateur peut placer des fichiers de menus
+dans ~/.menu/ qui auront priorité sur tous les autres fichiers de menus.
+.PP
+Veuillez consulter le manuel des menus Debian présent dans 
+/usr/share/doc/menu/html pour les spécifications complètes des fichiers de 
+menus.
+.PP
+Les fichiers de menus portent d'habitude le nom du paquet Debian qui 
+contient les programmes qu'ils listent. Ils peuvent contenir plusieurs «\  
+entrées de menus\ », qui spécifient un élément particulier de la structure 
+d'un menu. Chaque entrée de menu spécifie le paquet dont elle dépend, ce qui 
+permet à
+.BR update\-menus (1)
+d'ignorer le menu si ce paquet n'est pas 
+installé. (Dans une entrée de menu vous pouvez spécifier des pseudo\-paquets 
+qui commencent par «\ local.\ », ce qui indique à update\-menus de toujours 
+utiliser ces menus). Si vous voulez supprimer entièrement tous les éléments 
+d'un fichier de menus, vous pouvez créer un fichier vide portant le même nom 
+que ce fichier de menus.
+.SH Exemples
+Dosemu peut installer le fichier de menus suivant dans 
+/usr/share/menu/dosemu\ :
+.PP
+ ?package(dosemu):needs="text" section="Apps/Emulators" title="Dosemu" command="dosemu"
+ ?package(dosemu):needs="x11" section="Apps/Emulators" title="Dosemu" command="xdos"
+.PP
+L'administrateur système peut vouloir remplacer ce fichier pour changer la 
+façon dont dosemu est exécuté, il crée alors le fichier /etc/menu/dosemu 
+suivant\ :
+.PP
+ ?package(dosemu):needs="text" section="Apps/Emulators" title="Dosemu" command="dosemu \-A"
+ ?package(dosemu):needs="x11"  section="Apps/Emulators" title="Dosemu" command="xdos \-A"
+.PP
+Il se peut également qu'un utilisateur ne veuille pas voir apparaître Dosemu 
+dans ses menus. Il peut alors créer un fichier vide nommé ~/.menu/dosemu.
+.SH FORMAT
+Un fichier de menus consiste en 0 ou plusieurs lignes dans le format 
+suivant\ :
+.RS
+.PP
+\fB?package(nom_paquet):var1=value1 var2=value2 \fP ...
+.TP 
+needs=
+Indique le type d'environnement que le programme nécessite. Cette variable 
+est obligatoire et peut valoir\ :
+.RS
+.TP 
+needs="text"
+Le programme nécessite un terminal
+.TP 
+needs="x11"
+Le programme nécessite un serveur X
+.TP 
+needs="vc"
+Le programme nécessite une console Linux (c'est à dire un programme 
+utilisant svgalib).
+.TP 
+needs="wm"
+Le programme est un gestionnaire de fenêtres.
+.TP 
+needs="fvwmmodule"
+Le programme est un module compatible avec fvwm.
+.RE
+.TP 
+section
+La section dans laquelle l'entrée de menu doit être affichée. Reportez\-vous 
+à la section \fBDISPOSITION DES MENUS\fP pour les noms de section.
+.RS
+.RE
+.TP 
+icon
+Une icône pour cette entrée de menu. Si aucune icône n'est disponible, vous 
+n'avez qu'à ne pas définir ce champ. (icon="none" est également possible, 
+mais il est préférable de ne pas placer cette ligne).
+.TP 
+title
+Le titre du programme qui apparaîtra dans le menu. Essayer de garder ce 
+champ court. Si deux entrées de menu partagent le même titre et la même 
+section, celle qui est la mieux adaptée au type d'affichage est 
+conservée. De cette façon, dans l'exemple précédent qui a deux menus qui ont 
+le même titre, si X est disponible, l'entrée dépendant de X11 est utilisée, 
+sinon celle pour un affichage texte est utilisée. Ce champ est obligatoire.
+.TP 
+command
+La commande à exécuter lorsque cette entrée est sélectionnée.
+.TP 
+hints
+Une liste d'indications séparées par des virgules, permettant de grouper les 
+menus. Veuillez consulter le manuel.
+.RE
+.SH "DISPOSITION DES MENUS"
+La liste \fBofficielle\fP de la structure des menus Debian est maintenue dans
+la sous\-charte des menus Debian («\ Debian Menu sub\-policy\ »), qui fait
+partie du paquet Debian Policy. La structure de menus ci\-dessous est incluse
+(et traduite) pour des raisons de commodité. Veuillez ne pas placer vos paquets 
+dans d'autres sections.
+
+NDT: les noms de sections officiels sont automatiquement traduit au
+moment de la génération des menus.
+
+Utilisez `/' pour séparer les noms des sous\-menus. Par exemple\ : 
+"Apps/Editors" ou "Games/Arcade".
+.PP
+ \fIApps\fP            \-\- Applications normales
+   \fIDatabases\fP     \-\- Programmes interactifs pour bases de données
+   \fIEditors\fP       \-\- Editeurs
+   \fIEmulators\fP     \-\- dosemu, ...
+   \fIEducation\fP     \-\- Programmes éducatif et de formation
+   \fIGraphics\fP      \-\- Outil de manipulation d'images
+   \fIHamradio\fP      \-\- Ce qui touche aux radioamateurs
+   \fIMath\fP          \-\- Applications pour les maths\ : gnuplot, octave, oleo, ...
+   \fINet\fP           \-\- mail, news, web, irc, etc.
+   \fIProgramming\fP   \-\- Debogueurs, etc
+   \fIScience\fP       \-\- Programmes scientifiques
+   \fITools\fP         \-\- Autres outils\ : xclock, xmag, xman, ...
+   \fITechnical\fP     \-\- Trucs techniques
+   \fIText\fP          \-\- Outils orientés texte (autres que les éditeurs)
+   \fIShells\fP        \-\- Différents interpréteurs, comme bash, zsh, ...
+   \fISound\fP         \-\- Lecteurs et éditeurs de fichiers sonores
+   \fIViewers\fP       \-\- Visualiseurs d'images\ : gs, ...
+   \fISystem\fP        \-\- Outils d'administration et de surveillance
+ \fIGames\fP           \-\- Jeux et divertissements
+   \fIAdventure\fP     \-\- Jeux d'aventure, zork, MOO's, ...
+   \fIArcade\fP        \-\- Jeux de reflexes
+   \fIBoard\fP         \-\- Gnuchess, pente, gnugo
+   \fICard\fP          \-\- solitaire, etc.
+   \fIPuzzles\fP       \-\- Stuff from xpuzzles, ...
+   \fISports\fP        \-\- Jeux de sports
+   \fIStrategy\fP      \-\- Jeux de stratégie
+   \fISimulation\fP    \-\- Simulateurs de vol, etc.
+   \fITetris\-like\fP   \-\- Jeux de chutes de blocs à ranger
+   \fIToys\fP          \-\- oneko, xeyes, etc.
+ \fIScreen\fP          \-\- Programmes utilisant l'écran
+   \fILock\fP          \-\- xlock, etc
+   \fISave\fP          \-\- Économiseurs d'écran
+   \fIRoot\-window\fP   \-\- Programmes qui modifient la fenêtre racine
+ \fIWindow\-managers\fP \-\- Switch between fvwm, afterstep, ...
+   \fIModules\fP       \-\- modules fvwm, etc 
+ \fIXShells\fP         \-\- Terminaux graphiques (comme xterm, rxvt, ...)
+.SH NOTES
+Si vous voulez spécifier une icône ou un raccourci clavier pour un sous\-menu 
+(par exemple, le sous\-menu Editors), utilisez la même syntaxe, mais laisser 
+le champ command vide, comme ceci\ :
+
+?package(monpaquet):needs="X11" section="Apps" icon="icon.xpm" hotkey="E" title="Editors"
+
+.PP
+À chaque fois qu'un fichier de menus est modifié, vous devez exécuter 
+.BR update\-menus (1).
+.SH FICHIERS
+(Fichiers par ordre de priorité décroissante)
+.PP
+.I ~/.menu/*
+.RS
+Fichiers de menus ajoutés par l'utilisateur.
+.RE
+.I /etc/menu/*
+.RS
+Fichiers de menus ajoutés par l'administrateur système.
+.RE
+.I /usr/lib/menu/*
+.RS
+Fichiers de menus dépendants de l'architecture fournis par d'autres paquets 
+Debian.
+.RE
+.I /usr/share/menu/*
+.RS
+Fichiers de menus indépendants de l'architecture fournis par d'autres 
+paquets Debian.
+.RE
+.I /usr/share/menu/default/*
+.RS
+Fichiers de menus fournis par le paquet menu.
+.RE
+.SH AUTEURS
+Joost Witteveen <joostje@debian.org>, basé sur les travaux de Lars 
+Wirzenius <liw@iki.fi> Il est désormais maintenu par Bill Allombert 
+<ballombe@debian.org>.
+.PP
+Page de manuel par Joey Hess, <joeyh@debian.org>
+.PP
+Ce document est basée sur une traduction, réalisée par Nicolas François le
+3 septembre 2005.
+.SH "VOIR AUSSI"
+.BR update\-menus(1),
+.BR /usr/share/doc/menu/html/index.html
