@@ -1,6 +1,9 @@
 menu (2.1.28) unstable; urgency=low
 
   * the "unreleased" release 
+  * Fix the menu.pot file. Closes: #343327. Thanks Thomas Huriaux.
+  * Update Greek menu sections translation. Thanks Konstantinos Margaritis.
+    Closes: #344587. 
 
  -- Bill Allombert <ballombe@debian.org>  Tue, 13 Dec 2005 16:15:23 +0100
 

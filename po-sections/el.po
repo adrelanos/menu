@@ -206,13 +206,13 @@ msgstr "Αποθήκευση"
 #.  Menu policy definition: things that fill the root window
 #.  will handle things that deal with the screen background, for instance
 msgid "Root-window"
-msgstr "Βασικό-παράθυρο"
+msgstr "Βασικό παράθυρο"
 
 #.  First level entry
 #.  Menu policy definition: X window managers
 #.  Will collect all window managers such as icewm, samfish, twm...
 msgid "WindowManagers"
-msgstr "ΔιαχειριστέςΠαραθύρων"
+msgstr "Διαχειριστές Παραθύρων"
 
 #.  Second level entry under "WindowManagers"
 #.  Menu policy definition: window manager modules
@@ -222,7 +222,7 @@ msgstr "Μονάδες"
 #.  First level entry for all xterm-style apps
 #.  Menu policy definition: xterm and its brethren
 msgid "XShells"
-msgstr "ΤερματικάΧ"
+msgstr "Τερματικά Χ"
 
 # From Apps/System/Admin
 #. From Apps/System/Admin
@@ -237,7 +237,7 @@ msgstr "Εμφάνισης"
 
 #. Non official sections from WindowMaker
 msgid "WorkSpace"
-msgstr "ΕπιφάνειαΕργασίας"
+msgstr "Επιφάνεια Εργασίας"
 
 # Frequently used unofficial sections.
 # From Apps/Net/Mozilla Components
