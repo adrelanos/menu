@@ -1,14 +1,15 @@
 # Menu section translation (Galician)
-# Copyright (C) 2005 Software in the Public Interest
+# Copyright (C) 2003
 # This file is distributed under the same license as the menu package.
-# Jacobo Tarrío <jtarrio@debian.org>, 2005.
+# Bill Allombert <ballombe@debian.org>, 2003.
+# Jacobo Tarrio <jtarrio@debian.org>, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: menu-section 2.1.9-3\n"
 "POT-Creation-Date: 2003-04-03 12:14+0100\n"
-"PO-Revision-Date: 2005-02-16 23:16+0100\n"
-"Last-Translator: Jacobo Tarrío <jtarrio@debian.org>\n"
+"PO-Revision-Date: 2006-03-26 14:27+0200\n"
+"Last-Translator: Jacobo Tarrio <jtarrio@debian.org>\n"
 "Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +35,7 @@ msgstr "Editores"
 #.  Second level entry under "Apps"
 #.  Menu policy definition: educational and training programs
 msgid "Education"
-msgstr "Educación"
+msgstr "Educativos"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: wine, dosemu, etc.
@@ -49,7 +50,7 @@ msgstr "Gráficos"
 #.  Second level entry under "Apps"
 #.  Menu policy definition: anything relating to ham (amateur) radio
 msgid "Hamradio"
-msgstr "Radioafección"
+msgstr "Radio-afección"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: math related programs
@@ -59,7 +60,7 @@ msgstr "Matemáticas"
 #.  Second level entry under "Apps"
 #.  Menu policy definition: network programs that don't fit elsewhere
 msgid "Net"
-msgstr "Rede"
+msgstr "Redes"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: debuggers, etc.
@@ -89,7 +90,7 @@ msgstr "Texto"
 #.  Second level entry under "Apps"
 #.  Menu policy definition: bash, ksh, zsh, etc.
 msgid "Shells"
-msgstr "Liña de ordes"
+msgstr "Intérpretes de ordes"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: sound players and editors
@@ -122,7 +123,7 @@ msgstr "Aventuras"
 #.  Second level entry under "Games"
 #.  Menu policy definition: any game where reflexes count
 msgid "Arcade"
-msgstr "Arcade"
+msgstr "Acción"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: games played on a board
@@ -139,7 +140,7 @@ msgstr "Cartas"
 #.  Menu policy definition: tests of ingenuity and logic
 #.  one-player games most often...or games which need the player to think..:-)
 msgid "Puzzles"
-msgstr "Creba cabezas"
+msgstr "Lóxica"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: Simulations of the real world (Flight
@@ -160,7 +161,7 @@ msgstr "Estratexia"
 #.  Second level entry under "Games"
 #.  Menu policy definition: games involving falling blocks
 msgid "Tetris-like"
-msgstr "Semellantes a Tetris"
+msgstr "Tipo Tetris"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: amusements, eye-candy, etc.
@@ -197,7 +198,7 @@ msgstr "Bloquear"
 #.  Most often the common word for "Save" as in File/Save
 #.  will NOT be appropriate
 msgid "Save"
-msgstr "Salvapantallas"
+msgstr "Salvar"
 
 #.  Second level entry under "Screen"
 #.  Menu policy definition: things that fill the root window
@@ -219,7 +220,7 @@ msgstr "Módulos"
 #.  First level entry for all xterm-style apps
 #.  Menu policy definition: xterm and its brethren
 msgid "XShells"
-msgstr "Terminais X"
+msgstr "Terminais gráficos"
 
 #. From Apps/System/Admin
 #.  for "System administration"
@@ -232,7 +233,7 @@ msgstr "Aparencia"
 
 #. Non official sections from WindowMaker
 msgid "WorkSpace"
-msgstr "Espacio de traballo"
+msgstr "Espazo de traballo"
 
 #. Frequently used unofficial sections.
 #. From Apps/Net/Mozilla Components
@@ -242,4 +243,4 @@ msgstr "Compoñentes de Mozilla"
 #. From Games/Toys/Teddies
 #.  as in "Teddy Bear"
 msgid "Teddies"
-msgstr "Monecos"
+msgstr "Osiños"
