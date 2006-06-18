@@ -703,7 +703,6 @@ int create_lock()
 {
   // return lock fd if succesful, false if unsuccesfull.
   int fd = true;
-  char buf[64];
 
   if (is_root) {
     fd = open(UPMEN_LOCKFILE,O_WRONLY|O_CREAT,00644);
@@ -720,8 +719,9 @@ int create_lock()
 
     }
 
-    sprintf(buf, "%d", getpid());
-    if (write(fd, buf, sizeof(buf) < 1)) {
+    std::ostringstream ss;
+    ss << getpid() << "\n";
+    if (write(fd, ss.str().c_str(), ss.str().length()) < 1) {
       config.report(String::compose(_("Cannot write to lockfile %1 - Aborting."), UPMEN_LOCKFILE),
           configinfo::report_quiet);
       return false;
