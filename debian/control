@@ -2,7 +2,7 @@ Source: menu
 Section: admin
 Priority: optional
 Maintainer: Bill Allombert <ballombe@debian.org>
-Standards-Version: 3.6.2
+Standards-Version: 3.7.2
 Build-Depends: debhelper (>= 4.0.0), texinfo, debiandoc-sgml, gettext
 
 Package: menu
