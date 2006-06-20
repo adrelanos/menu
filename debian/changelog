@@ -5,6 +5,9 @@ menu (2.1.28) unstable; urgency=low
     - Actually write pid to update-menus.pid. 
       Thanks to Pierre Thierry who discovered this bug.
   * Fix the menu.pot file. Closes: #343327. Thanks Thomas Huriaux.
+  * debian/rules: 
+    + Undo incorrect change in 2.1.26 that caused update-menus to be shipped
+      executable. Closes: #368814. Thanks Peter Chubb
   * Update Greek menu sections translation. Thanks Konstantinos Margaritis.
     Closes: #344587. 
   * Update Galician menu sections translation. Thanks Jacobo Tarrio.

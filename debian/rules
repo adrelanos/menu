@@ -82,6 +82,8 @@ binary-arch: build install
 	dh_strip
 	dh_compress
 	dh_fixperms
+	#Ensure update-menus is not shipped executable
+	chmod a-x debian/menu/usr/bin/update-menus
 	dh_installdeb
 #	refuse debhelper V3 conffiles behaviour.
 	cp debian/conffiles debian/menu/DEBIAN
