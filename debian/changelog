@@ -16,6 +16,8 @@ menu (2.1.28) unstable; urgency=low
     Closes: #374272
   * Add Belarusian menu sections translation. Thanks, Pavel Piatruk
     Closes: #373240
+  * Update Hungarian menu sections translation. Thanks, Attila Szervác
+    Closes: #374622
   * Bump Standards-Version to 3.7.2.
 
  -- Bill Allombert <ballombe@debian.org>  Sun, 18 Jun 2006 16:53:47 +0200
