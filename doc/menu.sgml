@@ -141,12 +141,12 @@ are finished by a ';' instead of a newline).
 <p>
 <sect> How/when do the window manager startup files get created?
 <p>
-Basically, you as user don't need to know any of how and when the
-startupfiles are created, but you might be interested to know anyway.
+Basically, users don't need to know any of how and when the
+startup files are created, but they might be interested to know anyway.
 <p>
 When a package that wants to add something to the menu tree gets
 installed, it will run <prgn/update-menus/ in its <file/postinst/ script.
-Update-menus then reads in all menu files in <file>/etc/menu/</file>
+Update-menus then reads in all menu files in <file>/etc/menu/</file>,
 <file>/usr/lib/menu</file>, <file>/usr/share/menu</file> and
 <file>/usr/share/menu/default</file>, and stores the menu entries of all
 installed packages in memory. Once that has been done, it will run the
@@ -206,7 +206,7 @@ in <file>/usr/lib/menu/</file>.
 System-local menu files should be in <file>/etc/menu/</file>.
 User-specific menu files should be in <file>~/.menu/</file>
 <sect> Syntax
-<p> The format is
+<p> The format is:
 <example>
 ?package(package[,package2,...]): \
    field1="value1"\
@@ -227,12 +227,12 @@ Here is an example to describe the syntax of such a file:
 </example>
 <p>
 A number sign ("#") can be used to include comments. An entry must be
-terminated by a newline, however you can use \ to escape a newline.
+terminated by a newline; however you can use a backslash to escape a newline.
 <p>
-Values must be quoted with ", and meta-character (", \, newline) must be
-escaped with a \.
+Values must be quoted with ", and meta-characters (", backslash, newline) must
+be escaped with a backslash.
 <p>
-You can include several entries in the same files. 
+You can include several entries in the same file. 
 <p>
 The file must be encoded in ASCII 7bit. This is necessary to accomodate 
 window managers that do not support 8bit. However the translations are not
@@ -242,12 +242,12 @@ limited in encoding.
 need to be installed for the menu entry to be displayed. That should include
 the package containing the menu file and any packages necessary to run the
 command not depended by the package nor essential.  Users can use
-pseudo packages names starting by <tt/local./ which are assumed to be always
+pseudo-package names starting with "<tt/local./" which are assumed to be always
 installed.
 <p> The fields <tt/needs/, <tt/section/, <tt/title/ and <tt/command/ are
 mandatory. Other fields are optional. Custom fields are supported, so
 you can add new fields for you own purpose. If a field is specified multiple
-times in a menuentry, the last instance will be used.
+times in a menu entry, the last instance will be used.
 
 <sect> The <tt/title/ field
 <p>
@@ -267,42 +267,44 @@ The following <tt/needs/ are documented for use in the Debian menu.
 <enumlist>
   <item> <tt/X11/: if this program runs under X11.
   <item> <tt/text/: if it runs under a terminal.  X11 window managers will
-  spawn a X terminal emulator.
-  <item> <tt/vc/: if it runs under the linux console but not under a virtual
-  terminal.
+  spawn an X terminal emulator.
+  <item> <tt/vc/: if it runs under a linux virtual console but not under a X
+  terminal emulator.
   <item> <tt/wm/: if it is a X11 window manager. The current window manager
   will exec(2) this program to avoid "Another window manager is running"
   errors.
 </enumlist>
 <p>
 
-A menu manager can use a special <tt/needs/ named after the package for
-menu entries that must only be displayed in this menu manager.
+A menu manager can use a special <tt/needs/ value reflecting the menu manager
+name for menu entries that must only be displayed in this menu manager.
 Examples include <tt/fvwm/ modules, <tt/dwww/ menu entries.
 <p>
-
-A program like gnumeric which can be run on X11 as well as on a text
+A program like gnuplot which can be run on X11 as well as on a text
 terminal should <em/not/ have an extra entry with <tt/needs=X11/
-because it will then be next to impossible to configure the window
-managers to spawn <prgn/rxvt/ instead of the default <prgn/xterm/.
+with an hard-coded call to an X terminal emulator, because this would defeat
+the configuration mechanism of menu that allow to choose which window manager
+is called.
 <p>
 
 On the other hand, if a program (like <prgn/emacs/) can be run as real X
 application as well as in a terminal, two entries should be listed,
 otherwise the program will always be run in an <prgn/xterm/ (or
-<prgn/rxvt/). Though you must remember, that two entries are never allowed
-to have the same title. The title must be unique.
+<prgn/rxvt/). However, two entries are not allowed to have the same title. The
+title must be unique.
 <p>
 <sect> The <tt/section/ field
 <p>
-The section field hold a / separated list of hierarchical sections components.
+The <tt/section/ field hold a slash-separated list of hierarchical sections
+components.
 <p>
 The <em/authoritative list of Debian's menu structure/ is maintained
 in the Debian Menu sub-policy document which is part of the Debian
 Policy package.
 <p>
-The menu structure below is included only for convenience and is not authoritative. If it disagree with the structure in the Debian Menu sub-policy, please
-send a wishlist bug to the <tt/menu/ package.
+The menu structure below is included only for convenience and is not
+authoritative. If it disagrees with the structure in the Debian Menu
+sub-policy, please send a wishlist bug to the <tt/menu/ package.
 <p>
 Please do <em/not/ put your packages into any other sections.
 <p>
@@ -363,11 +365,10 @@ or the equivalent.
 <sect> The <tt/icon/ field
 <p>
 
-Please, make sure the icons you specify are always available on the
+Please make sure the icons you specify are always available on the
 system. So, if you want to have an icon with your menu entry, the
-preferred method is to supply the icon with that package. Also, to
-prevent the distribution of icons files to turn too much into a mess,
-please put all icon files in the directory
+preferred method is to supply the icon with that package. 
+Icons sould generally be installed in the directory
 <file>/usr/share/pixmaps</file>.
 <p>
 
@@ -405,12 +406,12 @@ For example:
   command="/usr/bin/emacs20"\
   icon=/usr/share/emacs/20.3/etc/emacs.xbm
 </example>
-The above hints will case <tt/menu/ to consider grouping <tt/emacs/
+The above hints will tell <tt/menu/ to consider grouping <tt/emacs/
 together with other editors that are marked similar. For example, if
 <tt/vi/ on your system has a hints="Small,Expert" definition, and
-there are too many entries in the /Apps/Editors menuentry, then menu
+there are too many entries in the /Apps/Editors menu entry, then menu
 will consider creating a /Apps/Editors/Expert submenu, and put both
-<tt/vi/ and <tt/emacs/ in it. (of course, only if you have 
+<tt/vi/ and <tt/emacs/ in it. (Of course, only if you have 
 <tt/hint_optimize=true/ in your <file>/etc/menu-methods/menu.h</file> file).
 
 <sect> Entries for menu sections.
@@ -495,7 +496,7 @@ and the <file/postrm/ script should get the line
 <chapt>What packages with menu managers should do
 <p>
 
-Each package containing a <em/menu manager/ (i.e. a program that can
+Each package containing a <em/menu manager/ (i.e., a program that can
 display a menu) should provide a script or program in
 <file>/etc/menu-methods/</> that can read the menu files. This script
 will be executed by <prgn/update-menus/, which will feed the menu
@@ -589,7 +590,8 @@ preferred way of telling dpkg that your wm can cooperate with menu is:
    Suggests: menu
 </example>
 Please only consider using "depends" if you feel providing reasonable
-defaults for systems without menu will make life very difficult for you.
+defaults for systems without <prgn>menu</prgn> will make life very difficult
+for you.
 <p>
 
 <chapt>How a user can override the menus
@@ -612,9 +614,9 @@ if it's something that isn't ``debian-officially'' installed. (Any
 ``package'' that starts with ``<tt/local./'' is considered installed.)
 <p>
 
-If a user wants to have his/her own menu methods, he/she should create
-a <file>~/.menu-methods</> directory and put all scripts he/she wants to
-be run in it. (If <file>~/.menu-methods</> exists,
+If users want to have their own menu methods, they should create
+a <file>~/.menu-methods</> directory and put all their menu methods in it.
+(If <file>~/.menu-methods</> exists,
 <file>/etc/menu-methods</> will not be searched when a user runs
 <prgn/update-menus/).
 <p>
@@ -689,20 +691,20 @@ returns control to dpkg. The background process checks the
 gone. 
 <p>
 
-After that, <prgn/update-menus/ reads the menu-entry-files in
+After that, <prgn/update-menus/ reads the menu-entry files in
 the following directories: <file>/etc/menu</>, <file>/usr/lib/menu</>,
 <file>/usr/share/menu</>, <file>/usr/share/menu/default</>.
 (if a user runs <prgn/update-menus/, it will add <file>~/.menu</> to the
 front of that list). For every menu entry line in each file it checks
-if the corresponding package is installed (works on file bases for old
-syntax menu entry files). The menu entries of all "installed" packages
+if the corresponding package is installed. The menu entries of all 
+packages marked as installed by dpkg
 are added together in one big buffer that is kept in memory (exception:
 executable menu entry files are executed, and stdout is placed in
 the buffer). 
 <p>
 Once it's read all menu entry files, <prgn/update-menus/ starts all
 executable scripts in <file>/etc/menu-methods/</>, hands the scripts the
-previously created buffer via stdin. (If <prgn/update-menus/ is ran by
+previously created buffer via stdin. (If <prgn/update-menus/ is run by
 a user, it will first try to run the scripts in <file>~/.menu-methods</>, and
 only if that directory doesn't exist, it will run the scripts in
 <file>/etc/menu-methods</>). 
@@ -755,8 +757,8 @@ Options to <prgn/install-menu/:
 </example>
 <p>
 
-Some window managers don't support an `include' like statement in their
-<file/system.*rc/ files (like <prgn/m4/ or <prgn/cpp/ preprocessing), they
+Some window managers don't support an `include'-like statement in their
+<file/system.*rc/ files (like <prgn/m4/ or <prgn/cpp/ preprocessing); they
 cannot read the <file/menudefs.hook/ file generated by install-menu from their
 <file/system.*rc/ config file. To still be able to use them,
 <prgn/install-menu/ will copy the file <file>$path/$examplercfile</file> to
@@ -774,10 +776,9 @@ As an example, consider the following:
 will first generate the file
 <file>/etc/X11/foo-wm/menudefs.hook</file>. Next, it will line-by-line 
 read the file <file>/etc/X11/foo-wm/system.foo-wm-example</file> and copy
-it's contents to <file>/etc/X11/foo-wm/system.foo-wm</file>, replacing
-every occurrence of the string <tt>install-menu-defs</tt> by the
-contents
-of the file <file>/etc/X11/foo-wm/menudefs.hook</file>. 
+its contents to <file>/etc/X11/foo-wm/system.foo-wm</file>, replacing
+every occurrence of the string <tt>install-menu-defs</tt> with the
+contents of the file <file>/etc/X11/foo-wm/menudefs.hook</file>. 
 <p>
 
 To activate the file copying in this way, simply define the <tt/$examplercfile/
@@ -788,7 +789,7 @@ example, see <file>/etc/menu-methods/fvwm</file>), and make sure there is a
 <p>
 
 If you are writing a menu method, you can use the following to make
-debugging it somewhat easier:
+debugging it somewhat more easily:
 <enumlist>
 <item>use <tt>update-menus --stdout > /tmp/menu-stdin </tt>
 to create a list of menu entries in <file>/tmp/menu-stdin</file>
@@ -804,9 +805,9 @@ and then
 <p>
 
 The menu-methods in <file>/etc/menu-methods/*</> are basically made up of
-a lot of ``tag=string'' definitions, explaining <prgn/install-menu/
-how to generate a <file/system.$wmrc/ script. This way you can tune
-the look of generated <file/system.$wmrc/ to your needs.
+a lot of ``tag=string'' definitions, telling <prgn/install-menu/
+how to generate a <file/system.${wm}rc/ script. This way you can tune
+the look of generated <file/system.${wm}rc/ to your needs.
 <p>
 
 In the following, something like 
@@ -825,8 +826,10 @@ For examples of what these scripts can look like, see
 <item>
 Two mode are defined:
 <taglist>
-<tag> <tt/"menu-1"/ <item> menu directives are terminated by an end-of-line character. </item>
-<tag> <tt/"menu-2"/ <item>menu directives are terminated by semi-comma character. </item>
+<tag> <tt/"menu-1"/ <item> menu directives are terminated by an end-of-line
+character. </item>
+<tag> <tt/"menu-2"/ <item> menu directives are terminated by a semicolon
+character. </item>
 </taglist>
 This must be just after the <tt>!include "menu.h"</tt> directive so that
 <file>menu.h</file> can use its own compat mode.
@@ -859,21 +862,22 @@ is an example for a wm that supports both needs=x11 and needs=text:
 
 For the variable substitution (and functions, not shown above), see
 the next paragraph. In the above example, you'll notice that for the
-menu entries that "need=text", the term() function is used. This is an
+menu entries that "need=text", the term() function is used. This is a
 user-supplied function that will run $command in a X terminal emulator.  Also,
-as x11 is higher up in the supported list above than text, a package that
-supplies both a "needs=x11" and a "needs=text" entry will have the needs=x11
+as X11 is higher up in the supported list above than text, a package that
+supplies both a "needs=X11" and a "needs=text" entry will have the needs=X11
 entry installed, in favour of the needs=text entry.  You can continue lines on
-the next line with a \, but do make sure you don't add any spaces after the \.
+the next line with a backslash ("\"), but make sure you don't add any spaces
+after the backslash.
 
 <tag><tt/startmenu=""/
 <tag><tt/endmenu=""/
 <tag><tt/submenutitle=""/
 <item>
 These define what to print for the beginning/end of a menu, and
-how to the print a menu entry that pops up another menu entry.
-They are substituted the same way as the "supported" stuff is.
-(see next paragraph).
+how to the print a menu entry that pops up another menu.
+They are substituted the same way as the "supported" stuff is;
+see next paragraph.
 
 <tag><tt/treewalk="c(m)"/
 <item>
@@ -906,12 +910,12 @@ only need one of the two anyway).
 
 <tag><tt>rootsection="/Debian"</>
 <item>
-the prefix, every <tt/$section/ variable gets.
+the prefix every <tt/$section/ variable gets.
 
 <tag><tt/prerun=""/
 <tag><tt/postrun=""/
 <item>
-The commands to run before resp. after the actual generation of the
+The commands to run before and after, respectively, the actual generation of the
 <file/menudefs.hook/ (genmenu) file. Commands will be executed by <prgn/sh/.
 Example: 
 <example>
@@ -927,12 +931,9 @@ menu will quit.
 <item>
 If non-zero, install-menus will, after generating the output files,
 also load the file also_run, and use the new assignments to treewalk,
-genmenu, etc to generate more output. This second time, variables like
+genmenu, etc. to generate more output. This second time, variables like
 <tt/prerun/ and all of the hint stuff are ignored.
 <p>
-Note: NOT just like <tt/prerun/ etc: <tt/prerun/ etc start a command
-with /bin/sh, <tt/also_run/ doesn't exec any other command, just tells
-install-menu to also load another binary, and generate the output.
 
 <tag><tt/removemenu=""/
 <item>
@@ -945,8 +946,9 @@ defined, and try to remove <tt/prefix()/ if it is empty.
 <tag><tt/onlyrunasroot=false/
 <tag><tt/onlyrunasuser=false/
 <item>
-If <tt/onlyrunasroot/ is set to true, menu will quit silently when run as
-user. Similarly for <tt/onlyrunasuser/.
+If <tt/onlyrunasroot/ is set to true, <prgn>install-menu</> will quit silently
+when run as a user. Similarly for <tt/onlyrunasuser/.
+
 <var><tt/onlyrunasroot/ is deprecated since it is simpler to just not define
 <tt/userprefix/.</var> On the other hand, <tt/onlyrunasuser/ might be needed 
 if you use <tt/rcfile/ since <tt/rootprefix/ is used as a fallback location
@@ -1097,7 +1099,7 @@ menu-divisions.
 <item>
 The search for what hints to use in one menu is rather expensive. But
 due to the way things are sorted, menu seems to always find the `best'
-match in the first 2% of iterations. Thus, a way to speedup things is
+match in the first 2% of iterations. Thus, a way to speed things up is
 simply to cut of menu searching after `some' iterations are
 done. This value controls this, and limits the number of iterations to 
 5+hint_max_iter_hint*number_of_possible_hints. Set this value to
@@ -1114,7 +1116,7 @@ The hints actually work in a rather strange way: when
 <tt/hint_optimize=true/ then all <tt/$section/ elements are added to
 the specified <tt/$hints/ variable, and the order (/Apps/Editors or
 /Editors/Apps) of the resulting hints is completely ignored. Then, the
-hints for each menu entry are handed to the optimization routine, that
+hints for each menu entry are handed to the optimization routine, which
 will calculate a reasonable tree for those hints. That tree must
 comply with the following:
 <p>
@@ -1123,7 +1125,7 @@ When a user looks for a program "Program" with, say, hints
 "Good,Bulky,Heaven", then, while walking through the tree, it should at
 every node visited
 be clear for the user what submenu to select (or the menu should have
-"Program" directly in it). So, the toplevel menu may
+"Program" directly in it). So, the top-level menu may
 look like
 <example>
   Good
@@ -1155,8 +1157,8 @@ and "submenutitle=" are interpreted as follows:
 <p>
   Anything inside double quotes ("") is interpreted as a string, and
   is written verbatim to the output file.
-  Stuff like \n, \t, ... will be substituted for their C expansions 
-  (But not \0xx, currently).
+  Escape sequences like \n, \t, ... will be replaced with their C expansions 
+  (but currently \0xx octal escape sequences are not supported).
 
 <sect> Variables
 <p>
@@ -1177,7 +1179,7 @@ and "submenutitle=" are interpreted as follows:
 <tag>    command: 
 <item>
              If this is undefined, this menu entry is taken as defining
-             a sub-menu. (this way you can specify icons of sub-menus).
+             a sub-menu. This way you can specify icons of sub-menus.
 <tag>    title!:  
 <item>
              Used for sorting (see section).
@@ -1272,8 +1274,8 @@ and "submenutitle=" are interpreted as follows:
 </taglist>   
 <sect> Functions
 <p>
-  Anything matching [a-z,A-Z,_] is taken as a function (and an error
-  is generated if the function doesn't exist). The arguments of the
+  Anything matching <tt/[a-zA-Z_]+/ is taken as a function name, and an error
+  is generated if the function doesn't exist. The arguments of the
   functions can be other functions, string constants or variables.
 <taglist>
 <tag> prefix() <item>

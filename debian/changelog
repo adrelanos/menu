@@ -10,6 +10,8 @@ menu (2.1.28) unstable; urgency=low
       executable. Closes: #368814. Thanks Peter Chubb
   * Fix typos in su-to-root's French manpage. Thanks Filipus Klutiero.
     Closes: #352465.
+  * Improve menu.sgml following suggestions from Daniel Barclay, first stage,
+    see bug #354403.
   * Update Greek menu sections translation. Thanks Konstantinos Margaritis.
     Closes: #344587. 
   * Update Galician menu sections translation. Thanks Jacobo Tarrio.
