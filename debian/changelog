@@ -8,6 +8,8 @@ menu (2.1.28) unstable; urgency=low
   * debian/rules: 
     + Undo incorrect change in 2.1.26 that caused update-menus to be shipped
       executable. Closes: #368814. Thanks Peter Chubb
+  * Fix typos in su-to-root's French manpage. Thanks Filipus Klutiero.
+    Closes: #352465.
   * Update Greek menu sections translation. Thanks Konstantinos Margaritis.
     Closes: #344587. 
   * Update Galician menu sections translation. Thanks Jacobo Tarrio.

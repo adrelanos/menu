@@ -4,16 +4,16 @@
 .SH NOM
 su\-to\-root \- un simple script qui est une interface interactive à su. Il 
 peut être utilisé dans les commandes des entrées de menu pour demander le 
-mode passe du superutilisateur.
+mot de passe du super-utilisateur.
 .SH SYNOPSIS
 \fBsu\-to\-root [\-X] [\-p <utilisateur>] \-c <commande>\fP
 .SH DESCRIPTION
 La plupart des entrées de menu démarrent un éditeur, un jeu, ou n'importe 
 quoi d'autre. Mais certaines entrées de menu veulent fournir à l'utilisateur 
-la possibilité de changer des réglages important du système, ce qui 
+la possibilité de changer des réglages importants du système, ce qui 
 nécessite des droits d'administration. 
 .B su\-to\-root
-peut être utilisé pour demander le mot de passe du superutilisateur.
+peut être utilisé pour demander le mot de passe du super-utilisateur.
 .SH OPTIONS
 .IP "\-c <command>"
 La commande à exécuter sous forme de chaîne de caractères. Cette option est 
@@ -25,7 +25,7 @@ La commande est un programme X11 qui ne nécessite pas de terminal. Elle doit
 être utilisée avec les entrées de menu qui déclarent le champs needs="X11".
 .SH ENVIRONNEMENT
 .IP SU_TO_ROOT_X
-Indique le programme permettant de devenir superutilisateur qui sera appelé 
+Indique le programme permettant de devenir super-utilisateur qui sera appelé 
 par \fBsu\-to\-root \-X\fP. Les valeurs acceptées sont \fIgksu\fP, \fIkdesu\fP
 et \fIsux\fP.
 .IP SU_TO_ROOT_SU
