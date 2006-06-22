@@ -1,6 +1,6 @@
 menu (2.1.28) unstable; urgency=low
 
-  * The "unreleased" release 
+  * The "Happy birthday" release 
   * Morten Brix Pedersen:
     - Actually write pid to update-menus.pid. 
       Thanks to Pierre Thierry who discovered this bug.
@@ -24,7 +24,7 @@ menu (2.1.28) unstable; urgency=low
     Closes: #374622
   * Bump Standards-Version to 3.7.2.
 
- -- Bill Allombert <ballombe@debian.org>  Sun, 18 Jun 2006 16:53:47 +0200
+ -- Bill Allombert <ballombe@debian.org>  Thu, 22 Jun 2006 20:40:52 +0200
 
 menu (2.1.27) unstable; urgency=low
 
