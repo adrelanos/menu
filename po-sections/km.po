@@ -1,0 +1,251 @@
+# translation of menu_po-sections_km.po to Khmer
+# translation of menu_po-sections_km.po to
+# Menu section translation
+# Copyright (C) 2003
+# This file is distributed under the same license as the menu package.
+#
+# Bill Allombert <ballombe@debian.org>, 2003.
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2006.
+# auk piseth <piseth_dv@khmeros.info>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: menu_po-sections_km\n"
+"POT-Creation-Date: 2003-04-03 12:14+0100\n"
+"PO-Revision-Date: 2006-06-12 15:21-0600\n"
+"Last-Translator: auk piseth <piseth_dv@khmeros.info>\n"
+"Language-Team: Khmer <support@khmeros.info>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11\n"
+
+#.  First level entry
+#.  All following 2nd level entries go "under" it
+#.  From menu policy (/usr/share/doc/pdebian-policy/menu-policy.txt.gz):
+#.      normal applications
+msgid "Apps"
+msgstr "Apps"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: interactive database programs
+msgid "Databases"
+msgstr "មូលដ្ឋាន​ទិន្នន័យ​"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: text editors, word processors
+msgid "Editors"
+msgstr "កម្មវិធី​និពន្ធ​"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: educational and training programs
+msgid "Education"
+msgstr "ការ​អប់​រំ​"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: wine, dosemu, etc.
+msgid "Emulators"
+msgstr "វត្ថុ​ត្រាប់​តាម"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: image manipulation
+msgid "Graphics"
+msgstr "ក្រាហ្វិក​"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: anything relating to ham (amateur) radio
+msgid "Hamradio"
+msgstr "Hamradio"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: math related programs
+msgid "Math"
+msgstr "គណិត​"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: network programs that don't fit elsewhere
+msgid "Net"
+msgstr "សំណាញ់"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: debuggers, etc.
+msgid "Programming"
+msgstr "សរសេរ​កម្មវិធី​"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: scientific programs
+msgid "Science"
+msgstr "វិទ្យាសាស្ត្រ​"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: simple apps, like clocks, that perform only one task
+msgid "Tools"
+msgstr "ឧបករណ៍​"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: technical stuff
+msgid "Technical"
+msgstr "បច្ចេកទេស​"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: text oriented tools other than editors
+msgid "Text"
+msgstr "អត្ថបទ​"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: bash, ksh, zsh, etc.
+msgid "Shells"
+msgstr "សែល​"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: sound players and editors
+msgid "Sound"
+msgstr "សម្លេង​"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: image viewers
+#.  Maybe also applications which able users to view some specific data
+#.  such as PDF, images, Postscript...
+msgid "Viewers"
+msgstr "អ្នក​​មើល​"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: system administration and monitoring tools
+msgid "System"
+msgstr "ប្រព័ន្ធ​"
+
+#.  First level entry
+#.  Menu policy definition: games and recreations
+msgid "Games"
+msgstr "ល្បែង​"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: walk around virtual space, zork, MOO's, etc
+#.  All adventure-style games (often includes RPG)
+msgid "Adventure"
+msgstr "ការផ្សងព្រេង​"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: any game where reflexes count
+msgid "Arcade"
+msgstr "ល្បែងទូ​"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: games played on a board
+#.  Board-style games such as Mastermind, Yahtzee, Mahjongg
+msgid "Board"
+msgstr "ក្តារ​"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: games involving a deck of cards
+msgid "Card"
+msgstr "កាត​"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: tests of ingenuity and logic
+#.  one-player games most often...or games which need the player to think..:-)
+msgid "Puzzles"
+msgstr "ល្បែង​ដោះស្រាយ​"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: Simulations of the real world (Flight
+#.                          Simulators, for example)
+msgid "Simulation"
+msgstr "ការក្លែងធ្វើ​"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: games derived from "real world" sports
+msgid "Sports"
+msgstr "កីឡា"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: games involving long term strategic thinking
+msgid "Strategy"
+msgstr "យុទ្ធសាស្ត្រ​"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: games involving falling blocks
+msgid "Tetris-like"
+msgstr "ដូច​ Tetris"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: amusements, eye-candy, etc.
+#.  Very small things which are often not really games
+#.  Such as Xeyes....
+msgid "Toys"
+msgstr "គ្រឿងលេង​"
+
+#.  First level entry
+#.  Menu policy definition: programs that provide user documentation
+msgid "Help"
+msgstr "ជំនួយ​"
+
+#.  First level entry
+#.  BE VERY CAREFUL HERE
+#.  Menu policy definition: programs that affect the whole screen
+#.  This entry is about screen saver/locking systems
+#.  (see the following entries)
+#.  Most often, literal translations to the word for "Screen"
+#.  in your language will NOT be correct
+#.  Try using what you use for "screen" in "screensaver" for your language
+msgid "Screen"
+msgstr "អេក្រង់​"
+
+#.  Second level entry under "Screen"
+#.  Menu policy definition: programs to lock the screen
+#.  Refers to "Screen" as "Lock the screen"
+msgid "Lock"
+msgstr "ចាក់សោ"
+
+#.  Second level entry under "Screen"
+#.  Menu policy definition: screen savers
+#.  Refers to "Screen" as "trigger the screensaver"
+#.  Most often the common word for "Save" as in File/Save
+#.  will NOT be appropriate
+msgid "Save"
+msgstr "រក្សាទុក​"
+
+#.  Second level entry under "Screen"
+#.  Menu policy definition: things that fill the root window
+#.  will handle things that deal with the screen background, for instance
+msgid "Root-window"
+msgstr "បង្អួច​ Root"
+
+#.  First level entry
+#.  Menu policy definition: X window managers
+#.  Will collect all window managers such as icewm, samfish, twm...
+msgid "WindowManagers"
+msgstr "អ្នក​គ្រប់គ្រង​បង្អួច​"
+
+#.  Second level entry under "WindowManagers"
+#.  Menu policy definition: window manager modules
+msgid "Modules"
+msgstr "ម៉ូឌុល"
+
+#.  First level entry for all xterm-style apps
+#.  Menu policy definition: xterm and its brethren
+msgid "XShells"
+msgstr "សែល X"
+
+#. From Apps/System/Admin
+#.  for "System administration"
+msgid "Admin"
+msgstr "Admin"
+
+#. Non official sections from WindowMaker
+msgid "Appearance"
+msgstr "រូបរាង​"
+
+#. Non official sections from WindowMaker
+msgid "WorkSpace"
+msgstr "តំបន់​ធ្វើការ"
+
+#. Frequently used unofficial sections.
+#. From Apps/Net/Mozilla Components
+msgid "Mozilla Components"
+msgstr "សមាសភាគ Mozilla "
+
+#. From Games/Toys/Teddies
+#.  as in "Teddy Bear"
+msgid "Teddies"
+msgstr "Teddies"
+
