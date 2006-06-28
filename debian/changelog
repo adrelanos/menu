@@ -1,8 +1,10 @@
 menu (2.1.29) unstable; urgency=low
 
-  * The "unreleased" release.
+  * The "spotted giraffe" release.
+  * Replace depcomp symlink by the depcomp script. Closes: #375103.
+  * Add Khmer menu sections translation. Thanks, Khoem Sokhem. Closes: #375062.
 
- -- Bill Allombert <ballombe@debian.org>  Thu, 22 Jun 2006 23:55:26 +0200
+ -- Bill Allombert <ballombe@debian.org>  Tue, 27 Jun 2006 20:52:38 +0200
 
 menu (2.1.28) unstable; urgency=low
 
