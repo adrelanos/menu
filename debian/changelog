@@ -1,3 +1,9 @@
+menu (2.1.30) UNRELEASED; urgency=low
+
+  * Add Dzongkha menu sections translation. Thanks, Jurmey Rabgay.
+
+ -- Christian Perrier <bubulle@debian.org>  Sat,  1 Jul 2006 08:39:43 +0200
+
 menu (2.1.29) unstable; urgency=low
 
   * The "spotted giraffe" release.
