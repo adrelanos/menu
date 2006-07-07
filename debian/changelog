@@ -1,8 +1,8 @@
-menu (2.1.30) UNRELEASED; urgency=low
+menu (2.1.30) unstable; urgency=low
 
-  * Add Dzongkha menu sections translation. Thanks, Jurmey Rabgay.
+  * The "unreleased" release.
 
- -- Christian Perrier <bubulle@debian.org>  Sat,  1 Jul 2006 08:39:43 +0200
+ -- Bill Allombert <ballombe@debian.org>  Fri,  7 Jul 2006 11:31:29 +0200
 
 menu (2.1.29) unstable; urgency=low
 
