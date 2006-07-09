@@ -2,6 +2,8 @@ menu (2.1.30) unstable; urgency=low
 
   * The "unreleased" release.
   * Add Dzongkha menu sections translation. Thanks, Jurmey Rabgay.
+  * Add Arabic menu sections translation. Thanks, Ossama M. Khayat.
+    Closes: #377427
 
  -- Bill Allombert <ballombe@debian.org>  Sat,  8 Jul 2006 11:28:17 +0200
 
