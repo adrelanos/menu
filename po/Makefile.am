@@ -1,5 +1,5 @@
-MOs = cs.mo da.mo de.mo el.mo eo.mo es.mo fi.mo fr.mo gl.mo it.mo ja.mo nl.mo nb.mo nn.mo pl.mo pt.mo pt_BR.mo ru.mo sv.mo tr.mo vi.mo zh_CN.mo zh_TW.mo
-POs = cs.po da.po de.po el.po eo.po es.po fi.po fr.po gl.po it.po ja.po nl.po nb.po nn.po pl.po pt.po pt_BR.po ru.po sv.po tr.po vi.po zh_CN.po zh_TW.po
+MOs = @MO_PROGRAMS@
+POs = @PO_PROGRAMS@
 localedir = $(datadir)/locale
 
 EXTRA_DIST = $(POs)
