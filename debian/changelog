@@ -1,5 +1,6 @@
 menu (2.1.30) unstable; urgency=low
 
+  [ Bill Allombert ]
   * The "unreleased" release.
   * Add Dzongkha menu sections translation. Thanks, Jurmey Rabgay.
   * Add Arabic menu sections translation. Thanks, Ossama M. Khayat.
@@ -7,11 +8,15 @@ menu (2.1.30) unstable; urgency=low
   * Add Thai menu messages and sections translations.
     Thanks, Theppitak Karoonboonyanan. Closes: #377511
   * configure.ac, po/Makefile.am, po-sections/Makefile.am:
-    + automatically compute the list of available po files when running 
+    + automatically compute the list of available po files when running
     configure instead of hard-coding them. This should make life easier for
     Christian and Mohammed.
 
- -- Bill Allombert <ballombe@debian.org>  Sun, 16 Jul 2006 16:54:38 +0200
+  [ Christian Perrier ]
+  * Add Tagalog menu sections translation. Thanks, Eric Pareja.
+    Closes: #382337
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 11 Aug 2006 21:12:26 -0500
 
 menu (2.1.29) unstable; urgency=low
 
