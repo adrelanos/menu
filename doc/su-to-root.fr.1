@@ -28,11 +28,18 @@ La commande est un programme X11 qui ne nécessite pas de terminal. Elle doit
 Indique le programme permettant de devenir super-utilisateur qui sera appelé 
 par \fBsu\-to\-root \-X\fP. Les valeurs acceptées sont \fIgksu\fP, \fIkdesu\fP
 et \fIsux\fP.
+.IP
+Quand cette variable n'est pas définie, \fBsu-to-root\fR essaie actuellement 
+d'utiliser \fIgksu\fR, \fIkdesu\fR, \fIsux\fR et le code intégré dans cet ordre
+avec l'exception que, dans une session KDE, \fIkdesu\fR sera préféré à
+\fIgksu\fR.
+.IP
+La liste de programmes à essayer et son ordre est sujet à changement sans avertissement. 
 .IP SU_TO_ROOT_SU
 La valeur \fIsux\fP force \fBsu\-to\-root\fP à utiliser \fIsux\fP en mode texte.
 .SH FICHIERS
 .IP ~/.su\-to\-rootrc
-(\fBexperimental\fP) \fBsu\-to\-root\fP sourcera ce fichier au lancement. Ceci
+\fBsu\-to\-root\fP sourcera ce fichier au lancement. Ceci
 permet de définir et modifier les variables d'environnement décrite
 précédemment sans avoir à redémarrer votre session X.
 .SH DISTRIBUTION

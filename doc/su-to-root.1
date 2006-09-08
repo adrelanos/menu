@@ -17,7 +17,7 @@ can be used to ask for the root password.
 .IP "-c <command>"
 The command to execute as a string. This option is mandatory.
 .IP "-p <user>"
-The name of the user to su to, instead of root.
+The name of the user to change to, instead of root.
 .IP -X
 The command is a X11 program that do not require a terminal.
 This is to be used with menu entries that declare needs="X11".
@@ -25,13 +25,20 @@ This is to be used with menu entries that declare needs="X11".
 .IP SU_TO_ROOT_X
 Select the su-like program called by \fBsu-to-root -X\fR.
 Supported values are \fIgksu\fR, \fIkdesu\fR and \fIsux\fR.
+.IP
+When this variable is not set \fBsu-to-root\fR will currently try to use
+\fIgksu\fR, \fIkdesu\fR, \fIsux\fR and the built-in code, in that order with
+the exception that under a KDE session, \fIkdesu\fR is prefered over
+\fIgksu\fR.
+.IP
+The exact set of programs to try and their order is subject to change without
+notice.
 .IP SU_TO_ROOT_SU
 If set to \fIsux\fR force 
 .B su-to-root 
 to use \fIsux\fR in text mode.
 .SH FILES
 .IP ~/.su-to-rootrc
-(\fBexperimental\fR)
 \fBsu-to-root\fR will source this file at startup. This lets you define and
 modify the environment variables above without restarting your X session.  
 .SH COPYING

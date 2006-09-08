@@ -1,22 +1,25 @@
 menu (2.1.30) unstable; urgency=low
 
-  [ Bill Allombert ]
-  * The "unreleased" release.
+  * The "check for free" release.
   * Add Dzongkha menu sections translation. Thanks, Jurmey Rabgay.
   * Add Arabic menu sections translation. Thanks, Ossama M. Khayat.
     Closes: #377427
   * Add Thai menu messages and sections translations.
     Thanks, Theppitak Karoonboonyanan. Closes: #377511
-  * configure.ac, po/Makefile.am, po-sections/Makefile.am:
-    + automatically compute the list of available po files when running
-    configure instead of hard-coding them. This should make life easier for
-    Christian and Mohammed.
-
-  [ Christian Perrier ]
   * Add Tagalog menu sections translation. Thanks, Eric Pareja.
     Closes: #382337
+  * configure.ac, po/Makefile.am, po-sections/Makefile.am:
+    + automatically compute the list of available po files when running
+      configure instead of hard-coding them. This should make life easier
+      for Christian and Mohammed.
+  * su_to-root: if both gksu and kdesu are available, select kdesu
+    in preference of gksu if running under KDE. Thanks Fathi Boudra.
+  * su_to-root.1, su_to-root.fr.1: document which program is called when
+    SU_TO_ROOT_X is not set. Closes: #352464.
+  * Improve menu.sgml and manpages following suggestions from Daniel Barclay.
+    Closes: #354403, thanks a lot for the thorough review.
 
- -- Christian Perrier <bubulle@debian.org>  Fri, 11 Aug 2006 21:12:26 -0500
+ -- Bill Allombert <ballombe@debian.org>  Fri,  8 Sep 2006 19:08:30 +0200
 
 menu (2.1.29) unstable; urgency=low
 

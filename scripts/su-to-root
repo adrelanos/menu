@@ -14,7 +14,7 @@ eshell() {
 }
 usage () {
   echo usage: $0 '[-X] [-p <user>] -c <command>' >&2
-  echo '-X: command is a X11 program' >&2
+  echo '  -X: command is a X11 program' >&2
   exit 1
 }
 
@@ -70,7 +70,12 @@ else
   X11)
     if test -z "$SU_TO_ROOT_X"; then
       if which gksu >/dev/null 2>&1 ; then
-        SU_TO_ROOT_X=gksu
+        if test "X$KDE_FULL_SESSION" = "Xtrue" \
+           && which kdesu >/dev/null 2>&1 ; then
+          SU_TO_ROOT_X=kdesu
+        else
+          SU_TO_ROOT_X=gksu
+        fi;
       elif which kdesu >/dev/null 2>&1 ; then 
         SU_TO_ROOT_X=kdesu
       elif which sux >/dev/null 2>&1 ; then 
