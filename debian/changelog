@@ -15,9 +15,12 @@ menu (2.1.30) unstable; urgency=low
   * su_to-root: if both gksu and kdesu are available, select kdesu
     in preference of gksu if running under KDE. Thanks Fathi Boudra.
   * su_to-root.1, su_to-root.fr.1: document which program is called when
-    SU_TO_ROOT_X is not set. Closes: #352464.
+    SU_TO_ROOT_X is not set. Closes: #352464. Noticed by Filipus Klutiero.
   * Improve menu.sgml and manpages following suggestions from Daniel Barclay.
     Closes: #354403, thanks a lot for the thorough review.
+  * update-menus:
+    + In verbose mode, report menu entries that depend on a missing package.
+      Closes: #386446.  Requested by Frank Küster.
 
  -- Bill Allombert <ballombe@debian.org>  Fri,  8 Sep 2006 19:08:30 +0200
 

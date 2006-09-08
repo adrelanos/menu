@@ -145,6 +145,10 @@ void menuentry::check_pkg_validity(parsestream &i, std::string &name)
           name += pkgname;
           if (!is_pkg_installed(pkgname)) {
               i.skip_line();
+              config.report(String::compose(
+          _("file %1 line %2:\nDiscarding entry requiring missing package %3.")
+                  , i.filename(), i.linenumber(), pkgname)
+                  , configinfo::report_verbose);
               throw cond_inst_false();
           }
       } else if (c == ')') {
