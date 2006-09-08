@@ -72,7 +72,7 @@ dans le répertoire ~/.menu. Voir aussi
 .RE	
 .I par gestionnaire de fenêtres, dans /etc/menu-methods/$wm
 .RS
-Dans ces fichiers de configuration, on peut ajuster le fichier system."$wm"rc
+Dans ces fichiers de configuration, on peut ajuster le fichier system.${wm}rc
 généré pour chacun des gestionnaires de fenêtres. Par exemple, on peut
 définir que le gestionnaire doit ignorer toute icône que le paquet pourrait 
 fournir, ou définir le programme générique pour les applications en mode texte
@@ -167,8 +167,8 @@ La distribution est soumise à la Licence Publique Générale GNU.
 .I update-menus
 peut connaître des dysfonctionnements quand il est invoqué par un simple 
 utilisateur pour générer ses propres menus. C'est souvent parce que le 
-gestionnaire de fenêtres n'attend pas les fichiers system."$wm"rc 
-dans le répertoire (normalement ~/."$wm", à configurer dans /etc/menu-methods).
+gestionnaire de fenêtres n'attend pas les fichiers system.${wm}rc 
+dans le répertoire (normalement ~/.${wm}, à configurer dans /etc/menu-methods).
 Si vous repérez quelque chose de ce genre et que vous trouvez une solution, 
 envoyez-moi un courrier à <menu@packages.debian.org>. Cela doit parfaitement
 fonctionner pour fvwm et fvwm2\ : je teste d'abord le paquet en tant que simple

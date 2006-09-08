@@ -20,15 +20,15 @@ managers and other menu programs. It should be run whenever a
 .BR menufile (5)
 or menu-method file is changed.
 .I update-menus
-will be ran automatically when Debian packages that contain menu 
-files are installed or removed from the system.
+will be run automatically when Debian packages that contain menu 
+files are installed on or removed from the system.
 .PP
 .I update-menus
 uses the package-supplied menu entry files (in /usr/share/menu) for
 its information about the menus (but this can be overruled by the
-system administrator/user, see below). If a menu entry file is executable,
+system administrator/user; see below). If a menu entry file is executable,
 .I update-menus
-execute the menu entry file, and use its stdout to generate the menu
+executes the menu entry file, and uses its stdout to generate the menu
 database.
 
 .SH OPTIONS
@@ -39,7 +39,7 @@ Debug output. Generates loads of unintelligible output.
 .IP "-h, --help"
 Display usage help and exit.
 .IP "--menufilesdir <dir>" 
-Adds directory <dir> to the list of directory to search for menu files in. 
+Adds directory <dir> to the list of directories to search for menu files in. 
 .IP "--menumethod <method>" 
 Process only the menu method <method> instead of all the menu methods found.
 .IP "--nodefaultdirs"
@@ -56,8 +56,8 @@ There are several ways to tune the operation of update-menus:
 .PP
 .I per menu entry, in /etc/menu/$package
 .RS
-In these directory the system administrator or user can override the default
-menu files. (if a file /etc/menu/$package exists, than the
+In these directories the system administrator or user can override the default
+menu files (If a file /etc/menu/$package exists, than the
 corresponding /usr/share/menu/$package file isn't read any more). Users
 who want to override the system wide defaults put their files in
 ~/.menu. See also 
@@ -65,7 +65,7 @@ who want to override the system wide defaults put their files in
 .RE
 .I per window-manager in /etc/menu-methods/$wm
 .RS
-In these configuration files, one can tune generated system."$wm"rc files for
+In these configuration files, one can tune generated system.${wm}rc files for
 each individual window manager. For example, one can specify that the
 wm should ignore any icons that the packages may supply, or set the
 default wrapper for text-only applications (usually, an xterm is started to
@@ -155,7 +155,7 @@ Distribution is subject to the GNU General Public License.
 .I update-menus
 may not work properly when run by a normal user, to generate menus for that
 user. This is usually because the window manager doesn't expect the
-system."$wm"rc files in the directory (usually ~/."$wm", configurable
+system.${wm}rc files in the directory (usually ~/.${wm}, configurable
 in /etc/menu-methods). If you see such a thing, and you find a
 solution, please mail <menu@packages.debian.org>. It should work OK for
 fvwm and fvwm2: I usually test the package first as an ordinary user.
