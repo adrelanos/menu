@@ -234,14 +234,14 @@ be escaped with a backslash.
 <p>
 You can include several entries in the same file. 
 <p>
-The file must be encoded in ASCII 7bit. This is necessary to accomodate 
-window managers that do not support 8bit. However the translations are not
-limited in encoding.
+The file must be encoded in 7-bit ASCII. This is necessary to accomodate 
+window managers that do not support 8-bit encodings. However the translations
+are not limited in encoding.
 
 <p> <tt/?package(...)/ contains a comma-separated list of packages that
 need to be installed for the menu entry to be displayed. That should include
 the package containing the menu file and any packages necessary to run the
-command not depended by the package nor essential.  Users can use
+command not depended on by the package nor essential.  Users can use
 pseudo-package names starting with "<tt/local./" which are assumed to be always
 installed.
 <p> The fields <tt/needs/, <tt/section/, <tt/title/ and <tt/command/ are
