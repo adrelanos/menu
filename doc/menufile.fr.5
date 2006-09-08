@@ -26,10 +26,8 @@ menus.
 Les fichiers de menus portent d'habitude le nom du paquet Debian qui 
 contient les programmes qu'ils listent. Ils peuvent contenir plusieurs «\  
 entrées de menus\ », qui spécifient un élément particulier de la structure 
-d'un menu. Chaque entrée de menu spécifie le paquet dont elle dépend, ce qui 
-permet à
-.BR update\-menus (1)
-d'ignorer le menu si ce paquet n'est pas 
+d'un menu. Chaque entrée de menu spécifie les paquets dont elle dépend, ce qui 
+permet à \fBupdate-menus(1)\fP d'ignorer le menu si ces paquet ne sont pas 
 installé. (Dans une entrée de menu vous pouvez spécifier des pseudo\-paquets 
 qui commencent par «\ local.\ », ce qui indique à update\-menus de toujours 
 utiliser ces menus). Si vous voulez supprimer entièrement tous les éléments 
@@ -197,7 +195,7 @@ Wirzenius <liw@iki.fi> Il est désormais maintenu par Bill Allombert
 .PP
 Page de manuel par Joey Hess, <joeyh@debian.org>
 .PP
-Ce document est basée sur une traduction, réalisée par Nicolas François le
+Ce document est basée sur une traduction réalisée par Nicolas François le
 3 septembre 2005.
 .SH "VOIR AUSSI"
 .BR update\-menus(1),
