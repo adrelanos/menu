@@ -23,12 +23,12 @@ for the complete specification of menu files.
 .PP
 The menu files are usually named after the Debian package that
 contains the programs listed in them. In it, you can list several
-"menu entries", that specify a specific item in the menu
-structure. Each menu entry specifies what package it depends on, if
-that package is not installed, the menu entry will be ignored by
-.BR update-menus(1) .
+"menu entries" that specify a specific item in the menu
+structure. Each menu entry specifies which packages it depends on; if
+that package are not installed, the menu entry will be ignored by
+\fBupdate-menus(1)\fP.
 (In a menu entry you can specify pseudo-packages that start
-with "local.", update-menus will always use those menu entries).
+with "local."; update-menus will always use those menu entries).
 If you wish to remove an item from the menu entirely, make an empty menu
 file with the same name as the file you want to override.
 .SH Examples
@@ -43,8 +43,8 @@ run, so /etc/menu/dosemu is created:
  ?package(dosemu):needs="text" section="Apps/Emulators" title="Dosemu" command="dosemu -A"
  ?package(dosemu):needs="x11"  section="Apps/Emulators" title="Dosemu" command="xdos -A"
 .PP
-A user does not want Dosemu to appear on his menus at all, so he creates
-an empty file named ~/.menu/dosemu .
+A user does not want Dosemu to appear in the menus at all, so the user creates
+an empty file named \fI~/.menu/dosemu\fP.
 .SH FORMAT
 A menu file consists of 0 or more lines of the following format:
 .RS
@@ -80,21 +80,21 @@ preferred section names.
 .TP
 icon
 An icon for this menu entry. If no icon is available, just don't
-define this. (icon="none" is also possible, preferably just leave it out)
+define this. 
 .TP
 title
 The title of the program that will appear on the menus. Keep it short.
 If two menu entries share the same title and section, the one that
 bests fits the available display will be used. So in the example above
 with two menu entries that both have the menu id "title", if X is
-available, the X11 one will be used, otherwise the text one will be used.
+available, the X11 one will be used; otherwise the text one will be used.
 Must be defined.
 .TP
 command
 The command to be executed when this menu entry is selected.
 .TP
 hints
-A comma-separated list of hints on how grouping menu entries, see manual.
+A comma-separated list of hints on how grouping menu entries; see the manual.
 .RE
 .SH "MENU LAYOUT"
 The \fBauthoritative\fP list of Debian's menu structure is maintained in the
