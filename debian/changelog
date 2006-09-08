@@ -1,6 +1,7 @@
 menu (2.1.30) unstable; urgency=low
 
   * The "check for free" release.
+  * New po/menu.pot file to translate.
   * Add Dzongkha menu sections translation. Thanks, Jurmey Rabgay.
   * Add Arabic menu sections translation. Thanks, Ossama M. Khayat.
     Closes: #377427
