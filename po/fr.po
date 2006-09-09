@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: menu 2.1.10\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2006-09-08 23:25+0200\n"
-"PO-Revision-Date: 2005-02-14 19:03+0100\n"
+"PO-Revision-Date: 2005-12-17 11:17+0100\n"
 "Last-Translator: Jean-Luc  Coulon (f5ibh) <jean-luc.coulon@wanadoo.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -31,11 +31,11 @@ msgstr "install-menu : création du répertoire %1\n"
 
 #: ../install-menu/install-menu.cc:217
 msgid "Could not create directory(%1): %2"
-msgstr "Impossible de créer le répertoire « %1 »."
+msgstr "Impossible de créer le répertoire « %1 » : %2."
 
 #: ../install-menu/install-menu.cc:219
 msgid "Could not change directory(%1): %2"
-msgstr "Impossible de changer de répertoire en faveur de « %1 »."
+msgstr "Impossible de changer de répertoire en faveur de « %1 » : %2."
 
 #: ../install-menu/install-menu.cc:222
 msgid "install-menu: directory %1 already exists\n"
@@ -72,7 +72,7 @@ msgstr ""
 
 #: ../install-menu/install-menu.cc:657
 msgid "install-menu: %1 must be defined in menu-method %2"
-msgstr "install-menu: %1 doit être défini dans la méthode de menu %2"
+msgstr "install-menu : %1 doit être défini dans la méthode de menu %2"
 
 #: ../install-menu/install-menu.cc:824
 msgid "Cannot open file %1 (also tried %2).\n"
@@ -99,7 +99,6 @@ msgstr "Attention : la chaîne %1 n'existe pas dans le fichier de canevas %2\n"
 
 #. Don't translate quoted string
 #: ../install-menu/install-menu.cc:896
-#, fuzzy
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
@@ -113,8 +112,9 @@ msgstr ""
 "  Lecture des entrées de menu depuis l'entrée standard selon le format\n"
 "  « update-menus --stdout » et création des fichiers de menu en\n"
 "   utilisant la méthode de menu indiquée.\n"
-"  Les options d'install-menu sont : \n"
+"  Les options d'install-menu sont :\n"
 "     -h --help      : ce texte\n"
+"        --remove    : supprimer le menu plutôt que de le créer\n"
 "     -v --verbose   : mode bavard\n"
 
 #: ../install-menu/install-menu.cc:943
@@ -128,6 +128,8 @@ msgstr "Impossible d'ouvrir le script %1 en lecture.\n"
 #: ../install-menu/install-menu.cc:979
 msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
 msgstr ""
+"Attention : le script %1 ne fournit pas « removemenu », le menu n'a pas été "
+"supprimé\n"
 
 #: ../install-menu/install-menu.cc:1014
 msgid "Running: \"%1\"\n"
@@ -273,9 +275,8 @@ msgid "%1 menu entries found (%2 total)."
 msgstr "%1 entrées de menu ont été trouvées (%2 au total)."
 
 #: ../update-menus/update-menus.cc:594
-#, fuzzy
 msgid "Running method: %1 --remove"
-msgstr "Lancement de la méthode : %1"
+msgstr "Lancement de la méthode : %1 --remove"
 
 #: ../update-menus/update-menus.cc:606 ../update-menus/update-menus.cc:668
 #: ../update-menus/update-menus.cc:1007
@@ -340,7 +341,6 @@ msgstr "Dpkg ne verrouille pas la zone d'état de dpkg, c'est correct."
 
 #. This is the update-menus --help message
 #: ../update-menus/update-menus.cc:877
-#, fuzzy
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -358,19 +358,20 @@ msgid ""
 "                         install-menu.\n"
 "  --version              Output version information and exit.\n"
 msgstr ""
-"Usage : update-menus [options]\n"
-"Rassemble les informations sur les paquets dans la base de données\n"
-"de menu et génère les menus pour tout les programmes fournissant un\n"
+"Utilisation : update-menus [options]\n"
+"Rassembler les informations sur les paquets dans la base de données\n"
+"de menu et créer les menus pour tout les programmes fournissant un\n"
 "script de menu (menu-method), habituellement les gestionnaires de fenêtres\n"
-"    -d                      affiche les messages de déboguage.\n"
+"    -d                      afficher les messages de déboguage.\n"
 "    -v                      mode bavard sur les actions en cours.\n"
 "    -h, --help              ce message.\n"
-"    --menufilesdir <rép>    ajoute <rép> à la liste des répertoires où\n"
-"                            recherche des menus.\n"
-"    --menumethod <méthode>  ne lance que la méthode de menu <méthode>.\n"
-"    --nodefaultdirs         ne tient pas compte des répertoires de menus\n"
+"    --menufilesdir <rép>    ajouter <rép> à la liste des répertoires où\n"
+"                            rechercher des menus.\n"
+"    --menumethod <méthode>  ne lancer que la méthode de menu <méthode>.\n"
+"    --nodefaultdirs         ne pas tenir compte des répertoires de menus\n"
 "                            standards.\n"
-"    --stdout                affiche la liste des menus dans un format\n"
+"    --remove                supprimer les menus créés.\n"
+"    --stdout                afficher la liste des menus dans un format\n"
 "                            compatible avec un tubage vers install-menu.\n"
 
 #: ../update-menus/update-menus.h:150
@@ -378,7 +379,4 @@ msgid ""
 "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
 msgstr ""
 "Condition d'installation inconnue « %1 » (actuellement, seul « package » est "
-"supporté)."
-
-#~ msgid "  --version              Output version information and exit.\n"
-#~ msgstr "    --version               affiche la version et termine.\n"
+"géré)."

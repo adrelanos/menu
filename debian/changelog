@@ -1,3 +1,10 @@
+menu (2.1.31) UNRELEASED; urgency=low
+
+  [ Program translations]
+  * French update by Jean-Luc Coulon. Closes: #344434
+
+ -- Christian Perrier <bubulle@debian.org>  Sat,  9 Sep 2006 10:16:50 +0200
+
 menu (2.1.30) unstable; urgency=low
 
   * The "check for free" release.
