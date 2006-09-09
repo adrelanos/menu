@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: menu\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
-"POT-Creation-Date: 2005-02-14 19:02+0100\n"
+"POT-Creation-Date: 2006-09-08 23:25+0200\n"
 "PO-Revision-Date: 2005-02-18 00:21+0100\n"
 "Last-Translator: Jacobo Tarrío <jtarrio@debian.org>\n"
 "Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
@@ -19,47 +19,47 @@ msgstr ""
 msgid "Zero-size argument to print function."
 msgstr "Pasouse un argumento de tamaño 0 á función de impresión."
 
-#: ../install-menu/install-menu.cc:201
+#: ../install-menu/install-menu.cc:202
 msgid "install-menu: checking directory %1\n"
 msgstr "install-menu: a comprobar o directorio %1\n"
 
-#: ../install-menu/install-menu.cc:214
+#: ../install-menu/install-menu.cc:215
 msgid "install-menu: creating directory %1:\n"
 msgstr "install-menu: a crear o directorio %1:\n"
 
-#: ../install-menu/install-menu.cc:216
+#: ../install-menu/install-menu.cc:217
 msgid "Could not create directory(%1): %2"
 msgstr "Non se puido crear o directorio(%1): %2"
 
-#: ../install-menu/install-menu.cc:218
+#: ../install-menu/install-menu.cc:219
 msgid "Could not change directory(%1): %2"
 msgstr "Non se puido cambiar de directorio(%1): %2"
 
-#: ../install-menu/install-menu.cc:221
+#: ../install-menu/install-menu.cc:222
 msgid "install-menu: directory %1 already exists\n"
 msgstr "install-menu: o directorio %1 xa existe\n"
 
 #. Do not translate supported
-#: ../install-menu/install-menu.cc:438
+#: ../install-menu/install-menu.cc:447
 msgid "install-menu: [supported]: name=%1\n"
 msgstr "install-menu: [supported]: nome=%1\n"
 
-#: ../install-menu/install-menu.cc:455
+#: ../install-menu/install-menu.cc:464
 msgid "Menu entry lacks mandatory field \"%1\".\n"
 msgstr "A entrada de menú non ten o campo obrigatorio \"%1\".\n"
 
-#: ../install-menu/install-menu.cc:461
+#: ../install-menu/install-menu.cc:470
 msgid "Unknown value for field %1=\"%2\".\n"
 msgstr "Valor descoñecido para o campo %1=\"%2\".\n"
 
 #. Do not translate quoted text
-#: ../install-menu/install-menu.cc:606
+#: ../install-menu/install-menu.cc:617
 msgid ""
 "install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
 msgstr ""
 "install-menu: \"hotkeycase\" só pode valer \"sensitive\" ou \"insensitive\"\n"
 
-#: ../install-menu/install-menu.cc:636
+#: ../install-menu/install-menu.cc:647
 msgid ""
 "install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
 "Ignoring.\n"
@@ -67,20 +67,20 @@ msgstr ""
 "install-menu: Aviso: Identificador \"%1\" descoñecido na liña %2 do ficheiro "
 "%3. Ignórase.\n"
 
-#: ../install-menu/install-menu.cc:646
+#: ../install-menu/install-menu.cc:657
 msgid "install-menu: %1 must be defined in menu-method %2"
 msgstr "install-menu: %1 debe estar definido no método de menú %2"
 
-#: ../install-menu/install-menu.cc:813
+#: ../install-menu/install-menu.cc:824
 msgid "Cannot open file %1 (also tried %2).\n"
 msgstr "Non se pode abrir o ficheiro %1 (tamén se probou con %2).\n"
 
-#: ../install-menu/install-menu.cc:821 ../install-menu/install-menu.cc:828
-#: ../install-menu/install-menu.cc:836
+#: ../install-menu/install-menu.cc:832 ../install-menu/install-menu.cc:839
+#: ../install-menu/install-menu.cc:847
 msgid "Cannot open file %1.\n"
 msgstr "Non se pode abrir o ficheiro %1.\n"
 
-#: ../install-menu/install-menu.cc:838
+#: ../install-menu/install-menu.cc:849
 msgid ""
 "In order to be able to create the user config file(s) for the window "
 "manager,\n"
@@ -90,18 +90,20 @@ msgstr ""
 "fiestras, o ficheiro de enriba ten que se poder escribir (e o directorio\n"
 "ten que existir).\n"
 
-#: ../install-menu/install-menu.cc:860
+#: ../install-menu/install-menu.cc:871
 msgid "Warning: the string %1 did not occur in template file %2\n"
 msgstr "Aviso: a cadea %1 non aparece no ficheiro de patróns %2\n"
 
 #. Don't translate quoted string
-#: ../install-menu/install-menu.cc:885
+#: ../install-menu/install-menu.cc:896
+#, fuzzy
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
 "  and generate menu files using the specified menu-method.\n"
 "  Options to install-menu:\n"
 "     -h --help    : this message\n"
+"        --remove  : remove the menu instead of generating it.\n"
 "     -v --verbose : be verbose\n"
 msgstr ""
 "install-menu [-vh] <método>\n"
@@ -111,39 +113,43 @@ msgstr ""
 "     -h --help    : esta mensaxe\n"
 "     -v --verbose : ser moi descritivo\n"
 
-#: ../install-menu/install-menu.cc:929
+#: ../install-menu/install-menu.cc:943
 msgid "install-menu: no menu-method script specified!"
 msgstr "install-menu: non se indicou un guión de método do menú"
 
-#: ../install-menu/install-menu.cc:942
+#: ../install-menu/install-menu.cc:956
 msgid "Cannot open script %1 for reading.\n"
 msgstr "Non se pode abrir o guión %1 para lectura.\n"
 
-#: ../install-menu/install-menu.cc:982
+#: ../install-menu/install-menu.cc:979
+msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
+msgstr ""
+
+#: ../install-menu/install-menu.cc:1014
 msgid "Running: \"%1\"\n"
 msgstr "A executar: \"%1\"\n"
 
-#: ../install-menu/install-menu.cc:998
+#: ../install-menu/install-menu.cc:1030
 msgid "install-menu: %1: aborting\n"
 msgstr "install-menu: %1: abórtase\n"
 
-#: ../install-menu/install-menu.h:198
+#: ../install-menu/install-menu.h:199
 msgid "Number of arguments to function %1 does not match."
 msgstr "O número de argumentos da función %1 non encaixa."
 
-#: ../install-menu/install-menu.h:206
+#: ../install-menu/install-menu.h:207
 msgid "Unknown function: \"%1\""
 msgstr "Función descoñecida: \"%1\""
 
-#: ../install-menu/install-menu.h:215
+#: ../install-menu/install-menu.h:216
 msgid "Indirectly used, but not defined function: \"%1\""
 msgstr "Función empregada indirectamente, pero sen definir: \"%1\""
 
-#: ../install-menu/install-menu.h:224
+#: ../install-menu/install-menu.h:225
 msgid "Unknown identifier: \"%1\""
 msgstr "Identificador descoñecido: \"%1\""
 
-#: ../install-menu/install-menu.h:233
+#: ../install-menu/install-menu.h:234
 msgid "Encoding conversion error: \"%1\""
 msgstr "Erro na conversión da codificación: \"%1\""
 
@@ -219,84 +225,96 @@ msgstr ""
 "replacewith($cadea, $remprazo, $con): $remprazo e $con deben ser da mesma "
 "lonxitude."
 
+#: ../update-menus/update-menus.cc:149
+msgid ""
+"file %1 line %2:\n"
+"Discarding entry requiring missing package %3."
+msgstr ""
+
 #. Translation here and below refer to the file
 #. /etc/menu-methods/translate_menus that allow to rename and reorganize
 #. menu entries automatically. It does not refer to the localisation
 #. (translation to other languages).
 #.
-#: ../update-menus/update-menus.cc:358
+#: ../update-menus/update-menus.cc:363
 msgid "Reading translation rules in %1."
 msgstr "A ler as regras de tradución de %1."
 
-#: ../update-menus/update-menus.cc:438
+#: ../update-menus/update-menus.cc:443
 msgid "Reading installed packages list..."
 msgstr "A ler a lista de paquetes instalados..."
 
-#: ../update-menus/update-menus.cc:485
+#: ../update-menus/update-menus.cc:492
 msgid "Execution of %1 generated no output or returned an error.\n"
 msgstr "A execución de %1 non produciu saída ou devolveu un erro.\n"
 
-#: ../update-menus/update-menus.cc:525 ../update-menus/update-menus.cc:529
+#: ../update-menus/update-menus.cc:533 ../update-menus/update-menus.cc:537
 msgid "Skipping file because of errors...\n"
 msgstr "A omitir o ficheiro por mor dos erros...\n"
 
-#: ../update-menus/update-menus.cc:545
+#: ../update-menus/update-menus.cc:554
 msgid "Reading menu-entry files in %1."
 msgstr "A ler os ficheiros de entradas do menú de %1."
 
-#: ../update-menus/update-menus.cc:568
+#: ../update-menus/update-menus.cc:577
 msgid "Error reading %1.\n"
 msgstr "Erro ao ler %1.\n"
 
-#: ../update-menus/update-menus.cc:573
+#: ../update-menus/update-menus.cc:583
 msgid "%1 menu entries found (%2 total)."
 msgstr "Atopáronse %1 entradas de menú (%2 en total)."
 
-#: ../update-menus/update-menus.cc:585
-msgid "Running method: %1"
+#: ../update-menus/update-menus.cc:594
+#, fuzzy
+msgid "Running method: %1 --remove"
 msgstr "A executar o método: %1"
 
-#: ../update-menus/update-menus.cc:588
-msgid "Cannot create pipe."
-msgstr "Non se puido crear a canle."
-
-#: ../update-menus/update-menus.cc:624 ../update-menus/update-menus.cc:1000
+#: ../update-menus/update-menus.cc:606 ../update-menus/update-menus.cc:668
+#: ../update-menus/update-menus.cc:1007
 msgid "Script %1 could not be executed."
 msgstr "Non se puido executar o guión %1."
 
-#: ../update-menus/update-menus.cc:627
+#: ../update-menus/update-menus.cc:609 ../update-menus/update-menus.cc:671
 msgid "Script %1 returned error status %2."
 msgstr "O guión %1 devolveu o estado de erro %2."
 
-#: ../update-menus/update-menus.cc:630
+#: ../update-menus/update-menus.cc:612 ../update-menus/update-menus.cc:674
 msgid "Script %1 received signal %2."
 msgstr "O guión %1 recibiu o sinal %2."
 
-#: ../update-menus/update-menus.cc:640
+#: ../update-menus/update-menus.cc:629
+msgid "Running method: %1"
+msgstr "A executar o método: %1"
+
+#: ../update-menus/update-menus.cc:632
+msgid "Cannot create pipe."
+msgstr "Non se puido crear a canle."
+
+#: ../update-menus/update-menus.cc:684
 msgid "Running menu-methods in %1."
 msgstr "A executar menu-methods en %1."
 
-#: ../update-menus/update-menus.cc:673
+#: ../update-menus/update-menus.cc:716
 msgid "Other update-menus processes are already locking %1, quitting."
 msgstr "Hai outros procesos de update-menus a bloquear %1, sáese."
 
-#: ../update-menus/update-menus.cc:676
+#: ../update-menus/update-menus.cc:719
 msgid "Cannot lock %1: %2 - Aborting."
 msgstr "Non se pode bloquear %1: %2 - Abórtase."
 
-#: ../update-menus/update-menus.cc:685
+#: ../update-menus/update-menus.cc:729
 msgid "Cannot write to lockfile %1 - Aborting."
 msgstr "Non se pode escribir no ficheiro de bloqueo %1 - Abórtase."
 
-#: ../update-menus/update-menus.cc:698
+#: ../update-menus/update-menus.cc:742
 msgid "Cannot remove lockfile %1."
 msgstr "Non se pode borrar o ficheiro de bloqueo %1."
 
-#: ../update-menus/update-menus.cc:714
+#: ../update-menus/update-menus.cc:758
 msgid "Update-menus is run by user."
 msgstr "O usuario executa update-menus."
 
-#: ../update-menus/update-menus.cc:798
+#: ../update-menus/update-menus.cc:842
 msgid ""
 "Waiting for dpkg to finish (forking to background).\n"
 "(checking %1)"
@@ -304,16 +322,17 @@ msgstr ""
 "A agardar a que dpkg remate (convértese en tarefa de segundo plano).\n"
 "(compróbase %1)"
 
-#: ../update-menus/update-menus.cc:801
+#: ../update-menus/update-menus.cc:845
 msgid "Further output (if any) will appear in %1."
 msgstr "Se hai máis saída ha aparecer en %1."
 
-#: ../update-menus/update-menus.cc:823
+#: ../update-menus/update-menus.cc:867
 msgid "Dpkg is not locking dpkg status area, good."
 msgstr "Dpkg non bloquea a área de estado de dpkg; iso é bo."
 
 #. This is the update-menus --help message
-#: ../update-menus/update-menus.cc:833
+#: ../update-menus/update-menus.cc:877
+#, fuzzy
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -326,8 +345,10 @@ msgid ""
 "  --menumethod=<method>  Run only the menu method <method>.\n"
 "  --nodefaultdirs        Disable the use of all the standard menu "
 "directories.\n"
+"  --remove               Remove generated menus instead.\n"
 "  --stdout               Output menu list in format suitable for piping to\n"
 "                         install-menu.\n"
+"  --version              Output version information and exit.\n"
 msgstr ""
 "Emprego: update-menus [opcións] \n"
 "Recolle datos dos paquetes da base de datos dos menús e xera menús para "
@@ -344,15 +365,13 @@ msgstr ""
 "  --stdout               Produce a lista de menús nun formato axeitado para\n"
 "                         pasar a install-menu.\n"
 
-#. This is the end of the update-menus --help message
-#: ../update-menus/update-menus.cc:845
-msgid "  --version              Output version information and exit.\n"
-msgstr ""
-"  --version              Produce información sobre a versión e sae.\n"
-
-#: ../update-menus/update-menus.h:149
+#: ../update-menus/update-menus.h:150
 msgid ""
 "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
 msgstr ""
 "Condición de instalación \"%1\" descoñecida (só hai \"package\" polo "
 "momento)."
+
+#~ msgid "  --version              Output version information and exit.\n"
+#~ msgstr ""
+#~ "  --version              Produce información sobre a versión e sae.\n"

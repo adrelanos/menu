@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: menu 2.1.19\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
-"POT-Creation-Date: 2005-02-14 19:02+0100\n"
+"POT-Creation-Date: 2006-09-08 23:25+0200\n"
 "PO-Revision-Date: 2004-10-18 14:57+0300\n"
 "Last-Translator: Yuri Kozlov <yuray@id.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
@@ -21,48 +21,48 @@ msgstr ""
 msgid "Zero-size argument to print function."
 msgstr "Аргумент нулевого размера в функции print"
 
-#: ../install-menu/install-menu.cc:201
+#: ../install-menu/install-menu.cc:202
 msgid "install-menu: checking directory %1\n"
 msgstr "install-menu: проверка каталога %1\n"
 
-#: ../install-menu/install-menu.cc:214
+#: ../install-menu/install-menu.cc:215
 msgid "install-menu: creating directory %1:\n"
 msgstr "install-menu: создание каталога %1:\n"
 
-#: ../install-menu/install-menu.cc:216
+#: ../install-menu/install-menu.cc:217
 msgid "Could not create directory(%1): %2"
 msgstr "Невозможно открыть каталог(%1): %2"
 
-#: ../install-menu/install-menu.cc:218
+#: ../install-menu/install-menu.cc:219
 msgid "Could not change directory(%1): %2"
 msgstr "Невозможно сменить каталог(%1): %2"
 
-#: ../install-menu/install-menu.cc:221
+#: ../install-menu/install-menu.cc:222
 msgid "install-menu: directory %1 already exists\n"
 msgstr "install-menu: каталог %1 уже существует\n"
 
 #. Do not translate supported
-#: ../install-menu/install-menu.cc:438
+#: ../install-menu/install-menu.cc:447
 msgid "install-menu: [supported]: name=%1\n"
 msgstr "install-menu: [поддерживается]: имя=%1\n"
 
-#: ../install-menu/install-menu.cc:455
+#: ../install-menu/install-menu.cc:464
 msgid "Menu entry lacks mandatory field \"%1\".\n"
 msgstr "В записи пункта меню отсутствует необходимое поле \"%1\".\n"
 
-#: ../install-menu/install-menu.cc:461
+#: ../install-menu/install-menu.cc:470
 msgid "Unknown value for field %1=\"%2\".\n"
 msgstr "Неизвестное значение поля %1=\"%2\".\n"
 
 #. Do not translate quoted text
-#: ../install-menu/install-menu.cc:606
+#: ../install-menu/install-menu.cc:617
 msgid ""
 "install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
 msgstr ""
 "install-menu: \"hotkeycase\" может иметь значение только \"sensitive\" или "
 "\"insensitive\"\n"
 
-#: ../install-menu/install-menu.cc:636
+#: ../install-menu/install-menu.cc:647
 msgid ""
 "install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
 "Ignoring.\n"
@@ -70,20 +70,20 @@ msgstr ""
 "install-menu: Внимание: Неизвестный идентификатор `%1' в строк %2 в файле %"
 "3. Игнорирую\n"
 
-#: ../install-menu/install-menu.cc:646
+#: ../install-menu/install-menu.cc:657
 msgid "install-menu: %1 must be defined in menu-method %2"
 msgstr "install-menu: %1 должен быть определён в menu-method %2"
 
-#: ../install-menu/install-menu.cc:813
+#: ../install-menu/install-menu.cc:824
 msgid "Cannot open file %1 (also tried %2).\n"
 msgstr "Не удалось открыть файл %1 (также и %2).\n"
 
-#: ../install-menu/install-menu.cc:821 ../install-menu/install-menu.cc:828
-#: ../install-menu/install-menu.cc:836
+#: ../install-menu/install-menu.cc:832 ../install-menu/install-menu.cc:839
+#: ../install-menu/install-menu.cc:847
 msgid "Cannot open file %1.\n"
 msgstr "Не удалось открыть файл %1.\n"
 
-#: ../install-menu/install-menu.cc:838
+#: ../install-menu/install-menu.cc:849
 msgid ""
 "In order to be able to create the user config file(s) for the window "
 "manager,\n"
@@ -93,18 +93,20 @@ msgstr ""
 "Вышеуказанные файлы должны быть доступны на запись (и/или каталоги должны "
 "существовать).\n"
 
-#: ../install-menu/install-menu.cc:860
+#: ../install-menu/install-menu.cc:871
 msgid "Warning: the string %1 did not occur in template file %2\n"
 msgstr "Внимание: строка %1 не найдена в файле шаблона %2\n"
 
 #. Don't translate quoted string
-#: ../install-menu/install-menu.cc:885
+#: ../install-menu/install-menu.cc:896
+#, fuzzy
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
 "  and generate menu files using the specified menu-method.\n"
 "  Options to install-menu:\n"
 "     -h --help    : this message\n"
+"        --remove  : remove the menu instead of generating it.\n"
 "     -v --verbose : be verbose\n"
 msgstr ""
 "install-menu [-vh] <метод-меню>\n"
@@ -114,39 +116,43 @@ msgstr ""
 "     -h --help    : это сообщение\n"
 "     -v --verbose : выдавать подробную информацию\n"
 
-#: ../install-menu/install-menu.cc:929
+#: ../install-menu/install-menu.cc:943
 msgid "install-menu: no menu-method script specified!"
 msgstr "install-menu: узазанный метод меню не установлен !"
 
-#: ../install-menu/install-menu.cc:942
+#: ../install-menu/install-menu.cc:956
 msgid "Cannot open script %1 for reading.\n"
 msgstr "Не удалось открыть сценарий %1 на чтение.\n"
 
-#: ../install-menu/install-menu.cc:982
+#: ../install-menu/install-menu.cc:979
+msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
+msgstr ""
+
+#: ../install-menu/install-menu.cc:1014
 msgid "Running: \"%1\"\n"
 msgstr "Запуск: \"%1\"\n"
 
-#: ../install-menu/install-menu.cc:998
+#: ../install-menu/install-menu.cc:1030
 msgid "install-menu: %1: aborting\n"
 msgstr "install-menu: %1: отмена\n"
 
-#: ../install-menu/install-menu.h:198
+#: ../install-menu/install-menu.h:199
 msgid "Number of arguments to function %1 does not match."
 msgstr "Число аргументов к функции %1 не подходит."
 
-#: ../install-menu/install-menu.h:206
+#: ../install-menu/install-menu.h:207
 msgid "Unknown function: \"%1\""
 msgstr "Неизвестная функция: \"%1\""
 
-#: ../install-menu/install-menu.h:215
+#: ../install-menu/install-menu.h:216
 msgid "Indirectly used, but not defined function: \"%1\""
 msgstr "Неявное использование неопределённой функции: \"%1\""
 
-#: ../install-menu/install-menu.h:224
+#: ../install-menu/install-menu.h:225
 msgid "Unknown identifier: \"%1\""
 msgstr "Неизвестный идентификатор: \"%1\""
 
-#: ../install-menu/install-menu.h:233
+#: ../install-menu/install-menu.h:234
 msgid "Encoding conversion error: \"%1\""
 msgstr "Ошибка конвертации кодировки: \"%1\""
 
@@ -223,84 +229,96 @@ msgstr ""
 "replacewith($string, $replace, $with): $replace и $with должны иметь "
 "одинаковую длину."
 
+#: ../update-menus/update-menus.cc:149
+msgid ""
+"file %1 line %2:\n"
+"Discarding entry requiring missing package %3."
+msgstr ""
+
 #. Translation here and below refer to the file
 #. /etc/menu-methods/translate_menus that allow to rename and reorganize
 #. menu entries automatically. It does not refer to the localisation
 #. (translation to other languages).
 #.
-#: ../update-menus/update-menus.cc:358
+#: ../update-menus/update-menus.cc:363
 msgid "Reading translation rules in %1."
 msgstr "Чтение правил трансляции в %1."
 
-#: ../update-menus/update-menus.cc:438
+#: ../update-menus/update-menus.cc:443
 msgid "Reading installed packages list..."
 msgstr "Чтение списка установленных пакетов..."
 
-#: ../update-menus/update-menus.cc:485
+#: ../update-menus/update-menus.cc:492
 msgid "Execution of %1 generated no output or returned an error.\n"
 msgstr "Исполнение %1 ничего не выдало и вернуло ошибку.\n"
 
-#: ../update-menus/update-menus.cc:525 ../update-menus/update-menus.cc:529
+#: ../update-menus/update-menus.cc:533 ../update-menus/update-menus.cc:537
 msgid "Skipping file because of errors...\n"
 msgstr "Пропуск файла из-за ошибок...\n"
 
-#: ../update-menus/update-menus.cc:545
+#: ../update-menus/update-menus.cc:554
 msgid "Reading menu-entry files in %1."
 msgstr "Чтение пунктов меню в %1."
 
-#: ../update-menus/update-menus.cc:568
+#: ../update-menus/update-menus.cc:577
 msgid "Error reading %1.\n"
 msgstr "Ошибка чтения %1.\n"
 
-#: ../update-menus/update-menus.cc:573
+#: ../update-menus/update-menus.cc:583
 msgid "%1 menu entries found (%2 total)."
 msgstr "Найдено %1 пунктов меню (всего %2)."
 
-#: ../update-menus/update-menus.cc:585
-msgid "Running method: %1"
+#: ../update-menus/update-menus.cc:594
+#, fuzzy
+msgid "Running method: %1 --remove"
 msgstr "Запуск метода: %1"
 
-#: ../update-menus/update-menus.cc:588
-msgid "Cannot create pipe."
-msgstr "Не удалось создать канал."
-
-#: ../update-menus/update-menus.cc:624 ../update-menus/update-menus.cc:1000
+#: ../update-menus/update-menus.cc:606 ../update-menus/update-menus.cc:668
+#: ../update-menus/update-menus.cc:1007
 msgid "Script %1 could not be executed."
 msgstr "Сценарий %1 не может быть выполнен."
 
-#: ../update-menus/update-menus.cc:627
+#: ../update-menus/update-menus.cc:609 ../update-menus/update-menus.cc:671
 msgid "Script %1 returned error status %2."
 msgstr "Сценарий %1 вернул статус ошибки %2."
 
-#: ../update-menus/update-menus.cc:630
+#: ../update-menus/update-menus.cc:612 ../update-menus/update-menus.cc:674
 msgid "Script %1 received signal %2."
 msgstr "Сценарий %1 получил сигнал %2."
 
-#: ../update-menus/update-menus.cc:640
+#: ../update-menus/update-menus.cc:629
+msgid "Running method: %1"
+msgstr "Запуск метода: %1"
+
+#: ../update-menus/update-menus.cc:632
+msgid "Cannot create pipe."
+msgstr "Не удалось создать канал."
+
+#: ../update-menus/update-menus.cc:684
 msgid "Running menu-methods in %1."
 msgstr "Запускается menu-methods в %1."
 
-#: ../update-menus/update-menus.cc:673
+#: ../update-menus/update-menus.cc:716
 msgid "Other update-menus processes are already locking %1, quitting."
 msgstr "Уже запущены другие процессы update-menus, блокирующие %1, выход."
 
-#: ../update-menus/update-menus.cc:676
+#: ../update-menus/update-menus.cc:719
 msgid "Cannot lock %1: %2 - Aborting."
 msgstr "Невозможно заблокировать %1: %2 - Отмена."
 
-#: ../update-menus/update-menus.cc:685
+#: ../update-menus/update-menus.cc:729
 msgid "Cannot write to lockfile %1 - Aborting."
 msgstr "Невозможно удалить файл блокировки %1 - Отменение."
 
-#: ../update-menus/update-menus.cc:698
+#: ../update-menus/update-menus.cc:742
 msgid "Cannot remove lockfile %1."
 msgstr "Невозможно удалить файл блокировки %1."
 
-#: ../update-menus/update-menus.cc:714
+#: ../update-menus/update-menus.cc:758
 msgid "Update-menus is run by user."
 msgstr "Update-menus запущен от пользователя."
 
-#: ../update-menus/update-menus.cc:798
+#: ../update-menus/update-menus.cc:842
 msgid ""
 "Waiting for dpkg to finish (forking to background).\n"
 "(checking %1)"
@@ -308,16 +326,17 @@ msgstr ""
 "Ожидание завершения работы dpkg (работа в фоновом режиме).\n"
 "(проверка %1)"
 
-#: ../update-menus/update-menus.cc:801
+#: ../update-menus/update-menus.cc:845
 msgid "Further output (if any) will appear in %1."
 msgstr "Дальнейший вывод (если есть) будет перенаправлен в %1."
 
-#: ../update-menus/update-menus.cc:823
+#: ../update-menus/update-menus.cc:867
 msgid "Dpkg is not locking dpkg status area, good."
 msgstr "Dpkg не блокирует область статистики, хорошо."
 
 #. This is the update-menus --help message
-#: ../update-menus/update-menus.cc:833
+#: ../update-menus/update-menus.cc:877
+#, fuzzy
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -330,8 +349,10 @@ msgid ""
 "  --menumethod=<method>  Run only the menu method <method>.\n"
 "  --nodefaultdirs        Disable the use of all the standard menu "
 "directories.\n"
+"  --remove               Remove generated menus instead.\n"
 "  --stdout               Output menu list in format suitable for piping to\n"
 "                         install-menu.\n"
+"  --version              Output version information and exit.\n"
 msgstr ""
 "update-menus: обновляет файлы конфигурации для различных оконных сред (а так "
 "же dwww, и pdmenu)\n"
@@ -345,14 +366,12 @@ msgstr ""
 "    --stdout Вывод списка меню в формате, пригодном для каналов для "
 "установки-меню.\n"
 
-#. This is the end of the update-menus --help message
-#: ../update-menus/update-menus.cc:845
-msgid "  --version              Output version information and exit.\n"
-msgstr "  --version              Показать информацию о версии и выйти.\n"
-
-#: ../update-menus/update-menus.h:149
+#: ../update-menus/update-menus.h:150
 msgid ""
 "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
 msgstr ""
 "Неизвестное условие установки \"%1\" (пока поддерживается только \"package"
 "\")."
+
+#~ msgid "  --version              Output version information and exit.\n"
+#~ msgstr "  --version              Показать информацию о версии и выйти.\n"
