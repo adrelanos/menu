@@ -3,7 +3,10 @@ menu (2.1.31) UNRELEASED; urgency=low
   [ Program translations]
   * French update by Jean-Luc Coulon. Closes: #344434
 
- -- Christian Perrier <bubulle@debian.org>  Sat,  9 Sep 2006 10:16:50 +0200
+  [ Menu translations]
+  * Slovak update by Peter Mann.
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 10 Sep 2006 14:12:16 +0200
 
 menu (2.1.30) unstable; urgency=low
 
