@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: menu 2.1.29\n"
+"Project-Id-Version: menu 2.1.30\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2006-09-08 23:25+0200\n"
 "PO-Revision-Date: 2006-09-11 09:25+0700\n"
@@ -366,5 +366,3 @@ msgid ""
 "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
 msgstr "เงื่อนไขการติดตั้ง \"%1\" ที่ไม่รู้จัก (ขณะนี้ สนับสนุนเพียงเงื่อนไข \"package\" เท่านั้น)"
 
-#~ msgid "  --version              Output version information and exit.\n"
-#~ msgstr "  --version              แสดงข้อมูลรุ่นของโปรแกรมแล้วจบการทำงาน\n"
