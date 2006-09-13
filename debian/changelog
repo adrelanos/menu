@@ -1,13 +1,15 @@
-menu (2.1.31) UNRELEASED; urgency=low
+menu (2.1.31) unstable; urgency=low
 
-  [ Program translations]
-  * French update by Jean-Luc Coulon. Closes: #344434
-  * Thai update by Theppitak Karoonboonyanan. Closes: #386921
+  * Program translations: (Thanks Christian Perrier for processing them).
+    - French update by Jean-Luc Coulon. Closes: #344434
+    - Russian update by Yuri Kozlov. Closes: #386789
+    - Swedish update by Daniel Nylander. Closes: #386701
+    - Thai update by Theppitak Karoonboonyanan. Closes: #386921
+  * Menu translations
+    - Slovak update by Peter Mann.
+    - Wolof translation by Mouhamadou Mamoune Mbacke.
 
-  [ Menu translations]
-  * Slovak update by Peter Mann.
-
- -- Christian Perrier <bubulle@debian.org>  Tue, 12 Sep 2006 10:41:08 +0200
+ -- Bill Allombert <ballombe@debian.org>  Wed, 13 Sep 2006 21:22:27 +0200
 
 menu (2.1.30) unstable; urgency=low
 
