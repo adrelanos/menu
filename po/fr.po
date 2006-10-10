@@ -6,16 +6,15 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: menu 2.1.10\n"
+"Project-Id-Version: menu\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2006-09-08 23:25+0200\n"
-"PO-Revision-Date: 2005-12-17 11:17+0100\n"
+"PO-Revision-Date: 2006-10-09 10:36+0200\n"
 "Last-Translator: Jean-Luc  Coulon (f5ibh) <jean-luc.coulon@wanadoo.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
 
 #: ../install-menu/functions.cc:92
 msgid "Zero-size argument to print function."
@@ -238,6 +237,8 @@ msgid ""
 "file %1 line %2:\n"
 "Discarding entry requiring missing package %3."
 msgstr ""
+"fichier %1, ligne %2 :\n"
+"Suppression de l'entrée pour laquelle le paquet manquant %3 est nécessaire."
 
 #. Translation here and below refer to the file
 #. /etc/menu-methods/translate_menus that allow to rename and reorganize
@@ -373,6 +374,7 @@ msgstr ""
 "    --remove                supprimer les menus créés.\n"
 "    --stdout                afficher la liste des menus dans un format\n"
 "                            compatible avec un tubage vers install-menu.\n"
+"    --version               afficher les informations de version et quitter\n"
 
 #: ../update-menus/update-menus.h:150
 msgid ""
@@ -380,3 +382,4 @@ msgid ""
 msgstr ""
 "Condition d'installation inconnue « %1 » (actuellement, seul « package » est "
 "géré)."
+
