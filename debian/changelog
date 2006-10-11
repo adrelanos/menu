@@ -1,3 +1,9 @@
+menu (2.1.32) unstable; urgency=low
+
+  * The "unreleased" release
+
+ -- Bill Allombert <ballombe@debian.org>  Wed, 11 Oct 2006 20:47:02 +0200
+
 menu (2.1.31) unstable; urgency=medium
 
   * The "it is not dead, it's sleeping" release.
