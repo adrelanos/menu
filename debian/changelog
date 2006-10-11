@@ -2,6 +2,8 @@ menu (2.1.31) unstable; urgency=medium
 
   * The "it is not dead, it's sleeping" release.
   * Medium urgency for i18n and documentation fix only upload.
+  * menufile.5, menufile.fr.5:
+    - section WindowManagers was mispelled.
   * Program translations: (Thanks Christian Perrier for processing them).
     - French update by Jean-Luc Coulon. Closes: #344434
     - Russian update by Yuri Kozlov. Closes: #386789
