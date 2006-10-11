@@ -1,16 +1,21 @@
-menu (2.1.31) unstable; urgency=low
+menu (2.1.31) unstable; urgency=medium
 
+  * The "it is not dead, it's sleeping" release.
+  * Medium urgency for i18n and documentation fix only upload.
   * Program translations: (Thanks Christian Perrier for processing them).
     - French update by Jean-Luc Coulon. Closes: #344434
     - Russian update by Yuri Kozlov. Closes: #386789
     - Swedish update by Daniel Nylander. Closes: #386701
     - Thai update by Theppitak Karoonboonyanan. Closes: #386921
+    - Czech update by Miroslav Kure. Closes: #387343
+    - Vietnamese update by Clytie Siddall. Closes: #387577
   * Menu translations
     - Slovak update by Peter Mann.
     - Wolof translation by Mouhamadou Mamoune Mbacke.
+    - Kurdish translation by Erdal Ronahi. Closes: #387763, 387764
     - Korean translation by Sunjae Park. Closes: #391335
 
- -- Christian Perrier <bubulle@debian.org>  Fri,  6 Oct 2006 07:53:30 +0200
+ -- Bill Allombert <ballombe@debian.org>  Wed, 11 Oct 2006 01:17:24 +0200
 
 menu (2.1.30) unstable; urgency=low
 
