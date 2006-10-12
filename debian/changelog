@@ -1,6 +1,8 @@
 menu (2.1.32) unstable; urgency=low
 
   * The "unreleased" release
+  * Menu translations
+    - Bengali added by Jamil Ahmed
 
  -- Bill Allombert <ballombe@debian.org>  Wed, 11 Oct 2006 20:47:02 +0200
 
