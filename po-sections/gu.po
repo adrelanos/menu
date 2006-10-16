@@ -31,7 +31,7 @@ msgstr "ડેટાબેઝ"
 #.  Second level entry under "Apps"
 #.  Menu policy definition: text editors, word processors
 msgid "Editors"
-msgstr ""
+msgstr "સંપાદકો"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: educational and training programs
@@ -41,7 +41,7 @@ msgstr "શિક્ષણ"
 #.  Second level entry under "Apps"
 #.  Menu policy definition: wine, dosemu, etc.
 msgid "Emulators"
-msgstr ""
+msgstr "ઇમ્યુલેટર્સ"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: image manipulation
@@ -81,7 +81,7 @@ msgstr "સાધનો"
 #.  Second level entry under "Apps"
 #.  Menu policy definition: technical stuff
 msgid "Technical"
-msgstr ""
+msgstr "તકનીકી"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: text oriented tools other than editors
@@ -234,7 +234,7 @@ msgstr "દેખાવ"
 
 #. Non official sections from WindowMaker
 msgid "WorkSpace"
-msgstr "વર્કસ્પેશ"
+msgstr "વર્કસ્પેસ"
 
 #. Frequently used unofficial sections.
 
