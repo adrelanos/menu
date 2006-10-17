@@ -1,245 +1,357 @@
-# Vietnamese Translation for menu-section.
-# Copyright © 2005 Free Software Foundation, Inc.
-# Clytie Siddall <clytie@riverland.net.au>, 2005.
-# 
+# Vietnamese Translation for menu.
+# Copyright © 2006 Free Software Foundation, Inc.
+# Clytie Siddall <clytie@riverland.net.au>, 2005-2006.
 # 
 msgid ""
-msgstr ""
-"Project-Id-Version: menu-section 2.1.9-3\n"
-"POT-Creation-Date: 2003-04-03 12:14+0100\n"
-"PO-Revision-Date: 2005-05-13 22:14+0930\n"
+""
+msgstr "Project-Id-Version: menu 2.1.10\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"POT-Creation-Date: 2005-02-14 19:02+0100\n"
+"PO-Revision-Date: 2006-10-17 15:39+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
-"Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
+"Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: LocFactoryEditor 1.6fc1\n"
 
-#.First level entry
-#.All following 2nd level entries go "under" it
-#.From menu policy (/usr/share/doc/pdebian-policy/menu-policy.txt.gz):
-#.normal applications
-msgid "Apps"
-msgstr "Ứng dụng"
+#: ../install-menu/functions.cc:92
+msgid "Zero-size argument to print function."
+msgstr "Đối số có kích cỡ số không tới chức năng in."
 
-#.Second level entry under "Apps"
-#.Menu policy definition: interactive database programs
-msgid "Databases"
-msgstr "Cơ sở dữ liệu"
+#: ../install-menu/install-menu.cc:201
+msgid "install-menu: checking directory %1\n"
+msgstr "trình đơn cài đặt: đang kiểm tra thư mục %1\n"
 
-#.Second level entry under "Apps"
-#.Menu policy definition: text editors, word processors
-msgid "Editors"
-msgstr "Biên soạn"
+#: ../install-menu/install-menu.cc:214
+msgid "install-menu: creating directory %1:\n"
+msgstr "trình đơn cài đặt: đang tạo thư mục %1:\n"
 
-#.Second level entry under "Apps"
-#.Menu policy definition: educational and training programs
-msgid "Education"
-msgstr "Giáo dục"
+#: ../install-menu/install-menu.cc:216
+msgid "Could not create directory(%1): %2"
+msgstr "Không thể tạo thư mục(%1): %2"
 
-#.Second level entry under "Apps"
-#.Menu policy definition: wine, dosemu, etc.
-msgid "Emulators"
-msgstr "Mô phỏng"
+#: ../install-menu/install-menu.cc:218
+msgid "Could not change directory(%1): %2"
+msgstr "Không thể chuyển đổi thư mục(%1): %2"
 
-#.Second level entry under "Apps"
-#.Menu policy definition: image manipulation
-msgid "Graphics"
-msgstr "Đồ hoạ"
+#: ../install-menu/install-menu.cc:221
+msgid "install-menu: directory %1 already exists\n"
+msgstr "trình đơn cài đặt: thư mục %1 đã có\n"
 
-#.Second level entry under "Apps"
-#.Menu policy definition: anything relating to ham (amateur) radio
-msgid "Hamradio"
-msgstr "Truyền thành tài tử"
+#.Do not translate supported
+#: ../install-menu/install-menu.cc:438
+msgid "install-menu: [supported]: name=%1\n"
+msgstr "trình đơn cài đặt: [được hỗ trợ]: tên=%1\n"
 
-#.Second level entry under "Apps"
-#.Menu policy definition: math related programs
-msgid "Math"
-msgstr "Toán học"
+#: ../install-menu/install-menu.cc:455
+msgid "Menu entry lacks mandatory field \"%1\".\n"
+msgstr "Mục trình đơn thiếu trường bắt buộc \"%1\".\n"
 
-#.Second level entry under "Apps"
-#.Menu policy definition: network programs that don't fit elsewhere
-msgid "Net"
-msgstr "Mạng"
+#: ../install-menu/install-menu.cc:461
+msgid "Unknown value for field %1=\"%2\".\n"
+msgstr "Không biết giá trị cho trường %1=\"%2\".\n"
 
-#.Second level entry under "Apps"
-#.Menu policy definition: debuggers, etc.
-msgid "Programming"
-msgstr "Lập trình"
+#.Do not translate quoted text
+#: ../install-menu/install-menu.cc:606
+msgid "install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
+msgstr "trình đơn cài đặt: \"hotkeycase\" (phím nóng là chữ hoa/thường) chỉ có thể là \"sensitive\" (phân biệt chữ hoa/thường) hay \"insensitive\" (không phân biệt)\n"
 
-#.Second level entry under "Apps"
-#.Menu policy definition: scientific programs
-msgid "Science"
-msgstr "Khoa học"
+#: ../install-menu/install-menu.cc:636
+msgid ""
+"install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
+"Ignoring.\n"
+msgstr "trình đơn cài đặt: cảnh báo : không biết dấu hiệu nhận diện `%1' trên dòng %2 trong tập tin %3 nên bỏ qua.\n"
 
-#.Second level entry under "Apps"
-#.Menu policy definition: simple apps, like clocks, that perform only one task
-msgid "Tools"
-msgstr "Công cụ"
+#: ../install-menu/install-menu.cc:646
+msgid "install-menu: %1 must be defined in menu-method %2"
+msgstr "trình đơn cài đặt: %1 phải được xác định trong menu-method (phương pháp trình đơn) %2"
 
-#.Second level entry under "Apps"
-#.Menu policy definition: technical stuff
-msgid "Technical"
-msgstr "Kỹ thuật"
+#: ../install-menu/install-menu.cc:813
+msgid "Cannot open file %1 (also tried %2).\n"
+msgstr "Không thể mở tập tin %1 (cũng đã thử %2).\n"
 
-#.Second level entry under "Apps"
-#.Menu policy definition: text oriented tools other than editors
-msgid "Text"
-msgstr "Văn bản"
+#: ../install-menu/install-menu.cc:821
+#: ../install-menu/install-menu.cc:828
+#: ../install-menu/install-menu.cc:836
+msgid "Cannot open file %1.\n"
+msgstr "Không thể mở tập tin %1.\n"
 
-#.Second level entry under "Apps"
-#.Menu policy definition: bash, ksh, zsh, etc.
-msgid "Shells"
-msgstr "Hệ vỏ"
+#: ../install-menu/install-menu.cc:838
+msgid ""
+"In order to be able to create the user config file(s) for the window "
+"manager,\n"
+"the above file needs to be writeable (and/or the directory needs to exist).\n"
+msgstr "Để có khả năng tạo các tập tin cấu hình người dùng cho trình quản lý cửa sổ,\n"
+"tập tin ở trên cần phải có khả năng ghi (và/hay thư mục đó cần tồn tại).\n"
 
-#.Second level entry under "Apps"
-#.Menu policy definition: sound players and editors
-msgid "Sound"
-msgstr "Âm thanh"
+#: ../install-menu/install-menu.cc:860
+msgid "Warning: the string %1 did not occur in template file %2\n"
+msgstr "Cảnh báo : chuỗi %1 không nằm trong tập tin mẫu %2\n"
 
-#.Second level entry under "Apps"
-#.Menu policy definition: image viewers
-#.Maybe also applications which able users to view some specific data
-#.such as PDF, images, Postscript...
-msgid "Viewers"
-msgstr "Trình xem"
+#.Don't translate quoted string
+#: ../install-menu/install-menu.cc:885
+msgid ""
+"install-menu [-vh] <menu-method>\n"
+"  Read menu entries from stdin in \"update-menus --stdout\" format\n"
+"  and generate menu files using the specified menu-method.\n"
+"  Options to install-menu:\n"
+"     -h --help    : this message\n"
+"     -v --verbose : be verbose\n"
+msgstr "install-menu [-vh] <menu-method>\n"
+"\n"
+"[install-menu: trình đơn cài đặt\n"
+"menu-method: phương pháp trình đơn]\n"
+"\n"
+"  Đọc các mục nhập trình đơn từ thiết bị nhập chuẩn có dạng \"update-menus --stdout\"\n"
+"	(cập nhật các trình đơn, thiết bị xuất chuẩn)\n"
+" và tạo ra các tập tin trình đơn bằng phương pháp trình đơn đã ghi rõ.\n"
+"  Tùy chọn cho install-menu:\n"
+"     -h --help    	: hiển thị _trợ giúp_ này\n"
+"     -v --verbose 	: xuất _chi tiết_\n"
 
-#.Second level entry under "Apps"
-#.Menu policy definition: system administration and monitoring tools
-msgid "System"
-msgstr "Hệ thống"
+#: ../install-menu/install-menu.cc:929
+msgid "install-menu: no menu-method script specified!"
+msgstr "trình đơn cài đặt: chưa ghi rõ văn lệnh kiểu phương pháp trình đơn."
 
-#.First level entry
-#.Menu policy definition: games and recreations
-msgid "Games"
-msgstr "Trò chơi"
+#: ../install-menu/install-menu.cc:942
+msgid "Cannot open script %1 for reading.\n"
+msgstr "Không thể mở văn lệnh %1 để đọc.\n"
 
-#.Second level entry under "Games"
-#.Menu policy definition: walk around virtual space, zork, MOO's, etc
-#.All adventure-style games (often includes RPG)
-msgid "Adventure"
-msgstr "Phiêu lưu"
+#: ../install-menu/install-menu.cc:982
+msgid "Running: \"%1\"\n"
+msgstr "Đang chạy: \"%1\"\n"
 
-#.Second level entry under "Games"
-#.Menu policy definition: any game where reflexes count
-msgid "Arcade"
-msgstr "Nhà điện tử"
+#: ../install-menu/install-menu.cc:998
+msgid "install-menu: %1: aborting\n"
+msgstr "Trình đơn cài đặt: %1: hủy bỏ\n"
 
-#.Second level entry under "Games"
-#.Menu policy definition: games played on a board
-#.Board-style games such as Mastermind, Yahtzee, Mahjongg
-msgid "Board"
-msgstr "Bảng"
+#: ../install-menu/install-menu.h:198
+msgid "Number of arguments to function %1 does not match."
+msgstr "Số đối số tới chức năng %1 không khớp."
 
-#.Second level entry under "Games"
-#.Menu policy definition: games involving a deck of cards
-msgid "Card"
-msgstr "Đánh bài"
+#: ../install-menu/install-menu.h:206
+msgid "Unknown function: \"%1\""
+msgstr "Không biết chức năng: \"%1\""
 
-#.Second level entry under "Games"
-#.Menu policy definition: tests of ingenuity and logic
-#.one-player games most often...or games which need the player to think..:-)
-msgid "Puzzles"
-msgstr "Trờ chơi đố"
+#: ../install-menu/install-menu.h:215
+msgid "Indirectly used, but not defined function: \"%1\""
+msgstr "Chức năng được dùng gián tiếp, nhưng chưa được xác định: \"%1\""
 
-#.Second level entry under "Games"
-#.Menu policy definition: Simulations of the real world (Flight
-#.Simulators, for example)
-msgid "Simulation"
-msgstr "Thế giới mô phỏng"
+#: ../install-menu/install-menu.h:224
+msgid "Unknown identifier: \"%1\""
+msgstr "Không biết dấu hiệu nhận diện: \"%1\""
 
-#.Second level entry under "Games"
-#.Menu policy definition: games derived from "real world" sports
-msgid "Sports"
-msgstr "Thể thao"
+#: ../install-menu/install-menu.h:233
+msgid "Encoding conversion error: \"%1\""
+msgstr "Lỗi chuyển đổi bảng mã: \"%1\""
 
-#.Second level entry under "Games"
-#.Menu policy definition: games involving long term strategic thinking
-msgid "Strategy"
-msgstr "Chiến lược"
+#: ../update-menus/exceptions.h:43
+msgid "Unknown error."
+msgstr "Lỗi không rõ."
 
-#.Second level entry under "Games"
-#.Menu policy definition: games involving falling blocks
-msgid "Tetris-like"
-msgstr "Khối thả"
+#: ../update-menus/exceptions.h:55
+#: ../update-menus/parsestream.h:114
+msgid "Unknown error, message=%1"
+msgstr "Lỗi không rõ, thông điệp=%1"
 
-#.Second level entry under "Games"
-#.Menu policy definition: amusements, eye-candy, etc.
-#.Very small things which are often not really games
-#.Such as Xeyes....
-msgid "Toys"
-msgstr "Đồ chơi"
+#: ../update-menus/exceptions.h:64
+msgid "Unable to open file \"%1\"."
+msgstr "Không thể mở tập tin \"%1\"."
 
-#.First level entry
-#.Menu policy definition: programs that provide user documentation
-msgid "Help"
-msgstr "Trợ giúp"
+#: ../update-menus/exceptions.h:73
+msgid "Failed to pipe data through \"%1\" (pipe opened for reading)."
+msgstr "Lỗi gởi dữ liệu qua ống dẫn \"%1\" (ống dẫn được mở để đọc)."
 
-#.First level entry
-#.BE VERY CAREFUL HERE
-#.Menu policy definition: programs that affect the whole screen
-#.This entry is about screen saver/locking systems
-#.(see the following entries)
-#.Most often, literal translations to the word for "Screen"
-#.in your language will NOT be correct
-#.Try using what you use for "screen" in "screensaver" for your language
-msgid "Screen"
-msgstr "Màn ảnh"
+#: ../update-menus/exceptions.h:89
+msgid "%1: missing required tag: \"%2\""
+msgstr "%1: thiếu thẻ cần thiết: \"%2\""
 
-#.Second level entry under "Screen"
-#.Menu policy definition: programs to lock the screen
-#.Refers to "Screen" as "Lock the screen"
-msgid "Lock"
-msgstr "Khóa"
+#: ../update-menus/parsestream.cc:49
+msgid "(probably) stdin"
+msgstr "(rất có thể là) thiết bị nhập chuẩn"
 
-#.Second level entry under "Screen"
-#.Menu policy definition: screen savers
-#.Refers to "Screen" as "trigger the screensaver"
-#.Most often the common word for "Save" as in File/Save
-#.will NOT be appropriate
-msgid "Save"
-msgstr "Bảo vệ"
+#: ../update-menus/parsestream.cc:449
+msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
+msgstr "Trong tập tin \"%1\", ở (hay trong lời định nghĩa kết thúc tại) dòng %2:\n"
 
-#.Second level entry under "Screen"
-#.Menu policy definition: things that fill the root window
-#.will handle things that deal with the screen background, for instance
-msgid "Root-window"
-msgstr "Cửa sổ chủ"
+#: ../update-menus/parsestream.cc:470
+msgid "Somewhere in input file:\n"
+msgstr "Tại nơi nào trong tập tin nhập:\n"
 
-#.First level entry
-#.Menu policy definition: X window managers
-#.Will collect all window managers such as icewm, samfish, twm...
-msgid "WindowManagers"
-msgstr "Quản lý cửa sổ"
+#: ../update-menus/parsestream.h:122
+msgid "Unexpected end of file."
+msgstr "Gặp kết thúc tập tin bất thường."
 
-#.Second level entry under "WindowManagers"
-#.Menu policy definition: window manager modules
-msgid "Modules"
-msgstr "Mô-đun"
+#: ../update-menus/parsestream.h:129
+msgid "Unexpected end of line."
+msgstr "Gặp kết thúc dòng bất thường."
 
-#.First level entry for all xterm-style apps
-#.Menu policy definition: xterm and its brethren
-msgid "XShells"
-msgstr "Ứng dụng X"
+#: ../update-menus/parsestream.h:136
+msgid "Identifier expected."
+msgstr "Yêu cầu dấu hiệu nhận diện."
 
-#.From Apps/System/Admin
-#.for "System administration"
-msgid "Admin"
-msgstr "Quản lý"
+#: ../update-menus/parsestream.h:144
+msgid "Expected: \"%1\""
+msgstr "Yêu cầu : \"%1\""
 
-#.Non official sections from WindowMaker
-msgid "Appearance"
-msgstr "Diện mạo"
+#: ../update-menus/parsestream.h:153
+msgid "Unexpected character: \"%1\""
+msgstr "Gặp ký tự bất thường: \"%1\""
 
-#.Non official sections from WindowMaker
-msgid "WorkSpace"
-msgstr "Vùng làm việc"
+#: ../update-menus/parsestream.h:162
+msgid ""
+"Boolean (either true or false) expected.\n"
+"Found: \"%1\""
+msgstr "Yêu cầu giá trị luận lý (hoặc đúng hoặc sai).\n"
+"Tìm thấy: \"%1\""
 
-#.From Apps/Net/Mozilla Components
-msgid "Mozilla Components"
-msgstr "Thành phần Mozilla"
+#: ../update-menus/parsestream.h:172
+msgid "Unknown compat mode: \"%1\""
+msgstr "Không biết chế đô tương thích: \"%1\""
 
-#.From Games/Toys/Teddies
-#.as in "Teddy Bear"
-msgid "Teddies"
-msgstr "Con gấu bông"
+#: ../update-menus/stringtoolbox.cc:85
+msgid ""
+"replacewith($string, $replace, $with): $replace and $with must have the same "
+"length."
+msgstr "replacewith($string, $replace, $with): $replace (thay thế) và $with (bằng) phải có cùng độ dài."
+
+#.Translation here and below refer to the file
+#./etc/menu-methods/translate_menus that allow to rename and reorganize
+#.menu entries automatically. It does not refer to the localisation
+#.(translation to other languages).
+#.
+#: ../update-menus/update-menus.cc:358
+msgid "Reading translation rules in %1."
+msgstr "Đang đọc các quy tắc thông dịch trong %1."
+
+#: ../update-menus/update-menus.cc:438
+msgid "Reading installed packages list..."
+msgstr "Đang đọc danh sách các gói đã cài đặt..."
+
+#: ../update-menus/update-menus.cc:485
+msgid "Execution of %1 generated no output or returned an error.\n"
+msgstr "Việc thực hiện %1 chưa tạo ra dữ liệu xuất, hoặc đã trả về lỗi.\n"
+
+#: ../update-menus/update-menus.cc:525
+#: ../update-menus/update-menus.cc:529
+msgid "Skipping file because of errors...\n"
+msgstr "Đang bỏ qua tập tin vì gặp lỗi...\n"
+
+#: ../update-menus/update-menus.cc:545
+msgid "Reading menu-entry files in %1."
+msgstr "Đang đọc các tập tin kiểu menu-entry ()mục nhập trình đơn trong %1."
+
+#: ../update-menus/update-menus.cc:568
+msgid "Error reading %1.\n"
+msgstr "Gặp lỗi khi đọc %1.\n"
+
+#: ../update-menus/update-menus.cc:573
+msgid "%1 menu entries found (%2 total)."
+msgstr "Tìm thấy %1 mục nhập trình đơn (tổng %2)."
+
+#: ../update-menus/update-menus.cc:585
+msgid "Running method: %1"
+msgstr "Đang chạy phương pháp: %1"
+
+#: ../update-menus/update-menus.cc:588
+msgid "Cannot create pipe."
+msgstr "Không thể tạo ống dẫn."
+
+#: ../update-menus/update-menus.cc:624
+#: ../update-menus/update-menus.cc:1000
+msgid "Script %1 could not be executed."
+msgstr "Không thể thực hiện văn lệnh %1."
+
+#: ../update-menus/update-menus.cc:627
+msgid "Script %1 returned error status %2."
+msgstr "Văn lệnh %1 đã trả về trạng thái lỗi %2."
+
+#: ../update-menus/update-menus.cc:630
+msgid "Script %1 received signal %2."
+msgstr "Văn lệnh %1 đã nhận tín hiệu %2."
+
+#: ../update-menus/update-menus.cc:640
+msgid "Running menu-methods in %1."
+msgstr "Đang chạy menu-methods (các phương pháp trình đơn) trong %1."
+
+#: ../update-menus/update-menus.cc:673
+msgid "Other update-menus processes are already locking %1, quitting."
+msgstr "Những tiến trình update-menus (cập nhật các trình đơn) đang khoá %1 nên sẽ thoát."
+
+#: ../update-menus/update-menus.cc:676
+msgid "Cannot lock %1: %2 - Aborting."
+msgstr "Không thể khoá %1: %2 nên hủy bỏ."
+
+#: ../update-menus/update-menus.cc:685
+msgid "Cannot write to lockfile %1 - Aborting."
+msgstr "Không thể ghi vào tâp tin khoá %1 nên hủy bỏ."
+
+#: ../update-menus/update-menus.cc:698
+msgid "Cannot remove lockfile %1."
+msgstr "Không thể gỡ bỏ tập tin khoá %1."
+
+#: ../update-menus/update-menus.cc:714
+msgid "Update-menus is run by user."
+msgstr "Tiến trình update menus (cập nhật các trình đơn) được chạy bởi người dùng."
+
+#: ../update-menus/update-menus.cc:798
+msgid ""
+"Waiting for dpkg to finish (forking to background).\n"
+"(checking %1)"
+msgstr "Đang đời trình dpkg chạy xong (đang tạo tiến trình con vào nền).\n"
+"(đang kiểm tra %1)"
+
+#: ../update-menus/update-menus.cc:801
+msgid "Further output (if any) will appear in %1."
+msgstr "Kết xuất thêm (nếu có) sẽ xuất hiện trong %1."
+
+#: ../update-menus/update-menus.cc:823
+msgid "Dpkg is not locking dpkg status area, good."
+msgstr "Trình dpkg không đang khoá vùng trạng thái dpkg: tốt."
+
+#.This is the update-menus --help message
+#: ../update-menus/update-menus.cc:833
+msgid ""
+"Usage: update-menus [options] \n"
+"Gather packages data from the menu database and generate menus for\n"
+"all programs providing menu-methods, usually window-managers.\n"
+"  -d                     Output debugging messages.\n"
+"  -v                     Be verbose about what is going on.\n"
+"  -h, --help             This message.\n"
+"  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to "
+"search.\n"
+"  --menumethod=<method>  Run only the menu method <method>.\n"
+"  --nodefaultdirs        Disable the use of all the standard menu "
+"directories.\n"
+"  --stdout               Output menu list in format suitable for piping to\n"
+"                         install-menu.\n"
+msgstr "Cách sử dụng: update-menus [tùy_chọn ...] \n"
+"\n"
+"[update-menus: cập nhật các trình đơn]\n"
+"\n"
+"Thu thập các dữ liệu về gói trong cơ sở dữ liệu trình đơn,\n"
+"và tạo ra các trình đơn cho tất cả các chương trinh cung cấp\n"
+"phương pháp trình đơn, thường là trình quản lý cửa sổ.\n"
+"\n"
+"  -d                          Xuất thông điệp _go lỗi_\n"
+"  -v                          Xuất _chi tiết_.\n"
+"  -h, --help                  Hiển thị _trợ giúp_ này.\n"
+"  --menufilesdir=<thư_mục>        Thêm <thư_mục> vào các danh sách\n"
+"		thư mục trình đơn trong chúng cần tìm kiếm qua.\n"
+"  --menumethod=<phương_pháp>  Chạy chỉ phương pháp trình đơn này.\n"
+"  --nodefaultdirs         Tắt khả năng sử dụng mọi thư mục trình đơn chuẩn\n"
+"	[không có thư mục mặc định]\n"
+"  --stdout                    Xuất danh sách trình đơn có dạng thích hợp để\n"
+"                              gởi qua ống dẫn cho tiến trình cài đặt trình đơn\n"
+"	[stdout: thiết bị xuất chuẩn]\n"
+
+#.This is the end of the update-menus --help message
+#: ../update-menus/update-menus.cc:845
+msgid "  --version              Output version information and exit.\n"
+msgstr "  --version                   Xuất thông tin phiên bản rồi thoát.\n"
+
+#: ../update-menus/update-menus.h:149
+msgid "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
+msgstr "Không biết điều kiện cài đặt \"%1\" (hiện thời chỉ hỗ trợ \"package\" (gói))."

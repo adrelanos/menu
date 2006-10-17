@@ -7,8 +7,9 @@ menu (2.1.32) unstable; urgency=low
 
   [ Christian Perrier ]
     - Gujarati added by Kartik Mistry
+    - Vietnamese updated by Clytie Siddal. Closes: #393622
 
- -- Christian Perrier <bubulle@debian.org>  Sat, 14 Oct 2006 20:49:22 +0200
+ -- Christian Perrier <bubulle@debian.org>  Tue, 17 Oct 2006 19:41:45 +0200
 
 menu (2.1.31) unstable; urgency=medium
 
