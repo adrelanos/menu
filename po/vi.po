@@ -4,10 +4,10 @@
 # 
 msgid ""
 ""
-msgstr "Project-Id-Version: menu 2.1.30\n"
+msgstr "Project-Id-Version: menu 2.1.10\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
-"POT-Creation-Date: 2006-09-08 23:25+0200\n"
-"PO-Revision-Date: 2006-09-17 15:18+0930\n"
+"POT-Creation-Date: 2005-02-14 19:02+0100\n"
+"PO-Revision-Date: 2006-10-17 15:39+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -18,145 +18,134 @@ msgstr "Project-Id-Version: menu 2.1.30\n"
 
 #: ../install-menu/functions.cc:92
 msgid "Zero-size argument to print function."
-msgstr "Đối số có kích cỡ số không với hàm in."
+msgstr "Đối số có kích cỡ số không tới chức năng in."
 
-#: ../install-menu/install-menu.cc:202
+#: ../install-menu/install-menu.cc:201
 msgid "install-menu: checking directory %1\n"
-msgstr "cài đặt trình đơn: đang kiểm tra thư mục %1\n"
+msgstr "trình đơn cài đặt: đang kiểm tra thư mục %1\n"
 
-#: ../install-menu/install-menu.cc:215
+#: ../install-menu/install-menu.cc:214
 msgid "install-menu: creating directory %1:\n"
-msgstr "cài đặt trình đơn: đang tạo thư mục %1\n"
+msgstr "trình đơn cài đặt: đang tạo thư mục %1:\n"
 
-#: ../install-menu/install-menu.cc:217
+#: ../install-menu/install-menu.cc:216
 msgid "Could not create directory(%1): %2"
 msgstr "Không thể tạo thư mục(%1): %2"
 
-#: ../install-menu/install-menu.cc:219
+#: ../install-menu/install-menu.cc:218
 msgid "Could not change directory(%1): %2"
-msgstr "Không thể thay đổi thư mục(%1): %2"
+msgstr "Không thể chuyển đổi thư mục(%1): %2"
 
-#: ../install-menu/install-menu.cc:222
+#: ../install-menu/install-menu.cc:221
 msgid "install-menu: directory %1 already exists\n"
-msgstr "cài đặt trình đơn: thư mục %1 đã có\n"
+msgstr "trình đơn cài đặt: thư mục %1 đã có\n"
 
 #.Do not translate supported
-#: ../install-menu/install-menu.cc:447
+#: ../install-menu/install-menu.cc:438
 msgid "install-menu: [supported]: name=%1\n"
-msgstr "cài đặt trình đơn: [supported]: tên=%1\n"
+msgstr "trình đơn cài đặt: [được hỗ trợ]: tên=%1\n"
 
-#: ../install-menu/install-menu.cc:464
+#: ../install-menu/install-menu.cc:455
 msgid "Menu entry lacks mandatory field \"%1\".\n"
-msgstr "Mục trình đơn còn thiếu trường bắt buộc « %1 ».\n"
+msgstr "Mục trình đơn thiếu trường bắt buộc \"%1\".\n"
 
-#: ../install-menu/install-menu.cc:470
+#: ../install-menu/install-menu.cc:461
 msgid "Unknown value for field %1=\"%2\".\n"
-msgstr "Giá trị không rõ cho trường %1=« %2 ».\n"
+msgstr "Không biết giá trị cho trường %1=\"%2\".\n"
 
 #.Do not translate quoted text
-#: ../install-menu/install-menu.cc:617
-msgid ""
-"install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
-msgstr "cài đặt trình đơn: \"hotkeycase\" (phím nóng là chữ hoa/thường) chỉ có thể là "
-"\"sensitive\" (nhạy cảm) hay \"insensitive\" (không nhạy cảm) thôi\n"
+#: ../install-menu/install-menu.cc:606
+msgid "install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
+msgstr "trình đơn cài đặt: \"hotkeycase\" (phím nóng là chữ hoa/thường) chỉ có thể là \"sensitive\" (phân biệt chữ hoa/thường) hay \"insensitive\" (không phân biệt)\n"
 
-#: ../install-menu/install-menu.cc:647
+#: ../install-menu/install-menu.cc:636
 msgid ""
 "install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
 "Ignoring.\n"
-msgstr "cài đặt trình đơn: cảnh báo: bộ nhận diện không rõ  « %1 » trên dòng %2 trong tập tin %3 nên bỏ qua.\n"
+msgstr "trình đơn cài đặt: cảnh báo : không biết dấu hiệu nhận diện `%1' trên dòng %2 trong tập tin %3 nên bỏ qua.\n"
 
-#: ../install-menu/install-menu.cc:657
+#: ../install-menu/install-menu.cc:646
 msgid "install-menu: %1 must be defined in menu-method %2"
-msgstr "cài đặt trình đơn: phải định nghĩa %1 trong phương pháp trình đơn (menu-method) %2"
+msgstr "trình đơn cài đặt: %1 phải được xác định trong menu-method (phương pháp trình đơn) %2"
 
-#: ../install-menu/install-menu.cc:824
+#: ../install-menu/install-menu.cc:813
 msgid "Cannot open file %1 (also tried %2).\n"
-msgstr "Không thể mở tập tin %1 (cũng đã thử mở %2).\n"
+msgstr "Không thể mở tập tin %1 (cũng đã thử %2).\n"
 
-#: ../install-menu/install-menu.cc:832
-#: ../install-menu/install-menu.cc:839
-#: ../install-menu/install-menu.cc:847
+#: ../install-menu/install-menu.cc:821
+#: ../install-menu/install-menu.cc:828
+#: ../install-menu/install-menu.cc:836
 msgid "Cannot open file %1.\n"
 msgstr "Không thể mở tập tin %1.\n"
 
-#: ../install-menu/install-menu.cc:849
+#: ../install-menu/install-menu.cc:838
 msgid ""
 "In order to be able to create the user config file(s) for the window "
 "manager,\n"
 "the above file needs to be writeable (and/or the directory needs to exist).\n"
-msgstr "Để có khả năng tạo (các) tập tin cấu hình người dùng cho bộ quản lý cửa sổ,\n"
-"tập tin bên trên cần phải cho phép ghi (và/hay thư mục cần phải tồn tại).\n"
+msgstr "Để có khả năng tạo các tập tin cấu hình người dùng cho trình quản lý cửa sổ,\n"
+"tập tin ở trên cần phải có khả năng ghi (và/hay thư mục đó cần tồn tại).\n"
 
-#: ../install-menu/install-menu.cc:871
+#: ../install-menu/install-menu.cc:860
 msgid "Warning: the string %1 did not occur in template file %2\n"
-msgstr "Cảnh báo : chuỗi %1 không nằm trong tập tin biểu mẫu %2.\n"
+msgstr "Cảnh báo : chuỗi %1 không nằm trong tập tin mẫu %2\n"
 
 #.Don't translate quoted string
-#: ../install-menu/install-menu.cc:896
+#: ../install-menu/install-menu.cc:885
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
 "  and generate menu files using the specified menu-method.\n"
 "  Options to install-menu:\n"
 "     -h --help    : this message\n"
-"        --remove  : remove the menu instead of generating it.\n"
 "     -v --verbose : be verbose\n"
 msgstr "install-menu [-vh] <menu-method>\n"
 "\n"
-"[install-menu: cài đặt trình đơn\n"
+"[install-menu: trình đơn cài đặt\n"
 "menu-method: phương pháp trình đơn]\n"
 "\n"
-"Đọc các mục ghi trình đơn từ thiết bị nhập chuẩn\n"
-"    bằng dạng thức « update-menus --stdout »\n"
-"[cập nhật các trình đơn, thiết bị xuất chuẩn]\n"
-" và tạo ra các tập tin trình đơn bằng cách sử dụng\n"
-"    phương pháp trình đơn đã ghi rõ.\n"
-"\n"
+"  Đọc các mục nhập trình đơn từ thiết bị nhập chuẩn có dạng \"update-menus --stdout\"\n"
+"	(cập nhật các trình đơn, thiết bị xuất chuẩn)\n"
+" và tạo ra các tập tin trình đơn bằng phương pháp trình đơn đã ghi rõ.\n"
 "  Tùy chọn cho install-menu:\n"
-"     -h --help         hiển thị _trợ giúp_ này\n"
-"        --remove       _gỡ bỏ_ trình đơn thay vì tạo ra nó\n"
-"     -v --verbose      xuất _chi tiết_\n"
+"     -h --help    	: hiển thị _trợ giúp_ này\n"
+"     -v --verbose 	: xuất _chi tiết_\n"
 
-#: ../install-menu/install-menu.cc:943
+#: ../install-menu/install-menu.cc:929
 msgid "install-menu: no menu-method script specified!"
-msgstr "cài đặt trình đơn: chưa xác định tập lệnh menu-method."
+msgstr "trình đơn cài đặt: chưa ghi rõ văn lệnh kiểu phương pháp trình đơn."
 
-#: ../install-menu/install-menu.cc:956
+#: ../install-menu/install-menu.cc:942
 msgid "Cannot open script %1 for reading.\n"
-msgstr "Không thể mở tập lệnh %1 để đọc.\n"
+msgstr "Không thể mở văn lệnh %1 để đọc.\n"
 
-#: ../install-menu/install-menu.cc:979
-msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
-msgstr "Cảnh báo : tập lệnh %1 không cung cấp « removemenu » nên không xoá bỏ trình đơn\n"
-
-#: ../install-menu/install-menu.cc:1014
+#: ../install-menu/install-menu.cc:982
 msgid "Running: \"%1\"\n"
-msgstr "Đang chạy: « %1 »\n"
+msgstr "Đang chạy: \"%1\"\n"
 
-#: ../install-menu/install-menu.cc:1030
+#: ../install-menu/install-menu.cc:998
 msgid "install-menu: %1: aborting\n"
-msgstr "cài đặt trình đơn: %1: nên hủy bỏ\n"
+msgstr "Trình đơn cài đặt: %1: hủy bỏ\n"
 
-#: ../install-menu/install-menu.h:199
+#: ../install-menu/install-menu.h:198
 msgid "Number of arguments to function %1 does not match."
-msgstr "Hàm %1 có số đối số không khớp được."
+msgstr "Số đối số tới chức năng %1 không khớp."
 
-#: ../install-menu/install-menu.h:207
+#: ../install-menu/install-menu.h:206
 msgid "Unknown function: \"%1\""
-msgstr "Hàm không rõ : « %1 »"
+msgstr "Không biết chức năng: \"%1\""
 
-#: ../install-menu/install-menu.h:216
+#: ../install-menu/install-menu.h:215
 msgid "Indirectly used, but not defined function: \"%1\""
-msgstr "Hàm đã được dùng gián tiếp còn chưa được xác định: « %1 »"
+msgstr "Chức năng được dùng gián tiếp, nhưng chưa được xác định: \"%1\""
 
-#: ../install-menu/install-menu.h:225
+#: ../install-menu/install-menu.h:224
 msgid "Unknown identifier: \"%1\""
-msgstr "Bộ nhận diện không rõ : « %1 »"
+msgstr "Không biết dấu hiệu nhận diện: \"%1\""
 
-#: ../install-menu/install-menu.h:234
+#: ../install-menu/install-menu.h:233
 msgid "Encoding conversion error: \"%1\""
-msgstr "Lỗi chuyển đổi bảng mã: « %1 »"
+msgstr "Lỗi chuyển đổi bảng mã: \"%1\""
 
 #: ../update-menus/exceptions.h:43
 msgid "Unknown error."
@@ -169,15 +158,15 @@ msgstr "Lỗi không rõ, thông điệp=%1"
 
 #: ../update-menus/exceptions.h:64
 msgid "Unable to open file \"%1\"."
-msgstr "Không thể mở tập tin « %1 »."
+msgstr "Không thể mở tập tin \"%1\"."
 
 #: ../update-menus/exceptions.h:73
 msgid "Failed to pipe data through \"%1\" (pipe opened for reading)."
-msgstr "Lỗi gởi dữ liệu qua ống dẫn tới « %1 » (ống dẫn được mở để đọc)."
+msgstr "Lỗi gởi dữ liệu qua ống dẫn \"%1\" (ống dẫn được mở để đọc)."
 
 #: ../update-menus/exceptions.h:89
 msgid "%1: missing required tag: \"%2\""
-msgstr "%1: còn thiếu thẻ cần thiết: « %2 »"
+msgstr "%1: thiếu thẻ cần thiết: \"%2\""
 
 #: ../update-menus/parsestream.cc:49
 msgid "(probably) stdin"
@@ -185,7 +174,7 @@ msgstr "(rất có thể là) thiết bị nhập chuẩn"
 
 #: ../update-menus/parsestream.cc:449
 msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
-msgstr "Nằm trong tập tin « %1 », trên (hoặc tại lời xác định kết thúc bằng) dòng %2:\n"
+msgstr "Trong tập tin \"%1\", ở (hay trong lời định nghĩa kết thúc tại) dòng %2:\n"
 
 #: ../update-menus/parsestream.cc:470
 msgid "Somewhere in input file:\n"
@@ -193,152 +182,137 @@ msgstr "Tại nơi nào trong tập tin nhập:\n"
 
 #: ../update-menus/parsestream.h:122
 msgid "Unexpected end of file."
-msgstr "Kết thúc tập tin bất thường."
+msgstr "Gặp kết thúc tập tin bất thường."
 
 #: ../update-menus/parsestream.h:129
 msgid "Unexpected end of line."
-msgstr "Kết thúc dòng bất thường."
+msgstr "Gặp kết thúc dòng bất thường."
 
 #: ../update-menus/parsestream.h:136
 msgid "Identifier expected."
-msgstr "Đợi bộ nhận diện."
+msgstr "Yêu cầu dấu hiệu nhận diện."
 
 #: ../update-menus/parsestream.h:144
 msgid "Expected: \"%1\""
-msgstr "Đợi : « %1 »"
+msgstr "Yêu cầu : \"%1\""
 
 #: ../update-menus/parsestream.h:153
 msgid "Unexpected character: \"%1\""
-msgstr "Ký tự bất thường : « %1 »"
+msgstr "Gặp ký tự bất thường: \"%1\""
 
 #: ../update-menus/parsestream.h:162
 msgid ""
 "Boolean (either true or false) expected.\n"
 "Found: \"%1\""
-msgstr "Đợi giá trị Bun (hoặc đúng hoặc sai).\n"
-"Tìm thấy: « %1 »"
+msgstr "Yêu cầu giá trị luận lý (hoặc đúng hoặc sai).\n"
+"Tìm thấy: \"%1\""
 
 #: ../update-menus/parsestream.h:172
 msgid "Unknown compat mode: \"%1\""
-msgstr "Không biết chế đô tương thích: « %1 »"
+msgstr "Không biết chế đô tương thích: \"%1\""
 
 #: ../update-menus/stringtoolbox.cc:85
 msgid ""
 "replacewith($string, $replace, $with): $replace and $with must have the same "
 "length."
-msgstr "replacewith($string, $replace, $with): $replace và $with phải có cùng một độ dài.\n"
-"[replacewith: thay thế bằng]"
-
-#: ../update-menus/update-menus.cc:149
-msgid ""
-"file %1 line %2:\n"
-"Discarding entry requiring missing package %3."
-msgstr "tập tin %1 dòng %2:\n"
-"đang hủy mục nhập cần thiết gói còn thiếu %3."
+msgstr "replacewith($string, $replace, $with): $replace (thay thế) và $with (bằng) phải có cùng độ dài."
 
 #.Translation here and below refer to the file
 #./etc/menu-methods/translate_menus that allow to rename and reorganize
 #.menu entries automatically. It does not refer to the localisation
 #.(translation to other languages).
 #.
-#: ../update-menus/update-menus.cc:363
+#: ../update-menus/update-menus.cc:358
 msgid "Reading translation rules in %1."
-msgstr "Đang đọc các quy tắc dịch trong %1."
+msgstr "Đang đọc các quy tắc thông dịch trong %1."
 
-#: ../update-menus/update-menus.cc:443
+#: ../update-menus/update-menus.cc:438
 msgid "Reading installed packages list..."
 msgstr "Đang đọc danh sách các gói đã cài đặt..."
 
-#: ../update-menus/update-menus.cc:492
+#: ../update-menus/update-menus.cc:485
 msgid "Execution of %1 generated no output or returned an error.\n"
-msgstr "Việc thực hiện %1 chưa tạo ra dữ liệu, hoặc đã gặp lỗi.\n"
+msgstr "Việc thực hiện %1 chưa tạo ra dữ liệu xuất, hoặc đã trả về lỗi.\n"
 
-#: ../update-menus/update-menus.cc:533
-#: ../update-menus/update-menus.cc:537
+#: ../update-menus/update-menus.cc:525
+#: ../update-menus/update-menus.cc:529
 msgid "Skipping file because of errors...\n"
-msgstr "Sẽ bỏ qua tập tin vì gặp lỗi...\n"
+msgstr "Đang bỏ qua tập tin vì gặp lỗi...\n"
 
-#: ../update-menus/update-menus.cc:554
+#: ../update-menus/update-menus.cc:545
 msgid "Reading menu-entry files in %1."
-msgstr "Đang đọc các tập tin kiểu « menu-entry » (mục trình đơn) trong %1."
+msgstr "Đang đọc các tập tin kiểu menu-entry ()mục nhập trình đơn trong %1."
 
-#: ../update-menus/update-menus.cc:577
+#: ../update-menus/update-menus.cc:568
 msgid "Error reading %1.\n"
 msgstr "Gặp lỗi khi đọc %1.\n"
 
-#: ../update-menus/update-menus.cc:583
+#: ../update-menus/update-menus.cc:573
 msgid "%1 menu entries found (%2 total)."
-msgstr "Tìm thấy %1 mục trình đơn (tổng %2)."
+msgstr "Tìm thấy %1 mục nhập trình đơn (tổng %2)."
 
-#: ../update-menus/update-menus.cc:594
-msgid "Running method: %1 --remove"
-msgstr "Đang chạy phương pháp: %1 --remove"
-
-#: ../update-menus/update-menus.cc:606
-#: ../update-menus/update-menus.cc:668
-#: ../update-menus/update-menus.cc:1007
-msgid "Script %1 could not be executed."
-msgstr "Không thể thực hiện tập lệnh %1."
-
-#: ../update-menus/update-menus.cc:609
-#: ../update-menus/update-menus.cc:671
-msgid "Script %1 returned error status %2."
-msgstr "Tập lệnh %1 đã trả lại trạng thái lỗi %2."
-
-#: ../update-menus/update-menus.cc:612
-#: ../update-menus/update-menus.cc:674
-msgid "Script %1 received signal %2."
-msgstr "Tập lệnh %1 đã nhận tín hiệu %2."
-
-#: ../update-menus/update-menus.cc:629
+#: ../update-menus/update-menus.cc:585
 msgid "Running method: %1"
 msgstr "Đang chạy phương pháp: %1"
 
-#: ../update-menus/update-menus.cc:632
+#: ../update-menus/update-menus.cc:588
 msgid "Cannot create pipe."
 msgstr "Không thể tạo ống dẫn."
 
-#: ../update-menus/update-menus.cc:684
+#: ../update-menus/update-menus.cc:624
+#: ../update-menus/update-menus.cc:1000
+msgid "Script %1 could not be executed."
+msgstr "Không thể thực hiện văn lệnh %1."
+
+#: ../update-menus/update-menus.cc:627
+msgid "Script %1 returned error status %2."
+msgstr "Văn lệnh %1 đã trả về trạng thái lỗi %2."
+
+#: ../update-menus/update-menus.cc:630
+msgid "Script %1 received signal %2."
+msgstr "Văn lệnh %1 đã nhận tín hiệu %2."
+
+#: ../update-menus/update-menus.cc:640
 msgid "Running menu-methods in %1."
-msgstr "Đang chạy « menu-methods » (phương pháp trình đơn) trong %1."
+msgstr "Đang chạy menu-methods (các phương pháp trình đơn) trong %1."
 
-#: ../update-menus/update-menus.cc:716
+#: ../update-menus/update-menus.cc:673
 msgid "Other update-menus processes are already locking %1, quitting."
-msgstr "Những tiến trình « update-menus » (cập nhật trình đơn) khác đang khóa %1 nên thoát."
+msgstr "Những tiến trình update-menus (cập nhật các trình đơn) đang khoá %1 nên sẽ thoát."
 
-#: ../update-menus/update-menus.cc:719
+#: ../update-menus/update-menus.cc:676
 msgid "Cannot lock %1: %2 - Aborting."
-msgstr "Không thể khóa %1: %2 nên hủy bỏ."
+msgstr "Không thể khoá %1: %2 nên hủy bỏ."
 
-#: ../update-menus/update-menus.cc:729
+#: ../update-menus/update-menus.cc:685
 msgid "Cannot write to lockfile %1 - Aborting."
-msgstr "Không thể ghi vào tâp tin khóa (lockfile) %1 nên hủy bỏ."
+msgstr "Không thể ghi vào tâp tin khoá %1 nên hủy bỏ."
 
-#: ../update-menus/update-menus.cc:742
+#: ../update-menus/update-menus.cc:698
 msgid "Cannot remove lockfile %1."
-msgstr "Không thể gỡ bỏ tập tin khóa (lockfile) %1."
+msgstr "Không thể gỡ bỏ tập tin khoá %1."
 
-#: ../update-menus/update-menus.cc:758
+#: ../update-menus/update-menus.cc:714
 msgid "Update-menus is run by user."
-msgstr "Người dùng có chạy tiến trình « update-menus » (cập nhật trình đơn)."
+msgstr "Tiến trình update menus (cập nhật các trình đơn) được chạy bởi người dùng."
 
-#: ../update-menus/update-menus.cc:842
+#: ../update-menus/update-menus.cc:798
 msgid ""
 "Waiting for dpkg to finish (forking to background).\n"
 "(checking %1)"
-msgstr "Đang đời trình dpkg chạy xong (tạo tiến trình con vào nền).\n"
+msgstr "Đang đời trình dpkg chạy xong (đang tạo tiến trình con vào nền).\n"
 "(đang kiểm tra %1)"
 
-#: ../update-menus/update-menus.cc:845
+#: ../update-menus/update-menus.cc:801
 msgid "Further output (if any) will appear in %1."
-msgstr "Dữ liệu xuất thêm (nếu có) sẽ xuất hiện trong %1."
+msgstr "Kết xuất thêm (nếu có) sẽ xuất hiện trong %1."
 
-#: ../update-menus/update-menus.cc:867
+#: ../update-menus/update-menus.cc:823
 msgid "Dpkg is not locking dpkg status area, good."
-msgstr "Trình dpkg không khóa vùng trạng thái dpkg: tốt."
+msgstr "Trình dpkg không đang khoá vùng trạng thái dpkg: tốt."
 
 #.This is the update-menus --help message
-#: ../update-menus/update-menus.cc:877
+#: ../update-menus/update-menus.cc:833
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -351,32 +325,33 @@ msgid ""
 "  --menumethod=<method>  Run only the menu method <method>.\n"
 "  --nodefaultdirs        Disable the use of all the standard menu "
 "directories.\n"
-"  --remove               Remove generated menus instead.\n"
 "  --stdout               Output menu list in format suitable for piping to\n"
 "                         install-menu.\n"
-"  --version              Output version information and exit.\n"
-msgstr "Cách sử dụng: update-menus [tùy_chọn]\n"
+msgstr "Cách sử dụng: update-menus [tùy_chọn ...] \n"
 "\n"
-"[update-menus: cập nhật trình đơn]\n"
+"[update-menus: cập nhật các trình đơn]\n"
 "\n"
-"Thu thập dữ liệu về gói phần mềm từ cơ sở dữ liệu trình đơn,\n"
-"và tạo ra trình đơn cho các chương trinh cung cấp phương pháp trình đơn\n"
-"(menu-methods), thường là trình quản lý cửa sổ.\n"
+"Thu thập các dữ liệu về gói trong cơ sở dữ liệu trình đơn,\n"
+"và tạo ra các trình đơn cho tất cả các chương trinh cung cấp\n"
+"phương pháp trình đơn, thường là trình quản lý cửa sổ.\n"
 "\n"
 "  -d                          Xuất thông điệp _go lỗi_\n"
 "  -v                          Xuất _chi tiết_.\n"
 "  -h, --help                  Hiển thị _trợ giúp_ này.\n"
-"  --menufilesdir=<thư_mục>    Thêm thư mục này vào danh sách\n"
-"                              các thư mục trình đơn trong chúng cần tìm kiếm.\n"
+"  --menufilesdir=<thư_mục>        Thêm <thư_mục> vào các danh sách\n"
+"		thư mục trình đơn trong chúng cần tìm kiếm qua.\n"
 "  --menumethod=<phương_pháp>  Chạy chỉ phương pháp trình đơn này.\n"
-"  --nodefaultdirs             Tắt sử dụng các thư mục trình đơn chuẩn\n"
-"  --remove                    _Gỡ bỏ_ các trình đơn đã tạo ra thay thế.\n"
+"  --nodefaultdirs         Tắt khả năng sử dụng mọi thư mục trình đơn chuẩn\n"
+"	[không có thư mục mặc định]\n"
 "  --stdout                    Xuất danh sách trình đơn có dạng thích hợp để\n"
-"                              gởi qua ống dẫn tới tiến trình cài đặt trình đơn\n"
-"                              (install-menu).\n"
-"  --version                   Xuất thông tin về _phiên bản_ rồi thoát.\n"
+"                              gởi qua ống dẫn cho tiến trình cài đặt trình đơn\n"
+"	[stdout: thiết bị xuất chuẩn]\n"
 
-#: ../update-menus/update-menus.h:150
-msgid ""
-"Unknown install condition \"%1\" (currently, only \"package\" is supported)."
-msgstr "Không biết điều kiện cài đặt « %1 » (hiện thời hỗ trợ chỉ « package » [gói])."
+#.This is the end of the update-menus --help message
+#: ../update-menus/update-menus.cc:845
+msgid "  --version              Output version information and exit.\n"
+msgstr "  --version                   Xuất thông tin phiên bản rồi thoát.\n"
+
+#: ../update-menus/update-menus.h:149
+msgid "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
+msgstr "Không biết điều kiện cài đặt \"%1\" (hiện thời chỉ hỗ trợ \"package\" (gói))."

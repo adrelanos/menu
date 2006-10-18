@@ -6,7 +6,9 @@ menu (2.1.32) unstable; urgency=low
     - Bengali added by Jamil Ahmed
 
   [ Christian Perrier ]
+  * Menu translations
     - Gujarati added by Kartik Mistry
+  * Programs translations
     - Vietnamese updated by Clytie Siddal. Closes: #393622
 
  -- Christian Perrier <bubulle@debian.org>  Tue, 17 Oct 2006 19:41:45 +0200
