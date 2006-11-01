@@ -10,11 +10,11 @@ menu (2.1.32) unstable; urgency=low
     - Gujarati added by Kartik Mistry
     - Albanian added by Elian Myftiu. Closes: #394702
     - Macedonian added by Georgi Stanojevski. Closes: #396033
-    - Bosnian added by Safir Secerovic. Closes: #396403
+    - Bosnian added by Safir Secerovic. Closes: #396403, #396432
   * Programs translations
     - Vietnamese updated by Clytie Siddal. Closes: #393622
 
- -- Christian Perrier <bubulle@debian.org>  Tue, 31 Oct 2006 22:48:28 +0100
+ -- Christian Perrier <bubulle@debian.org>  Wed,  1 Nov 2006 10:02:31 +0100
 
 menu (2.1.31) unstable; urgency=medium
 
