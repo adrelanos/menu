@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: menu-section 2.1.9-3\n"
 "POT-Creation-Date: 2003-04-03 12:14+0100\n"
-"PO-Revision-Date: 2006-11-02 00:20+0100\n"
+"PO-Revision-Date: 2006-11-06 16:22+0100\n"
 "Last-Translator: Safir Secerovic <sapphire@linux.org.ba>\n"
 "Language-Team: Bosnian <lokal@linux.org.ba>\n"
 "MIME-Version: 1.0\n"
@@ -77,12 +77,12 @@ msgstr "Nauka"
 #.  Second level entry under "Apps"
 #.  Menu policy definition: simple apps, like clocks, that perform only one task
 msgid "Tools"
-msgstr "Halati"
+msgstr "Alati"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: technical stuff
 msgid "Technical"
-msgstr "Tehnika"
+msgstr "Tehnički"
 
 #.  Second level entry under "Apps"
 #.  Menu policy definition: text oriented tools other than editors
@@ -142,7 +142,7 @@ msgstr "Kartaške"
 #.  Menu policy definition: tests of ingenuity and logic
 #.  one-player games most often...or games which need the player to think..:-)
 msgid "Puzzles"
-msgstr "Zagonetke"
+msgstr "Slagalice"
 
 #.  Second level entry under "Games"
 #.  Menu policy definition: Simulations of the real world (Flight
