@@ -12,6 +12,7 @@ menu (2.1.32) unstable; urgency=low
     - Macedonian added by Georgi Stanojevski. Closes: #396033
     - Bosnian added by Safir Secerovic. 
       Closes: #396403, #396432, #396651, #397326
+    - Hindi added by Guntupalli Karunakar (still 4u)
   * Programs translations
     - Vietnamese updated by Clytie Siddal. Closes: #393622
 
