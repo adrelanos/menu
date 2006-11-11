@@ -1,23 +1,15 @@
-# translation of popularity-contest_debian_po_mk.po to Macedonian
-# translation of popularity-contest_debian_po.po to
+# translation of menu_po-sections_mk.po to Macedonian
+# Menu section translation
+# Copyright (C) 2003
+# This file is distributed under the same license as the menu package.
 #
-#    Translators, if you are not familiar with the PO format, gettext
-#    documentation is worth reading, especially sections dedicated to
-#    this format, e.g. by running:
-#         info -n '(gettext)PO Files'
-#         info -n '(gettext)Header Entry'
-#    Some information specific to po-debconf are available at
-#            /usr/share/doc/po-debconf/README-trans
-#         or http://www.debian.org/intl/l10n/po-debconf/README-trans#
-#    Developers do not need to manually edit POT or PO files.
-#
+# Bill Allombert <ballombe@debian.org>, 2003.
 # Georgi Stanojevski <glisha@gmail.com>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: popularity-contest_debian_po_mk\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-29 12:23+0200\n"
-"PO-Revision-Date: 2006-10-03 08:33+0200\n"
+"Project-Id-Version: menu_po-sections_mk\n"
+"POT-Creation-Date: 2003-04-03 12:14+0100\n"
+"PO-Revision-Date: 2006-10-20 11:03+0200\n"
 "Last-Translator: Georgi Stanojevski <glisha@gmail.com>\n"
 "Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
 "MIME-Version: 1.0\n"
@@ -25,38 +17,233 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.2\n"
 
-#. Type: boolean
-#. Description
-#: ../templates:4
-msgid "Participate in the package usage survey?"
-msgstr "Ќе учествуваш ли во анкетата за користење на пакети?"
+#.  First level entry
+#.  All following 2nd level entries go "under" it
+#.  From menu policy (/usr/share/doc/pdebian-policy/menu-policy.txt.gz):
+#.      normal applications
+msgid "Apps"
+msgstr "Програми"
 
-#. Type: boolean
-#. Description
-#: ../templates:4
-msgid ""
-"The system may anonymously supply the distribution developers with "
-"statistics about the most used packages on this system.  This information "
-"influences decisions such as which packages should go on the first "
-"distribution CD."
-msgstr "Може да направиш твојот систем анонимно да доставува статистики до развојните тимови за најчесто користените пакети.на овој систем. Овие информации влијаат, на пример, на одлуките кои пакети ќе се стават на првиот диск од дистрибуцијата."
+#.  Second level entry under "Apps"
+#.  Menu policy definition: interactive database programs
+msgid "Databases"
+msgstr "Бази со податоци"
 
-#. Type: boolean
-#. Description
-#: ../templates:4
-msgid ""
-"If you choose to participate, the automatic submission script will run once "
-"every week, sending statistics to the distribution developers. The collected "
-"statistics can be viewed on http://popcon.debian.org/."
-msgstr "Ако одлучиш да учествуваш, скриптата за автоматско поднесување ќе се извршува еднаш неделно и ќе праќа статистики од развојниот тим на дистрибуцијата. Собраните податоци можат да се гледаат на http://popcon.debian.org/."
+#.  Second level entry under "Apps"
+#.  Menu policy definition: text editors, word processors
+msgid "Editors"
+msgstr "Уредувачи"
 
-#. Type: boolean
-#. Description
-#: ../templates:4
-msgid ""
-"This choice can be later modified by running \"dpkg-reconfigure popularity-"
-"contest\"."
-msgstr ""
-"Овој избор може да се смени подоцна со „dpkg-reconfigure "
-"popularity-contest“."
+#.  Second level entry under "Apps"
+#.  Menu policy definition: educational and training programs
+msgid "Education"
+msgstr "Образовни"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: wine, dosemu, etc.
+msgid "Emulators"
+msgstr "Емулатори"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: image manipulation
+msgid "Graphics"
+msgstr "Графика"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: anything relating to ham (amateur) radio
+msgid "Hamradio"
+msgstr "Аматерско радио"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: math related programs
+msgid "Math"
+msgstr "Математички"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: network programs that don't fit elsewhere
+msgid "Net"
+msgstr "Мрежа"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: debuggers, etc.
+msgid "Programming"
+msgstr "Програмирање"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: scientific programs
+msgid "Science"
+msgstr "Наука"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: simple apps, like clocks, that perform only one task
+msgid "Tools"
+msgstr "Алатки"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: technical stuff
+msgid "Technical"
+msgstr "Технички"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: text oriented tools other than editors
+msgid "Text"
+msgstr "Текст"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: bash, ksh, zsh, etc.
+msgid "Shells"
+msgstr "Школки"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: sound players and editors
+msgid "Sound"
+msgstr "Звук"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: image viewers
+#.  Maybe also applications which able users to view some specific data
+#.  such as PDF, images, Postscript...
+msgid "Viewers"
+msgstr "Прегледувачи"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: system administration and monitoring tools
+msgid "System"
+msgstr "Систем"
+
+#.  First level entry
+#.  Menu policy definition: games and recreations
+msgid "Games"
+msgstr "Игри"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: walk around virtual space, zork, MOO's, etc
+#.  All adventure-style games (often includes RPG)
+msgid "Adventure"
+msgstr "Авантура"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: any game where reflexes count
+msgid "Arcade"
+msgstr "Аркадни"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: games played on a board
+#.  Board-style games such as Mastermind, Yahtzee, Mahjongg
+msgid "Board"
+msgstr "На табла"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: games involving a deck of cards
+msgid "Card"
+msgstr "Карти"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: tests of ingenuity and logic
+#.  one-player games most often...or games which need the player to think..:-)
+msgid "Puzzles"
+msgstr "Загатки"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: Simulations of the real world (Flight
+#.                          Simulators, for example)
+msgid "Simulation"
+msgstr "Симулација"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: games derived from "real world" sports
+msgid "Sports"
+msgstr "Спорт"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: games involving long term strategic thinking
+msgid "Strategy"
+msgstr "Стратегија"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: games involving falling blocks
+msgid "Tetris-like"
+msgstr "Тетрис"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: amusements, eye-candy, etc.
+#.  Very small things which are often not really games
+#.  Such as Xeyes....
+msgid "Toys"
+msgstr "Играчки"
+
+#.  First level entry
+#.  Menu policy definition: programs that provide user documentation
+msgid "Help"
+msgstr "Помош"
+
+#.  First level entry
+#.  BE VERY CAREFUL HERE
+#.  Menu policy definition: programs that affect the whole screen
+#.  This entry is about screen saver/locking systems
+#.  (see the following entries)
+#.  Most often, literal translations to the word for "Screen"
+#.  in your language will NOT be correct
+#.  Try using what you use for "screen" in "screensaver" for your language
+msgid "Screen"
+msgstr "Екран"
+
+#.  Second level entry under "Screen"
+#.  Menu policy definition: programs to lock the screen
+#.  Refers to "Screen" as "Lock the screen"
+msgid "Lock"
+msgstr "Заклучи"
+
+#.  Second level entry under "Screen"
+#.  Menu policy definition: screen savers
+#.  Refers to "Screen" as "trigger the screensaver"
+#.  Most often the common word for "Save" as in File/Save
+#.  will NOT be appropriate
+msgid "Save"
+msgstr "Активирај"
+
+#.  Second level entry under "Screen"
+#.  Menu policy definition: things that fill the root window
+#.  will handle things that deal with the screen background, for instance
+msgid "Root-window"
+msgstr "Главен прозорец"
+
+#.  First level entry
+#.  Menu policy definition: X window managers
+#.  Will collect all window managers such as icewm, samfish, twm...
+msgid "WindowManagers"
+msgstr "Менаџери за прозорци"
+
+#.  Second level entry under "WindowManagers"
+#.  Menu policy definition: window manager modules
+msgid "Modules"
+msgstr "Модули"
+
+#.  First level entry for all xterm-style apps
+#.  Menu policy definition: xterm and its brethren
+msgid "XShells"
+msgstr "ХШколки"
+
+#. From Apps/System/Admin
+#.  for "System administration"
+msgid "Admin"
+msgstr "Администрација"
+
+#. Non official sections from WindowMaker
+msgid "Appearance"
+msgstr "Изглед"
+
+#. Non official sections from WindowMaker
+msgid "WorkSpace"
+msgstr "Работна околина"
+
+#. Frequently used unofficial sections.
+#. From Apps/Net/Mozilla Components
+msgid "Mozilla Components"
+msgstr "Мозила компоненти"
+
+#. From Games/Toys/Teddies
+#.  as in "Teddy Bear"
+msgid "Teddies"
+msgstr "Мечиња"
 
