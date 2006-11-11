@@ -1,22 +1,20 @@
-menu (2.1.32) unstable; urgency=low
+menu (2.1.32) unstable; urgency=medium
 
-  [ Bill Allombert ]
-  * The "unreleased" release
+  * The "maintainer on strike" release
+  * Medium urgency for i18n only upload.
+  * This release was prepared by Christian Perrier.
   * Menu translations
     - Bengali added by Jamil Ahmed
-
-  [ Christian Perrier ]
-  * Menu translations
     - Gujarati added by Kartik Mistry
     - Albanian added by Elian Myftiu. Closes: #394702
     - Macedonian added by Georgi Stanojevski. Closes: #396033
-    - Bosnian added by Safir Secerovic. 
+    - Bosnian added by Safir Secerovic.
       Closes: #396403, #396432, #396651, #397326
     - Hindi added by Guntupalli Karunakar (still 4u)
   * Programs translations
     - Vietnamese updated by Clytie Siddal. Closes: #393622
 
- -- Christian Perrier <bubulle@debian.org>  Wed,  1 Nov 2006 10:02:31 +0100
+ -- Bill Allombert <ballombe@debian.org>  Sat, 11 Nov 2006 18:36:22 +0100
 
 menu (2.1.31) unstable; urgency=medium
 
