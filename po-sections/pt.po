@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: menu-section 2.1.9-3\n"
 "POT-Creation-Date: 2003-04-03 12:14+0100\n"
-"PO-Revision-Date: 2005-05-31 00:30:00+0000\n"
+"PO-Revision-Date: 2006-11-18 18:20:00+0000\n"
 "Last-Translator: Miguel Figueiredo <elmig@debianpt.org>\n"
 "Language-Team: portuguese <traduz@debianpt.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 
 #.  First level entry
 #.  All following 2nd level entries go "under" it
-#.  From menu policy (/usr/share/doc/pdebian-policy/menu-policy.txt.gz): 
+#.  From menu policy (/usr/share/doc/pdebian-policy/menu-policy.txt.gz):
 #.      normal applications
 msgid "Apps"
 msgstr "Aplicações"
@@ -203,7 +203,7 @@ msgstr "Proteger"
 #.  Menu policy definition: things that fill the root window
 #.  will handle things that deal with the screen background, for instance
 msgid "Root-window"
-msgstr "Janela Raíz"
+msgstr "Janela Raiz"
 
 #.  First level entry
 #.  Menu policy definition: X window managers
@@ -225,7 +225,7 @@ msgstr "Shells Gráficos"
 #. From Apps/System/Admin
 #.  for "System administration"
 msgid "Admin"
-msgstr "Adminstração"
+msgstr "Administração"
 
 # Non official sections from WindowMaker
 #. Non official sections from WindowMaker
