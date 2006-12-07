@@ -1,0 +1,249 @@
+# translation of menu_po-sections_ml.po to malayalam
+# Menu section translation to Malayalam
+# Copyright (C) 2006
+# This file is distributed under the same license as the menu package.
+# Contributers: Praveen A <pravi.a@gmail.com>
+#
+# Praveen A <pravi.a@gmail.com>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: menu_po-sections_ml\n"
+"POT-Creation-Date: 2003-04-03 12:14+0100\n"
+"PO-Revision-Date: 2006-12-07 19:46+0530\n"
+"Last-Translator: Praveen A <pravi.a@gmail.com>\n"
+"Language-Team: malayalam <smc-discuss@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#.  First level entry
+#.  All following 2nd level entries go "under" it
+#.  From menu policy (/usr/share/doc/pdebian-policy/menu-policy.txt.gz):
+#.      normal applications
+msgid "Apps"
+msgstr "അപ്ലിക്കേഷനുകള്‍"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: interactive database programs
+msgid "Databases"
+msgstr "ഡാറ്റാബേസുകള്‍"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: text editors, word processors
+msgid "Editors"
+msgstr "എഡിറ്ററുകള്‍"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: educational and training programs
+msgid "Education"
+msgstr "വിദ്യഭ്യാസം"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: wine, dosemu, etc.
+msgid "Emulators"
+msgstr "എമുലേറ്ററുകള്‍"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: image manipulation
+msgid "Graphics"
+msgstr "ഗ്രാഫിക്സ്"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: anything relating to ham (amateur) radio
+msgid "Hamradio"
+msgstr "ഹാംറേഡിയോ"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: math related programs
+msgid "Math"
+msgstr "ഗണിതം"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: network programs that don't fit elsewhere
+msgid "Net"
+msgstr "നെറ്റ്"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: debuggers, etc.
+msgid "Programming"
+msgstr "പ്രോഗ്രാമിങ്ങ്"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: scientific programs
+msgid "Science"
+msgstr "ശാസ്ത്രം"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: simple apps, like clocks, that perform only one task
+msgid "Tools"
+msgstr "ടൂളുകള്‍"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: technical stuff
+msgid "Technical"
+msgstr "സാങ്കേതികം"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: text oriented tools other than editors
+msgid "Text"
+msgstr "ടെക്സ്റ്റ്"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: bash, ksh, zsh, etc.
+msgid "Shells"
+msgstr "ഷെല്ലുകള്‍"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: sound players and editors
+msgid "Sound"
+msgstr "ശബ്ദം"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: image viewers
+#.  Maybe also applications which able users to view some specific data
+#.  such as PDF, images, Postscript...
+msgid "Viewers"
+msgstr "വ്യൂവേര്സ്"
+
+#.  Second level entry under "Apps"
+#.  Menu policy definition: system administration and monitoring tools
+msgid "System"
+msgstr "സിസ്റ്റം"
+
+#.  First level entry
+#.  Menu policy definition: games and recreations
+msgid "Games"
+msgstr "കളികള്‍"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: walk around virtual space, zork, MOO's, etc
+#.  All adventure-style games (often includes RPG)
+msgid "Adventure"
+msgstr "സാഹസികം"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: any game where reflexes count
+msgid "Arcade"
+msgstr "ആര്കേഡ്"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: games played on a board
+#.  Board-style games such as Mastermind, Yahtzee, Mahjongg
+msgid "Board"
+msgstr "ബോര്ഡ്"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: games involving a deck of cards
+msgid "Card"
+msgstr "കാര്ഡ്"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: tests of ingenuity and logic
+#.  one-player games most often...or games which need the player to think..:-)
+msgid "Puzzles"
+msgstr "പസിലുകള്‍"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: Simulations of the real world (Flight
+#.                          Simulators, for example)
+msgid "Simulation"
+msgstr "സിമുലേഷന്‍"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: games derived from "real world" sports
+msgid "Sports"
+msgstr "കായികം"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: games involving long term strategic thinking
+msgid "Strategy"
+msgstr "തന്ത്രം"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: games involving falling blocks
+msgid "Tetris-like"
+msgstr "ടെട്രിസ്-പോലുള്ള"
+
+#.  Second level entry under "Games"
+#.  Menu policy definition: amusements, eye-candy, etc.
+#.  Very small things which are often not really games
+#.  Such as Xeyes....
+msgid "Toys"
+msgstr "കളിപ്പാട്ടങ്ങള്‍"
+
+#.  First level entry
+#.  Menu policy definition: programs that provide user documentation
+msgid "Help"
+msgstr "സഹായം"
+
+#.  First level entry
+#.  BE VERY CAREFUL HERE
+#.  Menu policy definition: programs that affect the whole screen
+#.  This entry is about screen saver/locking systems
+#.  (see the following entries)
+#.  Most often, literal translations to the word for "Screen"
+#.  in your language will NOT be correct
+#.  Try using what you use for "screen" in "screensaver" for your language
+msgid "Screen"
+msgstr "സ്ക്രീന്‍"
+
+#.  Second level entry under "Screen"
+#.  Menu policy definition: programs to lock the screen
+#.  Refers to "Screen" as "Lock the screen"
+msgid "Lock"
+msgstr "പൂട്ട്"
+
+#.  Second level entry under "Screen"
+#.  Menu policy definition: screen savers
+#.  Refers to "Screen" as "trigger the screensaver"
+#.  Most often the common word for "Save" as in File/Save
+#.  will NOT be appropriate
+msgid "Save"
+msgstr "രക്ഷിക്കുക"
+
+#.  Second level entry under "Screen"
+#.  Menu policy definition: things that fill the root window
+#.  will handle things that deal with the screen background, for instance
+msgid "Root-window"
+msgstr "റൂട്ട്-വിന്ഡോ"
+
+#.  First level entry
+#.  Menu policy definition: X window managers
+#.  Will collect all window managers such as icewm, samfish, twm...
+msgid "WindowManagers"
+msgstr "വിന്ഡോമാനേജറുകള്‍"
+
+#.  Second level entry under "WindowManagers"
+#.  Menu policy definition: window manager modules
+msgid "Modules"
+msgstr "മൊഡ്യൂളുകള്‍"
+
+#.  First level entry for all xterm-style apps
+#.  Menu policy definition: xterm and its brethren
+msgid "XShells"
+msgstr "Xഷെല്ലുകള്‍"
+
+#. From Apps/System/Admin
+#.  for "System administration"
+msgid "Admin"
+msgstr "ഭരണം"
+
+#. Non official sections from WindowMaker
+msgid "Appearance"
+msgstr "അപ്പിയറന്സ്"
+
+#. Non official sections from WindowMaker
+msgid "WorkSpace"
+msgstr "വര്ക്ക്സ്പെയ്സ്"
+
+#. Frequently used unofficial sections.
+#. From Apps/Net/Mozilla Components
+msgid "Mozilla Components"
+msgstr "മോസില്ല ഘടകങ്ങള്‍"
+
+#. From Games/Toys/Teddies
+#.  as in "Teddy Bear"
+msgid "Teddies"
+msgstr "ടെഡ്ഡികള്‍"
+
