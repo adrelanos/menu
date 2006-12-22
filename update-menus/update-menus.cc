@@ -792,77 +792,54 @@ void wait_dpkg(string &stdoutfile)
   int child;
   int parentpid;
   int i,r;
-
   // This function checks to see if dpkg is running, and if
   // so, forks into the background, to let dpkg go on installing
   // packages. After dpkg finished (and wrote the new packages file),
   // this function wakes up, and returns.
+
   
-  // Writing the console output correctly is actually non-trivial.
-  // The problem is that we in the following if statement
-  //     if(child=fork())
-  //       exit(0);                            //parent process
-  //     else
-  //       do something (and write to stdout); //child `background' process
-  // want to write to stdout. But if we write to stdout there,
-  // the exit(0) may already have occured, and dpkg may already
-  // have started writing stuff to the console. To prevent that,
-  // I use signals: the `background' process sents a signal to the
-  // parent once it's written everything it wants to stdout,
-  // and only after the parent received the signal it will exit(0);
-  // [Oh god! (added by Bill trying to understand the fork() business)]
-
+  // Check if the dpkg lock is taken
   if (check_dpkglock()) {
-    sigset_t sig,oldsig;
 
-    // Apparently libc2 on 2.0 kernels, with threading on, blocks
-    // SIGUSR1. This blocking would be inherited by children, so
-    // as apt was compiled with -lpthread, this caused problems in 
-    // update-menus. I now get rid of that by using
-    //  - SIGUSR2 instead of SIGUSR1,
-    //  - sigprocmask to unblock SIGUSR2.
-    // Either one of those solutions should be enough, though.
+    // If we can't get the u-m lock, probably another process is waiting 
+    // for dpkg. We can savely exit.
+    r = create_lock();
+    if (!r)
+	exit(0);
 
-    sigemptyset(&sig);
-    sigaddset(&sig,SIGUSR2);
-    sigprocmask(SIG_UNBLOCK,&sig,&oldsig);
+    // OK, we need to fork, create log file name and tell user about it.
+    stdoutfile = string("/tmp/update-menus.")+itostring(getpid());
+    config.report(String::compose(_("Waiting for dpkg to finish (forking to background).\n"
+            "(checking %1)"), DPKG_LOCKFILE),
+            configinfo::report_normal);
+    config.report(String::compose(_("Further output (if any) will appear in %1."), stdoutfile),
+            configinfo::report_normal);
 
-    signal(SIGUSR2, exit_on_signal);
+    // Now do the fork
     parentpid=getpid();
     if ((child=fork())) {
       if (child==-1) {
         perror("update-menus: fork");
         exit(1);
       }
-      pause();
-    } else {
-      r = create_lock();
-      if (r) {
-        stdoutfile = string("/tmp/update-menus.")+itostring(getpid());
-        config.report(String::compose(_("Waiting for dpkg to finish (forking to background).\n"
-            "(checking %1)"), DPKG_LOCKFILE),
-            configinfo::report_normal);
-        config.report(String::compose(_("Further output (if any) will appear in %1."), stdoutfile),
-            configinfo::report_normal);
-        // Close all fd's except the lock fd, for daemon mode.
-        for (i=0;i<32;i++) {
-          if (i != r)
-              close(i);
-        }
-        kill(parentpid, SIGUSR2);
-
-        while(check_dpkglock())
-            sleep(2);
-      } else {
-        // Exit without doing anything. Kill parent too!
-        kill(parentpid,SIGUSR2);
-        exit(0);
+      exit(0);
+    } else {      
+      // Close all fd's except the lock fd, for daemon mode.
+      for (i=0;i<32;i++) {
+        if (i != r)
+            close(i);
       }
+	
+      // Sit and wait until dpkg is finished ...
+      while(check_dpkglock())
+          sleep(2);
     }
   } else {
+    // Dpkg is not locked. Try to get the u-m lock. If we can't get it, 
+    // there may be a real problem. 
     r = create_lock();
     if (!r)
-        exit(1);
+	exit(1);
 
     config.report(_("Dpkg is not locking dpkg status area, good."),
         configinfo::report_verbose);

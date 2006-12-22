@@ -1,12 +1,15 @@
 menu (2.1.33) unstable; urgency=low
 
-  * The "not yet released" release
+  * The "and justice for all" release.
+  * Apply patch from Tim Dijkstra to simplify wait_dpkg() to not require
+    signal to be sent between the parent and the child to work around a
+    race condition in glibc, probably bug #223110. Closes: #374834.
   * Menu translations
     - Portuguese updated by Miguel Figueiredo. Closes: #399241
     - Malayalam added by Praveen. Closes: #402016
     - Tamil added by Tirumurti Vasudevan.
 
- -- Christian Perrier <bubulle@debian.org>  Sun, 19 Nov 2006 08:14:55 +0100
+ -- Bill Allombert <ballombe@debian.org>  Fri, 22 Dec 2006 15:20:52 +0100
 
 menu (2.1.32) unstable; urgency=medium
 
