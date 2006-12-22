@@ -4,6 +4,7 @@ menu (2.1.33) unstable; urgency=low
   * Menu translations
     - Portuguese updated by Miguel Figueiredo. Closes: #399241
     - Malayalam added by Praveen. Closes: #402016
+    - Tamil added by Tirumurti Vasudevan.
 
  -- Christian Perrier <bubulle@debian.org>  Sun, 19 Nov 2006 08:14:55 +0100
 
