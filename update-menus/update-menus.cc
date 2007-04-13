@@ -29,6 +29,7 @@
 #include <sstream>
 #include <set>
 #include <cstdio>
+#include <cstdlib>
 #include <unistd.h>
 #include <getopt.h>
 #include <cerrno>

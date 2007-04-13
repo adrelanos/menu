@@ -24,6 +24,7 @@
  * Written by Joost Witteveen.
  */
 
+#include <cstdlib>
 #include <cctype>
 #include <list>
 #include <set>

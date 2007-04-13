@@ -24,6 +24,7 @@
  * Written by Joost Witteveen.
  */
 
+#include <cstdlib>
 #include <fstream>
 #include <cstring>
 #include "parsestream.h"

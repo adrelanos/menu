@@ -1,9 +1,12 @@
-menu (2.1.34) UNRELEASED; urgency=low
+menu (2.1.34) unstable; urgency=low
 
+  * The unreleased release.
+  * Apply patch from Martin Michlmayr to fix compilation with GCC 4.3.
+    Closes: #417431.
   * Menu translations
     - Marathi added by Priti Patil. Closes: #416797
 
- -- Christian Perrier <bubulle@debian.org>  Sun, 01 Apr 2007 16:08:12 +0200
+ -- Bill Allombert <ballombe@debian.org>  Fri, 13 Apr 2007 17:33:14 +0200
 
 menu (2.1.33) unstable; urgency=low
 
