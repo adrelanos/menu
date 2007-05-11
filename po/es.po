@@ -1,10 +1,10 @@
 # menu translation to Spanish
-# Copyright (C) 2004 Software in the Public Interest
+# Copyright (C) 2004-2007 Software in the Public Interest
 # This file is distributed under the same license as the menu package.
 #
 # Changes:
 # - Initial translation
-# 	Javier Fernandez-Sanguino Peña <jfs@debian.org>, 2004
+# 	Javier Fernandez-Sanguino Peña <jfs@debian.org>, 2004-2007
 #
 #
 #  Traductores, si no conoce el formato PO, merece la pena leer la 
@@ -15,7 +15,7 @@
 #
 # Equipo de traducción al español, por favor, lean antes de traducir
 # los siguientes documentos:
-# 
+#
 # - El proyecto de traducción de Debian al español
 #   http://www.debian.org/intl/spanish/coordinacion
 #   especialmente las notas de traducción en
@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: menu 2.1.19\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2006-09-08 23:25+0200\n"
-"PO-Revision-Date: 2004-10-19 14:40+0200\n"
+"PO-Revision-Date: 2007-05-11 07:45+0200\n"
 "Last-Translator: Javier Fernandez-Sanguino Peña <jfs@debian.org>\n"
 "Language-Team: Debian Spanish <debian-l10n-spanish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -118,7 +118,6 @@ msgstr "Aviso: no se encontró la cadena %1 en el fichero de plantilla %2\n"
 
 #. Don't translate quoted string
 #: ../install-menu/install-menu.cc:896
-#, fuzzy
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
@@ -131,9 +130,10 @@ msgstr ""
 "install-menu [-vh] <método de menú>\n"
 "  Lee las entradas de menú de la entrada estánder en formato \n"
 "  «update-menus --stdout» y genera ficheros de menú utilizando el \n"
-"  método de menú.\n"
+"  método de menú indicado.\n"
 "  Opciones posibles para install-menu: \n"
 "     -h --help     : este mensaje\n"
+"     --remove      : elimina el menú en lugar de generarlo.\n"
 "     -v --verbose  : ser más verboso\n"
 
 #: ../install-menu/install-menu.cc:943
@@ -146,7 +146,7 @@ msgstr "No se pudo abrir el guión %1 para lectura\n"
 
 #: ../install-menu/install-menu.cc:979
 msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
-msgstr ""
+msgstr "Aviso: el guión %1 no proporciona «removemenu», no se borrará el menú\n"
 
 #: ../install-menu/install-menu.cc:1014
 msgid "Running: \"%1\"\n"
@@ -255,6 +255,8 @@ msgid ""
 "file %1 line %2:\n"
 "Discarding entry requiring missing package %3."
 msgstr ""
+"fichero %1 línea %2:\n"
+"Descartando la entrada que requiere un paquete omitido %3."
 
 #. Translation here and below refer to the file
 #. /etc/menu-methods/translate_menus that allow to rename and reorganize
@@ -290,9 +292,8 @@ msgid "%1 menu entries found (%2 total)."
 msgstr "Se encontraron %1 entradas de menú (un total de %2). "
 
 #: ../update-menus/update-menus.cc:594
-#, fuzzy
 msgid "Running method: %1 --remove"
-msgstr "Ejecutando el método: %1"
+msgstr "Ejecutando el método: %1 --remove"
 
 #: ../update-menus/update-menus.cc:606 ../update-menus/update-menus.cc:668
 #: ../update-menus/update-menus.cc:1007
@@ -357,7 +358,6 @@ msgstr "Dpkg no está bloquando el área de estado de dpkg, bien."
 
 #. This is the update-menus --help message
 #: ../update-menus/update-menus.cc:877
-#, fuzzy
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -379,17 +379,16 @@ msgstr ""
 "Recoje la información de paquetes de la base de datos de menú y genera\n"
 "menús para todos los programas que incluyen métodos de menú, habitualmente\n"
 "gestores de ventanas.\n"
-"  -d                          Introducir mensajes de depuración.\n"
+"  -d                          Generar mensajes de depuración.\n"
 "  -v                          Ser verboso e indicar lo que está pasando.\n"
 "  -h --help                   Este mensaje.\n"
 "  --menufilesdir=<directorio> Añadir <directorio> a la lista de directorios\n"
 "                              de menú a buscar.\n"
 "  --menumethod=<método>       Ejecutar sólo el método de menú <método>.\n"
-"  --nodefaultdirs             Deshabilita la utilización de los "
-"directorios \n"
+"  --nodefaultdirs             Deshabilita la utilización de los directorios \n"
 "                              de menú estándar.\n"
-"  --stdout                    Volcar la lista de menús en un formato que "
-"pueda\n"
+"  --remove                    Elimina los menús generados en lugar de crearlos.\n"
+"  --stdout                    Volcar la lista de menús en un formato que pueda\n"
 "                              ser enviado a install-menu.\n"
 
 #: ../update-menus/update-menus.h:150

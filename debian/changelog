@@ -5,6 +5,8 @@ menu (2.1.34) unstable; urgency=low
     Closes: #417431.
   * Menu translations
     - Marathi added by Priti Patil. Closes: #416797
+  * Programs translations
+    - Spanish updated by Javier Fernández-Sanguino Peña. Closes: #423277
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 13 Apr 2007 17:33:14 +0200
 
