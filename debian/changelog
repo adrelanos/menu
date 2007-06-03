@@ -5,6 +5,7 @@ menu (2.1.34) unstable; urgency=low
     Closes: #417431.
   * Menu translations
     - Marathi added by Priti Patil. Closes: #416797
+    - Punjabi added by Amanpreet Singh Alam. Closes: #427300
   * Programs translations
     - Spanish updated by Javier Fernández-Sanguino Peña. Closes: #423277
 
