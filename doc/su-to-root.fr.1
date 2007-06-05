@@ -12,8 +12,8 @@ La plupart des entrées de menu démarrent un éditeur, un jeu, ou n'importe
 quoi d'autre. Mais certaines entrées de menu veulent fournir à l'utilisateur 
 la possibilité de changer des réglages importants du système, ce qui 
 nécessite des droits d'administration. 
-.B su\-to\-root
-peut être utilisé pour demander le mot de passe du super-utilisateur.
+\fBsu\-to\-root\fP peut être utilisé pour demander le mot de passe du
+super-utilisateur.
 .SH OPTIONS
 .IP "\-c <command>"
 La commande à exécuter sous forme de chaîne de caractères. Cette option est 
@@ -29,15 +29,18 @@ Indique le programme permettant de devenir super-utilisateur qui sera appelé
 par \fBsu\-to\-root \-X\fP. Les valeurs acceptées sont \fIgksu\fP, \fIkdesu\fP
 et \fIsux\fP.
 .IP
-Quand cette variable n'est pas définie, \fBsu-to-root\fR essaie actuellement 
-d'utiliser \fIgksu\fR, \fIkdesu\fR, \fIsux\fR et le code intégré dans cet ordre
-avec l'exception que, dans une session KDE, \fIkdesu\fR sera préféré à
-\fIgksu\fR.
+Quand cette variable n'est pas définie, \fBsu-to-root\fP essaie actuellement 
+d'utiliser \fIgksu\fP, \fIkdesu\fP, \fIsux\fP et le code intégré dans cet ordre
+avec l'exception que, dans une session KDE, \fIkdesu\fP sera préféré à
+\fIgksu\fP.
 .IP
 La liste de programmes à essayer et son ordre est sujet à changement sans avertissement. 
 .IP SU_TO_ROOT_SU
-La valeur \fIsux\fP force \fBsu\-to\-root\fP à utiliser \fIsux\fP en mode texte.
+Indique le programme permettant de devenir super-utilisateur qui sera appelé 
+en mode texte. Les valeurs acceptées sont \fIsux\fP, \fIsudo\fP
+et \fIsu\fP, ce dernier étant la valeur par défaut.
 .SH FICHIERS
+.IP /etc/su\-to\-rootrc
 .IP ~/.su\-to\-rootrc
 \fBsu\-to\-root\fP sourcera ce fichier au lancement. Ceci
 permet de définir et modifier les variables d'environnement décrite

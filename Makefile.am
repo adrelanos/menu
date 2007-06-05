@@ -1,4 +1,4 @@
-SUBDIRS = update-menus install-menu doc po-sections scripts po
+SUBDIRS = update-menus install-menu doc scripts po po-sections po-su-to-root
 EXTRA_DIST = autogen.sh Doxyfile
 dist-hook:
 	mkdir $(distdir)/examples $(distdir)/default

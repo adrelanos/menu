@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if test -r /etc/su-to-rootrc; then
+. /etc/su-to-rootrc
+fi
+
 if test -r ~/.su-to-rootrc; then
 . ~/.su-to-rootrc
 fi
@@ -8,13 +12,26 @@ PRIV=root
 COMMAND=
 NEEDS=text
 
+gettext=$(which gettext 2>/dev/null)
+
+transl() {
+  txt="$1";
+  shift;
+  if [ -n "$gettext" ]; then 
+    txt="$(gettext su-to-root "$txt")";
+  fi
+  printf "$txt" "$@"
+}
 
 eshell() {
    getent passwd $1 | cut -f7 -d:
 }
+
 usage () {
-  echo usage: $0 '[-X] [-p <user>] -c <command>' >&2
-  echo '  -X: command is a X11 program' >&2
+  transl 'usage: %s [-X] [-p <user>] -c <command>
+  -c command: command to execute as a string (mandatory)
+  -p <user>: user to switch to (default: root)
+  -X: command is a X11 program\n' $0 >&2
   exit 1
 }
 
@@ -42,31 +59,26 @@ else
   case $NEEDS in
   text)
     if test "$euid" != 0; then
-      echo About to execute $COMMAND. 
-      echo This command needs $PRIV privileges to be executed.
+      transl "About to execute %s.\n" $COMMAND
+      transl "This command needs %s privileges to be executed.\n" $PRIV
     fi
     PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin
     SHELL=`eshell $PRIV`
-    if test "X$SU_TO_ROOT_SU" = "Xsux"; then
-      echo "Using sux..."
-      echo enter $PRIV passwd:
-      while ! sux -p "$PRIV" "$COMMAND"; do
-        echo -n 'Incorrect password or command failed. Try again? (y/n)'
-        read ans
-        if test "$ans" != "y" -a "$ans" != "Y"; then
-          exit 1
-        fi
-      done
-    else
-      echo enter $PRIV passwd:
-      while ! su -p "$PRIV" -c "$COMMAND"; do
-        echo -n 'Incorrect password or command failed. Try again? (y/n)'
-        read ans
-        if test "$ans" != "y" -a "$ans" != "Y"; then
-          exit 1
-        fi
-      done
-    fi;;
+    case $SU_TO_ROOT_SU in
+      sux)  suname=sux; pwuser="$PRIV"; cmd='sux  -p "$PRIV"    "$COMMAND"';;
+      sudo) suname=sudo;pwuser="$USER"; cmd='sudo -u "$PRIV"    "$COMMAND"';;
+      *)    suname=su;  pwuser="$PRIV"; cmd='su   -p "$PRIV" -c "$COMMAND"';;
+    esac
+    transl 'Using %s...\n' $suname
+    transl 'Enter %s passwd at prompt.\n' $pwuser
+    yesexpr=$(locale yesexpr)
+    while ! eval $cmd; do
+      transl 'Incorrect password or command failed. Try again? (y/N)'
+      read ans
+      if echo "$ans" | perl -e "<> =~ /$yesexpr/ and exit(1);"; then
+        exit 1
+      fi
+    done;;
   X11)
     if test -z "$SU_TO_ROOT_X"; then
       if which gksu >/dev/null 2>&1 ; then
@@ -84,17 +96,14 @@ else
         SU_TO_ROOT_X=su-to-root
       fi
     fi
-    if test "X$SU_TO_ROOT_X" = "Xgksu" ; then
-      gksu -u "$PRIV" "$COMMAND"
-    elif test "X$SU_TO_ROOT_X" = "Xkdesu" ; then 
-      kdesu -u "$PRIV" "$COMMAND"
-    elif test "X$SU_TO_ROOT_X" = "Xsux" ; then
-      env SU_TO_ROOT_SU=sux \
-        x-terminal-emulator -e su-to-root -p "$PRIV" -c "$COMMAND"  
+    case $SU_TO_ROOT_X in
+      gksu) gksu -u "$PRIV" "$COMMAND";;
+      kdesu) kdesu -u "$PRIV" "$COMMAND";;
+      sux) env SU_TO_ROOT_SU=sux \
+        x-terminal-emulator -e su-to-root -p "$PRIV" -c "$COMMAND";;
   # As a last resort, open a new x-terminal-emulator and prompt for the password
   # Do not use -X here!
-    else
-      x-terminal-emulator -e su-to-root -p "$PRIV" -c "$COMMAND"
-    fi;;
+      *) x-terminal-emulator -e su-to-root -p "$PRIV" -c "$COMMAND";;
+    esac;;
   esac
 fi

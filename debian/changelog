@@ -3,6 +3,11 @@ menu (2.1.34) unstable; urgency=low
   * The unreleased release.
   * Apply patch from Martin Michlmayr to fix compilation with GCC 4.3.
     Closes: #417431.
+  * su-to-root:
+    - tighten the script. Closes: #416302.
+    - add support for SU_TO_ROOT_SU=sudo. Closes: #410875
+    - l10n support. Closes: #383321. Thanks Michelle Konzack.
+    - support for a /etc/su-to-rootrc config file.
   * Menu translations
     - Marathi added by Priti Patil. Closes: #416797
     - Punjabi added by Amanpreet Singh Alam. Closes: #427300

@@ -25,14 +25,18 @@ AC_CHECK_FUNCS(mkdir strdup strerror)
 dnl Available po files.
 PO_PROGRAMS=`cd po; echo *.po`
 PO_SECTIONS=`cd po-sections; echo *.po`
+PO_SUTOROOT=`cd po-su-to-root; echo *.po`
 MO_PROGRAMS=`echo $PO_PROGRAMS | sed s/\.po/.mo/g`
 MO_SECTIONS=`echo $PO_SECTIONS | sed s/\.po/.mo/g`
+MO_SUTOROOT=`echo $PO_SUTOROOT | sed s/\.po/.mo/g`
 
 AC_SUBST(MO_PROGRAMS)
 AC_SUBST(MO_SECTIONS)
+AC_SUBST(MO_SUTOROOT)
 AC_SUBST(PO_PROGRAMS)
 AC_SUBST(PO_SECTIONS)
+AC_SUBST(PO_SUTOROOT)
 
-AC_CONFIG_FILES([po/Makefile scripts/Makefile po-sections/Makefile doc/Makefile update-menus/Makefile install-menu/Makefile Makefile])
+AC_CONFIG_FILES([po-su-to-root/Makefile po/Makefile scripts/Makefile po-sections/Makefile doc/Makefile update-menus/Makefile install-menu/Makefile Makefile])
 AC_OUTPUT
 
