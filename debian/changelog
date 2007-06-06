@@ -1,6 +1,6 @@
 menu (2.1.34) unstable; urgency=low
 
-  * The unreleased release.
+  * The "black arrow" release.
   * Apply patch from Martin Michlmayr to fix compilation with GCC 4.3.
     Closes: #417431.
   * su-to-root:
@@ -14,7 +14,7 @@ menu (2.1.34) unstable; urgency=low
   * Programs translations
     - Spanish updated by Javier Fernández-Sanguino Peña. Closes: #423277
 
- -- Bill Allombert <ballombe@debian.org>  Fri, 13 Apr 2007 17:33:14 +0200
+ -- Bill Allombert <ballombe@debian.org>  Wed,  6 Jun 2007 20:09:59 +0200
 
 menu (2.1.33) unstable; urgency=low
 
