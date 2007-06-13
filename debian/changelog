@@ -1,6 +1,12 @@
 menu (2.1.35) unstable; urgency=low
 
   * The "unreleased" release.
+  * su-to-root translations
+    - Gujarati added by Kartik Mistry. Closes: #428481
+    - Hungarian added by SZERVÁC Attila. Closes: #428495
+    - Galician added by Jacobo Tarrio. Closes: #428501
+    - Swedish added by Daniel Nylander. Closes: #428542
+    - Tamil added by Tirumurti Vasudevan. Closes: #428562
 
  -- Bill Allombert <ballombe@debian.org>  Thu,  7 Jun 2007 01:19:56 +0200
 

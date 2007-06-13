@@ -1,0 +1,47 @@
+# Copyright (C) 2007 Debian menu team
+# This file is distributed under the same license as the menu package.
+# Bill Allombert <ballombe@debian.org>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: menu 2.1.34\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"POT-Creation-Date: 2007-06-05 21:25+0200\n"
+"PO-Revision-Date: 2007-06-05 21:25+0200\n"
+"Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
+"Language-Team: Gujarati <team@utkarsh.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../scripts/su-to-root:31
+msgid ""
+"usage: %s [-X] [-p <user>] -c <command>\n"
+"  -c command: command to execute as a string (mandatory)\n"
+"  -p <user>: user to switch to (default: root)\n"
+"  -X: command is a X11 program\\n"
+msgstr ""
+"ઉપયોગ: %s [-X] [-p <વપરાશકર્તા>] -c <આદેશ>\n"
+"  -c આદેશ: વાક્ય તરીકે ચલાવવાનો આદેશ (જરુરી)\n"
+"  -p <વપરાશકર્તા>: વપરાશકર્તા બદલો (મૂળભૂત: root)\n"
+"  -X: આદેશએ X11 કાર્યક્રમ છે\\n"
+
+#: ../scripts/su-to-root:62
+msgid "About to execute %s.\\n"
+msgstr "%s ચલાવવા જઇ રહ્યા છીએ.\\n"
+
+#: ../scripts/su-to-root:63
+msgid "This command needs %s privileges to be executed.\\n"
+msgstr "આ આદેશને ચલાવવા માટે %s પરવાનગીઓ જોઇએ છે.\\n"
+
+#: ../scripts/su-to-root:72
+msgid "Using %s...\\n"
+msgstr "%s ઉપયોગ કરે છે...\\n"
+
+#: ../scripts/su-to-root:73
+msgid "Enter %s passwd at prompt.\\n"
+msgstr "પૂછતી વખતે %s દાખલ કરો.\\n"
+
+#: ../scripts/su-to-root:76
+msgid "Incorrect password or command failed. Try again? (y/N)"
+msgstr "અયોગ્ય પાસવર્ડ અથવા આદેશ નિષ્ફળ. ફરીથી પ્રયત્ન કરશો? (y/N)"

@@ -1,0 +1,46 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: su-to-root\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"POT-Creation-Date: 2007-06-05 21:25+0200\n"
+"PO-Revision-Date: 2007-06-12 09:08+0100\n"
+"Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
+"Language-Team: Hungarian <debian-l10n-hungarian@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural>1;\n"
+"X-Poedit-Language: Hungarian\n"
+"X-Poedit-Country: HUNGARY\n"
+
+#: ../scripts/su-to-root:31
+msgid ""
+"usage: %s [-X] [-p <user>] -c <command>\n"
+"  -c command: command to execute as a string (mandatory)\n"
+"  -p <user>: user to switch to (default: root)\n"
+"  -X: command is a X11 program\\n"
+msgstr ""
+"használat: %s [-X] [-p <felhasználó>] -c <parancs>\n"
+"  -c parancs: futtatandó parancs mint szöveg (kötelező)\n"
+"  -p <felhasználó>: e felhasználóként (alap: root)\n"
+"  -X: a parancs egy X11 program\\n"
+
+#: ../scripts/su-to-root:62
+msgid "About to execute %s.\\n"
+msgstr "%s futtatásáról.\\n"
+
+#: ../scripts/su-to-root:63
+msgid "This command needs %s privileges to be executed.\\n"
+msgstr "E parancs %s jogait igényli a futáshoz.\\n"
+
+#: ../scripts/su-to-root:72
+msgid "Using %s...\\n"
+msgstr "%s használata...\\n"
+
+#: ../scripts/su-to-root:73
+msgid "Enter %s passwd at prompt.\\n"
+msgstr "Add meg %s jelszavát a beviteli jelnél.\\n"
+
+#: ../scripts/su-to-root:76
+msgid "Incorrect password or command failed. Try again? (y/N)"
+msgstr "Rossz jelszó vagy meghiúsult parancs. Újrapróbálod? (i/N)"

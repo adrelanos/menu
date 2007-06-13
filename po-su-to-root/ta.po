@@ -1,0 +1,52 @@
+# translation of su-to-root.po to TAMIL
+#
+# Copyright (C) YEAR Debian menu team
+# This file is distributed under the same license as the menu package.
+#
+# Bill Allombert <ballombe@debian.org>, 2007.
+# Dr.T.Vasudevan <agnihot3@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: su-to-root\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"POT-Creation-Date: 2007-06-05 21:25+0200\n"
+"PO-Revision-Date: 2007-06-12 21:19+0530\n"
+"Last-Translator: Dr.T.Vasudevan <agnihot3@gmail.com>\n"
+"Language-Team: TAMIL <ubuntu-l10n-tam@lists.ubuntu.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../scripts/su-to-root:31
+msgid ""
+"usage: %s [-X] [-p <user>] -c <command>\n"
+"  -c command: command to execute as a string (mandatory)\n"
+"  -p <user>: user to switch to (default: root)\n"
+"  -X: command is a X11 program\\n"
+msgstr ""
+"பயன்பாடு: %s [-X] [-p <user>] -c <command>\n"
+"  -c command: ஒரு சரமாக இயக்க வேண்டிய கட்டளை (அவசியம்)\n"
+"  -p <user>: எந்த  பயனருக்கு மாற வேண்டுமோ அவர் (முன்னிருப்பு: ரூட்)\n"
+"  -X: கட்டளை ஒரு X11 நிரல்\\n"
+
+#: ../scripts/su-to-root:62
+msgid "About to execute %s.\\n"
+msgstr "%s ஐ இயக்க உள்ளது. \\n"
+
+#: ../scripts/su-to-root:63
+msgid "This command needs %s privileges to be executed.\\n"
+msgstr "இந்த கட்டளைக்கு %s இன் உரிமைகள் நிறைவேற்றப்பட வேண்டும். \\n"
+
+#: ../scripts/su-to-root:72
+msgid "Using %s...\\n"
+msgstr "%s ஐ பயன்படுத்துகிறது ...\\n"
+
+#: ../scripts/su-to-root:73
+msgid "Enter %s passwd at prompt.\\n"
+msgstr "தூண்டியில் %s கடவுச்சொல்லை உள்ளிடவும். \\n"
+
+#: ../scripts/su-to-root:76
+msgid "Incorrect password or command failed. Try again? (y/N)"
+msgstr ""
+"தவறான கடவுச் சொல் அல்லது கட்டளை தோல்வியுற்றது. மீண்டும் முயற்சிக்கலாமா? (ஆம்/இல்லை) "
