@@ -7,6 +7,9 @@ menu (2.1.35) unstable; urgency=low
     - Galician added by Jacobo Tarrio. Closes: #428501
     - Swedish added by Daniel Nylander. Closes: #428542
     - Tamil added by Tirumurti Vasudevan. Closes: #428562
+    - Bulgarian added by Damyan Ivanov. Closes: #428648
+    - Arabic added by Ossama Khayat. Closes: #428652
+    - Portuguese added by Ricardo Silva. Closes: #428657
 
  -- Bill Allombert <ballombe@debian.org>  Thu,  7 Jun 2007 01:19:56 +0200
 
