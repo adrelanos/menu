@@ -1,0 +1,52 @@
+# Vietnamese translation for menu (su-to-root).
+# Copyright © 2007 Debian menu team
+# This file is distributed under the same license as the menu package.
+# Bill Allombert <ballombe@debian.org>, 2007 (mã nguồn)
+# Clytie Siddall <clytie@riverland.net.au>, 2007 (bản dịch)
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: menu 2.1.34\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"POT-Creation-Date: 2007-06-05 21:25+0200\n"
+"PO-Revision-Date: 2007-06-14 16:39+0930\n"
+"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
+"Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: LocFactoryEditor 1.6.3b1\n"
+
+#: ../scripts/su-to-root:31
+msgid ""
+"usage: %s [-X] [-p <user>] -c <command>\n"
+"  -c command: command to execute as a string (mandatory)\n"
+"  -p <user>: user to switch to (default: root)\n"
+"  -X: command is a X11 program\\n"
+msgstr ""
+"cách sử dụng: %s [-X] [-p <người_dùng>] -c <lệnh>\n"
+"  -c lệnh\t\tlệnh cần thực hiện dạng chuỗi (bắt buộc phải dùng)\n"
+"  -p <người_dùng>\n"
+"\tngười dùng đến đó cần chuyển đổi (mặc định: root)  -X\t\t\tlệnh là chương "
+"trình kiểu X11\\n"
+
+#: ../scripts/su-to-root:62
+msgid "About to execute %s.\\n"
+msgstr "Sắp thực hiện %s.\\n"
+
+#: ../scripts/su-to-root:63
+msgid "This command needs %s privileges to be executed.\\n"
+msgstr "Để thực hiện được, lệnh này cần thiết quyền %s.\\n"
+
+#: ../scripts/su-to-root:72
+msgid "Using %s...\\n"
+msgstr "Đang dùng %s...\\n"
+
+#: ../scripts/su-to-root:73
+msgid "Enter %s passwd at prompt.\\n"
+msgstr "Hãy nhập mật khẩu %s vào dấu nhắc.\\n"
+
+#: ../scripts/su-to-root:76
+msgid "Incorrect password or command failed. Try again? (y/N)"
+msgstr "Mật khẩu sai hay lệnh bị lỗi. Thử lại không? (c/K)"
