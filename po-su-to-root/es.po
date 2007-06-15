@@ -1,0 +1,75 @@
+# 
+# Copyright (C) 2007 Debian menu team
+# This file is distributed under the same license as the menu package.
+# Bill Allombert <ballombe@debian.org>, 2007.
+#
+# Changes:
+# - Initial translation
+#       Javier Fernández-Sanguino , 2007
+#
+#
+#  Traductores, si no conoce el formato PO, merece la pena leer la 
+#  documentación de gettext, especialmente las secciones dedicadas a este
+#  formato, por ejemplo ejecutando:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+# Equipo de traducción al español, por favor lean antes de traducir
+# los siguientes documentos:
+#
+# - El proyecto de traducción de Debian al español
+#   http://www.debian.org/intl/spanish/
+#   especialmente las notas y normas de traducción en
+#   http://www.debian.org/intl/spanish/notas
+#
+# - La guía de traducción de po's de debconf:
+#   /usr/share/doc/po-debconf/README-trans
+#   o http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+# Si tiene dudas o consultas sobre esta traducción consulte con el último
+# traductor (campo Last-Translator) y ponga en copia a la lista de
+# traducción de Debian al español (<debian-l10n-spanish@lists.debian.org>)
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: menu 2.1.34\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"POT-Creation-Date: 2007-06-05 21:25+0200\n"
+"PO-Revision-Date: 2007-06-15 13:50+0200\n"
+"Last-Translator: Javier Fernández-Sanguino <jfs@debian.org>\n"
+"Language-Team: Debian Spanish <debian-l10n-spanish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../scripts/su-to-root:31
+msgid ""
+"usage: %s [-X] [-p <user>] -c <command>\n"
+"  -c command: command to execute as a string (mandatory)\n"
+"  -p <user>: user to switch to (default: root)\n"
+"  -X: command is a X11 program\\n"
+msgstr ""
+"Modo de uso: %s [-X] [-p <usuario>] -c <orden>\n"
+"  -c orden: orden a ejecutar como una cadena (obligatoria)\n"
+"  -p <usuario>: usuario al que cambiar (por omisión: root)\n"
+"  -X: la orden a ejecutar es un programa X11\\n"
+
+#: ../scripts/su-to-root:62
+msgid "About to execute %s.\\n"
+msgstr "Apunto de ejecutar %s\\n"
+
+#: ../scripts/su-to-root:63
+msgid "This command needs %s privileges to be executed.\\n"
+msgstr "Esta orden necesita privilegios de %s para poderse ejecutar.\\n"
+
+#: ../scripts/su-to-root:72
+msgid "Using %s...\\n"
+msgstr "Utilizando %s...\\n"
+
+#: ../scripts/su-to-root:73
+msgid "Enter %s passwd at prompt.\\n"
+msgstr "Introduzca la contraseña de %s en el indicador.\\n"
+
+#: ../scripts/su-to-root:76
+msgid "Incorrect password or command failed. Try again? (y/N)"
+msgstr "La contraseña es incorrecta o la orden falló. ¿Desea reintentar? (s/N)"
