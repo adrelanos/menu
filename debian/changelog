@@ -12,6 +12,7 @@ menu (2.1.35) unstable; urgency=low
     - Portuguese added by Ricardo Silva. Closes: #428657
     - Vietnamese added by Clytie Siddall. Closes: #428789
     - German added by Helge Kreutzmann. Closes: #428912
+    - Spanish added by Javier Fernández-Sanguino Peña. Closes: #429000
 
  -- Bill Allombert <ballombe@debian.org>  Thu,  7 Jun 2007 01:19:56 +0200
 
