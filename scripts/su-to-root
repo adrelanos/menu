@@ -31,7 +31,7 @@ usage () {
   transl 'usage: %s [-X] [-p <user>] -c <command>
   -c command: command to execute as a string (mandatory)
   -p <user>: user to switch to (default: root)
-  -X: command is a X11 program\n' $0 >&2
+  -X: command is a X11 program\n' "$0" >&2
   exit 1
 }
 
@@ -59,8 +59,8 @@ else
   case $NEEDS in
   text)
     if test "$euid" != 0; then
-      transl "About to execute %s.\n" $COMMAND
-      transl "This command needs %s privileges to be executed.\n" $PRIV
+      transl 'About to execute %s.\n' "$COMMAND"
+      transl 'This command needs %s privileges to be executed.\n' "$PRIV"
     fi
     PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin
     SHELL=`eshell $PRIV`
@@ -69,8 +69,8 @@ else
       sudo) suname=sudo;pwuser="$USER"; cmd='sudo -u "$PRIV"    "$COMMAND"';;
       *)    suname=su;  pwuser="$PRIV"; cmd='su   -p "$PRIV" -c "$COMMAND"';;
     esac
-    transl 'Using %s...\n' $suname
-    transl 'Enter %s passwd at prompt.\n' $pwuser
+    transl 'Using %s...\n' "$suname"
+    transl 'Enter %s passwd at prompt.\n' "$pwuser"
     yesexpr=$(locale yesexpr)
     while ! eval $cmd; do
       transl 'Incorrect password or command failed. Try again? (y/N)'

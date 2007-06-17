@@ -13,8 +13,9 @@ menu (2.1.35) unstable; urgency=low
     - Vietnamese added by Clytie Siddall. Closes: #428789
     - German added by Helge Kreutzmann. Closes: #428912
     - Spanish added by Javier Fernández-Sanguino Peña. Closes: #429000
+  * su-to-root: fix missing quote in printf arguments.
 
- -- Bill Allombert <ballombe@debian.org>  Thu,  7 Jun 2007 01:19:56 +0200
+ -- Bill Allombert <ballombe@debian.org>  Wed, 13 Jun 2007 11:02:35 +0200
 
 menu (2.1.34) unstable; urgency=low
 
