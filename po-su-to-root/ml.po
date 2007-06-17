@@ -1,0 +1,49 @@
+# Malayalam translation of su-ro-root
+# Copyright (C) YEAR Debian menu team
+# This file is distributed under the same license as the menu package.
+# Bill Allombert <ballombe@debian.org>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: menu 2.1.34\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"POT-Creation-Date: 2007-06-05 21:25+0200\n"
+"PO-Revision-Date: 2007-06-17 07:18+0530\n"
+"Last-Translator: Praveen|പ്രവീണ്‍ A|എ <pravi.a@gmail.com>\n"
+"Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ്  <smc-"
+"discuss@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../scripts/su-to-root:31
+msgid ""
+"usage: %s [-X] [-p <user>] -c <command>\n"
+"  -c command: command to execute as a string (mandatory)\n"
+"  -p <user>: user to switch to (default: root)\n"
+"  -X: command is a X11 program\\n"
+msgstr ""
+"usage: %s [-X] [-p <ഉപയോക്താവ്>] -c <ആജ്ഞ>\n"
+"  -c ആജ്ഞ: പ്രവര്‍ത്തിപ്പിയ്ക്കേണ്ട ആജ്ഞ ഒരു വാക്കായി (നിര്‍ബന്ധം)\n"
+"  -p <ഉപയോക്താവ്>: മാറേണ്ട ഉപയോക്താവ് (സഹജവില: root)\n"
+"  -X: ആജ്ഞ ഒരു എക്സ്ഇലവന്‍ (X11) പ്രോഗ്രാമാണ്\\n"
+
+#: ../scripts/su-to-root:62
+msgid "About to execute %s.\\n"
+msgstr "%s പ്രവര്‍ത്തിപ്പിയ്ക്കാനൊരുങ്ങുന്നു.\\n"
+
+#: ../scripts/su-to-root:63
+msgid "This command needs %s privileges to be executed.\\n"
+msgstr "ഈ ആജ്ഞയ്ക്ക് പ്രവര്‍ത്തിയ്ക്കാനായി %s അനുമതികള്‍ ആവശ്യമാണ്.\\n"
+
+#: ../scripts/su-to-root:72
+msgid "Using %s...\\n"
+msgstr "%s ഉപയോഗിച്ചു കൊണ്ടിരിയ്ക്കുന്നു ...\\n"
+
+#: ../scripts/su-to-root:73
+msgid "Enter %s passwd at prompt.\\n"
+msgstr "%s അടയാളവാക്ക് സൂചികയില്‍ നല്‍കുക.\\n"
+
+#: ../scripts/su-to-root:76
+msgid "Incorrect password or command failed. Try again? (y/N)"
+msgstr "തെറ്റായ അടയാളവാക്കോ ആജ്ഞാ പരാജയമോ സംഭവിച്ചു. വീണ്ടും ശ്രമിയ്ക്കണോ? (y/N)"
