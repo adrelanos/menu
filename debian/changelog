@@ -15,6 +15,7 @@ menu (2.1.35) unstable; urgency=low
     - Spanish added by Javier Fernández-Sanguino Peña. Closes: #429000
     - Malayalam added by Praveen. Closes: #429369
     - Korean added by Sunjae Park. Closes: #430753
+    - French added by Steve Petruzzello.
   * su-to-root: fix missing quote in printf arguments.
 
  -- Bill Allombert <ballombe@debian.org>  Wed, 13 Jun 2007 11:02:35 +0200
