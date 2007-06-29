@@ -26,10 +26,10 @@ msgid ""
 "  -X: command is a X11 program\\n"
 msgstr ""
 "usage : %s [-X] [-p <identifiant>] -c <commande>\n"
-" -c commanden : commande à exécuter (obligatoire)\n"
+" -c commande : commande à exécuter (obligatoire)\n"
 " -p <identifiant> : identifiant sous lequel exécuter la commande (par "
 "défaut : root)\n"
-"- X : la commande est un programme X11\\n"
+" -X : la commande est un programme X11\\n"
 
 #: ../scripts/su-to-root:62
 msgid "About to execute %s.\\n"
