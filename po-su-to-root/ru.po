@@ -1,0 +1,54 @@
+# translation of ru.po to Russian
+#
+# Copyright (C) YEAR Debian menu team
+# This file is distributed under the same license as the menu package.
+#
+# Bill Allombert <ballombe@debian.org>, 2007.
+# Yuri Kozlov <kozlov.y@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: menu 2.1.34\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"POT-Creation-Date: 2007-06-05 21:25+0200\n"
+"PO-Revision-Date: 2007-07-01 09:34+0400\n"
+"Last-Translator: Yuri Kozlov <kozlov.y@gmail.com>\n"
+"Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../scripts/su-to-root:31
+msgid ""
+"usage: %s [-X] [-p <user>] -c <command>\n"
+"  -c command: command to execute as a string (mandatory)\n"
+"  -p <user>: user to switch to (default: root)\n"
+"  -X: command is a X11 program\\n"
+msgstr ""
+"Использование: %s [-X] [-p <пользователь>] -c <команда>\n"
+"  -c команда:        строка с командой для выполнения (обязательно)\n"
+"  -p <пользователь>: пользователь, с правами которого\n"
+"                     нужно выполнять (по умолчанию root)\n"
+"  -X:                команда выполняется в графическом окружении X11\\n"
+
+#: ../scripts/su-to-root:62
+msgid "About to execute %s.\\n"
+msgstr "О выполнении %s.\\n"
+
+#: ../scripts/su-to-root:63
+msgid "This command needs %s privileges to be executed.\\n"
+msgstr "Для выполнения этой команды требуются права %s.\\n"
+
+#: ../scripts/su-to-root:72
+msgid "Using %s...\\n"
+msgstr "Используется %s...\\n"
+
+#: ../scripts/su-to-root:73
+msgid "Enter %s passwd at prompt.\\n"
+msgstr "Введите пароль %s в приглашении.\\n"
+
+#: ../scripts/su-to-root:76
+msgid "Incorrect password or command failed. Try again? (y/N)"
+msgstr "Неправильный пароль или команда. Попробовать ещё раз? (д/Н)"
