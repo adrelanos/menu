@@ -1,6 +1,6 @@
 menu (2.1.35) unstable; urgency=low
 
-  * The "unreleased" release.
+  * The "far cry" release.
   * su-to-root translations
     - Gujarati added by Kartik Mistry. Closes: #428481
     - Hungarian added by SZERVÁC Attila. Closes: #428495
@@ -19,8 +19,12 @@ menu (2.1.35) unstable; urgency=low
     - Russian added by Yuri Kozlov. Closes: #431245
   * su-to-root: fix missing quotes in printf arguments.
   * debian/rules: use 'install -p' to preserve timestamp.
+  * move to new menu structure:
+    - examples/translate_menus: convert old section names to new names.
+    - doc/menu.sgml doc/menufile.5 doc/menufile.fr.5: updated.
+    - po-sections/menu-messages.pot: updated.
 
- -- Bill Allombert <ballombe@debian.org>  Wed,  4 Jul 2007 14:32:48 +0200
+ -- Bill Allombert <ballombe@debian.org>  Wed,  4 Jul 2007 15:23:06 +0200
 
 menu (2.1.34) unstable; urgency=low
 

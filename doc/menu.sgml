@@ -308,50 +308,373 @@ sub-policy, please send a wishlist bug to the <tt/menu/ package.
 <p>
 Please do <em/not/ put your packages into any other sections.
 <p>
-
-<example>
-       Apps            - normal apps
-         Databases     - interactive database programs
-         Editors       - text editors, word processors
-         Education     - educational and training programs
-         Emulators     - dosemu, etc.
-         Graphics      - image manipulation
-         Hamradio      - anything relating to ham radio.
-         Math          - maxima, octave, oleo, etc.
-         Net           - mail, news, web, irc, etc.
-         Programming   - debuggers, etc.
-         Science       - scientific programs
-         Tools         - other tools: xclock, xmag, xman, etc.
-         Technical     - technical stuff.
-         Text          - text oriented tools other than editors.
-         Shells        - bash, ksh, zsh, etc.
-         Sound         - sound players and editors
-         Viewers       - image viewers
-         System        - system administration and monitoring tools
-       Games           - games and recreations
-         Adventure     - walk around virtual space, zork, MOO's, etc
-         Arcade        - any game where reflexes count
-         Board         - like gnuchess, pente, gnugo
-         Card          - solitaire, etc
-         Puzzles       - Stuff from xpuzzles, ...
-         Simulation
-         Sports        - Games derived from "real world" sports
-         Strategy      - games involving long term strategic thinking
-         Tetris-like   - games involving falling blocks
-         Toys          - oneko, xeyes, etc.
-       Help            - programs that provide user documentation
-       Screen          - programs that affect the whole screen 
-         Lock          - xlock, etc.
-         Save          - screen savers
-         Root-window   - things that fill the root window
-       WindowManagers  - X window managers 
-         Modules       - window manager modules
-       XShells         - shells (like xterm, rxvt, ...)
-</example>
-For users wanting to access some menu entries quickly, you can also put
-entries in the root menu. This is done by using <em>section="/"</em>.
-Package provided menu entries must never use this feature.
-
+  Here is the authoritative list of Debian's menu
+  structure. Packages must be placed in leaf sections.
+<p>
+<taglist>
+  <tag>Applications</tag>
+  <item>
+    <p>Normal applications</p>
+    <p><taglist>
+        <tag>Accessibility</tag>
+        <item> 
+          <p>Tools to aid people with disabilities or for machines
+             lacking usual input devices.</p>
+          <p>Examples: gok, yasr, dasher.</p>
+        </item>
+        <tag>Amateur Radio</tag>
+        <item>
+          <p>Anything relating to HAM radio.</p>
+          <p>Examples: baken, hamsoft, twlog</p>
+        </item> 
+        <tag>Data Management</tag>
+        <item>
+          <p>Interactive database programs, collection managers,
+             address books, bibliography tools, etc.</p>
+          <p>gaby, alexandria, mdbtools</p>
+        </item>
+        <tag>Editors</tag>
+        <item>
+          <p>Editors, other than office word processors, for 
+             text-based information.</p>
+          <p>Examples: ksubtile, nano, hexedit</p>
+        </item>
+        <tag>Education</tag>
+        <item>
+          <p>Educational and training softwares.</p>
+          <p>Examples: gtypist, gcompris, quiz</p>
+        </item>
+        <tag>Emulators</tag>
+        <item>
+          <p>Software that allows you to run non-native
+          software or more than one OS at a time.</p>
+          <p>Examples: wine, dosemu, qemu</p>
+        </item>
+        <tag>File Management</tag>
+        <item>
+          <p>Tools for file management, archiving,
+          searching, CD/DVD burning, backup, etc.</p>
+          <p>Examples: file-roller, mc, baobab</p>
+        </item>
+        <tag>Graphics</tag>
+        <item>
+          <p>2D and 3D graphics manipulation software.</p>
+          <p>Examples: gimp, inkscape, imagemagick</p>
+        </item>
+        <tag>Mobile Devices</tag>
+        <item>
+          <p>Software that allows you to interface with mobile
+             devices (phones, PDAs, etc.).</p>
+          <p>Examples: kandy, gnokii, gnome-pilot</p>
+        </item>
+        <tag>Network</tag>
+        <item>
+          Network related software. This is a three-level
+          section, do not put entries directly here.
+          <taglist>
+          <tag>Communication</tag>
+          <item>
+            <p>Mail, USENET news, chat, instant messaging,
+               IP telephony, video conferencing software, etc.</p>
+            <p>Examples: xchat, gaim, mutt</p>
+          </item>
+          <tag>File Transfer</tag>
+          <item>
+             <p>File transfer software such as download
+                managers, FTP clients, P2P clients, etc.</p>
+             <p>Examples: amule, gftp, d4x</p>
+          </item>
+          <tag>Monitoring</tag>
+          <item>
+             <p>Network monitoring software</p>
+             <p>Examples: gip, ettercap, iptstate</p>
+          </item>
+          <tag>Web Browsing</tag>
+          <item>
+             <p>Web browsers, tools for offline browsing, etc.</p>
+             <p>Examples: elinks, epiphany-browser, webhttrack</p>
+          </item>
+          <tag>Web News</tag>
+          <item>
+            <p>Web feed (RSS, Atom, etc.) and podcast aggregators.
+            </p>
+            <p>Examples: akregator, kitty, liferea</p>
+          </item>
+          </taglist>
+        </item>
+        <tag>Office</tag>
+        <item>
+        <p>Office suites, word processors, spreadsheets,
+           CRM, ERP, financial sofware, etc.</p>
+        <p>Examples: openoffice.org, tinyerp-client, gnucash</p>
+        </item>
+        <tag>Programming</tag>
+        <item>
+          <p>IDEs, debuggers, etc.</p>
+          <p>Examples: anjuta, gdb, eclipse</p>
+        </item>
+        <tag>Project Management</tag>
+        <item>
+          <p>Timetable managers, group task trackers,
+          bug tracking software, etc.</p>
+          <p>Examples: planner, bugzilla, gnotime</p>
+        </item>
+        <tag>Science</tag>
+        <item>
+        Scientific and engineering-related software.
+        <taglist>
+          <tag>Astronomy</tag>
+          <item>
+            <p>Astronomy-related software.</p>
+            <p>Examples: celestia, spacechart, stellarium</p>
+          </item>
+          <tag>Biology</tag>
+          <item>
+            <p>Biology-related software.</p>
+            <p>Examples: arb, ncbi-tools-x11, seaview</p>
+          </item>
+          <tag>Chemistry</tag>
+          <item>
+            <p>Chemistry-related software.</p>
+            <p>Examples: chemtool, kalzium, xdrawchem</p>
+          </item>
+          <tag>Data Analysis</tag>
+          <item>
+            <p>Software designed for processing, extracting,
+               and presenting generic scientific data.</p>
+            <p>Examples: fityk, ygraph, mn-fit</p>
+          </item>
+          <tag>Electronics</tag>
+          <item>
+            <p>Circuit design tools, simulators and
+               assemblers for microprocessors, etc</p>
+            <p>Examples: geda, gnucap, tkgate</p>
+          </item>
+          <tag>Engineering</tag>
+          <item>
+            <p>CAD, UML tools, diagram-drawing and
+               other engineering-related software.</p>
+            <p>Examples: tcm, dia, qcad</p>
+          </item>
+          <tag>Geoscience</tag>
+          <item>
+            <p>Geoscience-related software.</p>
+            <p>Examples: earth3d, qgis, therion</p>
+          </item>
+          <tag>Mathematics</tag>
+          <item>
+            <p>Mathematics-related software.</p>
+            <p>Examples: gcalctool, snappea, xeukleides</p>
+          </item>
+          <tag>Medicine</tag>
+          <item>
+            <p>Medicine-related software.</p>
+            <p>Examples: mssstest, gnumed-client, xmedcon</p>
+          </item>
+          <tag>Physics</tag>
+          <item>
+            <p>Physics-related software.</p>
+            <p>Examples: kxterm, ifrit, paw</p>
+          </item>
+          <tag>Social</tag>
+          <item>
+            <p>Social sciences-related software.</p>
+            <p>Examples: gnomesword, hanzim, bibletime</p>
+          </item>
+        </taglist>
+        </item>
+        <tag>Shells</tag>
+        <item>
+          <p>Various shells to be used inside a terminal emulator.</p>
+          <p>Examples: bash, ksh, zsh</p>
+        </item>
+        <tag>Sound</tag>
+        <item>
+          <p>Sound players, editors, and rippers/recorders.</p>
+          <p>Examples: beep-media-player, grip, audacity</p>
+        </item>
+        <tag>System</tag>
+        <item>
+          System related software.
+        <taglist>
+          <tag>Administration</tag>
+          <item>
+            <p>Administrative and system configuration utilities,
+               also tools for personal user settings.</p>
+            <p>Examples: gnome-control-center, configure-debian, gksu</p>
+          </item>
+          <tag>Hardware</tag>
+          <item>
+            <p>Tools for manipulating specific hardware,
+               especially non-standard laptop hardware.</p>
+            <p>Examples: toshutils, nvclock-gtk, nvtv</p>
+          </item>
+          <tag>Language Environment</tag>
+          <item>
+            <p>This section is reserved for language-env as a
+               special case.</p>
+          </item>
+          <tag>Monitoring</tag>
+          <item>
+            <p>System information and monitoring tools, log viewers,
+               etc.</p>
+            <p>Examples: top, hal-device-manager, gtkdiskfree</p>
+          </item>
+          <tag>Package Management</tag>
+          <item>
+            <p>Package managers and related tools.</p>
+            <p>Examples: aptitude, deborphan, smartpm</p>
+          </item>
+          <tag>Security</tag>
+          <item>
+            <p>Security, cryptography and privacy related software,
+               antiviruses, tools to track and report bugs, etc.</p>
+            <p>Examples: gpgkeys, bastille, avscan</p>
+          </item>
+          </taglist>
+        </item>
+        <tag>Terminal Emulators</tag>
+        <item>
+          <p>Graphical terminal emulators.</p>
+          <p>Examples: xterm, gnome-terminal, rxvt</p>
+        </item>
+        <tag>Text</tag>
+        <item>
+          <p>Text oriented tools like dictionaries, OCR,
+             translation, text analysis software, etc.</p>
+          <p>Examples: kdrill, stardict, turkey</p>
+        </item>
+        <tag>TV and Radio</tag>
+        <item>
+          <p>TV-in, TV-out, FM radio, teletext browsers, etc.</p>
+          <p>Examples: gradio, gatos, alevt</p>
+        </item>
+        <tag>Viewers</tag>
+        <item>
+          <p>Software for viewing images, documents
+             and other (non-video) media.</p>
+          <p>Examples: gqview, evince, gthumb</p>
+        </item>
+        <tag>Video</tag>
+        <item>
+          <p>Video players, editors, and rippers/recorders.</p>
+          <p>Examples: istanbul, totem, kino</p>
+        </item>
+        <tag>Web Development</tag>
+        <item>
+          <p>Software for web site editing, web
+             programming, and site administration.</p>
+          <p>Examples: bluefish, screem, gphpedit</p>
+        </item>
+      </taglist>
+    </p>
+  </item>
+  <tag>Games</tag>
+  <item>
+    Games and recreations
+    <taglist>
+    <tag>Action</tag>
+    <item>
+      <p>Games that involve a lot of action
+         and require fast reflexes.</p>
+      <p>Examples: xsoldier, supertux, xmoto</p>
+    </item>
+    <tag>Adventure</tag>
+    <item>
+      <p>Role playing and adventure games,
+         interactive movies and stories, etc.</p>
+      <p>Examples: beneath-a-steel-sky, egoboo, kq</p>
+    </item>
+    <tag>Blocks</tag>
+    <item>
+      <p>Tetris-like games involving falling blocks.</p>
+      <p>Examples: crack-attack, frozen-bubble, netris</p>
+    </item>
+    <tag>Board</tag>
+    <item>
+      <p>Games played on a board.</p>
+      <p>Examples: phalanx, xshogi, xboard</p>
+    </item>
+    <tag>Card</tag>
+    <item>
+      <p>Games involving a deck of cards.</p>
+      <p>Examples: pysol, ace-of-penguins, xpat2</p>
+    </item>
+    <tag>Puzzles</tag>
+    <item>
+      <p>Tests of ingenuity and logic.</p>
+      <p>Examples: xmpuzzles, sgt-puzzles, enigma</p>
+    </item>
+    <tag>Simulation</tag>
+    <item>
+      <p>Simulations of the real world
+         in all detail and complexity.</p>
+      <p>Examples: flightgear, torcs</p>
+    </item>
+    <tag>Strategy</tag>
+    <item>
+      <p>Games involving long-term strategic thinking.</p>
+      <p>Examples: wesnoth, widelands, netpanzer</p>
+    </item>
+    <tag>Tools</tag>
+    <item>
+      <p>Server browsers, configurators, editors, and other
+         game-related tools that are not games themselves.</p>
+      <p>Examples: xqf, crystalspace</p>
+    </item>
+    <tag>Toys</tag>
+    <item>
+      <p>Amusements, eye-candy, entertaining
+         demos, screen hacks (screensavers), etc.</p>
+      <p>Examples: xdesktopwaves, xphoon, xpenguins</p>
+    </item>
+    </taglist>
+  </item>
+  <tag>Help</tag>
+  <item>
+    <p>programs that provide user documentation</p>
+    <p>Examples: debian-reference, apt-howto, dhelp</p>
+  </item>
+  <tag>Screen</tag>
+  <item>
+    Programs that affect the whole screen.
+    <taglist>
+    <tag>Saving</tag>
+    <item>
+      <p>Tools for blanking the screen. Entries of screen hacks and
+         configuration GUIs should go to other appropriate sections.
+      </p>
+      <p>Examples: xscreensaver, xlockmore</p>
+    </item>
+    <tag>Locking</tag>
+    <item>
+      <p>Tools for locking the screen.</p>
+      <p>Examples: xscreensaver, xlockmore</p>
+    </item>
+    </taglist>
+  </item>
+  <tag>Window Managers</tag>
+  <item>
+    <p>X window managers.</p>
+    <p>Examples: fluxbox, metacity, waimea</p>
+  </item>
+  <tag>FVWM Modules</tag>
+  <item>
+    <p>FVWM-based window manager modules. As only modules related to
+       the running window-manager are displayed, do not create 
+       subsections for specific window-managers.</p>
+    <p>Examples: fvwm, fvwm-gnome, fvwm95</p>
+  </item>
+  <tag>Window Maker</tag>
+  <item>
+    <p>This section is reserved for wmaker as a special case.</p>
+    <p>All wmaker specific entries must go here.</p>
+  </item>
+</taglist>
+<p>
+Users wanting to access some menu entries quickly can also put
+them in the root menu. This is done by using <em>section="/"</em>.
+Package-provided menu entries must never use this feature.
 <sect> The <tt/command/ field
 <p>
 The command field holds the command that should be executed when the

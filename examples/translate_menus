@@ -1,23 +1,3 @@
-#  /etc/menu-methods/menu-translate file for update-menus.
-#
-#  NOTE: if you want to translate the menu entries in a different language,
-#        DO NOT USE THIS FILE!!!
-#        use the GNU internationalisation tools, see the menu source
-#        code (menu/po-sections/menu-sections.pot), and send the .po file 
-#        you created to us, we'll include it in a next release of menu. 
-#
-#
-#Synopsis:
-#
-# translate x -> y    #where x and y are one of section, id, title, icon, ...
-#   x-name  y-name
-#   ...
-# endtranslate
-#
-#The translations are done by update-menus: the menu-methods will not
-#have to be aware of this.
-#
-
 #There's:
 #  translate:     only translate for exact matches (RE "^$match\$"
 #  subtranslate:  translate for matches of RE "^$match"
@@ -26,12 +6,94 @@
 #		  will give interesting results for " substitute x->y".
 # 
 # Language translators: DO NOT USE THIS FILE! (see note on top of this file)
+# 
+# Implement transitory menu layout for menu migration.
+#
+# Applications [was:Apps]
+#   Amateur Radio [was:Hamradio]
+#   Data Management [was:Databases]
+#   Network [was:Net]
+#   Science
+#      Science/Electronics [was:Technical]
+#      Science/Mathematics [was:Math]
+#   System
+#      System/Administration [was:Admin]
+#      System/Language Environment [was:Language-Environment]
+#   Terminal Emulators [was:XShells]
+# Games
+#   Action [was:Arcade]
+#   Blocks [was:Tetris-like]
+# Screen
+#   Saving [was:Save]
+#   Locking [was:Lock]
+# Window Managers [was:WindowManagers]
+# FVWM Modules [was:WindowManagers/Modules]
 
-# Examples:
-# subtranslate section->section
-#   Apps/        Programs/     #Rename Apps to Programs
-# endtranslate
+# Applications
 
-# subtranslate section->section
-#   Apps/Editors/ Editors/     #Move Editors at the root.
-# endtranslate
+substitute section->section
+  Apps/Hamradio "Apps/Amateur Radio"
+endtranslate
+
+substitute section->section
+  Apps/Databases "Apps/Data Management"
+endtranslate
+
+substitute section->section
+  Apps/Net Apps/Network
+endtranslate
+
+substitute section->section
+  Apps/Math Apps/Science/Mathematics
+endtranslate
+
+substitute section->section
+  Apps/Technical Apps/Science/Electronics
+endtranslate
+
+substitute section->section
+  Apps/System/Admin Apps/System/Administration
+endtranslate
+
+substitute section->section
+  Apps/System/Language-Environment "Apps/System/Language Environment"
+endtranslate
+
+substitute section->section
+  XShells "Apps/Terminal Emulators"
+endtranslate
+
+# Games
+
+substitute section->section
+  Games/Arcade Games/Action
+endtranslate
+
+substitute section->section
+  Games/Tetris-like Games/Blocks
+endtranslate
+
+# Screen
+
+substitute section->section
+  Screen/Lock Screen/Locking
+endtranslate
+
+substitute section->section
+  Screen/Save Screen/Saving
+endtranslate
+
+# Toplevels
+
+substitute section->section
+  Apps/ Applications/
+endtranslate
+
+substitute section->section
+  WindowManagers/Modules "FVWM Modules"
+endtranslate
+
+substitute section->section
+  WindowManagers "Window Managers"
+endtranslate
+
