@@ -52,17 +52,23 @@ install-stamp: build-stamp
 	# Add here commands to install the package into debian/menu.
 	$(MAKE) install DESTDIR=`pwd`/debian/menu/
 
-	cp examples/translate_menus examples/menu.h po-sections/lang.h\
-	   examples/menu.config debian/menu/etc/menu-methods 
+	install -p -g root -o root -m 644 \
+	      examples/translate_menus debian/menu/etc/menu-methods
+	install -p -g root -o root -m 644 \
+	      examples/menu.h debian/menu/etc/menu-methods
+	install -p -g root -o root -m 644 \
+	      po-sections/lang.h debian/menu/etc/menu-methods
+	install -p -g root -o root -m 644 \
+	      examples/menu.config debian/menu/etc/menu-methods
 	#
-	install -g root -o root -m 644 \
+	install -p -g root -o root -m 644 \
 	   doc/README.config-menus debian/menu/etc/menu/README
-	install -g root -o root -m 644 \
+	install -p -g root -o root -m 644 \
 	   doc/README.menu-methods debian/menu/etc/menu-methods/README
-	install -g root -o root -m 644 \
+	install -p -g root -o root -m 644 \
 	   doc/README.package-menus debian/menu/usr/share/menu/README
 	#
-	install -g root -o root -m 644 \
+	install -p -g root -o root -m 644 \
 	   debian/bug.presubj debian/menu/usr/share/bug/menu/presubj
 	#
 	touch install-stamp

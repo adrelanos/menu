@@ -17,9 +17,10 @@ menu (2.1.35) unstable; urgency=low
     - Korean added by Sunjae Park. Closes: #430753
     - French added by Steve Petruzzello.
     - Russian added by Yuri Kozlov. Closes: #431245
-  * su-to-root: fix missing quote in printf arguments.
+  * su-to-root: fix missing quotes in printf arguments.
+  * debian/rules: use 'install -p' to preserve timestamp.
 
- -- Bill Allombert <ballombe@debian.org>  Wed, 13 Jun 2007 11:02:35 +0200
+ -- Bill Allombert <ballombe@debian.org>  Wed,  4 Jul 2007 14:32:48 +0200
 
 menu (2.1.34) unstable; urgency=low
 
