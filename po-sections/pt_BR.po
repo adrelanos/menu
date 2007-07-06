@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: menu-section 2.1.7-2\n"
-"POT-Creation-Date: 2003-04-03 12:14+0100\n"
+"POT-Creation-Date: 2007-07-04 15:27+0100\n"
 "PO-Revision-Date: 2003-10-30 12:40-0300\n"
 "Last-Translator: Andre Luis Lopes <andrelop@debian.orgr>\n"
 "Language-Team: Debian-BR Project <debian-l10n-portuguese@lists.debian.org>\n"
@@ -14,218 +14,427 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#.  First level entry
-#.  All following 2nd level entries go "under" it
-#.  From menu policy (/usr/share/doc/pdebian-policy/menu-policy.txt.gz): 
-#.      normal applications
-msgid "Apps"
-msgstr "Aplicativos"
+#. First level entry 
+#. Policy definition: Normal applications. This is a top-level
+#. Examples: section, do not put entries here.
+msgid "Applications"
+msgstr ""
 
-#.  Second level entry under "Apps"
-#.  Menu policy definition: interactive database programs
-msgid "Databases"
-msgstr "Bases de Dados"
+#. Second level entry under Applications
+#. Policy definition: Tools to aid people with disabilities or
+#. for machines lacking usual input devices.
+#. Examples: gok, yasr, dasher
+msgid "Accessibility"
+msgstr ""
 
-#.  Second level entry under "Apps"
-#.  Menu policy definition: text editors, word processors
+#. Second level entry under Applications
+#. Policy definition: Anything relating to HAM radio.
+#. Examples: baken, hamsoft, twlog
+msgid "Amateur Radio"
+msgstr ""
+
+#. Second level entry under Applications
+#. Policy definition: Interactive database programs, collection
+#. managers, address books, bibliography tools, etc.
+#. Examples: gaby, alexandria, mdbtools
+msgid "Data Management"
+msgstr ""
+
+#. Second level entry under Applications
+#. Policy definition: Editors, other than office word processors,
+#. for text-based information.
+#. Examples: ksubtile, nano, hexedit
 msgid "Editors"
 msgstr "Editores"
 
-#.  Second level entry under "Apps"
-#.  Menu policy definition: educational and training programs
+#. Second level entry under Applications
+#. Policy definition: Educational and training software.
+#. Examples: gtypist, gcompris, quiz
 msgid "Education"
 msgstr "Educação"
 
-#.  Second level entry under "Apps"
-#.  Menu policy definition: wine, dosemu, etc.
+#. Second level entry under Applications
+#. Policy definition: Software that allows you to run non-native
+#. software or more than one OS at a time.
+#. Examples: wine, dosemu, qemu
 msgid "Emulators"
 msgstr "Emuladores"
 
-#.  Second level entry under "Apps"
-#.  Menu policy definition: image manipulation
+#. Second level entry under Applications
+#. Policy definition: Tools for file management, archiving,
+#. searching, CD/DVD burning, backup, etc.
+#. Examples: file-roller, mc, baobab
+msgid "File Management"
+msgstr ""
+
+#. Second level entry under Applications
+#. Policy definition: 2D and 3D graphics manipulation software.
+#. Examples: gimp, inkscape, imagemagick
 msgid "Graphics"
 msgstr "Gráficos"
 
-#.  Second level entry under "Apps"
-#.  Menu policy definition: anything relating to ham (amateur) radio
-msgid "Hamradio"
-msgstr "Rádio Amador"
+#. Second level entry under Applications
+#. Policy definition: Software that allows you to interface
+#. with mobile devices (phones, PDAs, etc.).
+#. Examples: kandy, gnokii, gnome-pilot
+msgid "Mobile Devices"
+msgstr ""
 
-#.  Second level entry under "Apps"
-#.  Menu policy definition: math related programs
-msgid "Math"
-msgstr "Matemática"
-
-#.  Second level entry under "Apps"
-#.  Menu policy definition: network programs that don't fit elsewhere
-msgid "Net"
+#. Second level entry under Applications
+#. Policy definition: Network related software. This is a three-level
+#. Examples: section, do not put entries directly here.
+#, fuzzy
+msgid "Network"
 msgstr "Rede"
 
-#.  Second level entry under "Apps"
-#.  Menu policy definition: debuggers, etc.
+#. Third level entry under Network
+#. Policy definition: Mail, USENET news, chat, instant messaging,
+#. IP telephony, video conferencing software, etc.
+#. Examples: xchat, gaim, mutt
+#, fuzzy
+msgid "Communication"
+msgstr "Educação"
+
+#. Third level entry under Network
+#. Policy definition: File transfer software such as download
+#. managers, FTP clients, P2P clients, etc.
+#. Examples: amule, gftp, d4x
+msgid "File Transfer"
+msgstr ""
+
+#. #-#-#-#-#  - (menu-section 2.1.9-3)  #-#-#-#-#
+#. Third level entry under Network
+#. Policy definition: Network monitoring software.
+#. Examples: gip, ettercap, iptstate
+#. #-#-#-#-#  - (menu-section 2.1.9-3)  #-#-#-#-#
+#. Third level entry under System
+#. Policy definition: System information and monitoring tools, log viewers, etc.
+#. Examples: top, hal-device-manager, gtkdiskfree
+msgid "Monitoring"
+msgstr ""
+
+#. Third level entry under Network
+#. Policy definition: Web browsers, tools for offline browsing, etc.
+#. Examples: elinks, epiphany-browser, webhttrack
+msgid "Web Browsing"
+msgstr ""
+
+#. Third level entry under Network
+#. Policy definition: Web feed (RSS, Atom, etc.)
+#. and podcast aggregators.
+#. Examples: akregator, kitty, liferea
+msgid "Web News"
+msgstr ""
+
+#. Second level entry under Applications
+#. Policy definition: Office suites, word processors, spreadsheets,
+#. CRM, ERP, financial sofware, etc.
+#. Examples: openoffice.org, tinyerp-client, gnucash
+msgid "Office"
+msgstr ""
+
+#. Second level entry under Applications
+#. Policy definition: IDEs, debuggers, etc.
+#. Examples: anjuta, gdb, eclipse
 msgid "Programming"
 msgstr "Programação"
 
-#.  Second level entry under "Apps"
-#.  Menu policy definition: scientific programs
+#. Second level entry under Applications
+#. Policy definition: Timetable managers, group task trackers,
+#. bug tracking software, etc.
+#. Examples: planner, bugzilla, gnotime
+msgid "Project Management"
+msgstr ""
+
+#. Second level entry under Applications
+#. Policy definition: Scientific and engineering-related software. This is
+#. Examples: a three-level section, do not put entries directly here.
 msgid "Science"
 msgstr "Ciência"
 
-#.  Second level entry under "Apps"
-#.  Menu policy definition: simple apps, like clocks, that perform only one task
-msgid "Tools"
-msgstr "Ferramentas"
+#. Third level entry under Science
+#. Policy definition: Astronomy-related software.
+#. Examples: celestia, spacechart, stellarium
+msgid "Astronomy"
+msgstr ""
 
-#.  Second level entry under "Apps"
-#.  Menu policy definition: technical stuff
-msgid "Technical"
-msgstr "Técnico"
+#. Third level entry under Science
+#. Policy definition: Biology-related software.
+#. Examples: arb, ncbi-tools-x11, seaview
+msgid "Biology"
+msgstr ""
 
-#.  Second level entry under "Apps"
-#.  Menu policy definition: text oriented tools other than editors
-msgid "Text"
-msgstr "Texto"
+#. Third level entry under Science
+#. Policy definition: Chemistry-related software.
+#. Examples: chemtool, kalzium, xdrawchem
+msgid "Chemistry"
+msgstr ""
 
-#.  Second level entry under "Apps"
-#.  Menu policy definition: bash, ksh, zsh, etc.
+#. Third level entry under Science
+#. Policy definition: Software designed for processing, extracting,
+#. and presenting generic scientific data.
+#. Examples: fityk, ygraph, mn-fit
+#, fuzzy
+msgid "Data Analysis"
+msgstr "Bases de Dados"
+
+#. Third level entry under Science
+#. Policy definition: Circuit design tools, simulators and
+#. assemblers for microprocessors, etc.
+#. Examples: geda, gnucap, tkgate
+msgid "Electronics"
+msgstr ""
+
+#. Third level entry under Science
+#. Policy definition: CAD, UML tools, diagram-drawing and
+#. other engineering-related software.
+#. Examples: tcm, dia, qcad
+msgid "Engineering"
+msgstr ""
+
+#. Third level entry under Science
+#. Policy definition: Geoscience-related software.
+#. Examples: earth3d, qgis, therion
+#, fuzzy
+msgid "Geoscience"
+msgstr "Ciência"
+
+#. Third level entry under Science
+#. Policy definition: Mathematics-related software.
+#. Examples: gcalctool, snappea, xeukleides
+msgid "Mathematics"
+msgstr ""
+
+#. Third level entry under Science
+#. Policy definition: Medicine-related software.
+#. Examples: mssstest, gnumed-client, xmedcon
+msgid "Medicine"
+msgstr ""
+
+#. Third level entry under Science
+#. Policy definition: Physics-related software.
+#. Examples: kxterm, ifrit, paw
+msgid "Physics"
+msgstr ""
+
+#. Third level entry under Science
+#. Policy definition: Social sciences-related software.
+#. Examples: gnomesword, hanzim, bibletime
+msgid "Social"
+msgstr ""
+
+#. Second level entry under Applications
+#. Policy definition: Various shells to be used inside a terminal emulator.
+#. Examples: bash, ksh, zsh
 msgid "Shells"
 msgstr "Shells"
 
-#.  Second level entry under "Apps"
-#.  Menu policy definition: sound players and editors
+#. Second level entry under Applications
+#. Policy definition: Sound players, editors, and rippers/recorders.
+#. Examples: beep-media-player, grip, audacity
 msgid "Sound"
 msgstr "Som"
 
-#.  Second level entry under "Apps"
-#.  Menu policy definition: image viewers
-#.  Maybe also applications which able users to view some specific data
-#.  such as PDF, images, Postscript...
-msgid "Viewers"
-msgstr "Visualizadores"
-
-#.  Second level entry under "Apps"
-#.  Menu policy definition: system administration and monitoring tools
+#. Second level entry under Applications
+#. Policy definition: System related software. This is a three-level
+#. Examples: section, do not put entries directly here.
 msgid "System"
 msgstr "Sistema"
 
-#.  First level entry
-#.  Menu policy definition: games and recreations
+#. Third level entry under System
+#. Policy definition: Administrative and system configuration utilities,
+#. also tools for personal user settings.
+#. Examples: gnome-control-center, configure-debian, gksu
+msgid "Administration"
+msgstr ""
+
+#. Third level entry under System
+#. Policy definition: Tools for manipulating specific hardware,
+#. especially non-standard laptop hardware.
+#. Examples: toshutils, nvclock-gtk, nvtv
+msgid "Hardware"
+msgstr ""
+
+#. Third level entry under System
+#. Policy definition: This section is reserved for language-env as a special
+#. case.
+msgid "Language Environment"
+msgstr ""
+
+#. Third level entry under System
+#. Policy definition: Package managers and related tools.
+#. Examples: aptitude, deborphan, smartpm
+msgid "Package Management"
+msgstr ""
+
+#. Third level entry under System
+#. Policy definition: Security, cryptography and privacy related software,
+#. antiviruses, tools to track and report bugs, etc.
+#. Examples: gpgkeys, bastille, avscan
+msgid "Security"
+msgstr ""
+
+#. Second level entry under Applications
+#. Policy definition: Graphical terminal emulators.
+#. Examples: xterm, gnome-terminal, rxvt
+#, fuzzy
+msgid "Terminal Emulators"
+msgstr "Emuladores"
+
+#. Second level entry under Applications
+#. Policy definition: Text oriented tools like dictionaries, OCR,
+#. translation, text analysis software, etc.
+#. Examples: kdrill, stardict, turkey
+msgid "Text"
+msgstr "Texto"
+
+#. Second level entry under Applications
+#. Policy definition: TV-in, TV-out, FM radio, teletext browsers, etc.
+#. Examples: gradio, gatos, alevt
+msgid "TV and Radio"
+msgstr ""
+
+#. Second level entry under Applications
+#. Policy definition: Software for viewing images, documents
+#. and other (non-video) media.
+#. Examples: gqview, evince, gthumb
+msgid "Viewers"
+msgstr "Visualizadores"
+
+#. Second level entry under Applications
+#. Policy definition: Video players, editors, and rippers/recorders.
+#. Examples: istanbul, totem, kino
+msgid "Video"
+msgstr ""
+
+#. Second level entry under Applications
+#. Policy definition: Software for web site editing, web
+#. programming, and site administration.
+#. Examples: bluefish, screem, gphpedit
+msgid "Web Development"
+msgstr ""
+
+#. First level entry 
+#. Policy definition: Games and recreation. This is a top-level
+#. Examples: section, do not put entries here.
 msgid "Games"
 msgstr "Jogos"
 
-#.  Second level entry under "Games"
-#.  Menu policy definition: walk around virtual space, zork, MOO's, etc
-#.  All adventure-style games (often includes RPG)
+#. Second level entry under Games
+#. Policy definition: Games that involve a lot of action
+#. and require fast reflexes.
+#. Examples: xsoldier, supertux, xmoto
+#, fuzzy
+msgid "Action"
+msgstr "Educação"
+
+#. Second level entry under Games
+#. Policy definition: Role playing and adventure games,
+#. interactive movies and stories, etc.
+#. Examples: beneath-a-steel-sky, egoboo, kq
 msgid "Adventure"
 msgstr "Aventura"
 
-#.  Second level entry under "Games"
-#.  Menu policy definition: any game where reflexes count
-msgid "Arcade"
-msgstr "Fliperama"
+#. Second level entry under Games
+#. Policy definition: Tetris-like games involving falling blocks.
+#. Examples: crack-attack, frozen-bubble, netris
+#, fuzzy
+msgid "Blocks"
+msgstr "Travar"
 
-#.  Second level entry under "Games"
-#.  Menu policy definition: games played on a board
-#.  Board-style games such as Mastermind, Yahtzee, Mahjongg
+#. Second level entry under Games
+#. Policy definition: Games played on a board.
+#. Examples: phalanx, xshogi, xboard
 msgid "Board"
 msgstr "Tabuleiro"
 
-#.  Second level entry under "Games"
-#.  Menu policy definition: games involving a deck of cards
+#. Second level entry under Games
+#. Policy definition: Games involving a deck of cards.
+#. Examples: pysol, ace-of-penguins, xpat2
 msgid "Card"
 msgstr "Cartas"
 
-#.  Second level entry under "Games"
-#.  Menu policy definition: tests of ingenuity and logic
-#.  one-player games most often...or games which need the player to think..:-)
+#. Second level entry under Games
+#. Policy definition: Tests of ingenuity and logic.
+#. Examples: xmpuzzles, sgt-puzzles, enigma
 msgid "Puzzles"
 msgstr "Quebra Cabeças"
 
-#.  Second level entry under "Games"
-#.  Menu policy definition: Simulations of the real world (Flight
-#.                          Simulators, for example)
+#. Second level entry under Games
+#. Policy definition: Simulations of the real world
+#. in all detail and complexity.
+#. Examples: flightgear, torcs
 msgid "Simulation"
 msgstr "Simulação"
 
-#.  Second level entry under "Games"
-#.  Menu policy definition: games derived from "real world" sports
-msgid "Sports"
-msgstr "Esportes"
-
-#.  Second level entry under "Games"
-#.  Menu policy definition: games involving long term strategic thinking
+#. Second level entry under Games
+#. Policy definition: Games involving long-term strategic thinking.
+#. Examples: wesnoth, widelands, netpanzer
 msgid "Strategy"
 msgstr "Estratégia"
 
-#.  Second level entry under "Games"
-#.  Menu policy definition: games involving falling blocks
-msgid "Tetris-like"
-msgstr "Estilo Tetris"
+#. Second level entry under Games
+#. Policy definition: Server browsers, configurators, editors, and other
+#. game-related tools that are not games themselves.
+#. Examples: xqf, crystalspace
+msgid "Tools"
+msgstr "Ferramentas"
 
-#.  Second level entry under "Games"
-#.  Menu policy definition: amusements, eye-candy, etc.
-#.  Very small things which are often not really games
-#.  Such as Xeyes....
+#. Second level entry under Games
+#. Policy definition: Amusements, eye-candy, entertaining
+#. demos, screen hacks (screensavers), etc.
+#. Examples: xdesktopwaves, xphoon, xpenguins
 msgid "Toys"
 msgstr "Brinquedos"
 
-#.  First level entry
-#.  Menu policy definition: programs that provide user documentation
+#. First level entry 
+#. Policy definition: Programs that provide user documentation. Can (and
+#. should) also contain entries for important documents.
+#. Examples: debian-reference, apt-howto, dhelp
 msgid "Help"
 msgstr "Ajuda"
 
-#.  First level entry
-#.  BE VERY CAREFUL HERE
-#.  Menu policy definition: programs that affect the whole screen
-#.  This entry is about screen saver/locking systems
-#.  (see the following entries)
-#.  Most often, literal translations to the word for "Screen"
-#.  in your language will NOT be correct
-#.  Try using what you use for "screen" in "screensaver" for your language
+#. First level entry 
+#. Policy definition: Programs that affect the whole screen. This
+#. Examples: is a top-level section, do not put entries here.
 msgid "Screen"
 msgstr "Tela"
 
-#.  Second level entry under "Screen"
-#.  Menu policy definition: programs to lock the screen
-#.  Refers to "Screen" as "Lock the screen"
-msgid "Lock"
-msgstr "Travar"
-
-#.  Second level entry under "Screen"
-#.  Menu policy definition: screen savers
-#.  Refers to "Screen" as "trigger the screensaver"
-#.  Most often the common word for "Save" as in File/Save
-#.  will NOT be appropriate
-msgid "Save"
+#. Second level entry under Screen
+#. Policy definition: Tools for blanking the screen. Entries of screen hacks and
+#. configuration GUIs should go to other appropriate sections.
+#. Examples: xscreensaver, xlockmore
+#, fuzzy
+msgid "Saving"
 msgstr "Trancar"
 
-#.  Second level entry under "Screen"
-#.  Menu policy definition: things that fill the root window
-#.  will handle things that deal with the screen background, for instance
-msgid "Root-window"
-msgstr "Janela Raíz"
+#. Second level entry under Screen
+#. Policy definition: Tools for locking the screen.
+#. Examples: xscreensaver, xlockmore
+#, fuzzy
+msgid "Locking"
+msgstr "Travar"
 
-#.  First level entry
-#.  Menu policy definition: X window managers
-#.  Will collect all window managers such as icewm, samfish, twm...
-msgid "WindowManagers"
+#. First level entry 
+#. Policy definition: X window managers.
+#. Examples: fluxbox, metacity, waimea
+#, fuzzy
+msgid "Window Managers"
 msgstr "Gerenciadores de Janelas"
 
-#.  Second level entry under "WindowManagers"
-#.  Menu policy definition: window manager modules
-msgid "Modules"
+#. First level entry 
+#. Policy definition: FVWM-based window manager modules. 
+#. Examples: fvwm, fvwm-gnome, fvwm95
+#, fuzzy
+msgid "FVWM Modules"
 msgstr "Módulos"
 
-#.  First level entry for all xterm-style apps
-#.  Menu policy definition: xterm and its brethren
-msgid "XShells"
-msgstr "Shells Gráficos"
-
-# From Apps/System/Admin
-#. From Apps/System/Admin
-#.  for "System administration"
-msgid "Admin"
-msgstr "Administração"
+#. First level entry 
+#. Policy definition: This section is reserved for wmaker as a special
+#. case. 
+#, fuzzy
+msgid "Window Maker"
+msgstr "Gerenciadores de Janelas"
 
 # Non official sections from WindowMaker
 #. Non official sections from WindowMaker
@@ -239,8 +448,9 @@ msgstr "Área de Trabalho"
 # Frequently used unofficial sections.
 # From Apps/Net/Mozilla Components
 #. Frequently used unofficial sections.
-#. From Apps/Net/Mozilla Components
-msgid "Mozilla Components"
+#. From Apps/Net/Iceape Components
+#, fuzzy
+msgid "Iceape Components"
 msgstr "Componentes Mozilla"
 
 # From Games/Toys/Teddies
@@ -248,3 +458,34 @@ msgstr "Componentes Mozilla"
 #.  as in "Teddy Bear"
 msgid "Teddies"
 msgstr "Bichinhos"
+
+#~ msgid "Apps"
+#~ msgstr "Aplicativos"
+
+#~ msgid "Hamradio"
+#~ msgstr "Rádio Amador"
+
+#~ msgid "Math"
+#~ msgstr "Matemática"
+
+#~ msgid "Technical"
+#~ msgstr "Técnico"
+
+#~ msgid "Arcade"
+#~ msgstr "Fliperama"
+
+#~ msgid "Sports"
+#~ msgstr "Esportes"
+
+#~ msgid "Tetris-like"
+#~ msgstr "Estilo Tetris"
+
+#~ msgid "Root-window"
+#~ msgstr "Janela Raíz"
+
+#~ msgid "XShells"
+#~ msgstr "Shells Gráficos"
+
+# From Apps/System/Admin
+#~ msgid "Admin"
+#~ msgstr "Administração"
