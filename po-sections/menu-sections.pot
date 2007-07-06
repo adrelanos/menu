@@ -102,9 +102,14 @@ msgstr ""
 msgid "File Transfer"
 msgstr ""
 
+#. #-#-#-#-#  - (menu-section 2.1.9-3)  #-#-#-#-#
 #. Third level entry under Network
 #. Policy definition: Network monitoring software.
 #. Examples: gip, ettercap, iptstate
+#. #-#-#-#-#  - (menu-section 2.1.9-3)  #-#-#-#-#
+#. Third level entry under System
+#. Policy definition: System information and monitoring tools, log viewers, etc.
+#. Examples: top, hal-device-manager, gtkdiskfree
 msgid "Monitoring"
 msgstr ""
 
@@ -252,12 +257,6 @@ msgstr ""
 #. Policy definition: This section is reserved for language-env as a special
 #. case.
 msgid "Language Environment"
-msgstr ""
-
-#. Third level entry under System
-#. Policy definition: System information and monitoring tools, log viewers, etc.
-#. Examples: top, hal-device-manager, gtkdiskfree
-msgid "Monitoring"
 msgstr ""
 
 #. Third level entry under System
@@ -426,7 +425,7 @@ msgstr ""
 #. case. 
 msgid "Window Maker"
 msgstr ""
- 
+
 #. Non official sections from WindowMaker
 msgid "Appearance"
 msgstr ""
@@ -436,7 +435,6 @@ msgid "WorkSpace"
 msgstr ""
 
 #. Frequently used unofficial sections.
-
 #. From Apps/Net/Iceape Components
 msgid "Iceape Components"
 msgstr ""
@@ -445,4 +443,3 @@ msgstr ""
 #.  as in "Teddy Bear"
 msgid "Teddies"
 msgstr ""
-
