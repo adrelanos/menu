@@ -4,6 +4,7 @@ menu (2.1.36) unstable; urgency=low
   * Menu sections translations:
     - Remove duplicate entries in the POT file
     - Re-generate PO files from the new POT file
+    - Tamil completed by Tirumurti Vasudevan. Closes: #432177
 
  -- Christian Perrier <bubulle@debian.org>  Fri, 06 Jul 2007 07:11:17 +0200
 
