@@ -6,6 +6,7 @@ menu (2.1.36) unstable; urgency=low
     - Re-generate PO files from the new POT file
     - Tamil completed by Tirumurti Vasudevan. Closes: #432177
     - Vietnamese completed by Clytie Siddall. Closes: #432282
+    - Basque completed by Piarres Beobide. Closes: #432295
 
  -- Christian Perrier <bubulle@debian.org>  Fri, 06 Jul 2007 07:11:17 +0200
 
