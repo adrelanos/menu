@@ -10,6 +10,7 @@ menu (2.1.36) unstable; urgency=low
 
   * su-to-root translations:
     - Basque added by Piarres Beobide. Closes: #432301
+    - Norwegian Bokmål added by Hans Fredrik Nordhaug. Closes: #433046
 
   * programs translations:
     - Basque added by Piarres Beobide. Closes: #432303
