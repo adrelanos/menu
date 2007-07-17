@@ -7,10 +7,12 @@ menu (2.1.36) unstable; urgency=low
     - Tamil completed by Tirumurti Vasudevan. Closes: #432177
     - Vietnamese completed by Clytie Siddall. Closes: #432282
     - Basque completed by Piarres Beobide. Closes: #432295
+    - Thai completed by Theppitak Karoonboonyanan. Closes: #433431
 
   * su-to-root translations:
     - Basque added by Piarres Beobide. Closes: #432301
     - Norwegian Bokmål added by Hans Fredrik Nordhaug. Closes: #433046
+    - Thai completed by Theppitak Karoonboonyanan. Closes: #433435
 
   * programs translations:
     - Basque added by Piarres Beobide. Closes: #432303
