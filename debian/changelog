@@ -10,6 +10,7 @@ menu (2.1.36) unstable; urgency=low
     - Thai completed by Theppitak Karoonboonyanan. Closes: #433431
     - Bulgarian completed by Damyan Ivanov. Closes: #433626
     - French completed by Jean-Philippe Guérard.
+    - Portuguese completed by Miguel Figueiredo. Closes: #433679
 
   * su-to-root translations:
     - Basque added by Piarres Beobide. Closes: #432301
