@@ -1,47 +1,48 @@
 # Menu section translation
-# Copyright (C) 2003
+# Copyright (C) 2003,2007
 # This file is distributed under the same license as the menu package.
-# Bill Allombert <ballombe@debian.org>, 2003.
-# French translation†:
-#     Jean-Philippe Guerard <jean-philippe.guerard@laposte.net>, 2003.
+# French translation¬†:
 #
+# Bill Allombert <ballombe@debian.org>, 2003.
+# Jean-Philippe Gu√©rard <jean-philippe.guerard@tigreraye.org>, 2003,2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: menu-section 2.1.7-2\n"
 "POT-Creation-Date: 2007-07-04 15:27+0100\n"
-"PO-Revision-Date: 2003-12-31 18:40:41+0100\n"
-"Last-Translator: Jean-Philippe Guerard <jean-philippe.guerard@laposte.net>\n"
-"Language-Team: Debian-l10n-French <debian-l10n-french@lists.debian.org>\n"
+"PO-Revision-Date: 2007-07-07 14:01+0200\n"
+"Last-Translator: Jean-Philippe Gu√©rard <jean-philippe.guerard@tigreraye."
+"org>\n"
+"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms:  nplurals=2; plural=(n > 1);\n"
 
 #. First level entry 
 #. Policy definition: Normal applications. This is a top-level
 #. Examples: section, do not put entries here.
 msgid "Applications"
-msgstr ""
+msgstr "Applications"
 
 #. Second level entry under Applications
 #. Policy definition: Tools to aid people with disabilities or
 #. for machines lacking usual input devices.
 #. Examples: gok, yasr, dasher
 msgid "Accessibility"
-msgstr ""
+msgstr "Accessibilit√©"
 
 #. Second level entry under Applications
 #. Policy definition: Anything relating to HAM radio.
 #. Examples: baken, hamsoft, twlog
 msgid "Amateur Radio"
-msgstr ""
+msgstr "Radio amateur"
 
 #. Second level entry under Applications
 #. Policy definition: Interactive database programs, collection
 #. managers, address books, bibliography tools, etc.
 #. Examples: gaby, alexandria, mdbtools
 msgid "Data Management"
-msgstr ""
+msgstr "Gestion de donn√©es"
 
 #
 #. Second level entry under Applications
@@ -49,14 +50,14 @@ msgstr ""
 #. for text-based information.
 #. Examples: ksubtile, nano, hexedit
 msgid "Editors"
-msgstr "…diteurs"
+msgstr "√âditeurs"
 
 #
 #. Second level entry under Applications
 #. Policy definition: Educational and training software.
 #. Examples: gtypist, gcompris, quiz
 msgid "Education"
-msgstr "Apprentissage"
+msgstr "√âducatif"
 
 #
 #. Second level entry under Applications
@@ -64,52 +65,50 @@ msgstr "Apprentissage"
 #. software or more than one OS at a time.
 #. Examples: wine, dosemu, qemu
 msgid "Emulators"
-msgstr "…mulateurs"
+msgstr "√âmulateurs"
 
 #. Second level entry under Applications
 #. Policy definition: Tools for file management, archiving,
 #. searching, CD/DVD burning, backup, etc.
 #. Examples: file-roller, mc, baobab
 msgid "File Management"
-msgstr ""
+msgstr "Gestion de fichiers"
 
 #
 #. Second level entry under Applications
 #. Policy definition: 2D and 3D graphics manipulation software.
 #. Examples: gimp, inkscape, imagemagick
 msgid "Graphics"
-msgstr "Image"
+msgstr "Dessin et image"
 
 #. Second level entry under Applications
 #. Policy definition: Software that allows you to interface
 #. with mobile devices (phones, PDAs, etc.).
 #. Examples: kandy, gnokii, gnome-pilot
 msgid "Mobile Devices"
-msgstr ""
+msgstr "Mat√©riel nomade"
 
 #
 #. Second level entry under Applications
 #. Policy definition: Network related software. This is a three-level
 #. Examples: section, do not put entries directly here.
-#, fuzzy
 msgid "Network"
-msgstr "RÈseau"
+msgstr "R√©seau"
 
 #
 #. Third level entry under Network
 #. Policy definition: Mail, USENET news, chat, instant messaging,
 #. IP telephony, video conferencing software, etc.
 #. Examples: xchat, gaim, mutt
-#, fuzzy
 msgid "Communication"
-msgstr "Apprentissage"
+msgstr "Communication"
 
 #. Third level entry under Network
 #. Policy definition: File transfer software such as download
 #. managers, FTP clients, P2P clients, etc.
 #. Examples: amule, gftp, d4x
 msgid "File Transfer"
-msgstr ""
+msgstr "Transfert de fichiers"
 
 #. #-#-#-#-#  - (menu-section 2.1.9-3)  #-#-#-#-#
 #. Third level entry under Network
@@ -120,27 +119,27 @@ msgstr ""
 #. Policy definition: System information and monitoring tools, log viewers, etc.
 #. Examples: top, hal-device-manager, gtkdiskfree
 msgid "Monitoring"
-msgstr ""
+msgstr "Surveillance"
 
 #. Third level entry under Network
 #. Policy definition: Web browsers, tools for offline browsing, etc.
 #. Examples: elinks, epiphany-browser, webhttrack
 msgid "Web Browsing"
-msgstr ""
+msgstr "Navigateurs web"
 
 #. Third level entry under Network
 #. Policy definition: Web feed (RSS, Atom, etc.)
 #. and podcast aggregators.
 #. Examples: akregator, kitty, liferea
 msgid "Web News"
-msgstr ""
+msgstr "Flux d'informations"
 
 #. Second level entry under Applications
 #. Policy definition: Office suites, word processors, spreadsheets,
 #. CRM, ERP, financial sofware, etc.
 #. Examples: openoffice.org, tinyerp-client, gnucash
 msgid "Office"
-msgstr ""
+msgstr "Bureautique"
 
 #
 #. Second level entry under Applications
@@ -154,7 +153,7 @@ msgstr "Programmation"
 #. bug tracking software, etc.
 #. Examples: planner, bugzilla, gnotime
 msgid "Project Management"
-msgstr ""
+msgstr "Gestion de projets"
 
 #
 #. Second level entry under Applications
@@ -167,136 +166,133 @@ msgstr "Sciences"
 #. Policy definition: Astronomy-related software.
 #. Examples: celestia, spacechart, stellarium
 msgid "Astronomy"
-msgstr ""
+msgstr "Astronomie"
 
 #. Third level entry under Science
 #. Policy definition: Biology-related software.
 #. Examples: arb, ncbi-tools-x11, seaview
 msgid "Biology"
-msgstr ""
+msgstr "Biologie"
 
 #. Third level entry under Science
 #. Policy definition: Chemistry-related software.
 #. Examples: chemtool, kalzium, xdrawchem
 msgid "Chemistry"
-msgstr ""
+msgstr "Chimie"
 
 #
 #. Third level entry under Science
 #. Policy definition: Software designed for processing, extracting,
 #. and presenting generic scientific data.
 #. Examples: fityk, ygraph, mn-fit
-#, fuzzy
 msgid "Data Analysis"
-msgstr "Bases de donnÈes"
+msgstr "Analyse de donn√©es"
 
 #. Third level entry under Science
 #. Policy definition: Circuit design tools, simulators and
 #. assemblers for microprocessors, etc.
 #. Examples: geda, gnucap, tkgate
 msgid "Electronics"
-msgstr ""
+msgstr "√âlectronique"
 
 #. Third level entry under Science
 #. Policy definition: CAD, UML tools, diagram-drawing and
 #. other engineering-related software.
 #. Examples: tcm, dia, qcad
 msgid "Engineering"
-msgstr ""
+msgstr "Ing√©nierie"
 
 #
 #. Third level entry under Science
 #. Policy definition: Geoscience-related software.
 #. Examples: earth3d, qgis, therion
-#, fuzzy
 msgid "Geoscience"
-msgstr "Sciences"
+msgstr "Sciences de la terre"
 
 #. Third level entry under Science
 #. Policy definition: Mathematics-related software.
 #. Examples: gcalctool, snappea, xeukleides
 msgid "Mathematics"
-msgstr ""
+msgstr "Math√©matiques"
 
 #. Third level entry under Science
 #. Policy definition: Medicine-related software.
 #. Examples: mssstest, gnumed-client, xmedcon
 msgid "Medicine"
-msgstr ""
+msgstr "M√©decine"
 
 #. Third level entry under Science
 #. Policy definition: Physics-related software.
 #. Examples: kxterm, ifrit, paw
 msgid "Physics"
-msgstr ""
+msgstr "Physique"
 
 #. Third level entry under Science
 #. Policy definition: Social sciences-related software.
 #. Examples: gnomesword, hanzim, bibletime
 msgid "Social"
-msgstr ""
+msgstr "Sciences sociales"
 
 #
 #. Second level entry under Applications
 #. Policy definition: Various shells to be used inside a terminal emulator.
 #. Examples: bash, ksh, zsh
 msgid "Shells"
-msgstr "InterprÈteurs de commandes"
+msgstr "Interpr√©teurs de commandes"
 
 #
 #. Second level entry under Applications
 #. Policy definition: Sound players, editors, and rippers/recorders.
 #. Examples: beep-media-player, grip, audacity
 msgid "Sound"
-msgstr "Son"
+msgstr "Son et musique"
 
 #
 #. Second level entry under Applications
 #. Policy definition: System related software. This is a three-level
 #. Examples: section, do not put entries directly here.
 msgid "System"
-msgstr "Outils systËme"
+msgstr "Syst√®me"
 
 #. Third level entry under System
 #. Policy definition: Administrative and system configuration utilities,
 #. also tools for personal user settings.
 #. Examples: gnome-control-center, configure-debian, gksu
 msgid "Administration"
-msgstr ""
+msgstr "Administration"
 
 #. Third level entry under System
 #. Policy definition: Tools for manipulating specific hardware,
 #. especially non-standard laptop hardware.
 #. Examples: toshutils, nvclock-gtk, nvtv
 msgid "Hardware"
-msgstr ""
+msgstr "Mat√©riel"
 
 #. Third level entry under System
 #. Policy definition: This section is reserved for language-env as a special
 #. case.
 msgid "Language Environment"
-msgstr ""
+msgstr "Param√©trage de la langue"
 
 #. Third level entry under System
 #. Policy definition: Package managers and related tools.
 #. Examples: aptitude, deborphan, smartpm
 msgid "Package Management"
-msgstr ""
+msgstr "Gestionnaires de paquets"
 
 #. Third level entry under System
 #. Policy definition: Security, cryptography and privacy related software,
 #. antiviruses, tools to track and report bugs, etc.
 #. Examples: gpgkeys, bastille, avscan
 msgid "Security"
-msgstr ""
+msgstr "S√©curit√©"
 
 #
 #. Second level entry under Applications
 #. Policy definition: Graphical terminal emulators.
 #. Examples: xterm, gnome-terminal, rxvt
-#, fuzzy
 msgid "Terminal Emulators"
-msgstr "…mulateurs"
+msgstr "√âmulateurs de terminaux"
 
 #
 #. Second level entry under Applications
@@ -304,13 +300,13 @@ msgstr "…mulateurs"
 #. translation, text analysis software, etc.
 #. Examples: kdrill, stardict, turkey
 msgid "Text"
-msgstr "Outils texte"
+msgstr "Langue √©crite"
 
 #. Second level entry under Applications
 #. Policy definition: TV-in, TV-out, FM radio, teletext browsers, etc.
 #. Examples: gradio, gatos, alevt
 msgid "TV and Radio"
-msgstr ""
+msgstr "T√©l√©vision et radio"
 
 #
 #. Second level entry under Applications
@@ -318,20 +314,20 @@ msgstr ""
 #. and other (non-video) media.
 #. Examples: gqview, evince, gthumb
 msgid "Viewers"
-msgstr "Visionneurs"
+msgstr "Lecteurs"
 
 #. Second level entry under Applications
 #. Policy definition: Video players, editors, and rippers/recorders.
 #. Examples: istanbul, totem, kino
 msgid "Video"
-msgstr ""
+msgstr "Vid√©o"
 
 #. Second level entry under Applications
 #. Policy definition: Software for web site editing, web
 #. programming, and site administration.
 #. Examples: bluefish, screem, gphpedit
 msgid "Web Development"
-msgstr ""
+msgstr "D√©veloppement web"
 
 #
 #. First level entry 
@@ -345,9 +341,8 @@ msgstr "Jeux"
 #. Policy definition: Games that involve a lot of action
 #. and require fast reflexes.
 #. Examples: xsoldier, supertux, xmoto
-#, fuzzy
 msgid "Action"
-msgstr "Apprentissage"
+msgstr "Action"
 
 #
 #. Second level entry under Games
@@ -361,16 +356,15 @@ msgstr "Aventures"
 #. Second level entry under Games
 #. Policy definition: Tetris-like games involving falling blocks.
 #. Examples: crack-attack, frozen-bubble, netris
-#, fuzzy
 msgid "Blocks"
-msgstr "Verrouillage"
+msgstr "Chute de blocs"
 
 #
 #. Second level entry under Games
 #. Policy definition: Games played on a board.
 #. Examples: phalanx, xshogi, xboard
 msgid "Board"
-msgstr "Plateau"
+msgstr "R√©flexion"
 
 #
 #. Second level entry under Games
@@ -384,7 +378,7 @@ msgstr "Cartes"
 #. Policy definition: Tests of ingenuity and logic.
 #. Examples: xmpuzzles, sgt-puzzles, enigma
 msgid "Puzzles"
-msgstr "RÈflexion"
+msgstr "Casse-t√™te"
 
 #
 #. Second level entry under Games
@@ -399,7 +393,7 @@ msgstr "Simulation"
 #. Policy definition: Games involving long-term strategic thinking.
 #. Examples: wesnoth, widelands, netpanzer
 msgid "Strategy"
-msgstr "StratÈgie"
+msgstr "Strat√©gie"
 
 #
 #. Second level entry under Games
@@ -407,7 +401,7 @@ msgstr "StratÈgie"
 #. game-related tools that are not games themselves.
 #. Examples: xqf, crystalspace
 msgid "Tools"
-msgstr "Petits outils"
+msgstr "Outils"
 
 #
 #. Second level entry under Games
@@ -423,21 +417,20 @@ msgstr "Jouets"
 #. should) also contain entries for important documents.
 #. Examples: debian-reference, apt-howto, dhelp
 msgid "Help"
-msgstr "Documentation"
+msgstr "Aide"
 
 #
 #. First level entry 
 #. Policy definition: Programs that affect the whole screen. This
 #. Examples: is a top-level section, do not put entries here.
 msgid "Screen"
-msgstr "…cran"
+msgstr "√âcran"
 
 #
 #. Second level entry under Screen
 #. Policy definition: Tools for blanking the screen. Entries of screen hacks and
 #. configuration GUIs should go to other appropriate sections.
 #. Examples: xscreensaver, xlockmore
-#, fuzzy
 msgid "Saving"
 msgstr "Veille"
 
@@ -445,7 +438,6 @@ msgstr "Veille"
 #. Second level entry under Screen
 #. Policy definition: Tools for locking the screen.
 #. Examples: xscreensaver, xlockmore
-#, fuzzy
 msgid "Locking"
 msgstr "Verrouillage"
 
@@ -453,25 +445,22 @@ msgstr "Verrouillage"
 #. First level entry 
 #. Policy definition: X window managers.
 #. Examples: fluxbox, metacity, waimea
-#, fuzzy
 msgid "Window Managers"
-msgstr "Gestionnaires de fenÍtres"
+msgstr "Gestionnaires de fen√™tres"
 
 #
 #. First level entry 
 #. Policy definition: FVWM-based window manager modules. 
 #. Examples: fvwm, fvwm-gnome, fvwm95
-#, fuzzy
 msgid "FVWM Modules"
-msgstr "Modules"
+msgstr "Modules FVWM"
 
 #
 #. First level entry 
 #. Policy definition: This section is reserved for wmaker as a special
 #. case. 
-#, fuzzy
 msgid "Window Maker"
-msgstr "Gestionnaires de fenÍtres"
+msgstr "Window Maker"
 
 #
 # Non official sections from WindowMaker
@@ -489,9 +478,8 @@ msgstr "Espace de travail"
 # From Apps/Net/Mozilla Components
 #. Frequently used unofficial sections.
 #. From Apps/Net/Iceape Components
-#, fuzzy
 msgid "Iceape Components"
-msgstr "Composants Mozilla"
+msgstr "Composants Iceape"
 
 #
 # From Games/Toys/Teddies
@@ -499,45 +487,3 @@ msgstr "Composants Mozilla"
 #.  as in "Teddy Bear"
 msgid "Teddies"
 msgstr "Peluches"
-
-#
-#~ msgid "Apps"
-#~ msgstr "Applications"
-
-#
-# cf. http://www.ref-union.org/promotion/19.php
-#~ msgid "Hamradio"
-#~ msgstr "Radio amateur"
-
-#
-#~ msgid "Math"
-#~ msgstr "MathÈmatiques"
-
-#
-#~ msgid "Technical"
-#~ msgstr "Techniques"
-
-#
-#~ msgid "Arcade"
-#~ msgstr "Arcades"
-
-#
-#~ msgid "Sports"
-#~ msgstr "Sports"
-
-#
-#~ msgid "Tetris-like"
-#~ msgstr "Clones de Tetris"
-
-#
-#~ msgid "Root-window"
-#~ msgstr "Fonds d'Ècran"
-
-#
-#~ msgid "XShells"
-#~ msgstr "Terminaux graphiques"
-
-#
-# From Apps/System/Admin
-#~ msgid "Admin"
-#~ msgstr "Administration"

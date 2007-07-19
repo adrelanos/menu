@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: menu 2.1.34\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2007-06-05 21:25+0200\n"
-"PO-Revision-Date: 2007-06-13 10:24+0300\n"
+"PO-Revision-Date: 2007-07-18 12:49+0300\n"
 "Last-Translator: Damyan Ivanov <dam@modsoftsys.com>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgstr ""
 
 #: ../scripts/su-to-root:62
 msgid "About to execute %s.\\n"
-msgstr "Яе се изпълни %s.\\n"
+msgstr "Ще се изпълни %s.\\n"
 
 #: ../scripts/su-to-root:63
 msgid "This command needs %s privileges to be executed.\\n"
