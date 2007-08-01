@@ -11,6 +11,7 @@ menu (2.1.36) unstable; urgency=low
     - Bulgarian completed by Damyan Ivanov. Closes: #433626
     - French completed by Jean-Philippe Guérard.
     - Portuguese completed by Miguel Figueiredo. Closes: #433679
+    - Nepali completed by Shiva Prasad Pokharel. Closes: #435342
 
   * su-to-root translations:
     - Basque added by Piarres Beobide. Closes: #432301
