@@ -12,6 +12,7 @@ menu (2.1.36) unstable; urgency=low
     - French completed by Jean-Philippe Guérard.
     - Portuguese completed by Miguel Figueiredo. Closes: #433679
     - Nepali completed by Shiva Prasad Pokharel. Closes: #435342
+    - Gujarati completed by Kartik Mistry. Closes: #435436
 
   * su-to-root translations:
     - Basque added by Piarres Beobide. Closes: #432301
