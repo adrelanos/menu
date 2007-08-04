@@ -9,7 +9,7 @@ menu (2.1.36) unstable; urgency=low
     - Basque completed by Piarres Beobide. Closes: #432295
     - Thai completed by Theppitak Karoonboonyanan. Closes: #433431
     - Bulgarian completed by Damyan Ivanov. Closes: #433626
-    - French completed by Jean-Philippe Guérard.
+    - French completed by Jean-Philippe Guérard. Closes: #435919
     - Portuguese completed by Miguel Figueiredo. Closes: #433679
     - Nepali completed by Shiva Prasad Pokharel. Closes: #435342
     - Gujarati completed by Kartik Mistry. Closes: #435436
