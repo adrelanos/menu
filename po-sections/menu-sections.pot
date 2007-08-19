@@ -7,7 +7,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: menu-section 2.1.9-3\n"
+"Project-Id-Version: menu-section 2.1.35\n"
 "POT-Creation-Date: 2007-07-04 15:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
