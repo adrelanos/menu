@@ -1,29 +1,33 @@
 menu (2.1.36) unstable; urgency=low
 
   * The "unreleased yet" release
-  * Menu sections translations:
-    - Remove duplicate entries in the POT file
-    - Re-generate PO files from the new POT file
-    - Tamil completed by Tirumurti Vasudevan. Closes: #432177
-    - Vietnamese completed by Clytie Siddall. Closes: #432282
-    - Basque completed by Piarres Beobide. Closes: #432295
-    - Thai completed by Theppitak Karoonboonyanan. Closes: #433431
-    - Bulgarian completed by Damyan Ivanov. Closes: #433626
-    - French completed by Jean-Philippe Guérard. Closes: #435919
-    - Portuguese completed by Miguel Figueiredo. Closes: #433679
-    - Nepali completed by Shiva Prasad Pokharel. Closes: #435342
-    - Gujarati completed by Kartik Mistry. Closes: #435436
+  * Handling of l10n by Christian Perrier:
+    + Menu sections translations:
+      - Remove duplicate entries in the POT file
+      - Re-generate PO files from the new POT file
+      - Tamil completed by Tirumurti Vasudevan. Closes: #432177
+      - Vietnamese completed by Clytie Siddall. Closes: #432282
+      - Basque completed by Piarres Beobide. Closes: #432295
+      - Thai completed by Theppitak Karoonboonyanan. Closes: #433431
+      - Bulgarian completed by Damyan Ivanov. Closes: #433626
+      - French completed by Jean-Philippe Guérard. Closes: #435919
+      - Portuguese completed by Miguel Figueiredo. Closes: #433679
+      - Nepali completed by Shiva Prasad Pokharel. Closes: #435342
+      - Gujarati completed by Kartik Mistry. Closes: #435436
+ 
+    + su-to-root translations:
+      - Basque added by Piarres Beobide. Closes: #432301
+      - Norwegian Bokmål added by Hans Fredrik Nordhaug. Closes: #433046
+      - Thai completed by Theppitak Karoonboonyanan. Closes: #433435
+      - Bulgarian completed by Damyan Ivanov. Closes: #433621
+ 
+    + programs translations:
+      - Basque added by Piarres Beobide. Closes: #432303
 
-  * su-to-root translations:
-    - Basque added by Piarres Beobide. Closes: #432301
-    - Norwegian Bokmål added by Hans Fredrik Nordhaug. Closes: #433046
-    - Thai completed by Theppitak Karoonboonyanan. Closes: #433435
-    - Bulgarian completed by Damyan Ivanov. Closes: #433621
+  * doc/menu.sgml, doc/menufile.5, doc/menufile.fr.5:
+    - update examples to new menu structure. Closes: #434217, #438444.
 
-  * programs translations:
-    - Basque added by Piarres Beobide. Closes: #432303
-
- -- Christian Perrier <bubulle@debian.org>  Fri, 06 Jul 2007 07:11:17 +0200
+ -- Bill Allombert <ballombe@debian.org>  Sat, 18 Aug 2007 22:46:42 +0200
 
 menu (2.1.35) unstable; urgency=low
 

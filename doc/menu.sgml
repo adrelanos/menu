@@ -77,20 +77,19 @@ window-manager startup files that are used in preference to the
 systemwide files.
 <p>
 
-One problem we ran into with menu-1.x (and before) was that the
-number of entries in any submenu vary wildly: on my system there are
-only two entries in /Apps/Editors, while I'm sure that other people
-have more like 20 entries there. Many people complained about the
-fullness of certain submenus, citing scientific studies or personal
-experience to explain why overfull or underfull submenus are a bad
-thing. To overcome this, menu-2.0 now can optimize the tree itself,
-possibly subdividing for example the /Apps/Editors tree in, say
-Editors/Beginner, Editors/Experienced, or whatever, if there are many
-entries in that submenu, or maybe even totally removing /Apps/Editors
-on systems where there are few editors installed. To be able to do
-this, menu follows the information supplied to it in the `hints'
-variables (see paragraph below, or the hints chapter).
-
+One problem we ran into with menu-1.x (and before) was that the number of
+entries in any submenu vary wildly: on my system there are only two entries in
+<tt>/Applications/Editors</tt>, while I'm sure that other people have more like
+20 entries there. Many people complained about the fullness of certain
+submenus, citing scientific studies or personal experience to explain why
+overfull or underfull submenus are a bad thing. To overcome this, menu-2.0 now
+can optimize the tree itself, possibly subdividing for example the
+<tt>/Applications/Editors</tt> tree in, say <tt>Editors/Beginner</tt>,
+<tt>Editors/Experienced</tt>, or whatever, if there are many entries in that
+submenu, or maybe even totally removing <tt>/Applications/Editors</tt> on
+systems where there are few editors installed. To be able to do this, menu
+follows the information supplied to it in the `hints' variables (see paragraph
+below, or the hints chapter).
 
 <p>
 
@@ -99,16 +98,16 @@ includes a menu file <file>/usr/share/menu/package-name</file>. In
 this file, it will have one line per menu entry, like this (copied
 from <file>/usr/share/menu/xbase</file>):
 <example>
-   ?package(xbase):command="/usr/bin/X11/xedit" needs="X11" \
-                section="Apps/Editors" title="Xedit" \
+   ?package(xbase):command="/usr/bin/xedit" needs="X11" \
+                section="Applications/Editors" title="Xedit" \
                 hints="Beginner,Small"
 </example>
 This describes the type of interface Xedit needs (X11),
 the menu section the menu entry should be in,
 the menu text, and the command that should be executed.
-Also, it tells menu that, if /Apps/Editors is overfull, 
-it could put Xedit in a Apps/Editors/Beginner or Apps/Editors/Small 
-subsection.
+Also, it tells menu that, if <tt>/Applications/Editors</tt>
+is overfull, it could put Xedit in a <tt>Applications/Editors/Beginner</tt> 
+or <tt>Applications/Editors/Small</tt> subsection.
 
 <p>
 
@@ -215,14 +214,14 @@ User-specific menu files should be in <file>~/.menu/</file>
 <p>
 Here is an example to describe the syntax of such a file:
 <example>
-?package(gnumeric):\           specifies what packages need to be installed
-                               multiple requirements should be separated by
-                               comma
-  needs="X11"\                 what kind of environment this command expects
-  section="Apps/Math"\         in what section this menu entry should be
-  title="Gnumeric"\            the title of the menu entry
-  command="gnumeric" \         the command to run
-  hints="Gnome,Spreadsheets" \ some hints about menu placement.
+?package(gnumeric):\             specifies what packages need to be installed
+                                 multiple requirements should be separated by
+                                 comma
+  needs="X11"\                   what kind of environment this command expects
+  section="Applications/Office"\ in what section this menu entry should be
+  title="Gnumeric"\              the title of the menu entry
+  command="gnumeric" \           the command to run
+  hints="Gnome,Spreadsheets" \   some hints about menu placement.
   icon="/usr/share/pixmaps/gnumeric.xpm"  the path to the icon to use.
 </example>
 <p>
@@ -724,7 +723,7 @@ For example:
 ?package(emacs20):\
   needs="x11"\
   hints="Big,Expert,Featureful" \
-  section="Apps/Editors"\
+  section="Applications/Editors"\
   title="Emacs 20"\
   command="/usr/bin/emacs20"\
   icon=/usr/share/emacs/20.3/etc/emacs.xbm
@@ -732,10 +731,11 @@ For example:
 The above hints will tell <tt/menu/ to consider grouping <tt/emacs/
 together with other editors that are marked similar. For example, if
 <tt/vi/ on your system has a hints="Small,Expert" definition, and
-there are too many entries in the /Apps/Editors menu entry, then menu
-will consider creating a /Apps/Editors/Expert submenu, and put both
-<tt/vi/ and <tt/emacs/ in it. (Of course, only if you have 
-<tt/hint_optimize=true/ in your <file>/etc/menu-methods/menu.h</file> file).
+there are too many entries in the <tt>/Applications/Editors</tt> menu entry,
+then menu will consider creating a <tt>/Applications/Editors/Expert</tt>
+submenu, and put both <tt/vi/ and <tt/emacs/ in it. (Of course, only if you
+have <tt/hint_optimize=true/ in your <file>/etc/menu-methods/menu.h</file>
+file).
 
 <sect> Entries for menu sections.
 <p>
@@ -1437,10 +1437,11 @@ Set to true if you want to see loads and loads of debug output.
 <p>
 The hints actually work in a rather strange way: when
 <tt/hint_optimize=true/ then all <tt/$section/ elements are added to
-the specified <tt/$hints/ variable, and the order (/Apps/Editors or
-/Editors/Apps) of the resulting hints is completely ignored. Then, the
-hints for each menu entry are handed to the optimization routine, which
-will calculate a reasonable tree for those hints. That tree must
+the specified <tt/$hints/ variable, and the order
+(<tt>/Applications/Editors</tt> or <tt>/Editors/Applications</tt>) of the
+resulting hints is completely ignored. Then, the hints for each menu entry are
+handed to the optimization routine, which will calculate a reasonable tree for
+those hints. That tree must
 comply with the following:
 <p>
 
@@ -1696,15 +1697,15 @@ and "submenutitle=" are interpreted as follows:
 
 <tag> parent($arg) <item>
      for $arg a "directory", return parent directory:
-     parent("/Debian/Apps/Editors") = "/Debian/Apps".
+     parent("/Debian/Applications/Editors") = "/Debian/Applications".
 
 <tag> basename($arg) <item>
      return the last part of the parent directory:
-     basename("/Debian/Apps/Editors") = "Apps".
+     basename("/Debian/Applications/Editors") = "Applications".
 
 <tag> stripdir($arg) <item>
      everything after the last slash, i.e. what basename() 
-     should have returned: stripdir("/Debian/Apps/Editors") = "Editors".
+     should have returned: stripdir("/Debian/Applications/Editors") = "Editors".
 
 <tag> entrycount() <item>
      the number of entries in this menu.

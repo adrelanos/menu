@@ -37,15 +37,15 @@ que ce fichier de menus.
 Dosemu peut installer le fichier de menus suivant dans 
 /usr/share/menu/dosemu\ :
 .PP
- ?package(dosemu):needs="text" section="Apps/Emulators" title="Dosemu" command="dosemu"
- ?package(dosemu):needs="x11" section="Apps/Emulators" title="Dosemu" command="xdos"
+ ?package(dosemu):needs="text" section="Applications/Emulators" title="Dosemu" command="dosemu"
+ ?package(dosemu):needs="x11" section="Applications/Emulators" title="Dosemu" command="xdos"
 .PP
 L'administrateur système peut vouloir remplacer ce fichier pour changer la 
 façon dont dosemu est exécuté, il crée alors le fichier /etc/menu/dosemu 
 suivant\ :
 .PP
- ?package(dosemu):needs="text" section="Apps/Emulators" title="Dosemu" command="dosemu \-A"
- ?package(dosemu):needs="x11"  section="Apps/Emulators" title="Dosemu" command="xdos \-A"
+ ?package(dosemu):needs="text" section="Applications/Emulators" title="Dosemu" command="dosemu \-A"
+ ?package(dosemu):needs="x11"  section="Applications/Emulators" title="Dosemu" command="xdos \-A"
 .PP
 Il se peut également qu'un utilisateur ne veuille pas voir apparaître Dosemu 
 dans ses menus. Il peut alors créer un fichier vide nommé ~/.menu/dosemu.
@@ -115,7 +115,7 @@ NDT: les noms de sections officiels sont automatiquement traduits au
 moment de la génération des menus.
 
 Utilisez `/' pour séparer les noms des sous\-menus. Par exemple\ : 
-"Apps/Editors" ou "Games/Action".
+"Applications/Editors" ou "Games/Action".
 .PP
  \fIApplications\fP
    \fIAccessibility\fP
@@ -187,7 +187,7 @@ Si vous voulez spécifier une icône ou un raccourci clavier pour un sous\-menu
 (par exemple, le sous\-menu Editors), utilisez la même syntaxe, mais laisser 
 le champ command vide, comme ceci\ :
 
-?package(monpaquet):needs="X11" section="Apps" icon="icon.xpm" hotkey="E" title="Editors"
+?package(monpaquet):needs="X11" section="Applications" icon="icon.xpm" hotkey="E" title="Editors"
 
 .PP
 À chaque fois qu'un fichier de menus est modifié, vous devez exécuter 

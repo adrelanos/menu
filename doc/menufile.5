@@ -34,14 +34,14 @@ file with the same name as the file you want to override.
 .SH Examples
 Dosemu could install the following menu file as /usr/share/menu/dosemu:
 .PP                                                              
- ?package(dosemu):needs="text" section="Apps/Emulators" title="Dosemu" command="dosemu"
- ?package(dosemu):needs="x11" section="Apps/Emulators" title="Dosemu" command="xdos"
+ ?package(dosemu):needs="text" section="Applications/Emulators" title="Dosemu" command="dosemu"
+ ?package(dosemu):needs="X11" section="Applications/Emulators" title="Dosemu" command="xdos"
 .PP
 The system administrator wants to override this file to change how dosemu is
 run, so /etc/menu/dosemu is created:
 .PP
- ?package(dosemu):needs="text" section="Apps/Emulators" title="Dosemu" command="dosemu -A"
- ?package(dosemu):needs="x11"  section="Apps/Emulators" title="Dosemu" command="xdos -A"
+ ?package(dosemu):needs="text" section="Applications/Emulators" title="Dosemu" command="dosemu -A"
+ ?package(dosemu):needs="X11"  section="Applications/Emulators" title="Dosemu" command="xdos -A"
 .PP
 A user does not want Dosemu to appear in the menus at all, so the user creates
 an empty file named \fI~/.menu/dosemu\fP.
@@ -102,7 +102,7 @@ Debian Menu sub-policy document which is part of the Debian Policy package. The
 menu structure below is included only for convenience. Please do not put your
 packages into any other sections. 
 
-Use `/' to separate sub-menu names, for example, "Apps/Editors" or
+Use `/' to separate sub-menu names, for example, "Applications/Editors" or
 "Games/Arcade".
 .PP
  \fIApplications\fP
@@ -175,7 +175,7 @@ If you want to specify an icon or hotkey for a sub-menu (for example,
 the Editors sub-menu), just use the same syntax but leave the command
 empty:
 
-?package(mypackage):needs="X11" section="Apps" icon="icon.xpm" hotkey="E" title="Editors"
+?package(mypackage):needs="X11" section="Applications" icon="icon.xpm" hotkey="E" title="Editors"
 
 .PP
 Whenever any menu files are changed, you must run
