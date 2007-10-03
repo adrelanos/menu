@@ -94,7 +94,7 @@ bool executable(const string &s)
 /** Checks whether a package is installed */
 bool is_pkg_installed(const string& filename)
 {
-  if (contains(filename, "local."))
+  if (config.no_dpkg_check || contains(filename, "local."))
     return true;
   else
     return installed_packages.find(filename) != installed_packages.end();
@@ -861,6 +861,7 @@ void usage(ostream &c)
   "  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to search.\n"
   "  --menumethod=<method>  Run only the menu method <method>.\n"
   "  --nodefaultdirs        Disable the use of all the standard menu directories.\n"
+  "  --nodpkgcheck          Do not check if packages are installed.\n"
   "  --remove               Remove generated menus instead.\n"
   "  --stdout               Output menu list in format suitable for piping to\n"
   "                         install-menu.\n"
@@ -874,6 +875,7 @@ struct option long_options[] = {
   { "menufilesdir", required_argument, NULL, 'f'},
   { "menumethod", required_argument, NULL, 'm'},
   { "nodefaultdirs", no_argument, NULL, 'n'},
+  { "nodpkgcheck", no_argument, NULL, 'c'},
   { "stdout", no_argument, NULL, 's'},
   { "version", no_argument, NULL, 'V'},
   { "remove", no_argument, NULL, 'r'},
@@ -892,6 +894,9 @@ void parse_params(int argc, char **argv)
     {
     case 'v':
         config.set_verbosity(configinfo::report_verbose);
+      break;
+    case 'c':
+      config.no_dpkg_check = true;
       break;
     case 'd':
         config.set_verbosity(configinfo::report_verbose);

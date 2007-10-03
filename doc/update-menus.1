@@ -44,8 +44,11 @@ Adds directory <dir> to the list of directories to search for menu files in.
 Process only the menu method <method> instead of all the menu methods found.
 .IP "--nodefaultdirs"
 Disables the search of menu entries in system menu directories.
+.IP "--nodpkgcheck"
+Do not discard menu entries for packages that are not installed according to
+\fIdpkg\fP.
 .IP "--remove"
-Remove the menus by calling the menu-methods with --remove.
+Remove the menus by calling the menu-methods with \fB--remove\fP.
 .IP "--stdout" 
 Output the menu list in a format suitable as input for \fIinstall-menu\fP or a
 menu method file.

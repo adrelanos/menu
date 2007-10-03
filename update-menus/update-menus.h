@@ -125,6 +125,7 @@ public:
   std::string menumethod;
   bool usedefaultmenufilesdirs;
   bool onlyoutput_to_stdout;
+  bool no_dpkg_check;
   bool remove_menu;
 
 
