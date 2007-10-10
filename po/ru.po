@@ -1,22 +1,22 @@
-# translation of menu_ru.po to Russian
+# translation of ru.po to Russian
 # Russian translation of menu.
 # Copyright (C) 2004 Debian menu team
 # This file is distributed under the same license as the menu package.
 #
 # Dan Korostelev <dan@ats.energo.ru>, 2004.
-# Yuri Kozlov <kozlov.y@gmail.com>, 2004, 2006.
+# Yuri Kozlov <kozlov.y@gmail.com>, 2004, 2006, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: menu 2.1.30\n"
+"Project-Id-Version: menu 2.1.37\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2007-10-05 07:30+0200\n"
-"PO-Revision-Date: 2006-09-10 15:37+0400\n"
+"PO-Revision-Date: 2007-10-10 21:13+0400\n"
 "Last-Translator: Yuri Kozlov <kozlov.y@gmail.com>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.2\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
@@ -341,24 +341,6 @@ msgstr "Dpkg не блокирует область статистики, хор
 
 #. This is the update-menus --help message
 #: ../update-menus/update-menus.cc:855
-#, fuzzy
-#| msgid ""
-#| "Usage: update-menus [options] \n"
-#| "Gather packages data from the menu database and generate menus for\n"
-#| "all programs providing menu-methods, usually window-managers.\n"
-#| "  -d                     Output debugging messages.\n"
-#| "  -v                     Be verbose about what is going on.\n"
-#| "  -h, --help             This message.\n"
-#| "  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to "
-#| "search.\n"
-#| "  --menumethod=<method>  Run only the menu method <method>.\n"
-#| "  --nodefaultdirs        Disable the use of all the standard menu "
-#| "directories.\n"
-#| "  --remove               Remove generated menus instead.\n"
-#| "  --stdout               Output menu list in format suitable for piping "
-#| "to\n"
-#| "                         install-menu.\n"
-#| "  --version              Output version information and exit.\n"
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -378,20 +360,20 @@ msgid ""
 "  --version              Output version information and exit.\n"
 msgstr ""
 "Использование: update-menus [опции] \n"
-"Собирает данные пакетов из базы данных меню и генерирует меню для\n"
+"Собирает данные о пакетах из базы данных меню и генерирует меню для\n"
 "всех программ, которые предоставляют методы-меню, обычно это менеджеры "
 "окон.\n"
-"    -d                   Выводить сообщения отладки.\n"
-"    -v                   Подробно сообщать что происходит при работе.\n"
-"    -h, --help           Это сообщение.\n"
-"    --menufilesdir=<кат> Добавить <кат> в список поиска каталогов меню.\n"
-"    --menumethod=<метод> Выполнить только указанный <метод> меню.\n"
-"    --nodefaultdirs      Не использовать стандартные каталоги меню.\n"
-"    --remove             Удалять, а не создавать меню.\n"
-"    --stdout             Вывод списка меню в формате, пригодном для "
-"передачи\n"
-"                         по каналу в install-menu.\n"
-"    --version            Показать версию и закончить работу.\n"
+"  -d                   Выводить сообщения отладки.\n"
+"  -v                   Подробно сообщать что происходит при работе.\n"
+"  -h, --help           Это сообщение.\n"
+"  --menufilesdir=<кат> Добавить <кат> в список поиска каталогов меню.\n"
+"  --menumethod=<метод> Выполнить только указанный <метод> меню.\n"
+"  --nodefaultdirs      Не использовать стандартные каталоги меню.\n"
+"  --nodpkgcheck        Не проверять, установлены ли пакеты.\n"
+"  --remove             Удалять, а не создавать меню.\n"
+"  --stdout             Вывод списка меню в формате, пригодном для передачи\n"
+"                       по каналу в install-menu.\n"
+"  --version            Показать версию и закончить работу.\n"
 
 #: ../update-menus/update-menus.h:151
 msgid ""

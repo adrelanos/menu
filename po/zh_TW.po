@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: menu\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2007-10-05 07:30+0200\n"
-"PO-Revision-Date: 2005-02-18 11:47+0800\n"
+"PO-Revision-Date: 2007-10-11 00:09+0800\n"
 "Last-Translator: Kanru Chen <koster@debian.org.tw>\n"
 "Language-Team: Chinese/Traditional <zh-l10n@linux.org.tw>\n"
 "MIME-Version: 1.0\n"
@@ -92,7 +92,6 @@ msgstr "警告：字串 %1 不存在於樣板檔案 %2 中\n"
 
 #. Don't translate quoted string
 #: ../install-menu/install-menu.cc:896
-#, fuzzy
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
@@ -107,6 +106,7 @@ msgstr ""
 "  並且用指定的 menu-method 產生選單檔案。\n"
 "  install-menu 的選項：\n"
 "     -h --help    ：本訊息\n"
+"        --remove  : 移除選單而不是產生選單。\n"
 "     -v --verbose ：詳細輸出\n"
 
 #: ../install-menu/install-menu.cc:943
@@ -119,7 +119,7 @@ msgstr "無法開啟文稿 %1 以讀取。\n"
 
 #: ../install-menu/install-menu.cc:979
 msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
-msgstr ""
+msgstr "警告：文稿 %1 沒有提供 removemenu，選單沒有被刪除\n"
 
 #: ../install-menu/install-menu.cc:1014
 msgid "Running: \"%1\"\n"
@@ -225,6 +225,8 @@ msgid ""
 "file %1 line %2:\n"
 "Discarding entry requiring missing package %3."
 msgstr ""
+"檔案 %1 的第 %2 行：\n"
+"放棄，需要缺少的套件 %3。"
 
 #. Translation here and below refer to the file
 #. /etc/menu-methods/translate_menus that allow to rename and reorganize
@@ -260,9 +262,8 @@ msgid "%1 menu entries found (%2 total)."
 msgstr "找到 %1 個選單項目(總共 %2 個)。"
 
 #: ../update-menus/update-menus.cc:595
-#, fuzzy
 msgid "Running method: %1 --remove"
-msgstr "執行方法：%1"
+msgstr "執行方法：%1 --remove"
 
 #: ../update-menus/update-menus.cc:607 ../update-menus/update-menus.cc:669
 #: ../update-menus/update-menus.cc:990
@@ -327,7 +328,6 @@ msgstr "Dpkg 沒有鎖定 dpkg 狀態區，很好。"
 
 #. This is the update-menus --help message
 #: ../update-menus/update-menus.cc:855
-#, fuzzy
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -355,8 +355,11 @@ msgstr ""
 "  --menufilesdir=<dir>   加入 <dir> 到要搜尋的選單目錄清單中。\n"
 "  --menumethod=<method>  僅執行選單方法 <method>。\n"
 "  --nodefaultdirs        停用所有的標準選單目錄。\n"
+"  --nodpkgcheck          不要檢查套件是否已安裝。\n"
+"  --remove               移除所有產生的選單。\n"
 "  --stdout               以適合透過管道傳送到 install-menu 的方式輸出選單清"
 "單。\n"
+"  --version              輸出版本訊息然後離開。\n"
 
 #: ../update-menus/update-menus.h:151
 msgid ""
