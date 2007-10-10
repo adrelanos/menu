@@ -1,6 +1,9 @@
 menu (2.1.37) unstable; urgency=low
 
   * the "unreleased" release.
+  * Handling of l10n by Christian Perrier:
+    + programs translations:
+      - Dutch updated by Tim Dijkstra. Closes: #446009
 
  -- Bill Allombert <ballombe@debian.org>  Wed, 03 Oct 2007 12:46:47 +0200
 

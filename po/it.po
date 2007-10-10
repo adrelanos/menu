@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: menu 2.1.9-3\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
-"POT-Creation-Date: 2006-09-08 23:25+0200\n"
+"POT-Creation-Date: 2007-10-05 07:30+0200\n"
 "PO-Revision-Date: 2004-07-03 23:16+0200\n"
 "Last-Translator: Stefano Canepa <sc@linux.it>\n"
 "Language-Team: Italian <tp@list.linux.it>\n"
@@ -178,16 +178,16 @@ msgstr ""
 msgid "%1: missing required tag: \"%2\""
 msgstr "%1: manca del tag necessario: \"%2\""
 
-#: ../update-menus/parsestream.cc:49
+#: ../update-menus/parsestream.cc:50
 msgid "(probably) stdin"
 msgstr "(probabilmente) stdin"
 
-#: ../update-menus/parsestream.cc:449
+#: ../update-menus/parsestream.cc:450
 msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
 msgstr ""
 "Nel file \"%1\", alla (o nella definizione che finisce alla) linea %2:\n"
 
-#: ../update-menus/parsestream.cc:470
+#: ../update-menus/parsestream.cc:471
 msgid "Somewhere in input file:\n"
 msgstr "Da qualche parte nel file di input:\n"
 
@@ -231,7 +231,7 @@ msgstr ""
 "replacewith($string, $replace, $with): $replace e $with devono avere la "
 "stessa lunghezza."
 
-#: ../update-menus/update-menus.cc:149
+#: ../update-menus/update-menus.cc:150
 msgid ""
 "file %1 line %2:\n"
 "Discarding entry requiring missing package %3."
@@ -242,86 +242,86 @@ msgstr ""
 #. menu entries automatically. It does not refer to the localisation
 #. (translation to other languages).
 #.
-#: ../update-menus/update-menus.cc:363
+#: ../update-menus/update-menus.cc:364
 msgid "Reading translation rules in %1."
 msgstr "Lettura delle regole di traduzione in %1 in corso."
 
-#: ../update-menus/update-menus.cc:443
+#: ../update-menus/update-menus.cc:444
 msgid "Reading installed packages list..."
 msgstr "Lettura dei pacchetti installati in corso"
 
-#: ../update-menus/update-menus.cc:492
+#: ../update-menus/update-menus.cc:493
 msgid "Execution of %1 generated no output or returned an error.\n"
 msgstr ""
 "L'esecuzione di %1 non ha generato output oppure ha restituito un errore.\n"
 
-#: ../update-menus/update-menus.cc:533 ../update-menus/update-menus.cc:537
+#: ../update-menus/update-menus.cc:534 ../update-menus/update-menus.cc:538
 msgid "Skipping file because of errors...\n"
 msgstr "Si sta saltando il file a causa di errori\n"
 
-#: ../update-menus/update-menus.cc:554
+#: ../update-menus/update-menus.cc:555
 msgid "Reading menu-entry files in %1."
 msgstr "Lettura dei file menu-entru in %1 in corso."
 
-#: ../update-menus/update-menus.cc:577
+#: ../update-menus/update-menus.cc:578
 msgid "Error reading %1.\n"
 msgstr "Errore leggendo %1.\n"
 
-#: ../update-menus/update-menus.cc:583
+#: ../update-menus/update-menus.cc:584
 msgid "%1 menu entries found (%2 total)."
 msgstr "%1 voce menu trovate (%2 totale)."
 
-#: ../update-menus/update-menus.cc:594
+#: ../update-menus/update-menus.cc:595
 #, fuzzy
 msgid "Running method: %1 --remove"
 msgstr "Metodo %1 in esecuzione"
 
-#: ../update-menus/update-menus.cc:606 ../update-menus/update-menus.cc:668
-#: ../update-menus/update-menus.cc:1007
+#: ../update-menus/update-menus.cc:607 ../update-menus/update-menus.cc:669
+#: ../update-menus/update-menus.cc:990
 msgid "Script %1 could not be executed."
 msgstr "Impossibile eseguire lo script %1."
 
-#: ../update-menus/update-menus.cc:609 ../update-menus/update-menus.cc:671
+#: ../update-menus/update-menus.cc:610 ../update-menus/update-menus.cc:672
 msgid "Script %1 returned error status %2."
 msgstr "Lo script %1 ha restituito l'errore %2."
 
-#: ../update-menus/update-menus.cc:612 ../update-menus/update-menus.cc:674
+#: ../update-menus/update-menus.cc:613 ../update-menus/update-menus.cc:675
 msgid "Script %1 received signal %2."
 msgstr "Lo script %1 ha ricevuto l'errore %2."
 
-#: ../update-menus/update-menus.cc:629
+#: ../update-menus/update-menus.cc:630
 msgid "Running method: %1"
 msgstr "Metodo %1 in esecuzione"
 
-#: ../update-menus/update-menus.cc:632
+#: ../update-menus/update-menus.cc:633
 msgid "Cannot create pipe."
 msgstr "Impossibile creare la pipe."
 
-#: ../update-menus/update-menus.cc:684
+#: ../update-menus/update-menus.cc:685
 msgid "Running menu-methods in %1."
 msgstr "Esecuzione di menu-methods in %1 in corso."
 
-#: ../update-menus/update-menus.cc:716
+#: ../update-menus/update-menus.cc:717
 msgid "Other update-menus processes are already locking %1, quitting."
 msgstr "Altri processi update-menu hanno già bloccato %1, il processo uscirà."
 
-#: ../update-menus/update-menus.cc:719
+#: ../update-menus/update-menus.cc:720
 msgid "Cannot lock %1: %2 - Aborting."
 msgstr "Impossibile bloccare %1: %2 - Interruzione in corso."
 
-#: ../update-menus/update-menus.cc:729
+#: ../update-menus/update-menus.cc:730
 msgid "Cannot write to lockfile %1 - Aborting."
 msgstr "Impossibile scrivere il file di blocco %1 - Interruzione in corso."
 
-#: ../update-menus/update-menus.cc:742
+#: ../update-menus/update-menus.cc:743
 msgid "Cannot remove lockfile %1."
 msgstr "Impossibile rimuovere il file di blocco %1"
 
-#: ../update-menus/update-menus.cc:758
+#: ../update-menus/update-menus.cc:759
 msgid "Update-menus is run by user."
 msgstr "Update-menus è eseguito da un utente."
 
-#: ../update-menus/update-menus.cc:842
+#: ../update-menus/update-menus.cc:813
 msgid ""
 "Waiting for dpkg to finish (forking to background).\n"
 "(checking %1)"
@@ -329,16 +329,16 @@ msgstr ""
 "In attesa che dpkg finisca (fork in background).\n"
 "(controllo %1)"
 
-#: ../update-menus/update-menus.cc:845
+#: ../update-menus/update-menus.cc:816
 msgid "Further output (if any) will appear in %1."
 msgstr "Maggiore output (se disponibile) apparirà in %1."
 
-#: ../update-menus/update-menus.cc:867
+#: ../update-menus/update-menus.cc:845
 msgid "Dpkg is not locking dpkg status area, good."
 msgstr "Dpkg non sta bloccando l'are di stato di dpkg, buono."
 
 #. This is the update-menus --help message
-#: ../update-menus/update-menus.cc:877
+#: ../update-menus/update-menus.cc:855
 #, fuzzy
 msgid ""
 "Usage: update-menus [options] \n"
@@ -352,6 +352,7 @@ msgid ""
 "  --menumethod=<method>  Run only the menu method <method>.\n"
 "  --nodefaultdirs        Disable the use of all the standard menu "
 "directories.\n"
+"  --nodpkgcheck          Do not check if packages are installed.\n"
 "  --remove               Remove generated menus instead.\n"
 "  --stdout               Output menu list in format suitable for piping to\n"
 "                         install-menu.\n"
@@ -372,7 +373,7 @@ msgstr ""
 "  --stdout               Stampa la lista dei menu in un formato ottimale per "
 "il pipe a install-menu.\n"
 
-#: ../update-menus/update-menus.h:150
+#: ../update-menus/update-menus.h:151
 msgid ""
 "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
 msgstr ""
