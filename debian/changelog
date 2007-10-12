@@ -6,6 +6,7 @@ menu (2.1.37) unstable; urgency=low
       - Dutch updated by Tim Dijkstra. Closes: #446009
       - Traditional Chinese updated by Kanru Chen. Closes: #446125
       - Russian updated by Yuri Kozlov. Closes: #446136
+      - Spanish updated by Javier Fernández-Sanguino Peña. Closes: #446309
 
  -- Bill Allombert <ballombe@debian.org>  Wed, 03 Oct 2007 12:46:47 +0200
 
