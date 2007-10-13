@@ -7,6 +7,8 @@ menu (2.1.37) unstable; urgency=low
       - Traditional Chinese updated by Kanru Chen. Closes: #446125
       - Russian updated by Yuri Kozlov. Closes: #446136
       - Spanish updated by Javier Fernández-Sanguino Peña. Closes: #446309
+      - Finnish updated by Tommi Vainikainen. Closes: #445927
+      - Spanish updated by Jacobo Tarrio. Closes: #446481
 
  -- Bill Allombert <ballombe@debian.org>  Wed, 03 Oct 2007 12:46:47 +0200
 

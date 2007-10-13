@@ -1,16 +1,16 @@
 # Galician translation of menu
 # Copyright (C) 2005 Debian menu team
 # This file is distributed under the same license as the menu package.
-# Jacobo Tarrío <jtarrio@debian.org>, 2005.
+# Jacobo Tarrío <jtarrio@debian.org>, 2005, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: menu\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2007-10-05 07:30+0200\n"
-"PO-Revision-Date: 2005-02-18 00:21+0100\n"
+"PO-Revision-Date: 2007-10-13 12:43+0100\n"
 "Last-Translator: Jacobo Tarrío <jtarrio@debian.org>\n"
-"Language-Team: Galician <trasno@ceu.fi.udc.es>\n"
+"Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -96,7 +96,6 @@ msgstr "Aviso: a cadea %1 non aparece no ficheiro de patróns %2\n"
 
 #. Don't translate quoted string
 #: ../install-menu/install-menu.cc:896
-#, fuzzy
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
@@ -109,8 +108,9 @@ msgstr ""
 "install-menu [-vh] <método>\n"
 "  Le as entradas do menú da entrada estándar no formato de \"update-menus\n"
 "  --stdout\" e xera ficheiros de menú empregando o método indicado.\n"
-"  As opcións de install-menu son:\n"
+"  Opcións de install-menu:\n"
 "     -h --help    : esta mensaxe\n"
+"        --remove  : eliminar o menú no canto de o xerar.\n"
 "     -v --verbose : ser moi descritivo\n"
 
 #: ../install-menu/install-menu.cc:943
@@ -123,7 +123,7 @@ msgstr "Non se pode abrir o guión %1 para lectura.\n"
 
 #: ../install-menu/install-menu.cc:979
 msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
-msgstr ""
+msgstr "Aviso: o script %1 non fornece removemenu, non se eliminou o menú\n"
 
 #: ../install-menu/install-menu.cc:1014
 msgid "Running: \"%1\"\n"
@@ -230,6 +230,8 @@ msgid ""
 "file %1 line %2:\n"
 "Discarding entry requiring missing package %3."
 msgstr ""
+"ficheiro %1 liña %2:\n"
+"A descargar a entrada que precisa do paquete que falla %3."
 
 #. Translation here and below refer to the file
 #. /etc/menu-methods/translate_menus that allow to rename and reorganize
@@ -265,9 +267,8 @@ msgid "%1 menu entries found (%2 total)."
 msgstr "Atopáronse %1 entradas de menú (%2 en total)."
 
 #: ../update-menus/update-menus.cc:595
-#, fuzzy
 msgid "Running method: %1 --remove"
-msgstr "A executar o método: %1"
+msgstr "A executar o método: %1 --remove"
 
 #: ../update-menus/update-menus.cc:607 ../update-menus/update-menus.cc:669
 #: ../update-menus/update-menus.cc:990
@@ -332,7 +333,6 @@ msgstr "Dpkg non bloquea a área de estado de dpkg; iso é bo."
 
 #. This is the update-menus --help message
 #: ../update-menus/update-menus.cc:855
-#, fuzzy
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -363,8 +363,11 @@ msgstr ""
 "buscar.\n"
 "  --menumethod=<método>  Executa só o método <método>.\n"
 "  --nodefaultdirs        Non emprega os directorios estándar de menús.\n"
+"  --nodpkgcheck          Non comproba se os paquetes están instalados.\n"
+"  --remove               Elimina os menús xerados.\n"
 "  --stdout               Produce a lista de menús nun formato axeitado para\n"
 "                         pasar a install-menu.\n"
+"  --version              Amosa información sobre a versión e sae.\n"
 
 #: ../update-menus/update-menus.h:151
 msgid ""

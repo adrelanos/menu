@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: menu\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2007-10-05 07:30+0200\n"
-"PO-Revision-Date: 2004-09-23 10:37+0300\n"
+"PO-Revision-Date: 2007-10-12 23:58+0300\n"
 "Last-Translator: Tommi Vainikainen <thv+debian@iki.fi>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -29,11 +29,11 @@ msgstr "install-menu: luodaan hakemisto %1:\n"
 
 #: ../install-menu/install-menu.cc:217
 msgid "Could not create directory(%1): %2"
-msgstr "Hakemistoa(%1) ei voi luoda: %2"
+msgstr "Hakemistoa(%1) ei voitu luoda: %2"
 
 #: ../install-menu/install-menu.cc:219
 msgid "Could not change directory(%1): %2"
-msgstr "Hakemistoa(%1) ei voi vaihtaa: %2"
+msgstr "Hakemistoa(%1) ei voitu vaihtaa: %2"
 
 #: ../install-menu/install-menu.cc:222
 msgid "install-menu: directory %1 already exists\n"
@@ -70,16 +70,16 @@ msgstr ""
 
 #: ../install-menu/install-menu.cc:657
 msgid "install-menu: %1 must be defined in menu-method %2"
-msgstr "install-menu: %1 täytyy määrittää valikkotavassa %2"
+msgstr "install-menu: %1 täytyy olla määritelty valikkotavassa %2"
 
 #: ../install-menu/install-menu.cc:824
 msgid "Cannot open file %1 (also tried %2).\n"
-msgstr "Tiedostoa %1 ei voi avata (myös tiedostoa %2 yritettiin).\n"
+msgstr "Tiedostoa %1 ei voitu avata (myös tiedostoa %2 yritettiin).\n"
 
 #: ../install-menu/install-menu.cc:832 ../install-menu/install-menu.cc:839
 #: ../install-menu/install-menu.cc:847
 msgid "Cannot open file %1.\n"
-msgstr "Tiedostoa %1 ei voi avata.\n"
+msgstr "Tiedostoa %1 ei voitu avata.\n"
 
 #: ../install-menu/install-menu.cc:849
 msgid ""
@@ -97,7 +97,6 @@ msgstr "Varoitus: merkkijonoa %1 ei löydy mallitiedostosta %2\n"
 
 #. Don't translate quoted string
 #: ../install-menu/install-menu.cc:896
-#, fuzzy
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
@@ -112,19 +111,22 @@ msgstr ""
 "  ja luo valikkotiedostot määriteltyä valikkotapaa käyttäen.\n"
 "  install-menun valitsimet:\n"
 "     -h --help    : tämä viesti\n"
-"     -v --verbose : toimii monisanaisesti\n"
+"        --remove  : poista valikko luomisen sijaan\n"
+"     -v --verbose : yksityiskohtaisempi tuloste\n"
 
 #: ../install-menu/install-menu.cc:943
 msgid "install-menu: no menu-method script specified!"
-msgstr "install-menu: valikkotapa-skriptiä ei määritelty !"
+msgstr "install-menu: valikkotapa-komentotiedostoa ei määritelty !"
 
 #: ../install-menu/install-menu.cc:956
 msgid "Cannot open script %1 for reading.\n"
-msgstr "Skriptiä %1 ei aukea luettavaksi.\n"
+msgstr "Komentotiedostoa %1 ei saada luettua.\n"
 
 #: ../install-menu/install-menu.cc:979
 msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
 msgstr ""
+"Varoitus: komentotiedosto %1 ei tarjoa poistovaihtoehtoa, valikkoa ei "
+"poisteta\n"
 
 #: ../install-menu/install-menu.cc:1014
 msgid "Running: \"%1\"\n"
@@ -164,12 +166,13 @@ msgstr "Tuntematon virhe, viesti=%1"
 
 #: ../update-menus/exceptions.h:64
 msgid "Unable to open file \"%1\"."
-msgstr "Tiedosto \"%1\" ei aukea."
+msgstr "Tiedostoa \"%1\" ei voitu avata."
 
 #: ../update-menus/exceptions.h:73
 msgid "Failed to pipe data through \"%1\" (pipe opened for reading)."
 msgstr ""
-"Tiedon putkittaminen läpi \"%1\" epäonnistui (putki avattu luettavaksi)."
+"Tiedon putkittaminen ohjelman \"%1\" läpi epäonnistui (putki avattu "
+"luettavaksi)."
 
 #: ../update-menus/exceptions.h:89
 msgid "%1: missing required tag: \"%2\""
@@ -198,7 +201,7 @@ msgstr "Odottamaton rivin loppu."
 
 #: ../update-menus/parsestream.h:136
 msgid "Identifier expected."
-msgstr "Tunnistetta odotettiin."
+msgstr "Odotettiin tunnistetta."
 
 #: ../update-menus/parsestream.h:144
 msgid "Expected: \"%1\""
@@ -213,7 +216,7 @@ msgid ""
 "Boolean (either true or false) expected.\n"
 "Found: \"%1\""
 msgstr ""
-"Totuusarvoa (joko tosi tai epätosi) odotettiin.\n"
+"Odotettiin totuusarvoa (joko tosi tai epätosi).\n"
 "Löytyi: \"%1\""
 
 #: ../update-menus/parsestream.h:172
@@ -233,6 +236,8 @@ msgid ""
 "file %1 line %2:\n"
 "Discarding entry requiring missing package %3."
 msgstr ""
+"tiedosto %1 rivi %2:\n"
+"Hylätään syöte, joka vaatii puuttuvan paketin %3."
 
 #. Translation here and below refer to the file
 #. /etc/menu-methods/translate_menus that allow to rename and reorganize
@@ -250,8 +255,7 @@ msgstr "Luetaan asennettujen pakettien luetteloa..."
 #: ../update-menus/update-menus.cc:493
 msgid "Execution of %1 generated no output or returned an error.\n"
 msgstr ""
-"Ohjelmaa %1 yritettiin suorittaa, mutta se ei joko tulostanut mitään tai "
-"keskeytyi virheeseen.\n"
+"Ohjelman %1 suoritus ei tuottanut tulostetta tai keskeytyi virheeseen.\n"
 
 #: ../update-menus/update-menus.cc:534 ../update-menus/update-menus.cc:538
 msgid "Skipping file because of errors...\n"
@@ -267,25 +271,24 @@ msgstr "Virhe luettaessa tiedostoa %1.\n"
 
 #: ../update-menus/update-menus.cc:584
 msgid "%1 menu entries found (%2 total)."
-msgstr "%1 valikkomerkintää löytyi (yhteensä %2)."
+msgstr "Löytyi %1 valikkomerkintää (yhteensä %2)."
 
 #: ../update-menus/update-menus.cc:595
-#, fuzzy
 msgid "Running method: %1 --remove"
-msgstr "Suoritustapa: %1"
+msgstr "Suoritustapa: %1 --remove"
 
 #: ../update-menus/update-menus.cc:607 ../update-menus/update-menus.cc:669
 #: ../update-menus/update-menus.cc:990
 msgid "Script %1 could not be executed."
-msgstr "Skriptiä %1 ei voi suorittaa."
+msgstr "Komentotiedostoa %1 ei voitu suorittaa."
 
 #: ../update-menus/update-menus.cc:610 ../update-menus/update-menus.cc:672
 msgid "Script %1 returned error status %2."
-msgstr "Skripti %1 palautta virhetilan %2."
+msgstr "Komentotiedosto %1 palautti virhekoodin %2."
 
 #: ../update-menus/update-menus.cc:613 ../update-menus/update-menus.cc:675
 msgid "Script %1 received signal %2."
-msgstr "Skripti %1 sai signaalin %2."
+msgstr "Komentotiedosto %1 sai signaalin %2."
 
 #: ../update-menus/update-menus.cc:630
 msgid "Running method: %1"
@@ -302,19 +305,19 @@ msgstr "Suoritetaan valikkotavat hakemistosta %1."
 #: ../update-menus/update-menus.cc:717
 msgid "Other update-menus processes are already locking %1, quitting."
 msgstr ""
-"Toiset update-menus-prosessit ovat jo lukinneet tiedoston %1, lopetaan. "
+"Toiset update-menus-prosessit ovat jo lukinneet tiedoston %1, lopetetaan."
 
 #: ../update-menus/update-menus.cc:720
 msgid "Cannot lock %1: %2 - Aborting."
-msgstr "Ei voi lukita %1: %2 - Keskeytetään."
+msgstr "Ei voitu lukita %1: %2 - Keskeytetään."
 
 #: ../update-menus/update-menus.cc:730
 msgid "Cannot write to lockfile %1 - Aborting."
-msgstr "Ei voi kirjoittaa lukkotiedostoa %1 - Keskeytetään."
+msgstr "Ei voitu kirjoittaa lukkotiedostoa %1 - Keskeytetään."
 
 #: ../update-menus/update-menus.cc:743
 msgid "Cannot remove lockfile %1."
-msgstr "Lukkotiedostoa %1 ei voi poistaa."
+msgstr "Lukkotiedostoa %1 ei voitu poistaa."
 
 #: ../update-menus/update-menus.cc:759
 msgid "Update-menus is run by user."
@@ -338,7 +341,6 @@ msgstr "Dpkg ei lukitse dpkg-tilannealaa, hyvä."
 
 #. This is the update-menus --help message
 #: ../update-menus/update-menus.cc:855
-#, fuzzy
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -361,22 +363,22 @@ msgstr ""
 "Kerää pakettitiedot valikkotietokannasta ja luo valikot kaikille\n"
 "valikkotavan tarjoaville ohjelmille eli yleensä ikkunointiohjelmille.\n"
 "  -d                   Tulosta vianetsintäviestit.\n"
-"  -v                   Tekemisiä ilmaistaan monisanaisesti.\n"
+"  -v                   Tulosta tekemiset yksityiskohtaisesti.\n"
 "  -h, --help           Tämä viesti.\n"
 "  --menufilesdir=<hak> Lisää <hak> etsittävien valikkohakemistojen "
 "luetteloon.\n"
 "  --menumethod=<tapa>  Suorita vain valikkotapa <tapa>.\n"
 "  --nodefaultdirs      Kaikki standardit valikkohakemistot poistetaan "
 "käytöstä.\n"
+"  --nodpkgcheck        Älä tarkasta onko paketit asennettu.\n"
+"  --remove             Poista luodut valikot.\n"
 "  --stdout             Tulosta valikkoluettelo install-menulle "
 "putkittamiseen\n"
 "                       soveltuvassa muodossa.\n"
+"  --version            Tulosta versiotiedot ja poistu.\n"
 
 #: ../update-menus/update-menus.h:151
 msgid ""
 "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
 msgstr ""
 "Tuntematon asennusehto \"%1\" (tällä hetkellä vain \"package\" on tuettu)."
-
-#~ msgid "  --version              Output version information and exit.\n"
-#~ msgstr "  --version            Tulosta versio ja poistu.\n"
