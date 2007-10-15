@@ -9,8 +9,14 @@ menu (2.1.37) unstable; urgency=low
       - Spanish updated by Javier Fernández-Sanguino Peña. Closes: #446309
       - Finnish updated by Tommi Vainikainen. Closes: #445927
       - Spanish updated by Jacobo Tarrio. Closes: #446481
+      - Czech updated by Miroslav Kure. Closes: #446677
+      - Dutch updated by Tim Dijkstra. Closes: #446009
     + Menu sections translations:
       - Belarusian updated by Pavel Piatruk. Closes: #446557
+      - Czech updated by Miroslav Kure. Closes: #446677
+      - Galician updated by Jacobo Tarrio. Closes: #446616
+    + su-to-root translations:
+      - Czech updated by Miroslav Kure. Closes: #446677
 
  -- Bill Allombert <ballombe@debian.org>  Wed, 03 Oct 2007 12:46:47 +0200
 

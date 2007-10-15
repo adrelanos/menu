@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: menu 2.1.30\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2007-10-05 07:30+0200\n"
-"PO-Revision-Date: 2006-09-16 19:22+0200\n"
+"PO-Revision-Date: 2007-10-14 15:21+0200\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgstr "install-menu: [supported]: jméno=%1\n"
 
 #: ../install-menu/install-menu.cc:464
 msgid "Menu entry lacks mandatory field \"%1\".\n"
-msgstr "Položce menu chybí povinné pole \"%1\".\n"
+msgstr "Položce menu chybí povinné pole „%1“.\n"
 
 #: ../install-menu/install-menu.cc:470
 msgid "Unknown value for field %1=\"%2\".\n"
@@ -57,15 +57,14 @@ msgstr "Neznámá hodnota pole %1=\"%2\".\n"
 msgid ""
 "install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
 msgstr ""
-"install-menu: \"hotkeycase\" může být pouze \"sensitive\" nebo \"insensitive"
-"\"\n"
+"install-menu: „hotkeycase“ může být pouze „sensitive“ nebo „insensitive“\n"
 
 #: ../install-menu/install-menu.cc:647
 msgid ""
 "install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
 "Ignoring.\n"
 msgstr ""
-"install-menu: Varování: Neznámý identifikátor `%1' na řádku %2 v souboru %3. "
+"install-menu: Varování: Neznámý identifikátor „%1“ na řádku %2 v souboru %3. "
 "Ignoruji.\n"
 
 #: ../install-menu/install-menu.cc:657
@@ -127,7 +126,7 @@ msgstr "Varování: skript %1 neposkytuje removemenu, menu nebylo odstraněno\n"
 
 #: ../install-menu/install-menu.cc:1014
 msgid "Running: \"%1\"\n"
-msgstr "Spouštím: \"%1\"\n"
+msgstr "Spouštím: „%1“\n"
 
 #: ../install-menu/install-menu.cc:1030
 msgid "install-menu: %1: aborting\n"
@@ -139,19 +138,19 @@ msgstr "Neodpovídá počet argumentů funkce %1."
 
 #: ../install-menu/install-menu.h:207
 msgid "Unknown function: \"%1\""
-msgstr "Neznámá funkce: \"%1\""
+msgstr "Neznámá funkce: „%1“"
 
 #: ../install-menu/install-menu.h:216
 msgid "Indirectly used, but not defined function: \"%1\""
-msgstr "Nepřímo použitá, ale nedefinovaná funkce: \"%1\""
+msgstr "Nepřímo použitá, ale nedefinovaná funkce: „%1“"
 
 #: ../install-menu/install-menu.h:225
 msgid "Unknown identifier: \"%1\""
-msgstr "Neznámý identifikátor: \"%1\""
+msgstr "Neznámý identifikátor: „%1“"
 
 #: ../install-menu/install-menu.h:234
 msgid "Encoding conversion error: \"%1\""
-msgstr "Chyba při převodu kódování: \"%1\""
+msgstr "Chyba při převodu kódování: „%1“"
 
 #: ../update-menus/exceptions.h:43
 msgid "Unknown error."
@@ -163,15 +162,15 @@ msgstr "Neznámá chyba, zpráva=%1"
 
 #: ../update-menus/exceptions.h:64
 msgid "Unable to open file \"%1\"."
-msgstr "Nelze otevřít soubor \"%1\"."
+msgstr "Nelze otevřít soubor „%1“."
 
 #: ../update-menus/exceptions.h:73
 msgid "Failed to pipe data through \"%1\" (pipe opened for reading)."
-msgstr "Nemohu protlačit data přes \"%1\" (roura otevřena pro čtení)."
+msgstr "Nemohu protlačit data přes „%1“ (roura otevřena pro čtení)."
 
 #: ../update-menus/exceptions.h:89
 msgid "%1: missing required tag: \"%2\""
-msgstr "%1: chybí vyžadovaná značka: \"%2\""
+msgstr "%1: chybí vyžadovaná značka: „%2“"
 
 #: ../update-menus/parsestream.cc:50
 msgid "(probably) stdin"
@@ -179,7 +178,7 @@ msgstr "(pravděpodobně) stdin"
 
 #: ../update-menus/parsestream.cc:450
 msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
-msgstr "V souboru \"%1\" na řádku %2 (nebo v definici, která zde končí):\n"
+msgstr "V souboru „%1“ na řádku %2 (nebo v definici, která zde končí):\n"
 
 #: ../update-menus/parsestream.cc:471
 msgid "Somewhere in input file:\n"
@@ -199,11 +198,11 @@ msgstr "Očekáván identifikátor."
 
 #: ../update-menus/parsestream.h:144
 msgid "Expected: \"%1\""
-msgstr "Očekáván: \"%1\""
+msgstr "Očekáván: „%1“"
 
 #: ../update-menus/parsestream.h:153
 msgid "Unexpected character: \"%1\""
-msgstr "Neočekávaný znak: \"%1\""
+msgstr "Neočekávaný znak: „%1“"
 
 #: ../update-menus/parsestream.h:162
 msgid ""
@@ -211,11 +210,11 @@ msgid ""
 "Found: \"%1\""
 msgstr ""
 "Očekávána pravdivostní hodnota (pravda nebo nepravda).\n"
-"Nalezeno: \"%1\""
+"Nalezeno: „%1“"
 
 #: ../update-menus/parsestream.h:172
 msgid "Unknown compat mode: \"%1\""
-msgstr "Neznámý režim: \"%1\""
+msgstr "Neznámý režim: „%1“"
 
 #: ../update-menus/stringtoolbox.cc:85
 msgid ""
@@ -333,24 +332,6 @@ msgstr "Dpkg nezamyká stavovou oblast dpkg, dobře."
 
 #. This is the update-menus --help message
 #: ../update-menus/update-menus.cc:855
-#, fuzzy
-#| msgid ""
-#| "Usage: update-menus [options] \n"
-#| "Gather packages data from the menu database and generate menus for\n"
-#| "all programs providing menu-methods, usually window-managers.\n"
-#| "  -d                     Output debugging messages.\n"
-#| "  -v                     Be verbose about what is going on.\n"
-#| "  -h, --help             This message.\n"
-#| "  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to "
-#| "search.\n"
-#| "  --menumethod=<method>  Run only the menu method <method>.\n"
-#| "  --nodefaultdirs        Disable the use of all the standard menu "
-#| "directories.\n"
-#| "  --remove               Remove generated menus instead.\n"
-#| "  --stdout               Output menu list in format suitable for piping "
-#| "to\n"
-#| "                         install-menu.\n"
-#| "  --version              Output version information and exit.\n"
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -378,6 +359,7 @@ msgstr ""
 "  --menufilesdir=<adr>   Přidá <adr> do seznamu adresářů pro prohledávání.\n"
 "  --menumethod=<metoda>  Spustí pouze metodu <metoda>.\n"
 "  --nodefaultdirs        Zakáže použití všech standardních adresářů.\n"
+"  --nodpkgcheck          Nekontroluje, zda jsou balíky nainstalovány.\n"
 "  --remove               Místo vytvoření menu smaže.\n"
 "  --stdout               Vypíše seznam menu ve formátu vhodném pro použití\n"
 "                         v programu install-menu.\n"
@@ -387,4 +369,4 @@ msgstr ""
 msgid ""
 "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
 msgstr ""
-"Neznámá instalační podmínka \"%1\" (nyní je podporována pouze \"package\")."
+"Neznámá instalační podmínka „%1“ (nyní je podporována pouze „package“)."
