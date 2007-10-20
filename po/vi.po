@@ -1,20 +1,20 @@
 # Vietnamese Translation for menu.
-# Copyright © 2006 Free Software Foundation, Inc.
-# Clytie Siddall <clytie@riverland.net.au>, 2005-2006.
+# Copyright © 2007 Free Software Foundation, Inc.
+# Clytie Siddall <clytie@riverland.net.au>, 2005-2007.
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: menu 2.1.10\n"
+"Project-Id-Version: menu 2.1.37\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2007-10-05 07:30+0200\n"
-"PO-Revision-Date: 2006-10-17 15:39+0930\n"
+"PO-Revision-Date: 2007-10-17 18:05+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: LocFactoryEditor 1.6fc1\n"
+"X-Generator: LocFactoryEditor 1.7b1\n"
 
 #: ../install-menu/functions.cc:92
 msgid "Zero-size argument to print function."
@@ -101,14 +101,6 @@ msgstr "Cảnh báo : chuỗi %1 không nằm trong tập tin mẫu %2\n"
 
 #. Don't translate quoted string
 #: ../install-menu/install-menu.cc:896
-#, fuzzy
-#| msgid ""
-#| "install-menu [-vh] <menu-method>\n"
-#| "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
-#| "  and generate menu files using the specified menu-method.\n"
-#| "  Options to install-menu:\n"
-#| "     -h --help    : this message\n"
-#| "     -v --verbose : be verbose\n"
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
@@ -129,6 +121,7 @@ msgstr ""
 " và tạo ra các tập tin trình đơn bằng phương pháp trình đơn đã ghi rõ.\n"
 "  Tùy chọn cho install-menu:\n"
 "     -h --help    \t: hiển thị _trợ giúp_ này\n"
+"        --remove\t: gỡ bỏ trình đơn thay vào tạo ra nó.\n"
 "     -v --verbose \t: xuất _chi tiết_\n"
 
 #: ../install-menu/install-menu.cc:943
@@ -142,6 +135,8 @@ msgstr "Không thể mở văn lệnh %1 để đọc.\n"
 #: ../install-menu/install-menu.cc:979
 msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
 msgstr ""
+"Cảnh báo : văn lệnh %1 không cung cấp chức năng removemenu nên không xoá "
+"trình đơn\n"
 
 #: ../install-menu/install-menu.cc:1014
 msgid "Running: \"%1\"\n"
@@ -249,6 +244,8 @@ msgid ""
 "file %1 line %2:\n"
 "Discarding entry requiring missing package %3."
 msgstr ""
+"tập tin %1 dòng %2:\n"
+"Đang hủy mục nhập yêu cầu gói bị thiếu %3."
 
 #. Translation here and below refer to the file
 #. /etc/menu-methods/translate_menus that allow to rename and reorganize
@@ -284,10 +281,8 @@ msgid "%1 menu entries found (%2 total)."
 msgstr "Tìm thấy %1 mục nhập trình đơn (tổng %2)."
 
 #: ../update-menus/update-menus.cc:595
-#, fuzzy
-#| msgid "Running method: %1"
 msgid "Running method: %1 --remove"
-msgstr "Đang chạy phương pháp: %1"
+msgstr "Đang chạy phương pháp: %1 --remove"
 
 #: ../update-menus/update-menus.cc:607 ../update-menus/update-menus.cc:669
 #: ../update-menus/update-menus.cc:990
@@ -355,22 +350,6 @@ msgstr "Trình dpkg không đang khoá vùng trạng thái dpkg: tốt."
 
 #. This is the update-menus --help message
 #: ../update-menus/update-menus.cc:855
-#, fuzzy
-#| msgid ""
-#| "Usage: update-menus [options] \n"
-#| "Gather packages data from the menu database and generate menus for\n"
-#| "all programs providing menu-methods, usually window-managers.\n"
-#| "  -d                     Output debugging messages.\n"
-#| "  -v                     Be verbose about what is going on.\n"
-#| "  -h, --help             This message.\n"
-#| "  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to "
-#| "search.\n"
-#| "  --menumethod=<method>  Run only the menu method <method>.\n"
-#| "  --nodefaultdirs        Disable the use of all the standard menu "
-#| "directories.\n"
-#| "  --stdout               Output menu list in format suitable for piping "
-#| "to\n"
-#| "                         install-menu.\n"
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -405,10 +384,11 @@ msgstr ""
 "  --menumethod=<phương_pháp>  Chạy chỉ phương pháp trình đơn này.\n"
 "  --nodefaultdirs         Tắt khả năng sử dụng mọi thư mục trình đơn chuẩn\n"
 "\t[không có thư mục mặc định]\n"
-"  --stdout                    Xuất danh sách trình đơn có dạng thích hợp để\n"
-"                              gởi qua ống dẫn cho tiến trình cài đặt trình "
-"đơn\n"
-"\t[stdout: thiết bị xuất chuẩn]\n"
+"  --nodpkgcheck          Đừng kiểm tra gói đã được cài đặt chưa\n"
+"  --remove               Gỡ bỏ các trình đơn đã tạo ra, thay thế.\n"
+"  --stdout               Xuất danh sách trình đơn theo định dạng thích hợp\n"
+"\t\t\t\tđể gửi qua ống dẫn cho chức năng install-menu.\n"
+"  --version              Xuất thông tin về phiên bản, rồi thoát.\n"
 
 #: ../update-menus/update-menus.h:151
 msgid ""

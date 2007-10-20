@@ -11,10 +11,12 @@ menu (2.1.37) unstable; urgency=low
       - Spanish updated by Jacobo Tarrio. Closes: #446481
       - Czech updated by Miroslav Kure. Closes: #446677
       - Dutch updated by Tim Dijkstra. Closes: #446009
+      - Vietnamese updated by Clytie Siddall. Closes: #446993
     + Menu sections translations:
       - Belarusian updated by Pavel Piatruk. Closes: #446557
       - Czech updated by Miroslav Kure. Closes: #446677
       - Galician updated by Jacobo Tarrio. Closes: #446616
+      - German updated by Sven Joachim. Closes: #447044
     + su-to-root translations:
       - Czech added by Miroslav Kure. Closes: #446677
 
