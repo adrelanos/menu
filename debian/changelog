@@ -18,6 +18,7 @@ menu (2.1.37) unstable; urgency=low
       - Galician updated by Jacobo Tarrio. Closes: #446616
       - German updated by Sven Joachim. Closes: #447044
       - Korean updated by Sunjae Park. Closes: #448051
+      - Hebrew updated by Lior Kaplan. Closes: #442234
     + su-to-root translations:
       - Czech added by Miroslav Kure. Closes: #446677
 
