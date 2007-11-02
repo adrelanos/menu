@@ -2,19 +2,18 @@
 # This file is distributed under the same license as the menu package.
 # Copyright (C) 2004 Debian menu team.
 # Tobias Toedter <t.toedter@gmx.net>, 2004.
-#
+# Sven Joachim <svenjoac@gmx.de>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: menu 2.1.19\n"
+"Project-Id-Version: menu 2.1.37\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2007-10-05 07:30+0200\n"
-"PO-Revision-Date: 2004-10-20 23:18+0200\n"
-"Last-Translator: Tobias Toedter <t.toedter@gmx.net>\n"
+"PO-Revision-Date: 2007-11-01 20:46+0100\n"
+"Last-Translator: Sven Joachim <svenjoac@gmx.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.3.1\n"
 
 #: ../install-menu/functions.cc:92
 msgid "Zero-size argument to print function."
@@ -65,8 +64,8 @@ msgid ""
 "install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
 "Ignoring.\n"
 msgstr ""
-"install-menu: Warnung: Unbekannter Bezeichner »%1« in Zeile %2 der Datei %3. "
-"Wird ignoriert.\n"
+"install-menu: Warnung: Unbekannter Bezeichner »%1« in Zeile %2 der Datei %3 "
+"wird ignoriert.\n"
 
 #: ../install-menu/install-menu.cc:657
 msgid "install-menu: %1 must be defined in menu-method %2"
@@ -88,16 +87,15 @@ msgid ""
 "the above file needs to be writeable (and/or the directory needs to exist).\n"
 msgstr ""
 "Um die Benutzer-Konfigurationsdatei(en) für den Fenstermanager erstellen zu\n"
-"können, müssen die oben aufgeführten Dateien schreibbar sein (und/oder das\n"
+"können, muss die oben aufgeführte Datei schreibbar sein (und/oder das\n"
 "Verzeichnis muss existieren).\n"
 
 #: ../install-menu/install-menu.cc:871
 msgid "Warning: the string %1 did not occur in template file %2\n"
-msgstr "Warnung: Die Zeichenfolge %1 kam in der Schablonendatei %2 nicht vor\n"
+msgstr "Warnung: Die Zeichenkette %1 kam in der Vorlagendatei %2 nicht vor\n"
 
 #. Don't translate quoted string
 #: ../install-menu/install-menu.cc:896
-#, fuzzy
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
@@ -108,10 +106,11 @@ msgid ""
 "     -v --verbose : be verbose\n"
 msgstr ""
 "install-menu [-vh] <Menü-Methode>\n"
-"  Lese Menüeinträge von stdin im »update-menus --stdout«-Format\n"
-"  und erzeuge Menüdateien mittels der angegebenen Menü-Methode.\n"
+"  Menüeinträge von stdin im »update-menus --stdout«-Format lesen\n"
+"  und Menüdateien mittels der angegebenen Menü-Methode erstellen.\n"
 "  Optionen für install-menu:\n"
 "     -h --help    : Dieser Text\n"
+"        --remove  : Das Menü entfernen statt es zu erstellen.\n"
 "     -v --verbose : Ausführliche Ausgaben\n"
 
 #: ../install-menu/install-menu.cc:943
@@ -125,10 +124,11 @@ msgstr "Kann das Skript %1 nicht zum Lesen öffnen.\n"
 #: ../install-menu/install-menu.cc:979
 msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
 msgstr ""
+"Warnung: Skript %1 stellt »removemenu« nicht bereit, Menü nicht entfernt\n"
 
 #: ../install-menu/install-menu.cc:1014
 msgid "Running: \"%1\"\n"
-msgstr "Führe aus: »%1«\n"
+msgstr "Führe »%1« aus:\n"
 
 #: ../install-menu/install-menu.cc:1030
 msgid "install-menu: %1: aborting\n"
@@ -173,7 +173,7 @@ msgstr ""
 
 #: ../update-menus/exceptions.h:89
 msgid "%1: missing required tag: \"%2\""
-msgstr "%1: Erforderlicher Tag fehlt: »%2«"
+msgstr "%1: Erforderliche Marke fehlt: »%2«"
 
 #: ../update-menus/parsestream.cc:50
 msgid "(probably) stdin"
@@ -212,7 +212,7 @@ msgid ""
 "Boolean (either true or false) expected.\n"
 "Found: \"%1\""
 msgstr ""
-"Boolean (entweder »true« oder »false«) erwartet.\n"
+"Boolescher Wert (entweder »true« oder »false«) erwartet.\n"
 "Gefunden: »%1«"
 
 #: ../update-menus/parsestream.h:172
@@ -232,6 +232,8 @@ msgid ""
 "file %1 line %2:\n"
 "Discarding entry requiring missing package %3."
 msgstr ""
+"Datei %1 Zeile %2:\n"
+"Verwerfe Eintrag, der fehlendes Paket %3 erfordert."
 
 #. Translation here and below refer to the file
 #. /etc/menu-methods/translate_menus that allow to rename and reorganize
@@ -253,7 +255,7 @@ msgstr ""
 
 #: ../update-menus/update-menus.cc:534 ../update-menus/update-menus.cc:538
 msgid "Skipping file because of errors...\n"
-msgstr "Überspringe Datei wegen Fehlern ...\n"
+msgstr "Überspringe Datei aufgrund von Fehlern ...\n"
 
 #: ../update-menus/update-menus.cc:555
 msgid "Reading menu-entry files in %1."
@@ -268,9 +270,8 @@ msgid "%1 menu entries found (%2 total)."
 msgstr "%1 Menüeinträge gefunden (insgesamt %2)."
 
 #: ../update-menus/update-menus.cc:595
-#, fuzzy
 msgid "Running method: %1 --remove"
-msgstr "Ausführen der Methode: %1"
+msgstr "Ausführen der Methode: %1 --remove"
 
 #: ../update-menus/update-menus.cc:607 ../update-menus/update-menus.cc:669
 #: ../update-menus/update-menus.cc:990
@@ -283,7 +284,7 @@ msgstr "Skript %1 gab den Fehlerstatus %2 zurück."
 
 #: ../update-menus/update-menus.cc:613 ../update-menus/update-menus.cc:675
 msgid "Script %1 received signal %2."
-msgstr "Skript %1 empfing das Signal %2."
+msgstr "Skript %1 erhielt das Signal %2."
 
 #: ../update-menus/update-menus.cc:630
 msgid "Running method: %1"
@@ -291,7 +292,7 @@ msgstr "Ausführen der Methode: %1"
 
 #: ../update-menus/update-menus.cc:633
 msgid "Cannot create pipe."
-msgstr "Konnte die Pipe nicht erstellen."
+msgstr "Kann Pipe nicht erstellen."
 
 #: ../update-menus/update-menus.cc:685
 msgid "Running menu-methods in %1."
@@ -299,19 +300,19 @@ msgstr "Führe Menü-Methoden in %1 aus."
 
 #: ../update-menus/update-menus.cc:717
 msgid "Other update-menus processes are already locking %1, quitting."
-msgstr "Andere update-menus-Prozesse blockieren bereits %1, beendet."
+msgstr "Andere update-menus-Prozesse sperren %1 bereits, beendet."
 
 #: ../update-menus/update-menus.cc:720
 msgid "Cannot lock %1: %2 - Aborting."
-msgstr "Konnte %1 nicht blockieren: %2 - Abbruch."
+msgstr "Kann %1 nicht sperren: %2 - Abbruch."
 
 #: ../update-menus/update-menus.cc:730
 msgid "Cannot write to lockfile %1 - Aborting."
-msgstr "Konnte die Blockierungsdatei %1 nicht schreiben - Abbruch."
+msgstr "Kann die Sperrdatei %1 nicht schreiben - Abbruch."
 
 #: ../update-menus/update-menus.cc:743
 msgid "Cannot remove lockfile %1."
-msgstr "Konnte die Blockierungsdatei %1 nicht löschen."
+msgstr "Kann die Sperrdatei %1 nicht löschen."
 
 #: ../update-menus/update-menus.cc:759
 msgid "Update-menus is run by user."
@@ -327,15 +328,14 @@ msgstr ""
 
 #: ../update-menus/update-menus.cc:816
 msgid "Further output (if any) will appear in %1."
-msgstr "Weitere Ausgaben (wenn vorhanden) werden in %1 erscheinen."
+msgstr "Weitere Ausgaben (falls überhaupt) werden in %1 erscheinen."
 
 #: ../update-menus/update-menus.cc:845
 msgid "Dpkg is not locking dpkg status area, good."
-msgstr "Dpkg blockiert nicht den dpkg-Statusbereich, gut."
+msgstr "Dpkg sperrt nicht den dpkg-Statusbereich, gut."
 
 #. This is the update-menus --help message
 #: ../update-menus/update-menus.cc:855
-#, fuzzy
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -355,26 +355,25 @@ msgid ""
 "  --version              Output version information and exit.\n"
 msgstr ""
 "Aufruf: update-menus [Optionen] \n"
-"Sammeln der Paketdaten aus der Menüdatenbank und erzeugen von Menüs für\n"
+"Sammeln der Paketdaten aus der Menüdatenbank und Erstellen von Menüs für\n"
 "alle Programme, die Menü-Methoden zur Verfügung stellen, normalerweise\n"
 "Fenstermanager.\n"
 "  -d                     Ausgabe von Debugmeldungen.\n"
 "  -v                     Ausführlicher Bericht, was gerade passiert.\n"
 "  -h, --help             Dieser Text.\n"
-"  --menufilesdir=<Verz>  Füge <Verz> zur Liste der zu durchsuchenden\n"
-"                         Menüverzeichnisse hinzu.\n"
-"  --menumethod=<Methode> Führe nur die Menü-Methode <Methode> aus.\n"
-"  --nodefaultdirs        Verwende keines der Standard-Menüverzeichnisse.\n"
+"  --menufilesdir=<Verz>  <Verz> zur Liste der zu durchsuchenden\n"
+"                         Menüverzeichnisse hinzufügen.\n"
+"  --menumethod=<Methode> Nur die Menü-Methode <Methode> ausführen.\n"
+"  --remove               Menüs entfernen statt erstellen.\n"
+"  --nodefaultdirs        Keines der Standard-Menüverzeichnisse verwenden.\n"
+"  --nodpkgcheck          Nicht überprüfen, ob Pakete installiert sind.\n"
 "  --stdout               Ausgabe der Menüliste in einem Format, das für die\n"
 "                         Weiterleitung an install-menu geeignet ist.\n"
+"  --version              Versionsinformationen ausgeben und beenden.\n"
 
 #: ../update-menus/update-menus.h:151
 msgid ""
 "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
 msgstr ""
-"Unbekannte Installationsbedingung: »%1« (zurzeit wird nur »package« "
+"Unbekannte Installationsbedingung »%1« (zurzeit wird nur »package« "
 "unterstützt)."
-
-#~ msgid "  --version              Output version information and exit.\n"
-#~ msgstr ""
-#~ "  --version              Ausgabe der Versionsinformation und beenden.\n"
