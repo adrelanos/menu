@@ -27,8 +27,8 @@ Les fichiers de menus portent d'habitude le nom du paquet Debian qui
 contient les programmes qu'ils listent. Ils peuvent contenir plusieurs «\  
 entrées de menus\ », qui spécifient un élément particulier de la structure 
 d'un menu. Chaque entrée de menu spécifie les paquets dont elle dépend, ce qui 
-permet à \fBupdate-menus(1)\fP d'ignorer le menu si ces paquet ne sont pas 
-installé. (Dans une entrée de menu vous pouvez spécifier des pseudo\-paquets 
+permet à \fBupdate-menus(1)\fP d'ignorer le menu si ces paquets ne sont pas 
+installés. (Dans une entrée de menu vous pouvez spécifier des pseudo\-paquets 
 qui commencent par «\ local.\ », ce qui indique à update\-menus de toujours 
 utiliser ces menus). Si vous voulez supprimer entièrement tous les éléments 
 d'un fichier de menus, vous pouvez créer un fichier vide portant le même nom 
@@ -56,7 +56,7 @@ suivant\ :
 .PP
 \fB?package(nom_paquet):var1=value1 var2=value2 \fP ...
 .TP 
-needs=
+needs
 Indique le type d'environnement que le programme nécessite. Cette variable 
 est obligatoire et peut valoir\ :
 .RS
@@ -85,12 +85,12 @@ La section dans laquelle l'entrée de menu doit être affichée. Reportez\-vous
 .RE
 .TP 
 icon
-Une icône pour cette entrée de menu. Si aucune icône n'est disponible, vous 
-n'avez qu'à ne pas définir ce champ. (icon="none" est également possible, 
+Une icône pour cette entrée de menu. Si aucune icône n'est disponible,
+il suffit de ne pas définir ce champ. (icon="none" est également possible, 
 mais il est préférable de ne pas placer cette ligne).
 .TP 
 title
-Le titre du programme qui apparaîtra dans le menu. Essayer de garder ce 
+Le titre du programme qui apparaîtra dans le menu. Essayez de garder ce 
 champ court. Si deux entrées de menu partagent le même titre et la même 
 section, celle qui est la mieux adaptée au type d'affichage est 
 conservée. De cette façon, dans l'exemple précédent qui a deux menus qui ont 
@@ -111,7 +111,7 @@ partie du paquet Debian Policy. La structure de menus ci\-dessous est incluse
 (et traduite) pour des raisons de commodité. Veuillez ne pas placer vos paquets 
 dans d'autres sections.
 
-NDT: les noms de sections officiels sont automatiquement traduits au
+NDT\ : les noms de sections officiels sont automatiquement traduits au
 moment de la génération des menus.
 
 Utilisez `/' pour séparer les noms des sous\-menus. Par exemple\ : 
@@ -184,7 +184,7 @@ Utilisez `/' pour séparer les noms des sous\-menus. Par exemple\ :
 
 .SH NOTES
 Si vous voulez spécifier une icône ou un raccourci clavier pour un sous\-menu 
-(par exemple, le sous\-menu Editors), utilisez la même syntaxe, mais laisser 
+(par exemple, le sous\-menu Editors), utilisez la même syntaxe, mais laissez 
 le champ command vide, comme ceci\ :
 
 ?package(monpaquet):needs="X11" section="Applications" icon="icon.xpm" hotkey="E" title="Editors"
@@ -219,12 +219,12 @@ Fichiers de menus fournis par le paquet menu.
 .RE
 .SH AUTEURS
 Joost Witteveen <joostje@debian.org>, basé sur les travaux de Lars 
-Wirzenius <liw@iki.fi> Il est désormais maintenu par Bill Allombert 
+Wirzenius <liw@iki.fi>. Il est désormais maintenu par Bill Allombert 
 <ballombe@debian.org>.
 .PP
 Page de manuel par Joey Hess, <joeyh@debian.org>
 .PP
-Ce document est basée sur une traduction réalisée par Nicolas François le
+Ce document est basé sur une traduction réalisée par Nicolas François le
 3 septembre 2005.
 .SH "VOIR AUSSI"
 .BR update\-menus(1),

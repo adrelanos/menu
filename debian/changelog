@@ -23,6 +23,10 @@ menu (2.1.37) unstable; urgency=low
     + su-to-root translations:
       - Czech added by Miroslav Kure. Closes: #446677
 
+  * doc/menufile.fr.5:
+    - corrected typo, thanks to Cyril Brulebois for spotting it.
+      Closes: #449067
+
  -- Bill Allombert <ballombe@debian.org>  Wed, 03 Oct 2007 12:46:47 +0200
 
 menu (2.1.36) unstable; urgency=low
