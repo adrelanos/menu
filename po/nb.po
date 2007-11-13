@@ -1,14 +1,14 @@
 # translation of menu.po to Norwegian Bokmål
 # This file is distributed under the same license as the menu package.
 # Copyright (C) 2004 Debian menu team.
-# Hans Fredrik Nordhaug <hans@nordhaug.priv.no>, 2005.
+# Hans Fredrik Nordhaug <hans@nordhaug.priv.no>, 2005-2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: menu_nb\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2007-10-05 07:30+0200\n"
-"PO-Revision-Date: 2005-03-04 15:02+0100\n"
+"PO-Revision-Date: 2007-11-12 18:31+0100\n"
 "Last-Translator: Hans Fredrik Nordhaug <hans@nordhaug.priv.no>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -96,7 +96,6 @@ msgstr "Advarsel: strengen %1 fins ikke i malfil %2\n"
 
 #. Don't translate quoted string
 #: ../install-menu/install-menu.cc:896
-#, fuzzy
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
@@ -111,6 +110,7 @@ msgstr ""
 "  og oppretter menyfiler ved bruk av den oppgitte menymetoden.\n"
 "  Valg for install-menu:\n"
 "     -h --help    : denne meldinga\n"
+"        --remove  : fjern menyen istedenfor å opprette den.\n"
 "     -v --verbose : skriv ut fyldig informasjon\n"
 
 #: ../install-menu/install-menu.cc:943
@@ -124,6 +124,7 @@ msgstr "Klarer ikke åpne script %1 for lesing.\n"
 #: ../install-menu/install-menu.cc:979
 msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
 msgstr ""
+"Advarsel: Skriptet %s tilbyr ikke removemenu, menyen ble ikke slettet\n"
 
 #: ../install-menu/install-menu.cc:1014
 msgid "Running: \"%1\"\n"
@@ -230,6 +231,8 @@ msgid ""
 "file %1 line %2:\n"
 "Discarding entry requiring missing package %3."
 msgstr ""
+"fil %1 linje %2:\n"
+"Ser bort fra oppføringen som krever den manglende pakken %3."
 
 #. Translation here and below refer to the file
 #. /etc/menu-methods/translate_menus that allow to rename and reorganize
@@ -265,9 +268,8 @@ msgid "%1 menu entries found (%2 total)."
 msgstr "%1 menyelement funnet (%2 totalt)."
 
 #: ../update-menus/update-menus.cc:595
-#, fuzzy
 msgid "Running method: %1 --remove"
-msgstr "Kjører metode %1"
+msgstr "Kjører metode: %1 --remove"
 
 #: ../update-menus/update-menus.cc:607 ../update-menus/update-menus.cc:669
 #: ../update-menus/update-menus.cc:990
@@ -332,7 +334,6 @@ msgstr "Dpkg låser ikke dpkg sitt statusområde, bra."
 
 #. This is the update-menus --help message
 #: ../update-menus/update-menus.cc:855
-#, fuzzy
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -361,8 +362,11 @@ msgstr ""
 "                          som det skal søkes i.\n"
 "  --menumethod  <metode>  Kjør bare menymetode <metode>.\n"
 "  --nodefaultdirs         Slår av bruk av alle standard menykataloger.\n"
+"  --nodpkgcheck           Ikke sjekk om pakkene er installert.\n"
+"  --remove                Fjern opprettede menyer istedenfor.\n"
 "  --stdout                Skriv ut menylista i et format som passer \n"
 "                          til å sende vidare til install-menu.\n"
+"  --version               Skriv ut versjonsinformasjon og avslutt.\n"
 
 #: ../update-menus/update-menus.h:151
 msgid ""
