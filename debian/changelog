@@ -13,7 +13,8 @@ menu (2.1.37) unstable; urgency=low
       - Dutch updated by Tim Dijkstra. Closes: #446009
       - Vietnamese updated by Clytie Siddall. Closes: #446993
       - German updated by Sven Joachim. Closes: #448943
-      - Norwegian Bokmål updated by Hans F. Nordhaug. Closes: #450959
+      - Norwegian Bokmål updated by Hans F. Nordhaug. 
+        Closes: #450959, #451298
     + Menu sections translations:
       - Belarusian updated by Pavel Piatruk. Closes: #446557
       - Czech updated by Miroslav Kure. Closes: #446677
@@ -21,6 +22,7 @@ menu (2.1.37) unstable; urgency=low
       - German updated by Sven Joachim. Closes: #447044
       - Korean updated by Sunjae Park. Closes: #448051
       - Hebrew updated by Lior Kaplan. Closes: #442234
+      - Dzongkha updated by Tenzin Dendup. Closes: #455862
     + su-to-root translations:
       - Czech added by Miroslav Kure. Closes: #446677
 
