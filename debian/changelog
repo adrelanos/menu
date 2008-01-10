@@ -24,6 +24,7 @@ menu (2.1.37) unstable; urgency=low
       - Hebrew updated by Lior Kaplan. Closes: #442234
       - Dzongkha updated by Tenzin Dendup. Closes: #455862
       - Spanish updated by Javier Fernández-Sanguino Peña. Closes: #457707
+      - Simplified Chinese updated by Xu Wang. Closes: #459983
     + su-to-root translations:
       - Czech added by Miroslav Kure. Closes: #446677
 
