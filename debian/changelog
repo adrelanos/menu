@@ -25,6 +25,7 @@ menu (2.1.37) unstable; urgency=low
       - Dzongkha updated by Tenzin Dendup. Closes: #455862
       - Spanish updated by Javier Fernández-Sanguino Peña. Closes: #457707
       - Simplified Chinese updated by Xu Wang. Closes: #459983
+      - Slovak updated by Peter Mann. Closes: #460520
     + su-to-root translations:
       - Czech added by Miroslav Kure. Closes: #446677
 
