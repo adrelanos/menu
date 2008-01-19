@@ -37,17 +37,24 @@ menu (2.1.37) unstable; urgency=low
     + Remove versionned Depends on >= pre-sarge dpkg.
     + Bump Standards-Version to 3.7.3
 
-  * Add missing #include <cstring>, required with g++ 4.3. Closes: #455435.
-    Thanks Martin Michlmayr for his explanation.
+  * update-menus/update-menus.cc:
+    - Fix g++-4.2 warning about string conversion.  Closes: #445490.
+      Thanks Sven Joachim.
 
-  * Fix segfault for unknown compatibility level. Closes: #431988.
-    Thanks Rafael Laboissiere.
+  * install-menu/install-menu.cc, install-menu/menu-tree.cc,
+    update-menus/update-menus.cc:
+    - Add missing #include <cstring>, required with g++ 4.3. Closes: #455435.
+      Thanks Martin Michlmayr for his explanation.
+
+  * update-menus/parsestream.cc:
+    - Fix segfault for unknown compatibility level. Closes: #431988.
+      Thanks Rafael Laboissiere.
 
   * debian/control, doc/su-to-root.1, doc/su-to-root.fr.1, scripts/su-to-root:
-    + Add support for the KDE4 version of kdesu (hereby nicknamed kde4su).
+    - Add support for the KDE4 version of kdesu (hereby nicknamed kde4su).
       Closes: #460483. Thanks Armin Berres.
- 
- -- Bill Allombert <ballombe@debian.org>  Sat, 19 Jan 2008 20:31:52 +0100
+
+ -- Bill Allombert <ballombe@debian.org>  Sat, 19 Jan 2008 21:26:05 +0100
 
 menu (2.1.36) unstable; urgency=low
 
