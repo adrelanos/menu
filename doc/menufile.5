@@ -51,7 +51,7 @@ A menu file consists of 0 or more lines of the following format:
 .PP
 \fB?package(package-name):var1=value1 var2=value2 \fR ...
 .TP
-needs=
+needs
 Specify what kind of environment the program require. This variable must be
 defined, and should be one of the following:
 .RS
@@ -85,7 +85,7 @@ define this.
 title
 The title of the program that will appear on the menus. Keep it short.
 If two menu entries share the same title and section, the one that
-bests fits the available display will be used. So in the example above
+best fits the available display will be used. So in the example above
 with two menu entries that both have the menu id "title", if X is
 available, the X11 one will be used; otherwise the text one will be used.
 Must be defined.
