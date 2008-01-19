@@ -294,16 +294,6 @@ string parsestream::get_name(const Regex &r)
   return s;
 }
 
-string parsestream::get_eq_name()
-{
-  skip_space();
-  char c = get_char();
-  if (c != '=')
-    throw char_expected(this, "=");
-  return get_name();
-}
-
-
 string parsestream::get_stringconst()
 {
   string s;

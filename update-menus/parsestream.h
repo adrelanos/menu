@@ -78,7 +78,6 @@ public:
   char put_back(char);
   std::string get_name();
   std::string get_name(const Regex &);
-  std::string get_eq_name();
   std::string get_stringconst();
   std::string get_eq_stringconst();
   bool   get_boolean();
