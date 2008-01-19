@@ -40,7 +40,10 @@ menu (2.1.37) unstable; urgency=low
   * Add missing #include <cstring>, required with g++ 4.3. Closes: #455435.
     Thanks Martin Michlmayr for his explanation.
 
- -- Bill Allombert <ballombe@debian.org>  Sat, 19 Jan 2008 13:52:46 +0100
+  * Fix segfault for unknown compatibility level. Closes: #431988.
+    Thanks Rafael Laboissiere.
+
+ -- Bill Allombert <ballombe@debian.org>  Sat, 19 Jan 2008 14:31:33 +0100
 
 menu (2.1.36) unstable; urgency=low
 

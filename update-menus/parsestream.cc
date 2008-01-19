@@ -182,7 +182,9 @@ void parsestream::new_line()
     {
       getline(*current_istr(), buffer);
       set_linenumber(linenumber()+1);
-      preprocess(buffer);
+      try {
+        preprocess(buffer);
+      } catch (unknown_compat p) { p.report(); }
       buffer = rmtrailingspace(buffer);
     }
     while (current_istr()->good() &&
