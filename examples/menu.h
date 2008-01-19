@@ -7,9 +7,6 @@
 #For more information, see /usr/share/doc/menu/html
 
 #If you prefer long titles, change the definition below accordingly.
-#(this will currently not give you many long titles, as most menu entries
-#still don't provide long titles. In those cases, the defintion below
-#defaults to the short title).
 
 function title()=$title
 
