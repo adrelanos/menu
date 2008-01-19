@@ -57,6 +57,10 @@ menu (2.1.37) unstable; urgency=low
   * doc/menufile.5:
     - Apply patch from Kobayashi Noritada to fix typos. Closes: #449388.
 
+  * debian/changelog: 
+    - Remove useless 'Local variables' section at the end of the file.
+      Closes: #445483.  Thanks Sven Joachim.
+    
  -- Bill Allombert <ballombe@debian.org>  Sat, 19 Jan 2008 21:32:05 +0100
 
 menu (2.1.36) unstable; urgency=low
@@ -1939,6 +1943,3 @@ menu (0.0) unstable; urgency=low
 
  -- joost witteveen <joost@rulcmc.leidenuniv.nl>  Tue, 5 Nov 1996 22:42:09 +0100
 
-Local variables:
-mode: debian-changelog
-End:
