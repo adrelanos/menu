@@ -26,6 +26,7 @@
 
 #include <cstdlib>
 #include <cctype>
+#include <cstring>
 #include <list>
 #include <set>
 #include "menu-tree.h"

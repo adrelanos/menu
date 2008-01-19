@@ -29,6 +29,7 @@
 #include <iostream>
 #include <fstream>
 #include <cctype>
+#include <cstring>
 #include <cstdlib>
 #include <getopt.h>
 #include <limits.h>

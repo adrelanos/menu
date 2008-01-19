@@ -1,9 +1,6 @@
 menu (2.1.37) unstable; urgency=low
 
   * the "unreleased" release.
-  * debian/control:
-    + Remove versionned Depends on >= pre-sarge dpkg.
-    + Bump Standards-Version to 3.7.3
   * Handling of l10n by Christian Perrier:
     + programs translations:
       - Dutch updated by Tim Dijkstra. Closes: #446009
@@ -36,7 +33,14 @@ menu (2.1.37) unstable; urgency=low
     - corrected typo, thanks to Cyril Brulebois for spotting it.
       Closes: #449067
 
- -- Bill Allombert <ballombe@debian.org>  Sat, 19 Jan 2008 10:08:34 +0100
+  * debian/control:
+    + Remove versionned Depends on >= pre-sarge dpkg.
+    + Bump Standards-Version to 3.7.3
+
+  * Add missing #include <cstring>, required with g++ 4.3. Closes: #455435.
+    Thanks Martin Michlmayr for his explanation.
+
+ -- Bill Allombert <ballombe@debian.org>  Sat, 19 Jan 2008 13:52:46 +0100
 
 menu (2.1.36) unstable; urgency=low
 

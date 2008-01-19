@@ -34,6 +34,7 @@
 #include <getopt.h>
 #include <cerrno>
 #include <cctype>
+#include <cstring>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/wait.h>
