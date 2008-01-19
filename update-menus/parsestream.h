@@ -164,7 +164,7 @@ namespace exceptions {
     }
   };
 
-  /** Exception to be thrown when an unknown compatability mode was chosen */
+  /** Exception to be thrown when an unknown compatibility mode was chosen */
   class unknown_compat : public except_pi_string {
   public:
     unknown_compat(parsestream *p, std::string s):except_pi_string(p,s) { }
