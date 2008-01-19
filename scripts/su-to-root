@@ -82,14 +82,18 @@ else
   X11)
     if test -z "$SU_TO_ROOT_X"; then
       if which gksu >/dev/null 2>&1 ; then
-        if test "X$KDE_FULL_SESSION" = "Xtrue" \
-           && which kdesu >/dev/null 2>&1 ; then
-          SU_TO_ROOT_X=kdesu
-        else
-          SU_TO_ROOT_X=gksu
+        SU_TO_ROOT_X=gksu
+        if test "X$KDE_FULL_SESSION" = "Xtrue" ; then
+          if which kdesu >/dev/null 2>&1 ; then
+            SU_TO_ROOT_X=kdesu
+          elif test -x /usr/lib/kde4/libexec/kdesu ; then
+            SU_TO_ROOT_X=kde4su
+          fi;
         fi;
       elif which kdesu >/dev/null 2>&1 ; then 
         SU_TO_ROOT_X=kdesu
+      elif test -x /usr/lib/kde4/libexec/kdesu ; then
+        SU_TO_ROOT_X=kde4su
       elif which sux >/dev/null 2>&1 ; then 
         SU_TO_ROOT_X=sux
       else
@@ -99,6 +103,7 @@ else
     case $SU_TO_ROOT_X in
       gksu) gksu -u "$PRIV" "$COMMAND";;
       kdesu) kdesu -u "$PRIV" "$COMMAND";;
+      kde4su) /usr/lib/kde4/libexec/kdesu -u "$PRIV" "$COMMAND";;
       sux) env SU_TO_ROOT_SU=sux \
         x-terminal-emulator -e su-to-root -p "$PRIV" -c "$COMMAND";;
   # As a last resort, open a new x-terminal-emulator and prompt for the password

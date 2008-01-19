@@ -23,11 +23,11 @@ This is to be used with menu entries that declare needs="X11".
 .SH ENVIRONMENT
 .IP SU_TO_ROOT_X
 Select the su-like program called by \fIsu\-to\-root \-X\fP.
-Supported values are \fIgksu\fP, \fIkdesu\fP and \fIsux\fP.
+Supported values are \fIgksu\fP, \fIkdesu\fP, \fIkde4su\fP and \fIsux\fP.
+\fIkde4su\fP denotes the KDE4 version of \fBkdesu\fP.
 .IP
 When this variable is not set \fBsu\-to\-root\fP will currently try to use
-\fIgksu\fP, \fIkdesu\fP, \fIsux\fP and the built-in code, in that order with
-the exception that under a KDE session, \fIkdesu\fP is prefered over
+\fIgksu\fP, \fIkdesu\fP, \fIkde4su\fP, \fIsux\fP and the built-in code, in that order with the exception that under a KDE session, \fIkdesu\fP and \fIkde4su\fP are prefered over
 \fIgksu\fP.
 .IP
 The exact set of programs to try and their order is subject to change without
