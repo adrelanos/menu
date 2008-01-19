@@ -1,10 +1,11 @@
 Document: menu
-Title: Debian Menu Guideline
-Author: Joost Witteveen, Joey Hess, Christian Schwarz
-Abstract: Guidelines to how debian packages should
- register themselves with the menu package, so that menuentries
- for them are setup for every window manager available on the system.
-Section: Apps/Programming
+Title: Debian Menu System Manual
+Author: Joost Witteveen, Joey Hess, Christian Schwarz, Bill Allombert
+Abstract: This manual describes the how packages can register themselves
+ in the Debian Menu, how window-managers can interface with
+ the Menu System to build up-to-date menu files, and how administrators
+ and users can control the generated menus.
+Section: Debian
 
 
 Format: debiandoc-sgml
