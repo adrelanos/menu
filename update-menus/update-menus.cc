@@ -435,11 +435,11 @@ void read_pkginfo()
 {
   // Here we get the list of *installed* packages from dpkg, using sed to
   // retrieve the package name.
-  char *pkgs = "dpkg-query --show --showformat='${status} ${package}\\n' | sed -n -e 's/.*installed *//p'";
-  FILE *status = popen(pkgs, "r");
+  string pkgs = "dpkg-query --show --showformat='${status} ${package}\\n' | sed -n -e 's/.*installed *//p'";
+  FILE *status = popen(pkgs.c_str(), "r");
 
   if (!status)
-    throw pipeerror_read(pkgs);
+    throw pipeerror_read(pkgs.c_str());
 
   config.report(_("Reading installed packages list..."),
                   configinfo::report_verbose);
