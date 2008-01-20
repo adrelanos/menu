@@ -1,493 +1,382 @@
-# Menu section translation
-# Copyright (C) 2004
+# Swedish translation of menu messages.
+# Copyright (C) 2004, 2006, 2007 Debian menu team
 # This file is distributed under the same license as the menu package.
-# Bill Allombert <ballombe@debian.org>, 2003.
-# Swedish translation:
-#   Jens Arvidsson <jya@sverige.nu>, 2004.
+# Daniel Nylander <po@danielnylander.se>, 2006, 2007.
+# Jens Arvidsson <jya@sverige.nu>, 2004.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: menu-section 2.1.9-5\n"
-"POT-Creation-Date: 2007-07-04 15:27+0100\n"
-"PO-Revision-Date: 2004-03-22 18:37+0100\n"
-"Last-Translator: Jens Arvidsson <jya@sverige.nu>\n"
-"Language-Team: Swedish <sv@li.org>\n"
+"Project-Id-Version: menu 2.1.30\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"POT-Creation-Date: 2007-10-05 07:30+0200\n"
+"PO-Revision-Date: 2007-10-09 10:50+0100\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. First level entry 
-#. Policy definition: Normal applications. This is a top-level
-#. Examples: section, do not put entries here.
-msgid "Applications"
+#: ../install-menu/functions.cc:92
+msgid "Zero-size argument to print function."
+msgstr "Argument för utskriftsfunktion har nollstorlek."
+
+#: ../install-menu/install-menu.cc:202
+msgid "install-menu: checking directory %1\n"
+msgstr "install-menu: kontrollerar katalogen %1\n"
+
+#: ../install-menu/install-menu.cc:215
+msgid "install-menu: creating directory %1:\n"
+msgstr "install-menu: skapar katalogen %1:\n"
+
+#: ../install-menu/install-menu.cc:217
+msgid "Could not create directory(%1): %2"
+msgstr "Kunde inte skapa katalog(%1): %2"
+
+#: ../install-menu/install-menu.cc:219
+msgid "Could not change directory(%1): %2"
+msgstr "Kunde inte ändra katalog(%1): %2"
+
+#: ../install-menu/install-menu.cc:222
+msgid "install-menu: directory %1 already exists\n"
+msgstr "install-menu: katalogen %1 finns redan\n"
+
+#. Do not translate supported
+#: ../install-menu/install-menu.cc:447
+msgid "install-menu: [supported]: name=%1\n"
+msgstr "install-menu: [stöds]: namn=%1\n"
+
+#: ../install-menu/install-menu.cc:464
+msgid "Menu entry lacks mandatory field \"%1\".\n"
+msgstr "Menypost saknar obligatoriska fältet \"%1\".\n"
+
+#: ../install-menu/install-menu.cc:470
+msgid "Unknown value for field %1=\"%2\".\n"
+msgstr "Okänt värde för fältet %1=\"%2\".\n"
+
+#. Do not translate quoted text
+#: ../install-menu/install-menu.cc:617
+msgid "install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
+msgstr "install-menu: \"hotkeycase\" får endast vara \"sensitive\" eller \"insensitive\"\n"
+
+#: ../install-menu/install-menu.cc:647
+msgid "install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. Ignoring.\n"
+msgstr "install-menu: Varning: Okänd identifierare \"%1\" på rad %2 i fil %3. Ignorerar.\n"
+
+#: ../install-menu/install-menu.cc:657
+msgid "install-menu: %1 must be defined in menu-method %2"
+msgstr "install-menu: %1 måste vara definierad i menymetoden %2"
+
+#: ../install-menu/install-menu.cc:824
+msgid "Cannot open file %1 (also tried %2).\n"
+msgstr "Kan inte öppna filen %1 (försökte även med %2).\n"
+
+#: ../install-menu/install-menu.cc:832
+#: ../install-menu/install-menu.cc:839
+#: ../install-menu/install-menu.cc:847
+msgid "Cannot open file %1.\n"
+msgstr "Kan inte öppna filen %1.\n"
+
+#: ../install-menu/install-menu.cc:849
+msgid ""
+"In order to be able to create the user config file(s) for the window manager,\n"
+"the above file needs to be writeable (and/or the directory needs to exist).\n"
 msgstr ""
+"För att kunna skapa användarkonfigurationsfilen/filerna för fönsterhanteraren,\n"
+"måste ovanstående fil vara skrivbar (och/eller katalogen måste finnas).\n"
 
-#. Second level entry under Applications
-#. Policy definition: Tools to aid people with disabilities or
-#. for machines lacking usual input devices.
-#. Examples: gok, yasr, dasher
-msgid "Accessibility"
+#: ../install-menu/install-menu.cc:871
+msgid "Warning: the string %1 did not occur in template file %2\n"
+msgstr "Varning: strängen %1 fanns inte i mallfilen %2\n"
+
+#. Don't translate quoted string
+#: ../install-menu/install-menu.cc:896
+msgid ""
+"install-menu [-vh] <menu-method>\n"
+"  Read menu entries from stdin in \"update-menus --stdout\" format\n"
+"  and generate menu files using the specified menu-method.\n"
+"  Options to install-menu:\n"
+"     -h --help    : this message\n"
+"        --remove  : remove the menu instead of generating it.\n"
+"     -v --verbose : be verbose\n"
 msgstr ""
+"install-menu [-vh] <menymetod>\n"
+"  Läs in menyposter från standard in i \"update-menus --stdout\"-format\n"
+"  och skapa menyfiler genom att använda den angivna menymetoden.\n"
+"  Flaggor för install-menu:\n"
+"     -h --help    : detta meddelande\n"
+"        --remove  : ta bort menyn istället för att generera den.\n"
+"     -v --verbose : var utförlig\n"
 
-#. Second level entry under Applications
-#. Policy definition: Anything relating to HAM radio.
-#. Examples: baken, hamsoft, twlog
-msgid "Amateur Radio"
+#: ../install-menu/install-menu.cc:943
+msgid "install-menu: no menu-method script specified!"
+msgstr "install-menu: inget menymetodsskript angivet!"
+
+#: ../install-menu/install-menu.cc:956
+msgid "Cannot open script %1 for reading.\n"
+msgstr "Kan inte öppna skriptet %1 för läsning.\n"
+
+#: ../install-menu/install-menu.cc:979
+msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
+msgstr "Varning: skriptet %1 tillhandahåller inte removemenu, menyn inte borttagen\n"
+
+#: ../install-menu/install-menu.cc:1014
+msgid "Running: \"%1\"\n"
+msgstr "Kör: \"%1\"\n"
+
+#: ../install-menu/install-menu.cc:1030
+msgid "install-menu: %1: aborting\n"
+msgstr "install-menu: %1: avbryter\n"
+
+#: ../install-menu/install-menu.h:199
+msgid "Number of arguments to function %1 does not match."
+msgstr "Antalet argument till funktionen %1 stämmer inte."
+
+#: ../install-menu/install-menu.h:207
+msgid "Unknown function: \"%1\""
+msgstr "Okänd funktion: \"%1\""
+
+#: ../install-menu/install-menu.h:216
+msgid "Indirectly used, but not defined function: \"%1\""
+msgstr "Indirekt använd, men inte definierad funktion: \"%1\""
+
+#: ../install-menu/install-menu.h:225
+msgid "Unknown identifier: \"%1\""
+msgstr "Okänd identifierare: \"%1\""
+
+#: ../install-menu/install-menu.h:234
+msgid "Encoding conversion error: \"%1\""
+msgstr "Fel vid kodningskonversion: \"%1\""
+
+#: ../update-menus/exceptions.h:43
+msgid "Unknown error."
+msgstr "Okänt fel."
+
+#: ../update-menus/exceptions.h:55
+#: ../update-menus/parsestream.h:114
+msgid "Unknown error, message=%1"
+msgstr "Okänt fel, meddelande=%1"
+
+#: ../update-menus/exceptions.h:64
+msgid "Unable to open file \"%1\"."
+msgstr "Kunde inte öppna filen \"%1\"."
+
+#: ../update-menus/exceptions.h:73
+msgid "Failed to pipe data through \"%1\" (pipe opened for reading)."
+msgstr "Misslyckades med att omleda data genom \"%1\" (rör öppnat för läsning)."
+
+#: ../update-menus/exceptions.h:89
+msgid "%1: missing required tag: \"%2\""
+msgstr "%1: tagg som krävs saknas: \"%2\""
+
+#: ../update-menus/parsestream.cc:50
+msgid "(probably) stdin"
+msgstr "(troligen) standard in"
+
+#: ../update-menus/parsestream.cc:450
+msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
+msgstr "I filen \"%1\", vid (eller i definitionen som slutar vid) rad %2:\n"
+
+#: ../update-menus/parsestream.cc:471
+msgid "Somewhere in input file:\n"
+msgstr "Någonstans i inmatningsfilen:\n"
+
+#: ../update-menus/parsestream.h:122
+msgid "Unexpected end of file."
+msgstr "Oväntat filslut."
+
+#: ../update-menus/parsestream.h:129
+msgid "Unexpected end of line."
+msgstr "Oväntat radslut."
+
+#: ../update-menus/parsestream.h:136
+msgid "Identifier expected."
+msgstr "En identifierare förväntades."
+
+#: ../update-menus/parsestream.h:144
+msgid "Expected: \"%1\""
+msgstr "Förväntade: \"%1\""
+
+#: ../update-menus/parsestream.h:153
+msgid "Unexpected character: \"%1\""
+msgstr "Oväntat tecken: \"%1\""
+
+#: ../update-menus/parsestream.h:162
+msgid ""
+"Boolean (either true or false) expected.\n"
+"Found: \"%1\""
 msgstr ""
+"Boolesk (antingen sann eller falsk) förväntades.\n"
+"Hittade: \"%1\""
 
-#. Second level entry under Applications
-#. Policy definition: Interactive database programs, collection
-#. managers, address books, bibliography tools, etc.
-#. Examples: gaby, alexandria, mdbtools
-msgid "Data Management"
+#: ../update-menus/parsestream.h:172
+msgid "Unknown compat mode: \"%1\""
+msgstr "Okänt kompatibilitetsläge: \"%1\""
+
+#: ../update-menus/stringtoolbox.cc:85
+msgid "replacewith($string, $replace, $with): $replace and $with must have the same length."
+msgstr "replacewith($sträng, $ersätt, $med): $ersätt och $med måste ha samma längd."
+
+#: ../update-menus/update-menus.cc:150
+msgid ""
+"file %1 line %2:\n"
+"Discarding entry requiring missing package %3."
 msgstr ""
+"fil %1 rad %2:\n"
+"Förkastar post som kräver saknade paketet %3."
 
-#. Second level entry under Applications
-#. Policy definition: Editors, other than office word processors,
-#. for text-based information.
-#. Examples: ksubtile, nano, hexedit
-msgid "Editors"
-msgstr "Textredigerare"
+#. Translation here and below refer to the file
+#. /etc/menu-methods/translate_menus that allow to rename and reorganize
+#. menu entries automatically. It does not refer to the localisation
+#. (translation to other languages).
+#.
+#: ../update-menus/update-menus.cc:364
+msgid "Reading translation rules in %1."
+msgstr "Läser in översättningsregler i %1."
 
-#. Second level entry under Applications
-#. Policy definition: Educational and training software.
-#. Examples: gtypist, gcompris, quiz
-msgid "Education"
-msgstr "Utbildning"
+#: ../update-menus/update-menus.cc:444
+msgid "Reading installed packages list..."
+msgstr "Läser in lista över installerade paket..."
 
-#. Second level entry under Applications
-#. Policy definition: Software that allows you to run non-native
-#. software or more than one OS at a time.
-#. Examples: wine, dosemu, qemu
-msgid "Emulators"
-msgstr "Emulatorer"
+#: ../update-menus/update-menus.cc:493
+msgid "Execution of %1 generated no output or returned an error.\n"
+msgstr "Körning av %1 genererade ingen utskrift eller returnerade ett fel.\n"
 
-#. Second level entry under Applications
-#. Policy definition: Tools for file management, archiving,
-#. searching, CD/DVD burning, backup, etc.
-#. Examples: file-roller, mc, baobab
-msgid "File Management"
+#: ../update-menus/update-menus.cc:534
+#: ../update-menus/update-menus.cc:538
+msgid "Skipping file because of errors...\n"
+msgstr "Hoppar över fil på grund av fel...\n"
+
+#: ../update-menus/update-menus.cc:555
+msgid "Reading menu-entry files in %1."
+msgstr "Läser in menypostfiler i %1."
+
+#: ../update-menus/update-menus.cc:578
+msgid "Error reading %1.\n"
+msgstr "Fel vid inläsning av %1.\n"
+
+#: ../update-menus/update-menus.cc:584
+msgid "%1 menu entries found (%2 total)."
+msgstr "%1 menyposter hittades (%2 totalt)."
+
+#: ../update-menus/update-menus.cc:595
+msgid "Running method: %1 --remove"
+msgstr "Kör metod: %1 --remove"
+
+#: ../update-menus/update-menus.cc:607
+#: ../update-menus/update-menus.cc:669
+#: ../update-menus/update-menus.cc:990
+msgid "Script %1 could not be executed."
+msgstr "Skriptet %1 kunde inte köras."
+
+#: ../update-menus/update-menus.cc:610
+#: ../update-menus/update-menus.cc:672
+msgid "Script %1 returned error status %2."
+msgstr "Skriptet %1 returnerade felstatus %2."
+
+#: ../update-menus/update-menus.cc:613
+#: ../update-menus/update-menus.cc:675
+msgid "Script %1 received signal %2."
+msgstr "Skriptet %1 mottog signalen %2."
+
+#: ../update-menus/update-menus.cc:630
+msgid "Running method: %1"
+msgstr "Kör metod: %1"
+
+#: ../update-menus/update-menus.cc:633
+msgid "Cannot create pipe."
+msgstr "Kan inte skapa rör."
+
+#: ../update-menus/update-menus.cc:685
+msgid "Running menu-methods in %1."
+msgstr "Kör menu-methods i %1."
+
+#: ../update-menus/update-menus.cc:717
+msgid "Other update-menus processes are already locking %1, quitting."
+msgstr "Andra update-menus-processer låser redan %1, avslutar."
+
+#: ../update-menus/update-menus.cc:720
+msgid "Cannot lock %1: %2 - Aborting."
+msgstr "Kan inte låsa %1: %2 - Avbryter."
+
+#: ../update-menus/update-menus.cc:730
+msgid "Cannot write to lockfile %1 - Aborting."
+msgstr "Kan inte skriva till låsfilen %1 - Avbryter."
+
+#: ../update-menus/update-menus.cc:743
+msgid "Cannot remove lockfile %1."
+msgstr "Kan inte ta bort låsfilen %1."
+
+#: ../update-menus/update-menus.cc:759
+msgid "Update-menus is run by user."
+msgstr "Update-menus körs av användare."
+
+#: ../update-menus/update-menus.cc:813
+msgid ""
+"Waiting for dpkg to finish (forking to background).\n"
+"(checking %1)"
 msgstr ""
+"Väntar på att dpkg ska avsluta (grenar till bakgrund).\n"
+"(kontrollerar %1)"
 
-#. Second level entry under Applications
-#. Policy definition: 2D and 3D graphics manipulation software.
-#. Examples: gimp, inkscape, imagemagick
-msgid "Graphics"
-msgstr "Grafik"
+#: ../update-menus/update-menus.cc:816
+msgid "Further output (if any) will appear in %1."
+msgstr "Ytterligare utdata (om några) kommer att synas i %1."
 
-#. Second level entry under Applications
-#. Policy definition: Software that allows you to interface
-#. with mobile devices (phones, PDAs, etc.).
-#. Examples: kandy, gnokii, gnome-pilot
-msgid "Mobile Devices"
+#: ../update-menus/update-menus.cc:845
+msgid "Dpkg is not locking dpkg status area, good."
+msgstr "Dpkg låser inte dpkg:s statusområde, bra."
+
+#. This is the update-menus --help message
+#: ../update-menus/update-menus.cc:855
+#| msgid ""
+#| "Usage: update-menus [options] \n"
+#| "Gather packages data from the menu database and generate menus for\n"
+#| "all programs providing menu-methods, usually window-managers.\n"
+#| "  -d                     Output debugging messages.\n"
+#| "  -v                     Be verbose about what is going on.\n"
+#| "  -h, --help             This message.\n"
+#| "  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to "
+#| "search.\n"
+#| "  --menumethod=<method>  Run only the menu method <method>.\n"
+#| "  --nodefaultdirs        Disable the use of all the standard menu "
+#| "directories.\n"
+#| "  --remove               Remove generated menus instead.\n"
+#| "  --stdout               Output menu list in format suitable for piping "
+#| "to\n"
+#| "                         install-menu.\n"
+#| "  --version              Output version information and exit.\n"
+msgid ""
+"Usage: update-menus [options] \n"
+"Gather packages data from the menu database and generate menus for\n"
+"all programs providing menu-methods, usually window-managers.\n"
+"  -d                     Output debugging messages.\n"
+"  -v                     Be verbose about what is going on.\n"
+"  -h, --help             This message.\n"
+"  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to search.\n"
+"  --menumethod=<method>  Run only the menu method <method>.\n"
+"  --nodefaultdirs        Disable the use of all the standard menu directories.\n"
+"  --nodpkgcheck          Do not check if packages are installed.\n"
+"  --remove               Remove generated menus instead.\n"
+"  --stdout               Output menu list in format suitable for piping to\n"
+"                         install-menu.\n"
+"  --version              Output version information and exit.\n"
 msgstr ""
+"Användning: update-menus [flaggor] \n"
+"Samla in paketdata från menydatabasen och skapa menyer för alla\n"
+"program som tillhandahåller menu-methods, vanligtvis fönsterhanterare.\n"
+"  -d                     Skriv ut felsökningsmeddelanden.\n"
+"  -v                     Var utförlig om vad som händer.\n"
+"  -h, --help             Detta meddelande.\n"
+"  --menufilesdir=<kat>   Lägg till <kat> i menykatalogslistorna att söka i.\n"
+"  --menumethod=<metod>   Kör endast menymetoden <metod>.\n"
+"  --nodefaultdirs        Inaktivera användning av alla standardmenykatalogerna.\n"
+"  --nodpkgcheck          Kontrollera inte om paket är installerade.\n"
+"  --remove               Ta bort genererade menyer istället.\n"
+"  --stdout               Skriv ut menylista i format passande för omledning\n"
+"                         till install-menu.\n"
+"  --version              Skriv ut versionsinformation och avsluta.\n"
+
+#: ../update-menus/update-menus.h:151
+msgid "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
+msgstr "Okänt installationstillstånd \"%1\" (för närvarande stöds endast \"package\")."
 
-#. Second level entry under Applications
-#. Policy definition: Network related software. This is a three-level
-#. Examples: section, do not put entries directly here.
-#, fuzzy
-msgid "Network"
-msgstr "Nätverk"
-
-#. Third level entry under Network
-#. Policy definition: Mail, USENET news, chat, instant messaging,
-#. IP telephony, video conferencing software, etc.
-#. Examples: xchat, gaim, mutt
-#, fuzzy
-msgid "Communication"
-msgstr "Utbildning"
-
-#. Third level entry under Network
-#. Policy definition: File transfer software such as download
-#. managers, FTP clients, P2P clients, etc.
-#. Examples: amule, gftp, d4x
-msgid "File Transfer"
-msgstr ""
-
-#. #-#-#-#-#  - (menu-section 2.1.9-3)  #-#-#-#-#
-#. Third level entry under Network
-#. Policy definition: Network monitoring software.
-#. Examples: gip, ettercap, iptstate
-#. #-#-#-#-#  - (menu-section 2.1.9-3)  #-#-#-#-#
-#. Third level entry under System
-#. Policy definition: System information and monitoring tools, log viewers, etc.
-#. Examples: top, hal-device-manager, gtkdiskfree
-msgid "Monitoring"
-msgstr ""
-
-#. Third level entry under Network
-#. Policy definition: Web browsers, tools for offline browsing, etc.
-#. Examples: elinks, epiphany-browser, webhttrack
-msgid "Web Browsing"
-msgstr ""
-
-#. Third level entry under Network
-#. Policy definition: Web feed (RSS, Atom, etc.)
-#. and podcast aggregators.
-#. Examples: akregator, kitty, liferea
-msgid "Web News"
-msgstr ""
-
-#. Second level entry under Applications
-#. Policy definition: Office suites, word processors, spreadsheets,
-#. CRM, ERP, financial sofware, etc.
-#. Examples: openoffice.org, tinyerp-client, gnucash
-msgid "Office"
-msgstr ""
-
-#. Second level entry under Applications
-#. Policy definition: IDEs, debuggers, etc.
-#. Examples: anjuta, gdb, eclipse
-msgid "Programming"
-msgstr "Programmering"
-
-#. Second level entry under Applications
-#. Policy definition: Timetable managers, group task trackers,
-#. bug tracking software, etc.
-#. Examples: planner, bugzilla, gnotime
-msgid "Project Management"
-msgstr ""
-
-#. Second level entry under Applications
-#. Policy definition: Scientific and engineering-related software. This is
-#. Examples: a three-level section, do not put entries directly here.
-msgid "Science"
-msgstr "Vetenskap"
-
-#. Third level entry under Science
-#. Policy definition: Astronomy-related software.
-#. Examples: celestia, spacechart, stellarium
-msgid "Astronomy"
-msgstr ""
-
-#. Third level entry under Science
-#. Policy definition: Biology-related software.
-#. Examples: arb, ncbi-tools-x11, seaview
-msgid "Biology"
-msgstr ""
-
-#. Third level entry under Science
-#. Policy definition: Chemistry-related software.
-#. Examples: chemtool, kalzium, xdrawchem
-msgid "Chemistry"
-msgstr ""
-
-#. Third level entry under Science
-#. Policy definition: Software designed for processing, extracting,
-#. and presenting generic scientific data.
-#. Examples: fityk, ygraph, mn-fit
-#, fuzzy
-msgid "Data Analysis"
-msgstr "Databaser"
-
-#. Third level entry under Science
-#. Policy definition: Circuit design tools, simulators and
-#. assemblers for microprocessors, etc.
-#. Examples: geda, gnucap, tkgate
-msgid "Electronics"
-msgstr ""
-
-#. Third level entry under Science
-#. Policy definition: CAD, UML tools, diagram-drawing and
-#. other engineering-related software.
-#. Examples: tcm, dia, qcad
-msgid "Engineering"
-msgstr ""
-
-#. Third level entry under Science
-#. Policy definition: Geoscience-related software.
-#. Examples: earth3d, qgis, therion
-#, fuzzy
-msgid "Geoscience"
-msgstr "Vetenskap"
-
-#. Third level entry under Science
-#. Policy definition: Mathematics-related software.
-#. Examples: gcalctool, snappea, xeukleides
-msgid "Mathematics"
-msgstr ""
-
-#. Third level entry under Science
-#. Policy definition: Medicine-related software.
-#. Examples: mssstest, gnumed-client, xmedcon
-msgid "Medicine"
-msgstr ""
-
-#. Third level entry under Science
-#. Policy definition: Physics-related software.
-#. Examples: kxterm, ifrit, paw
-msgid "Physics"
-msgstr ""
-
-#. Third level entry under Science
-#. Policy definition: Social sciences-related software.
-#. Examples: gnomesword, hanzim, bibletime
-msgid "Social"
-msgstr ""
-
-#. Second level entry under Applications
-#. Policy definition: Various shells to be used inside a terminal emulator.
-#. Examples: bash, ksh, zsh
-msgid "Shells"
-msgstr "Skal"
-
-#. Second level entry under Applications
-#. Policy definition: Sound players, editors, and rippers/recorders.
-#. Examples: beep-media-player, grip, audacity
-msgid "Sound"
-msgstr "Ljud"
-
-#. Second level entry under Applications
-#. Policy definition: System related software. This is a three-level
-#. Examples: section, do not put entries directly here.
-msgid "System"
-msgstr "System"
-
-#. Third level entry under System
-#. Policy definition: Administrative and system configuration utilities,
-#. also tools for personal user settings.
-#. Examples: gnome-control-center, configure-debian, gksu
-msgid "Administration"
-msgstr ""
-
-#. Third level entry under System
-#. Policy definition: Tools for manipulating specific hardware,
-#. especially non-standard laptop hardware.
-#. Examples: toshutils, nvclock-gtk, nvtv
-msgid "Hardware"
-msgstr ""
-
-#. Third level entry under System
-#. Policy definition: This section is reserved for language-env as a special
-#. case.
-msgid "Language Environment"
-msgstr ""
-
-#. Third level entry under System
-#. Policy definition: Package managers and related tools.
-#. Examples: aptitude, deborphan, smartpm
-msgid "Package Management"
-msgstr ""
-
-#. Third level entry under System
-#. Policy definition: Security, cryptography and privacy related software,
-#. antiviruses, tools to track and report bugs, etc.
-#. Examples: gpgkeys, bastille, avscan
-msgid "Security"
-msgstr ""
-
-#. Second level entry under Applications
-#. Policy definition: Graphical terminal emulators.
-#. Examples: xterm, gnome-terminal, rxvt
-#, fuzzy
-msgid "Terminal Emulators"
-msgstr "Emulatorer"
-
-#. Second level entry under Applications
-#. Policy definition: Text oriented tools like dictionaries, OCR,
-#. translation, text analysis software, etc.
-#. Examples: kdrill, stardict, turkey
-msgid "Text"
-msgstr "Text"
-
-#. Second level entry under Applications
-#. Policy definition: TV-in, TV-out, FM radio, teletext browsers, etc.
-#. Examples: gradio, gatos, alevt
-msgid "TV and Radio"
-msgstr ""
-
-#. Second level entry under Applications
-#. Policy definition: Software for viewing images, documents
-#. and other (non-video) media.
-#. Examples: gqview, evince, gthumb
-msgid "Viewers"
-msgstr "Visare"
-
-#. Second level entry under Applications
-#. Policy definition: Video players, editors, and rippers/recorders.
-#. Examples: istanbul, totem, kino
-msgid "Video"
-msgstr ""
-
-#. Second level entry under Applications
-#. Policy definition: Software for web site editing, web
-#. programming, and site administration.
-#. Examples: bluefish, screem, gphpedit
-msgid "Web Development"
-msgstr ""
-
-#. First level entry 
-#. Policy definition: Games and recreation. This is a top-level
-#. Examples: section, do not put entries here.
-msgid "Games"
-msgstr "Spel"
-
-#. Second level entry under Games
-#. Policy definition: Games that involve a lot of action
-#. and require fast reflexes.
-#. Examples: xsoldier, supertux, xmoto
-#, fuzzy
-msgid "Action"
-msgstr "Utbildning"
-
-#. Second level entry under Games
-#. Policy definition: Role playing and adventure games,
-#. interactive movies and stories, etc.
-#. Examples: beneath-a-steel-sky, egoboo, kq
-msgid "Adventure"
-msgstr "Äventyr"
-
-#. Second level entry under Games
-#. Policy definition: Tetris-like games involving falling blocks.
-#. Examples: crack-attack, frozen-bubble, netris
-#, fuzzy
-msgid "Blocks"
-msgstr "Lås"
-
-#. Second level entry under Games
-#. Policy definition: Games played on a board.
-#. Examples: phalanx, xshogi, xboard
-msgid "Board"
-msgstr "Brädspel"
-
-#. Second level entry under Games
-#. Policy definition: Games involving a deck of cards.
-#. Examples: pysol, ace-of-penguins, xpat2
-msgid "Card"
-msgstr "Kortspel"
-
-#. Second level entry under Games
-#. Policy definition: Tests of ingenuity and logic.
-#. Examples: xmpuzzles, sgt-puzzles, enigma
-msgid "Puzzles"
-msgstr "Tankenötter"
-
-#. Second level entry under Games
-#. Policy definition: Simulations of the real world
-#. in all detail and complexity.
-#. Examples: flightgear, torcs
-msgid "Simulation"
-msgstr "Simulering"
-
-#. Second level entry under Games
-#. Policy definition: Games involving long-term strategic thinking.
-#. Examples: wesnoth, widelands, netpanzer
-msgid "Strategy"
-msgstr "Strategi"
-
-#. Second level entry under Games
-#. Policy definition: Server browsers, configurators, editors, and other
-#. game-related tools that are not games themselves.
-#. Examples: xqf, crystalspace
-msgid "Tools"
-msgstr "Verktyg"
-
-#. Second level entry under Games
-#. Policy definition: Amusements, eye-candy, entertaining
-#. demos, screen hacks (screensavers), etc.
-#. Examples: xdesktopwaves, xphoon, xpenguins
-msgid "Toys"
-msgstr "Leksaker"
-
-#. First level entry 
-#. Policy definition: Programs that provide user documentation. Can (and
-#. should) also contain entries for important documents.
-#. Examples: debian-reference, apt-howto, dhelp
-msgid "Help"
-msgstr "Hjälp"
-
-#. First level entry 
-#. Policy definition: Programs that affect the whole screen. This
-#. Examples: is a top-level section, do not put entries here.
-msgid "Screen"
-msgstr "Skärm"
-
-#. Second level entry under Screen
-#. Policy definition: Tools for blanking the screen. Entries of screen hacks and
-#. configuration GUIs should go to other appropriate sections.
-#. Examples: xscreensaver, xlockmore
-#, fuzzy
-msgid "Saving"
-msgstr "Skärmsläckare"
-
-#. Second level entry under Screen
-#. Policy definition: Tools for locking the screen.
-#. Examples: xscreensaver, xlockmore
-#, fuzzy
-msgid "Locking"
-msgstr "Lås"
-
-#. First level entry 
-#. Policy definition: X window managers.
-#. Examples: fluxbox, metacity, waimea
-#, fuzzy
-msgid "Window Managers"
-msgstr "Fönsterhanterare"
-
-#. First level entry 
-#. Policy definition: FVWM-based window manager modules. 
-#. Examples: fvwm, fvwm-gnome, fvwm95
-#, fuzzy
-msgid "FVWM Modules"
-msgstr "Moduler"
-
-#. First level entry 
-#. Policy definition: This section is reserved for wmaker as a special
-#. case. 
-#, fuzzy
-msgid "Window Maker"
-msgstr "Fönsterhanterare"
-
-# Non official sections from WindowMaker
-#. Non official sections from WindowMaker
-msgid "Appearance"
-msgstr "Utseende"
-
-#. Non official sections from WindowMaker
-msgid "WorkSpace"
-msgstr "Arbetsyta"
-
-# Frequently used unofficial sections.
-# From Apps/Net/Mozilla Components
-#. Frequently used unofficial sections.
-#. From Apps/Net/Iceape Components
-#, fuzzy
-msgid "Iceape Components"
-msgstr "Mozillakomponenter"
-
-# From Games/Toys/Teddies
-#. From Games/Toys/Teddies
-#.  as in "Teddy Bear"
-msgid "Teddies"
-msgstr "Teddybjörnar"
-
-#~ msgid "Apps"
-#~ msgstr "Program"
-
-#~ msgid "Hamradio"
-#~ msgstr "Amatörradio"
-
-#~ msgid "Math"
-#~ msgstr "Matematik"
-
-#~ msgid "Technical"
-#~ msgstr "Tekniskt"
-
-#~ msgid "Arcade"
-#~ msgstr "Arkad"
-
-#~ msgid "Sports"
-#~ msgstr "Sport"
-
-#~ msgid "Tetris-like"
-#~ msgstr "Tetrisliknande"
-
-#~ msgid "Root-window"
-#~ msgstr "Rotfönster"
-
-#~ msgid "XShells"
-#~ msgstr "X-terminaler"
-
-# From Apps/System/Admin
-#~ msgid "Admin"
-#~ msgstr "Administration"

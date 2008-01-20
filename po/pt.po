@@ -98,7 +98,6 @@ msgstr "Aviso: a string %1 não aparece no ficheiro de template %2\n"
 
 #. Don't translate quoted string
 #: ../install-menu/install-menu.cc:896
-#, fuzzy
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
@@ -114,6 +113,7 @@ msgstr ""
 "  o método-menu especificado.\n"
 "  Opções para o install-menu:\n"
 "     -h --help    : esta mensagem\n"
+"        --remove  : elimine este menu em vez de o gerar.\n"
 "     -v --verbose : seja verboso\n"
 
 #: ../install-menu/install-menu.cc:943
@@ -126,7 +126,7 @@ msgstr "Não foi possível abrir o script %1 para leitura.\n"
 
 #: ../install-menu/install-menu.cc:979
 msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
-msgstr ""
+msgstr "Aviso: o script %1 não fornece removemenu, o menu não foi removido\n"
 
 #: ../install-menu/install-menu.cc:1014
 msgid "Running: \"%1\"\n"
@@ -269,9 +269,8 @@ msgid "%1 menu entries found (%2 total)."
 msgstr "%1 items de menu encontrados (%2 total)."
 
 #: ../update-menus/update-menus.cc:595
-#, fuzzy
 msgid "Running method: %1 --remove"
-msgstr "Executando método: %1"
+msgstr "Executando método: %1 --remove"
 
 #: ../update-menus/update-menus.cc:607 ../update-menus/update-menus.cc:669
 #: ../update-menus/update-menus.cc:990
@@ -337,7 +336,6 @@ msgstr "O dpkg não está fazendo lock na sua àrea de status, perfeito."
 
 #. This is the update-menus --help message
 #: ../update-menus/update-menus.cc:855
-#, fuzzy
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -368,9 +366,12 @@ msgstr ""
 "  --menumethod=<método>  Executa somente o método de menu <método>.\n"
 "  --nodefaultdirs        Desabilita o uso de todos os directórios de menu\n"
 "                         padrão.\n"
+"  --nodpkgcheck          Não verifica se os pacotes estão instalados.\n"
+"  --remove               Em alternativa remove os menus instalados.\n"
 "  --stdout               Exibe lista de menu em formato utilizável para "
 "enviar\n"
 "                         via pipe par o install-menu.\n"
+"  --version              Exibe informação sobre a versão e termina.\n"
 
 #: ../update-menus/update-menus.h:151
 msgid ""
@@ -378,7 +379,3 @@ msgid ""
 msgstr ""
 "Condição de instalação desconhecida \"%1\" (atualmente, somente \"package\" "
 "é suportado)."
-
-#~ msgid "  --version              Output version information and exit.\n"
-#~ msgstr ""
-#~ "  --version              Fornece informaçãol sobre a versão e termina.\n"

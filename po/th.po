@@ -1,16 +1,16 @@
 # Thai translation of Menu sections
-# Copyright (C) 2006 Software in the Public Interest, Inc.
+# Copyright (C) 2006-2007 Software in the Public Interest, Inc.
 # This file is distributed under the same license as the menu package.
-# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2006.
+# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2006-2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: menu 2.1.30\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2007-10-05 07:30+0200\n"
-"PO-Revision-Date: 2006-09-11 09:25+0700\n"
+"PO-Revision-Date: 2007-10-09 15:09+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
-"Language-Team: Thai <l10n@opentle.org>\n"
+"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -330,24 +330,6 @@ msgstr "dpkg ไม่ได้ล็อคแฟ้มสถานะ dpkg อ�
 
 #. This is the update-menus --help message
 #: ../update-menus/update-menus.cc:855
-#, fuzzy
-#| msgid ""
-#| "Usage: update-menus [options] \n"
-#| "Gather packages data from the menu database and generate menus for\n"
-#| "all programs providing menu-methods, usually window-managers.\n"
-#| "  -d                     Output debugging messages.\n"
-#| "  -v                     Be verbose about what is going on.\n"
-#| "  -h, --help             This message.\n"
-#| "  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to "
-#| "search.\n"
-#| "  --menumethod=<method>  Run only the menu method <method>.\n"
-#| "  --nodefaultdirs        Disable the use of all the standard menu "
-#| "directories.\n"
-#| "  --remove               Remove generated menus instead.\n"
-#| "  --stdout               Output menu list in format suitable for piping "
-#| "to\n"
-#| "                         install-menu.\n"
-#| "  --version              Output version information and exit.\n"
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -375,6 +357,7 @@ msgstr ""
 "  --menufilesdir=<dir>   เพิ่ม <dir> เข้าในรายการไดเรกทอรีของเมนูที่จะใช้ค้นหา\n"
 "  --menumethod=<method>  ดำเนินการเฉพาะการกระทำ <method>\n"
 "  --nodefaultdirs        ปิดใช้ไดเรกทอรีมาตรฐานของเมนู\n"
+"  --nodpkgcheck          ไม่ต้องตรวจสอบว่าแพกเกจถูกติดตั้งไว้หรือไม่\n"
 "  --remove               ลบเมนูแทนที่จะสร้างเมนู\n"
 "  --stdout               แสดงผลลัพธ์รายการเมนูในรูปแบบที่เหมาะสำหรับส่งต่อทางไปป์\n"
 "                         ให้กับคำสั่ง install-menu\n"
