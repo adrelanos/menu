@@ -473,20 +473,20 @@ int read_menufile(const string &filename, const string &shortfilename,
     // need to execute it and read its output from stdout.
 
     if (executable(filename)) {
-      FILE *status = popen(filename.c_str(), "r");
+      FILE *exec_file = popen(filename.c_str(), "r");
 
       sstream = new std::stringstream;
 
-      if (!status)
+      if (!exec_file)
           throw pipeerror_read(filename.c_str());
 
-      while (!feof(status))
+      while (!feof(exec_file))
       {
         char tmp[MAX_LINE];
-        if (fgets(tmp, MAX_LINE, status) != NULL)
+        if (fgets(tmp, MAX_LINE, exec_file) != NULL)
             *sstream << tmp;
       }
-      pclose(status);
+      int status = pclose(exec_file);
 
       try {
         ps = new parsestream(*sstream);
