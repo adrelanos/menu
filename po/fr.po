@@ -256,7 +256,7 @@ msgstr "Lecture de la liste des paquets installés..."
 #: ../update-menus/update-menus.cc:493
 msgid "Execution of %1 generated no output or returned an error.\n"
 msgstr ""
-"L'exécution de %1 n'a créé aucune donnée en sortie ni retourné aucune "
+"L'exécution de %1 n'a créé aucune donnée en sortie ou a retourné une "
 "erreur.\n"
 
 #: ../update-menus/update-menus.cc:534 ../update-menus/update-menus.cc:538
