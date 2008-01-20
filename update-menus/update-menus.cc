@@ -491,7 +491,8 @@ int read_menufile(const string &filename, const string &shortfilename,
       try {
         ps = new parsestream(*sstream);
       } catch (endoffile d) {
-        cerr << String::compose(_("Execution of %1 generated no output or returned an error.\n"), filename);
+        if (status || sstream->str().size())
+          cerr << String::compose(_("Execution of %1 generated no output or returned an error.\n"), filename);
         throw endoffile(d);
       }
     } else {

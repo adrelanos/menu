@@ -72,7 +72,13 @@ menu (2.1.37) unstable; urgency=low
       Thanks to Colin Watson and Drew Parsons.
     - Rewrite abstract and update Author field.
 
- -- Bill Allombert <ballombe@debian.org>  Sat, 19 Jan 2008 22:59:09 +0100
+  * update-menus/update-menus.cc, po/fr.po:
+    - error "Execution of %1 generated no output or returned an error.":
+      + Fix French translation.
+      + Does not display it when there is no output and the exit status is 0.
+        Closes: #445728. Thanks Andreas Tille.
+
+ -- Bill Allombert <ballombe@debian.org>  Sun, 20 Jan 2008 19:10:20 +0100
 
 menu (2.1.36) unstable; urgency=low
 
