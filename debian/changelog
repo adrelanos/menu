@@ -1,6 +1,6 @@
 menu (2.1.37) unstable; urgency=low
 
-  * the "unreleased" release.
+  * the "what happened to release early, release often ?" release.
   * Handling of l10n by Christian Perrier:
     + programs translations:
       - Dutch updated by Tim Dijkstra. Closes: #446009
@@ -78,7 +78,7 @@ menu (2.1.37) unstable; urgency=low
       + Does not display it when there is no output and the exit status is 0.
         Closes: #445728. Thanks Andreas Tille.
 
- -- Bill Allombert <ballombe@debian.org>  Sun, 20 Jan 2008 19:10:20 +0100
+ -- Bill Allombert <ballombe@debian.org>  Mon, 21 Jan 2008 21:54:26 +0100
 
 menu (2.1.36) unstable; urgency=low
 
