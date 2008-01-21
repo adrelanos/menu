@@ -1,16 +1,15 @@
-# translation of menu to Euskara
-# Debian menu system
-# Copyright (C) 2006 Debian menu team
+# translation of eu.po to Euskara
+# Menu section translation
+# Copyright (C) 2003
 # This file is distributed under the same license as the menu package.
 #
-# Bill Allombert <ballombe@debian.org>, 2006.
-# Piarres Beobide <pi@beobide.net>, 2007.
+# Bill Allombert <ballombe@debian.org>, 2003.
+# Piarres Beobide  <pi@beobide.net>, 2005, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: menu 2.1.37\n"
-"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"Project-Id-Version: eu\n"
 "POT-Creation-Date: 2007-07-04 15:27+0100\n"
-"PO-Revision-Date: 2007-07-09 11:34+0200\n"
+"PO-Revision-Date: 2007-07-09 10:42+0200\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Euskara <Librezale@librezale.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,87 +21,87 @@ msgstr ""
 #. Policy definition: Normal applications. This is a top-level
 #. Examples: section, do not put entries here.
 msgid "Applications"
-msgstr ""
+msgstr "Aplikazioak"
 
 #. Second level entry under Applications
 #. Policy definition: Tools to aid people with disabilities or
 #. for machines lacking usual input devices.
 #. Examples: gok, yasr, dasher
 msgid "Accessibility"
-msgstr ""
+msgstr "Erabilerraztasuna"
 
 #. Second level entry under Applications
 #. Policy definition: Anything relating to HAM radio.
 #. Examples: baken, hamsoft, twlog
 msgid "Amateur Radio"
-msgstr ""
+msgstr "Irrati-amateurra"
 
 #. Second level entry under Applications
 #. Policy definition: Interactive database programs, collection
 #. managers, address books, bibliography tools, etc.
 #. Examples: gaby, alexandria, mdbtools
 msgid "Data Management"
-msgstr ""
+msgstr "Datu Kudeaketa"
 
 #. Second level entry under Applications
 #. Policy definition: Editors, other than office word processors,
 #. for text-based information.
 #. Examples: ksubtile, nano, hexedit
 msgid "Editors"
-msgstr ""
+msgstr "Editoreak"
 
 #. Second level entry under Applications
 #. Policy definition: Educational and training software.
 #. Examples: gtypist, gcompris, quiz
 msgid "Education"
-msgstr ""
+msgstr "Heziketa"
 
 #. Second level entry under Applications
 #. Policy definition: Software that allows you to run non-native
 #. software or more than one OS at a time.
 #. Examples: wine, dosemu, qemu
 msgid "Emulators"
-msgstr ""
+msgstr "Emuladoreak"
 
 #. Second level entry under Applications
 #. Policy definition: Tools for file management, archiving,
 #. searching, CD/DVD burning, backup, etc.
 #. Examples: file-roller, mc, baobab
 msgid "File Management"
-msgstr ""
+msgstr "Fitxategi Kudeaketa"
 
 #. Second level entry under Applications
 #. Policy definition: 2D and 3D graphics manipulation software.
 #. Examples: gimp, inkscape, imagemagick
 msgid "Graphics"
-msgstr ""
+msgstr "Grafikoak"
 
 #. Second level entry under Applications
 #. Policy definition: Software that allows you to interface
 #. with mobile devices (phones, PDAs, etc.).
 #. Examples: kandy, gnokii, gnome-pilot
 msgid "Mobile Devices"
-msgstr ""
+msgstr "Gailu Mugikorrak"
 
 #. Second level entry under Applications
 #. Policy definition: Network related software. This is a three-level
 #. Examples: section, do not put entries directly here.
 msgid "Network"
-msgstr ""
+msgstr "Sarea"
 
 #. Third level entry under Network
 #. Policy definition: Mail, USENET news, chat, instant messaging,
 #. IP telephony, video conferencing software, etc.
 #. Examples: xchat, gaim, mutt
 msgid "Communication"
-msgstr ""
+msgstr "Komunikazioak"
 
 #. Third level entry under Network
 #. Policy definition: File transfer software such as download
 #. managers, FTP clients, P2P clients, etc.
 #. Examples: amule, gftp, d4x
 msgid "File Transfer"
-msgstr ""
+msgstr "Fitxategi Transferentzia"
 
 #. #-#-#-#-#  - (menu-section 2.1.9-3)  #-#-#-#-#
 #. Third level entry under Network
@@ -113,644 +112,335 @@ msgstr ""
 #. Policy definition: System information and monitoring tools, log viewers, etc.
 #. Examples: top, hal-device-manager, gtkdiskfree
 msgid "Monitoring"
-msgstr ""
+msgstr "Monitorizazioa"
 
 #. Third level entry under Network
 #. Policy definition: Web browsers, tools for offline browsing, etc.
 #. Examples: elinks, epiphany-browser, webhttrack
 msgid "Web Browsing"
-msgstr ""
+msgstr "Web Nabigatzea"
 
 #. Third level entry under Network
 #. Policy definition: Web feed (RSS, Atom, etc.)
 #. and podcast aggregators.
 #. Examples: akregator, kitty, liferea
 msgid "Web News"
-msgstr ""
+msgstr "Web Berriak"
 
 #. Second level entry under Applications
 #. Policy definition: Office suites, word processors, spreadsheets,
 #. CRM, ERP, financial sofware, etc.
 #. Examples: openoffice.org, tinyerp-client, gnucash
 msgid "Office"
-msgstr ""
+msgstr "Bulegoa"
 
 #. Second level entry under Applications
 #. Policy definition: IDEs, debuggers, etc.
 #. Examples: anjuta, gdb, eclipse
 msgid "Programming"
-msgstr ""
+msgstr "Programatzea"
 
 #. Second level entry under Applications
 #. Policy definition: Timetable managers, group task trackers,
 #. bug tracking software, etc.
 #. Examples: planner, bugzilla, gnotime
 msgid "Project Management"
-msgstr ""
+msgstr "Proiektu Kudeaketa"
 
 #. Second level entry under Applications
 #. Policy definition: Scientific and engineering-related software. This is
 #. Examples: a three-level section, do not put entries directly here.
 msgid "Science"
-msgstr ""
+msgstr "Zientzia"
 
 #. Third level entry under Science
 #. Policy definition: Astronomy-related software.
 #. Examples: celestia, spacechart, stellarium
 msgid "Astronomy"
-msgstr ""
+msgstr "Astronomia"
 
 #. Third level entry under Science
 #. Policy definition: Biology-related software.
 #. Examples: arb, ncbi-tools-x11, seaview
 msgid "Biology"
-msgstr ""
+msgstr "Biologia"
 
 #. Third level entry under Science
 #. Policy definition: Chemistry-related software.
 #. Examples: chemtool, kalzium, xdrawchem
 msgid "Chemistry"
-msgstr ""
+msgstr "Kimika"
 
 #. Third level entry under Science
 #. Policy definition: Software designed for processing, extracting,
 #. and presenting generic scientific data.
 #. Examples: fityk, ygraph, mn-fit
 msgid "Data Analysis"
-msgstr ""
+msgstr "Datu Analisia"
 
 #. Third level entry under Science
 #. Policy definition: Circuit design tools, simulators and
 #. assemblers for microprocessors, etc.
 #. Examples: geda, gnucap, tkgate
 msgid "Electronics"
-msgstr ""
+msgstr "Elektronika"
 
 #. Third level entry under Science
 #. Policy definition: CAD, UML tools, diagram-drawing and
 #. other engineering-related software.
 #. Examples: tcm, dia, qcad
 msgid "Engineering"
-msgstr ""
+msgstr "Ingeniaritza"
 
 #. Third level entry under Science
 #. Policy definition: Geoscience-related software.
 #. Examples: earth3d, qgis, therion
 msgid "Geoscience"
-msgstr ""
+msgstr "Geozientzia"
 
 #. Third level entry under Science
 #. Policy definition: Mathematics-related software.
 #. Examples: gcalctool, snappea, xeukleides
 msgid "Mathematics"
-msgstr ""
+msgstr "Matematika"
 
 #. Third level entry under Science
 #. Policy definition: Medicine-related software.
 #. Examples: mssstest, gnumed-client, xmedcon
 msgid "Medicine"
-msgstr ""
+msgstr "Medizina"
 
 #. Third level entry under Science
 #. Policy definition: Physics-related software.
 #. Examples: kxterm, ifrit, paw
 msgid "Physics"
-msgstr ""
+msgstr "Fisika"
 
 #. Third level entry under Science
 #. Policy definition: Social sciences-related software.
 #. Examples: gnomesword, hanzim, bibletime
 msgid "Social"
-msgstr ""
+msgstr "Soziala"
 
 #. Second level entry under Applications
 #. Policy definition: Various shells to be used inside a terminal emulator.
 #. Examples: bash, ksh, zsh
 msgid "Shells"
-msgstr ""
+msgstr "Shell-ak"
 
 #. Second level entry under Applications
 #. Policy definition: Sound players, editors, and rippers/recorders.
 #. Examples: beep-media-player, grip, audacity
 msgid "Sound"
-msgstr ""
+msgstr "Soinua"
 
 #. Second level entry under Applications
 #. Policy definition: System related software. This is a three-level
 #. Examples: section, do not put entries directly here.
 msgid "System"
-msgstr ""
+msgstr "Sistema"
 
 #. Third level entry under System
 #. Policy definition: Administrative and system configuration utilities,
 #. also tools for personal user settings.
 #. Examples: gnome-control-center, configure-debian, gksu
 msgid "Administration"
-msgstr ""
+msgstr "Administrazioa"
 
 #. Third level entry under System
 #. Policy definition: Tools for manipulating specific hardware,
 #. especially non-standard laptop hardware.
 #. Examples: toshutils, nvclock-gtk, nvtv
 msgid "Hardware"
-msgstr ""
+msgstr "Hardwarea"
 
 #. Third level entry under System
 #. Policy definition: This section is reserved for language-env as a special
 #. case.
 msgid "Language Environment"
-msgstr ""
+msgstr "Hizkuntz Ingurunea"
 
 #. Third level entry under System
 #. Policy definition: Package managers and related tools.
 #. Examples: aptitude, deborphan, smartpm
 msgid "Package Management"
-msgstr ""
+msgstr "Pakete kudeaketa"
 
 #. Third level entry under System
 #. Policy definition: Security, cryptography and privacy related software,
 #. antiviruses, tools to track and report bugs, etc.
 #. Examples: gpgkeys, bastille, avscan
 msgid "Security"
-msgstr ""
+msgstr "Segurtasuna"
 
 #. Second level entry under Applications
 #. Policy definition: Graphical terminal emulators.
 #. Examples: xterm, gnome-terminal, rxvt
 msgid "Terminal Emulators"
-msgstr ""
+msgstr "Terminal Emulatzaileak"
 
 #. Second level entry under Applications
 #. Policy definition: Text oriented tools like dictionaries, OCR,
 #. translation, text analysis software, etc.
 #. Examples: kdrill, stardict, turkey
 msgid "Text"
-msgstr ""
+msgstr "Testua"
 
 #. Second level entry under Applications
 #. Policy definition: TV-in, TV-out, FM radio, teletext browsers, etc.
 #. Examples: gradio, gatos, alevt
 msgid "TV and Radio"
-msgstr ""
+msgstr "TV eta Irratia"
 
 #. Second level entry under Applications
 #. Policy definition: Software for viewing images, documents
 #. and other (non-video) media.
 #. Examples: gqview, evince, gthumb
 msgid "Viewers"
-msgstr ""
+msgstr "Ikustatzaileak"
 
 #. Second level entry under Applications
 #. Policy definition: Video players, editors, and rippers/recorders.
 #. Examples: istanbul, totem, kino
 msgid "Video"
-msgstr ""
+msgstr "Bideoa"
 
 #. Second level entry under Applications
 #. Policy definition: Software for web site editing, web
 #. programming, and site administration.
 #. Examples: bluefish, screem, gphpedit
 msgid "Web Development"
-msgstr ""
+msgstr "Web Garapena"
 
 #. First level entry 
 #. Policy definition: Games and recreation. This is a top-level
 #. Examples: section, do not put entries here.
 msgid "Games"
-msgstr ""
+msgstr "Jokoak"
 
 #. Second level entry under Games
 #. Policy definition: Games that involve a lot of action
 #. and require fast reflexes.
 #. Examples: xsoldier, supertux, xmoto
 msgid "Action"
-msgstr ""
+msgstr "Ekintza"
 
 #. Second level entry under Games
 #. Policy definition: Role playing and adventure games,
 #. interactive movies and stories, etc.
 #. Examples: beneath-a-steel-sky, egoboo, kq
 msgid "Adventure"
-msgstr ""
+msgstr "Abentura"
 
 #. Second level entry under Games
 #. Policy definition: Tetris-like games involving falling blocks.
 #. Examples: crack-attack, frozen-bubble, netris
 msgid "Blocks"
-msgstr ""
+msgstr "Blokeak"
 
 #. Second level entry under Games
 #. Policy definition: Games played on a board.
 #. Examples: phalanx, xshogi, xboard
 msgid "Board"
-msgstr ""
+msgstr "Mahaigainekoak"
 
 #. Second level entry under Games
 #. Policy definition: Games involving a deck of cards.
 #. Examples: pysol, ace-of-penguins, xpat2
 msgid "Card"
-msgstr ""
+msgstr "Kartak"
 
 #. Second level entry under Games
 #. Policy definition: Tests of ingenuity and logic.
 #. Examples: xmpuzzles, sgt-puzzles, enigma
 msgid "Puzzles"
-msgstr ""
+msgstr "Puzleak"
 
 #. Second level entry under Games
 #. Policy definition: Simulations of the real world
 #. in all detail and complexity.
 #. Examples: flightgear, torcs
 msgid "Simulation"
-msgstr ""
+msgstr "Simulazioa"
 
 #. Second level entry under Games
 #. Policy definition: Games involving long-term strategic thinking.
 #. Examples: wesnoth, widelands, netpanzer
 msgid "Strategy"
-msgstr ""
+msgstr "Estrategia"
 
 #. Second level entry under Games
 #. Policy definition: Server browsers, configurators, editors, and other
 #. game-related tools that are not games themselves.
 #. Examples: xqf, crystalspace
 msgid "Tools"
-msgstr ""
+msgstr "Lanabesak"
 
 #. Second level entry under Games
 #. Policy definition: Amusements, eye-candy, entertaining
 #. demos, screen hacks (screensavers), etc.
 #. Examples: xdesktopwaves, xphoon, xpenguins
 msgid "Toys"
-msgstr ""
+msgstr "Jostailuak"
 
 #. First level entry 
 #. Policy definition: Programs that provide user documentation. Can (and
 #. should) also contain entries for important documents.
 #. Examples: debian-reference, apt-howto, dhelp
 msgid "Help"
-msgstr ""
+msgstr "Laguntza"
 
 #. First level entry 
 #. Policy definition: Programs that affect the whole screen. This
 #. Examples: is a top-level section, do not put entries here.
 msgid "Screen"
-msgstr ""
+msgstr "Pantaila"
 
 #. Second level entry under Screen
 #. Policy definition: Tools for blanking the screen. Entries of screen hacks and
 #. configuration GUIs should go to other appropriate sections.
 #. Examples: xscreensaver, xlockmore
 msgid "Saving"
-msgstr ""
+msgstr "Gorde"
 
 #. Second level entry under Screen
 #. Policy definition: Tools for locking the screen.
 #. Examples: xscreensaver, xlockmore
 msgid "Locking"
-msgstr ""
+msgstr "Blokeatu"
 
 #. First level entry 
 #. Policy definition: X window managers.
 #. Examples: fluxbox, metacity, waimea
 msgid "Window Managers"
-msgstr ""
+msgstr "Leiho kudeatzaileak"
 
 #. First level entry 
 #. Policy definition: FVWM-based window manager modules. 
 #. Examples: fvwm, fvwm-gnome, fvwm95
 msgid "FVWM Modules"
-msgstr ""
+msgstr "FVWM Moduluak"
 
 #. First level entry 
 #. Policy definition: This section is reserved for wmaker as a special
 #. case. 
 msgid "Window Maker"
-msgstr ""
+msgstr "Leiho Sortzailea"
 
 #. Non official sections from WindowMaker
 msgid "Appearance"
-msgstr ""
+msgstr "Itxura"
 
 #. Non official sections from WindowMaker
 msgid "WorkSpace"
-msgstr ""
+msgstr "LanekoArea"
 
 #. Frequently used unofficial sections.
 #. From Apps/Net/Iceape Components
 msgid "Iceape Components"
-msgstr ""
+msgstr "Iceape Osagaiak"
 
 #. From Games/Toys/Teddies
 #.  as in "Teddy Bear"
 msgid "Teddies"
-msgstr ""
-
-#~ msgid "Zero-size argument to print function."
-#~ msgstr "Zero-tamainako argumentua inprimatze funtziorako."
-
-#~ msgid "install-menu: checking directory %1\n"
-#~ msgstr "install-menu: %1 direktorioa arakatzen\n"
-
-#~ msgid "install-menu: creating directory %1:\n"
-#~ msgstr "install-menu: %1 direktorioa sortzen:\n"
-
-#~ msgid "Could not create directory(%1): %2"
-#~ msgstr "Ezin da direktorioa(%1) sortu: %2"
-
-#~ msgid "Could not change directory(%1): %2"
-#~ msgstr "Ezin da direktorioa(%1) aldatu: %2"
-
-#~ msgid "install-menu: directory %1 already exists\n"
-#~ msgstr "install-menu: Dagoeneko badago %1 direktorioa\n"
-
-#~ msgid "install-menu: [supported]: name=%1\n"
-#~ msgstr "install-menu: [onartua]: izena=%1\n"
-
-#~ msgid "Menu entry lacks mandatory field \"%1\".\n"
-#~ msgstr "Menu sarrerak ez du beharrezko \"%1\" eremua.\n"
-
-#~ msgid "Unknown value for field %1=\"%2\".\n"
-#~ msgstr "Balio ezezaguna %1 eremuarentzat=\"%2\".\n"
-
-#~ msgid ""
-#~ "install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive"
-#~ "\"\n"
-#~ msgstr ""
-#~ "install-menu: \"hotkeycase\" bakarrik \"sensitive\" edo \"insensitive\" "
-#~ "izan daiteke\n"
-
-#~ msgid ""
-#~ "install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
-#~ "Ignoring.\n"
-#~ msgstr ""
-#~ "install-menu: Abisua: `%1' identifikatzaile ezezaguna %3 fitxategiaren %2 "
-#~ "lerroan. Alde batetara uzten.\n"
-
-#~ msgid "install-menu: %1 must be defined in menu-method %2"
-#~ msgstr "install-menu: %1 ezarririk egon behar da %2 menu metodoan"
-
-#~ msgid "Cannot open file %1 (also tried %2).\n"
-#~ msgstr "Ezin da %1 fitxategia ireki (%2 ere probatu da).\n"
-
-#~ msgid "Cannot open file %1.\n"
-#~ msgstr "Ezin da %1 fitxategia ireki.\n"
-
-#~ msgid ""
-#~ "In order to be able to create the user config file(s) for the window "
-#~ "manager,\n"
-#~ "the above file needs to be writeable (and/or the directory needs to "
-#~ "exist).\n"
-#~ msgstr ""
-#~ "Leiho kudeatzailearentzat erabiltzailearen konfigurazio fitxategiak sortu "
-#~ "ahal izateko,\n"
-#~ "ondorengo fitxategietan idaztea posible izan behar da (eta/edo "
-#~ "direktorioa egon behar da).\n"
-
-#~ msgid "Warning: the string %1 did not occur in template file %2\n"
-#~ msgstr "Oharra: ez da %1 katea topatu %2 txantiloi fitxategian\n"
-
-#~ msgid ""
-#~ "install-menu [-vh] <menu-method>\n"
-#~ "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
-#~ "  and generate menu files using the specified menu-method.\n"
-#~ "  Options to install-menu:\n"
-#~ "     -h --help    : this message\n"
-#~ "        --remove  : remove the menu instead of generating it.\n"
-#~ "     -v --verbose : be verbose\n"
-#~ msgstr ""
-#~ "Install-menu [-vh] <menu-metodoa>\n"
-#~ "  Irakurri menu sarrerak sarrera estandarretik \"update-menus --stdout\" "
-#~ "formatuan\n"
-#~ "  eta ezarritako menu-metodoa erabiliaz sortu menu fitxategiak.\n"
-#~ "  install-menu aukerak:\n"
-#~ "     -h --help    : mezu hau\n"
-#~ "        --remove  : menua ezabatu sortu beharrean.\n"
-#~ "     -v --verbose : xehetasunak bistarazi\n"
-
-#~ msgid "install-menu: no menu-method script specified!"
-#~ msgstr "install-menu: ez dago menu-metodorik ezarririk!"
-
-#~ msgid "Cannot open script %1 for reading.\n"
-#~ msgstr "Ezin da %1 skript-a irakurri.\n"
-
-#~ msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
-#~ msgstr "Oharra: %1 skriptak ez du removemenu, menua ez da ezabatuko\n"
-
-#~ msgid "Running: \"%1\"\n"
-#~ msgstr "Exekutatzen: \"%1\"\n"
-
-#~ msgid "install-menu: %1: aborting\n"
-#~ msgstr "install-menu: %1: uzten\n"
-
-#~ msgid "Number of arguments to function %1 does not match."
-#~ msgstr "%s1 funtzioaren argumentu kopurua ez dator bat."
-
-#~ msgid "Unknown function: \"%1\""
-#~ msgstr "Funtzio ezezaguna: \"%1\""
-
-#~ msgid "Indirectly used, but not defined function: \"%1\""
-#~ msgstr "Zeharka erabilia, baina ez dago funtzioan ezarririk: \"%1\""
-
-#~ msgid "Unknown identifier: \"%1\""
-#~ msgstr "Identifikatzaile ezezaguna: \"%1\""
-
-#~ msgid "Encoding conversion error: \"%1\""
-#~ msgstr "Kodeketa eraldaketa errorea: \"%1\""
-
-#~ msgid "Unknown error."
-#~ msgstr "Errore ezezaguna."
-
-#~ msgid "Unknown error, message=%1"
-#~ msgstr "Ezezaguna errorea, mezua=%1"
-
-#~ msgid "Unable to open file \"%1\"."
-#~ msgstr "Ezin da \"%1\" fitxategia ireki."
-
-#~ msgid "Failed to pipe data through \"%1\" (pipe opened for reading)."
-#~ msgstr ""
-#~ "Huts datuak \"%1\" bidez kanalizatzerakoan (tutua irakurketarako irekirik)"
-
-#~ msgid "%1: missing required tag: \"%2\""
-#~ msgstr "%1: beharrezko marka falta da: \"%2\""
-
-#~ msgid "(probably) stdin"
-#~ msgstr "(ziurrenik) stdin"
-
-#~ msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
-#~ msgstr "\"%1\" fitxategian, %2 lerroan (edo hor amaitzen de definizioan:\n"
-
-#~ msgid "Somewhere in input file:\n"
-#~ msgstr "Sarrera fitxategiko nonbait:\n"
-
-#~ msgid "Unexpected end of file."
-#~ msgstr "Esperogabekoa fitxategi amaiera."
-
-#~ msgid "Unexpected end of line."
-#~ msgstr "Esperogabekoa lerro amaiera."
-
-#~ msgid "Identifier expected."
-#~ msgstr "Identifikatzailea espero zen."
-
-#~ msgid "Expected: \"%1\""
-#~ msgstr "Espero zena: \"%1\""
-
-#~ msgid "Unexpected character: \"%1\""
-#~ msgstr "Esperogabeko karakterea: \"%1\""
-
-#~ msgid ""
-#~ "Boolean (either true or false) expected.\n"
-#~ "Found: \"%1\""
-#~ msgstr ""
-#~ "Boolearra /egia edo faltsua) espero zen.\n"
-#~ "Topatutakoa: \"%1\""
-
-#~ msgid "Unknown compat mode: \"%1\""
-#~ msgstr "Bateragarritasun modu ezezaguna: \"%1\""
-
-#~ msgid ""
-#~ "replacewith($string, $replace, $with): $replace and $with must have the "
-#~ "same length."
-#~ msgstr ""
-#~ "replacewith($string, $replace, $with): $replace eta $with luzera "
-#~ "berdinekoak izan behar dira."
-
-#~ msgid ""
-#~ "file %1 line %2:\n"
-#~ "Discarding entry requiring missing package %3."
-#~ msgstr ""
-#~ "%1 fitxategia %2 lerroa:\n"
-#~ "Falta den %3 paketea behar duen sarrera alde batatara uzten."
-
-#~ msgid "Reading translation rules in %1."
-#~ msgstr "Itzulpen arauka %1-etik irakurtzen."
-
-#~ msgid "Reading installed packages list..."
-#~ msgstr "Instalatutako pakete zerrenda irakurtzen..."
-
-#~ msgid "Execution of %1 generated no output or returned an error.\n"
-#~ msgstr "%1-en exekuzioak ez du irteerarik sortu ez errorerik itzuli.\n"
-
-#~ msgid "Skipping file because of errors...\n"
-#~ msgstr "Erroreak direla eta fitxategia alde batetara uzten...\n"
-
-#~ msgid "Reading menu-entry files in %1."
-#~ msgstr "%1-eko menu sarrera fitxategiak irakurtzen."
-
-#~ msgid "Error reading %1.\n"
-#~ msgstr "Errorea %1 irakurtzerakoan.\n"
-
-#~ msgid "%1 menu entries found (%2 total)."
-#~ msgstr "%1 menu sarrera aurkitu dira (%2 guztira)"
-
-#~ msgid "Running method: %1 --remove"
-#~ msgstr "Metodoa exekutatzen: %1 --remove"
-
-#~ msgid "Script %1 could not be executed."
-#~ msgstr "%1 Script-a ezin da exekutatu."
-
-#~ msgid "Script %1 returned error status %2."
-#~ msgstr "%1 Script-ak %2 errorea egoera itzuli du."
-
-#~ msgid "Script %1 received signal %2."
-#~ msgstr "%1Script-ak %2 seinalea jaso du."
-
-#~ msgid "Running method: %1"
-#~ msgstr "Metodoa exekutatzen: %1"
-
-#~ msgid "Cannot create pipe."
-#~ msgstr "Ezin da kanalizazioa sortu."
-
-#~ msgid "Running menu-methods in %1."
-#~ msgstr "%1-eko menu-metodoak exekutatzen."
-
-#~ msgid "Other update-menus processes are already locking %1, quitting."
-#~ msgstr "Beste eguneraketa prozesu batzuk %1 blokeatzen dute, uzten."
-
-#~ msgid "Cannot lock %1: %2 - Aborting."
-#~ msgstr "Ezin da %1 blokeatu: %2 - Uzten."
-
-#~ msgid "Cannot write to lockfile %1 - Aborting."
-#~ msgstr "Ezin da %1 blokeo fitxategian idatzi - Uzten."
-
-#~ msgid "Cannot remove lockfile %1."
-#~ msgstr "Ezin da %1 blokeo fitxategia kendu."
-
-#~ msgid "Update-menus is run by user."
-#~ msgstr "Erabiltzaileak update-menus abiarazi du."
-
-#~ msgid ""
-#~ "Waiting for dpkg to finish (forking to background).\n"
-#~ "(checking %1)"
-#~ msgstr ""
-#~ "dpkg-ek amaitzearen zain (atzeko planora pasa da).\n"
-#~ "(%1 arakatzen)"
-
-#~ msgid "Further output (if any) will appear in %1."
-#~ msgstr "Hurrengo irteera (balego) %1-en agertuko da."
-
-#~ msgid "Dpkg is not locking dpkg status area, good."
-#~ msgstr "Dpkg ez dago egoera eremua blokeatzen, ondo."
-
-#, fuzzy
-#~| msgid ""
-#~| "Usage: update-menus [options] \n"
-#~| "Gather packages data from the menu database and generate menus for\n"
-#~| "all programs providing menu-methods, usually window-managers.\n"
-#~| "  -d                     Output debugging messages.\n"
-#~| "  -v                     Be verbose about what is going on.\n"
-#~| "  -h, --help             This message.\n"
-#~| "  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to "
-#~| "search.\n"
-#~| "  --menumethod=<method>  Run only the menu method <method>.\n"
-#~| "  --nodefaultdirs        Disable the use of all the standard menu "
-#~| "directories.\n"
-#~| "  --remove               Remove generated menus instead.\n"
-#~| "  --stdout               Output menu list in format suitable for piping "
-#~| "to\n"
-#~| "                         install-menu.\n"
-#~| "  --version              Output version information and exit.\n"
-#~ msgid ""
-#~ "Usage: update-menus [options] \n"
-#~ "Gather packages data from the menu database and generate menus for\n"
-#~ "all programs providing menu-methods, usually window-managers.\n"
-#~ "  -d                     Output debugging messages.\n"
-#~ "  -v                     Be verbose about what is going on.\n"
-#~ "  -h, --help             This message.\n"
-#~ "  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to "
-#~ "search.\n"
-#~ "  --menumethod=<method>  Run only the menu method <method>.\n"
-#~ "  --nodefaultdirs        Disable the use of all the standard menu "
-#~ "directories.\n"
-#~ "  --nodpkgcheck          Do not check if packages are installed.\n"
-#~ "  --remove               Remove generated menus instead.\n"
-#~ "  --stdout               Output menu list in format suitable for piping "
-#~ "to\n"
-#~ "                         install-menu.\n"
-#~ "  --version              Output version information and exit.\n"
-#~ msgstr ""
-#~ "Erabilera: update-menus [aukerak] \n"
-#~ "Menu datubasetik pakete datuak eskuratu eta menu-metodoak erabiltzen \n"
-#~ "dituzten programa guztientzat menuiak sortzen ditu, normalean leiho "
-#~ "kudeatzaileak dira.\n"
-#~ "  -d                     Arazpen mezuak bistarazi.\n"
-#~ "  -v                     Gertatzen denaren xehetasunak eman.\n"
-#~ "  -h, --help             Mezu hau.\n"
-#~ "  --menufilesdir=<dir>  <dir> gehitu bilaketarako menu direktorio "
-#~ "zerrendara.\n"
-#~ "  --menumethod=<method>  <metodo> menu metodoa bakarrik exekutatu.\n"
-#~ "  --nodefaultdirs        Lehenetsiriko menu direktorio estandarren "
-#~ "erabilera ezgaitu.\n"
-#~ "  --nodpkgcheck          Ez egiaztatu paketeak insalaturik dauden.\n"
-#~ "  --remove               Menuak ezabatu sortu beharrean.\n"
-#~ "  --stdout               Install-menura bidali daitekeen formatu batera "
-#~ "atera menu \n"
-#~ "                         zerrenda.\n"
-#~ "  --version              Bertsio argibideak bistarazi eta irten.\n"
-
-#~ msgid ""
-#~ "Unknown install condition \"%1\" (currently, only \"package\" is "
-#~ "supported)."
-#~ msgstr ""
-#~ "\"%1\" instalazio egoera ezezaguna (oraingoz \"package\" bakarrik "
-#~ "onartzen da)."
+msgstr "Pelutxeak"
