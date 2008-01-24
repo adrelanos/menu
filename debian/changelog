@@ -1,6 +1,9 @@
 menu (2.1.38) unstable; urgency=low
 
   * The "unreleased" release.
+  * Handling of l10n by Christian Perrier:
+    + Menu sections translations:
+      - Russian updated by Yuri Kozlov. Closes: #462283
 
  -- Bill Allombert <ballombe@debian.org>  Wed, 23 Jan 2008 19:45:20 +0100
 
