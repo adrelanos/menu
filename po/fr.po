@@ -1,4 +1,3 @@
-# translation of fr.po to French
 # Debian menu system
 # Copyright (C) 2004 Debian menu team
 # This file is distributed under the same license as the menu package.
@@ -373,10 +372,11 @@ msgstr ""
 "    --menumethod <méthode>  ne lancer que la méthode de menu <méthode>.\n"
 "    --nodefaultdirs         ne pas tenir compte des répertoires de menus\n"
 "                            standards.\n"
+"    --nodpkgcheck           ne pas vÃ©rifier si les paquets sont installÃ©s.\n"
 "    --remove                supprimer les menus créés.\n"
 "    --stdout                afficher la liste des menus dans un format\n"
 "                            compatible avec un tubage vers install-menu.\n"
-"    --version               afficher les informations de version et quitter\n"
+"    --version               afficher les informations de version et quitter.\n"
 
 #: ../update-menus/update-menus.h:151
 msgid ""
