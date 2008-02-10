@@ -4,6 +4,7 @@ menu (2.1.38) unstable; urgency=low
   * Handling of l10n by Christian Perrier:
     + Menu sections translations:
       - Russian updated by Yuri Kozlov. Closes: #462283
+      - Traditional Chinece updated by Tetralet. Closes: #464855
     + programs translations:
       - French completed by Christian Perrier.
 
