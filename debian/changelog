@@ -4,9 +4,13 @@ menu (2.1.38) unstable; urgency=low
   * Handling of l10n by Christian Perrier:
     + Menu sections translations:
       - Russian updated by Yuri Kozlov. Closes: #462283
-      - Traditional Chinece updated by Tetralet. Closes: #464855
+      - Traditional Chinese updated by Tetralet. Closes: #464855
+      - Romanian updated by stan ioan-eugen. Closes: #408387
     + programs translations:
       - French completed by Christian Perrier.
+      - Romanian updated by stan ioan-eugen. Closes: #408387
+    + su-to-root translations:
+      - Romanian updated by stan ioan-eugen. Closes: #408387
 
  -- Bill Allombert <ballombe@debian.org>  Wed, 23 Jan 2008 19:45:20 +0100
 
