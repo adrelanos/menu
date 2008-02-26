@@ -11,8 +11,10 @@ menu (2.1.38) unstable; urgency=low
       - Romanian updated by stan ioan-eugen. Closes: #408387
     + su-to-root translations:
       - Romanian updated by stan ioan-eugen. Closes: #408387
+  * Work-around apt bug #463030 by calling setsid in daemon mode.
+    Closes: #462648. Thanks Dmitry E. Oboukhov for the patch.
 
- -- Bill Allombert <ballombe@debian.org>  Wed, 23 Jan 2008 19:45:20 +0100
+ -- Bill Allombert <ballombe@debian.org>  Mon, 25 Feb 2008 11:51:00 +0100
 
 menu (2.1.37) unstable; urgency=low
 

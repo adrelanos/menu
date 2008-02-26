@@ -832,7 +832,7 @@ void wait_dpkg(string &stdoutfile)
         if (i != r)
             close(i);
       }
-	
+      setsid();
       // Sit and wait until dpkg is finished ...
       while(check_dpkglock())
           sleep(2);
