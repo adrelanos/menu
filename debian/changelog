@@ -22,7 +22,11 @@ menu (2.1.38) unstable; urgency=low
     - Remove excerpt from menu policy about authoritativeness
       pasted by mistake.  Closes: #466248. Thanks Robert Luberda.
 
- -- Bill Allombert <ballombe@debian.org>  Mon, 25 Feb 2008 11:51:00 +0100
+  * debian/bug.presubj:
+    - Remove color escape codes which are not displayed correctly by
+      current reportbug. Thanks Dan Jacobson.
+
+ -- Bill Allombert <ballombe@debian.org>  Wed, 27 Feb 2008 19:49:34 +0100
 
 menu (2.1.37) unstable; urgency=low
 
