@@ -18,6 +18,10 @@ menu (2.1.38) unstable; urgency=low
   * Patch from Robert Luberda:
     - Dependency check now handles virtual packages. Closes: #452801
 
+  * doc/menu.sgml:
+    - Remove excerpt from menu policy about authoritativeness
+      pasted by mistake.  Closes: #466248. Thanks Robert Luberda.
+
  -- Bill Allombert <ballombe@debian.org>  Mon, 25 Feb 2008 11:51:00 +0100
 
 menu (2.1.37) unstable; urgency=low

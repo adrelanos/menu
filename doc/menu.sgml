@@ -305,10 +305,8 @@ The menu structure below is included only for convenience and is not
 authoritative. If it disagrees with the structure in the Debian Menu
 sub-policy, please send a wishlist bug to the <tt/menu/ package.
 <p>
+Packages must be placed in leaf sections.
 Please do <em/not/ put your packages into any other sections.
-<p>
-  Here is the authoritative list of Debian's menu
-  structure. Packages must be placed in leaf sections.
 <p>
 <taglist>
   <tag>Applications</tag>
