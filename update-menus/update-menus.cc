@@ -436,7 +436,7 @@ void read_pkginfo()
 {
   // Here we get the list of *installed* packages from dpkg, using sed to
   // retrieve the package name.
-  string pkgs = "dpkg-query --show --showformat='${status} ${package}\\n' | sed -n -e 's/.*installed *//p'";
+  string pkgs = "dpkg-query --show --showformat='${status} ${provides} ${package}\\n' | sed -n -e '/installed /{s/^.*installed *//; s/[, ][, ]*/\\n/g; p}'";
   FILE *status = popen(pkgs.c_str(), "r");
 
   if (!status)

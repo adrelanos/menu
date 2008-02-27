@@ -11,8 +11,12 @@ menu (2.1.38) unstable; urgency=low
       - Romanian updated by stan ioan-eugen. Closes: #408387
     + su-to-root translations:
       - Romanian updated by stan ioan-eugen. Closes: #408387
+
   * Work-around apt bug #463030 by calling setsid in daemon mode.
     Closes: #462648. Thanks Dmitry E. Oboukhov for the patch.
+
+  * Patch from Robert Luberda:
+    - Dependency check now handles virtual packages. Closes: #452801
 
  -- Bill Allombert <ballombe@debian.org>  Mon, 25 Feb 2008 11:51:00 +0100
 
