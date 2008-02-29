@@ -341,7 +341,6 @@ msgstr "Dpkg ne verrouille pas la zone d'état de dpkg, c'est correct."
 
 #. This is the update-menus --help message
 #: ../update-menus/update-menus.cc:855
-#, fuzzy
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -367,9 +366,9 @@ msgstr ""
 "    -d                      afficher les messages de déboguage.\n"
 "    -v                      mode bavard sur les actions en cours.\n"
 "    -h, --help              ce message.\n"
-"    --menufilesdir <rép>    ajouter <rép> à la liste des répertoires où\n"
+"    --menufilesdir=<rép>    ajouter <rép> à la liste des répertoires où\n"
 "                            rechercher des menus.\n"
-"    --menumethod <méthode>  ne lancer que la méthode de menu <méthode>.\n"
+"    --menumethod=<méthode>  ne lancer que la méthode de menu <méthode>.\n"
 "    --nodefaultdirs         ne pas tenir compte des répertoires de menus\n"
 "                            standards.\n"
 "    --nodpkgcheck           ne pas vÃ©rifier si les paquets sont installÃ©s.\n"

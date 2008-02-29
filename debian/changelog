@@ -7,7 +7,7 @@ menu (2.1.38) unstable; urgency=low
       - Traditional Chinese updated by Tetralet. Closes: #464855
       - Romanian updated by stan ioan-eugen. Closes: #408387
     + programs translations:
-      - French completed by Christian Perrier.
+      - French completed by Christian Perrier. Closes: #468466
       - Romanian updated by stan ioan-eugen. Closes: #408387
     + su-to-root translations:
       - Romanian updated by stan ioan-eugen. Closes: #408387
