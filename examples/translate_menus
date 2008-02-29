@@ -31,55 +31,55 @@
 
 # Applications
 
-substitute section->section
+translate section->section
   Apps/Hamradio "Apps/Amateur Radio"
 endtranslate
 
-substitute section->section
+translate section->section
   Apps/Databases "Apps/Data Management"
 endtranslate
 
-substitute section->section
+translate section->section
   Apps/Net Apps/Network
 endtranslate
 
-substitute section->section
+translate section->section
   Apps/Math Apps/Science/Mathematics
 endtranslate
 
-substitute section->section
+translate section->section
   Apps/Technical Apps/Science/Electronics
 endtranslate
 
-substitute section->section
+translate section->section
   Apps/System/Admin Apps/System/Administration
 endtranslate
 
-substitute section->section
+translate section->section
   Apps/System/Language-Environment "Apps/System/Language Environment"
 endtranslate
 
-substitute section->section
+translate section->section
   XShells "Apps/Terminal Emulators"
 endtranslate
 
 # Games
 
-substitute section->section
+translate section->section
   Games/Arcade Games/Action
 endtranslate
 
-substitute section->section
+translate section->section
   Games/Tetris-like Games/Blocks
 endtranslate
 
 # Screen
 
-substitute section->section
+translate section->section
   Screen/Lock Screen/Locking
 endtranslate
 
-substitute section->section
+translate section->section
   Screen/Save Screen/Saving
 endtranslate
 
@@ -89,11 +89,11 @@ substitute section->section
   Apps/ Applications/
 endtranslate
 
-substitute section->section
+translate section->section
   WindowManagers/Modules "FVWM Modules"
 endtranslate
 
-substitute section->section
+translate section->section
   WindowManagers "Window Managers"
 endtranslate
 

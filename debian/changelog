@@ -31,6 +31,10 @@ menu (2.1.38) unstable; urgency=low
     - Fix command quoting for sudo.  Closes: #465136. Thanks Daniel Hahler.
     - Fix typo passwd->password. Closes: #462645. Thanks Salvatore Bonaccorso.
 
+  * examples/translate_menus:
+    - Fix automatic conversion from old section names to new names:
+      Does not replace partial match. Closes: #468385. Thanks Yves-Alexis Perez.
+
  -- Bill Allombert <ballombe@debian.org>  Fri, 29 Feb 2008 10:49:43 +0100
 
 menu (2.1.37) unstable; urgency=low
