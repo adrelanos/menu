@@ -38,7 +38,7 @@ msgid "Using %s...\\n"
 msgstr "%s használata...\\n"
 
 #: ../scripts/su-to-root:73
-msgid "Enter %s passwd at prompt.\\n"
+msgid "Enter %s password at prompt.\\n"
 msgstr "Add meg %s jelszavát a beviteli jelnél.\\n"
 
 #: ../scripts/su-to-root:76

@@ -67,7 +67,7 @@ msgid "Using %s...\\n"
 msgstr "Utilizando %s...\\n"
 
 #: ../scripts/su-to-root:73
-msgid "Enter %s passwd at prompt.\\n"
+msgid "Enter %s password at prompt.\\n"
 msgstr "Introduzca la contraseña de %s en el indicador.\\n"
 
 #: ../scripts/su-to-root:76

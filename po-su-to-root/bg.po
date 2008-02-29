@@ -44,7 +44,7 @@ msgid "Using %s...\\n"
 msgstr "Използване на %s...\\n"
 
 #: ../scripts/su-to-root:73
-msgid "Enter %s passwd at prompt.\\n"
+msgid "Enter %s password at prompt.\\n"
 msgstr "Въведете парола за %s.\\n"
 
 #: ../scripts/su-to-root:76

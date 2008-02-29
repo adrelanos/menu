@@ -29,6 +29,7 @@ menu (2.1.38) unstable; urgency=low
   * su-to-root:
     - Fix support for sux.
     - Fix command quoting for sudo.  Closes: #465136. Thanks Daniel Hahler.
+    - Fix typo passwd->password. Closes: #462645. Thanks Salvatore Bonaccorso.
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 29 Feb 2008 10:49:43 +0100
 

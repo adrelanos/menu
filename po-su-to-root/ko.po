@@ -41,8 +41,8 @@ msgid "Using %s...\\n"
 msgstr "%s 사용 중...\\n"
 
 #: ../scripts/su-to-root:73
-msgid "Enter %s passwd at prompt.\\n"
-msgstr "프롬프트에서 %s passwd를 입력하십시오.\\n"
+msgid "Enter %s password at prompt.\\n"
+msgstr "프롬프트에서 %s password를 입력하십시오.\\n"
 
 #: ../scripts/su-to-root:76
 msgid "Incorrect password or command failed. Try again? (y/N)"

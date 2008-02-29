@@ -43,7 +43,7 @@ msgid "Using %s...\\n"
 msgstr "%s ஐ பயன்படுத்துகிறது ...\\n"
 
 #: ../scripts/su-to-root:73
-msgid "Enter %s passwd at prompt.\\n"
+msgid "Enter %s password at prompt.\\n"
 msgstr "தூண்டியில் %s கடவுச்சொல்லை உள்ளிடவும். \\n"
 
 #: ../scripts/su-to-root:76

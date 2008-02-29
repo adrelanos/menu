@@ -43,8 +43,8 @@ msgid "Using %s...\\n"
 msgstr "Bruker %s ...\\n"
 
 #: ../scripts/su-to-root:73
-msgid "Enter %s passwd at prompt.\\n"
-msgstr "Skriv inn %s passwd på kommandolinja.\\n"
+msgid "Enter %s password at prompt.\\n"
+msgstr "Skriv inn %s password på kommandolinja.\\n"
 
 #: ../scripts/su-to-root:76
 msgid "Incorrect password or command failed. Try again? (y/N)"

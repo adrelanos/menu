@@ -43,7 +43,7 @@ msgid "Using %s...\\n"
 msgstr "%s erabiltzen...\\n"
 
 #: ../scripts/su-to-root:73
-msgid "Enter %s passwd at prompt.\\n"
+msgid "Enter %s password at prompt.\\n"
 msgstr "Idatzi %s pasahitza galderan:\\n"
 
 #: ../scripts/su-to-root:76

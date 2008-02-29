@@ -41,7 +41,7 @@ msgid "Using %s...\\n"
 msgstr "%s ഉപയോഗിച്ചു കൊണ്ടിരിയ്ക്കുന്നു ...\\n"
 
 #: ../scripts/su-to-root:73
-msgid "Enter %s passwd at prompt.\\n"
+msgid "Enter %s password at prompt.\\n"
 msgstr "%s അടയാളവാക്ക് സൂചികയില്‍ നല്‍കുക.\\n"
 
 #: ../scripts/su-to-root:76
