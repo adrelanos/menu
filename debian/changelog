@@ -25,8 +25,12 @@ menu (2.1.38) unstable; urgency=low
   * debian/bug.presubj:
     - Remove color escape codes which are not displayed correctly by
       current reportbug. Thanks Dan Jacobson.
+  
+  * su-to-root:
+    - Fix support for sux.
+    - Fix command quoting for sudo.  Closes: #465136. Thanks Daniel Hahler.
 
- -- Bill Allombert <ballombe@debian.org>  Wed, 27 Feb 2008 19:49:34 +0100
+ -- Bill Allombert <ballombe@debian.org>  Fri, 29 Feb 2008 10:49:43 +0100
 
 menu (2.1.37) unstable; urgency=low
 

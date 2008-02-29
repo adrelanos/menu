@@ -65,8 +65,8 @@ else
     PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/bin/X11:/usr/local/sbin:/usr/local/bin
     SHELL=`eshell $PRIV`
     case $SU_TO_ROOT_SU in
-      sux)  suname=sux; pwuser="$PRIV"; cmd='sux  -p "$PRIV"    "$COMMAND"';;
-      sudo) suname=sudo;pwuser="$USER"; cmd='sudo -u "$PRIV"    "$COMMAND"';;
+      sux)  suname=sux; pwuser="$PRIV"; cmd='sux  -p "$PRIV" -c "$COMMAND"';;
+      sudo) suname=sudo;pwuser="$USER"; cmd='sudo -u "$PRIV" sh -c "$COMMAND"';;
       *)    suname=su;  pwuser="$PRIV"; cmd='su   -p "$PRIV" -c "$COMMAND"';;
     esac
     transl 'Using %s...\n' "$suname"
