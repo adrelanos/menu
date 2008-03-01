@@ -1,15 +1,17 @@
 # translation of eu.po to Euskara
-# Menu section translation
-# Copyright (C) 2003
+# translation of menu to Euskara
+# Debian menu system
+# Copyright (C) 2006 Debian menu team
 # This file is distributed under the same license as the menu package.
 #
-# Bill Allombert <ballombe@debian.org>, 2003.
-# Piarres Beobide  <pi@beobide.net>, 2005, 2007.
+# Bill Allombert <ballombe@debian.org>, 2006.
+# Piarres Beobide <pi@beobide.net>, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2007-07-04 15:27+0100\n"
-"PO-Revision-Date: 2007-07-09 10:42+0200\n"
+"PO-Revision-Date: 2008-02-29 23:38+0100\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Euskara <Librezale@librezale.org>\n"
 "MIME-Version: 1.0\n"
@@ -54,21 +56,21 @@ msgstr "Editoreak"
 #. Policy definition: Educational and training software.
 #. Examples: gtypist, gcompris, quiz
 msgid "Education"
-msgstr "Heziketa"
+msgstr "Hezkuntza"
 
 #. Second level entry under Applications
 #. Policy definition: Software that allows you to run non-native
 #. software or more than one OS at a time.
 #. Examples: wine, dosemu, qemu
 msgid "Emulators"
-msgstr "Emuladoreak"
+msgstr "Emulatzaileak"
 
 #. Second level entry under Applications
 #. Policy definition: Tools for file management, archiving,
 #. searching, CD/DVD burning, backup, etc.
 #. Examples: file-roller, mc, baobab
 msgid "File Management"
-msgstr "Fitxategi Kudeaketa"
+msgstr "Fitxategi kudeaketa"
 
 #. Second level entry under Applications
 #. Policy definition: 2D and 3D graphics manipulation software.
@@ -94,14 +96,14 @@ msgstr "Sarea"
 #. IP telephony, video conferencing software, etc.
 #. Examples: xchat, gaim, mutt
 msgid "Communication"
-msgstr "Komunikazioak"
+msgstr "Komunikazioa"
 
 #. Third level entry under Network
 #. Policy definition: File transfer software such as download
 #. managers, FTP clients, P2P clients, etc.
 #. Examples: amule, gftp, d4x
 msgid "File Transfer"
-msgstr "Fitxategi Transferentzia"
+msgstr "Fitxategi-transferentzia"
 
 #. #-#-#-#-#  - (menu-section 2.1.9-3)  #-#-#-#-#
 #. Third level entry under Network
@@ -112,7 +114,7 @@ msgstr "Fitxategi Transferentzia"
 #. Policy definition: System information and monitoring tools, log viewers, etc.
 #. Examples: top, hal-device-manager, gtkdiskfree
 msgid "Monitoring"
-msgstr "Monitorizazioa"
+msgstr "Kontrolatzen"
 
 #. Third level entry under Network
 #. Policy definition: Web browsers, tools for offline browsing, etc.
@@ -138,14 +140,14 @@ msgstr "Bulegoa"
 #. Policy definition: IDEs, debuggers, etc.
 #. Examples: anjuta, gdb, eclipse
 msgid "Programming"
-msgstr "Programatzea"
+msgstr "Programazioa"
 
 #. Second level entry under Applications
 #. Policy definition: Timetable managers, group task trackers,
 #. bug tracking software, etc.
 #. Examples: planner, bugzilla, gnotime
 msgid "Project Management"
-msgstr "Proiektu Kudeaketa"
+msgstr "Proiektu zuzendaritza"
 
 #. Second level entry under Applications
 #. Policy definition: Scientific and engineering-related software. This is
@@ -176,7 +178,7 @@ msgstr "Kimika"
 #. and presenting generic scientific data.
 #. Examples: fityk, ygraph, mn-fit
 msgid "Data Analysis"
-msgstr "Datu Analisia"
+msgstr "Datu analisia"
 
 #. Third level entry under Science
 #. Policy definition: Circuit design tools, simulators and
@@ -258,7 +260,7 @@ msgstr "Hardwarea"
 #. Policy definition: This section is reserved for language-env as a special
 #. case.
 msgid "Language Environment"
-msgstr "Hizkuntz Ingurunea"
+msgstr "Hizkuntz ingurunea"
 
 #. Third level entry under System
 #. Policy definition: Package managers and related tools.
@@ -277,7 +279,7 @@ msgstr "Segurtasuna"
 #. Policy definition: Graphical terminal emulators.
 #. Examples: xterm, gnome-terminal, rxvt
 msgid "Terminal Emulators"
-msgstr "Terminal Emulatzaileak"
+msgstr "Terminal emulatzaileak"
 
 #. Second level entry under Applications
 #. Policy definition: Text oriented tools like dictionaries, OCR,
@@ -290,14 +292,14 @@ msgstr "Testua"
 #. Policy definition: TV-in, TV-out, FM radio, teletext browsers, etc.
 #. Examples: gradio, gatos, alevt
 msgid "TV and Radio"
-msgstr "TV eta Irratia"
+msgstr "TV eta irratia"
 
 #. Second level entry under Applications
 #. Policy definition: Software for viewing images, documents
 #. and other (non-video) media.
 #. Examples: gqview, evince, gthumb
 msgid "Viewers"
-msgstr "Ikustatzaileak"
+msgstr "Ikustaileak"
 
 #. Second level entry under Applications
 #. Policy definition: Video players, editors, and rippers/recorders.
@@ -310,7 +312,7 @@ msgstr "Bideoa"
 #. programming, and site administration.
 #. Examples: bluefish, screem, gphpedit
 msgid "Web Development"
-msgstr "Web Garapena"
+msgstr "Web garapena"
 
 #. First level entry 
 #. Policy definition: Games and recreation. This is a top-level
@@ -348,7 +350,7 @@ msgstr "Mahaigainekoak"
 #. Policy definition: Games involving a deck of cards.
 #. Examples: pysol, ace-of-penguins, xpat2
 msgid "Card"
-msgstr "Kartak"
+msgstr "Txartela"
 
 #. Second level entry under Games
 #. Policy definition: Tests of ingenuity and logic.
@@ -374,14 +376,14 @@ msgstr "Estrategia"
 #. game-related tools that are not games themselves.
 #. Examples: xqf, crystalspace
 msgid "Tools"
-msgstr "Lanabesak"
+msgstr "Tresnak"
 
 #. Second level entry under Games
 #. Policy definition: Amusements, eye-candy, entertaining
 #. demos, screen hacks (screensavers), etc.
 #. Examples: xdesktopwaves, xphoon, xpenguins
 msgid "Toys"
-msgstr "Jostailuak"
+msgstr "Jostagarriak"
 
 #. First level entry 
 #. Policy definition: Programs that provide user documentation. Can (and
@@ -401,7 +403,7 @@ msgstr "Pantaila"
 #. configuration GUIs should go to other appropriate sections.
 #. Examples: xscreensaver, xlockmore
 msgid "Saving"
-msgstr "Gorde"
+msgstr "Gordetzen"
 
 #. Second level entry under Screen
 #. Policy definition: Tools for locking the screen.
@@ -425,7 +427,7 @@ msgstr "FVWM Moduluak"
 #. Policy definition: This section is reserved for wmaker as a special
 #. case. 
 msgid "Window Maker"
-msgstr "Leiho Sortzailea"
+msgstr "Window Maker"
 
 #. Non official sections from WindowMaker
 msgid "Appearance"
@@ -433,7 +435,7 @@ msgstr "Itxura"
 
 #. Non official sections from WindowMaker
 msgid "WorkSpace"
-msgstr "LanekoArea"
+msgstr "Laneko area"
 
 #. Frequently used unofficial sections.
 #. From Apps/Net/Iceape Components
@@ -443,4 +445,4 @@ msgstr "Iceape Osagaiak"
 #. From Games/Toys/Teddies
 #.  as in "Teddy Bear"
 msgid "Teddies"
-msgstr "Pelutxeak"
+msgstr "Panpinak"

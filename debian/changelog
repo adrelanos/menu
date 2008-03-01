@@ -6,6 +6,7 @@ menu (2.1.38) unstable; urgency=low
       - Russian updated by Yuri Kozlov. Closes: #462283
       - Traditional Chinese updated by Tetralet. Closes: #464855
       - Romanian updated by stan ioan-eugen. Closes: #466618
+      - Basque updated by Piarre Beobide. Closes: #468682
     + programs translations:
       - French completed by Christian Perrier. Closes: #468466
       - Romanian updated by stan ioan-eugen. Closes: #466618
