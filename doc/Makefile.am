@@ -32,19 +32,21 @@ clean-local:
 maintainer-clean-local: 
 	rm -rf menu.html *.info* *.txt*
 
+install-default:
+	$(INSTALL) -d \
+	     $(DESTDIR)$(pkgdatadir)/default
+	for i in $(top_srcdir)/default/*; do \
+	   test -f $$i && $(INSTALL_DATA) $$i $(DESTDIR)$(pkgdatadir)/default;\
+        done;
+
 install-data-local:
 	$(INSTALL) -d \
 	     $(DESTDIR)$(pkgdocdir)/examples \
 	     $(DESTDIR)$(pkgdocdir)/html \
-	     $(DESTDIR)$(pkgdatadir)/default \
 	     $(DESTDIR)$(infodir)
              
 	for i in $(top_srcdir)/examples/*; do \
 	   test -f $$i && $(INSTALL_DATA) $$i $(DESTDIR)$(pkgdocdir)/examples;\
-        done;
-
-	for i in $(top_srcdir)/default/*; do \
-	   test -f $$i && $(INSTALL_DATA) $$i $(DESTDIR)$(pkgdatadir)/default;\
         done;
 
 	$(INSTALL_DATA) $(srcdir)/menu.html/* $(DESTDIR)$(pkgdocdir)/html

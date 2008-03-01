@@ -32,8 +32,10 @@ menu (2.1.38) unstable; urgency=low
     - Fix typo passwd->password. Closes: #462645. Thanks Salvatore Bonaccorso.
 
   * examples/translate_menus:
-    - Fix automatic conversion from old section names to new names:
-      Does not replace partial match. Closes: #468385. Thanks Yves-Alexis Perez.
+    - automatic conversion from old section names to new names would replace
+      Locking by Lockinging. Closes: #468385. Thanks Yves-Alexis Perez.
+
+  * No more install the default directory. Closes: #467238.
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 29 Feb 2008 10:49:43 +0100
 
