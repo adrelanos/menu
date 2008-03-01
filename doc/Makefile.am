@@ -9,20 +9,20 @@ docdir=$(datadir)/doc
 pkgdocdir=$(docdir)/menu
 
 menu.html/index.html: menu.sgml
-	debiandoc2html $<
+	LANG=C debiandoc2html $<
 
 menu-one-file.html: menu.sgml
-	debiandoc2html -1 -b menu-1-file $<
+	LANG=C debiandoc2html -1 -b menu-1-file $<
 	mv menu-1-file.html/index.html menu-one-file.html
 	rmdir menu-1-file.html
 
 menu-one-file: menu-one-file.html
 
 %.info: %.sgml
-	debiandoc2info $<
+	LANG=C debiandoc2info $<
 
 %.txt: %.sgml
-	debiandoc2text -O $< > $@
+	LANG=C debiandoc2text -O $< > $@
 
 %.gz:   %
 	gzip --best --force --stdout $< > $@

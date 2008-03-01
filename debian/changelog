@@ -35,7 +35,10 @@ menu (2.1.38) unstable; urgency=low
     - automatic conversion from old section names to new names would replace
       Locking by Lockinging. Closes: #468385. Thanks Yves-Alexis Perez.
 
-  * No more install the default directory. Closes: #467238.
+  * doc/Makefile.am:
+    - No more install the 'default' directory. Closes: #467238.
+    - Work around debiandoc-sgml bug #468772 by forcing locale to C.
+      Closes: #467239.  Thanks Dan Jacobson.
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 29 Feb 2008 10:49:43 +0100
 
