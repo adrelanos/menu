@@ -1,6 +1,6 @@
 menu (2.1.38) unstable; urgency=low
 
-  * The "unreleased" release.
+  * The "little zebra" release.
   * Handling of l10n by Christian Perrier:
     + Menu sections translations:
       - Russian updated by Yuri Kozlov. Closes: #462283
@@ -41,7 +41,7 @@ menu (2.1.38) unstable; urgency=low
     - Work around debiandoc-sgml bug #468772 by forcing locale to C.
       Closes: #467239.  Thanks Dan Jacobson.
 
- -- Bill Allombert <ballombe@debian.org>  Fri, 29 Feb 2008 10:49:43 +0100
+ -- Bill Allombert <ballombe@debian.org>  Wed, 05 Mar 2008 16:59:55 +0100
 
 menu (2.1.37) unstable; urgency=low
 
