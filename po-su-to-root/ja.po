@@ -1,0 +1,49 @@
+#
+# Copyright (C) YEAR Debian menu team
+# This file is distributed under the same license as the menu package.
+# Bill Allombert <ballombe@debian.org>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: menu 2.1.34\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"POT-Creation-Date: 2007-06-05 21:25+0200\n"
+"PO-Revision-Date: 2008-04-11 23:30+0900\n"
+"Last-Translator: Hideki Yamane (Debian-JP) <henrich@debian.or.jp>\n"
+"Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../scripts/su-to-root:31
+msgid ""
+"usage: %s [-X] [-p <user>] -c <command>\n"
+"  -c command: command to execute as a string (mandatory)\n"
+"  -p <user>: user to switch to (default: root)\n"
+"  -X: command is a X11 program\\n"
+msgstr ""
+"使い方: %s [-X] [-p <user>] -c <command>\n"
+"  -c command: 実行するコマンドを文字列で指定 (必須)\n"
+"  -p <user>: スイッチするユーザ (デフォルト: root)\n"
+"  -X: コマンドが X11 プログラムの場合に指定\\n"
+
+#: ../scripts/su-to-root:62
+msgid "About to execute %s.\\n"
+msgstr "%s を実行しようとしています。\\n"
+
+#: ../scripts/su-to-root:63
+msgid "This command needs %s privileges to be executed.\\n"
+msgstr "このコマンドは実行に %s 権限が必要です。\\n"
+
+#: ../scripts/su-to-root:72
+msgid "Using %s...\\n"
+msgstr "%s を使います...\\n"
+
+#: ../scripts/su-to-root:73
+msgid "Enter %s password at prompt.\\n"
+msgstr "プロンプトで %s のパスワードを入力してください。\\n"
+
+#: ../scripts/su-to-root:76
+msgid "Incorrect password or command failed. Try again? (y/N)"
+msgstr ""
+"パスワードが間違っていたか、コマンドが失敗しました。もう一度行いますか? (y/N)"
