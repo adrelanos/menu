@@ -5,6 +5,7 @@ menu (2.1.39) unstable; urgency=low
     + Menu sections translations:
       - Indonesian updated by Arief Fitrianto. Closes: #469955
       - Japanese updated by Hideki Yamane. Closes: #475543, #477982
+      - Malayalam updated by Praveen A. Closes: #479294
 
  -- Bill Allombert <ballombe@debian.org>  Wed, 05 Mar 2008 21:21:27 +0100
 
