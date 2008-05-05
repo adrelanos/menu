@@ -8,6 +8,10 @@ menu (2.1.39) unstable; urgency=low
       - Malayalam updated by Praveen A. Closes: #479294
       - Finnish updated by Tommi Vainikainen. Closes: #479351
       - Malayalam updated by SZERVÁC Attila. Closes: #479354
+      - Kurdish updated by Erdal Ronahi. Closes: #479444
+      - Lithuanian updated by Kestutis Biliunas. Closes: #479451
+    + su-to-root translations:
+      - Lithuanian updated by Kestutis Biliunas. Closes: #479453
 
  -- Bill Allombert <ballombe@debian.org>  Wed, 05 Mar 2008 21:21:27 +0100
 
