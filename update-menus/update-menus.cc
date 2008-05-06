@@ -436,7 +436,8 @@ void read_pkginfo()
 {
   // Here we get the list of *installed* packages from dpkg, using sed to
   // retrieve the package name.
-  string pkgs = "dpkg-query --show --showformat='${status} ${provides} ${package}\\n' | sed -n -e '/installed /{s/^.*installed *//; s/[, ][, ]*/\\n/g; p}'";
+  string pkgs = "dpkg-query --show --showformat=\"\\${status} \\${provides} \\${package}\\n\" | sed -n -e \"/installed /{s/^.*installed *//; s/[, ][, ]*/\\n/g; p}\"";
+  pkgs = "exec /bin/bash -o pipefail -c '" + pkgs + "'";
   FILE *status = popen(pkgs.c_str(), "r");
 
   if (!status)
@@ -455,7 +456,8 @@ void read_pkginfo()
       installed_packages.insert(tmp);
     }
   }
-  pclose(status);
+  if (pclose(status))
+    throw pipeerror_read(pkgs.c_str());
 }
 
 /** Read a menufile and create one (or more) menu entries for it.
