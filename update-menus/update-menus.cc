@@ -1022,9 +1022,12 @@ int main (int argc, char **argv)
     wait_dpkg(stdoutfile);
     if(!stdoutfile.empty()) {
       close(1);
-      open(stdoutfile.c_str(), O_WRONLY|O_CREAT|O_SYNC|O_EXCL, 0666);
       close(2);
-      dup2(1,2);
+      int i = open(stdoutfile.c_str(), O_WRONLY|O_CREAT|O_SYNC|O_EXCL, 0666);
+      if (i != 2) {
+	      dup2(i,2);
+	      close(i);
+	}      
     }
     if (config.remove_menu)
     {

@@ -13,7 +13,10 @@ menu (2.1.39) unstable; urgency=low
     + su-to-root translations:
       - Lithuanian updated by Kestutis Biliunas. Closes: #479453
 
- -- Bill Allombert <ballombe@debian.org>  Wed, 05 Mar 2008 21:21:27 +0100
+  * Patch from Robert Luberda:
+    - Fix diversion of output to /tmp/update-menus.XXX
+
+ -- Bill Allombert <ballombe@debian.org>  Tue, 06 May 2008 13:44:46 +0200
 
 menu (2.1.38) unstable; urgency=low
 
