@@ -10,6 +10,7 @@ menu (2.1.39) unstable; urgency=low
       - Malayalam updated by SZERVÁC Attila. Closes: #479354
       - Kurdish updated by Erdal Ronahi. Closes: #479444
       - Lithuanian updated by Kestutis Biliunas. Closes: #479451
+      - Turkish updated by Mert Dirik. Closes: #480013
     + su-to-root translations:
       - Lithuanian updated by Kestutis Biliunas. Closes: #479453
 
