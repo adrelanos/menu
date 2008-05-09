@@ -807,7 +807,7 @@ void wait_dpkg(string &stdoutfile)
   if (check_dpkglock()) {
 
     // If we can't get the u-m lock, probably another process is waiting 
-    // for dpkg. We can savely exit.
+    // for dpkg. We can safely exit.
     r = create_lock();
     if (!r)
 	exit(0);
