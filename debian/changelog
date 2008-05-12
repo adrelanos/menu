@@ -19,8 +19,11 @@ menu (2.1.39) unstable; urgency=low
   * Patches from Robert Luberda:
     - Fix diversion of output to /tmp/update-menus.XXX
     - Exit cleanly if the dpkg database is broken. Closes: #341701
+  
+  * debian/control, doc/su-to-root.1, doc/su-to-root.fr.1, scripts/su-to-root:
+    - Add support for ktsuss. Closes: #478841. Thanks Yves-Alexis Perez.
 
- -- Bill Allombert <ballombe@debian.org>  Tue, 06 May 2008 13:44:46 +0200
+ -- Bill Allombert <ballombe@debian.org>  Mon, 12 May 2008 20:41:42 +0200
 
 menu (2.1.38) unstable; urgency=low
 
