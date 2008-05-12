@@ -94,6 +94,8 @@ else
         SU_TO_ROOT_X=kdesu
       elif test -x /usr/lib/kde4/libexec/kdesu ; then
         SU_TO_ROOT_X=kde4su
+      elif which ktsuss >/dev/null 2>&1 ; then
+        SU_TO_ROOT_X=ktsuss
       elif which sux >/dev/null 2>&1 ; then 
         SU_TO_ROOT_X=sux
       else
@@ -104,6 +106,7 @@ else
       gksu) gksu -u "$PRIV" "$COMMAND";;
       kdesu) kdesu -u "$PRIV" "$COMMAND";;
       kde4su) /usr/lib/kde4/libexec/kdesu -u "$PRIV" "$COMMAND";;
+      ktsuss) ktsuss -u "$PRIV" "$COMMAND";;
       sux) env SU_TO_ROOT_SU=sux \
         x-terminal-emulator -e su-to-root -p "$PRIV" -c "$COMMAND";;
   # As a last resort, open a new x-terminal-emulator and prompt for the password
