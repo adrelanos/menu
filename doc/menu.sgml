@@ -1006,13 +1006,16 @@ filter out unwanted lines.
 On startup, update-menus checks the file
 <file>/var/run/update-menus.pid</> and the pid in it. If there's an
 <prgn/update-menus/ process with that pid it kills it.
-If <file>/var/lib/dpkg/lock</> exists, it forks to background and
-returns control to dpkg. The background process checks the
-<file>/var/lib/dpkg/lock</> file approx. every second until the file's
-gone. 
+If <file>/var/lib/dpkg/lock</> exists, it checks to see if dpkg supports
+triggers. If so, it uses dpkg-trigger to trigger a real update-menus run later.
+Otherwise, it forks to background and returns control to dpkg. The background
+process checks the <file>/var/lib/dpkg/lock</> file approx. every two second
+until the file's gone. 
 <p>
 
-After that, <prgn/update-menus/ reads the menu-entry files in
+Once it's decided to run, whether in the background after dpkg exits, or in
+the foreground when used with a trigger-capable dpkg, 
+<prgn/update-menus/ reads the menu-entry files in
 the following directories: <file>/etc/menu</>, <file>/usr/lib/menu</>,
 <file>/usr/share/menu</>, <file>/usr/share/menu/default</>.
 (if a user runs <prgn/update-menus/, it will add <file>~/.menu</> to the

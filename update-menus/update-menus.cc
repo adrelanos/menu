@@ -791,6 +791,8 @@ void exit_on_signal(int signr)
 }
 
 /** Check whether dpkg is running, and fork into background waiting if it is
+ *  Or, if this dpkg supports triggers, do nothing unless run with a --trigger
+ *  flag.
  */
 void wait_dpkg(string &stdoutfile)
 {
@@ -804,13 +806,31 @@ void wait_dpkg(string &stdoutfile)
 
   
   // Check if the dpkg lock is taken
-  if (check_dpkglock()) {
+  if (check_dpkglock())
+  {
+    if (! config.trigger)
+    {
+      // Try to use dpkg-trigger to trigger the menu update later.
+      if (system("dpkg-trigger --by-package=menu /usr/share/menu >/dev/null 2>&1") == 0)
+      {
+        // Success, so no need to do anything now.
+        exit(0);
+      }
+    }
 
     // If we can't get the u-m lock, probably another process is waiting 
     // for dpkg. We can safely exit.
     r = create_lock();
     if (!r)
 	exit(0);
+
+    if (config.trigger)
+    {
+      // This is the real update-menus run, caused by the trigger.
+      // So ignore the dpkg lock, and continue with updating in
+      // the foreground.
+      return;
+    }
 
     // OK, we need to fork, create log file name and tell user about it.
     stdoutfile = string("/tmp/update-menus.")+itostring(getpid());
@@ -883,6 +903,7 @@ struct option long_options[] = {
   { "stdout", no_argument, NULL, 's'},
   { "version", no_argument, NULL, 'V'},
   { "remove", no_argument, NULL, 'r'},
+  { "trigger", no_argument, NULL, 'T'},
   { NULL, 0, NULL, 0 } };
 
 
@@ -919,6 +940,9 @@ void parse_params(int argc, char **argv)
       break;
     case 'r':
       config.remove_menu = true;
+      break;
+    case 'T':
+      config.trigger = true;
       break;
     case 'V':
       cout << "update-menus "VERSION << std::endl;

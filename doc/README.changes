@@ -8,7 +8,8 @@ from scratch.
 update-menus
 
   *forks to background, waits for dpkg to finish (to get a _correct_
-   package listing).
+   package listing). (This is now only done with dpkgs that don't support
+   triggers.)
 
   *allows new menuentry format:
     needs=text     command=/usr/bin/vi section=Apps/Editors title=Vi \

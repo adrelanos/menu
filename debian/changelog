@@ -23,6 +23,12 @@ menu (2.1.39) unstable; urgency=low
   * debian/control, doc/su-to-root.1, doc/su-to-root.fr.1, scripts/su-to-root:
     - Add support for ktsuss. Closes: #478841. Thanks Yves-Alexis Perez.
 
+  * Patch from Joey Hess:
+    - add trigger support stage 1. Closes: #473467.
+     *Note* To allow partial upgrades, lenny packages should not assume
+        menu support triggers.
+      + this fix a rare race condition when upgrading. Closes: #473464.
+ 
  -- Bill Allombert <ballombe@debian.org>  Mon, 12 May 2008 20:41:42 +0200
 
 menu (2.1.38) unstable; urgency=low

@@ -116,7 +116,7 @@ public:
   configinfo()
       : method(method_stderr), compat(parsestream::eol_newline),
       usedefaultmenufilesdirs(true), onlyoutput_to_stdout(false),
-      remove_menu(false), verbosity(report_quiet)
+      remove_menu(false), trigger(false), verbosity(report_quiet)
     { }
 
   typedef enum { report_quiet, report_normal, report_verbose, report_debug} verbosity_type;
@@ -127,6 +127,7 @@ public:
   bool onlyoutput_to_stdout;
   bool no_dpkg_check;
   bool remove_menu;
+  bool trigger;
 
 
   /** Read configuration file from filename */
