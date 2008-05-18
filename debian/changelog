@@ -13,6 +13,7 @@ menu (2.1.39) unstable; urgency=low
       - Turkish updated by Mert Dirik. Closes: #480013
       - Albanian updated by Elian Myftiu. Closes: #480281
       - Irish added by Kevin Scannell. Closes: #480880
+      - Polish updated by Marcin Owsiany. Closes: #481635
     + su-to-root translations:
       - Lithuanian updated by Kestutis Biliunas. Closes: #479453
 
