@@ -1,6 +1,6 @@
 menu (2.1.39) unstable; urgency=low
 
-  * The "unreleased" release.
+  * The "thanks for all the patches" release.
   * Handling of l10n by Christian Perrier:
     + Menu sections translations:
       - Indonesian updated by Arief Fitrianto. Closes: #469955
