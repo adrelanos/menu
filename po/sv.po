@@ -1,7 +1,7 @@
 # Swedish translation of menu messages.
-# Copyright (C) 2004, 2006 Debian menu team
+# Copyright (C) 2004, 2006, 2007 Debian menu team
 # This file is distributed under the same license as the menu package.
-# Daniel Nylander <po@danielnylander.se>, 2006.
+# Daniel Nylander <po@danielnylander.se>, 2006, 2007.
 # Jens Arvidsson <jya@sverige.nu>, 2004.
 #
 msgid ""
@@ -9,9 +9,9 @@ msgstr ""
 "Project-Id-Version: menu 2.1.30\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2007-10-05 07:30+0200\n"
-"PO-Revision-Date: 2006-09-09 16:49+0100\n"
+"PO-Revision-Date: 2007-10-09 10:50+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
-"Language-Team: Swedish <sv@li.org>\n"
+"Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -336,24 +336,6 @@ msgstr "Dpkg låser inte dpkg:s statusområde, bra."
 
 #. This is the update-menus --help message
 #: ../update-menus/update-menus.cc:855
-#, fuzzy
-#| msgid ""
-#| "Usage: update-menus [options] \n"
-#| "Gather packages data from the menu database and generate menus for\n"
-#| "all programs providing menu-methods, usually window-managers.\n"
-#| "  -d                     Output debugging messages.\n"
-#| "  -v                     Be verbose about what is going on.\n"
-#| "  -h, --help             This message.\n"
-#| "  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to "
-#| "search.\n"
-#| "  --menumethod=<method>  Run only the menu method <method>.\n"
-#| "  --nodefaultdirs        Disable the use of all the standard menu "
-#| "directories.\n"
-#| "  --remove               Remove generated menus instead.\n"
-#| "  --stdout               Output menu list in format suitable for piping "
-#| "to\n"
-#| "                         install-menu.\n"
-#| "  --version              Output version information and exit.\n"
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -382,6 +364,7 @@ msgstr ""
 "  --menumethod=<metod>   Kör endast menymetoden <metod>.\n"
 "  --nodefaultdirs        Inaktivera användning av alla "
 "standardmenykatalogerna.\n"
+"  --nodpkgcheck          Kontrollera inte om paket är installerade.\n"
 "  --remove               Ta bort genererade menyer istället.\n"
 "  --stdout               Skriv ut menylista i format passande för omledning\n"
 "                         till install-menu.\n"
