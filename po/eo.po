@@ -1,14 +1,15 @@
 # Debian Menu Utilities, esperanto.
 # Copyright (C) 2005 Debian menu team
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the menu package.
 # MJ Ray <mjr@debian.org>, 2005
+# Felipe Castro <fefcas@gmail.com>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: menu 2.1.9-3\n"
+"Project-Id-Version: menu 2.1.39\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2007-10-05 07:30+0200\n"
-"PO-Revision-Date: 2005-05-23 15:15+0100\n"
-"Last-Translator: MJ Ray <mjr@debian.org>\n"
+"PO-Revision-Date: 2008-06-29 19:10-0300\n"
+"Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
 "Language-Team: Esperanto <debian-l10n-esperanto@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,7 +17,7 @@ msgstr ""
 
 #: ../install-menu/functions.cc:92
 msgid "Zero-size argument to print function."
-msgstr "Nulgranda operando al printfunkcio"
+msgstr "Nulgranda argumento al printfunkcio."
 
 #: ../install-menu/install-menu.cc:202
 msgid "install-menu: checking directory %1\n"
@@ -28,15 +29,15 @@ msgstr "install-menu: kreas dosierujon %1:\n"
 
 #: ../install-menu/install-menu.cc:217
 msgid "Could not create directory(%1): %2"
-msgstr "Ne povas krei dosierujon(%1): %2"
+msgstr "Ne eblis krei la dosierujon(%1): %2"
 
 #: ../install-menu/install-menu.cc:219
 msgid "Could not change directory(%1): %2"
-msgstr "Ne povas ŝanĝi dosierujon(%1): %2"
+msgstr "Ne eblis ŝanĝi la dosierujon(%1): %2"
 
 #: ../install-menu/install-menu.cc:222
 msgid "install-menu: directory %1 already exists\n"
-msgstr "install-menu: dosierujo %1 jam ekzistas\n"
+msgstr "install-menu: la dosierujo %1 jam ekzistas\n"
 
 #. Do not translate supported
 #: ../install-menu/install-menu.cc:447
@@ -45,18 +46,18 @@ msgstr "install-menu: [supported]: nomo=%1\n"
 
 #: ../install-menu/install-menu.cc:464
 msgid "Menu entry lacks mandatory field \"%1\".\n"
-msgstr "Menupeco devas havi kampo \"%1\".\n"
+msgstr "La menu-rikordo malhavas la postulatan kampon \"%1\".\n"
 
 #: ../install-menu/install-menu.cc:470
 msgid "Unknown value for field %1=\"%2\".\n"
-msgstr "Malkonata valoro por kampo %1=\"%2\".\n"
+msgstr "Nekonata valoro por kampo %1=\"%2\".\n"
 
 #. Do not translate quoted text
 #: ../install-menu/install-menu.cc:617
 msgid ""
 "install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
 msgstr ""
-"install-menu: \"hotkeycase\" povas esti nur \"sensitive\" aŭ \"insensitive"
+"install-menu: \"hotkeycase\" nur povas esti \"sensitive\" aŭ \"insensitive"
 "\"\n"
 
 #: ../install-menu/install-menu.cc:647
@@ -64,21 +65,21 @@ msgid ""
 "install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
 "Ignoring.\n"
 msgstr ""
-"install-menu: Averto: Malkonata nomo `%1' sur linio %2 en dosiero %3. "
+"install-menu: Averto: Nekonata identigilo `%1' ĉe linio %2 en dosiero %3. "
 "Ignorata.\n"
 
 #: ../install-menu/install-menu.cc:657
 msgid "install-menu: %1 must be defined in menu-method %2"
-msgstr "install-menu: Oni devas defini %1 en menu-metodo %2"
+msgstr "install-menu: Oni devas difini '%1'-on en menu-metodo %2"
 
 #: ../install-menu/install-menu.cc:824
 msgid "Cannot open file %1 (also tried %2).\n"
-msgstr "Ne povas malfermi dosieron %1 (ankoraŭ provis %2-n).\n"
+msgstr "Ne eblas malfermi la dosieron %1 (ni krome provis %2-on).\n"
 
 #: ../install-menu/install-menu.cc:832 ../install-menu/install-menu.cc:839
 #: ../install-menu/install-menu.cc:847
 msgid "Cannot open file %1.\n"
-msgstr "Ne povas malfermi dosieron %1.\n"
+msgstr "Ne eblas malfermi la dosieron %1.\n"
 
 #: ../install-menu/install-menu.cc:849
 msgid ""
@@ -86,17 +87,15 @@ msgid ""
 "manager,\n"
 "the above file needs to be writeable (and/or the directory needs to exist).\n"
 msgstr ""
-"Por krei konfigurdosieron de uzanto de la fenstroregilo,\n"
-"la supra dosiero devas esti skribebla (kaj/aŭ la dosierujo bezonas "
-"ekzisti).\n"
+"Por rajti krei agordo-dosiero(j)n de fenestro-regilo por la uzanto, la\n"
+"supra dosiero bezonas esti skribebla (kaj/aŭ la dosierujo bezonas ekzisti).\n"
 
 #: ../install-menu/install-menu.cc:871
 msgid "Warning: the string %1 did not occur in template file %2\n"
-msgstr "Averto: la ĉeno %1 ne estas en stilfolio %2\n"
+msgstr "Averto: la ĉeno %1 ne aperis en la stilfolio %2\n"
 
 #. Don't translate quoted string
 #: ../install-menu/install-menu.cc:896
-#, fuzzy
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
@@ -107,23 +106,26 @@ msgid ""
 "     -v --verbose : be verbose\n"
 msgstr ""
 "install-menu [-vh] <menu-metodo>\n"
-"  Legi menupeco de stdin \"update-menus --stdout\"-aranĝe\n"
-"  kaj kreigi menuajn dosierojn kun la donita menu-metodo.\n"
+"  Legi menu-rikordojn el stdin laŭ la formo de \"update-menus --stdout\"\n"
+"  kaj krei menu-dosierojn kun la donita menu-metodo.\n"
 "  Opcioj:\n"
-"     -h --help    : donu ĉi tiu mesaĝo\n"
-"     -v --verbose : estu babilema\n"
+"     -h --help    : montras ĉi tiun mesaĝon\n"
+"         --remove : forigas la menuon anstataŭ krei ĝin.\n"
+"     -v --verbose : fariĝas \"babilema\"\n"
 
 #: ../install-menu/install-menu.cc:943
 msgid "install-menu: no menu-method script specified!"
-msgstr "install-menu: menu-metodskripto ne donita !"
+msgstr "install-menu: neniu menu-metoda skripto estis indikita!"
 
 #: ../install-menu/install-menu.cc:956
 msgid "Cannot open script %1 for reading.\n"
-msgstr "Ne povas malfermi skripto %1 lege.\n"
+msgstr "Ne eblas malfermi la skripton %1 por legi.\n"
 
 #: ../install-menu/install-menu.cc:979
 msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
 msgstr ""
+"Averto: la skripto %1 ne disponigas 'removemenu'-on: la menuo ne estis "
+"forigita\n"
 
 #: ../install-menu/install-menu.cc:1014
 msgid "Running: \"%1\"\n"
@@ -135,39 +137,41 @@ msgstr "install-menu: %1: ĉesiganta\n"
 
 #: ../install-menu/install-menu.h:199
 msgid "Number of arguments to function %1 does not match."
-msgstr "Nombroj de operandoj al funkcio %1 malkongruas."
+msgstr "La nombro da argumentoj por la funkcio %1 malkongruas."
 
 #: ../install-menu/install-menu.h:207
 msgid "Unknown function: \"%1\""
-msgstr "Malkonata funkcio: \"%1\""
+msgstr "Nekonata funkcio: \"%1\""
 
 #: ../install-menu/install-menu.h:216
 msgid "Indirectly used, but not defined function: \"%1\""
-msgstr "Malrekte uzita, sed nedefinita funkcio: \"%1\""
+msgstr "Malrekte uzita, tamen nedifinita funkcio: \"%1\""
 
 #: ../install-menu/install-menu.h:225
 msgid "Unknown identifier: \"%1\""
-msgstr "Malkonata identigilo: \"%1\""
+msgstr "Nekonata identigilo: \"%1\""
 
 #: ../install-menu/install-menu.h:234
 msgid "Encoding conversion error: \"%1\""
-msgstr "Kodoprezente konverteraro: \"%1\""
+msgstr "Enkodiga konvert-eraro: \"%1\""
 
 #: ../update-menus/exceptions.h:43
 msgid "Unknown error."
-msgstr "Malkonata eraro."
+msgstr "Nekonata eraro."
 
 #: ../update-menus/exceptions.h:55 ../update-menus/parsestream.h:114
 msgid "Unknown error, message=%1"
-msgstr "Malkonata eraro, mesaĝo=%1"
+msgstr "Nekonata eraro, mesaĝo=%1"
 
 #: ../update-menus/exceptions.h:64
 msgid "Unable to open file \"%1\"."
-msgstr "Ne povas malfermi dosiero \"%1\"."
+msgstr "Ne eblas malfermi la dosieron \"%1\"."
 
 #: ../update-menus/exceptions.h:73
 msgid "Failed to pipe data through \"%1\" (pipe opened for reading)."
-msgstr "Malsukcesita dukti datumi tra \"%1\" (dukto malfermita lege)."
+msgstr ""
+"Malsukceso dum duktigo de datumaro tra \"%1\" (la dukto malfermiĝis por "
+"legi)."
 
 #: ../update-menus/exceptions.h:89
 msgid "%1: missing required tag: \"%2\""
@@ -179,23 +183,23 @@ msgstr "(verŝajne) stdin"
 
 #: ../update-menus/parsestream.cc:450
 msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
-msgstr "En dosiero \"%1\", al (aŭ en la definaĵo ke finata al) linio %2:\n"
+msgstr "En la dosiero \"%1\", ĉe (aŭ en la difino finiĝanta ĉe) linio %2:\n"
 
 #: ../update-menus/parsestream.cc:471
 msgid "Somewhere in input file:\n"
-msgstr "Ie, en fontdosiero:\n"
+msgstr "Ie, en enig-dosiero:\n"
 
 #: ../update-menus/parsestream.h:122
 msgid "Unexpected end of file."
-msgstr "Malatendita dosierfino."
+msgstr "Neatendita dosierfino."
 
 #: ../update-menus/parsestream.h:129
 msgid "Unexpected end of line."
-msgstr "Malatendita linofino"
+msgstr "Neatendita lini-fino"
 
 #: ../update-menus/parsestream.h:136
 msgid "Identifier expected."
-msgstr "Identigilo atendita"
+msgstr "Identigilo estis atendita"
 
 #: ../update-menus/parsestream.h:144
 msgid "Expected: \"%1\""
@@ -203,33 +207,35 @@ msgstr "Atendita: \"%1\""
 
 #: ../update-menus/parsestream.h:153
 msgid "Unexpected character: \"%1\""
-msgstr "Malatendita karaktero: \"%1\""
+msgstr "Neatendita signo: \"%1\""
 
 #: ../update-menus/parsestream.h:162
 msgid ""
 "Boolean (either true or false) expected.\n"
 "Found: \"%1\""
 msgstr ""
-"Buleaĵo (aŭ vero aŭ malvero) atendita.\n"
+"Buleo (aŭ vero aŭ malvero) estis atendita.\n"
 "Trovita: \"%1\""
 
 #: ../update-menus/parsestream.h:172
 msgid "Unknown compat mode: \"%1\""
-msgstr "Malkonata kongruata reĝimo: \"%1\""
+msgstr "Nekonata kongruanta reĝimo: \"%1\""
 
 #: ../update-menus/stringtoolbox.cc:85
 msgid ""
 "replacewith($string, $replace, $with): $replace and $with must have the same "
 "length."
 msgstr ""
-"replacewith($ĉeno, $trovota, $kuna): $trovota kaj $kuna devas havi mem "
-"longeco."
+"replacewith($ĉeno, $antataŭigu, $per): $anstataŭigu kaj $per devas havi "
+"saman grandecon."
 
 #: ../update-menus/update-menus.cc:150
 msgid ""
 "file %1 line %2:\n"
 "Discarding entry requiring missing package %3."
 msgstr ""
+"dosiero %1 linio %2:\n"
+"Ni forlasas rikordon kiu postulas la mankantan pakon %3."
 
 #. Translation here and below refer to the file
 #. /etc/menu-methods/translate_menus that allow to rename and reorganize
@@ -238,101 +244,99 @@ msgstr ""
 #.
 #: ../update-menus/update-menus.cc:364
 msgid "Reading translation rules in %1."
-msgstr "Legas interŝanĝregulojn en %1."
+msgstr "Ni legas interŝanĝregulojn en %1."
 
 #: ../update-menus/update-menus.cc:444
 msgid "Reading installed packages list..."
-msgstr "Legas instalitan pakaĵtabelon..."
+msgstr "Ni legas la liston de instalitaj pakoj..."
 
 #: ../update-menus/update-menus.cc:493
 msgid "Execution of %1 generated no output or returned an error.\n"
-msgstr "Lanĉo de %1 ne kreigis elmetaĵon aŭ eldonis eraron.\n"
+msgstr "La plenumo de %1 eligis nenion aŭ redonis eraron.\n"
 
 #: ../update-menus/update-menus.cc:534 ../update-menus/update-menus.cc:538
 msgid "Skipping file because of errors...\n"
-msgstr "Ignoras dosieron ĉar erarita...\n"
+msgstr "Ni preterpasas dosieron pro eraroj...\n"
 
 #: ../update-menus/update-menus.cc:555
 msgid "Reading menu-entry files in %1."
-msgstr "Legas menupeca dosiero en %1."
+msgstr "Ni legas menu-rikordajn dosierojn el %1."
 
 #: ../update-menus/update-menus.cc:578
 msgid "Error reading %1.\n"
-msgstr "Eraro, leganta %1.\n"
+msgstr "Eraro dum legado de %1.\n"
 
 #: ../update-menus/update-menus.cc:584
 msgid "%1 menu entries found (%2 total)."
-msgstr "%1 menupecoj trovitaj (%2 sumige)."
+msgstr "%1 menu-rikordoj estis trovitaj (%2 entute)."
 
 #: ../update-menus/update-menus.cc:595
-#, fuzzy
 msgid "Running method: %1 --remove"
-msgstr "Lanĉas metodo: %1"
+msgstr "Lanĉ-metodo: %1 --remove"
 
 #: ../update-menus/update-menus.cc:607 ../update-menus/update-menus.cc:669
 #: ../update-menus/update-menus.cc:990
 msgid "Script %1 could not be executed."
-msgstr "Malpovas lanĉi skripton %1."
+msgstr "Ne eblis lanĉi la skripton %1."
 
 #: ../update-menus/update-menus.cc:610 ../update-menus/update-menus.cc:672
 msgid "Script %1 returned error status %2."
-msgstr "Skripto %1 eldonis eraran staton %2."
+msgstr "La skripto %1 redonis eraran staton %2."
 
 #: ../update-menus/update-menus.cc:613 ../update-menus/update-menus.cc:675
 msgid "Script %1 received signal %2."
-msgstr "Skripto %1 ricevis signalo %2."
+msgstr "La skripto %1 ricevis signalon %2."
 
 #: ../update-menus/update-menus.cc:630
 msgid "Running method: %1"
-msgstr "Lanĉas metodo: %1"
+msgstr "Ni lanĉas la metodon: %1"
 
 #: ../update-menus/update-menus.cc:633
 msgid "Cannot create pipe."
-msgstr "Malpovas krei dukton."
+msgstr "Ne eblas krei dukton."
 
 #: ../update-menus/update-menus.cc:685
 msgid "Running menu-methods in %1."
-msgstr "Lanĉas menu-metodojn en %1."
+msgstr "Ni lanĉas menu-metodojn en %1."
 
 #: ../update-menus/update-menus.cc:717
 msgid "Other update-menus processes are already locking %1, quitting."
-msgstr "Aliaj update-menus procezoj estas jam ŝlosiganta %1. Eliranta."
+msgstr "Aliaj 'update-menus'-procezoj estas jam ŝlosintaj %1, ni eliras."
 
 #: ../update-menus/update-menus.cc:720
 msgid "Cannot lock %1: %2 - Aborting."
-msgstr "Malpovas ŝlosigi %1: %2 - Ĉesiganta."
+msgstr "Ne eblas ŝlosi %1: %2 - Ĉesiganta."
 
 #: ../update-menus/update-menus.cc:730
 msgid "Cannot write to lockfile %1 - Aborting."
-msgstr "Malpovas skribi al ŝlosdosieron %1 - Ĉesiganta."
+msgstr "Ne eblas skribi al la ŝlosdosiero %1 - Ĉesiganta."
 
 #: ../update-menus/update-menus.cc:743
 msgid "Cannot remove lockfile %1."
-msgstr "Malpovas malkrei ŝlosdiserion %1."
+msgstr "Ne eblas malkrei la ŝlosdosieron %1."
 
 #: ../update-menus/update-menus.cc:759
 msgid "Update-menus is run by user."
-msgstr "Update-menus estas lanĉanta de uzanto."
+msgstr "'Update-menus' estas lanĉata de uzanto."
 
 #: ../update-menus/update-menus.cc:813
 msgid ""
 "Waiting for dpkg to finish (forking to background).\n"
 "(checking %1)"
 msgstr ""
-"Atendanta dpkg-n finintan (forkiĝanta fone).\n"
-"(kontrolanta %1)"
+"Ni atendas ke dpkg finiĝu (ni forkas fonen).\n"
+"(ni kontrolas %1)"
 
 #: ../update-menus/update-menus.cc:816
 msgid "Further output (if any) will appear in %1."
-msgstr "Plia elmetaĵo (se iu) aperigos en %1."
+msgstr "Plia eligo (se iu) aperos en %1."
 
 #: ../update-menus/update-menus.cc:845
 msgid "Dpkg is not locking dpkg status area, good."
-msgstr "Dpkg ne ŝlosigas dpkg-statejo. Bona."
+msgstr "Dpkg ne ŝlosis sian stat-areon, bone."
 
 #. This is the update-menus --help message
 #: ../update-menus/update-menus.cc:855
-#, fuzzy
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -351,21 +355,24 @@ msgid ""
 "                         install-menu.\n"
 "  --version              Output version information and exit.\n"
 msgstr ""
-"Uzo: update-menus [opcioj] \n"
-"Kolekti pakaĵdaton de la menudatumbazo kaj kreigi menuojn por\n"
-"ĉiuj programo kiu donas menu-metodojn, plejofte fenstroregiloj.\n"
-"  -d                     Elmeti erarserĉajn mesaĝojn.\n"
-"  -v                     Esti babilema.\n"
-"  -h, --help             Ĉi tia mesaĝo.\n"
-"  --menufilesdir=<dos'>  Sumigi <dos'> al listoj de menudosierujoj serĉota.\n"
-"  --menumethod=<metodo>  Lanĉi nur la menumetodo <metodo>.\n"
-"  --nodefaultdirs        Malebligi la uzo de ĉiuj normalaj menudosierujoj.\n"
-"  --stdout               Elmeti menulisto aranĝe por dukti al install-menu.\n"
+"Uzmaniero: update-menus [opcioj] \n"
+" Kolekti pak-datumaron de la menu-datumbazo kaj krei menuojn por\n"
+" ĉiuj programoj kiu disponigas menu-metodojn, plejofte fenestro-regiloj.\n"
+"  -d                     Eligas erarserĉajn mesaĝojn.\n"
+"  -v                     Fariĝas \"babilema\".\n"
+"  -h, --help             Montras tiun ĉi mesaĝon.\n"
+"  --menufilesdir=<dir>   Aldonas <dir>-on al la listoj de menu-dosierujoj\n"
+"                         serĉotaj.\n"
+"  --menumethod=<metodo>  Lanĉas nur la menu-metodon <metodo>.\n"
+"  --nodefaultdirs        Malebligas la uzon de ĉiuj ordinaraj menu-"
+"dosierujoj.\n"
+"  --nodpkgcheck          Ne kontrolas ĉu la pakoj estas instalitaj.\n"
+"  --remove               Forigas kreitajn menuojn anstataŭe.\n"
+"  --stdout               Eligas menu-liston laŭ konvena formo por dukti al\n"
+"                         install-menu.\n"
+"  --version              Eligas informon pri la versio kaj finiĝas.\n"
 
 #: ../update-menus/update-menus.h:151
 msgid ""
 "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
-msgstr "Malkonata instalstato \"%1\" (nune, nur \"package\" estas apogita)."
-
-#~ msgid "  --version              Output version information and exit.\n"
-#~ msgstr "  --version              Elmeti eldonan informon kaj forlasi.\n"
+msgstr "Nekonata instalstato \"%1\" (nune, nur \"package\" estas subtenata)."

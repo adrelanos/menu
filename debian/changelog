@@ -5,6 +5,9 @@ menu (2.1.40) UNRELEASED; urgency=low
     + Menu sections translations:
       - turkish updated by Mert Dirik. Closes: #484795
       - Macedonian updated by Georgi Stanojevski. Closes: #486005
+      - Esperanto updated by Felipe Castro. Closes: #488591
+    + Programs translations:
+      - Esperanto updated by Felipe Castro. Closes: #488592
 
  -- Christian Perrier <bubulle@debian.org>  Sat, 07 Jun 2008 07:48:09 +0200
 
