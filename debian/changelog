@@ -6,6 +6,7 @@ menu (2.1.40) UNRELEASED; urgency=low
       - turkish updated by Mert Dirik. Closes: #484795
       - Macedonian updated by Georgi Stanojevski. Closes: #486005
       - Esperanto updated by Felipe Castro. Closes: #488591
+      - Swedish added by Martin Bagge. Closes: #488668
     + Programs translations:
       - Esperanto updated by Felipe Castro. Closes: #488592
 
