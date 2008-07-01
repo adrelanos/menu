@@ -1,4 +1,4 @@
-# translation of menu_po-sections.po to swedish
+# translation of sv.po to swedish
 # Menu section translation
 # Copyright (C) 2007
 # This file is distributed under the same license as the menu package.
@@ -7,9 +7,9 @@
 # Martin Bagge <martin.bagge@bthstudent.se>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: menu_po-sections\n"
+"Project-Id-Version: sv\n"
 "POT-Creation-Date: 2007-07-04 15:27+0100\n"
-"PO-Revision-Date: 2008-06-30 11:33+0200\n"
+"PO-Revision-Date: 2008-06-30 20:42+0200\n"
 "Last-Translator: Martin Bagge <martin.bagge@bthstudent.se>\n"
 "Language-Team: swedish <debian-l10n-swedish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -125,7 +125,7 @@ msgstr "Webbläsare"
 #. and podcast aggregators.
 #. Examples: akregator, kitty, liferea
 msgid "Web News"
-msgstr ""
+msgstr "Webbflöden (RSS mm)"
 
 #. Second level entry under Applications
 #. Policy definition: Office suites, word processors, spreadsheets,
