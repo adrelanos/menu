@@ -436,7 +436,9 @@ void read_pkginfo()
 {
   // Here we get the list of *installed* packages from dpkg, using sed to
   // retrieve the package name.
-  string pkgs = "dpkg-query --show --showformat=\"\\${status} \\${provides} \\${package}\\n\" | sed -n -e \"/installed /{s/^.*installed *//; s/[, ][, ]*/\\n/g; p}\"";
+  string inst_states="installed\\|triggers-awaited\\|triggers-pending";
+  string pkgs = "dpkg-query --show --showformat=\"\\${status} \\${provides} \\${package}\\n\" | sed -n -e \"/" + inst_states
+              + " /{s/^.*\\("+inst_states+"\\) *//; s/[, ][, ]*/\\n/g; p}\"";
   pkgs = "exec /bin/bash -o pipefail -c '" + pkgs + "'";
   FILE *status = popen(pkgs.c_str(), "r");
 
