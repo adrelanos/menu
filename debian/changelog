@@ -1,3 +1,9 @@
+menu (2.1.41) unstable; urgency=low
+
+  * The "unreleased" release 
+
+ -- Bill Allombert <ballombe@debian.org>  Fri, 25 Jul 2008 21:41:09 +0200
+
 menu (2.1.40) unstable; urgency=low
 
   * The "Saint-Malo" release.
