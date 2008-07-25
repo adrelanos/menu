@@ -1,6 +1,6 @@
 menu (2.1.40) unstable; urgency=low
 
-  * The "unreleased" release.
+  * The "Saint-Malo" release.
   * Handling of l10n by Christian Perrier:
     + Menu sections translations:
       - turkish updated by Mert Dirik. Closes: #484795
