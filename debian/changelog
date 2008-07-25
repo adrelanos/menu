@@ -3,12 +3,13 @@ menu (2.1.40) unstable; urgency=low
   * The "Saint-Malo" release.
   * Handling of l10n by Christian Perrier:
     + Menu sections translations:
-      - turkish updated by Mert Dirik. Closes: #484795
+      - Turkish updated by Mert Dirik. Closes: #484795
       - Macedonian updated by Georgi Stanojevski. Closes: #486005
       - Esperanto updated by Felipe Castro. Closes: #488591
       - Swedish added by Martin Bagge. Closes: #488668
       - Dutch updated by Benno Schulenberg. Closes: #490109
       - Arabic updated by Ossama Khayat. Closes: #491541
+      - Italian updated by Milo Casagrande. Closes: #492387
     + Programs translations:
       - Esperanto updated by Felipe Castro. Closes: #488592
 
