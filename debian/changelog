@@ -3,7 +3,7 @@ menu (2.1.41) unstable; urgency=low
   * The "unreleased" release 
   * Handling of l10n by Christian Perrier:
     + Menu sections translations:
-      - French updated by Eder Marques. Closes: #494159
+      - Brazilian Portuguese updated by Eder Marques. Closes: #494159
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 25 Jul 2008 21:41:09 +0200
 
