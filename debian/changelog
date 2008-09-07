@@ -4,6 +4,7 @@ menu (2.1.41) unstable; urgency=low
   * Handling of l10n by Christian Perrier:
     + Menu sections translations:
       - Brazilian Portuguese updated by Eder Marques. Closes: #494159
+  * l10n: menu sections translation into Croatian updated by Josip Rodin.
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 25 Jul 2008 21:41:09 +0200
 
