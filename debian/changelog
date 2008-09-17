@@ -6,6 +6,7 @@ menu (2.1.41) unstable; urgency=low
       - Brazilian Portuguese updated by Eder Marques. Closes: #494159
       - Georgian added by Aiet Kolkhi. Closes: #498422
       - Greek updated by Emmanuel Galatoulas. Closes: #498463
+      - Catalan updated by Jordi mallach. Closes: #499298
   * l10n: menu sections translation into Croatian updated by Josip Rodin,
     closes: #498055.
 
