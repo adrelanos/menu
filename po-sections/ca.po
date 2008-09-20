@@ -352,7 +352,7 @@ msgstr "Cartes"
 #. Policy definition: Tests of ingenuity and logic.
 #. Examples: xmpuzzles, sgt-puzzles, enigma
 msgid "Puzzles"
-msgstr "Puzzles"
+msgstr "Trencaclosques"
 
 #. Second level entry under Games
 #. Policy definition: Simulations of the real world
@@ -417,7 +417,7 @@ msgstr "Gestors de finestres"
 #. Policy definition: FVWM-based window manager modules. 
 #. Examples: fvwm, fvwm-gnome, fvwm95
 msgid "FVWM Modules"
-msgstr "Mòduls del FVWM"
+msgstr "Mòduls de l'FVWM"
 
 #. First level entry 
 #. Policy definition: This section is reserved for wmaker as a special
