@@ -1,6 +1,6 @@
 menu (2.1.41) unstable; urgency=low
 
-  * The "unreleased" release 
+  * The "true bubulle never burst" release
   * Handling of l10n by Christian Perrier:
     + Menu sections translations:
       - Brazilian Portuguese updated by Eder Marques. Closes: #494159
@@ -8,9 +8,9 @@ menu (2.1.41) unstable; urgency=low
       - Greek updated by Emmanuel Galatoulas. Closes: #498463
       - Catalan updated by Jordi mallach. Closes: #499298
   * l10n: menu sections translation into Croatian updated by Josip Rodin,
-    closes: #498055.
+    Closes: #498055.
 
- -- Bill Allombert <ballombe@debian.org>  Fri, 25 Jul 2008 21:41:09 +0200
+ -- Bill Allombert <ballombe@debian.org>  Fri, 24 Oct 2008 00:52:01 +0200
 
 menu (2.1.40) unstable; urgency=low
 
