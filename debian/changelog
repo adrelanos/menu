@@ -1,6 +1,11 @@
 menu (2.1.42) unstable; urgency=low
 
   * The "unreleased" release.
+  * Handling of l10n by Christian Perrier:
+    + Menu sections translations:
+      - Asturian added. Closes: #511622
+    + Programs translations:
+      - Asturian added. Closes: #511622
 
  -- Bill Allombert <ballombe@debian.org>  Fri, 24 Oct 2008 22:19:19 +0200
 

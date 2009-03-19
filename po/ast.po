@@ -1,0 +1,414 @@
+# menu translation to Spanish
+# Copyright (C) 2004-2007 Software in the Public Interest
+# This file is distributed under the same license as the menu package.
+#
+# Changes:
+# - Initial translation
+# 	Javier Fernandez-Sanguino Peña <jfs@debian.org>, 2004-2007
+#
+#
+#  Traductores, si no conoce el formato PO, merece la pena leer la
+#  documentación de gettext, especialmente las secciones dedicadas a este
+#  formato, por ejemplo ejecutando:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+# Equipo de traducción al español, por favor, lean antes de traducir
+# los siguientes documentos:
+#
+# - El proyecto de traducción de Debian al español
+#   http://www.debian.org/intl/spanish/coordinacion
+#   especialmente las notas de traducción en
+#   http://www.debian.org/intl/spanish/notas
+#
+# - La guía de traducción de po's de debconf:
+#   /usr/share/doc/po-debconf/README-trans
+#   o http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: menu 2.1.19\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"POT-Creation-Date: 2007-10-05 07:30+0200\n"
+"PO-Revision-Date: 2009-01-12 08:05+0100\n"
+"Last-Translator: Marcos Alvarez Costales <marcos.alvarez.costales@gmail."
+"com>\n"
+"Language-Team: Debian Asturian <softast-xeneral@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Asturian\n"
+"X-Poedit-Country: SPAIN\n"
+
+#: ../install-menu/functions.cc:92
+msgid "Zero-size argument to print function."
+msgstr "Dióse un argumentu de tamañu cero a la función d'imprentación."
+
+#: ../install-menu/install-menu.cc:202
+msgid "install-menu: checking directory %1\n"
+msgstr "install-menu: comprobando'l direutoriu %1\n"
+
+#: ../install-menu/install-menu.cc:215
+msgid "install-menu: creating directory %1:\n"
+msgstr "install-menu: criando'l direutoriu %1:\n"
+
+#: ../install-menu/install-menu.cc:217
+msgid "Could not create directory(%1): %2"
+msgstr "Nun pudo criase'l direutoriu (%1): %2"
+
+#: ../install-menu/install-menu.cc:219
+msgid "Could not change directory(%1): %2"
+msgstr "Nun pudo camudase al direutoriu (%1): %2."
+
+#: ../install-menu/install-menu.cc:222
+msgid "install-menu: directory %1 already exists\n"
+msgstr "install-menu: yá esiste'l direutoriu %1\n"
+
+#. Do not translate supported
+#: ../install-menu/install-menu.cc:447
+msgid "install-menu: [supported]: name=%1\n"
+msgstr "install-menu: [soportáu]: nome=%1\n"
+
+#: ../install-menu/install-menu.cc:464
+msgid "Menu entry lacks mandatory field \"%1\".\n"
+msgstr "La entrada de menú nun inclúi'l campu obligatoriu \"%1\".\n"
+
+#: ../install-menu/install-menu.cc:470
+msgid "Unknown value for field %1=\"%2\".\n"
+msgstr "Valor desconocíu pal campu %1=\"%2\".\n"
+
+#. Do not translate quoted text
+#: ../install-menu/install-menu.cc:617
+msgid ""
+"install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
+msgstr ""
+"install-menu: \"hotkeycase\" namái pue ser \"sensitive\" o \"insensitive\"\n"
+
+#: ../install-menu/install-menu.cc:647
+msgid ""
+"install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
+"Ignoring.\n"
+msgstr ""
+"install-menu: Avisu: Identificador desconocíu `%1' na llinia %2 del ficheru %"
+"3. Omitiendo.\n"
+
+#: ../install-menu/install-menu.cc:657
+msgid "install-menu: %1 must be defined in menu-method %2"
+msgstr "install-menu: menu-method %2 tien de definir %1"
+
+#: ../install-menu/install-menu.cc:824
+msgid "Cannot open file %1 (also tried %2).\n"
+msgstr "Nun pudo abrise'l ficheru %1 (tamién se tentó %2).\n"
+
+#: ../install-menu/install-menu.cc:832 ../install-menu/install-menu.cc:839
+#: ../install-menu/install-menu.cc:847
+msgid "Cannot open file %1.\n"
+msgstr "Nun pudo abrise'l ficheru %1.\n"
+
+#: ../install-menu/install-menu.cc:849
+msgid ""
+"In order to be able to create the user config file(s) for the window "
+"manager,\n"
+"the above file needs to be writeable (and/or the directory needs to exist).\n"
+msgstr ""
+"Tien de poder escribise nel ficheru amosáu arriba (o el direutoriu tien\n"
+"d'esistir) pa poder criar el/los ficheru/os de configuración d'usuario pal\n"
+"xestor de ventanes.\n"
+
+#: ../install-menu/install-menu.cc:871
+msgid "Warning: the string %1 did not occur in template file %2\n"
+msgstr "Avisu: Nun s'alcontró la cadena %1 nel ficheru de plantía %2\n"
+
+#. Don't translate quoted string
+#: ../install-menu/install-menu.cc:896
+msgid ""
+"install-menu [-vh] <menu-method>\n"
+"  Read menu entries from stdin in \"update-menus --stdout\" format\n"
+"  and generate menu files using the specified menu-method.\n"
+"  Options to install-menu:\n"
+"     -h --help    : this message\n"
+"        --remove  : remove the menu instead of generating it.\n"
+"     -v --verbose : be verbose\n"
+msgstr ""
+"install-menu [-vh] <métodu de menú>\n"
+"  Llee les entraes de menú de la entrada estándar en formatu \n"
+"  \"update-menus --stdout\" y xenera ficheros de menú usando'l \n"
+"  métodu de menú conseñáu.\n"
+"  Opciones dables pa install-menu: \n"
+"     -h --help     : esti mensax\n"
+"     --remove      : desanicia'l menú n'arróu de xeneralu.\n"
+"     -v --verbose  : ser más verbosu\n"
+
+#: ../install-menu/install-menu.cc:943
+msgid "install-menu: no menu-method script specified!"
+msgstr "install-menu: ¡Nun s'especificó dengún guión de métodu de menú!"
+
+#: ../install-menu/install-menu.cc:956
+msgid "Cannot open script %1 for reading.\n"
+msgstr "Nun pudo abrise'l guión %1 pa llectura\n"
+
+#: ../install-menu/install-menu.cc:979
+msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
+msgstr ""
+"Avisu: El guión %1 nun proporciona removemenu, nun se desaniciará'l menú\n"
+
+#: ../install-menu/install-menu.cc:1014
+msgid "Running: \"%1\"\n"
+msgstr "Executando: \"%1\"\n"
+
+#: ../install-menu/install-menu.cc:1030
+msgid "install-menu: %1: aborting\n"
+msgstr "install-menu: %1: albortando\n"
+
+#: ../install-menu/install-menu.h:199
+msgid "Number of arguments to function %1 does not match."
+msgstr "Nun concasa'l númberu d'argumentos a la función %1."
+
+#: ../install-menu/install-menu.h:207
+msgid "Unknown function: \"%1\""
+msgstr "Función desconocía: \"%1\""
+
+#: ../install-menu/install-menu.h:216
+msgid "Indirectly used, but not defined function: \"%1\""
+msgstr "La función \"%1\" úsase de forma indireuta pero nun ta definía"
+
+#: ../install-menu/install-menu.h:225
+msgid "Unknown identifier: \"%1\""
+msgstr "Identificador desconocíu: \"%1\""
+
+#: ../install-menu/install-menu.h:234
+msgid "Encoding conversion error: \"%1\""
+msgstr "Fallu na conversión de codificación: \"%1\""
+
+#: ../update-menus/exceptions.h:43
+msgid "Unknown error."
+msgstr "Fallu desconocíu."
+
+#: ../update-menus/exceptions.h:55 ../update-menus/parsestream.h:114
+msgid "Unknown error, message=%1"
+msgstr "Fallu desconocíu, mensax=%1"
+
+#: ../update-menus/exceptions.h:64
+msgid "Unable to open file \"%1\"."
+msgstr "Nun pudo abrise'l ficheru \"%1\"."
+
+#: ../update-menus/exceptions.h:73
+msgid "Failed to pipe data through \"%1\" (pipe opened for reading)."
+msgstr ""
+"Nun pudo unviase datos a traviés de \"%1\" (abrióse la tubería pa llectura)."
+
+#: ../update-menus/exceptions.h:89
+msgid "%1: missing required tag: \"%2\""
+msgstr "%1: falta la marca obligatoria: \"%2\""
+
+#: ../update-menus/parsestream.cc:50
+msgid "(probably) stdin"
+msgstr "(dablemente) entrada estándar"
+
+#: ../update-menus/parsestream.cc:450
+msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
+msgstr "Nel ficheru \"%1\", en (o na defición que fina en) la llinia %2:\n"
+
+#: ../update-menus/parsestream.cc:471
+msgid "Somewhere in input file:\n"
+msgstr "En dalgún llugar del ficheru d'entrada:\n"
+
+#: ../update-menus/parsestream.h:122
+msgid "Unexpected end of file."
+msgstr "Fallu de ficheru non esperáu."
+
+#: ../update-menus/parsestream.h:129
+msgid "Unexpected end of line."
+msgstr "Fallu de llinia inesperáu."
+
+#: ../update-menus/parsestream.h:136
+msgid "Identifier expected."
+msgstr "Esperábase un identificador."
+
+#: ../update-menus/parsestream.h:144
+msgid "Expected: \"%1\""
+msgstr "Esperaba: \"%1\""
+
+#: ../update-menus/parsestream.h:153
+msgid "Unexpected character: \"%1\""
+msgstr "Caráuter inesperáu: \"%1\""
+
+#: ../update-menus/parsestream.h:162
+msgid ""
+"Boolean (either true or false) expected.\n"
+"Found: \"%1\""
+msgstr ""
+"Esperábase un booleanu (bien braeru o falsu).\n"
+"Alcontróse: \"%1\""
+
+#: ../update-menus/parsestream.h:172
+msgid "Unknown compat mode: \"%1\""
+msgstr "Mou de compatibilidá desconocíu: \"%1\""
+
+#: ../update-menus/stringtoolbox.cc:85
+msgid ""
+"replacewith($string, $replace, $with): $replace and $with must have the same "
+"length."
+msgstr ""
+"replacewith($string, $replace, $with): $replace y $with tendríen de tener la "
+"mesma llonxitú."
+
+#: ../update-menus/update-menus.cc:150
+msgid ""
+"file %1 line %2:\n"
+"Discarding entry requiring missing package %3."
+msgstr ""
+"ficheru %1 llinia %2:\n"
+"Descartando la entrada que requier un paquete omitíu %3."
+
+#. Translation here and below refer to the file
+#. /etc/menu-methods/translate_menus that allow to rename and reorganize
+#. menu entries automatically. It does not refer to the localisation
+#. (translation to other languages).
+#.
+#: ../update-menus/update-menus.cc:364
+msgid "Reading translation rules in %1."
+msgstr "Lleendo regles de torna de %1."
+
+#: ../update-menus/update-menus.cc:444
+msgid "Reading installed packages list..."
+msgstr "Lleendo la llista de paquetes instalaos..."
+
+#: ../update-menus/update-menus.cc:493
+msgid "Execution of %1 generated no output or returned an error.\n"
+msgstr "La execución de %1 nun xeneró denguna salida o devolvió un fallu.\n"
+
+#: ../update-menus/update-menus.cc:534 ../update-menus/update-menus.cc:538
+msgid "Skipping file because of errors...\n"
+msgstr "Omitiendo'l ficheru polos errores producíos...\n"
+
+#: ../update-menus/update-menus.cc:555
+msgid "Reading menu-entry files in %1."
+msgstr "Lleendo los ficheros d'entraes de menú en %1."
+
+#: ../update-menus/update-menus.cc:578
+msgid "Error reading %1.\n"
+msgstr "Fallu al lleer %1.\n"
+
+#: ../update-menus/update-menus.cc:584
+msgid "%1 menu entries found (%2 total)."
+msgstr "Alcontráronse %1 entraes de menú (un total de %2). "
+
+#: ../update-menus/update-menus.cc:595
+msgid "Running method: %1 --remove"
+msgstr "Executando'l métodu: %1 --remove"
+
+#: ../update-menus/update-menus.cc:607 ../update-menus/update-menus.cc:669
+#: ../update-menus/update-menus.cc:990
+msgid "Script %1 could not be executed."
+msgstr "Nun pudo executase'l guión %1."
+
+#: ../update-menus/update-menus.cc:610 ../update-menus/update-menus.cc:672
+msgid "Script %1 returned error status %2."
+msgstr "El guión %1 devolvió un estáu de fallu %2."
+
+#: ../update-menus/update-menus.cc:613 ../update-menus/update-menus.cc:675
+msgid "Script %1 received signal %2."
+msgstr "El guión %1 recibió la señal %2."
+
+#: ../update-menus/update-menus.cc:630
+msgid "Running method: %1"
+msgstr "Executando'l métodu: %1"
+
+#: ../update-menus/update-menus.cc:633
+msgid "Cannot create pipe."
+msgstr "Nun pudo criase la tubería."
+
+#: ../update-menus/update-menus.cc:685
+msgid "Running menu-methods in %1."
+msgstr "Executando métodos de menú en %1."
+
+#: ../update-menus/update-menus.cc:717
+msgid "Other update-menus processes are already locking %1, quitting."
+msgstr "Otros procesos de \"update-menus\" tán bloquiando %1, zarrando."
+
+#: ../update-menus/update-menus.cc:720
+msgid "Cannot lock %1: %2 - Aborting."
+msgstr "Nun pudo bloquiae %1: %2 - Albortando."
+
+#: ../update-menus/update-menus.cc:730
+msgid "Cannot write to lockfile %1 - Aborting."
+msgstr "Nun pudo escribise nel ficheru de bloquéu %1 - Albortando."
+
+#: ../update-menus/update-menus.cc:743
+msgid "Cannot remove lockfile %1."
+msgstr "Nun pudo desaniciase'l ficheru de bloquéu %1."
+
+#: ../update-menus/update-menus.cc:759
+msgid "Update-menus is run by user."
+msgstr "Update-menus ta executándose por un usuariu."
+
+#: ../update-menus/update-menus.cc:813
+msgid ""
+"Waiting for dpkg to finish (forking to background).\n"
+"(checking %1)"
+msgstr ""
+"Esperando a que fine dpkg (diendo a segundu planu).\n"
+"(comprobando %1)"
+
+#: ../update-menus/update-menus.cc:816
+msgid "Further output (if any) will appear in %1."
+msgstr "La salida postrera (si la hubiere) amosaráse en %1."
+
+#: ../update-menus/update-menus.cc:845
+msgid "Dpkg is not locking dpkg status area, good."
+msgstr "Dpkg nun ta bloquiando l'área d'estáu de dpkg, bien."
+
+#. This is the update-menus --help message
+#: ../update-menus/update-menus.cc:855
+msgid ""
+"Usage: update-menus [options] \n"
+"Gather packages data from the menu database and generate menus for\n"
+"all programs providing menu-methods, usually window-managers.\n"
+"  -d                     Output debugging messages.\n"
+"  -v                     Be verbose about what is going on.\n"
+"  -h, --help             This message.\n"
+"  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to "
+"search.\n"
+"  --menumethod=<method>  Run only the menu method <method>.\n"
+"  --nodefaultdirs        Disable the use of all the standard menu "
+"directories.\n"
+"  --nodpkgcheck          Do not check if packages are installed.\n"
+"  --remove               Remove generated menus instead.\n"
+"  --stdout               Output menu list in format suitable for piping to\n"
+"                         install-menu.\n"
+"  --version              Output version information and exit.\n"
+msgstr ""
+"Mou d'usu: update-menus [opciones]\n"
+"Recueye la información de paquetes de la base de datos de menú y xenera\n"
+"menús pa tolos programes qu'inclúin métodos de menú, davezu\n"
+"xestores de ventanes.\n"
+"  -d                          Xenerar mensaxes de depuración.\n"
+"  -v                          Ser verbosu ya conseñar lo que ta pasando.\n"
+"  -h --help                   Esti mensax.\n"
+"  --menufilesdir=<direutoriu> Amestar <direutoriu> a la llista de "
+"direutorios\n"
+"                              de menú a guetar.\n"
+"  --menumethod=<método>       Executar namái el métodu de menú <métodu>.\n"
+"  --nodefaultdirs             Deshabilita la utilización de los "
+"direutorios \n"
+"                              de menú estándar.\n"
+"  --nodpkgcheck               Nun compruebe si los paquetes tán instalaos.\n"
+"  --remove                    Desanicia los menús xeneraos n'arróu de "
+"crialos.\n"
+"  --stdout                    Volcar la llista de menús nun formatu que "
+"pueda\n"
+"                              ser unviáu a install-menu.\n"
+"  --version                   Amosar la información de versión y colar.\n"
+
+#: ../update-menus/update-menus.h:151
+msgid ""
+"Unknown install condition \"%1\" (currently, only \"package\" is supported)."
+msgstr ""
+"Condición d'instalación desconocía \"%1\" (anguaño namái se reconoz \"package"
+"\")."
+
+#~ msgid "  --version              Output version information and exit.\n"
+#~ msgstr ""
+#~ "  --version                   Mostrar la información de versión y salir.\n"
