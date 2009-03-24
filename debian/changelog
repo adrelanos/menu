@@ -4,6 +4,7 @@ menu (2.1.42) unstable; urgency=low
   * Handling of l10n by Christian Perrier:
     + Menu sections translations:
       - Asturian added. Closes: #511622
+      - Kazakh added. Closes: #520998
     + Programs translations:
       - Asturian added. Closes: #511622
 
