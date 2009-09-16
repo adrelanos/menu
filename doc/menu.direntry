@@ -1,0 +1,11 @@
+#!/bin/sh
+sedscript=`tempfile`
+cat <<'EOF' > $sedscript
+/@c %\*\*add dircategory and direntry here/a\
+@dircategory Information\
+@direntry\
+* Debian menu: \(menu\).                  The Debian menu system\
+@end direntry
+EOF
+sed -f $sedscript <$1 >$2
+rm $sedscript

@@ -1,9 +1,9 @@
 all-local: menu.html/index.html menu.txt.gz menu.info.gz
 
-DOCS = announce-2 BUGS menu.sgml README.changes README.config-menus README.menu-methods README.new-sections README.package-menus README.pre1 TODO translate README.translations
+DOCS = announce-2 BUGS README.changes README.config-menus README.menu-methods README.new-sections README.package-menus README.pre1 TODO translate README.translations menu.sgml menu.direntry
 
 man_MANS = install-menu.1 menufile.5 su-to-root.1 update-menus.1
-EXTRA_DIST = $(man_MANS) $(DOCS) menu.sgml $(srcdir)/menu.html $(srcdir)/menu.txt.gz $(srcdir)/menu.info.gz update-menus.fr.1 su-to-root.fr.1 menufile.fr.5
+EXTRA_DIST = $(man_MANS) $(DOCS) $(srcdir)/menu.html $(srcdir)/menu.txt.gz $(srcdir)/menu.info.gz update-menus.fr.1 su-to-root.fr.1 menufile.fr.5
 
 docdir=$(datadir)/doc
 pkgdocdir=$(docdir)/menu
@@ -18,8 +18,8 @@ menu-one-file.html: menu.sgml
 
 menu-one-file: menu-one-file.html
 
-%.info: %.sgml
-	LANG=C debiandoc2info $<
+%.info: %.sgml %.direntry
+	LANG=C debiandoc2info -s ./$*.direntry $<
 
 %.txt: %.sgml
 	LANG=C debiandoc2text -O $< > $@
