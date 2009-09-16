@@ -1,6 +1,15 @@
 menu (2.1.42) unstable; urgency=low
 
   * The "unreleased" release.
+  * Switch to debhelper v5.
+  * debian/postinst, debian/prerm:
+    - Remove useless commented parts.
+    - Remove call to install-info.
+  * debian/control:
+    - Depends: add ${misc:Depends}
+    - Bump Standards-Version to 3.8.3.
+  * debian/rules:
+    - call dh_installinfo to handle info document.
   * Handling of l10n by Christian Perrier:
     + Menu sections translations:
       - Asturian added. Closes: #511622
@@ -10,7 +19,7 @@ menu (2.1.42) unstable; urgency=low
     + Programs translations:
       - Asturian added. Closes: #511622
 
- -- Bill Allombert <ballombe@debian.org>  Fri, 24 Oct 2008 22:19:19 +0200
+ -- Bill Allombert <ballombe@debian.org>  Wed, 16 Sep 2009 12:46:54 +0200
 
 menu (2.1.41) unstable; urgency=low
 
