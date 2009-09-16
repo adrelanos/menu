@@ -84,6 +84,7 @@ binary-arch: build install
 	dh_installdocs
 	dh_installman doc/update-menus.fr.1 doc/su-to-root.fr.1 \
 	              doc/menufile.fr.5
+	dh_installinfo doc/menu.info.gz
 	dh_installchangelogs
 	dh_strip
 	dh_compress
