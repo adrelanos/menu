@@ -2,12 +2,12 @@ Source: menu
 Section: admin
 Priority: optional
 Maintainer: Bill Allombert <ballombe@debian.org>
-Standards-Version: 3.8.0
-Build-Depends: debhelper (>= 4.0.0), texinfo, debiandoc-sgml, gettext
+Standards-Version: 3.8.3
+Build-Depends: debhelper (>= 5), texinfo, debiandoc-sgml, gettext
 
 Package: menu
 Architecture: any
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Suggests: gksu|kdebase-bin|kdebase-runtime|ktsuss|sux
 Description: generates programs menu for all menu-aware applications
  Debian menu keeps transparently the menus in the different
