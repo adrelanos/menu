@@ -52,12 +52,12 @@ function term()=\
 
 
 # This sort menu entry case-insensitively.
-sort=tolower(title())
+sort=$sort ":" tolower(title())
   
 #If you want your submenus to come before the commands themselves
 #in the menus (in case of mixed menus):
 #
-#sort=ifelse($command, "1", "0" ) ":" title()
+#sort=$sort ":" ifelse($command, "1", "0" ) ":" title()
 
 #Activate menu section translations:
 outputlanguage="LOCALE"

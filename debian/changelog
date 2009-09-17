@@ -15,6 +15,9 @@ menu (2.1.42) unstable; urgency=low
   * su-to-root:
     - su-to-root failed to interpolate command when run by root.
       Patch from Stefan Monnier. Closes: #522301
+  * menu.h:
+    - default setting of sort was disabling $sort.
+      Patch from Vaclav Ovsik. Closes: #504508
   * Handling of l10n by Christian Perrier:
     + Menu sections translations:
       - Asturian added. Closes: #511622
