@@ -871,7 +871,7 @@ Here is an example of such a <file/postrm/ script using <prgn/sh/:
      ;;
      purge)
          #remove the files that install-menu creates:
-         (cd /etc/X11/twm/; rm system.twmrc menus.dat menudefs.hook)
+         rm -rf /var/lib/foo-wm/menu
      ;;
      upgrade);;
      *)
@@ -1096,13 +1096,13 @@ generated.
 As an example, consider the following:
 <tt>examplercfile=system.foo-wm-example</tt>,
 <tt>rcfile=system.foo-wm</tt>, <tt>genmenu=menudefs.hook</tt> and
-<tt>rootprefix=/etc/X11/foo-wm</tt>. Now, if <prgn/install-menu/ gets run, it
+<tt>rootprefix=/var/lib/foo-wm/menu</tt>. Now, if <prgn/install-menu/ gets run, it
 will first generate the file
-<file>/etc/X11/foo-wm/menudefs.hook</file>. Next, it will line-by-line 
-read the file <file>/etc/X11/foo-wm/system.foo-wm-example</file> and copy
-its contents to <file>/etc/X11/foo-wm/system.foo-wm</file>, replacing
+<file>/var/lib/foo-wm/menu/menudefs.hook</file>. Next, it will line-by-line 
+read the file <file>/var/lib/foo-wm/menu/system.foo-wm-example</file> and copy
+its contents to <file>/var/lib/foo-wm/menu/system.foo-wm</file>, replacing
 every occurrence of the string <tt>install-menu-defs</tt> with the
-contents of the file <file>/etc/X11/foo-wm/menudefs.hook</file>. 
+contents of the file <file>/var/lib/foo-wm/menu/menudefs.hook</file>. 
 <p>
 
 To activate the file copying in this way, simply define the <tt/$examplercfile/
