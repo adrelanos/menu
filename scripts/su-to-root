@@ -54,7 +54,7 @@ fi
 euid=$(id -u)
 privid=$(id -u $PRIV)
 if test "$euid" = "$privid"; then
-  $COMMAND
+  sh -c "$COMMAND"
 else
   case $NEEDS in
   text)
