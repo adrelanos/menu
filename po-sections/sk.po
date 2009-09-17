@@ -1,19 +1,18 @@
-# Menu section translation
-# Copyright (C) 2003
-# This file is distributed under the same license as the menu package.
-# Bill Allombert <ballombe@debian.org>, 2003.
-# Slovak translation: Peter Mann, 2005
+# Slovak translation of menu_po-sections.
+# This file is distributed under the same license as the menu_po-sections package.
+# Ivan Masár <helix84@centrum.sk>, 2009.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: menu-section\n"
+"Project-Id-Version: menu_po-sections\n"
 "POT-Creation-Date: 2007-07-04 15:27+0100\n"
-"PO-Revision-Date: 2008-01-13 12:11+0100\n"
-"Last-Translator: Peter Mann <Peter.Mann@tuke.sk>\n"
+"PO-Revision-Date: 2009-04-07 00:15+0100\n"
+"Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 
 #. First level entry 
 #. Policy definition: Normal applications. This is a top-level
@@ -32,7 +31,7 @@ msgstr "Prístupnosť"
 #. Policy definition: Anything relating to HAM radio.
 #. Examples: baken, hamsoft, twlog
 msgid "Amateur Radio"
-msgstr "Rádioamatéri"
+msgstr "Amatérske rádio"
 
 #. Second level entry under Applications
 #. Policy definition: Interactive database programs, collection
@@ -143,7 +142,7 @@ msgstr "Programovanie"
 #. bug tracking software, etc.
 #. Examples: planner, bugzilla, gnotime
 msgid "Project Management"
-msgstr "Správa projektov"
+msgstr "Riadenie projektov"
 
 #. Second level entry under Applications
 #. Policy definition: Scientific and engineering-related software. This is
@@ -174,7 +173,7 @@ msgstr "Chémia"
 #. and presenting generic scientific data.
 #. Examples: fityk, ygraph, mn-fit
 msgid "Data Analysis"
-msgstr "Analýza údajov"
+msgstr "Analýza dát"
 
 #. Third level entry under Science
 #. Policy definition: Circuit design tools, simulators and
@@ -194,7 +193,7 @@ msgstr "Inžinierstvo"
 #. Policy definition: Geoscience-related software.
 #. Examples: earth3d, qgis, therion
 msgid "Geoscience"
-msgstr "Zemepis"
+msgstr "Vedy o Zemi"
 
 #. Third level entry under Science
 #. Policy definition: Mathematics-related software.
@@ -218,7 +217,7 @@ msgstr "Fyzika"
 #. Policy definition: Social sciences-related software.
 #. Examples: gnomesword, hanzim, bibletime
 msgid "Social"
-msgstr "Spoločenské"
+msgstr "Spoločenské vedy"
 
 #. Second level entry under Applications
 #. Policy definition: Various shells to be used inside a terminal emulator.
@@ -230,7 +229,7 @@ msgstr "Shelly"
 #. Policy definition: Sound players, editors, and rippers/recorders.
 #. Examples: beep-media-player, grip, audacity
 msgid "Sound"
-msgstr "Zvuky"
+msgstr "Zvuk"
 
 #. Second level entry under Applications
 #. Policy definition: System related software. This is a three-level
@@ -243,7 +242,7 @@ msgstr "Systém"
 #. also tools for personal user settings.
 #. Examples: gnome-control-center, configure-debian, gksu
 msgid "Administration"
-msgstr "Správa"
+msgstr "Správa systému"
 
 #. Third level entry under System
 #. Policy definition: Tools for manipulating specific hardware,
@@ -275,20 +274,20 @@ msgstr "Bezpečnosť"
 #. Policy definition: Graphical terminal emulators.
 #. Examples: xterm, gnome-terminal, rxvt
 msgid "Terminal Emulators"
-msgstr "Emulátory terminálov"
+msgstr "Emulátory terminálu"
 
 #. Second level entry under Applications
 #. Policy definition: Text oriented tools like dictionaries, OCR,
 #. translation, text analysis software, etc.
 #. Examples: kdrill, stardict, turkey
 msgid "Text"
-msgstr "Text"
+msgstr "Spracovanie textu"
 
 #. Second level entry under Applications
 #. Policy definition: TV-in, TV-out, FM radio, teletext browsers, etc.
 #. Examples: gradio, gatos, alevt
 msgid "TV and Radio"
-msgstr "Televízia a rádio"
+msgstr "TV a rádio"
 
 #. Second level entry under Applications
 #. Policy definition: Software for viewing images, documents
@@ -386,7 +385,7 @@ msgstr "Hračky"
 #. should) also contain entries for important documents.
 #. Examples: debian-reference, apt-howto, dhelp
 msgid "Help"
-msgstr "Nápoveda"
+msgstr "Pomocník"
 
 #. First level entry 
 #. Policy definition: Programs that affect the whole screen. This
@@ -399,7 +398,7 @@ msgstr "Obrazovka"
 #. configuration GUIs should go to other appropriate sections.
 #. Examples: xscreensaver, xlockmore
 msgid "Saving"
-msgstr "Šetrenie"
+msgstr "Šetriče"
 
 #. Second level entry under Screen
 #. Policy definition: Tools for locking the screen.
@@ -417,7 +416,7 @@ msgstr "Správcovia okien"
 #. Policy definition: FVWM-based window manager modules. 
 #. Examples: fvwm, fvwm-gnome, fvwm95
 msgid "FVWM Modules"
-msgstr "FVWM moduly"
+msgstr "Moduly FVWM"
 
 #. First level entry 
 #. Policy definition: This section is reserved for wmaker as a special
@@ -431,14 +430,14 @@ msgstr "Vzhľad"
 
 #. Non official sections from WindowMaker
 msgid "WorkSpace"
-msgstr "Pracovná plocha"
+msgstr "WorkSpace"
 
 #. Frequently used unofficial sections.
 #. From Apps/Net/Iceape Components
 msgid "Iceape Components"
-msgstr "Iceape súčasti"
+msgstr "Komponenty Iceape"
 
 #. From Games/Toys/Teddies
 #.  as in "Teddy Bear"
 msgid "Teddies"
-msgstr "Medvedíky"
+msgstr "Plyšáci"
