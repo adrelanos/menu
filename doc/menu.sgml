@@ -803,15 +803,13 @@ menus.
 <p>
 <sect> Adding a hook for dpkg in your packages
 <p>
-You should add a line like this to your <tt/postinst/ script
+The <tt/postinst/ script and the <file/postrm/ script of the package 
+should include the line
 <example>
  if test -x /usr/bin/update-menus; then update-menus; fi
 </example>
-and the <file/postrm/ script should get the line
-<example>
- if test -x /usr/bin/update-menus; then update-menus; fi
-</example>
-(that is, the same line in postinst and in postrm).
+If you are using  <prgn/debhelper/, the program <prgn/dh_installmenu/ 
+can do it for you.
 <p>
 
 <chapt>What packages with menu managers should do
@@ -893,6 +891,8 @@ And here is a good example for a <file/postinst/ script:
       fi
   fi
 </example>
+If you are using  <prgn/debhelper/, the program <prgn/dh_installmenu/ 
+can help you do it.
 <p>
 <var>Note:</var>
 <p>
@@ -1511,7 +1511,7 @@ and "submenutitle=" are interpreted as follows:
              For sub-menu entries (those with empty command), this
              is initialised to the last part of the section.
              Please, keep the title short (two words at maximum).
-             The title is for people who already know what programme
+             The title is for people who already know what program
              they want to start. See "longtitle" and "description" below
              for longer descriptions.
 <tag>    sort:    

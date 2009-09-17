@@ -20,7 +20,8 @@ menu (2.1.42) unstable; urgency=low
       Patch from Vaclav Ovsik. Closes: #504508
   * doc/menu.sgml:
     - Do not use /etc/X11 as example path. Closes: #498590
-    - Clean up purge example.
+    - Clean up 'postrm purge' example.
+    - Mention existence of dh_installmenu. Closes: #503140
   * Handling of l10n by Christian Perrier:
     + Menu sections translations:
       - Asturian added. Closes: #511622
