@@ -894,17 +894,6 @@ And here is a good example for a <file/postinst/ script:
 If you are using  <prgn/debhelper/, the program <prgn/dh_installmenu/ 
 can help you do it.
 <p>
-<var>Note:</var>
-<p>
-<var>
- Previous version of menu were advertising the script
- <file>/usr/sbin/wm-menu-config</file>. There was a flaw: this script
- was only available when menu is installed and so the menu-method
- script was not executable if menu was installed afterward.
- </var><p><var>
- This script is considered deprecated, please don't use it anymore.
- </var>
-<p>
 Please, do not make your package <em/depend/ on the menu package! The
 preferred way of telling dpkg that your wm can cooperate with menu is:
 <example>
