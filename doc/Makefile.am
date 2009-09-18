@@ -58,7 +58,9 @@ install-data-local:
 	$(INSTALL_DATA) $(srcdir)/README.translations $(DESTDIR)$(pkgdocdir)
 	$(INSTALL_DATA) $(srcdir)/../README $(DESTDIR)$(pkgdocdir)
         
+uninstall-default:
+	rm -rf $(DESTDIR)$(pkgdatadir)/default
+
 uninstall-local:
-	rm -r $(DESTDIR)$(pkgdocdir)
-	rm -r $(DESTDIR)$(pkgdatadir)/default
-	rm    $(DESTDIR)$(infodir)/menu.info.gz
+	rm -rf $(DESTDIR)$(pkgdocdir)
+	rm -f  $(DESTDIR)$(infodir)/menu.info.gz

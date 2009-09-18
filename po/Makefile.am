@@ -21,3 +21,9 @@ menu.pot::
 
 clean-local:
 	rm -f *.mo
+uninstall-local:$(MOs)
+	for mo in $(MOs); do \
+           lang=`basename $$mo .mo`; \
+	   dir=$(DESTDIR)$(localedir)/$$lang/LC_MESSAGES; \
+	   rm -f $$dir/menu.mo; \
+	done

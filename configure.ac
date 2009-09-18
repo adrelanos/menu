@@ -23,9 +23,9 @@ AC_TYPE_SIGNAL
 AC_CHECK_FUNCS(mkdir strdup strerror)
 
 dnl Available po files.
-PO_PROGRAMS=`cd po; echo *.po`
-PO_SECTIONS=`cd po-sections; echo *.po`
-PO_SUTOROOT=`cd po-su-to-root; echo *.po`
+PO_PROGRAMS=`cd ${srcdir}/po; echo *.po`
+PO_SECTIONS=`cd ${srcdir}/po-sections; echo *.po`
+PO_SUTOROOT=`cd ${srcdir}/po-su-to-root; echo *.po`
 MO_PROGRAMS=`echo $PO_PROGRAMS | sed s/\.po/.mo/g`
 MO_SECTIONS=`echo $PO_SECTIONS | sed s/\.po/.mo/g`
 MO_SUTOROOT=`echo $PO_SUTOROOT | sed s/\.po/.mo/g`

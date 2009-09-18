@@ -1,28 +1,6 @@
 menu (2.1.42) unstable; urgency=low
 
-  * The "unreleased" release.
-  * Switch to debhelper v5.
-  * doc/Makefile.am: 
-    - Add @direntry to menu.info. Closes: #528892
-  * debian/postinst, debian/prerm:
-    - Remove useless commented parts.
-    - Remove call to install-info.
-  * debian/control:
-    - Depends: add ${misc:Depends}
-    - Bump Standards-Version to 3.8.3.
-  * debian/rules:
-    - call dh_installinfo to handle info document.
-  * su-to-root:
-    - su-to-root failed to interpolate command when run by root.
-      Patch from Stefan Monnier. Closes: #522301
-  * menu.h:
-    - default setting of sort was disabling $sort.
-      Patch from Vaclav Ovsik. Closes: #504508
-  * doc/menu.sgml:
-    - Do not use /etc/X11 as example path. Closes: #498590
-    - Clean up 'postrm purge' example.
-    - Mention existence of dh_installmenu. Closes: #503140
-    - Remove note about wm-menu-config.
+  * The "answer to life, the universe and menu" release.
   * Handling of l10n by Christian Perrier:
     + Menu sections translations:
       - Asturian added. Closes: #511622
@@ -33,7 +11,42 @@ menu (2.1.42) unstable; urgency=low
     + Programs translations:
       - Asturian added. Closes: #511622
 
- -- Bill Allombert <ballombe@debian.org>  Wed, 16 Sep 2009 12:46:54 +0200
+  * debian/compat, debian/control
+    - Switch to debhelper v5.
+
+  * debian/control:
+    - Depends: add ${misc:Depends}
+    - Bump Standards-Version to 3.8.3.
+
+  * install-info transition: 
+    + doc/Makefile.am, doc/menu.direntry: 
+      - Add @direntry to menu.info. Closes: #528892
+    + debian/postinst, debian/prerm:
+      - Remove call to install-info.
+    + debian/rules:
+      - call dh_installinfo to handle info document.
+
+  * debian/postinst, debian/prerm:
+    - Remove useless commented parts.
+
+  * su-to-root:
+    - su-to-root failed to interpolate command when run by root.
+      Patch from Stefan Monnier. Closes: #522301
+
+  * menu.h:
+    - default setting of sort was disabling $sort.
+      Patch from Vaclav Ovsik. Closes: #504508
+
+  * doc/menu.sgml:
+    - Do not use /etc/X11 as example path. Closes: #498590
+    - Clean up 'postrm purge' example.
+    - Mention existence of dh_installmenu. Closes: #503140
+    - Remove note about wm-menu-config.
+
+  * configure.ac, */Makefile.am
+    - Fix uninstall target so that 'make distcheck' work again.
+
+ -- Bill Allombert <ballombe@debian.org>  Fri, 18 Sep 2009 20:37:19 +0200
 
 menu (2.1.41) unstable; urgency=low
 

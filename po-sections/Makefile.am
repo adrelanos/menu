@@ -2,7 +2,7 @@ MOs = @MO_SECTIONS@
 POs = @PO_SECTIONS@
 localedir = $(datadir)/locale
 
-EXTRA_DIST = $(POs) es.trme menufile2pot menu-sections.pot README trme2po
+EXTRA_DIST = $(POs) menufile2pot menu-sections.pot README trme2po
 
 all-local: $(MOs)
 install-data-local:$(MOs) lang.h
@@ -24,3 +24,9 @@ lang.h: $(MOs)
 
 clean-local:
 	rm -f *.mo lang.h
+uninstall-local:$(MOs)
+	for mo in $(MOs); do \
+           lang=`basename $$mo .mo`; \
+	   dir=$(DESTDIR)$(localedir)/$$lang/LC_MESSAGES; \
+	   rm -f $$dir/menu-sections.mo; \
+	done
