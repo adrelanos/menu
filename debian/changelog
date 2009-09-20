@@ -1,3 +1,9 @@
+menu (2.1.43) unstable; urgency=low
+
+  *  The "unreleased" release.
+
+ -- Bill Allombert <ballombe@debian.org>  Sun, 20 Sep 2009 21:01:03 +0200
+
 menu (2.1.42) unstable; urgency=low
 
   * The "answer to life, the universe and menu" release.
