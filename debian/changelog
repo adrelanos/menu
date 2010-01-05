@@ -1,6 +1,8 @@
 menu (2.1.43) unstable; urgency=low
 
-  *  The "unreleased" release.
+  * The "unreleased" release.
+  * doc/su-to-root.1:
+   + Fix typo. Closes: #552153. Thanks Filipus Klutiero.
 
  -- Bill Allombert <ballombe@debian.org>  Sun, 20 Sep 2009 21:01:03 +0200
 
