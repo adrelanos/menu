@@ -519,7 +519,6 @@ int read_menufile(const string &filename, const string &shortfilename,
         linenr++;
         if (transinfo)
             transinfo->process(m);
-        //gettext_translate(m);
         if (!wrote_filename) {
           menudata.push_back(string("!F ") + filename + '\n');
           wrote_filename = true;
