@@ -294,7 +294,7 @@ title must be unique.
 <p>
 <sect> The <tt/section/ field
 <p>
-The <tt/section/ field hold a slash-separated list of hierarchical sections
+The <tt/section/ field holds a slash-separated list of hierarchical sections
 components.
 <p>
 The <em/authoritative list of Debian's menu structure/ is maintained
