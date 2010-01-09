@@ -3,8 +3,10 @@ menu (2.1.43) unstable; urgency=low
   * The "unreleased" release.
   * doc/su-to-root.1:
    + Fix typo. Closes: #552153. Thanks Filipus Klutiero.
+  * doc/menu.sgml:
+   + Mention that the new menu structure was drafted by Linas Zvirblis.
 
- -- Bill Allombert <ballombe@debian.org>  Sun, 20 Sep 2009 21:01:03 +0200
+ -- Bill Allombert <ballombe@debian.org>  Fri, 08 Jan 2010 16:21:46 +0100
 
 menu (2.1.42) unstable; urgency=low
 

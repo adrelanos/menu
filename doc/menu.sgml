@@ -299,7 +299,8 @@ components.
 <p>
 The <em/authoritative list of Debian's menu structure/ is maintained
 in the Debian Menu sub-policy document which is part of the Debian
-Policy package.
+Policy package. The current menu structure was drafted in 2006 by Linas
+Zvirblis with input from the debian-devel mailing list.
 <p>
 The menu structure below is included only for convenience and is not
 authoritative. If it disagrees with the structure in the Debian Menu
