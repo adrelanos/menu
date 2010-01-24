@@ -1,7 +1,7 @@
 menu (2.1.43) unstable; urgency=low
 
+  * The "Javier Jugendtraum" release.
   * menu repository on alioth.debian.org converted to subversion
-  * The "unreleased" release.
   * doc/su-to-root.1:
     + Fix typo. Closes: #552153. Thanks Filipus Klutiero.
   * doc/menu.sgml:
@@ -10,6 +10,7 @@ menu (2.1.43) unstable; urgency=low
     + Add support for translation of menu entries in gettext domain 
      'menu-entries'. Translations will be provided by the menu-l10n package.
       Closes: #37716
+  * update automake-related scripts.
 
  -- Bill Allombert <ballombe@debian.org>  Sun, 24 Jan 2010 13:08:52 +0100
 
