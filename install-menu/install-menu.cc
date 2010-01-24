@@ -724,7 +724,7 @@ map<string, string> read_vars(parsestream &i)
       if (do_translation) {
 	if (name == "title") {
 	  // This won't work if ldgettext is also used (translate($lang)).
-	  string title = dgettext("menu-sections", val.c_str());
+	  string title = dgettext("menu-entries", val.c_str());
           try {
             title = convert(title);
           } catch (conversion_error& err) {

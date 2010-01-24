@@ -1,12 +1,17 @@
 menu (2.1.43) unstable; urgency=low
 
+  * menu repository on alioth.debian.org converted to subversion
   * The "unreleased" release.
   * doc/su-to-root.1:
-   + Fix typo. Closes: #552153. Thanks Filipus Klutiero.
+    + Fix typo. Closes: #552153. Thanks Filipus Klutiero.
   * doc/menu.sgml:
-   + Mention that the new menu structure was drafted by Linas Zvirblis.
+    + Mention that the new menu structure was drafted by Linas Zvirblis.
+  * install-menu/functions.cc, install-menu/install-menu.cc:
+    + Add support for translation of menu entries in gettext domain 
+     'menu-entries'. Translations will be provided by the menu-l10n package.
+      Closes: #37716
 
- -- Bill Allombert <ballombe@debian.org>  Fri, 08 Jan 2010 16:21:46 +0100
+ -- Bill Allombert <ballombe@debian.org>  Sun, 24 Jan 2010 13:08:52 +0100
 
 menu (2.1.42) unstable; urgency=low
 

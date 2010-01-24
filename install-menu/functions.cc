@@ -464,8 +464,11 @@ ostream &translate::output(ostream &o, vector<cat_str *> &args,
 {
   string lang=args[0]->soutput(menuentry);
   string text=args[1]->soutput(menuentry);
-
-  return o << ldgettext(lang.c_str(), "menu-sections", text.c_str());
+  const char *txt = text.c_str();
+  const char *trans = ldgettext(lang.c_str(), "menu-sections", txt);
+  if (trans == txt)
+    trans = ldgettext(lang.c_str(), "menu-entries", txt);
+  return o << trans;
 }
 
 }
