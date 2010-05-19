@@ -1,0 +1,377 @@
+# Estonian translation of Debian menu.
+# Copyright (C) 2008 THE Debian COPYRIGHT HOLDER
+# This file is distributed under the same license as the Debian menu package.
+# mihkel <turakas gmail com>, 2010
+msgid ""
+msgstr ""
+"Project-Id-Version: Debian menu 2.1.43\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"POT-Creation-Date: 2007-10-05 07:30+0200\n"
+"PO-Revision-Date: 2010-05-19 14:59+0300\n"
+"Last-Translator: mihkel <turakas@gmail.com>\n"
+"Language-Team: et <et@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Emacs\n"
+
+#: ../install-menu/functions.cc:92
+msgid "Zero-size argument to print function."
+msgstr "Null-suurusega argument print funktsiooniks."
+
+#: ../install-menu/install-menu.cc:202
+msgid "install-menu: checking directory %1\n"
+msgstr "install-menu: kontrollin kataloogi %1\n"
+
+#: ../install-menu/install-menu.cc:215
+msgid "install-menu: creating directory %1:\n"
+msgstr "install-menu: loon kataloogi %1:\n"
+
+#: ../install-menu/install-menu.cc:217
+msgid "Could not create directory(%1): %2"
+msgstr "Kataloogi (%1) pole võimalik luua: %2"
+
+#: ../install-menu/install-menu.cc:219
+msgid "Could not change directory(%1): %2"
+msgstr "Kataloogi (%1) muutmine nurjus: %2"
+
+#: ../install-menu/install-menu.cc:222
+msgid "install-menu: directory %1 already exists\n"
+msgstr "install-menu: kataloog %1 on juba olemas\n"
+
+#. Do not translate supported
+#: ../install-menu/install-menu.cc:447
+msgid "install-menu: [supported]: name=%1\n"
+msgstr "install-menu: [supported]: nimi=%1\n"
+
+#: ../install-menu/install-menu.cc:464
+msgid "Menu entry lacks mandatory field \"%1\".\n"
+msgstr "Menüü kirjel puudub kohustuslik väli \"%1\".\n"
+
+#: ../install-menu/install-menu.cc:470
+msgid "Unknown value for field %1=\"%2\".\n"
+msgstr "Tundmatu väärtus väljal %1=\"%2\".\n"
+
+#. Do not translate quoted text
+#: ../install-menu/install-menu.cc:617
+msgid ""
+"install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
+msgstr ""
+"install-menu: \"hotkeycase\" võib olla ainult \"sensitive\" või \"insensitive"
+"\"\n"
+
+#: ../install-menu/install-menu.cc:647
+msgid ""
+"install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
+"Ignoring.\n"
+msgstr ""
+"install-menu: Hoiatus: Tundmatu identifikaator `%1' real %2 failis %3. "
+"Ignoreerin.\n"
+
+#: ../install-menu/install-menu.cc:657
+msgid "install-menu: %1 must be defined in menu-method %2"
+msgstr "install-menu: %1 peab olema defineeritud menu-method %2"
+
+#: ../install-menu/install-menu.cc:824
+msgid "Cannot open file %1 (also tried %2).\n"
+msgstr "Faili %1 avamine nurjus (proovisin ka %2).\n"
+
+#: ../install-menu/install-menu.cc:832 ../install-menu/install-menu.cc:839
+#: ../install-menu/install-menu.cc:847
+msgid "Cannot open file %1.\n"
+msgstr "Faili %1 avamine nurjus.\n"
+
+#: ../install-menu/install-menu.cc:849
+msgid ""
+"In order to be able to create the user config file(s) for the window "
+"manager,\n"
+"the above file needs to be writeable (and/or the directory needs to exist).\n"
+msgstr ""
+"Kasutaja aknahalduri seadisteustefaili(de) loomiseks peab eelpool mainitud "
+"fail olema kirjutatav (ja/või kataloog peab olemas olema).\n"
+
+#: ../install-menu/install-menu.cc:871
+msgid "Warning: the string %1 did not occur in template file %2\n"
+msgstr "Hoiatus: string %1 ei esinenud mallifailis %2\n"
+
+#. Don't translate quoted string
+#: ../install-menu/install-menu.cc:896
+msgid ""
+"install-menu [-vh] <menu-method>\n"
+"  Read menu entries from stdin in \"update-menus --stdout\" format\n"
+"  and generate menu files using the specified menu-method.\n"
+"  Options to install-menu:\n"
+"     -h --help    : this message\n"
+"        --remove  : remove the menu instead of generating it.\n"
+"     -v --verbose : be verbose\n"
+msgstr ""
+"install-menu [-vh] <menu-method>\n"
+"  Loe menüü kirjed sdtin-st sisse \"update-menus --stdout\" vormingus\n"
+"  ja genereeri menüü failid kasutades määratud menu-method-it.\n"
+"  install-menu valikud:\n"
+"     -h --help    : see teade\n"
+"        --remove  : eemalda menüü genereerimise asemel.\n"
+"     -v --verbose : ole jutukas\n"
+
+#: ../install-menu/install-menu.cc:943
+msgid "install-menu: no menu-method script specified!"
+msgstr "install-menu: menu-method skripti pole määratud!"
+
+#: ../install-menu/install-menu.cc:956
+msgid "Cannot open script %1 for reading.\n"
+msgstr "Skripti %1 avamine lugemiseks nurjus.\n"
+
+#: ../install-menu/install-menu.cc:979
+msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
+msgstr "Hoiatus: skript %1 ei anna removemenu-t, menüüd ei kustutatud\n"
+
+#: ../install-menu/install-menu.cc:1014
+msgid "Running: \"%1\"\n"
+msgstr "Töös: \"%1\"\n"
+
+#: ../install-menu/install-menu.cc:1030
+msgid "install-menu: %1: aborting\n"
+msgstr "install-menu: %1: katkestan\n"
+
+#: ../install-menu/install-menu.h:199
+msgid "Number of arguments to function %1 does not match."
+msgstr "Funktsiooni %1 argumentide arv ei klapi."
+
+#: ../install-menu/install-menu.h:207
+msgid "Unknown function: \"%1\""
+msgstr "Tundmatu funktsioon: \"%1\""
+
+#: ../install-menu/install-menu.h:216
+msgid "Indirectly used, but not defined function: \"%1\""
+msgstr "Kaudselt kasutatud, kuid mitte defineeritud funktsioon: \"%1\""
+
+#: ../install-menu/install-menu.h:225
+msgid "Unknown identifier: \"%1\""
+msgstr "Tundmatu idendifikaator: \"%1\""
+
+#: ../install-menu/install-menu.h:234
+msgid "Encoding conversion error: \"%1\""
+msgstr "Kodeeringu teisenduse viga: \"%1\""
+
+#: ../update-menus/exceptions.h:43
+msgid "Unknown error."
+msgstr "Tundmatu viga."
+
+#: ../update-menus/exceptions.h:55 ../update-menus/parsestream.h:114
+msgid "Unknown error, message=%1"
+msgstr "Tundmatu viga, teade=%1"
+
+#: ../update-menus/exceptions.h:64
+msgid "Unable to open file \"%1\"."
+msgstr "Faili \"%1\" avamine nurjus."
+
+#: ../update-menus/exceptions.h:73
+msgid "Failed to pipe data through \"%1\" (pipe opened for reading)."
+msgstr "Andmete torustamine läbi \"%1\" nurjus (toru avatud lugemiseks)."
+
+#: ../update-menus/exceptions.h:89
+msgid "%1: missing required tag: \"%2\""
+msgstr "%1: puudub vajalik silt: \"%2\""
+
+#: ../update-menus/parsestream.cc:50
+msgid "(probably) stdin"
+msgstr "(ilmselt) stdin"
+
+#: ../update-menus/parsestream.cc:450
+msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
+msgstr "Failis \"%1\", real (või definitsioonil, mis lõppeb) %2:\n"
+
+#: ../update-menus/parsestream.cc:471
+msgid "Somewhere in input file:\n"
+msgstr "Kusagil sisendifailis:\n"
+
+#: ../update-menus/parsestream.h:122
+msgid "Unexpected end of file."
+msgstr "Faili ootamatu lõpp."
+
+#: ../update-menus/parsestream.h:129
+msgid "Unexpected end of line."
+msgstr "Rea ootamatu lõpp."
+
+#: ../update-menus/parsestream.h:136
+msgid "Identifier expected."
+msgstr "Oodati identifikaatorit."
+
+#: ../update-menus/parsestream.h:144
+msgid "Expected: \"%1\""
+msgstr "Oodati: \"%1\""
+
+#: ../update-menus/parsestream.h:153
+msgid "Unexpected character: \"%1\""
+msgstr "Ootamatu sümbol: \"%1\""
+
+#: ../update-menus/parsestream.h:162
+msgid ""
+"Boolean (either true or false) expected.\n"
+"Found: \"%1\""
+msgstr ""
+"Oodati tõeväärtust (kas tõene või väär).\n"
+"Leiti: %1"
+
+#: ../update-menus/parsestream.h:172
+msgid "Unknown compat mode: \"%1\""
+msgstr "Tundmatu ühilduvuse režiim: \"%1\""
+
+#: ../update-menus/stringtoolbox.cc:85
+msgid ""
+"replacewith($string, $replace, $with): $replace and $with must have the same "
+"length."
+msgstr ""
+"replacewith($string, $replace, $with): $replace ja $with peavad olema sama "
+"pikad."
+
+#: ../update-menus/update-menus.cc:150
+msgid ""
+"file %1 line %2:\n"
+"Discarding entry requiring missing package %3."
+msgstr ""
+"fail %1 rida %2:\n"
+"Hülgan kirjed, mis vajavad puuduvat pakki %3."
+
+#. Translation here and below refer to the file
+#. /etc/menu-methods/translate_menus that allow to rename and reorganize
+#. menu entries automatically. It does not refer to the localisation
+#. (translation to other languages).
+#.
+#: ../update-menus/update-menus.cc:364
+msgid "Reading translation rules in %1."
+msgstr "Loen translitereerimise reegleid %1."
+
+#: ../update-menus/update-menus.cc:444
+msgid "Reading installed packages list..."
+msgstr "Loen paigaldatud pakkide nimekirja..."
+
+#: ../update-menus/update-menus.cc:493
+msgid "Execution of %1 generated no output or returned an error.\n"
+msgstr "%1 käivitamie ei genereerinud väljundit või tagastas vea.\n"
+
+#: ../update-menus/update-menus.cc:534 ../update-menus/update-menus.cc:538
+msgid "Skipping file because of errors...\n"
+msgstr "Jätan faili vahele vigade tõttu...\n"
+
+#: ../update-menus/update-menus.cc:555
+msgid "Reading menu-entry files in %1."
+msgstr "Loen menüükirjete faili %1."
+
+#: ../update-menus/update-menus.cc:578
+msgid "Error reading %1.\n"
+msgstr "Viga lugemisel %1.\n"
+
+#: ../update-menus/update-menus.cc:584
+msgid "%1 menu entries found (%2 total)."
+msgstr "Leiti %1 menüü kirjeid (%2 kokku)."
+
+#: ../update-menus/update-menus.cc:595
+msgid "Running method: %1 --remove"
+msgstr "Töötamise meetod: %1 --remove"
+
+#: ../update-menus/update-menus.cc:607 ../update-menus/update-menus.cc:669
+#: ../update-menus/update-menus.cc:990
+msgid "Script %1 could not be executed."
+msgstr "Skripti %1 käivitamine nurjus."
+
+#: ../update-menus/update-menus.cc:610 ../update-menus/update-menus.cc:672
+msgid "Script %1 returned error status %2."
+msgstr "Skript %1 tagastas vea oleku %2."
+
+#: ../update-menus/update-menus.cc:613 ../update-menus/update-menus.cc:675
+msgid "Script %1 received signal %2."
+msgstr "Skript %1 võttis vastu signaali %2."
+
+#: ../update-menus/update-menus.cc:630
+msgid "Running method: %1"
+msgstr "Töötamise meetod: %1"
+
+#: ../update-menus/update-menus.cc:633
+msgid "Cannot create pipe."
+msgstr "Toru loomine nurjus."
+
+#: ../update-menus/update-menus.cc:685
+msgid "Running menu-methods in %1."
+msgstr "Töös menu-methods %1."
+
+#: ../update-menus/update-menus.cc:717
+msgid "Other update-menus processes are already locking %1, quitting."
+msgstr "Teised update-menu protsessid juba blokeerivad %1, loobun."
+
+#: ../update-menus/update-menus.cc:720
+msgid "Cannot lock %1: %2 - Aborting."
+msgstr "%1 lukustamine nurjus: %2 - Katkestan."
+
+#: ../update-menus/update-menus.cc:730
+msgid "Cannot write to lockfile %1 - Aborting."
+msgstr "Lukustusfaili %1 kirjutamine nurjus - Katkestan."
+
+#: ../update-menus/update-menus.cc:743
+msgid "Cannot remove lockfile %1."
+msgstr "Lukustusfaili %1 eemaldamine nurjus."
+
+#: ../update-menus/update-menus.cc:759
+msgid "Update-menus is run by user."
+msgstr "Update-menus käivitati kasutaja poolt."
+
+#: ../update-menus/update-menus.cc:813
+msgid ""
+"Waiting for dpkg to finish (forking to background).\n"
+"(checking %1)"
+msgstr ""
+"Dpkg ootamine on lõppenud (lükkasin taustale).\n"
+"(kontrollin %1)"
+
+#: ../update-menus/update-menus.cc:816
+msgid "Further output (if any) will appear in %1."
+msgstr "Edasine väljund (kui üldse) ilmub %1."
+
+#: ../update-menus/update-menus.cc:845
+msgid "Dpkg is not locking dpkg status area, good."
+msgstr "Dpkg ei lukusta dpkg oleku ala, tore."
+
+#. This is the update-menus --help message
+#: ../update-menus/update-menus.cc:855
+msgid ""
+"Usage: update-menus [options] \n"
+"Gather packages data from the menu database and generate menus for\n"
+"all programs providing menu-methods, usually window-managers.\n"
+"  -d                     Output debugging messages.\n"
+"  -v                     Be verbose about what is going on.\n"
+"  -h, --help             This message.\n"
+"  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to "
+"search.\n"
+"  --menumethod=<method>  Run only the menu method <method>.\n"
+"  --nodefaultdirs        Disable the use of all the standard menu "
+"directories.\n"
+"  --nodpkgcheck          Do not check if packages are installed.\n"
+"  --remove               Remove generated menus instead.\n"
+"  --stdout               Output menu list in format suitable for piping to\n"
+"                         install-menu.\n"
+"  --version              Output version information and exit.\n"
+msgstr ""
+"Kasutamine: update-menus [valikud] \n"
+"Kogu pakkide andmed menüü andmebaasist ja genereeri menüüd kõikidele\n"
+"programmidele pakkudes menu-method-eid, tavaliselt aknahaldureid.\n"
+"  -d                     Kuva silumise teateid.\n"
+"  -v                     Ole juhtunu suhtes rohkem jutukam.\n"
+"  -h, --help             See teade.\n"
+"  --menufilesdir=<dir>   Lisa <dir> otsitavate menüü kataloogide nimekirja.\n"
+"  --menumethod=<method>  Käivita ainult menüü meetod <method>.\n"
+"  --nodefaultdirs        Keela standardsete menüükataloogide kasutamine.\n"
+"  --nodpkgcheck          Ära kontrolli pakkide paigaldatust.\n"
+"  --remove               Eemalda hoopis genereeritud menüüd.\n"
+"  --stdout               Väljasta menüü nimekiri vormingus, mis sobib "
+"torustamiseks\n"
+"                         läbi install-menu.\n"
+"  --version              Kuva versiooni informatsioon ja välju.\n"
+
+#: ../update-menus/update-menus.h:151
+msgid ""
+"Unknown install condition \"%1\" (currently, only \"package\" is supported)."
+msgstr ""
+"Tundmatu paigaldamise konditsioon \"%1 (hetkel ainult \"package\" on "
+"toetatud)\"."
