@@ -8,6 +8,8 @@ menu (2.1.44) UNRELEASED; urgency=low
       - Estonian added. Closes: #582243
     + su-to-root translations:
       - Estonian added. Closes: #582243
+  * Fix spelling error in /usr/share/menu/README.
+    Thanks to Filipus Klutiero. Closes: #592114
 
  -- Christian Perrier <bubulle@debian.org>  Wed, 19 May 2010 21:32:18 +0200
 

@@ -1,4 +1,4 @@
-In this directory, each individual package should install it's
+In this directory, each individual package should install its
 menu files. Although changing them in this directory to change
 the menus on your local system may work, the sysadmin (you?)
 is best advised to put the local menufiles in /etc/menu, as, 
