@@ -1,17 +1,20 @@
-menu (2.1.44) UNRELEASED; urgency=low
+menu (2.1.44) unstable; urgency=low
 
-  * The "unreleased" release.
+  * The "Bordeaux" release.
   * Handling of l10n by Christian Perrier:
     + Menu sections translations:
       - Estonian added. Closes: #582243
     + Programs translations:
-      - Estonian added. Closes: #582243
+      - Estonian added.
     + su-to-root translations:
-      - Estonian added. Closes: #582243
+      - Estonian added.
+  * debian/control: 
+    - Suggests menu-l10n.
+    - Bump Standards-Version to 3.9.1.
   * Fix spelling error in /usr/share/menu/README.
     Thanks to Filipus Klutiero. Closes: #592114
 
- -- Christian Perrier <bubulle@debian.org>  Wed, 19 May 2010 21:32:18 +0200
+ -- Bill Allombert <ballombe@debian.org>  Mon, 06 Sep 2010 16:48:27 +0200
 
 menu (2.1.43) unstable; urgency=low
 

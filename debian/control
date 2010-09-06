@@ -2,13 +2,13 @@ Source: menu
 Section: admin
 Priority: optional
 Maintainer: Bill Allombert <ballombe@debian.org>
-Standards-Version: 3.8.3
+Standards-Version: 3.9.1
 Build-Depends: debhelper (>= 5), texinfo, debiandoc-sgml, gettext
 
 Package: menu
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Suggests: gksu|kdebase-bin|kdebase-runtime|ktsuss|sux
+Suggests: menu-l10n, gksu|kdebase-bin|kdebase-runtime|ktsuss|sux
 Description: generates programs menu for all menu-aware applications
  Debian menu keeps transparently the menus in the different
  window-managers in sync with the list of installed programs. 
