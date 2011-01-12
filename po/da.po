@@ -1,20 +1,25 @@
-# Danish translation of menu messages.
+# Danish translation of menu.
+# Copyright (C) 2011 menu og nedenstående oversættere.
+# This file is distributed under the same license as the menu package.
+# Morten Brix Pedersen <morten@wtf.dk>, 2005.
+# Joe Hansen (joedalton2@yahoo.dk), 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: menu 2.1.22\n"
+"Project-Id-Version: menu 2.1.44\n"
 "Report-Msgid-Bugs-To: menu@packages.debian.org\n"
 "POT-Creation-Date: 2007-10-05 07:30+0200\n"
-"PO-Revision-Date: 2005-02-18 03:30+0200\n"
-"Last-Translator: Morten Brix Pedersen <morten@wtf.dk>\n"
-"Language-Team: Danish <dansk@klid.dk>\n"
+"PO-Revision-Date: 2011-01-10 17:30+01:00\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <debian-l10n-danish@lists.debian.org>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../install-menu/functions.cc:92
 msgid "Zero-size argument to print function."
-msgstr "Argument med nul-størrelse angivet til print funktion"
+msgstr "Argument med nul-størrelse angivet til print-funktion."
 
 #: ../install-menu/install-menu.cc:202
 msgid "install-menu: checking directory %1\n"
@@ -34,7 +39,7 @@ msgstr "Kunne ikke ændre mappe(%1): %2"
 
 #: ../install-menu/install-menu.cc:222
 msgid "install-menu: directory %1 already exists\n"
-msgstr "install-menu: mappen %1 eksisterer allerede\n"
+msgstr "install-menu: mappen %1 findes allerede\n"
 
 #. Do not translate supported
 #: ../install-menu/install-menu.cc:447
@@ -62,7 +67,7 @@ msgid ""
 "install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
 "Ignoring.\n"
 msgstr ""
-"install-menu: Advarsel: Ukendt identifier `%1' på linje %2 i filen %3. "
+"install-menu: Advarsel: Ukendt identifier '%1' på linje %2 i filen %3. "
 "Ignorerer.\n"
 
 #: ../install-menu/install-menu.cc:657
@@ -94,7 +99,6 @@ msgstr "Advarsel: Strengen %1 blev ikke fundet i eksempelfil %2\n"
 
 #. Don't translate quoted string
 #: ../install-menu/install-menu.cc:896
-#, fuzzy
 msgid ""
 "install-menu [-vh] <menu-method>\n"
 "  Read menu entries from stdin in \"update-menus --stdout\" format\n"
@@ -106,9 +110,10 @@ msgid ""
 msgstr ""
 "install-menu [-vh] <menu-metode>\n"
 "  Læs menupunkter fra standard-ind i formatet \"update-menus --stdout\"\n"
-"  og generér menufiler med den angivne menu-metode.\n"
+"  og generer menufiler med den angivne menu-metode.\n"
 "  Tilvalg til install-menu:\n"
 "     -h --help    : denne besked\n"
+"        --remove  : fjern menuen i stede nfor at oprette den.\n"
 "     -v --verbose : skriv mere om hvad der sker\n"
 
 #: ../install-menu/install-menu.cc:943
@@ -121,7 +126,7 @@ msgstr "Kan ikke åbne skript %1 til læsning.\n"
 
 #: ../install-menu/install-menu.cc:979
 msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
-msgstr ""
+msgstr "Advarsel: Skript %1 tilbyder ikke removemenu, menu er ikke slettet\n"
 
 #: ../install-menu/install-menu.cc:1014
 msgid "Running: \"%1\"\n"
@@ -228,6 +233,8 @@ msgid ""
 "file %1 line %2:\n"
 "Discarding entry requiring missing package %3."
 msgstr ""
+"fil %1 linje %2:\n"
+"Fjerner punkt der kræver manglende pakke %3."
 
 #. Translation here and below refer to the file
 #. /etc/menu-methods/translate_menus that allow to rename and reorganize
@@ -263,9 +270,8 @@ msgid "%1 menu entries found (%2 total)."
 msgstr "%1 menupunkter fundet (%2 totalt)."
 
 #: ../update-menus/update-menus.cc:595
-#, fuzzy
 msgid "Running method: %1 --remove"
-msgstr "Kører metode: %1"
+msgstr "Kører metode: %1 --remove"
 
 #: ../update-menus/update-menus.cc:607 ../update-menus/update-menus.cc:669
 #: ../update-menus/update-menus.cc:990
@@ -274,7 +280,7 @@ msgstr "Skript %1 kunne ikke eksekveres."
 
 #: ../update-menus/update-menus.cc:610 ../update-menus/update-menus.cc:672
 msgid "Script %1 returned error status %2."
-msgstr "Skript %1 returnerede fejl status %2."
+msgstr "Skript %1 returnerede fejlstatus %2."
 
 #: ../update-menus/update-menus.cc:613 ../update-menus/update-menus.cc:675
 msgid "Script %1 received signal %2."
@@ -286,7 +292,7 @@ msgstr "Kører metode: %1"
 
 #: ../update-menus/update-menus.cc:633
 msgid "Cannot create pipe."
-msgstr "Kan ikke oprette 'pipe'."
+msgstr "Kan ikke oprette datakanal (pipe)."
 
 #: ../update-menus/update-menus.cc:685
 msgid "Running menu-methods in %1."
@@ -306,11 +312,11 @@ msgstr "Kan ikke skrive til lås-filen %1 - Afbryder."
 
 #: ../update-menus/update-menus.cc:743
 msgid "Cannot remove lockfile %1."
-msgstr "Kan ikke fjerne lås-filen %1."
+msgstr "Kan ikke fjerne låsfilen %1."
 
 #: ../update-menus/update-menus.cc:759
 msgid "Update-menus is run by user."
-msgstr "update-menus er kørt af bruger."
+msgstr "Update-menus er kørt af bruger."
 
 #: ../update-menus/update-menus.cc:813
 msgid ""
@@ -326,11 +332,10 @@ msgstr "Yderligere uddata (hvis nogen) vil kunne ses i %1."
 
 #: ../update-menus/update-menus.cc:845
 msgid "Dpkg is not locking dpkg status area, good."
-msgstr "Dpkg låser ikke dpkg status område, godt."
+msgstr "Dpkg låser ikke dpkg statusområde, godt."
 
 #. This is the update-menus --help message
 #: ../update-menus/update-menus.cc:855
-#, fuzzy
 msgid ""
 "Usage: update-menus [options] \n"
 "Gather packages data from the menu database and generate menus for\n"
@@ -359,14 +364,14 @@ msgstr ""
 "gennemsøges.\n"
 "  --menumethod=<metode>  Kør kun menumetoden <metode>.\n"
 "  --nodefaultdirs        Deaktiverer brugen af alle standard-menumapperne.\n"
+"  --nodpkgcheck          Tjek ikke om pakker er installeret.\n"
+"  --remove               Fjern i steden for oprettede menuer.\n"
 "  --stdout               Viser menulisten i et format, der kan ledes videre\n"
 "                         til install-menu.\n"
+"  --version              Vis versionsinformation og afslut.\n"
 
 #: ../update-menus/update-menus.h:151
 msgid ""
 "Unknown install condition \"%1\" (currently, only \"package\" is supported)."
 msgstr ""
 "Ukendt installationstilstand \"%1\" (endnu understøttes kun \"package\")."
-
-#~ msgid "  --version              Output version information and exit.\n"
-#~ msgstr "  --version              Vis versionsoplysninger og afslut.\n"
