@@ -1,10 +1,11 @@
-menu (2.1.45) UNRELEASED; urgency=low
+menu (2.1.45) unstable; urgency=low
 
+  * The "unreleased release" 
   * Handling of l10n by Christian Perrier:
     + Programs translations:
       - Danish updated. Closes: #609583
 
- -- Christian Perrier <bubulle@debian.org>  Wed, 12 Jan 2011 20:08:41 +0100
+ -- Bill Allombert <ballombe@debian.org>  Mon, 06 Sep 2010 17:57:43 +0200
 
 menu (2.1.44) unstable; urgency=low
 
