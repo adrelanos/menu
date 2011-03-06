@@ -4,6 +4,7 @@ menu (2.1.45) unstable; urgency=low
   * Handling of l10n by Christian Perrier:
     + Programs translations:
       - Danish updated. Closes: #609583
+  * su-to-root: add support for gksudo and kdesudo. Closes: #604085, #602118.
 
  -- Bill Allombert <ballombe@debian.org>  Mon, 06 Sep 2010 17:57:43 +0200
 
