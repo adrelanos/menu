@@ -572,7 +572,7 @@ void read_menufilesdir(vector<string> &menudata)
 
             if (menufiles_processed.find(name) == menufiles_processed.end()) {
               menufiles_processed.insert(name);
-              name = dirname+name;
+              name = dirname + "/" + name;
               struct stat st;
               int r = stat(name.c_str(),&st);
               try {
@@ -700,7 +700,7 @@ void run_menumethoddir(const string &dirname, const vector<string> &menudata)
     if (*s != '\0')
       continue;
     
-    string method = dirname + entry->d_name;
+    string method = dirname + "/" + entry->d_name;
 
     if (executable(method))
       run_menumethod(method, menudata);

@@ -27,14 +27,14 @@ const int MAX_LINE = 10240;
 //conditionals in the menuentry files (like "package(vi)")
 #define COND_PACKAGE "package"
 
-#define CONFIGMENUS     "/etc/menu/"
-#define PACKAGEMENUSLIB "/usr/lib/menu/"
-#define PACKAGEMENUS    "/usr/share/menu/"
-#define MENUMENUS       "/usr/share/menu/default/"
-#define USERMENUS       ".menu/"
+#define CONFIGMENUS     "/etc/menu"
+#define PACKAGEMENUSLIB "/usr/lib/menu"
+#define PACKAGEMENUS    "/usr/share/menu"
+#define MENUMENUS       "/usr/share/menu/default"
+#define USERMENUS       ".menu"
 
-#define MENUMETHODS     "/etc/menu-methods/"
-#define USERMETHODS     ".menu-methods/"
+#define MENUMETHODS     "/etc/menu-methods"
+#define USERMETHODS     ".menu-methods"
 
 #define UPMEN_LOCKFILE  "/var/run/update-menus.pid"
 #define DPKG_LOCKFILE   "/var/lib/dpkg/lock"
