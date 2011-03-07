@@ -7,9 +7,11 @@ menu (2.1.45) unstable; urgency=low
   * su-to-root: add support for gksudo and kdesudo. Closes: #604085, #602118.
   * update-menus/update-menus.cc:
     + option --menufilesdir: do not require a trailing slash. Closes: #595032.
-  * debian/prerm
-    + Automatically remove generate system menu files when menu is removed.
+  * debian/prerm:
+    + automatically remove generate system menu files when menu is removed.
       Closes: #305764, #592441.
+  * update-menus/parsestream.cc:
+    + catch endoffile exception in init method, thanks Renzo Davoli.
 
  -- Bill Allombert <ballombe@debian.org>  Mon, 07 Mar 2011 11:58:39 +0100
 

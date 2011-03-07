@@ -150,8 +150,9 @@ void parsestream::init(std::istream *in, std::string name)
   istreams.push_back(in);
   linenumbers.push_back(0);
   filenames.push_back(name);
-
-  new_line();
+  try {
+    new_line();
+  } catch (endoffile) { }
 }
 
 void parsestream::close_file()
