@@ -11,13 +11,12 @@ case "$1" in
 triggered)
 	# This is triggered by any installation of a menu file and by
 	# any call to update-menus made in a package maintainer script.
-	update-menus --trigger
+        test -x /usr/bin/update-menus && update-menus --trigger
         exit 0
 ;;
 *)
 	chmod a+x /usr/bin/update-menus
 	update-menus
-
 ;;
 esac
 
