@@ -1,0 +1,382 @@
+# translation of ru.po to Ukrainian
+# Russian translation of menu.
+# Copyright (C) 2004 Debian menu team
+# This file is distributed under the same license as the menu package.
+#
+# Serhij Dubyk <serhijdubyk@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: menu 2.1.37\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"POT-Creation-Date: 2007-10-05 07:30+0200\n"
+"PO-Revision-Date: 2011-03-11 12:08+0300\n"
+"Last-Translator: Serhij Dubyk <serhijdubyk@gmail.com>\n"
+"Language-Team: Ukrainian Linux Team <translation@linux.org.ua>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Language: Ukrainian\n"
+"X-Poedit-Country: UKRAINE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../install-menu/functions.cc:92
+msgid "Zero-size argument to print function."
+msgstr "У функцію „print“ переданий аргумент нульового розміру."
+
+#: ../install-menu/install-menu.cc:202
+msgid "install-menu: checking directory %1\n"
+msgstr "install-menu: перевірка теки „%1“\n"
+
+#: ../install-menu/install-menu.cc:215
+msgid "install-menu: creating directory %1:\n"
+msgstr "install-menu: створення теки „%1“:\n"
+
+#: ../install-menu/install-menu.cc:217
+msgid "Could not create directory(%1): %2"
+msgstr "Не вдалося створити теку (%1): %2"
+
+#: ../install-menu/install-menu.cc:219
+msgid "Could not change directory(%1): %2"
+msgstr "Не вдалося перейти у теку (%1): %2"
+
+#: ../install-menu/install-menu.cc:222
+msgid "install-menu: directory %1 already exists\n"
+msgstr "install-menu: тека „%1“ вже існує\n"
+
+#. Do not translate supported
+#: ../install-menu/install-menu.cc:447
+msgid "install-menu: [supported]: name=%1\n"
+msgstr "install-menu: [supported]: ім’я=%1\n"
+
+#: ../install-menu/install-menu.cc:464
+msgid "Menu entry lacks mandatory field \"%1\".\n"
+msgstr "У записі пункту меню відсутнє необхідне поле „%1“.\n"
+
+#: ../install-menu/install-menu.cc:470
+msgid "Unknown value for field %1=\"%2\".\n"
+msgstr "Невідоме значення для поля %1=„%2“.\n"
+
+#. Do not translate quoted text
+#: ../install-menu/install-menu.cc:617
+msgid ""
+"install-menu: \"hotkeycase\" can only be \"sensitive\" or \"insensitive\"\n"
+msgstr ""
+"install-menu: „hotkeycase“ може мати значення лише „sensitive“ чи "
+"„insensitive“\n"
+
+#: ../install-menu/install-menu.cc:647
+msgid ""
+"install-menu: Warning: Unknown identifier `%1' on line %2 in file %3. "
+"Ignoring.\n"
+msgstr ""
+"install-menu: Увага: невідомий ідентифікатор „%1“ у рядку %2 з файлу „%3“. "
+"Ігнорується.\n"
+
+#: ../install-menu/install-menu.cc:657
+msgid "install-menu: %1 must be defined in menu-method %2"
+msgstr "install-menu: %1 повинен бути визначений у menu-method %2"
+
+#: ../install-menu/install-menu.cc:824
+msgid "Cannot open file %1 (also tried %2).\n"
+msgstr "Не вдалося відкрити файл %1 (як і %2).\n"
+
+#: ../install-menu/install-menu.cc:832 ../install-menu/install-menu.cc:839
+#: ../install-menu/install-menu.cc:847
+msgid "Cannot open file %1.\n"
+msgstr "Не вдалося відкрити файл %1.\n"
+
+#: ../install-menu/install-menu.cc:849
+msgid ""
+"In order to be able to create the user config file(s) for the window "
+"manager,\n"
+"the above file needs to be writeable (and/or the directory needs to exist).\n"
+msgstr ""
+"Щоб створювати власні конфігураційні файли для менеджера вікон,\n"
+"вищевказані файли повинні бути доступні на запис (та/чи теки повинні "
+"існувати).\n"
+
+#: ../install-menu/install-menu.cc:871
+msgid "Warning: the string %1 did not occur in template file %2\n"
+msgstr "Увага: рядок %1 не знайдено у файлі шаблону %2\n"
+
+#. Don't translate quoted string
+#: ../install-menu/install-menu.cc:896
+msgid ""
+"install-menu [-vh] <menu-method>\n"
+"  Read menu entries from stdin in \"update-menus --stdout\" format\n"
+"  and generate menu files using the specified menu-method.\n"
+"  Options to install-menu:\n"
+"     -h --help    : this message\n"
+"        --remove  : remove the menu instead of generating it.\n"
+"     -v --verbose : be verbose\n"
+msgstr ""
+"install-menu [-vh] <menu-method>\n"
+" Читає записи пунктів меню з stdin у форматі „update-menus -- stdout“\n"
+" та генерує файли меню, використовуючи зазначений menu-method.\n"
+" Параметри install-menu:\n"
+" -h --help: це повідомлення\n"
+" --remove: вилучити меню, а не створювати.\n"
+" -v --verbose: видавати докладну інформацію\n"
+
+#: ../install-menu/install-menu.cc:943
+msgid "install-menu: no menu-method script specified!"
+msgstr "install-menu: не вказано сценарій для menu-method!"
+
+#: ../install-menu/install-menu.cc:956
+msgid "Cannot open script %1 for reading.\n"
+msgstr "Не вдалося відкрити сценарій %1 для читання.\n"
+
+#: ../install-menu/install-menu.cc:979
+msgid "Warning: script %1 does not provide removemenu, menu not deleted\n"
+msgstr "Увага: сценарій %1 не містить функції „removemenu“, меню не вилучено\n"
+
+#: ../install-menu/install-menu.cc:1014
+msgid "Running: \"%1\"\n"
+msgstr "Запуск: „%1“\n"
+
+#: ../install-menu/install-menu.cc:1030
+msgid "install-menu: %1: aborting\n"
+msgstr "install-menu: %1: скасування дії\n"
+
+#: ../install-menu/install-menu.h:199
+msgid "Number of arguments to function %1 does not match."
+msgstr "Неправильне число аргументів для функції %1."
+
+#: ../install-menu/install-menu.h:207
+msgid "Unknown function: \"%1\""
+msgstr "Невідома функція: „%1“"
+
+#: ../install-menu/install-menu.h:216
+msgid "Indirectly used, but not defined function: \"%1\""
+msgstr "Неявне використання невизначеної функції: „%1“"
+
+#: ../install-menu/install-menu.h:225
+msgid "Unknown identifier: \"%1\""
+msgstr "Невідомий ідентифікатор: „%1“"
+
+#: ../install-menu/install-menu.h:234
+msgid "Encoding conversion error: \"%1\""
+msgstr "Помилка при перетворенні кодування: „%1“"
+
+#: ../update-menus/exceptions.h:43
+msgid "Unknown error."
+msgstr "Невідома помилка."
+
+#: ../update-menus/exceptions.h:55 ../update-menus/parsestream.h:114
+msgid "Unknown error, message=%1"
+msgstr "Невідома помилка, повідомлення=%1"
+
+#: ../update-menus/exceptions.h:64
+msgid "Unable to open file \"%1\"."
+msgstr "Не вдалося відкрити файл „%1“."
+
+#: ../update-menus/exceptions.h:73
+msgid "Failed to pipe data through \"%1\" (pipe opened for reading)."
+msgstr "Помилка передачі даних через канал „%1“ (канал відкритий на читання)."
+
+#: ../update-menus/exceptions.h:89
+msgid "%1: missing required tag: \"%2\""
+msgstr "%1: відсутня необхідна мітка: „%2“"
+
+#: ../update-menus/parsestream.cc:50
+msgid "(probably) stdin"
+msgstr "(можливо) stdin (стандартний ввід)"
+
+#: ../update-menus/parsestream.cc:450
+msgid "In file \"%1\", at (or in the definition that ends at) line %2:\n"
+msgstr "У файлі „%1“, у рядку (або у визначенні, яке закінчується тут) %2:\n"
+
+#: ../update-menus/parsestream.cc:471
+msgid "Somewhere in input file:\n"
+msgstr "Десь у вхідному файлі:\n"
+
+#: ../update-menus/parsestream.h:122
+msgid "Unexpected end of file."
+msgstr "Несподіваний кінець файлу."
+
+#: ../update-menus/parsestream.h:129
+msgid "Unexpected end of line."
+msgstr "Несподіваний кінець рядка."
+
+#: ../update-menus/parsestream.h:136
+msgid "Identifier expected."
+msgstr "Очікується ідентифікатор."
+
+#: ../update-menus/parsestream.h:144
+msgid "Expected: \"%1\""
+msgstr "Очікується: „%1“"
+
+#: ../update-menus/parsestream.h:153
+msgid "Unexpected character: \"%1\""
+msgstr "Несподіваний символ: „%1“"
+
+#: ../update-menus/parsestream.h:162
+msgid ""
+"Boolean (either true or false) expected.\n"
+"Found: \"%1\""
+msgstr ""
+"Очікується логічне значення (або „true“, або ж „false“).\n"
+"Знайдено: „%1“"
+
+#: ../update-menus/parsestream.h:172
+msgid "Unknown compat mode: \"%1\""
+msgstr "Невідомий режим сумісності („compat“): „%1“"
+
+#: ../update-menus/stringtoolbox.cc:85
+msgid ""
+"replacewith($string, $replace, $with): $replace and $with must have the same "
+"length."
+msgstr ""
+"replacewith($string, $replace, $with): $replace та $with повинні мати "
+"однакову довжину."
+
+#: ../update-menus/update-menus.cc:150
+msgid ""
+"file %1 line %2:\n"
+"Discarding entry requiring missing package %3."
+msgstr ""
+"файл %1, рядок %2:\n"
+"Вилучається, запис вимагає відсутнього пакунка %3."
+
+#. Translation here and below refer to the file
+#. /etc/menu-methods/translate_menus that allow to rename and reorganize
+#. menu entries automatically. It does not refer to the localisation
+#. (translation to other languages).
+#.
+#: ../update-menus/update-menus.cc:364
+msgid "Reading translation rules in %1."
+msgstr "Читання правил перетворення у %1."
+
+#: ../update-menus/update-menus.cc:444
+msgid "Reading installed packages list..."
+msgstr "Читання списку встановлених пакунків…"
+
+#: ../update-menus/update-menus.cc:493
+msgid "Execution of %1 generated no output or returned an error.\n"
+msgstr "Виконання %1 завершилося без результату або з помилкою.\n"
+
+#: ../update-menus/update-menus.cc:534 ../update-menus/update-menus.cc:538
+msgid "Skipping file because of errors...\n"
+msgstr "Пропуск файлу через помилки…\n"
+
+#: ../update-menus/update-menus.cc:555
+msgid "Reading menu-entry files in %1."
+msgstr "Читання файлів для пунктів меню з %1."
+
+#: ../update-menus/update-menus.cc:578
+msgid "Error reading %1.\n"
+msgstr "Помилка при читанні %1.\n"
+
+#: ../update-menus/update-menus.cc:584
+msgid "%1 menu entries found (%2 total)."
+msgstr "Знайдено пунктів меню: %1 (усього %2)."
+
+#: ../update-menus/update-menus.cc:595
+msgid "Running method: %1 --remove"
+msgstr "Запуск методу: %1 --remove"
+
+#: ../update-menus/update-menus.cc:607 ../update-menus/update-menus.cc:669
+#: ../update-menus/update-menus.cc:990
+msgid "Script %1 could not be executed."
+msgstr "Сценарій %1 не може бути виконаний."
+
+#: ../update-menus/update-menus.cc:610 ../update-menus/update-menus.cc:672
+msgid "Script %1 returned error status %2."
+msgstr "Сценарій %1 повернув помилку %2."
+
+#: ../update-menus/update-menus.cc:613 ../update-menus/update-menus.cc:675
+msgid "Script %1 received signal %2."
+msgstr "Сценарій %1 отримав сигнал %2."
+
+#: ../update-menus/update-menus.cc:630
+msgid "Running method: %1"
+msgstr "Запуск методу: %1"
+
+#: ../update-menus/update-menus.cc:633
+msgid "Cannot create pipe."
+msgstr "Не вдалося створити канал."
+
+#: ../update-menus/update-menus.cc:685
+msgid "Running menu-methods in %1."
+msgstr "Запуск menu-method-ів з %1."
+
+#: ../update-menus/update-menus.cc:717
+msgid "Other update-menus processes are already locking %1, quitting."
+msgstr "Вже запущені інші процеси „update-menu“, що блокують %1, отож вихід."
+
+#: ../update-menus/update-menus.cc:720
+msgid "Cannot lock %1: %2 - Aborting."
+msgstr "Неможливо заблокувати %1: %2 — скасування роботи."
+
+#: ../update-menus/update-menus.cc:730
+msgid "Cannot write to lockfile %1 - Aborting."
+msgstr "Не вдалося записати у файл блокування %1 — скасування роботи."
+
+#: ../update-menus/update-menus.cc:743
+msgid "Cannot remove lockfile %1."
+msgstr "Не вдається вилучити файл блокування %1."
+
+#: ../update-menus/update-menus.cc:759
+msgid "Update-menus is run by user."
+msgstr "update-menu запущено користувачем."
+
+#: ../update-menus/update-menus.cc:813
+msgid ""
+"Waiting for dpkg to finish (forking to background).\n"
+"(checking %1)"
+msgstr ""
+"Очікується завершення роботи „dpkg“ (робота у фоновому режимі).\n"
+"(перевірка %1)"
+
+#: ../update-menus/update-menus.cc:816
+msgid "Further output (if any) will appear in %1."
+msgstr "Подальший вивід (якщо такий буде) буде перенаправлено у %1."
+
+#: ../update-menus/update-menus.cc:845
+msgid "Dpkg is not locking dpkg status area, good."
+msgstr "Dpkg не блокує область статусу, це нормально."
+
+#. This is the update-menus --help message
+#: ../update-menus/update-menus.cc:855
+msgid ""
+"Usage: update-menus [options] \n"
+"Gather packages data from the menu database and generate menus for\n"
+"all programs providing menu-methods, usually window-managers.\n"
+"  -d                     Output debugging messages.\n"
+"  -v                     Be verbose about what is going on.\n"
+"  -h, --help             This message.\n"
+"  --menufilesdir=<dir>   Add <dir> to the lists of menu directories to "
+"search.\n"
+"  --menumethod=<method>  Run only the menu method <method>.\n"
+"  --nodefaultdirs        Disable the use of all the standard menu "
+"directories.\n"
+"  --nodpkgcheck          Do not check if packages are installed.\n"
+"  --remove               Remove generated menus instead.\n"
+"  --stdout               Output menu list in format suitable for piping to\n"
+"                         install-menu.\n"
+"  --version              Output version information and exit.\n"
+msgstr ""
+"Використання: update-menus [опції]\n"
+"Збирає дані про пакунки з бази даних меню та генерує меню для\n"
+"усіх програм, які надають menu-method-и, зазвичай це менеджери вікон.\n"
+" -d   Виводити повідомлення налагодження.\n"
+" -v   Докладно повідомляти що відбувається при роботі.\n"
+" -h, --help   Це повідомлення.\n"
+" --menufilesdir=<тека>  Додати <теку> до списку пошуку тек меню.\n"
+" --menumethod=<метод>  Виконати лише вказаний <метод>-меню.\n"
+" --nodefaultdirs   Не використовувати стандартні теки меню.\n"
+" --nodpkgcheck   Не перевіряти, чи встановлені пакунки.\n"
+" --remove  Вилучати, а не створювати меню.\n"
+" --stdout  Виведення списку меню у форматі, придатному для передачі\n"
+"  по каналу в install-menu.\n"
+" --version  Показати версію та завершити роботу.\n"
+
+#: ../update-menus/update-menus.h:151
+msgid ""
+"Unknown install condition \"%1\" (currently, only \"package\" is supported)."
+msgstr ""
+"Невідома умова встановлення „%1“ (наразі підтримується лише „package“)."

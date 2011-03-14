@@ -1,3 +1,15 @@
+menu (2.1.46) UNRELEASED; urgency=low
+
+  * Handling of l10n by Christian Perrier:
+    + Programs translations:
+      - Ukrainian updated by Serhij Dubyk.
+    + su-to-root translations:
+      - Ukrainian updated by Serhij Dubyk.
+    + Menu sections translations:
+      - Ukrainian updated by Serhij Dubyk.
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 14 Mar 2011 20:31:33 +0100
+
 menu (2.1.45) unstable; urgency=low
 
   * The "no ghost" release 
