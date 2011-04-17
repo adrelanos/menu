@@ -3,19 +3,20 @@
 # This file is distributed under the same license as the menu package.
 # Bill Allombert <ballombe@debian.org>, 2003.
 # Eder L. Marques (frolic) <frolic@debian-ce.org>, 2008.
+# Sérgio Cipolla <secipolla@gmail.com>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: menu-section 2.1.7-2\n"
 "POT-Creation-Date: 2007-07-04 15:27+0100\n"
-"PO-Revision-Date: 2008-08-07 11:16-0300\n"
-"Last-Translator: Eder L. Marques (frolic) <frolic@debian-ce.org>\n"
+"PO-Revision-Date: 2011-04-17 11:02-0300\n"
+"Last-Translator: Sérgio Cipolla <secipolla@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
 "org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"pt_BR utf-8\n"
 
 #. First level entry 
 #. Policy definition: Normal applications. This is a top-level
@@ -401,13 +402,13 @@ msgstr "Tela"
 #. configuration GUIs should go to other appropriate sections.
 #. Examples: xscreensaver, xlockmore
 msgid "Saving"
-msgstr "Salvar"
+msgstr "Proteção"
 
 #. Second level entry under Screen
 #. Policy definition: Tools for locking the screen.
 #. Examples: xscreensaver, xlockmore
 msgid "Locking"
-msgstr "Proteger"
+msgstr "Bloqueio"
 
 #. First level entry 
 #. Policy definition: X window managers.

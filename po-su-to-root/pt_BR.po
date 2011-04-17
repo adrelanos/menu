@@ -1,0 +1,51 @@
+# su-to-root Brazilian Portuguese translation
+# Copyright (C) YEAR Debian menu team
+# This file is distributed under the same license as the menu package.
+# Sérgio Cipolla <secipolla@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: menu 2.1.45\n"
+"Report-Msgid-Bugs-To: menu@packages.debian.org\n"
+"POT-Creation-Date: 2007-06-05 21:25+0200\n"
+"PO-Revision-Date: 2011-04-17 11:14-0300\n"
+"Last-Translator: Sérgio Cipolla <secipolla@gmail.com>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Portuguese\n"
+"X-Poedit-Country: BRAZIL\n"
+
+#: ../scripts/su-to-root:31
+msgid ""
+"usage: %s [-X] [-p <user>] -c <command>\n"
+"  -c command: command to execute as a string (mandatory)\n"
+"  -p <user>: user to switch to (default: root)\n"
+"  -X: command is a X11 program\\n"
+msgstr ""
+"uso: %s [-X] [-p <usuário>] -c <comando>\n"
+"  -c comando: comando a ser executado como uma cadeia (obrigatório)\n"
+"  -p <usuário>: usuário para o qual mudar (padrão: root)\n"
+"  -X: o comando é um programa X11\\n"
+
+#: ../scripts/su-to-root:62
+msgid "About to execute %s.\\n"
+msgstr "Prestes a executar %s.\\n"
+
+#: ../scripts/su-to-root:63
+msgid "This command needs %s privileges to be executed.\\n"
+msgstr "Este comando necessita privilégios de %s para ser executado.\\n"
+
+#: ../scripts/su-to-root:72
+msgid "Using %s...\\n"
+msgstr "Usando %s...\\n"
+
+#: ../scripts/su-to-root:73
+msgid "Enter %s password at prompt.\\n"
+msgstr "Digite a senha de %s.\\n"
+
+#: ../scripts/su-to-root:76
+msgid "Incorrect password or command failed. Try again? (y/N)"
+msgstr "Senha incorreta ou falha no comando. Tentar de novo? (s/N)"

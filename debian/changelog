@@ -3,10 +3,16 @@ menu (2.1.46) UNRELEASED; urgency=low
   * Handling of l10n by Christian Perrier:
     + Programs translations:
       - Ukrainian updated by Serhij Dubyk.
+      - Brazilian Portuguese updated by Sérgio Cipolla.
+        Closes: #623121
     + su-to-root translations:
       - Ukrainian updated by Serhij Dubyk.
+      - Brazilian Portuguese updated by Sérgio Cipolla.
+        Closes: #623121
     + Menu sections translations:
       - Ukrainian updated by Serhij Dubyk.
+      - Brazilian Portuguese updated by Sérgio Cipolla.
+        Closes: #623121
 
  -- Christian Perrier <bubulle@debian.org>  Mon, 14 Mar 2011 20:31:33 +0100
 
