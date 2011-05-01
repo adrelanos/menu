@@ -13,6 +13,7 @@ menu (2.1.46) UNRELEASED; urgency=low
       - Ukrainian updated by Serhij Dubyk.
       - Brazilian Portuguese updated by Sérgio Cipolla.
         Closes: #623121
+      - Danish updated by Joe Dalton. Closes: #624656
 
  -- Christian Perrier <bubulle@debian.org>  Mon, 14 Mar 2011 20:31:33 +0100
 
