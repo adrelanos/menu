@@ -1,5 +1,6 @@
 menu (2.1.46) UNRELEASED; urgency=low
 
+  [ Christian Perrier ]
   * Handling of l10n by Christian Perrier:
     + Programs translations:
       - Ukrainian updated by Serhij Dubyk.
@@ -15,7 +16,10 @@ menu (2.1.46) UNRELEASED; urgency=low
         Closes: #623121
       - Danish updated by Joe Dalton. Closes: #624656
 
- -- Christian Perrier <bubulle@debian.org>  Mon, 14 Mar 2011 20:31:33 +0100
+   * doc/menu.sgml:
+     + Fix typo in chapter 3.7. Thanks Hideki Yamane. Closes: #625736
+
+ -- Bill Allombert <ballombe@debian.org>  Thu, 10 Nov 2011 18:04:05 +0100
 
 menu (2.1.45) unstable; urgency=low
 

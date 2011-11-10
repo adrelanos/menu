@@ -689,7 +689,7 @@ or the equivalent.
 Please make sure the icons you specify are always available on the
 system. So, if you want to have an icon with your menu entry, the
 preferred method is to supply the icon with that package. 
-Icons sould generally be installed in the directory
+Icons should generally be installed in the directory
 <file>/usr/share/pixmaps</file>.
 <p>
 
