@@ -1059,6 +1059,7 @@ int main (int argc, char **argv)
     if (config.remove_menu)
     {
       run_methods(menudata);
+      remove_lock();
       return 0;
     }
     read_pkginfo();

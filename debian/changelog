@@ -18,6 +18,9 @@ menu (2.1.46) UNRELEASED; urgency=low
 
    * doc/menu.sgml:
      + Fix typo in chapter 3.7. Thanks Hideki Yamane. Closes: #625736
+  
+   * update-menus/update-menus.cc
+     + 'update-menus --remove' failed to remove lock file.
 
  -- Bill Allombert <ballombe@debian.org>  Thu, 10 Nov 2011 18:04:05 +0100
 
