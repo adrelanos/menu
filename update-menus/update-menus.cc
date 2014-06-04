@@ -798,7 +798,6 @@ void exit_on_signal(int signr)
 void wait_dpkg(string &stdoutfile)
 {
   int child;
-  int parentpid;
   int i,r;
   // This function checks to see if dpkg is running, and if
   // so, forks into the background, to let dpkg go on installing
@@ -842,7 +841,6 @@ void wait_dpkg(string &stdoutfile)
             configinfo::report_normal);
 
     // Now do the fork
-    parentpid=getpid();
     if ((child=fork())) {
       if (child==-1) {
         perror("update-menus: fork");
