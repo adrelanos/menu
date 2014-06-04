@@ -8,7 +8,7 @@ Build-Depends: debhelper (>= 5), texinfo, debiandoc-sgml, gettext
 Package: menu
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Suggests: menu-l10n, gksu|kdebase-bin|kdebase-runtime|ktsuss|sux
+Suggests: menu-l10n, gksu|kde-runtime|ktsuss
 Description: generates programs menu for all menu-aware applications
  Debian menu keeps transparently the menus in the different
  window-managers in sync with the list of installed programs. 

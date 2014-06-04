@@ -3,6 +3,9 @@ menu (2.1.47) unstable; urgency=low
   * The "unreleased" release
   * debian/control
     + Bump Standards-Version to 3.9.5.
+    + Clean up Suggests for su-to-root: Closes: #666545
+      - added: kde-runtime
+      - removed: kedbase-bin, kdebase-runtime, sux
   * debian/rules:
     - Use dh_prep instead of dh_clean -k
     - Add -Wl,-z,relro to LDFLAGS
