@@ -10,6 +10,7 @@ arch    := $(shell dpkg-architecture -qDEB_HOST_ARCH)
 
 CXXFLAGS = -g -Wall
 CFLAGS = -g -Wall
+LDFLAGS = -Wl,-z,relro
 
 ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
 CXXFLAGS += -O0
@@ -23,7 +24,7 @@ build: build-stamp
 build-stamp:
 	dh_testdir
 	./configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man
-	$(MAKE) CXXFLAGS="$(CXXFLAGS)" CFLAGS="$(CFLAGS)" 
+	$(MAKE) CXXFLAGS="$(CXXFLAGS)" CFLAGS="$(CFLAGS)" "LDFLAGS=$(LDFLAGS)"
 	touch build-stamp
 
 clean:
@@ -40,7 +41,7 @@ install: install-stamp
 install-stamp: build-stamp
 	dh_testdir
 	dh_testroot
-	dh_clean -k
+	dh_prep
 	dh_installdirs \
 		   etc/menu-methods \
 		   etc/menu \
