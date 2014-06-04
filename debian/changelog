@@ -8,6 +8,8 @@ menu (2.1.47) unstable; urgency=low
     - Add -Wl,-z,relro to LDFLAGS
   * doc/menufile.5, doc/menufile.fr.5:
     - Add full icon path in example. Closes: #742490
+  * su-to-root:
+    + Fix support (hopefully) for sux. Closes: #695882
 
  -- Bill Allombert <ballombe@debian.org>  Tue, 03 Jun 2014 20:53:53 +0200
 
