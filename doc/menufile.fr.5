@@ -187,7 +187,8 @@ Si vous voulez spécifier une icône ou un raccourci clavier pour un sous\-menu
 (par exemple, le sous\-menu Editors), utilisez la même syntaxe, mais laissez 
 le champ command vide, comme ceci\ :
 
-?package(monpaquet):needs="X11" section="Applications" icon="icon.xpm" hotkey="E" title="Editors"
+?package(monpaquet):needs="X11" section="Applications" \\
+ icon="/usr/share/pixmaps/icon.xpm" hotkey="E" title="Editors"
 
 .PP
 À chaque fois qu'un fichier de menus est modifié, vous devez exécuter 

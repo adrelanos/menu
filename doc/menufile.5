@@ -175,7 +175,8 @@ If you want to specify an icon or hotkey for a sub-menu (for example,
 the Editors sub-menu), just use the same syntax but leave the command
 empty:
 
-?package(mypackage):needs="X11" section="Applications" icon="icon.xpm" hotkey="E" title="Editors"
+?package(mypackage):needs="X11" section="Applications" \\
+ icon="/usr/share/pixmaps/icon.xpm" hotkey="E" title="Editors"
 
 .PP
 Whenever any menu files are changed, you must run
