@@ -1,6 +1,8 @@
 menu (2.1.47) unstable; urgency=low
 
   * The "unreleased" release
+  * debian/control
+    + Bump Standards-Version to 3.9.5.
 
  -- Bill Allombert <ballombe@debian.org>  Tue, 03 Jun 2014 20:53:53 +0200
 
