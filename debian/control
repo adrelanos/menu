@@ -9,6 +9,7 @@ Package: menu
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Suggests: menu-l10n, gksu|kde-runtime|ktsuss
+Multi-Arch: foreign
 Description: generates programs menu for all menu-aware applications
  Debian menu keeps transparently the menus in the different
  window-managers in sync with the list of installed programs. 

@@ -6,6 +6,7 @@ menu (2.1.47) unstable; urgency=low
     + Clean up Suggests for su-to-root: Closes: #666545
       - added: kde-runtime
       - removed: kedbase-bin, kdebase-runtime, sux
+    + Add Multi-Arch: foreign. Closes: #698800
   * debian/rules:
     - Use dh_prep instead of dh_clean -k
     - Add -Wl,-z,relro to LDFLAGS
