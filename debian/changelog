@@ -3,19 +3,19 @@ menu (2.1.47) unstable; urgency=low
   * The "unreleased" release
   * debian/control
     + Bump Standards-Version to 3.9.5.
-    + Clean up Suggests for su-to-root: Closes: #666545
+    + Clean up Suggests for su-to-root: Closes: #666545. Thanks Pino Toscano
       - added: kde-runtime
-      - removed: kedbase-bin, kdebase-runtime, sux
-    + Add Multi-Arch: foreign. Closes: #698800
+      - removed: kdebase-bin, kdebase-runtime, sux
+    + Add Multi-Arch: foreign. Closes: #698800. Thanks Frédéric Brière
   * debian/rules:
     - Use dh_prep instead of dh_clean -k
     - Add -Wl,-z,relro to LDFLAGS
   * doc/menufile.5, doc/menufile.fr.5:
-    - Add full icon path in example. Closes: #742490
+    - Add full icon path in example. Closes: #742490. Thanks Markus Koschany
   * su-to-root:
-    + Fix support (hopefully) for sux. Closes: #695882
+    + Fix support (hopefully) for sux. Closes: #695882. Thanks Ian Pangilinan
 
- -- Bill Allombert <ballombe@debian.org>  Tue, 03 Jun 2014 20:53:53 +0200
+ -- Bill Allombert <ballombe@debian.org>  Fri, 13 Jun 2014 19:05:17 +0200
 
 menu (2.1.46) unstable; urgency=low
 
