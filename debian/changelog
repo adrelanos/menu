@@ -1,6 +1,7 @@
 menu (2.1.47) unstable; urgency=low
 
-  * The "unreleased" release
+  * The "Tours" release
+  * Update to automake 1.11
   * debian/control
     + Bump Standards-Version to 3.9.5.
     + Clean up Suggests for su-to-root: Closes: #666545. Thanks Pino Toscano
