@@ -10,6 +10,9 @@ menu (2.1.47) unstable; urgency=low
   * debian/rules:
     - Use dh_prep instead of dh_clean -k
     - Add -Wl,-z,relro to LDFLAGS
+    - call dh_lintian
+  * debian/menu.lintian-overrides: added
+    - suppress prerm-calls-updatemenus
   * debian/update-menus.sh: removed (useless since 2.1.26)
   * doc/menufile.5, doc/menufile.fr.5:
     - Add full icon path in example. Closes: #742490. Thanks Markus Koschany

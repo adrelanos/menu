@@ -87,6 +87,7 @@ binary-arch: build install
 	              doc/menufile.fr.5
 	dh_installinfo doc/menu.info.gz
 	dh_installchangelogs
+	dh_lintian
 	dh_strip
 	dh_compress
 	dh_fixperms
