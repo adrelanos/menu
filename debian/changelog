@@ -1,3 +1,11 @@
+menu (2.1.48) unstable; urgency=low
+
+  * debian/control:
+    + Bump Standards-Version to 3.9.6.
+    + Add Vcs-Git/Vcs-Browser fields
+
+ -- Bill Allombert <ballombe@debian.org>  Sun, 31 May 2015 23:15:22 +0200
+
 menu (2.1.47) unstable; urgency=low
 
   * The "Tours" release
