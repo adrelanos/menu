@@ -81,7 +81,11 @@ else
     done;;
   X11)
     if test -z "$SU_TO_ROOT_X"; then
-      if which gksu >/dev/null 2>&1 ; then
+      if which kdesudo >/dev/null 2>&1 ; then 
+        SU_TO_ROOT_X=kdesudo
+      elif which gksudo >/dev/null 2>&1 ; then 
+        SU_TO_ROOT_X=gksudo
+      elif which gksu >/dev/null 2>&1 ; then
         SU_TO_ROOT_X=gksu
         if test "X$KDE_FULL_SESSION" = "Xtrue" ; then
           if which kdesu >/dev/null 2>&1 ; then
