@@ -35,6 +35,38 @@ usage () {
   exit 1
 }
 
+su_to_root_x_detection() {
+   if sudo -n true >/dev/null 2>&1 ; then
+      if which kdesudo >/dev/null 2>&1 ; then
+         SU_TO_ROOT_X=kdesudo
+         return
+      elif which gksudo >/dev/null 2>&1 ; then
+         SU_TO_ROOT_X=gksudo
+         return
+      fi
+   fi
+   if which gksu >/dev/null 2>&1 ; then
+     SU_TO_ROOT_X=gksu
+     if test "X$KDE_FULL_SESSION" = "Xtrue" ; then
+       if which kdesu >/dev/null 2>&1 ; then
+         SU_TO_ROOT_X=kdesu
+       elif test -x /usr/lib/kde4/libexec/kdesu ; then
+         SU_TO_ROOT_X=kde4su
+       fi;
+     fi;
+   elif which kdesu >/dev/null 2>&1 ; then 
+     SU_TO_ROOT_X=kdesu
+   elif test -x /usr/lib/kde4/libexec/kdesu ; then
+     SU_TO_ROOT_X=kde4su
+   elif which ktsuss >/dev/null 2>&1 ; then
+     SU_TO_ROOT_X=ktsuss
+   elif which sux >/dev/null 2>&1 ; then 
+     SU_TO_ROOT_X=sux
+   else
+     SU_TO_ROOT_X=su-to-root
+   fi
+}
+
 for i in "$@"; do
    case "$prev" in
      -p)
@@ -81,26 +113,7 @@ else
     done;;
   X11)
     if test -z "$SU_TO_ROOT_X"; then
-      if which gksu >/dev/null 2>&1 ; then
-        SU_TO_ROOT_X=gksu
-        if test "X$KDE_FULL_SESSION" = "Xtrue" ; then
-          if which kdesu >/dev/null 2>&1 ; then
-            SU_TO_ROOT_X=kdesu
-          elif test -x /usr/lib/kde4/libexec/kdesu ; then
-            SU_TO_ROOT_X=kde4su
-          fi;
-        fi;
-      elif which kdesu >/dev/null 2>&1 ; then 
-        SU_TO_ROOT_X=kdesu
-      elif test -x /usr/lib/kde4/libexec/kdesu ; then
-        SU_TO_ROOT_X=kde4su
-      elif which ktsuss >/dev/null 2>&1 ; then
-        SU_TO_ROOT_X=ktsuss
-      elif which sux >/dev/null 2>&1 ; then 
-        SU_TO_ROOT_X=sux
-      else
-        SU_TO_ROOT_X=su-to-root
-      fi
+      su_to_root_x_detection
     fi
     case $SU_TO_ROOT_X in
       gksu) gksu -u "$PRIV" "$COMMAND";;
